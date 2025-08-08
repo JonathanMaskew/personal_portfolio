@@ -1,0 +1,61 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+debug.log
+
+# Dependency directories
+node_modules/
+
+# Build output
+dist/
+build/
+.next/
+out/
+
+# Testing
+coverage/
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment files (keep example files tracked)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+!.env.example
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+
+# macOS
+.DS_Store
+
+# Vercel
+.vercel/
+
+# Turbo / monorepo caches
+.turbo/
+
+# Yarn Berry (PnP) files
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Misc caches
+.npm/
+.eslintcache
+
