@@ -19,7 +19,7 @@ export default function Modal({
 
   return (
     <div
-      className="fixed inset-0 z-[100] bg-black/40 backdrop-blur-sm"
+      className={`fixed inset-0 z-[100] bg-black/40 ${color ? 'backdrop-blur-sm' : 'backdrop-blur-2xl'}`}
       onClick={onCloseCallback}
     >
       <div

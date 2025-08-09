@@ -1,5 +1,5 @@
 import { Bot, Code, Paintbrush } from 'lucide-react';
-import Chips from '../Chips';
+import HighlightFeature from '../HighlightFeature';
 
 export default function Hero() {
   return (
@@ -16,9 +16,9 @@ export default function Hero() {
 
       {/* Highlights */}
       <div className="grid grid-cols-3 gap-16">
-        {/* <Highlight icon={Bot} heading="AI Enthusiest" />
-        <Highlight icon={Code} heading="Frontend Connoisseur" />
-        <Highlight icon={Paintbrush} heading="Design Aficianado" /> */}
+        <HighlightFeature imagery={Bot} title="AI Enthusiast" />
+        <HighlightFeature imagery={Code} title="Frontend Connoisseur" />
+        <HighlightFeature imagery={Paintbrush} title="Design Aficionado" />
       </div>
     </div>
   );

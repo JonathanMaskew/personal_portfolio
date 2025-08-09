@@ -1,11 +1,10 @@
 'use client';
 
-import { BriefcaseBusiness, Plus } from 'lucide-react';
+import { BriefcaseBusiness } from 'lucide-react';
 import Chips from '../Chips';
 import myheloLogo from '@/assets/images/myhelo_logo.png';
 import allegionLogo from '@/assets/images/allegion_logo.png';
 import qualifiLogo from '@/assets/images/qualifi_logo.png';
-import Image from 'next/image';
 import SectionHeader from '../SectionHeader';
 import HighlightDetailed from '../HighlightDetailed';
 import { useModal } from '@/hooks/useModal';
@@ -51,6 +50,11 @@ export default function Work() {
       jobDescription:
         'Integrated with backend APIs to develop a scalable announcements feature within a component-based Angular site, allowing hundreds of users to access announcements and administrators to send targeted announcements.',
       keywords: ['Angular', 'Angular Material', 'Front-end', 'Scrum'],
+      bullets: [
+        'Integrated with backend APIs to develop a scalable announcements feature within a component-based Angular site, allowing hundreds of users to access announcements and administrators to send targeted announcements.',
+        'Translated high-fidelity mockups to front-end code that conform with user experience specifications and feedback.',
+        'Collaborated daily with Product Owner, Interaction Designer, and Backend Developer interns, following the Scrum methodology.',
+      ],
     },
     {
       logo: qualifiLogo,
@@ -67,6 +71,11 @@ export default function Work() {
         'Front-end',
         'Scrum',
         'React Testing Library',
+      ],
+      bullets: [
+        'Shipped new features and improved usability within a Next.js codebase by translating designs into front-end code.',
+        'Followed the Scrum methodology to communicate daily with the Engineering, Product, and Product Designer teams.',
+        'Ensured new contributions maintained system reliability and functionality by implementing test cases.',
       ],
     },
   ];
@@ -96,7 +105,7 @@ export default function Work() {
             >
               <HighlightDetailed
                 color={job.bgColor}
-                image={job.logo}
+                imagery={job.logo}
                 title={job.jobTitle}
                 subtitle={job.company}
                 subheading={job.timeRange}
@@ -122,7 +131,7 @@ export default function Work() {
         {openedJob && (
           <>
             <HighlightFeature
-              image={openedJob.logo}
+              imagery={openedJob.logo}
               title={openedJob.jobTitle}
               subtitle={openedJob.company}
               subheading={openedJob.timeRange}

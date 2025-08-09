@@ -1,10 +1,10 @@
-import { HighlightProps } from '@/types';
-import { Plus } from 'lucide-react';
-import Image from 'next/image';
+import React from 'react';
+import type { HighlightProps, Icon } from '@/types';
+import Image, { StaticImageData } from 'next/image';
 
 export default function HighlightFeature({
   color,
-  image,
+  imagery,
   title,
   subtitle,
   subheading,
@@ -26,8 +26,38 @@ export default function HighlightFeature({
       }}
     >
       <div className="flex flex-col gap-4 items-center">
-        {image && (
-          <Image src={image} alt="Purdue logo" width={100} height={100} />
+        {imagery && (
+          <>
+            {(() => {
+              if (React.isValidElement(imagery)) {
+                return imagery;
+              }
+
+              const isStaticImageData = (
+                value: unknown
+              ): value is StaticImageData => {
+                return (
+                  !!value &&
+                  typeof value === 'object' &&
+                  'src' in (value as Record<string, unknown>)
+                );
+              };
+
+              if (!isStaticImageData(imagery)) {
+                const IconComponent = imagery as Icon;
+                return <IconComponent size={50} />;
+              }
+
+              return (
+                <Image
+                  src={imagery as StaticImageData}
+                  alt={`${title} logo`}
+                  width={100}
+                  height={100}
+                />
+              );
+            })()}
+          </>
         )}
 
         <div>
@@ -35,11 +65,19 @@ export default function HighlightFeature({
             {title}
           </div>
 
-          <div className="text-base leading-tight text-center">{subtitle}</div>
-          <div className="text-xs leading-tight text-center">{subheading}</div>
+          {subtitle && (
+            <div className="text-base leading-tight text-center">
+              {subtitle}
+            </div>
+          )}
+          {subheading && (
+            <div className="text-xs leading-tight text-center">
+              {subheading}
+            </div>
+          )}
         </div>
       </div>
-      <div className="text-center">{body}</div>
+      {body && <div className="text-center">{body}</div>}
       {children}
     </div>
   );

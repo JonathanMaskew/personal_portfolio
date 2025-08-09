@@ -1,10 +1,11 @@
+import React from 'react';
 import Image, { StaticImageData } from 'next/image';
-import { HighlightProps } from '@/types';
+import type { HighlightProps, Icon } from '@/types';
 import { Plus } from 'lucide-react';
 
 export default function HighlightDetailed({
   color,
-  image,
+  imagery,
   title,
   subtitle,
   subheading,
@@ -14,19 +15,41 @@ export default function HighlightDetailed({
 }: HighlightProps) {
   return (
     <div
-      className="flex flex-col justify-between p-8 rounded-xl h-full w-full gap-6 relative"
+      className="flex flex-col p-8 rounded-xl h-full w-full gap-6 relative"
       style={{
         backgroundImage: `
           linear-gradient(
             to top left,
             ${color},
-            color-mix(in srgb, ${color} 35%, black)
+            color-mix(in srgb, ${color} 45%, black)
           )
         `,
       }}
     >
       <div className="flex items-center gap-4">
-        {image && <Image src={image} alt={`${title} logo`} height={50} />}
+        {imagery &&
+          (() => {
+            if (React.isValidElement(imagery)) {
+              return imagery;
+            }
+
+            const isStaticImageData = (
+              value: unknown
+            ): value is StaticImageData => {
+              return (
+                !!value &&
+                typeof value === 'object' &&
+                'src' in (value as Record<string, unknown>)
+              );
+            };
+
+            if (!isStaticImageData(imagery)) {
+              const IconComponent = imagery as Icon;
+              return <IconComponent size={50} />;
+            }
+
+            return <Image src={imagery} alt={`${title} logo`} height={50} />;
+          })()}
         <div className="flex flex-col">
           <div className="font-bold text-lg font-header leading-tight">
             {title}
@@ -40,7 +63,7 @@ export default function HighlightDetailed({
         </div>
       </div>
       {body && <div className="leading-tight text-sm">{body}</div>}
-      <div className="mb-6">{children}</div>
+      {children && <div className="mb-6">{children}</div>}
       {onClickCallback && (
         <button
           className="absolute right-4 bottom-4 flex items-center gap-1"

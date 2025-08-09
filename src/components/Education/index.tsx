@@ -1,39 +1,62 @@
 'use client';
-import { BriefcaseBusiness, GraduationCap, Plus } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 import purdueLogo from '@/assets/images/purdue_logo.png';
 import htfLogo from '@/assets/images/htf_logo_white.png';
-import Image from 'next/image';
 import SectionHeader from '../SectionHeader';
 import HighlightDetailed from '../HighlightDetailed';
 import HighlightFeature from '../HighlightFeature';
+import { useState } from 'react';
+import { useModal } from '@/hooks/useModal';
+import Modal from '../Modal';
 
 export default function Work() {
   const htfEducationData = [
     {
       color: '#00EB88',
-      image: htfLogo,
+      imagery: htfLogo,
       title: 'Design Director',
       subtitle: 'Hack the Future',
-      subheading: 'Spring 2022 - Spring 2024',
-      body: 'Make things look pretty',
+      subheading: 'Purdue University, March 2022 - May 2024',
+      body: 'Mentored four project teams on UX/UI principles and provided resources to translate Figma mockups into front-end code.',
+      bullets: [
+        'Mentored four project teams on UX/UI principles and provided resources to translate Figma mockups into front-end code.',
+        'Established branded components in React to streamline development and maintain consistency across all team projects.',
+        'Designed marketing materials in Figma leading to a nearly 90% increase in applicants year-over-year, shattering previous records.',
+      ],
     },
     {
       color: '#03C652',
-      image: htfLogo,
+      imagery: htfLogo,
       title: 'Secretary',
       subtitle: 'Hack the Future',
-      subheading: 'Spring 2022 - Spring 2024',
-      body: 'Secretate',
+      subheading: 'Purdue University, November 2023 - May 2024',
+      body: 'Oversaw club logistics, including event planning, member communications, and administrative tasks, to keep members engaged.',
+      bullets: [
+        'Oversaw club logistics, including event planning, member communications, and administrative tasks, to keep members engaged.',
+      ],
     },
     {
       color: '#277D4A',
-      image: htfLogo,
+      imagery: htfLogo,
       title: 'Software Developer',
       subtitle: 'Hack the Future',
-      subheading: 'Spring 2022 - Spring 2024',
-      body: 'Develop soft things',
+      subheading: 'Purdue University, Sep 2021 - May 2022',
+      body: 'Worked with a team of eight to deliver a website on schedule that allows Leadership Lafayette to collect and browse testimonials.',
+      bullets: [
+        'Worked with a team of eight to deliver a website on schedule that allows Leadership Lafayette to collect and browse testimonials.',
+        'Developed front-end interfaces using React that mimicked the Designer’s mockups and integrated with a MongoDB database.',
+      ],
     },
   ];
+
+  const { modalOpened, openModal, closeModal } = useModal();
+  const [openedEducationIndex, setOpenedEducationIndex] = useState<
+    number | null
+  >(null);
+  const openedEducation =
+    openedEducationIndex !== null && htfEducationData[openedEducationIndex]
+      ? htfEducationData[openedEducationIndex]
+      : null;
 
   return (
     <div className="flex flex-col gap-8 p-12 h-screen w-full">
@@ -41,7 +64,7 @@ export default function Work() {
 
       <HighlightFeature
         color="#CFB991"
-        image={purdueLogo}
+        imagery={purdueLogo}
         title="Bachelor of Science in Computer Science"
         subtitle="with a concentration in Software Engineering"
         subheading="Purdue University, 2020 - 2024"
@@ -73,15 +96,41 @@ export default function Work() {
           <div key={index} className={`${index === 0 ? 'row-span-2' : ''}`}>
             <HighlightDetailed
               color={item.color}
-              image={item.image}
+              imagery={item.imagery}
               title={item.title}
               subtitle={item.subtitle}
               subheading={item.subheading}
               body={item.body}
+              onClickCallback={() => {
+                setOpenedEducationIndex(index);
+                openModal();
+              }}
             />
           </div>
         ))}
       </div>
+      {openedEducation && (
+        <Modal
+          color={openedEducation.color}
+          open={modalOpened && !!openedEducation}
+          onCloseCallback={() => {
+            setOpenedEducationIndex(null);
+            closeModal();
+          }}
+        >
+          {openedEducation && (
+            <>
+              <HighlightFeature
+                imagery={openedEducation.imagery}
+                title={openedEducation.title}
+                subtitle={openedEducation.subtitle}
+                subheading={openedEducation.subheading}
+                body={openedEducation.body}
+              />
+            </>
+          )}
+        </Modal>
+      )}
     </div>
   );
 }
