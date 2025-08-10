@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Raleway, Quicksand } from 'next/font/google';
 import './globals.css';
 import SidebarNav from '@/components/SidebarNav';
+import TopNav from '@/components/TopNav';
 
 const header = Raleway({
   variable: '--font-header',
@@ -31,8 +32,16 @@ export default function RootLayout({
         className={`${header.variable} ${body.variable} font-body antialiased`}
       >
         <div className="flex h-screen">
-          <SidebarNav />
-          <main className="flex-1 overflow-y-auto">{children}</main>
+          <div className="hidden md:block">
+            <SidebarNav />
+          </div>
+
+          <div className="block md:hidden">
+            <TopNav />
+          </div>
+          <main className="flex-1 overflow-y-auto pt-14 md:pt-0">
+            {children}
+          </main>
         </div>
       </body>
     </html>

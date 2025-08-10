@@ -5,13 +5,13 @@ import Education from '@/components/Education';
 export default function Home() {
   return (
     <div className="h-screen w-full overflow-y-auto snap-y snap-mandatory scroll-smooth">
-      <section className="h-screen snap-start">
+      <section id="overview" className="h-screen snap-start">
         <Hero />
       </section>
-      <section className="h-screen overflow-y-auto snap-start">
+      <section id="work" className="h-screen overflow-y-auto snap-start">
         <Work />
       </section>
-      <section className="h-screen overflow-y-auto snap-start">
+      <section id="education" className="h-screen overflow-y-auto snap-start">
         <Education />
       </section>
     </div>

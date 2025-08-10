@@ -1,12 +1,4 @@
-import {
-  House,
-  Mail,
-  File,
-  User,
-  GraduationCap,
-  BriefcaseBusiness,
-} from 'lucide-react';
-import Link from 'next/link';
+import { MAIN_NAV_ITEMS, SECONDARY_NAV_ITEMS, NavLink } from '../NavLink';
 
 const jsLogo = (
   <svg
@@ -35,43 +27,22 @@ const jsLogo = (
 );
 
 export default function SidebarNav() {
-  const iconSize = 18;
-  const linkStyle = 'flex items-center gap-3';
-
   return (
     <aside className="h-screen w-[250] bg-gradient-to-r from-sky-500/50 to-transparent">
       <nav className="h-full w-full flex flex-col justify-between px-8 py-12">
         <div className="flex flex-col gap-10">
           {jsLogo}
           <div className="flex flex-col gap-4">
-            <Link href="/" className={`${linkStyle}`}>
-              <House size={`${iconSize}`} />
-              <div>Overview</div>
-            </Link>
-            <Link href="/" className={`${linkStyle}`}>
-              <BriefcaseBusiness size={`${iconSize}`} />
-              <div>Work</div>
-            </Link>
-            <Link href="/" className={`${linkStyle}`}>
-              <GraduationCap size={`${iconSize}`} />
-              <div>Education</div>
-            </Link>
-            <Link href="/" className={`${linkStyle}`}>
-              <User size={`${iconSize}`} />
-              <div>About</div>
-            </Link>
+            {MAIN_NAV_ITEMS.map((item) => (
+              <NavLink key={item.id} item={item} />
+            ))}
           </div>
         </div>
 
         <div className="flex flex-col gap-4">
-          <Link href="/" className={`${linkStyle}`}>
-            <File size={`${iconSize}`} />
-            <div>Resume</div>
-          </Link>
-          <Link href="/" className={`${linkStyle}`}>
-            <Mail size={`${iconSize}`} />
-            <div>Email</div>
-          </Link>
+          {SECONDARY_NAV_ITEMS.map((item) => (
+            <NavLink key={item.id} item={item} />
+          ))}
         </div>
       </nav>
     </aside>
