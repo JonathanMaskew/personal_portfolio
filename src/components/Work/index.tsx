@@ -5,12 +5,12 @@ import Chips from '../Chips';
 import myheloLogo from '@/assets/images/myhelo_logo.png';
 import allegionLogo from '@/assets/images/allegion_logo.png';
 import qualifiLogo from '@/assets/images/qualifi_logo.png';
-import SectionHeader from '../SectionHeader';
 import HighlightDetailed from '../HighlightDetailed';
 import { useModal } from '@/hooks/useModal';
 import { useState } from 'react';
 import Modal from '../Modal';
 import HighlightFeature from '../HighlightFeature';
+import SectionWrapper from '../SectionWrapper';
 
 export default function Work() {
   const jobData = [
@@ -89,13 +89,11 @@ export default function Work() {
       : null;
 
   return (
-    <div className="flex flex-col gap-8 p-12 w-full">
-      <SectionHeader
-        icon={BriefcaseBusiness}
-        title="Work Experience"
-        subtext="Mostly Front-end"
-      />
-
+    <SectionWrapper
+      icon={BriefcaseBusiness}
+      title="Work Experience"
+      subtext="Mostly Front-end"
+    >
       <div className="flex flex-col items-center w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
           {jobData.map((job, index) => (
@@ -148,6 +146,6 @@ export default function Work() {
           </>
         )}
       </Modal>
-    </div>
+    </SectionWrapper>
   );
 }

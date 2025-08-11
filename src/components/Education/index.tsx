@@ -2,12 +2,12 @@
 import { GraduationCap } from 'lucide-react';
 import purdueLogo from '@/assets/images/purdue_logo.png';
 import htfLogo from '@/assets/images/htf_logo_white.png';
-import SectionHeader from '../SectionHeader';
 import HighlightDetailed from '../HighlightDetailed';
 import HighlightFeature from '../HighlightFeature';
 import { useState } from 'react';
 import { useModal } from '@/hooks/useModal';
 import Modal from '../Modal';
+import SectionWrapper from '../SectionWrapper';
 
 export default function Work() {
   const htfEducationData = [
@@ -59,9 +59,7 @@ export default function Work() {
       : null;
 
   return (
-    <div className="flex flex-col gap-8 p-12 w-full">
-      <SectionHeader icon={GraduationCap} title="Education" />
-
+    <SectionWrapper icon={GraduationCap} title="Education">
       <HighlightFeature
         color="#CFB991"
         imagery={purdueLogo}
@@ -132,6 +130,6 @@ export default function Work() {
           )}
         </Modal>
       )}
-    </div>
+    </SectionWrapper>
   );
 }
