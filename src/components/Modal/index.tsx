@@ -18,7 +18,7 @@ export default function Modal({
 
   return (
     <div
-      className={`fixed inset-0 z-[100] bg-black/40 ${color ? 'backdrop-blur-sm' : 'backdrop-blur-2xl'} overscroll-contain`}
+      className={`fixed inset-0 z-[100] bg-black/40 ${color ? 'backdrop-blur-sm' : 'backdrop-blur-2xl'} overscroll-contain touch-none`}
       onClick={onCloseCallback}
     >
       <div
@@ -40,7 +40,7 @@ export default function Modal({
         >
           <X size={24} color="white" />
         </button>
-        <div className="h-full overflow-y-auto overscroll-contain p-6 md:p-12">
+        <div className="h-full overflow-y-auto overscroll-contain touch-auto p-6 md:p-12">
           {children}
         </div>
       </div>
