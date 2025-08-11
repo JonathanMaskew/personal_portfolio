@@ -8,14 +8,12 @@ export default function Home() {
       <section id="overview" className="h-screen snap-start">
         <Hero />
       </section>
-      <div className="snap-start">
-        <section id="work">
-          <Work />
-        </section>
-        <section id="education">
-          <Education />
-        </section>
-      </div>
+      <section id="work" className="snap-start">
+        <Work />
+      </section>
+      <section id="education" className="snap-start">
+        <Education />
+      </section>
     </>
   );
 }
