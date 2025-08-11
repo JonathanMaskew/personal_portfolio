@@ -89,14 +89,14 @@ export default function Work() {
       : null;
 
   return (
-    <div className="flex flex-col gap-8 p-12 h-screen w-full">
+    <div className="flex flex-col gap-8 p-12 w-full">
       <SectionHeader
         icon={BriefcaseBusiness}
         title="Work Experience"
         subtext="Mostly Front-end"
       />
 
-      <div className="flex flex-col items-center h-full w-full">
+      <div className="flex flex-col items-center w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
           {jobData.map((job, index) => (
             <div
@@ -136,6 +136,7 @@ export default function Work() {
               subtitle={openedJob.company}
               subheading={openedJob.timeRange}
               body={openedJob.jobDescription}
+              nested={true}
             ></HighlightFeature>
             {openedJob.bullets && (
               <ul className="list-disc pl-4 space-y-2 text-sm leading-tight">

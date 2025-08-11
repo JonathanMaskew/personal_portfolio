@@ -41,48 +41,46 @@ export default function TopNav() {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/50 backdrop-blur supports-[backdrop-filter]:bg-black/40">
-      <div className="mx-auto flex h-14 max-w-screen-xl items-center justify-between px-4">
-        <div className="relative">
-          <button
-            aria-haspopup="listbox"
-            aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
-            className="flex items-center gap-2 rounded px-2 py-1 text-white/90 hover:text-white"
+    <div className="fixed top-0 left-0 right-0 rounded-full mx-4 mt-4 z-50 ring-1 ring-white/10 backdrop-blur-md px-6 py-3 flex justify-between">
+      <div className="relative">
+        <button
+          aria-haspopup="listbox"
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+          className="flex items-center gap-2 rounded px-2 py-1 text-white/90 hover:text-white"
+        >
+          <span className="text-sm font-semibold">{current.label}</span>
+          <ChevronDown size={16} />
+        </button>
+
+        {open && (
+          <ul
+            role="listbox"
+            className="absolute left-0 mt-2 w-40 overflow-hidden rounded-md border border-white/10 bg-zinc-900/95 shadow-xl"
           >
-            <span className="text-sm font-semibold">{current.label}</span>
-            <ChevronDown size={16} />
-          </button>
-
-          {open && (
-            <ul
-              role="listbox"
-              className="absolute left-0 mt-2 w-40 overflow-hidden rounded-md border border-white/10 bg-zinc-900/95 shadow-xl"
-            >
-              {MAIN_NAV_ITEMS.map((item) => (
-                <li
-                  key={item.id}
-                  role="option"
-                  aria-selected={current.id === item.id}
+            {MAIN_NAV_ITEMS.map((item) => (
+              <li
+                key={item.id}
+                role="option"
+                aria-selected={current.id === item.id}
+              >
+                <a
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="block px-3 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white"
                 >
-                  <a
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="block px-3 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
 
-        <div className="flex items-center gap-4">
-          {SECONDARY_NAV_ITEMS.map((item) => {
-            return <NavLink key={item.id} item={item} />;
-          })}
-        </div>
+      <div className="flex items-center gap-6">
+        {SECONDARY_NAV_ITEMS.map((item) => {
+          return <NavLink key={item.id} item={item} iconOnly={true} />;
+        })}
       </div>
     </div>
   );

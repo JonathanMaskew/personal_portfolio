@@ -63,16 +63,17 @@ const linkStyle = 'flex items-center gap-3';
 
 interface NavLinkProps {
   item: NavItem;
+  iconOnly?: boolean;
 }
 
-export function NavLink({ item }: NavLinkProps) {
+export function NavLink({ item, iconOnly }: NavLinkProps) {
   const Icon = item.icon;
 
   if (item.href.startsWith('#')) {
     return (
       <a href={item.href} className={`${linkStyle}`}>
         <Icon size={iconSize} />
-        <div>{item.label}</div>
+        {!iconOnly && <div>{item.label}</div>}
       </a>
     );
   }
@@ -80,7 +81,7 @@ export function NavLink({ item }: NavLinkProps) {
   return (
     <Link href={item.href} className={`${linkStyle}`}>
       <Icon size={iconSize} />
-      <div>{item.label}</div>
+      {!iconOnly && <div>{item.label}</div>}
     </Link>
   );
 }

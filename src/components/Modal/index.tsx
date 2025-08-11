@@ -23,7 +23,7 @@ export default function Modal({
       onClick={onCloseCallback}
     >
       <div
-        className="absolute inset-12 rounded-t-xl p-12 bottom-0 overflow-y-auto max-w-5xl mx-auto"
+        className="absolute left-6 right-6 top-6 md:left-12 md:right-12 md:top-12 bottom-0 rounded-t-xl p-6 md:p-12 overflow-y-auto max-w-5xl mx-auto"
         style={{
           backgroundImage: `
           linear-gradient(

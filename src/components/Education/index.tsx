@@ -59,7 +59,7 @@ export default function Work() {
       : null;
 
   return (
-    <div className="flex flex-col gap-8 p-12 h-screen w-full">
+    <div className="flex flex-col gap-8 p-12 w-full">
       <SectionHeader icon={GraduationCap} title="Education" />
 
       <HighlightFeature
@@ -126,6 +126,7 @@ export default function Work() {
                 subtitle={openedEducation.subtitle}
                 subheading={openedEducation.subheading}
                 body={openedEducation.body}
+                nested={true}
               />
             </>
           )}
