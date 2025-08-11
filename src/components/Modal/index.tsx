@@ -1,6 +1,5 @@
 'use client';
 import { X } from 'lucide-react';
-import { useEffect } from 'react';
 
 type ModalProps = {
   open: boolean;
@@ -15,15 +14,15 @@ export default function Modal({
   color,
   children,
 }: ModalProps) {
-  if (!open) return;
+  if (!open) return null;
 
   return (
     <div
-      className={`fixed inset-0 z-[100] bg-black/40 ${color ? 'backdrop-blur-sm' : 'backdrop-blur-2xl'}`}
+      className={`fixed inset-0 z-[100] bg-black/40 ${color ? 'backdrop-blur-sm' : 'backdrop-blur-2xl'} overscroll-contain`}
       onClick={onCloseCallback}
     >
       <div
-        className="absolute left-6 right-6 top-6 md:left-12 md:right-12 md:top-12 bottom-0 rounded-t-xl p-6 md:p-12 overflow-y-auto max-w-5xl mx-auto"
+        className="absolute left-6 right-6 top-6 md:left-12 md:right-12 md:top-12 bottom-0 rounded-t-xl max-w-5xl mx-auto"
         style={{
           backgroundImage: `
           linear-gradient(
@@ -36,12 +35,14 @@ export default function Modal({
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="absolute right-6 top-6 rounded-full bg-white/20 w-fit h-fit p-1"
+          className="absolute right-6 top-6 z-10 rounded-full bg-white/20 w-fit h-fit p-1"
           onClick={onCloseCallback}
         >
           <X size={24} color="white" />
         </button>
-        <div>{children}</div>
+        <div className="h-full overflow-y-auto overscroll-contain p-6 md:p-12">
+          {children}
+        </div>
       </div>
     </div>
   );
