@@ -29,20 +29,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${header.variable} ${body.variable} font-body antialiased`}
+        className={`${header.variable} ${body.variable} font-body antialiased flex h-screen scroll-smooth`}
       >
-        <div className="flex h-screen">
-          <div className="hidden md:block">
-            <SidebarNav />
-          </div>
-
-          <div className="block md:hidden">
-            <TopNav />
-          </div>
-          <main className="flex-1 overflow-y-auto scroll-smooth pt-14 md:pt-0">
-            {children}
-          </main>
+        <div className="hidden md:block">
+          <SidebarNav />
         </div>
+
+        <div className="block md:hidden">
+          <TopNav />
+        </div>
+        <main className="flex-1 overflow-y-auto snap-y snap-mandatory pt-14 md:pt-0">
+          {children}
+        </main>
       </body>
     </html>
   );
