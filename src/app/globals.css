@@ -40,7 +40,7 @@ button {
     overscroll-behavior: none;
   }
   
-  /* Reduce snap sensitivity on mobile */
+  Reduce snap sensitivity on mobile
   .snap-y {
     scroll-snap-type: y proximity;
   }
