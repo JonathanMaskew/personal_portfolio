@@ -29,7 +29,7 @@ button {
   cursor: pointer;
 }
 
-/* Mobile scroll-snap improvements
+/* Mobile scroll-snap improvements */
 @media (max-width: 768px) {
   html {
     scroll-behavior: auto;
@@ -40,8 +40,8 @@ button {
     overscroll-behavior: none;
   }
   
-  Reduce snap sensitivity on mobile
+  /* Reduce snap sensitivity on mobile */
   .snap-y {
     scroll-snap-type: y proximity;
   }
-} */
+}
