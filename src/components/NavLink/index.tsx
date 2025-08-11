@@ -7,7 +7,7 @@ import {
   GraduationCap,
   BriefcaseBusiness,
 } from 'lucide-react';
-import Link from 'next/link';
+import { Button, ButtonType } from '../Button';
 
 export type NavItem = {
   label: string;
@@ -57,31 +57,19 @@ export const SECONDARY_NAV_ITEMS: NavItem[] = [
     href: '/',
   },
 ];
-
-const iconSize = 18;
-const linkStyle = 'flex items-center gap-3';
-
 interface NavLinkProps {
   item: NavItem;
   iconOnly?: boolean;
 }
 
 export function NavLink({ item, iconOnly }: NavLinkProps) {
-  const Icon = item.icon;
-
-  if (item.href.startsWith('#')) {
-    return (
-      <a href={item.href} className={`${linkStyle}`}>
-        <Icon size={iconSize} />
-        {!iconOnly && <div>{item.label}</div>}
-      </a>
-    );
-  }
-
   return (
-    <Link href={item.href} className={`${linkStyle}`}>
-      <Icon size={iconSize} />
-      {!iconOnly && <div>{item.label}</div>}
-    </Link>
+    <Button
+      text={item.label}
+      icon={item.icon}
+      clickDetail={item.href}
+      type={'NEXT-LINK' as ButtonType}
+      iconOnly={iconOnly}
+    />
   );
 }
