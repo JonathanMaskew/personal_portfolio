@@ -15,7 +15,7 @@ export default function HighlightDetailed({
 }: HighlightProps) {
   return (
     <div
-      className="flex flex-col p-8 rounded-xl h-full w-full gap-6 relative"
+      className={`flex flex-col p-8 ${onClickCallback ? 'pb-16' : ''} rounded-xl h-full w-full gap-6 relative`}
       style={{
         backgroundImage: `
           linear-gradient(
