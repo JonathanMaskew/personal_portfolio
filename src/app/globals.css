@@ -28,20 +28,3 @@ body {
 button {
   cursor: pointer;
 }
-
-/* Mobile scroll-snap improvements */
-@media (max-width: 768px) {
-  html {
-    scroll-behavior: auto;
-  }
-  
-  body {
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: none;
-  }
-  
-  /* Reduce snap sensitivity on mobile */
-  .snap-y {
-    scroll-snap-type: y proximity;
-  }
-}

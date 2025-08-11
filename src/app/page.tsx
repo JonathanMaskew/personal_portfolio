@@ -5,13 +5,13 @@ import Education from '@/components/Education';
 export default function Home() {
   return (
     <>
-      <section id="overview" className="h-screen snap-start">
+      <section id="overview" className="h-screen">
         <Hero />
       </section>
-      <section id="work" className="snap-start">
+      <section id="work">
         <Work />
       </section>
-      <section id="education" className="snap-start">
+      <section id="education">
         <Education />
       </section>
     </>
