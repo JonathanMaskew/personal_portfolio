@@ -28,7 +28,7 @@ const jsLogo = (
 
 export default function SidebarNav() {
   return (
-    <aside className="h-screen w-[250] bg-gradient-to-r from-sky-500/50 to-transparent">
+    <aside className="h-screen w-[200]">
       <nav className="h-full w-full flex flex-col justify-between px-8 py-12">
         <div className="flex flex-col gap-10">
           {jsLogo}

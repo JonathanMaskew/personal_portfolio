@@ -4,7 +4,7 @@ import Education from '@/components/Education';
 
 export default function Home() {
   return (
-    <div className="h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth">
+    <>
       <section id="overview" className="h-screen snap-start">
         <Hero />
       </section>
@@ -16,6 +16,6 @@ export default function Home() {
           <Education />
         </section>
       </div>
-    </div>
+    </>
   );
 }
