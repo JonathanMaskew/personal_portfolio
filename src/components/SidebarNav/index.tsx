@@ -1,4 +1,12 @@
-import { MAIN_NAV_ITEMS, SECONDARY_NAV_ITEMS, NavLink } from '../NavLink';
+'use client';
+
+import { useEffect, useState } from 'react';
+import {
+  MAIN_NAV_ITEMS,
+  SECONDARY_NAV_ITEMS,
+  NavLink,
+  type NavItem,
+} from '../NavLink';
 
 const jsLogo = (
   <svg
@@ -27,6 +35,35 @@ const jsLogo = (
 );
 
 export default function SidebarNav() {
+  const [current, setCurrent] = useState<NavItem>(MAIN_NAV_ITEMS[0]);
+
+  useEffect(() => {
+    const sections = MAIN_NAV_ITEMS.map((n) =>
+      document.getElementById(n.id)
+    ).filter(Boolean) as HTMLElement[];
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        const topMost = visible[0];
+        if (topMost?.target?.id) {
+          const match = MAIN_NAV_ITEMS.find((n) => n.id === topMost.target.id);
+          if (match) setCurrent(match);
+        }
+      },
+      {
+        threshold: [0.25, 1],
+      }
+    );
+
+    sections.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <aside className="h-screen w-[200]">
       <nav className="h-full w-full flex flex-col justify-between px-8 py-12">
@@ -34,7 +71,11 @@ export default function SidebarNav() {
           {jsLogo}
           <div className="flex flex-col gap-4">
             {MAIN_NAV_ITEMS.map((item) => (
-              <NavLink key={item.id} item={item} />
+              <NavLink
+                key={item.id}
+                item={item}
+                isActive={current.id === item.id}
+              />
             ))}
           </div>
         </div>
