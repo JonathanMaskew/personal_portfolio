@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { useModal } from '@/hooks/useModal';
 import Modal from '../Modal';
 import SectionWrapper from '../SectionWrapper';
+import Chips from '../Chips';
 
 export default function Work() {
   const htfEducationData = [
@@ -19,10 +20,10 @@ export default function Work() {
       subheading: 'Purdue University, March 2022 - May 2024',
       body: 'Mentored four project teams on UX/UI principles and provided resources to translate Figma mockups into front-end code.',
       bullets: [
-        'Mentored four project teams on UX/UI principles and provided resources to translate Figma mockups into front-end code.',
         'Established branded components in React to streamline development and maintain consistency across all team projects.',
         'Designed marketing materials in Figma leading to a nearly 90% increase in applicants year-over-year, shattering previous records.',
       ],
+      keywords: ['Figma', 'UI/UX Design', 'Front-end', 'Marketing'],
     },
     {
       color: '#03C652',
@@ -31,9 +32,8 @@ export default function Work() {
       subtitle: 'Hack the Future',
       subheading: 'Purdue University, November 2023 - May 2024',
       body: 'Oversaw club logistics, including event planning, member communications, and administrative tasks, to keep members engaged.',
-      bullets: [
-        'Oversaw club logistics, including event planning, member communications, and administrative tasks, to keep members engaged.',
-      ],
+      bullets: [],
+      keywords: ['Communication', 'Event Planning'],
     },
     {
       color: '#277D4A',
@@ -43,9 +43,9 @@ export default function Work() {
       subheading: 'Purdue University, Sep 2021 - May 2022',
       body: 'Worked with a team of eight to deliver a website on schedule that allows Leadership Lafayette to collect and browse testimonials.',
       bullets: [
-        'Worked with a team of eight to deliver a website on schedule that allows Leadership Lafayette to collect and browse testimonials.',
         'Developed front-end interfaces using React that mimicked the Designer’s mockups and integrated with a MongoDB database.',
       ],
+      keywords: ['React', 'MongoDB', 'Front-end'],
     },
   ];
 
@@ -103,7 +103,9 @@ export default function Work() {
                 setOpenedEducationIndex(index);
                 openModal();
               }}
-            />
+            >
+              <Chips strings={item.keywords} />
+            </HighlightDetailed>
           </div>
         ))}
       </div>

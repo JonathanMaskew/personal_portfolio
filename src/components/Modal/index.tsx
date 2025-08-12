@@ -1,5 +1,6 @@
 'use client';
 import { X } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 type ModalProps = {
   open: boolean;
@@ -14,15 +15,29 @@ export default function Modal({
   color,
   children,
 }: ModalProps) {
-  if (!open) return null;
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    if (open) {
+      setIsAnimating(true);
+    } else {
+      setIsAnimating(false);
+    }
+  }, [open]);
+
+  if (!open) return;
 
   return (
     <div
-      className={`fixed inset-0 z-[100] bg-[var(--background)]/60 backdrop-blur-2xl overscroll-contain`}
+      className={`fixed inset-0 z-[100] bg-[var(--background)]/60 backdrop-blur-2xl overscroll-contain transition-opacity duration-300 ${
+        isAnimating ? 'opacity-100' : 'opacity-0'
+      }`}
       onClick={onCloseCallback}
     >
       <div
-        className="absolute left-6 right-6 top-6 md:left-12 md:right-12 md:top-12 bottom-0 rounded-t-xl max-w-5xl mx-auto"
+        className={`absolute left-6 right-6 top-6 md:left-12 md:right-12 md:top-12 bottom-0 rounded-t-xl max-w-5xl mx-auto transition-transform duration-350 ease-out ${
+          isAnimating ? 'translate-y-0' : 'translate-y-full'
+        }`}
         style={{
           background: `${color}70`,
           boxShadow: `0 0 0 1px ${color}`,
@@ -30,10 +45,10 @@ export default function Modal({
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="absolute right-6 top-6 z-10 rounded-full bg-white/20 w-fit h-fit p-1 backdrop-blur-xs"
+          className="absolute right-6 top-6 z-10 rounded-full bg-white/20 w-fit h-fit p-1 backdrop-blur-xs hover:bg-white group"
           onClick={onCloseCallback}
         >
-          <X size={24} color="white" />
+          <X size={24} className="text-white group-hover:text-black" />
         </button>
         <div className="h-full overflow-y-auto overscroll-contain p-6 md:p-12">
           {children}

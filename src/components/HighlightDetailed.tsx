@@ -16,11 +16,21 @@ export default function HighlightDetailed({
 }: HighlightProps) {
   return (
     <div
-      className={`flex flex-col p-8 ${onClickCallback ? 'pb-16' : ''} rounded-xl h-full w-full gap-6 relative`}
+      className={`flex flex-col p-8 ${onClickCallback ? 'pb-16 cursor-pointer' : ''} rounded-xl h-full w-full gap-6 relative`}
       style={{
         background: `${color}70`,
-        boxShadow: `0 0 0 1px ${color}`, // 20% opacity
+        boxShadow: `0 0 0 1px ${color}`,
+        transition: 'box-shadow 0.2s',
       }}
+      onMouseEnter={(e) => {
+        (e.currentTarget as HTMLDivElement).style.boxShadow =
+          `0 0 0 5px ${color}`;
+      }}
+      onMouseLeave={(e) => {
+        (e.currentTarget as HTMLDivElement).style.boxShadow =
+          `0 0 0 1px ${color}`;
+      }}
+      onClick={onClickCallback || undefined}
     >
       <div className="flex items-center gap-4">
         {imagery &&
