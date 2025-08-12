@@ -1,6 +1,11 @@
 'use client';
 
-import { Bot, BriefcaseBusiness, PillBottle, User } from 'lucide-react';
+import {
+  Bot,
+  BriefcaseBusiness,
+  PillBottle,
+  UserRoundPlus,
+} from 'lucide-react';
 import Chips from '../Chips';
 import myheloLogo from '@/assets/images/myhelo_logo.png';
 import allegionLogo from '@/assets/images/allegion_logo.png';
@@ -35,12 +40,12 @@ export default function Work() {
           text: 'Pioneer a tool that leverages a Large Language Model to intelligently parse and import user data from an unstructured CSV file, introducing automation to a tedious workflow that significantly reduces user import times.',
         },
         {
-          icon: User,
-          text: 'Improve user activation by building a workflow to guide new users through password creation, profile setup, and initial training.',
-        },
-        {
           icon: PillBottle,
           text: 'Led a full-stack rebuilding of the e-prescribing infrastructure by rewriting all front-end and back-end files and integrating with third-party APIs, increasing reliability and functionality.',
+        },
+        {
+          icon: UserRoundPlus,
+          text: 'Improve user activation by building a workflow to guide new users through password creation, profile setup, and initial training.',
         },
       ],
       bullets: [

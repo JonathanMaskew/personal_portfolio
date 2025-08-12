@@ -35,7 +35,7 @@ export default function Modal({
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="absolute right-6 top-6 z-10 rounded-full bg-white/20 w-fit h-fit p-1"
+          className="absolute right-6 top-6 z-10 rounded-full bg-white/20 w-fit h-fit p-1 backdrop-blur-xs"
           onClick={onCloseCallback}
         >
           <X size={24} color="white" />
