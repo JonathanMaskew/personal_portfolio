@@ -72,6 +72,7 @@ export default function HighlightDetailed({
             icon={Plus}
             clickDetail={onClickCallback}
             type={'BUTTON-TAG' as ButtonType}
+            isActive={true}
           />
         </div>
       )}

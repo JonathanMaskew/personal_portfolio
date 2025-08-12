@@ -60,9 +60,10 @@ export const SECONDARY_NAV_ITEMS: NavItem[] = [
 interface NavLinkProps {
   item: NavItem;
   iconOnly?: boolean;
+  isActive?: boolean;
 }
 
-export function NavLink({ item, iconOnly }: NavLinkProps) {
+export function NavLink({ item, iconOnly, isActive }: NavLinkProps) {
   return (
     <Button
       text={item.label}
@@ -70,6 +71,7 @@ export function NavLink({ item, iconOnly }: NavLinkProps) {
       clickDetail={item.href}
       type={'NEXT-LINK' as ButtonType}
       iconOnly={iconOnly}
+      isActive={isActive}
     />
   );
 }
