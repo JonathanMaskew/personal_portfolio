@@ -66,7 +66,6 @@ export default function Work() {
         'Integrated with backend APIs to develop a scalable announcements feature within a component-based Angular site, allowing hundreds of users to access announcements and administrators to send targeted announcements.',
       keywords: ['Angular', 'Angular Material', 'Front-end', 'Scrum'],
       bullets: [
-        'Integrated with backend APIs to develop a scalable announcements feature within a component-based Angular site, allowing hundreds of users to access announcements and administrators to send targeted announcements.',
         'Translated high-fidelity mockups to front-end code that conform with user experience specifications and feedback.',
         'Collaborated daily with Product Owner, Interaction Designer, and Backend Developer interns, following the Scrum methodology.',
       ],
@@ -88,7 +87,6 @@ export default function Work() {
         'React Testing Library',
       ],
       bullets: [
-        'Shipped new features and improved usability within a Next.js codebase by translating designs into front-end code.',
         'Followed the Scrum methodology to communicate daily with the Engineering, Product, and Product Designer teams.',
         'Ensured new contributions maintained system reliability and functionality by implementing test cases.',
       ],

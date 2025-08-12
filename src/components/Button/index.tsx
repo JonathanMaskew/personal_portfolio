@@ -9,7 +9,6 @@ interface ButtonProps {
   icon: Icon;
   type: ButtonType;
   iconOnly?: boolean;
-  isActive?: boolean;
 }
 
 export function Button({
@@ -18,9 +17,8 @@ export function Button({
   icon: IconComponent,
   type,
   iconOnly,
-  isActive,
 }: ButtonProps) {
-  const buttonStyle = `flex items-center ${isActive ? 'opacity-100 font-bold' : 'opacity-60 hover:opacity-100'}`;
+  const buttonStyle = 'flex items-center';
 
   const content = (
     <>

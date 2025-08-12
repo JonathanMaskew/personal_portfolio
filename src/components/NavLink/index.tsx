@@ -64,14 +64,19 @@ interface NavLinkProps {
 }
 
 export function NavLink({ item, iconOnly, isActive }: NavLinkProps) {
+  const linkStyle = isActive
+    ? 'opacity-100 font-bold'
+    : 'opacity-60 hover:opacity-100';
+
   return (
-    <Button
-      text={item.label}
-      icon={item.icon}
-      clickDetail={item.href}
-      type={'NEXT-LINK' as ButtonType}
-      iconOnly={iconOnly}
-      isActive={isActive}
-    />
+    <div className={linkStyle}>
+      <Button
+        text={item.label}
+        icon={item.icon}
+        clickDetail={item.href}
+        type={'NEXT-LINK' as ButtonType}
+        iconOnly={iconOnly}
+      />
+    </div>
   );
 }
