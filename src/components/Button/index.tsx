@@ -20,7 +20,7 @@ export function Button({
   iconOnly,
   isActive,
 }: ButtonProps) {
-  const buttonStyle = `flex items-center ${isActive ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`;
+  const buttonStyle = `flex items-center ${isActive ? 'opacity-100 font-bold' : 'opacity-60 hover:opacity-100'}`;
 
   const content = (
     <>
