@@ -16,13 +16,8 @@ export default function HighlightFeature({
     <div
       className={`flex flex-col justify-between ${nested ? 'p-4' : 'p-8'} rounded-xl ${nested ? 'h-fit' : 'h-full'} w-full gap-6`}
       style={{
-        backgroundImage: `
-          linear-gradient(
-            to top,
-            ${color},
-            color-mix(in srgb, ${color} 35%, black)
-          )
-        `,
+        background: `${color}70`,
+        boxShadow: `0 0 0 1px ${color}`,
       }}
     >
       <div className="flex flex-col gap-4 items-center">

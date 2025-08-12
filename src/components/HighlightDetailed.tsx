@@ -18,13 +18,8 @@ export default function HighlightDetailed({
     <div
       className={`flex flex-col p-8 ${onClickCallback ? 'pb-16' : ''} rounded-xl h-full w-full gap-6 relative`}
       style={{
-        backgroundImage: `
-          linear-gradient(
-            to top left,
-            ${color},
-            color-mix(in srgb, ${color} 45%, black)
-          )
-        `,
+        background: `${color}70`,
+        boxShadow: `0 0 0 1px ${color}`, // 20% opacity
       }}
     >
       <div className="flex items-center gap-4">
@@ -72,7 +67,6 @@ export default function HighlightDetailed({
             icon={Plus}
             clickDetail={onClickCallback}
             type={'BUTTON-TAG' as ButtonType}
-            isActive={true}
           />
         </div>
       )}
