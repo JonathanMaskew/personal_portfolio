@@ -69,19 +69,19 @@ export default function Work() {
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 w-full">
           <HighlightFeature
-            color="#4B4B4B"
+            color="#000000"
             title="GPA"
             subtitle="3.69 /4.0"
             nested={true}
           />
           <HighlightFeature
-            color="#4B4B4B"
+            color="#000000"
             title="Dean's List"
             subtitle="Spring 2022 - Fall 2023"
             nested={true}
           />
           <HighlightFeature
-            color="#4B4B4B"
+            color="#000000"
             title="Semester Honors"
             subtitle="Fall 2021 - Fall 2023"
             nested={true}

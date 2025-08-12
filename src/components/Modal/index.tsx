@@ -18,19 +18,14 @@ export default function Modal({
 
   return (
     <div
-      className={`fixed inset-0 z-[100] bg-black/40 ${color ? 'backdrop-blur-sm' : 'backdrop-blur-2xl'} overscroll-contain`}
+      className={`fixed inset-0 z-[100] bg-[var(--background)]/60 backdrop-blur-2xl overscroll-contain`}
       onClick={onCloseCallback}
     >
       <div
         className="absolute left-6 right-6 top-6 md:left-12 md:right-12 md:top-12 bottom-0 rounded-t-xl max-w-5xl mx-auto"
         style={{
-          backgroundImage: `
-          linear-gradient(
-            to top,
-            ${color},
-            color-mix(in srgb, ${color} 35%, black)
-          )
-        `,
+          background: `${color}70`,
+          boxShadow: `0 0 0 1px ${color}`,
         }}
         onClick={(e) => e.stopPropagation()}
       >
