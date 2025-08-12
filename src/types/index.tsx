@@ -5,7 +5,7 @@ export type Icon = React.ElementType;
 
 export type HighlightProps = {
   color?: string;
-  title: string;
+  title?: string;
   imagery?: StaticImageData | Icon;
   subtitle?: string;
   subheading?: string;

@@ -1,6 +1,6 @@
 'use client';
 
-import { BriefcaseBusiness } from 'lucide-react';
+import { Bot, BriefcaseBusiness, PillBottle, User } from 'lucide-react';
 import Chips from '../Chips';
 import myheloLogo from '@/assets/images/myhelo_logo.png';
 import allegionLogo from '@/assets/images/allegion_logo.png';
@@ -29,12 +29,22 @@ export default function Work() {
         'UI/UX Design',
         'Figma',
       ],
+      highlights: [
+        {
+          icon: Bot,
+          text: 'Pioneer a tool that leverages a Large Language Model to intelligently parse and import user data from an unstructured CSV file, introducing automation to a tedious workflow that significantly reduces user import times.',
+        },
+        {
+          icon: User,
+          text: 'Improve user activation by building a workflow to guide new users through password creation, profile setup, and initial training.',
+        },
+        {
+          icon: PillBottle,
+          text: 'Led a full-stack rebuilding of the e-prescribing infrastructure by rewriting all front-end and back-end files and integrating with third-party APIs, increasing reliability and functionality.',
+        },
+      ],
       bullets: [
-        'Engineer new features using a custom JavaScript framework and PHP, empowering doctor’s offices nationwide and giving thousands of patients access to their health data.',
         'Streamline front-end development by building reusable, documented front-end components that reduce code redundancy.',
-        'Pioneer a tool that leverages a Large Language Model to intelligently parse and import user data from an unstructured CSV file, introducing automation to a tedious workflow that significantly reduces user import times.',
-        'Led a full-stack rebuilding of the e-prescribing infrastructure by rewriting all front-end and back-end files and integrating with third-party APIs, increasing reliability and functionality.',
-        'Improve user activation by building a workflow to guide new users through password creation, profile setup, and initial training.',
         'Strengthen security by implementing a reusable multi-factor authentication component that supports email, text, and passkey.',
         'Onboard new software engineers through training and guidance to accelerate their understanding of the codebase.',
         'Establish a Figma component library to enable design-to-development workflows and ensure intuitive, consistent experiences.',
@@ -92,7 +102,21 @@ export default function Work() {
     <SectionWrapper
       icon={BriefcaseBusiness}
       title="Work Experience"
-      subtext="Mostly Front-end"
+      subtext={
+        <>
+          <div>
+            Passionate about building exceptional user experience, much of my
+            experience has been front-end focused, using frameworks including
+            Next.js, React, Angular, and more.
+          </div>
+          <div>
+            Recent major tasks at myhELO include a full-stack overhaul of an
+            e-prescribing workflow, pioneering a data-import tool that leverages
+            an open-sourced Large Language Model, and improving security through
+            multi-factor authentication.
+          </div>
+        </>
+      }
     >
       <div className="flex flex-col items-center w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
@@ -127,7 +151,7 @@ export default function Work() {
         color={openedJob && openedJob.bgColor ? openedJob.bgColor : ''}
       >
         {openedJob && (
-          <>
+          <div className="flex flex-col gap-8">
             <HighlightFeature
               imagery={openedJob.logo}
               title={openedJob.jobTitle}
@@ -135,15 +159,38 @@ export default function Work() {
               subheading={openedJob.timeRange}
               body={openedJob.jobDescription}
               nested={true}
-            ></HighlightFeature>
-            {openedJob.bullets && (
-              <ul className="list-disc pl-4 space-y-2 text-sm leading-tight">
-                {openedJob.bullets.map((bullet, i) => (
-                  <li key={i}>{bullet}</li>
-                ))}
-              </ul>
+            />
+            {openedJob.highlights && (
+              <div>
+                <div className="mb-2 font-bold font-header">Highlights</div>
+                <div className="flex flex-col gap-4">
+                  {openedJob.highlights.map((highlight, i) => {
+                    const IconComponent = highlight.icon;
+                    return (
+                      <div key={i} className="flex items-start gap-4">
+                        <div>
+                          <IconComponent size={30} />
+                        </div>
+                        <div className="text-sm">{highlight.text}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             )}
-          </>
+            {openedJob.bullets && (
+              <div>
+                <div className="mb-2 font-bold font-header">
+                  Additional responsibilities...
+                </div>
+                <ul className="list-disc pl-4 space-y-2 text-sm leading-tight">
+                  {openedJob.bullets.map((bullet, i) => (
+                    <li key={i}>{bullet}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
         )}
       </Modal>
     </SectionWrapper>
