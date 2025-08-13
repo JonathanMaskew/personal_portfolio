@@ -65,8 +65,8 @@ export default function SidebarNav() {
   }, []);
 
   return (
-    <aside className="h-screen w-[200]">
-      <nav className="h-full w-full flex flex-col justify-between px-8 py-12">
+    <aside className="h-screen w-[200] overflow-y-auto">
+      <nav className="min-h-full w-full flex flex-col gap-4 justify-between px-8 py-12">
         <div className="flex flex-col gap-10">
           {jsLogo}
           <div className="flex flex-col gap-4">
