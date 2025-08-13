@@ -2,10 +2,11 @@ import { Icon } from '@/types';
 import {
   House,
   Mail,
-  File,
+  FileText,
   User,
   GraduationCap,
   BriefcaseBusiness,
+  Linkedin,
 } from 'lucide-react';
 import { Button, ButtonType } from '../Button';
 
@@ -47,14 +48,20 @@ export const SECONDARY_NAV_ITEMS: NavItem[] = [
   {
     label: 'Resume',
     id: 'resume',
-    icon: File,
-    href: '/',
+    icon: FileText,
+    href: '/api/resume',
+  },
+  {
+    label: 'LinkedIn',
+    id: 'linkedin',
+    icon: Linkedin,
+    href: 'https://www.linkedin.com/in/jonathan-maskew',
   },
   {
     label: 'Email',
     id: 'email',
     icon: Mail,
-    href: '/',
+    href: 'email-protection',
   },
 ];
 interface NavLinkProps {
@@ -74,7 +81,7 @@ export function NavLink({ item, iconOnly, isActive }: NavLinkProps) {
         text={item.label}
         icon={item.icon}
         clickDetail={item.href}
-        type={'NEXT-LINK' as ButtonType}
+        type={'A-TAG' as ButtonType}
         iconOnly={iconOnly}
       />
     </div>
