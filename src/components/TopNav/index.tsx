@@ -63,8 +63,10 @@ export default function TopNav() {
       </div>
 
       <div
-        className={`overflow-hidden transition-[max-height,opacity,margin] duration-500 ease-in-out ${
-          open ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'
+        className={`overflow-hidden transition-[max-height,opacity,margin] ${
+          open
+            ? 'duration-500 ease-in-out max-h-96 mt-4'
+            : 'duration-250 ease-in-out max-h-0 mt-0'
         }`}
       >
         <div className="flex flex-col gap-4" onClick={() => setOpen(false)}>
