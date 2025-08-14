@@ -8,13 +8,14 @@ import {
   BriefcaseBusiness,
   Linkedin,
 } from 'lucide-react';
-import { Button, ButtonType } from '../Button';
+import { Button } from '../Button';
 
 export type NavItem = {
   label: string;
   id: string;
   icon: Icon;
   href: string;
+  newTab?: boolean;
 };
 
 export const MAIN_NAV_ITEMS: NavItem[] = [
@@ -36,12 +37,12 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
     icon: GraduationCap,
     href: '#education',
   },
-  {
-    label: 'About',
-    id: 'about',
-    icon: User,
-    href: '#about',
-  },
+  // {
+  //   label: 'About',
+  //   id: 'about',
+  //   icon: User,
+  //   href: '#about',
+  // },
 ];
 
 export const SECONDARY_NAV_ITEMS: NavItem[] = [
@@ -50,18 +51,21 @@ export const SECONDARY_NAV_ITEMS: NavItem[] = [
     id: 'resume',
     icon: FileText,
     href: '/api/resume',
+    newTab: true,
   },
   {
     label: 'LinkedIn',
     id: 'linkedin',
     icon: Linkedin,
     href: 'https://www.linkedin.com/in/jonathan-maskew',
+    newTab: true,
   },
   {
     label: 'Email',
     id: 'email',
     icon: Mail,
     href: 'email-protection',
+    newTab: true,
   },
 ];
 interface NavLinkProps {
@@ -81,7 +85,7 @@ export function NavLink({ item, iconOnly, isActive }: NavLinkProps) {
         text={item.label}
         icon={item.icon}
         clickDetail={item.href}
-        type={'A-TAG' as ButtonType}
+        newTab={item.newTab}
         iconOnly={iconOnly}
       />
     </div>

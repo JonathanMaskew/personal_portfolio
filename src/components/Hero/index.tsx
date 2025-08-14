@@ -1,12 +1,27 @@
 'use client';
 
-import { Bot, Code, Paintbrush } from 'lucide-react';
-import HighlightFeature from '../HighlightFeature';
+import {
+  Bot,
+  Bug,
+  ChevronDown,
+  CircleChevronDown,
+  Code,
+  Lightbulb,
+  Paintbrush,
+  Sparkle,
+  SquareMousePointer,
+  Telescope,
+  User,
+  Wallpaper,
+} from 'lucide-react';
+import TypewriterText from '../TypewriterText';
 import turkeyRun from '@/assets/images/turkey_run.png';
 import costaRica from '@/assets/images/costa_rica.png';
 import graduation from '@/assets/images/graduation.png';
 import Image from 'next/image';
 import { useOrientation } from '@/hooks/useOrientation';
+import { NavLink } from '../NavLink';
+import { Button } from '../Button';
 
 export default function Hero() {
   const { isMobileLandscape } = useOrientation();
@@ -50,10 +65,28 @@ export default function Hero() {
       </div>
 
       {/* Highlights */}
-      <div className="grid grid-cols-3 gap-16">
-        <HighlightFeature imagery={Bot} title="AI Enthusiast" />
-        <HighlightFeature imagery={Code} title="Frontend Connoisseur" />
-        <HighlightFeature imagery={Paintbrush} title="Design Aficionado" />
+      <div className="text-2xl font-bold text-center opacity-85">
+        <TypewriterText
+          texts={[
+            { text: 'AI Enthusiast', icon: Bot },
+            { text: 'Front-end Connoisseur', icon: SquareMousePointer },
+            { text: 'UI Design Aficionado', icon: Paintbrush },
+            { text: 'Idea Generator', icon: Lightbulb },
+            { text: 'User Experience Architect', icon: User },
+            { text: 'Problem Solver', icon: Bug },
+          ]}
+          cursorClassName="bg-orange-500"
+          size={24}
+        />
+      </div>
+
+      <div>
+        <Button
+          text="Scroll to see more"
+          icon={ChevronDown}
+          clickDetail="#work"
+          iconOnly={true}
+        />
       </div>
     </div>
   );
