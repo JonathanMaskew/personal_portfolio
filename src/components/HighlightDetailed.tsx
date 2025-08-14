@@ -69,7 +69,7 @@ export default function HighlightDetailed({
         </div>
       </div>
       {body && <div className="leading-tight text-sm">{body}</div>}
-      {children && <div className="mb-6">{children}</div>}
+      {children && <div>{children}</div>}
       {onClickCallback && (
         <div className="absolute right-4 bottom-4 flex items-center gap-1">
           <Button

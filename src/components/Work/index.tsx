@@ -122,7 +122,7 @@ export default function Work() {
       }
     >
       <div className="flex flex-col items-center w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
           {jobData.map((job, index) => (
             <div
               key={index}

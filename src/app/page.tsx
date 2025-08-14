@@ -5,7 +5,7 @@ import Education from '@/components/Education';
 export default function Home() {
   return (
     <>
-      <section id="overview" className="h-screen">
+      <section id="overview">
         <Hero />
       </section>
       <section id="work">

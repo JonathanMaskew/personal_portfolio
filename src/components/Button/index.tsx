@@ -18,7 +18,7 @@ export function Button({
   type,
   iconOnly,
 }: ButtonProps) {
-  const buttonStyle = 'flex items-center';
+  const buttonStyle = 'flex items-center gap-3';
 
   const content = (
     <>
@@ -30,8 +30,30 @@ export function Button({
   switch (type) {
     case 'A-TAG':
       if (typeof clickDetail === 'string') {
+        // Handle email protection
+        if (clickDetail === 'email-protection') {
+          const handleEmailClick = () => {
+            const email = 'jmaskew1.softwareEngineer@gmail.com';
+            window.location.href = `mailto:${email}`;
+          };
+
+          return (
+            <button
+              onClick={handleEmailClick}
+              className={`${buttonStyle} cursor-pointer`}
+            >
+              {content}
+            </button>
+          );
+        }
+
         return (
-          <a href={clickDetail} className={`${buttonStyle} gap-2`}>
+          <a
+            href={clickDetail}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${buttonStyle}`}
+          >
             {content}
           </a>
         );
@@ -40,7 +62,7 @@ export function Button({
     case 'NEXT-LINK':
       if (typeof clickDetail === 'string') {
         return (
-          <Link href={clickDetail} className={`${buttonStyle} gap-3`}>
+          <Link href={clickDetail} className={`${buttonStyle}`}>
             {content}
           </Link>
         );
@@ -48,7 +70,7 @@ export function Button({
     case 'BUTTON-TAG':
       if (typeof clickDetail === 'function') {
         return (
-          <button onClick={clickDetail} className={`${buttonStyle} gap-2`}>
+          <button onClick={clickDetail} className={`${buttonStyle}`}>
             {content}
           </button>
         );

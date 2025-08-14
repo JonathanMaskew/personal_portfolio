@@ -41,7 +41,7 @@ export default function TopNav() {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 rounded-full mx-4 mt-4 z-50 ring-1 ring-white/10 backdrop-blur-lg px-6 py-3 flex justify-between">
+    <div className="fixed top-0 left-0 right-0 rounded-full mx-4 mt-4 z-50 ring-1 ring-white/10 backdrop-blur-xl px-6 py-3 flex justify-between">
       <div className="relative">
         <button
           aria-haspopup="listbox"
