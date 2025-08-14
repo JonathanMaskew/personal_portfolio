@@ -2,7 +2,7 @@ import React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import type { HighlightProps, Icon } from '@/types';
 import { Plus } from 'lucide-react';
-import { Button, ButtonType } from './Button';
+import { Button } from './Button';
 
 export default function HighlightDetailed({
   color,
@@ -72,12 +72,7 @@ export default function HighlightDetailed({
       {children && <div>{children}</div>}
       {onClickCallback && (
         <div className="absolute right-4 bottom-4 flex items-center gap-1">
-          <Button
-            text="More"
-            icon={Plus}
-            clickDetail={onClickCallback}
-            type={'BUTTON-TAG' as ButtonType}
-          />
+          <Button text="More" icon={Plus} clickDetail={onClickCallback} />
         </div>
       )}
     </div>
