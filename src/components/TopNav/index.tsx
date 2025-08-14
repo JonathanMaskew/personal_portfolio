@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import {
   MAIN_NAV_ITEMS,
   SECONDARY_NAV_ITEMS,
@@ -40,47 +40,44 @@ export default function TopNav() {
     return () => observer.disconnect();
   }, []);
 
-  return (
-    <div className="fixed top-0 left-0 right-0 rounded-full mx-4 mt-4 z-50 ring-1 ring-white/10 backdrop-blur-xl px-6 py-3 flex justify-between">
-      <div className="relative">
-        <button
-          aria-haspopup="listbox"
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="flex items-center gap-2 rounded px-2 py-1 text-white/90 hover:text-white"
-        >
-          <span className="text-sm font-semibold">{current.label}</span>
-          <ChevronDown size={16} />
-        </button>
+  const IconComponent = current.icon;
 
-        {open && (
-          <ul
-            role="listbox"
-            className="absolute left-0 mt-2 w-40 overflow-hidden rounded-md border border-white/10 bg-zinc-900/95 shadow-xl"
-          >
-            {MAIN_NAV_ITEMS.map((item) => (
-              <li
-                key={item.id}
-                role="option"
-                aria-selected={current.id === item.id}
-              >
-                <a
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="block px-3 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        )}
+  return (
+    <div
+      className={`fixed top-0 left-0 right-0 ${open ? 'rounded-2xl' : 'rounded-full'} mx-4 mt-4 z-50 ring-1 ring-white/10 backdrop-blur-xl px-6 py-3 flex flex-col`}
+    >
+      <div className="flex justify-between">
+        <button
+          onClick={() => setOpen((v) => !v)}
+          className="flex items-center gap-2 rounded text-white font-bold"
+        >
+          <IconComponent size={18} />
+          <div>{current.label}</div>
+          {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+        </button>
+        <div className="flex items-center gap-6">
+          {SECONDARY_NAV_ITEMS.map((item) => {
+            return <NavLink key={item.id} item={item} iconOnly={true} />;
+          })}
+        </div>
       </div>
 
-      <div className="flex items-center gap-6">
-        {SECONDARY_NAV_ITEMS.map((item) => {
-          return <NavLink key={item.id} item={item} iconOnly={true} />;
-        })}
+      <div
+        className={`overflow-hidden transition-[max-height,opacity,margin] duration-500 ease-in-out ${
+          open ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'
+        }`}
+      >
+        <div className="flex flex-col gap-4" onClick={() => setOpen(false)}>
+          {MAIN_NAV_ITEMS.filter((item) => item.id !== current.id).map(
+            (item) => (
+              <NavLink
+                key={item.id}
+                item={item}
+                isActive={current.id === item.id}
+              />
+            )
+          )}
+        </div>
       </div>
     </div>
   );

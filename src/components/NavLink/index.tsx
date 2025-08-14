@@ -20,10 +20,10 @@ export type NavItem = {
 
 export const MAIN_NAV_ITEMS: NavItem[] = [
   {
-    label: 'Overview',
-    id: 'overview',
+    label: 'Intro',
+    id: 'intro',
     icon: House,
-    href: '#overview',
+    href: '#intro',
   },
   {
     label: 'Work',
