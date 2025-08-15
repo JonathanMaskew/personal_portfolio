@@ -1,7 +1,7 @@
 'use client';
 import { GraduationCap } from 'lucide-react';
 import purdueLogo from '@/assets/images/purdue_logo.png';
-import htfLogo from '@/assets/images/htf_logo_white.png';
+import htf_logo_white from '@/assets/images/hack_the_future/htf_logo_white.png';
 import HighlightDetailed from '../HighlightDetailed';
 import HighlightFeature from '../HighlightFeature';
 import htf_spooky from '@/assets/images/hack_the_future/htf_spooky.png';
@@ -33,7 +33,7 @@ export default function Work() {
   const htfEducationData = [
     {
       color: '#00EB88',
-      imagery: htfLogo,
+      imagery: htf_logo_white,
       title: 'Design Director',
       subtitle: 'Hack the Future',
       subheading: 'Purdue University, March 2022 - May 2024',
@@ -66,7 +66,7 @@ export default function Work() {
     },
     {
       color: '#03C652',
-      imagery: htfLogo,
+      imagery: htf_logo_white,
       title: 'Secretary',
       subtitle: 'Hack the Future',
       subheading: 'Purdue University, November 2023 - May 2024',
@@ -76,7 +76,7 @@ export default function Work() {
     },
     {
       color: '#277D4A',
-      imagery: htfLogo,
+      imagery: htf_logo_white,
       title: 'Software Developer',
       subtitle: 'Hack the Future',
       subheading: 'Purdue University, Sep 2021 - May 2022',

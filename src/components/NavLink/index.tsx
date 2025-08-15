@@ -3,10 +3,10 @@ import {
   House,
   Mail,
   FileText,
-  User,
   GraduationCap,
   BriefcaseBusiness,
   Linkedin,
+  Smile,
 } from 'lucide-react';
 import { Button } from '../Button';
 
@@ -26,6 +26,12 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
     href: '#intro',
   },
   {
+    label: 'About',
+    id: 'about',
+    icon: Smile,
+    href: '#about',
+  },
+  {
     label: 'Work',
     id: 'work',
     icon: BriefcaseBusiness,
@@ -37,12 +43,6 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
     icon: GraduationCap,
     href: '#education',
   },
-  // {
-  //   label: 'About',
-  //   id: 'about',
-  //   icon: User,
-  //   href: '#about',
-  // },
 ];
 
 export const SECONDARY_NAV_ITEMS: NavItem[] = [

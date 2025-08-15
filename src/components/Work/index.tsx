@@ -112,12 +112,6 @@ export default function Work() {
             experience has been front-end focused, using frameworks including
             Next.js, React, Angular, and more.
           </div>
-          <div>
-            Recent major tasks at myhELO include a full-stack overhaul of an
-            e-prescribing workflow, pioneering a data-import tool that leverages
-            an open-sourced Large Language Model, and improving security through
-            multi-factor authentication.
-          </div>
         </>
       }
     >

@@ -10,7 +10,7 @@ type HighlightProps = {
 export default function Highlight({ color, nested, children }: HighlightProps) {
   return (
     <div
-      className={`flex flex-col rounded-xl w-full h-fit ${nested ? 'p-4' : 'p-8'}`}
+      className={`flex flex-col rounded-2xl w-full h-fit ${nested ? 'p-4' : 'p-8'}`}
       style={{
         backgroundImage: `
           linear-gradient(

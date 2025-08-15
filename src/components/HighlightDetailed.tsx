@@ -16,7 +16,7 @@ export default function HighlightDetailed({
 }: HighlightProps) {
   return (
     <div
-      className={`flex flex-col p-8 ${onClickCallback ? 'pb-16 cursor-pointer' : ''} rounded-xl h-full w-full gap-6 relative`}
+      className={`flex flex-col p-6 md:p-8 ${onClickCallback ? 'pb-14 md:pb-16 cursor-pointer' : ''} rounded-2xl h-full w-full gap-6 relative`}
       style={{
         background: `${color}70`,
         boxShadow: `0 0 0 1px ${color}`,
