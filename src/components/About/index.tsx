@@ -7,7 +7,7 @@ import lucy from '@/assets/images/lucy.png';
 import reeses from '@/assets/images/reeses.jpg';
 import reeses_shape from '@/assets/images/reeses_shape.png';
 import tater_tots from '@/assets/images/tater_tots.jpg';
-import dinosaur from '@/assets/images/dinosaur.JPG';
+import dinosaur from '@/assets/images/dinosaur.png';
 import carousel_of_progress from '@/assets/images/carousel_of_progress.png';
 import travel from '@/assets/images/travel.png';
 
