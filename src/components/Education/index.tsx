@@ -129,7 +129,7 @@ export default function Work() {
         </div>
       </HighlightFeature>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full">
         {htfEducationData.map((item, index) => (
           <div
             key={index}

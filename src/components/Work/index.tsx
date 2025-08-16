@@ -3,6 +3,8 @@
 import {
   Bot,
   BriefcaseBusiness,
+  ChevronDown,
+  ChevronUp,
   PillBottle,
   Plus,
   UserRoundPlus,
@@ -11,6 +13,8 @@ import Chips from '../Chips';
 import myheloLogo from '@/assets/images/myhelo_logo.png';
 import allegionLogo from '@/assets/images/allegion_logo.png';
 import qualifiLogo from '@/assets/images/qualifi_logo.png';
+import texMexyLogo from '@/assets/images/texy_mexy_logo.png';
+import noblesvilleAthleticClubLogo from '@/assets/images/noblesville_athletic_club_logo.png';
 import HighlightDetailed from '../HighlightDetailed';
 import { useModal } from '@/hooks/useModal';
 import { useState } from 'react';
@@ -18,6 +22,7 @@ import Modal from '../Modal';
 import HighlightFeature from '../HighlightFeature';
 import SectionWrapper from '../SectionWrapper';
 import { Button } from '../Button';
+import type { StaticImageData } from 'next/image';
 
 export default function Work() {
   const jobData = [
@@ -95,8 +100,121 @@ export default function Work() {
     },
   ];
 
-  const { modalOpened, openModal, closeModal } = useModal();
+  const moreJobData = [
+    {
+      bgColor: '#ffffff',
+      company: 'Noblesville Youth Tennis',
+      jobTitle: 'Tennis Camp Instructor',
+      timeRange: 'Seasonal, June 2018 - July 2021',
+      jobDescription:
+        'Supervised groups of approximately ten children daily while providing engaging instruction.',
+      keywords: [
+        'Lesson Planning',
+        'Sports Development',
+        'Working With Children',
+        'Tennis Instruction',
+      ],
+    },
+    {
+      bgColor: '#E9CD2E',
+      logo: texMexyLogo,
+      company: 'Texy Mexy',
+      jobTitle: 'Website Designer',
+      timeRange: 'Part-time, October 2018 - January 2021',
+      jobDescription:
+        'Created a WordPress website for a local tex-mex restaurant to promote products, market events, and expand reach.',
+      keywords: [
+        'Web Development',
+        'WordPress',
+        'Web Design',
+        'Digital Marketing',
+      ],
+    },
+    {
+      bgColor: '#E9CD2E',
+      logo: texMexyLogo,
+      company: 'Texy Mexy',
+      jobTitle: 'Kitchen Lead',
+      timeRange: 'Part-time, April 2016 - January 2021',
+      jobDescription:
+        'Led and trained the kitchen team of three to six people in a high-paced atmosphere to quickly complete customer orders.',
+      keywords: [
+        'Quick Service',
+        'Cooking',
+        'Fast Casual',
+        'Intercultural Communication',
+        'Employee Training',
+        'Multi-Cultural Team Leadership',
+      ],
+    },
+    {
+      bgColor: '#ffffff',
+      company: 'Premier Youth Fundraising Inc',
+      jobTitle: 'Concession Attendant',
+      timeRange: 'Part-time, March 2018 - 2021',
+      jobDescription:
+        'Worked with people of all ages to get food out quickly and accurately at sports stadium concession stands; set up, restock, and tear down.',
+      keywords: ['Quick Service', 'Intercultural Communication'],
+    },
+    {
+      bgColor: '#ffffff',
+      company: 'Self-employed',
+      jobTitle: 'Private Tennis Lessons Instructor',
+      timeRange: 'Part-time, June 2018 - July 2020',
+      jobDescription:
+        'Instructed elementary and middle school players weekly to enhance their tennis skill set.',
+      keywords: [
+        'Lesson Planning',
+        'Sports Development',
+        'Working With Children',
+        'Tennis Instruction',
+      ],
+    },
+    {
+      bgColor: '#D95A00',
+      company: 'Noblesville Athletic Club',
+      logo: noblesvilleAthleticClubLogo,
+      jobTitle: 'Website Designer and Manager',
+      timeRange: 'Part-time, December 2015 - November 2017',
+      jobDescription:
+        'Designed and updated a website for a local gym viewed thousands of times a month.',
+      keywords: [
+        'Web Development',
+        'GoDaddy',
+        'Web Design',
+        'Digital Marketing',
+      ],
+    },
+    {
+      bgColor: '#D95A00',
+      company: 'Noblesville Athletic Club',
+      logo: noblesvilleAthleticClubLogo,
+      jobTitle: 'Email Marketing',
+      timeRange: 'Part-time, December 2015 - November 2017',
+      jobDescription:
+        'Curated a monthly newsletter sent to hundreds of email addresses by working with the leadership team.',
+      keywords: ['Digital Marketing'],
+    },
+    {
+      bgColor: '#ffffff',
+      company: 'L&L Davis Farms',
+      jobTitle: 'Website Designer and Manager',
+      timeRange: 'Part-time, June 2016 - June 2017',
+      jobDescription:
+        'Produced a public, navigable website for a local farm to grow its small business.',
+      keywords: [
+        'Web Development',
+        'GoDaddy',
+        'Web Design',
+        'Digital Marketing',
+      ],
+    },
+  ];
+
+  const { modalOpened, openModal } = useModal();
   const [openedJobIndex, setOpenedJobIndex] = useState<number | null>(null);
+
+  const [showMore, setShowMore] = useState<boolean>(false);
 
   const openedJob =
     openedJobIndex !== null && jobData[openedJobIndex]
@@ -107,23 +225,53 @@ export default function Work() {
     <SectionWrapper
       icon={BriefcaseBusiness}
       title="Work Experience"
-      subtext={
-        <>
-          <div>
-            Passionate about building exceptional user experience, much of my
-            experience has been front-end focused, using frameworks including
-            Next.js, React, Angular, and more.
-          </div>
-        </>
-      }
+      subtext="Experienced in full-stack development, with a focus on building
+            user-focused front-end interfaces using frameworks including
+            Next.js, React, Angular, and more."
     >
-      <div className="flex flex-col items-center w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-          {jobData.map((job, index) => (
-            <div
-              key={index}
-              className={`${index === 0 ? 'col-span-full' : ''}`}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full">
+        {jobData.map((job, index) => (
+          <div key={index} className={`${index === 0 ? 'col-span-full' : ''}`}>
+            <HighlightDetailed
+              color={job.bgColor}
+              imagery={job.logo}
+              title={job.jobTitle}
+              subtitle={job.company}
+              subheading={job.timeRange}
+              body={job.jobDescription}
+              onClick={() => {
+                setOpenedJobIndex(index);
+                openModal();
+              }}
+              actionButton={
+                <Button
+                  icon={Plus}
+                  text="More"
+                  clickDetail={() => {
+                    setOpenedJobIndex(index);
+                    openModal();
+                  }}
+                />
+              }
             >
+              <Chips strings={job.keywords} />
+            </HighlightDetailed>
+          </div>
+        ))}
+      </div>
+      <div>
+        <Button
+          text={showMore ? 'Show less' : 'Show more'}
+          clickDetail={() => setShowMore(!showMore)}
+          icon={showMore ? ChevronUp : ChevronDown}
+          className="opacity-60 hover:opacity-100"
+        />
+      </div>
+
+      {showMore && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full">
+          {moreJobData.map((job, index) => (
+            <div key={index}>
               <HighlightDetailed
                 color={job.bgColor}
                 imagery={job.logo}
@@ -131,27 +279,14 @@ export default function Work() {
                 subtitle={job.company}
                 subheading={job.timeRange}
                 body={job.jobDescription}
-                onClick={() => {
-                  setOpenedJobIndex(index);
-                  openModal();
-                }}
-                actionButton={
-                  <Button
-                    icon={Plus}
-                    text="More"
-                    clickDetail={() => {
-                      setOpenedJobIndex(index);
-                      openModal();
-                    }}
-                  />
-                }
               >
                 <Chips strings={job.keywords} />
               </HighlightDetailed>
             </div>
           ))}
         </div>
-      </div>
+      )}
+
       <Modal
         open={modalOpened && !!openedJob}
         onCloseCallback={() => {

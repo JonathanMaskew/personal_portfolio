@@ -21,6 +21,7 @@ import travel from '@/assets/images/travel.png';
 import roundabouts from '@/assets/images/roundabouts.jpg';
 import HighlightFeature from '../HighlightFeature';
 import HighlightDetailed from '../HighlightDetailed';
+import carousel_of_progress from '@/assets/images/carousel_of_progress.png';
 import { NavLink, SECONDARY_NAV_ITEMS } from '../NavLink';
 import { Button } from '../Button';
 import { useHashScroll } from '@/hooks/useHashScroll';
@@ -73,7 +74,7 @@ export default function About() {
         <HighlightDetailed
           imagery={Blend}
           title="Blended Experience"
-          subtitle="User-centered Development"
+          subtitle="User-focused Development"
           body="I've done a little bit of everything - website design & development, branding, marketing, and so much more. At the core of everything, I'm focused on the experience."
           color="#42f59e"
         />
@@ -89,7 +90,7 @@ export default function About() {
           />
           <CarouselImageItem
             image={reeses_shape}
-            text="I am addicted to Reese's Peanut Butter Cups in every form, size, and flavor."
+            text="I am addicted to Reese's Peanut Butter Cups in every shape and size."
           />
           <CarouselImageItem
             image={travel}
@@ -110,6 +111,10 @@ export default function About() {
           <CarouselImageItem
             image={roundabouts}
             text="I love roundabouts. Give me a roundabout over a traffic light any day."
+          />
+          <CarouselImageItem
+            image={carousel_of_progress}
+            text="I could ride the Carousel of Progress in a loop. There's a Great Big Beautiful Tomorrow!"
           />
           <CarouselImageItem
             image={manatee}

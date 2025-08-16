@@ -25,7 +25,7 @@ export default function HighlightDetailed({
     : { transition: 'box-shadow 0.2s' };
   return (
     <div
-      className={`flex flex-col p-6 md:p-8 ${actionButton ? 'pb-12 md:pb-16 cursor-pointer' : ''} rounded-2xl h-full w-full gap-6 relative`}
+      className={`flex flex-col p-6 md:p-8 ${actionButton ? 'pb-14 md:pb-14 cursor-pointer' : ''} rounded-2xl h-full w-full gap-6 relative`}
       style={containerStyle}
       onMouseEnter={
         onClick && color

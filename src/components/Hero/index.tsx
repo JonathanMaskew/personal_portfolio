@@ -63,7 +63,7 @@ export default function Hero() {
           texts={[
             { text: 'AI Enthusiast', icon: Bot },
             { text: 'Front-end Connoisseur', icon: SquareMousePointer },
-            { text: 'UI Design Aficionado', icon: Paintbrush },
+            { text: 'Design Aficionado', icon: Paintbrush },
             { text: 'Idea Generator', icon: Lightbulb },
             { text: 'User Experience Architect', icon: User },
           ]}
