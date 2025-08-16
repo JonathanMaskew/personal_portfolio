@@ -47,7 +47,8 @@ export default function TypewriterText({
         {typewriter.displayText}
       </div>
       <div
-        className={`${cursorClassName} ${showCursor && typewriter.displayText.length > 0 ? 'opacity-100' : 'opacity-0'} rounded-full w-[3px] h-full transition-opacity duration-150`}
+        className={`${cursorClassName} ${showCursor && typewriter.displayText.length > 0 ? 'opacity-100' : 'opacity-0'} rounded-full w-[3px] transition-opacity duration-150`}
+        style={{ height: `${size}px` }}
       />
     </div>
   );

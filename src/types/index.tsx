@@ -9,7 +9,7 @@ export type HighlightProps = {
   imagery?: StaticImageData | Icon;
   subtitle?: string;
   subheading?: string;
-  body?: string;
+  body?: string | React.ReactElement;
   nested?: boolean;
   onClickCallback?: () => void;
   children?: ReactNode;

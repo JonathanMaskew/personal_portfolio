@@ -40,7 +40,7 @@ export default function RootLayout({
         </div>
         <main
           data-scroll-container
-          className="flex-1 overflow-y-visible md:overflow-y-auto scroll-smooth pt-14 md:pt-0"
+          className="flex-1 min-w-0 overflow-y-visible md:overflow-y-auto pt-14 md:pt-0"
         >
           {children}
         </main>

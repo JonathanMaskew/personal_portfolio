@@ -1,4 +1,11 @@
-import { Smile } from 'lucide-react';
+import {
+  Blend,
+  BriefcaseBusiness,
+  Code,
+  GraduationCap,
+  Handshake,
+  Smile,
+} from 'lucide-react';
 import SectionWrapper from '../SectionWrapper';
 import Carousel, { CarouselImageItem } from '../Carousel';
 import tennis from '@/assets/images/tennis.jpg';
@@ -10,6 +17,7 @@ import tater_tots from '@/assets/images/tater_tots.jpg';
 import dinosaur from '@/assets/images/dinosaur.png';
 import carousel_of_progress from '@/assets/images/carousel_of_progress.png';
 import travel from '@/assets/images/travel.png';
+import HighlightFeature from '../HighlightFeature';
 
 const reesesSvg = (
   <svg
@@ -67,69 +75,86 @@ const reesesSvg = (
 
 export default function About() {
   return (
-    <SectionWrapper
-      icon={Smile}
-      title="About Jonathan"
-      subtext={
-        <>
-          <div>Hi, I&apos;m Jonathan! I&apos;m happy you&apos;re here!</div>
-          <div>
+    <SectionWrapper icon={Smile} title="About Jonathan!">
+      <HighlightFeature
+        title="Hi, I'm Jonathan!"
+        imagery={Handshake}
+        subtitle="I'm happy you're here!"
+        color="#f97316"
+      >
+        <div className="flex flex-col gap-4">
+          <div className="flex items-start gap-4">
+            <div>
+              <Code size={30} />
+            </div>
             I&apos;m a Software Engineer, focused primarily on front-end
             development, crafting exceptional user experiences.
           </div>
-          <div>
-            Currently, I&apos;m serving as a full-stack engineer at myhELO. I
-            hold a BS in Computer Science from Purdue University, with a
+          <div className="flex items-start gap-4">
+            <div>
+              <BriefcaseBusiness size={30} />
+            </div>
+            I am a full-stack engineer at myhELO, where I&apos;ve delivered
+            high-impact full-stack solutions, worked with Large Language Model,
+            and designed new user interfaces.
+          </div>
+          <div className="flex items-start gap-4">
+            <div>
+              <GraduationCap size={30} />
+            </div>
+            I hold a BS in Computer Science from Purdue University, with a
             concentration in Software Engineering. At Purdue, I served as Design
-            Director of a volunteer-based organization, Hack the Future.
+            Director of a volunteer-based organization.
           </div>
-          <div>
+          <div className="flex items-start gap-4">
+            <div>
+              <Blend size={30} />
+            </div>
             With a blended balance of development and design experience, I
-            contain a unique set of skills perfect for bridging the gap between
-            designers and developers. Don&apos;t hesitate to reach out; I&apos;d
-            love to hear from you!
+            contain a unique set of skills. Please don&apos;t hesitate to reach
+            out!
           </div>
-        </>
-      }
-    >
-      <Carousel>
-        <CarouselImageItem
-          image={tennis}
-          text="I played varisty tennis at Noblesville High School, and continue to play recreationally."
-        />
-        <CarouselImageItem
-          image={reeses_shape}
-          text="I am addicted to Reese's Peanut Butter Cups in every form, size, and flavor."
-        />
-        <CarouselImageItem
-          image={travel}
-          text="Love to explore new places, having travelled to 40 states and 3 countries."
-        />
-        <CarouselImageItem
-          image={lucy}
-          text="A goofy little cockapoo named Lucy."
-        />
-        <CarouselImageItem
-          image={dinosaur}
-          text={
-            '"Your scientists were so preoccupied with whether or not they could, they didn\'t stop to think if they should." - Jurassic Park'
-          }
-        />
-        <CarouselImageItem
-          image={tater_tots}
-          text="Tater Tots are superior to french fries. Try to convince me otherwise."
-        />
-        <CarouselImageItem
-          image={carousel_of_progress}
-          text={
-            '"There\'s a great big beautiful tomorrow, shining at the end of every day." - Carousel of Progress'
-          }
-        />
-        <CarouselImageItem
-          image={manatee}
-          text="This is a gif of a manatee. You're welcome."
-        />
-      </Carousel>
+        </div>
+
+        <Carousel>
+          <CarouselImageItem
+            image={tennis}
+            text="I played varisty tennis at Noblesville High School, and continue to play recreationally."
+          />
+          <CarouselImageItem
+            image={reeses_shape}
+            text="I am addicted to Reese's Peanut Butter Cups in every form, size, and flavor."
+          />
+          <CarouselImageItem
+            image={travel}
+            text="I love to explore new places, having travelled to 40 states and 3 countries."
+          />
+          <CarouselImageItem
+            image={lucy}
+            text="A goofy little cockapoo named Lucy."
+          />
+          <CarouselImageItem
+            image={dinosaur}
+            text={
+              '"Your scientists were so preoccupied with whether or not they could, they didn\'t stop to think if they should." - Jurassic Park'
+            }
+          />
+          <CarouselImageItem
+            image={tater_tots}
+            text="Tater Tots are superior to french fries. Try to convince me otherwise."
+          />
+          <CarouselImageItem
+            image={carousel_of_progress}
+            text={
+              '"There\'s a great big beautiful tomorrow, shining at the end of every day." - Carousel of Progress'
+            }
+          />
+          <CarouselImageItem
+            image={manatee}
+            text="This is a gif of a manatee. You're welcome."
+          />
+        </Carousel>
+      </HighlightFeature>
     </SectionWrapper>
   );
 }

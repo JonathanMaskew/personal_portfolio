@@ -2,17 +2,11 @@
 
 import {
   Bot,
-  Bug,
   ChevronDown,
-  CircleChevronDown,
-  Code,
   Lightbulb,
   Paintbrush,
-  Sparkle,
   SquareMousePointer,
-  Telescope,
   User,
-  Wallpaper,
 } from 'lucide-react';
 import TypewriterText from '../TypewriterText';
 import turkeyRun from '@/assets/images/turkey_run.png';
@@ -20,7 +14,6 @@ import costaRica from '@/assets/images/costa_rica.png';
 import graduation from '@/assets/images/graduation.png';
 import Image from 'next/image';
 import { useOrientation } from '@/hooks/useOrientation';
-import { NavLink } from '../NavLink';
 import { Button } from '../Button';
 
 export default function Hero() {
@@ -73,7 +66,6 @@ export default function Hero() {
             { text: 'UI Design Aficionado', icon: Paintbrush },
             { text: 'Idea Generator', icon: Lightbulb },
             { text: 'User Experience Architect', icon: User },
-            { text: 'Problem Solver', icon: Bug },
           ]}
           cursorClassName="bg-orange-500"
           size={24}

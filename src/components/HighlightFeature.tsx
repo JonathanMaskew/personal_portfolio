@@ -14,7 +14,7 @@ export default function HighlightFeature({
 }: HighlightProps) {
   return (
     <div
-      className={`flex flex-col justify-between ${nested ? 'p-4' : 'p-8'} rounded-2xl ${nested ? 'h-fit' : 'h-full'} w-full gap-6`}
+      className={`flex flex-col justify-between ${nested ? 'p-2 md:p-4' : 'p-6 md:p-8'} rounded-2xl ${nested ? 'h-fit' : 'h-full'} w-full gap-6`}
       style={{
         background: `${color}70`,
         boxShadow: `0 0 0 1px ${color}`,

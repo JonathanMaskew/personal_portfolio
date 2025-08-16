@@ -35,7 +35,7 @@ export function CarouselImageItem({
   className = '',
 }: CarouselImageItemProps) {
   return (
-    <CarouselItem className={`max-w-[150px] ${className}`}>
+    <CarouselItem className={`w-[150px] ${className}`}>
       <div className="w-[150px] h-[150px]">
         <Image
           src={image}
