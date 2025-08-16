@@ -75,14 +75,14 @@ const reesesSvg = (
 
 export default function About() {
   return (
-    <SectionWrapper icon={Smile} title="About Jonathan!">
+    <SectionWrapper icon={Smile} title="About Jonathan">
       <HighlightFeature
         title="Hi, I'm Jonathan!"
         imagery={Handshake}
         subtitle="I'm happy you're here!"
         color="#f97316"
       >
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 text-sm">
           <div className="flex items-start gap-4">
             <div>
               <Code size={30} />
