@@ -8,7 +8,7 @@ interface CarouselProps {
 
 export default function Carousel({ children, className = '' }: CarouselProps) {
   return (
-    <div className={`flex overflow-x-auto gap-6 scrollbar-hide ${className}`}>
+    <div className={`flex overflow-x-auto gap-4 scrollbar-hide ${className}`}>
       {children}
     </div>
   );

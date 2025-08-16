@@ -12,67 +12,75 @@ export default function HighlightFeature({
   nested,
   children,
 }: HighlightProps) {
+  const hasHeaderContent = Boolean(imagery || title || subtitle || subheading);
+  const containerStyle = color
+    ? {
+        background: `${color}20`,
+        boxShadow: `0 0 0 2px ${color}80`,
+      }
+    : undefined;
   return (
     <div
-      className={`flex flex-col justify-between ${nested ? 'p-2 md:p-4' : 'p-6 md:p-8'} rounded-2xl ${nested ? 'h-fit' : 'h-full'} w-full gap-6`}
-      style={{
-        background: `${color}70`,
-        boxShadow: `0 0 0 1px ${color}`,
-      }}
+      className={`flex flex-col ${nested ? 'p-2 md:p-4' : 'p-6 md:p-8'} rounded-2xl ${nested ? 'h-fit' : 'h-full'} w-full gap-6`}
+      style={containerStyle}
     >
-      <div className="flex flex-col gap-4 items-center">
-        {imagery && (
-          <>
-            {(() => {
-              if (React.isValidElement(imagery)) {
-                return imagery;
-              }
+      {hasHeaderContent && (
+        <div className="flex flex-col gap-4 items-center">
+          {imagery && (
+            <>
+              {(() => {
+                if (React.isValidElement(imagery)) {
+                  return imagery;
+                }
 
-              const isStaticImageData = (
-                value: unknown
-              ): value is StaticImageData => {
+                const isStaticImageData = (
+                  value: unknown
+                ): value is StaticImageData => {
+                  return (
+                    !!value &&
+                    typeof value === 'object' &&
+                    'src' in (value as Record<string, unknown>)
+                  );
+                };
+
+                if (!isStaticImageData(imagery)) {
+                  const IconComponent = imagery as Icon;
+                  return <IconComponent size={50} />;
+                }
+
                 return (
-                  !!value &&
-                  typeof value === 'object' &&
-                  'src' in (value as Record<string, unknown>)
+                  <Image
+                    src={imagery as StaticImageData}
+                    alt={`${title || 'feature'} logo`}
+                    width={100}
+                    height={100}
+                  />
                 );
-              };
-
-              if (!isStaticImageData(imagery)) {
-                const IconComponent = imagery as Icon;
-                return <IconComponent size={50} />;
-              }
-
-              return (
-                <Image
-                  src={imagery as StaticImageData}
-                  alt={`${title} logo`}
-                  width={100}
-                  height={100}
-                  className="rounded-2xl"
-                />
-              );
-            })()}
-          </>
-        )}
-
-        <div>
-          <div className="font-bold text-lg font-header leading-tight text-center">
-            {title}
-          </div>
-
-          {subtitle && (
-            <div className="text-base leading-tight text-center">
-              {subtitle}
-            </div>
+              })()}
+            </>
           )}
-          {subheading && (
-            <div className="text-xs leading-tight text-center">
-              {subheading}
+
+          {(title || subtitle || subheading) && (
+            <div>
+              {title && (
+                <div className="font-bold text-lg font-header leading-tight text-center">
+                  {title}
+                </div>
+              )}
+              {subtitle && (
+                <div className="text-base leading-tight text-center">
+                  {subtitle}
+                </div>
+              )}
+              {subheading && (
+                <div className="text-xs leading-tight text-center">
+                  {subheading}
+                </div>
+              )}
             </div>
           )}
         </div>
-      </div>
+      )}
       {body && <div className="text-center">{body}</div>}
       {children}
     </div>

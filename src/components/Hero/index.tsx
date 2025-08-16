@@ -76,7 +76,7 @@ export default function Hero() {
         <Button
           text="Scroll to see more"
           icon={ChevronDown}
-          clickDetail="#work"
+          clickDetail="#overview"
           iconOnly={true}
         />
       </div>

@@ -11,6 +11,6 @@ export type HighlightProps = {
   subheading?: string;
   body?: string | React.ReactElement;
   nested?: boolean;
-  onClickCallback?: () => void;
+  onClick?: () => void;
   children?: ReactNode;
 };

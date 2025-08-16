@@ -4,6 +4,7 @@ import {
   Bot,
   BriefcaseBusiness,
   PillBottle,
+  Plus,
   UserRoundPlus,
 } from 'lucide-react';
 import Chips from '../Chips';
@@ -16,6 +17,7 @@ import { useState } from 'react';
 import Modal from '../Modal';
 import HighlightFeature from '../HighlightFeature';
 import SectionWrapper from '../SectionWrapper';
+import { Button } from '../Button';
 
 export default function Work() {
   const jobData = [
@@ -129,10 +131,20 @@ export default function Work() {
                 subtitle={job.company}
                 subheading={job.timeRange}
                 body={job.jobDescription}
-                onClickCallback={() => {
+                onClick={() => {
                   setOpenedJobIndex(index);
                   openModal();
                 }}
+                actionButton={
+                  <Button
+                    icon={Plus}
+                    text="More"
+                    clickDetail={() => {
+                      setOpenedJobIndex(index);
+                      openModal();
+                    }}
+                  />
+                }
               >
                 <Chips strings={job.keywords} />
               </HighlightDetailed>

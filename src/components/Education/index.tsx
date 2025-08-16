@@ -128,9 +128,12 @@ export default function Work() {
         </div>
       </HighlightFeature>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
+      <div className="grid grid-cols-2 gap-8 w-full">
         {htfEducationData.map((item, index) => (
-          <div key={index} className={`${index === 0 ? 'row-span-2' : ''}`}>
+          <div
+            key={index}
+            className={`${index === 0 ? 'col-span-full lg:col-span-1 lg:row-span-2' : ''}`}
+          >
             <HighlightDetailed
               color={item.color}
               imagery={item.imagery}

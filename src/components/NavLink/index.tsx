@@ -1,12 +1,12 @@
 import { Icon } from '@/types';
 import {
-  House,
   Mail,
   FileText,
   GraduationCap,
   BriefcaseBusiness,
   Linkedin,
-  Smile,
+  House,
+  User,
 } from 'lucide-react';
 import { Button } from '../Button';
 
@@ -28,7 +28,7 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
   {
     label: 'About',
     id: 'about',
-    icon: Smile,
+    icon: User,
     href: '#about',
   },
   {

@@ -44,7 +44,7 @@ export default function TopNav() {
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 ${open ? 'rounded-2xl' : 'rounded-full'} mx-4 mt-4 z-50 ring-1 ring-white/10 backdrop-blur-xl px-6 py-3 flex flex-col`}
+      className={`fixed top-0 left-0 right-0 ${open ? 'rounded-2xl bg-[var(--background)]' : 'rounded-full bg-[var(--background)]/30'} mx-4 mt-4 z-50 ring-1 ring-white/10 backdrop-blur-lg px-6 py-3 flex flex-col`}
     >
       <div className="flex justify-between">
         <button
@@ -63,7 +63,7 @@ export default function TopNav() {
       </div>
 
       <div
-        className={`overflow-hidden transition-[max-height,opacity,margin] ${
+        className={`overflow-hidden transition-[max-height] ${
           open
             ? 'duration-500 ease-in-out max-h-96 mt-4'
             : 'duration-250 ease-in-out max-h-0 mt-0'

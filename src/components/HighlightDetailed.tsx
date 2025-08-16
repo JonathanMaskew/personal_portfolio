@@ -1,8 +1,6 @@
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import type { HighlightProps, Icon } from '@/types';
-import { Plus } from 'lucide-react';
-import { Button } from './Button';
 
 export default function HighlightDetailed({
   color,
@@ -12,67 +10,98 @@ export default function HighlightDetailed({
   subheading,
   body,
   children,
-  onClickCallback,
-}: HighlightProps) {
+  actionButton,
+  onClick,
+}: HighlightProps & {
+  actionButton?: React.ReactNode;
+}) {
+  const hasHeaderContent = Boolean(imagery || title || subtitle || subheading);
+  const containerStyle = color
+    ? {
+        background: `${color}20`,
+        boxShadow: `0 0 0 2px ${color}80`,
+        transition: 'box-shadow 0.2s',
+      }
+    : { transition: 'box-shadow 0.2s' };
   return (
     <div
-      className={`flex flex-col p-6 md:p-8 ${onClickCallback ? 'pb-14 md:pb-16 cursor-pointer' : ''} rounded-2xl h-full w-full gap-6 relative`}
-      style={{
-        background: `${color}70`,
-        boxShadow: `0 0 0 1px ${color}`,
-        transition: 'box-shadow 0.2s',
-      }}
-      onMouseEnter={(e) => {
-        (e.currentTarget as HTMLDivElement).style.boxShadow =
-          `0 0 0 5px ${color}`;
-      }}
-      onMouseLeave={(e) => {
-        (e.currentTarget as HTMLDivElement).style.boxShadow =
-          `0 0 0 1px ${color}`;
-      }}
-      onClick={onClickCallback || undefined}
+      className={`flex flex-col p-6 md:p-8 ${actionButton ? 'pb-12 md:pb-16 cursor-pointer' : ''} rounded-2xl h-full w-full gap-6 relative`}
+      style={containerStyle}
+      onMouseEnter={
+        actionButton && color
+          ? (e) => {
+              (e.currentTarget as HTMLDivElement).style.boxShadow =
+                `0 0 0 3px ${color}`;
+            }
+          : undefined
+      }
+      onMouseLeave={
+        actionButton && color
+          ? (e) => {
+              (e.currentTarget as HTMLDivElement).style.boxShadow =
+                `0 0 0 2px ${color}90`;
+            }
+          : undefined
+      }
+      onClick={onClick}
     >
-      <div className="flex items-center gap-4">
-        {imagery &&
-          (() => {
-            if (React.isValidElement(imagery)) {
-              return imagery;
-            }
+      {hasHeaderContent && (
+        <div className="flex items-center gap-4">
+          {imagery &&
+            (() => {
+              if (React.isValidElement(imagery)) {
+                return imagery;
+              }
 
-            const isStaticImageData = (
-              value: unknown
-            ): value is StaticImageData => {
+              const isStaticImageData = (
+                value: unknown
+              ): value is StaticImageData => {
+                return (
+                  !!value &&
+                  typeof value === 'object' &&
+                  'src' in (value as Record<string, unknown>)
+                );
+              };
+
+              if (!isStaticImageData(imagery)) {
+                const IconComponent = imagery as Icon;
+                return (
+                  <div className="flex items-center justify-center">
+                    <IconComponent size={50} />
+                  </div>
+                );
+              }
+
               return (
-                !!value &&
-                typeof value === 'object' &&
-                'src' in (value as Record<string, unknown>)
+                <Image
+                  src={imagery}
+                  alt={`${title || 'highlight'} logo`}
+                  width={50}
+                />
               );
-            };
-
-            if (!isStaticImageData(imagery)) {
-              const IconComponent = imagery as Icon;
-              return <IconComponent size={50} />;
-            }
-
-            return <Image src={imagery} alt={`${title} logo`} height={50} />;
-          })()}
-        <div className="flex flex-col">
-          <div className="font-bold text-lg font-header leading-tight">
-            {title}
-          </div>
-          {subtitle && (
-            <div className="text-base leading-tight">{subtitle}</div>
-          )}
-          {subheading && (
-            <div className="text-xs leading-tight">{subheading}</div>
+            })()}
+          {(title || subtitle || subheading) && (
+            <div className="flex flex-col">
+              {title && (
+                <div className="font-bold text-lg font-header leading-tight">
+                  {title}
+                </div>
+              )}
+              {subtitle && (
+                <div className="text-base leading-tight">{subtitle}</div>
+              )}
+              {subheading && (
+                <div className="text-xs leading-tight">{subheading}</div>
+              )}
+            </div>
           )}
         </div>
-      </div>
+      )}
       {body && <div className="leading-tight text-sm">{body}</div>}
       {children && <div>{children}</div>}
-      {onClickCallback && (
+      {actionButton && (
         <div className="absolute right-4 bottom-4 flex items-center gap-1">
-          <Button text="More" icon={Plus} clickDetail={onClickCallback} />
+          {actionButton}
         </div>
       )}
     </div>

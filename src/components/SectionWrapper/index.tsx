@@ -1,8 +1,8 @@
 import { Icon } from '@/types';
 
 type SectionWrapperProps = {
-  title: string;
-  icon: Icon;
+  title?: string;
+  icon?: Icon;
   subtext?: string | React.ReactElement;
   children: React.ReactNode;
 };
@@ -18,8 +18,10 @@ export default function SectionWrapper({
       {/* Section header */}
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-3">
-          <IconComponent size={24} />
-          <div className="font-header font-bold text-2xl">{title}</div>
+          {IconComponent && <IconComponent size={24} />}
+          {title && (
+            <div className="font-header font-bold text-2xl">{title}</div>
+          )}
         </div>
         <div className="flex flex-col gap-2">{subtext}</div>
       </div>

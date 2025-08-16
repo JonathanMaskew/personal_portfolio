@@ -1,10 +1,12 @@
 import { Icon } from '@/types';
+import { useHashScroll } from '@/hooks/useHashScroll';
 interface ButtonProps {
   text: string;
   clickDetail: string | (() => void);
-  icon: Icon;
+  icon?: Icon;
   iconOnly?: boolean;
   newTab?: boolean;
+  className?: string;
 }
 
 export function Button({
@@ -13,12 +15,14 @@ export function Button({
   icon: IconComponent,
   iconOnly,
   newTab,
+  className,
 }: ButtonProps) {
-  const buttonStyle = 'flex items-center gap-3';
+  const { scrollToHash } = useHashScroll();
+  const buttonStyle = `flex items-center gap-3 ${className}`;
 
   const content = (
     <>
-      <IconComponent size={18} />
+      {IconComponent && <IconComponent size={18} />}
       {!iconOnly && <div>{text}</div>}
     </>
   );
@@ -49,39 +53,11 @@ export function Button({
 
     // check for hash link
     if (!newTab && clickDetail.startsWith('#')) {
-      const handleHashClick = () => {
-        const targetId = clickDetail.replace(/^#/, '');
-        const el = document.getElementById(targetId);
-
-        if (el) {
-          // Determine scroll container (window for mobile TopNav, <main> for desktop SidebarNav)
-          const scrollContainer = document.querySelector(
-            '[data-scroll-container]'
-          ) as HTMLElement | null;
-          const headerOffset = 64; // mobile TopNav offset
-
-          if (
-            scrollContainer &&
-            getComputedStyle(scrollContainer).overflowY !== 'visible'
-          ) {
-            const containerTop = scrollContainer.getBoundingClientRect().top;
-            const targetTop = el.getBoundingClientRect().top;
-            const current = scrollContainer.scrollTop;
-            const y = current + (targetTop - containerTop);
-            scrollContainer.scrollTo({ top: y, behavior: 'smooth' });
-          } else {
-            const y =
-              el.getBoundingClientRect().top + window.scrollY - headerOffset;
-            window.scrollTo({ top: y, behavior: 'smooth' });
-          }
-        } else {
-          // Fallback: update hash
-          window.location.hash = clickDetail;
-        }
-      };
-
       return (
-        <button onClick={handleHashClick} className={`${buttonStyle}`}>
+        <button
+          onClick={() => scrollToHash(clickDetail)}
+          className={`${buttonStyle}`}
+        >
           {content}
         </button>
       );
