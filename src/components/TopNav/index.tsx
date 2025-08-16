@@ -11,8 +11,8 @@ import {
 
 const jsLogo = (
   <svg
-    width="17"
-    height="30"
+    width="18"
+    height="18"
     viewBox="0 0 37 50"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -73,18 +73,20 @@ export default function TopNav() {
       className={`fixed top-0 left-0 right-0 ${open ? 'rounded-2xl bg-[var(--background)]' : 'rounded-full bg-[var(--background)]/30'} mx-4 mt-4 z-50 ring-1 ring-white/10 backdrop-blur-lg px-6 py-3 flex flex-col`}
     >
       <div className="flex justify-between">
-        <div className="flex items-center gap-6">
-          {jsLogo}
-          <button
-            onClick={() => setOpen((v) => !v)}
-            className="flex items-center gap-2 rounded text-white font-bold"
-          >
+        <button
+          onClick={() => setOpen((v) => !v)}
+          className="flex items-center gap-2 rounded text-white font-bold"
+        >
+          {current.id === 'intro' ? (
+            <div className="flex items-center justify-center h-[18px] w-[18px]">
+              {jsLogo}
+            </div>
+          ) : (
             <IconComponent size={18} />
-            <div>{current.label}</div>
-            {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-          </button>
-        </div>
-
+          )}
+          <div>{current.label}</div>
+          {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+        </button>
         <div className="flex items-center gap-6">
           {SECONDARY_NAV_ITEMS.map((item) => {
             return <NavLink key={item.id} item={item} iconOnly={true} />;
