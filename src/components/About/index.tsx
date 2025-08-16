@@ -93,7 +93,7 @@ export default function About() {
           />
           <CarouselImageItem
             image={travel}
-            text="I love to explore new places, having travelled to 40 states and 12 countries."
+            text="I love to explore new places, having travelled to 13 countries and 40 US states."
           />
           <CarouselImageItem
             image={lucy}
