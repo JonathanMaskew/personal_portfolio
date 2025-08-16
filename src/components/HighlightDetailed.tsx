@@ -28,7 +28,7 @@ export default function HighlightDetailed({
       className={`flex flex-col p-6 md:p-8 ${actionButton ? 'pb-12 md:pb-16 cursor-pointer' : ''} rounded-2xl h-full w-full gap-6 relative`}
       style={containerStyle}
       onMouseEnter={
-        actionButton && color
+        onClick && color
           ? (e) => {
               (e.currentTarget as HTMLDivElement).style.boxShadow =
                 `0 0 0 3px ${color}`;
@@ -36,7 +36,7 @@ export default function HighlightDetailed({
           : undefined
       }
       onMouseLeave={
-        actionButton && color
+        onClick && color
           ? (e) => {
               (e.currentTarget as HTMLDivElement).style.boxShadow =
                 `0 0 0 2px ${color}90`;

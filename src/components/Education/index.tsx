@@ -1,5 +1,5 @@
 'use client';
-import { GraduationCap } from 'lucide-react';
+import { GraduationCap, Plus } from 'lucide-react';
 import purdueLogo from '@/assets/images/purdue_logo.png';
 import htf_logo_white from '@/assets/images/hack_the_future/htf_logo_white.png';
 import HighlightDetailed from '../HighlightDetailed';
@@ -28,6 +28,7 @@ import Modal from '../Modal';
 import SectionWrapper from '../SectionWrapper';
 import Chips from '../Chips';
 import Image from 'next/image';
+import { Button } from '../Button';
 
 export default function Work() {
   const htfEducationData = [
@@ -128,7 +129,7 @@ export default function Work() {
         </div>
       </HighlightFeature>
 
-      <div className="grid grid-cols-2 gap-8 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
         {htfEducationData.map((item, index) => (
           <div
             key={index}
@@ -141,10 +142,20 @@ export default function Work() {
               subtitle={item.subtitle}
               subheading={item.subheading}
               body={item.body}
-              onClickCallback={() => {
+              onClick={() => {
                 setOpenedEducationIndex(index);
                 openModal();
               }}
+              actionButton={
+                <Button
+                  icon={Plus}
+                  text="More"
+                  clickDetail={() => {
+                    setOpenedEducationIndex(0);
+                    openModal();
+                  }}
+                />
+              }
             >
               <div className="flex flex-col gap-6">
                 <Chips strings={item.keywords} />

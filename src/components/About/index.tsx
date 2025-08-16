@@ -117,9 +117,9 @@ export default function About() {
           />
         </Carousel>
       </HighlightDetailed>
-      <div className="flex flex-col gap-2 items-center">
+      <div className="flex flex-col gap-2 items-center text-center">
         Please don&apos;t hesitate to reach out. I&apos;d love to connect!
-        <div className="flex gap-8 items-center justify-center">
+        <div className="flex gap-8 gap-y-2 items-center justify-center flex-wrap">
           {SECONDARY_NAV_ITEMS.filter((item) => item.id === 'email').map(
             (item) => {
               return <NavLink key={item.id} item={item} />;
