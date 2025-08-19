@@ -13,7 +13,6 @@ export default function HighlightDetailed({
   actionButton,
   onClick,
   nested,
-  className,
 }: HighlightProps & {
   actionButton?: React.ReactNode;
 }) {
