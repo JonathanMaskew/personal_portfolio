@@ -5,8 +5,6 @@ import {
   Blend,
   BriefcaseBusiness,
   GraduationCap,
-  Handshake,
-  User,
 } from 'lucide-react';
 import SectionWrapper from '../SectionWrapper';
 import Carousel, { CarouselImageItem } from '../Carousel';
@@ -19,12 +17,12 @@ import dinosaur from '@/assets/images/dinosaur.png';
 import travel from '@/assets/images/travel.png';
 import roundabouts from '@/assets/images/roundabouts.jpg';
 import HighlightFeature from '../HighlightFeature';
-import HighlightDetailed from '../HighlightDetailed';
 import carousel_of_progress from '@/assets/images/carousel_of_progress.png';
 import { NavLink } from '../NavLink';
 import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import { Button } from '../Button';
 import { useHashScroll } from '@/hooks/useHashScroll';
+import type React from 'react';
 
 export default function About() {
   const { scrollToHash } = useHashScroll();
@@ -32,15 +30,17 @@ export default function About() {
   return (
     <SectionWrapper>
       <div className="flex flex-col gap-4 md:gap-6 items-center">
-        <div
-          className="text-3xl font-bold"
-          style={{
-            textDecoration: 'underline #f97316',
-            textUnderlineOffset: '4px',
-            textDecorationThickness: '4px',
-          }}
-        >
-          Hi, I&apos;m Jonathan!
+        <div className="text-3xl font-bold">
+          <span
+            className="underline"
+            style={{
+              textDecorationColor: '#f97316',
+              textDecorationThickness: '4px',
+              textUnderlineOffset: '4px',
+            }}
+          >
+            Hi, I&apos;m Jonathan!
+          </span>
         </div>
         <div className="text-center max-w-2xl">
           As one who loves to dream big, I&apos;m always looking to transform

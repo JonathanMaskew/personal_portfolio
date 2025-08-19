@@ -94,14 +94,17 @@ export default function HighlightFeature({
           {(title || subtitle || subheading) && (
             <div>
               {title && (
-                <div
-                  className="font-bold text-xl font-header leading-tight mb-2"
-                  style={{
-                    textDecoration: `underline ${color}`,
-                    textUnderlineOffset: '2px',
-                  }}
-                >
-                  {title}
+                <div className="font-bold text-xl font-header leading-tight mb-2">
+                  <span
+                    className="underline"
+                    style={{
+                      textDecorationColor: color,
+                      textDecorationThickness: '3px',
+                      textUnderlineOffset: '2px',
+                    }}
+                  >
+                    {title}
+                  </span>
                 </div>
               )}
               {subtitle && (
