@@ -39,18 +39,31 @@ export default function Modal({
           isAnimating ? 'translate-y-0' : 'translate-y-full'
         }`}
         style={{
-          background: `${color}80`,
+          background: `radial-gradient(circle at top left, ${color}BF 0%, color-mix(in srgb, ${color} 30%, black) 100%)`,
           // boxShadow: `0 0 0 1px ${color}`,
         }}
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="absolute right-6 top-6 z-10 rounded-full bg-white/20 w-fit h-fit p-1 hover:bg-white group transition-all duration-200"
+          className="absolute right-6 top-6 z-10 rounded-full w-fit h-fit p-1 group transition-all duration-200"
           onClick={onCloseCallback}
+          style={{
+            backgroundColor: '#ffffff33',
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLButtonElement).style.backgroundColor =
+              color;
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLButtonElement).style.backgroundColor =
+              '#ffffff33';
+          }}
         >
-          <X size={24} className="text-white group-hover:text-black" />
+          <X size={24} className="text-white" />
         </button>
-        <div className="h-full overscroll-contain p-6 md:p-12">{children}</div>
+        <div className="h-full overflow-y-auto overscroll-contain p-6 md:p-12">
+          {children}
+        </div>
       </div>
     </div>
   );

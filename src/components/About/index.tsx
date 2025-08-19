@@ -30,17 +30,15 @@ export default function About() {
   return (
     <SectionWrapper>
       <div className="flex flex-col gap-4 md:gap-6 items-center">
-        <div className="text-3xl font-bold">
-          <span
-            className="underline"
-            style={{
-              textDecorationColor: '#f97316',
-              textDecorationThickness: '4px',
-              textUnderlineOffset: '4px',
-            }}
-          >
-            Hi, I&apos;m Jonathan!
-          </span>
+        <div
+          className="text-3xl font-bold underline"
+          style={{
+            textDecorationColor: '#FF6B18',
+            textDecorationThickness: '4px',
+            textUnderlineOffset: '4px',
+          }}
+        >
+          Hi, I&apos;m Jonathan!
         </div>
         <div className="text-center max-w-2xl">
           As one who loves to dream big, I&apos;m always looking to transform
@@ -71,7 +69,7 @@ export default function About() {
           title="Software Engineer"
           subtitle="myhELO"
           body="At myhELO, I've delivered high-impact full-stack solutions, worked with Large Language Models, and designed new user interfaces."
-          color="#f97316"
+          color="#FF6B18"
           onClick={() => scrollToHash('#work')}
           actionButton={
             <Button
@@ -86,7 +84,7 @@ export default function About() {
           title="BS in Computer Science"
           subtitle="Purdue University"
           body="In addition to coursework, I served as Design Director of a volunteer-based organization."
-          color="#f97316"
+          color="#FF6B18"
           onClick={() => scrollToHash('#education')}
           actionButton={
             <Button
@@ -102,7 +100,7 @@ export default function About() {
             title="Blended Experience"
             subtitle="User-focused Development"
             body="I've done a little bit of everything - website design & development, branding, marketing, and so much more. At the core of everything, I'm focused on how it makes an impact on the user."
-            color="#f97316"
+            color="#FF6B18"
           />
         </div>
       </div>

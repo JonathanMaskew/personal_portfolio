@@ -9,7 +9,7 @@ import Modal from '../Modal';
 import SectionWrapper from '../SectionWrapper';
 import { Button } from '../Button';
 import { JOBS, MORE_JOBS } from '@/data/jobs';
-import DetailsModal from '@/components/DetailsModal';
+import ExperienceDetails from '@/components/ExperienceDetails';
 
 export default function Work() {
   const { modalOpened, openModal } = useModal();
@@ -33,12 +33,12 @@ export default function Work() {
         {JOBS.map((job, index) => (
           <div key={index} className={`${index === 0 ? 'col-span-full' : ''}`}>
             <HighlightDetailed
-              color={job.bgColor}
+              color={job.color}
               imagery={job.imagery}
-              title={job.jobTitle}
-              subtitle={job.company}
-              subheading={job.timeRange}
-              body={job.jobDescription}
+              title={job.title}
+              subtitle={job.subtitle}
+              subheading={job.subheading}
+              body={job.body}
               onClick={() => {
                 if (JOBS[index]?.id) {
                   setOpenedJobId(JOBS[index].id as string);
@@ -77,12 +77,12 @@ export default function Work() {
           {MORE_JOBS.map((job, index) => (
             <div key={index}>
               <HighlightDetailed
-                color={job.bgColor}
+                color={job.color}
                 imagery={job.imagery}
-                title={job.jobTitle}
-                subtitle={job.company}
-                subheading={job.timeRange}
-                body={job.jobDescription}
+                title={job.title}
+                subtitle={job.subtitle}
+                subheading={job.subheading}
+                body={job.body}
               >
                 <Chips strings={job.keywords ?? []} />
               </HighlightDetailed>
@@ -96,9 +96,9 @@ export default function Work() {
         onCloseCallback={() => {
           setOpenedJobId(null);
         }}
-        color={openedJob && openedJob.bgColor ? openedJob.bgColor : ''}
+        color={openedJob?.color || ''}
       >
-        {openedJob && <DetailsModal data={openedJob} />}
+        {openedJob && <ExperienceDetails data={openedJob} />}
       </Modal>
     </SectionWrapper>
   );

@@ -49,7 +49,14 @@ export default function Hero() {
 
       {/* Text */}
       <div className="flex flex-col items-center gap-1">
-        <div className="text-5xl font-bold text-center bg-gradient-to-br bg-grad from-orange-500 to-yellow-200 bg-clip-text text-transparent font-header">
+        <div
+          className="text-5xl font-bold text-center font-header"
+          style={{
+            background: 'linear-gradient(to right, #FF6B18, #fef08a)',
+            backgroundClip: 'text',
+            color: 'transparent',
+          }}
+        >
           Jonathan Maskew
         </div>
         <div className="text-2xl font-bold text-center">Software Engineer</div>

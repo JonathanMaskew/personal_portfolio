@@ -30,7 +30,7 @@ import Chips from '../Chips';
 import Image from 'next/image';
 import { Button } from '../Button';
 import Carousel, { CarouselItem } from '../Carousel';
-import DetailsModal from '../DetailsModal';
+import ExperienceDetails from '../ExperienceDetails';
 
 export default function Work() {
   const htfEducationData = [
@@ -191,7 +191,7 @@ export default function Work() {
         >
           {openedEducation && (
             <>
-              <DetailsModal data={openedEducation} />
+              <ExperienceDetails data={openedEducation} />
             </>
           )}
         </Modal>

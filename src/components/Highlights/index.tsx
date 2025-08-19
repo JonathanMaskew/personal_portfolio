@@ -1,15 +1,21 @@
 'use client';
 
-import { PillBottle, Plus, Sparkles, SplinePointer } from 'lucide-react';
+import {
+  PillBottle,
+  Plus,
+  Sparkles,
+  SplinePointer,
+  UserPlus,
+  View,
+} from 'lucide-react';
 import SectionWrapper from '../SectionWrapper';
 import Carousel, { CarouselItem } from '../Carousel';
-import HighlightDetailed from '../HighlightDetailed';
 import { Button } from '../Button';
 
 import { useModal } from '@/hooks/useModal';
 import { useState } from 'react';
 import Modal from '../Modal';
-import DetailsModal from '@/components/DetailsModal';
+import ExperienceDetails from '@/components/ExperienceDetails';
 import { JOBS } from '@/data/jobs';
 import { EDUCATION } from '@/data/education';
 import HighlightFeature from '../HighlightFeature';
@@ -61,7 +67,7 @@ export default function Highlights() {
         </CarouselItem>
         <CarouselItem className={carouselItemStyle}>
           <HighlightFeature
-            title="Revamp Outreach Efforts to Achieve a Nearly 90% Increase in Applicants"
+            title="Revamped Outreach Efforts to Achieve a Nearly 90% Increase in Applicants"
             imagery={SplinePointer}
             subtitle="Design Director @ Hack the Future"
             body="Initiated by a branding refresh, our new handouts, collaborations, events, and revamped social media presence led to a nearly 90% increase in applicants year-over-year, shattering previous records."
@@ -73,9 +79,55 @@ export default function Highlights() {
             actionButton={
               <Button
                 icon={Plus}
-                text="More Hack the Future"
+                text="More Design Director"
                 clickDetail={() => {
                   setOpenedEducationId('htf-design-director');
+                  openModal();
+                }}
+              />
+            }
+          />
+        </CarouselItem>
+        <CarouselItem className={carouselItemStyle}>
+          <HighlightFeature
+            title="Implemented a New User Onboarding Workflow"
+            imagery={UserPlus}
+            subtitle="Software Engineer @ myhELO"
+            body="Proptyping first in Figma, improved user activation by implementing a new user oboarding workflow that guides users though password creation, profile setup, and intial training. Prioritization was on intuitiveness and ease of use."
+            color="#2396F0"
+            onClick={() => {
+              setOpenedJobId('myhelo');
+              openModal();
+            }}
+            actionButton={
+              <Button
+                icon={Plus}
+                text="More myhELO"
+                clickDetail={() => {
+                  setOpenedJobId('myhelo');
+                  openModal();
+                }}
+              />
+            }
+          />
+        </CarouselItem>
+        <CarouselItem className={carouselItemStyle}>
+          <HighlightFeature
+            title="Introduced a Condensed View to Quickly Visualize Patient Charts"
+            imagery={View}
+            subtitle="Software Engineer @ myhELO"
+            body="Prototyped many iterations in Figma, before settling on a consistent, minimalistic view to aggregate data in patient charts, allowing providers to quickly visualize patient information."
+            color="#2396F0"
+            onClick={() => {
+              setOpenedEducationId('htf-design-director');
+              openModal();
+            }}
+            actionButton={
+              <Button
+                icon={Plus}
+                text="More myhELO"
+                clickDetail={() => {
+                  setOpenedJobId('myhelo');
                   openModal();
                 }}
               />
@@ -90,15 +142,10 @@ export default function Highlights() {
           setOpenedEducationId(null);
           closeModal();
         }}
-        color={
-          (openedJob && openedJob.bgColor ? openedJob.bgColor : '') ||
-          (openedEducation && openedEducation.color
-            ? openedEducation.color
-            : '')
-        }
+        color={openedJob?.color || openedEducation?.color || ''}
       >
-        {openedJob && <DetailsModal data={openedJob} />}
-        {openedEducation && <DetailsModal data={openedEducation} />}
+        {openedJob && <ExperienceDetails data={openedJob} />}
+        {openedEducation && <ExperienceDetails data={openedEducation} />}
       </Modal>
     </SectionWrapper>
   );

@@ -39,6 +39,8 @@ export default function SidebarNav() {
       document.getElementById(n.id)
     ).filter(Boolean) as HTMLElement[];
 
+    sections.push(document.getElementById('footer') as HTMLElement);
+
     if (sections.length === 0) return;
 
     const observer = new IntersectionObserver(

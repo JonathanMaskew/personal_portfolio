@@ -22,31 +22,17 @@ export type JobHighlight = {
 
 export type Experience = {
   id?: string;
-  // Common fields
+  imagery?: StaticImageData | Icon;
   title: string;
+  subtitle?: string;
+  subheading?: string;
   body?: string;
   bullets?: string[];
   keywords?: string[];
-  imagery?: StaticImageData | Icon;
-
-  // Job-specific fields
-  company?: string;
-  jobTitle?: string;
-  timeRange?: string;
-  jobDescription?: string;
-  bgColor?: string;
   highlights?: JobHighlight[];
-
-  // Education-specific fields
-  subtitle?: string;
-  subheading?: string;
   color?: string;
   images?: StaticImageData[];
 };
-
-// Legacy types for backward compatibility
-export type Job = Experience;
-export type Education = Experience;
 
 export type NavItem = {
   label: string;

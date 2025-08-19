@@ -67,18 +67,16 @@ export default function HighlightDetailed({
               if (!isStaticImageData(imagery)) {
                 const IconComponent = imagery as Icon;
                 return (
-                  <div>
+                  <div className="rounded-2xl p-3 bg-white/10 h-[72px] w-[72px] justify-center items-center flex">
                     <IconComponent size={40} />
                   </div>
                 );
               }
 
               return (
-                <Image
-                  src={imagery}
-                  alt={`${title || 'highlight'} logo`}
-                  width={60}
-                />
+                <div className="rounded-2xl p-3 bg-white/10 h-[72px] w-[72px] justify-center items-center flex">
+                  <Image src={imagery} alt={`${title || 'highlight'} logo`} />
+                </div>
               );
             })()}
           {(title || subtitle || subheading) && (

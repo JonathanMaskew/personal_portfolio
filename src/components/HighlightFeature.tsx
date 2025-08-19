@@ -13,22 +13,27 @@ export default function HighlightFeature({
   children,
   actionButton,
   onClick,
+  heading,
 }: HighlightProps & {
   actionButton?: React.ReactNode;
+  heading?: boolean;
 }) {
   const hasHeaderContent = Boolean(imagery || title || subtitle || subheading);
-  const containerStyle = color
-    ? {
-        background: `radial-gradient(circle at top left, ${color}BF 0%, color-mix(in srgb, ${color} 30%, black) 100%)`,
-        // boxShadow: `inset 0 0 0 2px ${color}80`,
-        transition: 'box-shadow 0.2s',
-      }
-    : {
-        transition: 'box-shadow 0.2s',
-      };
+  const containerStyle =
+    color && !heading
+      ? {
+          background: `radial-gradient(circle at top left, ${color}BF 0%, color-mix(in srgb, ${color} 30%, black) 100%)`,
+          // boxShadow: `inset 0 0 0 2px ${color}80`,
+          transition: 'box-shadow 0.2s',
+        }
+      : {
+          transition: 'box-shadow 0.2s',
+        };
+  const paddingClass = heading ? 'p-0' : nested ? 'p-4' : 'p-6 md:p-8';
+
   return (
     <div
-      className={`flex flex-col ${nested ? 'p-4' : 'p-6 md:p-8'} ${actionButton ? 'pb-18 md:pb-18 cursor-pointer' : ''} rounded-2xl ${nested ? 'h-fit' : 'h-full'} w-full gap-6 relative`}
+      className={`flex flex-col ${paddingClass} ${heading ? 'mb-8 items-center' : ''} ${actionButton ? 'pb-18 md:pb-18 cursor-pointer' : ''} rounded-2xl ${nested ? 'h-fit' : 'h-full'} w-full gap-6 relative`}
       style={containerStyle}
       onMouseEnter={
         onClick && color
@@ -49,7 +54,9 @@ export default function HighlightFeature({
       onClick={onClick}
     >
       {hasHeaderContent && (
-        <div className="flex flex-col gap-4">
+        <div
+          className={`flex flex-col gap-4 ${heading ? 'items-center text-center' : ''}`}
+        >
           {imagery && (
             <>
               {(() => {
@@ -70,22 +77,19 @@ export default function HighlightFeature({
                 if (!isStaticImageData(imagery)) {
                   const IconComponent = imagery as Icon;
                   return (
-                    <div
-                      className="rounded-full p-4 w-fit bg-white/20"
-                      // style={{ background: `40` }}
-                    >
+                    <div className="rounded-full p-3 bg-white/10 h-[72px] w-[72px] justify-center items-center flex">
                       <IconComponent size={40} />
                     </div>
                   );
                 }
 
                 return (
-                  <Image
-                    src={imagery as StaticImageData}
-                    alt={`${title || 'feature'} logo`}
-                    width={40}
-                    height={40}
-                  />
+                  <div className="rounded-full p-3 bg-white/10 h-[72px] w-[72px] justify-center items-center flex">
+                    <Image
+                      src={imagery as StaticImageData}
+                      alt={`${title || 'feature'} logo`}
+                    />
+                  </div>
                 );
               })()}
             </>
