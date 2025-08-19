@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-export function useOrientation() {
+export function useMobile() {
   const [isLandscape, setIsLandscape] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 

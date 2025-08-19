@@ -1,12 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import {
-  MAIN_NAV_ITEMS,
-  SECONDARY_NAV_ITEMS,
-  NavLink,
-  type NavItem,
-} from '../NavLink';
+import { NavLink } from '../NavLink';
+import type { NavItem } from '@/types';
+import { MAIN_NAV_ITEMS, SECONDARY_NAV_ITEMS } from '@/data/nav';
 
 const jsLogo = (
   <svg

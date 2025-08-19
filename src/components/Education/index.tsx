@@ -29,6 +29,8 @@ import SectionWrapper from '../SectionWrapper';
 import Chips from '../Chips';
 import Image from 'next/image';
 import { Button } from '../Button';
+import Carousel, { CarouselItem } from '../Carousel';
+import DetailsModal from '../DetailsModal';
 
 export default function Work() {
   const htfEducationData = [
@@ -100,41 +102,40 @@ export default function Work() {
 
   return (
     <SectionWrapper icon={GraduationCap} title="Education">
-      <HighlightFeature
-        color="#CFB991"
-        imagery={purdueLogo}
-        title="Bachelor of Science in Computer Science"
-        subtitle="with a concentration in Software Engineering"
-        subheading="Purdue University, 2020 - 2024"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 w-full">
-          <HighlightFeature
-            color="#000000"
-            title="GPA"
-            subtitle="3.69 /4.0"
-            nested={true}
-          />
-          <HighlightFeature
-            color="#000000"
-            title="Dean's List"
-            subtitle="Spring 2022 - Fall 2023"
-            nested={true}
-          />
-          <HighlightFeature
-            color="#000000"
-            title="Semester Honors"
-            subtitle="Fall 2021 - Fall 2023"
-            nested={true}
-          />
-        </div>
-      </HighlightFeature>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full">
-        {htfEducationData.map((item, index) => (
-          <div
-            key={index}
-            className={`${index === 0 ? 'col-span-full lg:col-span-1 lg:row-span-2' : ''}`}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
+        <div className="col-span-full">
+          <HighlightDetailed
+            color="#CFB991"
+            imagery={purdueLogo}
+            title="Bachelor of Science in Computer Science"
+            subtitle="with a concentration in Software Engineering"
+            subheading="Purdue University, 2020 - 2024"
           >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+              <HighlightDetailed
+                color="#000000"
+                title="GPA"
+                subtitle="3.69 /4.0"
+                nested={true}
+              />
+              <HighlightDetailed
+                color="#000000"
+                title="Dean's List"
+                subtitle="Spring 2022 - Fall 2023"
+                nested={true}
+              />
+              <HighlightDetailed
+                color="#000000"
+                title="Semester Honors"
+                subtitle="Fall 2021 - Fall 2023"
+                nested={true}
+              />
+            </div>
+          </HighlightDetailed>
+        </div>
+
+        {htfEducationData.map((item, index) => (
+          <div key={index} className={`${index === 0 ? 'col-span-full' : ''}`}>
             <HighlightDetailed
               color={item.color}
               imagery={item.imagery}
@@ -160,15 +161,18 @@ export default function Work() {
               <div className="flex flex-col gap-6">
                 <Chips strings={item.keywords} />
                 {item.images && (
-                  <div className="flex flex-wrap gap-4 justify-center bg-white/20 rounded-2xl p-4">
-                    {item.images.map((img, img_index) => (
-                      <Image
-                        key={img_index}
-                        src={img}
-                        alt={`Hack the Future logo ${img_index}`}
-                        className="w-18 object-contain"
-                      />
-                    ))}
+                  <div className="bg-white/30 rounded-2xl p-4">
+                    <Carousel color={item.color}>
+                      {item.images.map((img, img_index) => (
+                        <CarouselItem key={img_index} className="w-18">
+                          <Image
+                            src={img}
+                            alt={`Hack the Future logo ${img_index}`}
+                            className="w-18 h-18 object-contain"
+                          />
+                        </CarouselItem>
+                      ))}
+                    </Carousel>
                   </div>
                 )}
               </div>
@@ -187,14 +191,7 @@ export default function Work() {
         >
           {openedEducation && (
             <>
-              <HighlightFeature
-                imagery={openedEducation.imagery}
-                title={openedEducation.title}
-                subtitle={openedEducation.subtitle}
-                subheading={openedEducation.subheading}
-                body={openedEducation.body}
-                nested={true}
-              />
+              <DetailsModal data={openedEducation} />
             </>
           )}
         </Modal>

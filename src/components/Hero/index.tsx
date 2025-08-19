@@ -13,11 +13,11 @@ import turkeyRun from '@/assets/images/turkey_run.png';
 import costaRica from '@/assets/images/costa_rica.png';
 import graduation from '@/assets/images/graduation.png';
 import Image from 'next/image';
-import { useOrientation } from '@/hooks/useOrientation';
+import { useMobile } from '@/hooks/useMobile';
 import { Button } from '../Button';
 
 export default function Hero() {
-  const { isMobileLandscape } = useOrientation();
+  const { isMobileLandscape } = useMobile();
 
   return (
     <div className="flex flex-col gap-8 md:gap-16 justify-center items-center p-6 min-h-screen w-full">
@@ -52,13 +52,11 @@ export default function Hero() {
         <div className="text-5xl font-bold text-center bg-gradient-to-br bg-grad from-orange-500 to-yellow-200 bg-clip-text text-transparent font-header">
           Jonathan Maskew
         </div>
-        <div className="text-2xl font-bold text-center opacity-85">
-          Software Engineer
-        </div>
+        <div className="text-2xl font-bold text-center">Software Engineer</div>
       </div>
 
       {/* Highlights */}
-      <div className="text-2xl font-bold text-center opacity-85">
+      <div className="text-2xl font-bold text-center">
         <TypewriterText
           texts={[
             { text: 'AI Enthusiast', icon: Bot },
@@ -76,7 +74,7 @@ export default function Hero() {
         <Button
           text="Scroll to see more"
           icon={ChevronDown}
-          clickDetail="#overview"
+          clickDetail="#about"
           iconOnly={true}
         />
       </div>

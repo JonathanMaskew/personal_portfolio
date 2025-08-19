@@ -11,21 +11,45 @@ export default function HighlightFeature({
   body,
   nested,
   children,
-}: HighlightProps) {
+  actionButton,
+  onClick,
+}: HighlightProps & {
+  actionButton?: React.ReactNode;
+}) {
   const hasHeaderContent = Boolean(imagery || title || subtitle || subheading);
   const containerStyle = color
     ? {
-        background: `${color}20`,
-        boxShadow: `0 0 0 2px ${color}80`,
+        background: `radial-gradient(circle at top left, ${color}BF 0%, color-mix(in srgb, ${color} 30%, black) 100%)`,
+        // boxShadow: `inset 0 0 0 2px ${color}80`,
+        transition: 'box-shadow 0.2s',
       }
-    : undefined;
+    : {
+        transition: 'box-shadow 0.2s',
+      };
   return (
     <div
-      className={`flex flex-col ${nested ? 'p-2 md:p-4' : 'p-6 md:p-8'} rounded-2xl ${nested ? 'h-fit' : 'h-full'} w-full gap-6`}
+      className={`flex flex-col ${nested ? 'p-4' : 'p-6 md:p-8'} ${actionButton ? 'pb-18 md:pb-18 cursor-pointer' : ''} rounded-2xl ${nested ? 'h-fit' : 'h-full'} w-full gap-6 relative`}
       style={containerStyle}
+      onMouseEnter={
+        onClick && color
+          ? (e) => {
+              (e.currentTarget as HTMLDivElement).style.boxShadow =
+                `inset 0 0 0 4px ${color}`;
+            }
+          : undefined
+      }
+      onMouseLeave={
+        onClick && color
+          ? (e) => {
+              (e.currentTarget as HTMLDivElement).style.boxShadow = 'none';
+              // `inset 0 0 0 2px ${color}90`;
+            }
+          : undefined
+      }
+      onClick={onClick}
     >
       {hasHeaderContent && (
-        <div className="flex flex-col gap-4 items-center">
+        <div className="flex flex-col gap-4">
           {imagery && (
             <>
               {(() => {
@@ -45,15 +69,22 @@ export default function HighlightFeature({
 
                 if (!isStaticImageData(imagery)) {
                   const IconComponent = imagery as Icon;
-                  return <IconComponent size={50} />;
+                  return (
+                    <div
+                      className="rounded-full p-4 w-fit bg-white/20"
+                      // style={{ background: `40` }}
+                    >
+                      <IconComponent size={40} />
+                    </div>
+                  );
                 }
 
                 return (
                   <Image
                     src={imagery as StaticImageData}
                     alt={`${title || 'feature'} logo`}
-                    width={100}
-                    height={100}
+                    width={40}
+                    height={40}
                   />
                 );
               })()}
@@ -63,26 +94,31 @@ export default function HighlightFeature({
           {(title || subtitle || subheading) && (
             <div>
               {title && (
-                <div className="font-bold text-lg font-header leading-tight text-center">
+                <div
+                  className="font-bold text-xl font-header leading-tight mb-2"
+                  style={{
+                    textDecoration: `underline ${color}`,
+                    textUnderlineOffset: '2px',
+                  }}
+                >
                   {title}
                 </div>
               )}
               {subtitle && (
-                <div className="text-base leading-tight text-center">
-                  {subtitle}
-                </div>
+                <div className="text-sm leading-tight">{subtitle}</div>
               )}
               {subheading && (
-                <div className="text-xs leading-tight text-center">
-                  {subheading}
-                </div>
+                <div className="text-xs leading-tight">{subheading}</div>
               )}
             </div>
           )}
         </div>
       )}
-      {body && <div className="text-center">{body}</div>}
+      {body && <div className="text-sm">{body}</div>}
       {children}
+      {actionButton && (
+        <div className="self-center absolute bottom-4">{actionButton}</div>
+      )}
     </div>
   );
 }

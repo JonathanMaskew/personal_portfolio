@@ -2,12 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import {
-  MAIN_NAV_ITEMS,
-  SECONDARY_NAV_ITEMS,
-  type NavItem,
-  NavLink,
-} from '../NavLink';
+import { NavLink } from '../NavLink';
+import type { NavItem } from '@/types';
+import { MAIN_NAV_ITEMS, SECONDARY_NAV_ITEMS } from '@/data/nav';
 
 const jsLogo = (
   <svg
@@ -95,7 +92,7 @@ export default function TopNav() {
       </div>
 
       <div
-        className={`overflow-hidden transition-[max-height] ${
+        className={`overflow-hidden transition-[max-height,margin,opacity] ${
           open
             ? 'duration-500 ease-in-out max-h-96 mt-4'
             : 'duration-250 ease-in-out max-h-0 mt-0'

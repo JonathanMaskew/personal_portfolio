@@ -12,34 +12,36 @@ export default function HighlightDetailed({
   children,
   actionButton,
   onClick,
+  nested,
+  className,
 }: HighlightProps & {
   actionButton?: React.ReactNode;
 }) {
   const hasHeaderContent = Boolean(imagery || title || subtitle || subheading);
   const containerStyle = color
     ? {
-        background: `${color}20`,
-        boxShadow: `0 0 0 2px ${color}80`,
+        background: `${color}80`,
+        // boxShadow: `inset 0 0 0 2px ${color}80`,
         transition: 'box-shadow 0.2s',
       }
     : { transition: 'box-shadow 0.2s' };
   return (
     <div
-      className={`flex flex-col p-6 md:p-8 ${actionButton ? 'pb-14 md:pb-14 cursor-pointer' : ''} rounded-2xl h-full w-full gap-6 relative`}
+      className={`flex flex-col ${actionButton ? 'pb-16 md:pb-16 cursor-pointer' : ''} ${nested ? 'p-4' : 'p-6 md:p-8'} rounded-2xl h-full w-full gap-6 relative`}
       style={containerStyle}
       onMouseEnter={
         onClick && color
           ? (e) => {
               (e.currentTarget as HTMLDivElement).style.boxShadow =
-                `0 0 0 3px ${color}`;
+                `inset 0 0 0 4px ${color}`;
             }
           : undefined
       }
       onMouseLeave={
         onClick && color
           ? (e) => {
-              (e.currentTarget as HTMLDivElement).style.boxShadow =
-                `0 0 0 2px ${color}90`;
+              (e.currentTarget as HTMLDivElement).style.boxShadow = 'none';
+              // `inset 0 0 0 2px ${color}90`;
             }
           : undefined
       }
@@ -66,8 +68,8 @@ export default function HighlightDetailed({
               if (!isStaticImageData(imagery)) {
                 const IconComponent = imagery as Icon;
                 return (
-                  <div className="flex items-center justify-center">
-                    <IconComponent size={50} />
+                  <div>
+                    <IconComponent size={40} />
                   </div>
                 );
               }
@@ -76,7 +78,7 @@ export default function HighlightDetailed({
                 <Image
                   src={imagery}
                   alt={`${title || 'highlight'} logo`}
-                  width={50}
+                  width={60}
                 />
               );
             })()}

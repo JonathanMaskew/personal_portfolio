@@ -6,7 +6,9 @@ import Education from '@/components/Education';
 import About from '@/components/About';
 import SectionWrapper from '@/components/SectionWrapper';
 import HighlightFeature from '@/components/HighlightFeature';
-import { NavLink, SECONDARY_NAV_ITEMS } from '@/components/NavLink';
+import { NavLink } from '@/components/NavLink';
+import { SECONDARY_NAV_ITEMS } from '@/data/nav';
+import Highlights from '@/components/Highlights';
 
 export default function Home() {
   return (
@@ -16,6 +18,9 @@ export default function Home() {
       </section>
       <section id="about">
         <About />
+      </section>
+      <section id="highlights">
+        <Highlights />
       </section>
       <section id="work">
         <Work />
@@ -30,9 +35,21 @@ export default function Home() {
             <div className="flex flex-col gap-2">
               Please don&apos;t hesitate to reach out. I&apos;d love to connect!
               <div className="flex gap-8 gap-y-2 items-center flex-wrap">
-                {SECONDARY_NAV_ITEMS.map((item) => {
+                {SECONDARY_NAV_ITEMS.filter((item) => item.id === 'email').map(
+                  (item) => {
+                    return <NavLink key={item.id} item={item} />;
+                  }
+                )}
+                {SECONDARY_NAV_ITEMS.filter(
+                  (item) => item.id === 'linkedin'
+                ).map((item) => {
                   return <NavLink key={item.id} item={item} />;
                 })}
+                {SECONDARY_NAV_ITEMS.filter((item) => item.id === 'resume').map(
+                  (item) => {
+                    return <NavLink key={item.id} item={item} />;
+                  }
+                )}
               </div>
             </div>
           }

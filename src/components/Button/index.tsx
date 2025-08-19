@@ -6,6 +6,7 @@ interface ButtonProps {
   icon?: Icon;
   iconOnly?: boolean;
   newTab?: boolean;
+  color?: string;
   className?: string;
 }
 
@@ -15,10 +16,26 @@ export function Button({
   icon: IconComponent,
   iconOnly,
   newTab,
+  color,
   className,
 }: ButtonProps) {
   const { scrollToHash } = useHashScroll();
   const buttonStyle = `flex items-center gap-3 ${className}`;
+  const onMouseEnter = color
+    ? (e: React.MouseEvent<HTMLButtonElement>) => {
+        (e.currentTarget as HTMLButtonElement).style.textDecoration =
+          `underline ${color}`;
+        (e.currentTarget as HTMLButtonElement).style.textUnderlineOffset =
+          '2px';
+      }
+    : undefined;
+  const onMouseLeave = color
+    ? (e: React.MouseEvent<HTMLButtonElement>) => {
+        (e.currentTarget as HTMLButtonElement).style.textDecoration = 'none';
+        (e.currentTarget as HTMLButtonElement).style.textUnderlineOffset =
+          '0px';
+      }
+    : undefined;
 
   const content = (
     <>
@@ -29,7 +46,12 @@ export function Button({
 
   if (typeof clickDetail === 'function') {
     return (
-      <button onClick={clickDetail} className={`${buttonStyle}`}>
+      <button
+        onClick={clickDetail}
+        className={`${buttonStyle}`}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
         {content}
       </button>
     );
@@ -57,6 +79,8 @@ export function Button({
         <button
           onClick={() => scrollToHash(clickDetail)}
           className={`${buttonStyle}`}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
         >
           {content}
         </button>
@@ -70,6 +94,8 @@ export function Button({
         target={newTab ? '_blank' : '_self'}
         rel="noopener noreferrer"
         className={`${buttonStyle}`}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
       >
         {content}
       </a>
