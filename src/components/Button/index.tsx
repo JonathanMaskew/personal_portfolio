@@ -21,19 +21,20 @@ export function Button({
 }: ButtonProps) {
   const { scrollToHash } = useHashScroll();
   const buttonStyle = `flex items-center gap-3 ${className}`;
-  const onMouseEnter = color
-    ? (e: React.MouseEvent<HTMLButtonElement>) => {
-        (e.currentTarget as HTMLButtonElement).style.textDecoration =
-          `underline ${color}`;
-        (e.currentTarget as HTMLButtonElement).style.textUnderlineOffset =
-          '2px';
+  const onMouseEnter: React.MouseEventHandler<HTMLElement> | undefined = color
+    ? (e) => {
+        const element = e.currentTarget as HTMLElement;
+        element.style.textDecoration = 'underline';
+        element.style.textDecorationColor = color;
+        element.style.textUnderlineOffset = '2px';
       }
     : undefined;
-  const onMouseLeave = color
-    ? (e: React.MouseEvent<HTMLButtonElement>) => {
-        (e.currentTarget as HTMLButtonElement).style.textDecoration = 'none';
-        (e.currentTarget as HTMLButtonElement).style.textUnderlineOffset =
-          '0px';
+  const onMouseLeave: React.MouseEventHandler<HTMLElement> | undefined = color
+    ? (e) => {
+        const element = e.currentTarget as HTMLElement;
+        element.style.textDecoration = 'none';
+        element.style.textDecorationColor = '';
+        element.style.textUnderlineOffset = '0px';
       }
     : undefined;
 
