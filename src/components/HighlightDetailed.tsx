@@ -67,14 +67,14 @@ export default function HighlightDetailed({
               if (!isStaticImageData(imagery)) {
                 const IconComponent = imagery as Icon;
                 return (
-                  <div className="rounded-2xl p-3 bg-white/10 h-[72px] w-[72px] justify-center items-center flex">
+                  <div className="rounded-2xl p-3 bg-black/10 min-h-[60px] max-h-[60px] min-w-[60px] max-w-[60px] justify-center items-center flex">
                     <IconComponent size={40} />
                   </div>
                 );
               }
 
               return (
-                <div className="rounded-2xl p-3 bg-white/10 h-[72px] w-[72px] justify-center items-center flex">
+                <div className="rounded-2xl p-3 bg-black/10 min-h-[60px] max-h-[60px] min-w-[60px] max-w-[60px] justify-center items-center flex">
                   <Image src={imagery} alt={`${title || 'highlight'} logo`} />
                 </div>
               );

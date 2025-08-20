@@ -45,21 +45,9 @@ export default function About() {
           these dreams into experiences that feel intuitive and engaging.
         </div>
         <div className="flex gap-8 gap-y-2 items-center justify-center flex-wrap">
-          {SECONDARY_NAV_ITEMS.filter((item) => item.id === 'email').map(
-            (item) => {
-              return <NavLink key={item.id} item={item} />;
-            }
-          )}
-          {SECONDARY_NAV_ITEMS.filter((item) => item.id === 'linkedin').map(
-            (item) => {
-              return <NavLink key={item.id} item={item} />;
-            }
-          )}
-          {SECONDARY_NAV_ITEMS.filter((item) => item.id === 'resume').map(
-            (item) => {
-              return <NavLink key={item.id} item={item} />;
-            }
-          )}
+          {SECONDARY_NAV_ITEMS.map((item) => {
+            return <NavLink key={item.id} item={item} />;
+          })}
         </div>
       </div>
 

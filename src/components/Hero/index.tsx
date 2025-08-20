@@ -20,7 +20,7 @@ export default function Hero() {
   const { isMobileLandscape } = useMobile();
 
   return (
-    <div className="flex flex-col gap-8 md:gap-16 justify-center items-center p-6 min-h-screen w-full">
+    <div className="flex flex-col gap-8 md:gap-16 justify-center items-center p-6 min-h-dvh w-full">
       {!isMobileLandscape && (
         <div className="relative w-full max-w-[250px] md:max-w-[500px] h-[270px] md:h-[200px] flex justify-center">
           <div className="absolute transform rotate-6 left-0 top-35 md:top-5">

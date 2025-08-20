@@ -1,6 +1,7 @@
 'use client';
 import { X } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 type ModalProps = {
   open: boolean;
@@ -27,42 +28,41 @@ export default function Modal({
 
   if (!open) return;
 
+  const closeButton = (
+    <button
+      className="fixed right-8 top-8 md:right-12 md:top-12 z-[200] rounded-full w-fit h-fit p-1 group transition-all duration-200"
+      onClick={onCloseCallback}
+      style={{
+        backgroundColor: '#ffffff33',
+      }}
+      onMouseEnter={(e) => {
+        (e.currentTarget as HTMLButtonElement).style.backgroundColor = color;
+      }}
+      onMouseLeave={(e) => {
+        (e.currentTarget as HTMLButtonElement).style.backgroundColor =
+          '#ffffff33';
+      }}
+    >
+      <X size={24} className="text-white" />
+    </button>
+  );
+
   return (
     <div
-      className={`fixed inset-0 z-[100] bg-[var(--background)]/60 backdrop-blur-2xl overscroll-contain transition-opacity duration-300 ${
-        isAnimating ? 'opacity-100' : 'opacity-0'
-      }`}
-      onClick={onCloseCallback}
+      className={`fixed inset-0 z-[100] backdrop-blur-2xl overscroll-contain transition-opacity duration-300 ${isAnimating ? 'opacity-100' : 'opacity-0'} overflow-y-auto overscroll-contain`}
+      style={{
+        background: `radial-gradient(circle at bottom, ${color}BF 0%, color-mix(in srgb, ${color} 30%, black) 100%)`,
+      }}
     >
-      <div
-        className={`absolute left-6 right-6 top-6 md:left-12 md:right-12 md:top-12 bottom-0 rounded-t-2xl max-w-5xl mx-auto transition-transform duration-350 ease-out ${
-          isAnimating ? 'translate-y-0' : 'translate-y-full'
-        }`}
-        style={{
-          background: `radial-gradient(circle at top left, ${color}BF 0%, color-mix(in srgb, ${color} 30%, black) 100%)`,
-          // boxShadow: `0 0 0 1px ${color}`,
-        }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          className="absolute right-6 top-6 z-10 rounded-full w-fit h-fit p-1 group transition-all duration-200"
-          onClick={onCloseCallback}
+      {createPortal(closeButton, document.body)}
+      <div className="flex justify-center p-6 md:p-12">
+        <div
+          className={`relative w-full max-w-5xl rounded-t-2xl md:rounded-2xl transition-transform duration-350 ease-out ${isAnimating ? 'translate-y-0' : 'translate-y-full'}`}
           style={{
-            backgroundColor: '#ffffff33',
-          }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.backgroundColor =
-              color;
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.backgroundColor =
-              '#ffffff33';
+            background: `radial-gradient(circle at top middle, ${color}BF 0%, color-mix(in srgb, ${color} 30%, black) 100%)`,
           }}
         >
-          <X size={24} className="text-white" />
-        </button>
-        <div className="h-full overflow-y-auto overscroll-contain p-6 md:p-12">
-          {children}
+          <div className="p-6 md:p-12">{children}</div>
         </div>
       </div>
     </div>

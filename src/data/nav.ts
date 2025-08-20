@@ -45,10 +45,10 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
 
 export const SECONDARY_NAV_ITEMS: NavItem[] = [
   {
-    label: 'Resume',
-    id: 'resume',
-    icon: FileText,
-    href: '/api/resume',
+    label: 'Email',
+    id: 'email',
+    icon: Mail,
+    href: 'email-protection',
     newTab: true,
   },
   {
@@ -59,10 +59,10 @@ export const SECONDARY_NAV_ITEMS: NavItem[] = [
     newTab: true,
   },
   {
-    label: 'Email',
-    id: 'email',
-    icon: Mail,
-    href: 'email-protection',
+    label: 'Resume',
+    id: 'resume',
+    icon: FileText,
+    href: '/api/resume',
     newTab: true,
   },
 ];

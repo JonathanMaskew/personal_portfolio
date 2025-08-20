@@ -108,7 +108,7 @@ export default function Work() {
             color="#CFB991"
             imagery={purdueLogo}
             title="Bachelor of Science in Computer Science"
-            subtitle="with a concentration in Software Engineering"
+            subtitle="Concentration in Software Engineering"
             subheading="Purdue University, 2020 - 2024"
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">

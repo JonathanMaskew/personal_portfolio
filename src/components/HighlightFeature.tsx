@@ -77,14 +77,14 @@ export default function HighlightFeature({
                 if (!isStaticImageData(imagery)) {
                   const IconComponent = imagery as Icon;
                   return (
-                    <div className="rounded-full p-3 bg-white/10 h-[72px] w-[72px] justify-center items-center flex">
+                    <div className="rounded-full p-4 bg-black/10 min-h-[70px] max-h-[70px] min-w-[70px] max-w-[70px] justify-center items-center flex">
                       <IconComponent size={40} />
                     </div>
                   );
                 }
 
                 return (
-                  <div className="rounded-full p-3 bg-white/10 h-[72px] w-[72px] justify-center items-center flex">
+                  <div className="rounded-full p-4 bg-black/10 min-h-[70px] max-h-[70px] min-w-[70px] max-w-[70px] justify-center items-center flex">
                     <Image
                       src={imagery as StaticImageData}
                       alt={`${title || 'feature'} logo`}
