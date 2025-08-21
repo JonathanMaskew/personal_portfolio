@@ -19,7 +19,7 @@ export function Button({
   className,
 }: ButtonProps) {
   const { scrollToHash } = useHashScroll();
-  const buttonStyle = `flex items-center gap-3 w-fit ${className}`;
+  const buttonStyle = `flex items-center gap-3 w-full ${className}`;
 
   const content = (
     <>

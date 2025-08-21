@@ -42,7 +42,11 @@ export default function Footer() {
           Please don&apos;t hesitate to reach out. I&apos;d love to connect!
           <div className="flex gap-8 gap-y-2 items-center flex-wrap">
             {SECONDARY_NAV_ITEMS.map((item) => {
-              return <NavLink key={item.id} item={item} />;
+              return (
+                <div key={item.id} className="w-fit">
+                  <NavLink item={item} />
+                </div>
+              );
             })}
           </div>
         </div>

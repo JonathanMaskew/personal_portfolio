@@ -63,7 +63,7 @@ export default function Work() {
           </div>
         ))}
       </div>
-      <div>
+      <div className="w-fit">
         <Button
           text={showMore ? 'Show less' : 'Show more'}
           clickDetail={() => setShowMore(!showMore)}

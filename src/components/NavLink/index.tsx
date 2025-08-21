@@ -13,7 +13,7 @@ export function NavLink({ item, iconOnly, isActive }: NavLinkProps) {
     : 'opacity-60 hover:opacity-100';
 
   return (
-    <div className={linkStyle}>
+    <div className={`w-full ${linkStyle}`}>
       <Button
         text={item.label}
         icon={item.icon}

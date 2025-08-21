@@ -69,7 +69,7 @@ export default function TopNav() {
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 ${open ? 'rounded-2xl bg-[var(--background)]' : 'rounded-b-2xl bg-[var(--background)]/30'} mx-3 z-50 ring-1 ring-white/10 backdrop-blur-lg px-6 py-4 flex flex-col`}
+      className={`fixed top-0 left-0 right-0 rounded-b-2xl ${open ? 'bg-[var(--background)]' : 'bg-[var(--background)]/30'} mx-3 z-50 ring-1 ring-white/10 backdrop-blur-lg px-6 py-4 flex flex-col`}
     >
       <div className="flex justify-between">
         <button
@@ -88,7 +88,11 @@ export default function TopNav() {
         </button>
         <div className="flex items-center gap-6">
           {SECONDARY_NAV_ITEMS.map((item) => {
-            return <NavLink key={item.id} item={item} iconOnly={true} />;
+            return (
+              <div key={item.id} className="w-fit">
+                <NavLink item={item} iconOnly={true} />
+              </div>
+            );
           })}
         </div>
       </div>
@@ -105,7 +109,7 @@ export default function TopNav() {
             (item) => (
               <div
                 key={item.id}
-                className="w-fit"
+                className="w-full"
                 onClick={() => setOpen(false)}
               >
                 <NavLink item={item} isActive={current.id === item.id} />

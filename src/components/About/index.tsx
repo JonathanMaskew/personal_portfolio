@@ -46,7 +46,11 @@ export default function About() {
         </div>
         <div className="flex gap-8 gap-y-2 items-center justify-center flex-wrap">
           {SECONDARY_NAV_ITEMS.map((item) => {
-            return <NavLink key={item.id} item={item} />;
+            return (
+              <div key={item.id} className="w-fit">
+                <NavLink item={item} />
+              </div>
+            );
           })}
         </div>
       </div>
@@ -100,7 +104,7 @@ export default function About() {
         <Carousel color="#f97316">
           <CarouselImageItem
             image={tennis}
-            text="I played varisty tennis at Noblesville High School, and continue to play recreationally."
+            text="I played varisty tennis in high school and continue to play recreationally."
             color="#f97316"
           />
           <CarouselImageItem
