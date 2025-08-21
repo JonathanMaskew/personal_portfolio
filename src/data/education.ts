@@ -28,7 +28,7 @@ export const EDUCATION: Experience[] = [
     subtitle: 'Hack the Future',
     subheading: 'Purdue University, March 2022 - May 2024',
     body: 'Mentored four project teams on UX/UI principles and provided resources to translate Figma mockups into front-end code.',
-    bullets: [
+    coreBullets: [
       'Established branded components in React to streamline development and maintain consistency across all team projects.',
       'Designed marketing materials in Figma leading to a nearly 90% increase in applicants year-over-year, shattering previous records.',
     ],
@@ -62,7 +62,7 @@ export const EDUCATION: Experience[] = [
     subtitle: 'Hack the Future',
     subheading: 'Purdue University, November 2023 - May 2024',
     body: 'Oversaw club logistics, including event planning, member communications, and administrative tasks, to keep members engaged.',
-    bullets: [],
+    coreBullets: [],
     keywords: ['Communication', 'Event Planning'],
   },
   {
@@ -73,7 +73,7 @@ export const EDUCATION: Experience[] = [
     subtitle: 'Hack the Future',
     subheading: 'Purdue University, Sep 2021 - May 2022',
     body: 'Worked with a team of eight to deliver a website on schedule that allows Leadership Lafayette to collect and browse testimonials.',
-    bullets: [
+    coreBullets: [
       "Developed front-end interfaces using React that mimicked the Designer's mockups and integrated with a MongoDB database.",
     ],
     keywords: ['React', 'MongoDB', 'Front-end'],

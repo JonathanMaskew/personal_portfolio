@@ -28,6 +28,7 @@ import JsCreations from '../../assets/images/Js_page/Js_creations.gif';
 import JsAnimation from '../../assets/images/Js_page/Js_animation.gif';
 import JsMulticolor from '../../assets/images/Js_page/Js_multicolor.gif';
 import { useState } from 'react';
+import ModalSection from '../ModalSection';
 
 export default function Footer() {
   const [modalContent, setModalContent] = useState<string | null>(null);
@@ -125,7 +126,7 @@ export default function Footer() {
               nested
               heading
             />
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-8">
               <div>
                 I love to imagine the experience that others perceive, and
                 building a personal brand allowed me to be creative in that
@@ -241,7 +242,7 @@ export default function Footer() {
               nested
               heading
             />
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-8">
               <div>
                 I put my full dedication into everything I do to achieve the
                 best possible output. Everything I do is done with care and I
@@ -251,82 +252,48 @@ export default function Footer() {
               <div>
                 This passion, of course, is present in this very site...
               </div>
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-2">
-                  <LayoutDashboard size={20} />
-                  <div className="font-header font-bold text-lg">Layout</div>
-                </div>
-                <div>
-                  The point of the site it to showcase my accomplishments. No
-                  thing is inherently more important than another, it&apos;s all
-                  contributing to the same goal - to gain an understanding of,
-                  well, me. So why separate it into pages? Therefore, we&apos;ve
-                  got a single, scrollable page that highlights various aspects
-                  of my accomplishments, providing a holistic view of me.
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-2">
-                  <Palette size={20} />
-                  <div className="font-header font-bold text-lg">Colors</div>
-                </div>
-                <div>
-                  Again, the most important aspect of this site is the content
-                  within it. Therefore, I chose the color scheme to reflect
-                  that, with each color reflective of the corresponding data.
-                  This makes each chunk of content feel unified, helping to
-                  differentiate it from similar content within a single page. I
-                  strategically used gradients on content I wanted to draw more
-                  attention to. The dark background is intended to bring a sense
-                  of professionalism and helps the colors to pop.
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-2">
-                  <MousePointerClick size={20} />
-                  <div className="font-header font-bold text-lg">
-                    Interactivity
-                  </div>
-                </div>
-                <div>
-                  Little interactions and animations make the site feel
-                  friendly, engaging, and lively. Hovering over content makes it
-                  apparent what is interactable. Little animations when
-                  interacting provide clarity and a sense of flow.
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-2">
-                  <MousePointer size={20} />
-                  <div className="font-header font-bold text-lg">Usability</div>
-                </div>
-                <div>
-                  My intention with this site was not to shove it full of fancy
-                  technologies, contrarian user interface choices, or complex
-                  interactivity. My goal was to create a site that was practical
-                  and intuitive, that, again, prioritized the content. Of
-                  course, that doesn&apos;t mean the site couldn&apos;t be
-                  beautiful, interactive, and engaging.
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-2">
-                  <Code size={20} />
-                  <div className="font-header font-bold text-lg">
-                    Technology
-                  </div>
-                </div>
-                <div>
-                  I built the site with Next.js, knowing that it&apos;s a
-                  popular, modern framework, perfect for a front-end portfolio.
-                  I also used Tailwind CSS to style items for efficiently. I
-                  think AI is a very powerful tool, and I believe it should be
-                  used as a tool, not a replacement. All design decisions and
-                  all content are my own. Any AI contributions to the code were
-                  well-understood, vetted, and adapted, with AI being used more
-                  as an assistant, rather than a developer.
-                </div>
-              </div>
+              <ModalSection icon={LayoutDashboard} title="Layout">
+                The point of the site it to showcase my accomplishments. No
+                thing is inherently more important than another, it&apos;s all
+                contributing to the same goal - to gain an understanding of,
+                well, me. So why separate it into pages? Therefore, we&apos;ve
+                got a single, scrollable page that highlights various aspects of
+                my accomplishments, providing a holistic view of me.
+              </ModalSection>
+              <ModalSection icon={Palette} title="Colors">
+                Again, the most important aspect of this site is the content
+                within it. Therefore, I chose the color scheme to reflect that,
+                with each color reflective of the corresponding data. This makes
+                each chunk of content feel unified, helping to differentiate it
+                from similar content within a single page. I strategically used
+                gradients on content I wanted to draw more attention to. The
+                dark background is intended to bring a sense of professionalism
+                and helps the colors to pop.
+              </ModalSection>
+              <ModalSection icon={MousePointerClick} title="Interactivity">
+                Little interactions and animations make the site feel friendly,
+                engaging, and lively. Hovering over content makes it apparent
+                what is interactable. Little animations when interacting provide
+                clarity and a sense of flow.
+              </ModalSection>
+              <ModalSection icon={MousePointer} title="Usability">
+                My intention with this site was not to shove it full of fancy
+                technologies, contrarian user interface choices, or complex
+                interactivity. My goal was to create a site that was practical
+                and intuitive, that, again, prioritized the content. Of course,
+                that doesn&apos;t mean the site couldn&apos;t be beautiful,
+                interactive, and engaging.
+              </ModalSection>
+              <ModalSection icon={Code} title="Technology">
+                I built the site with Next.js, knowing that it&apos;s a popular,
+                modern framework, perfect for a front-end portfolio. I also used
+                Tailwind CSS to style items for efficiently. I think AI is a
+                very powerful tool, and I believe it should be used as a tool,
+                not a replacement. All design decisions and all content are my
+                own. Any AI contributions to the code were well-understood,
+                vetted, and adapted, with AI being used more as an assistant,
+                rather than a developer.
+              </ModalSection>
             </div>
           </>
         )}

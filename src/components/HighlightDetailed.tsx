@@ -13,9 +13,7 @@ export default function HighlightDetailed({
   actionButton,
   onClick,
   nested,
-}: HighlightProps & {
-  actionButton?: React.ReactNode;
-}) {
+}: HighlightProps) {
   const hasHeaderContent = Boolean(imagery || title || subtitle || subheading);
   const containerStyle = color
     ? {

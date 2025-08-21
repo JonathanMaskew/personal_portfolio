@@ -4,7 +4,7 @@ import allegionLogo from '@/assets/images/allegion_logo.png';
 import qualifiLogo from '@/assets/images/qualifi_logo.png';
 import texMexyLogo from '@/assets/images/texy_mexy_logo.png';
 import noblesvilleAthleticClubLogo from '@/assets/images/noblesville_athletic_club_logo.png';
-import { Bot, PillBottle, UserRoundPlus } from 'lucide-react';
+import { Bot, PillBottle, ShieldCheck, UserRoundPlus } from 'lucide-react';
 
 export const JOBS: Experience[] = [
   {
@@ -22,27 +22,35 @@ export const JOBS: Experience[] = [
       'UI/UX Design',
       'Figma',
     ],
-    highlights: [
-      {
-        icon: Bot,
-        text: 'Pioneer a tool that leverages a Large Language Model to intelligently parse and import user data from an unstructured CSV file, introducing automation to a tedious workflow that significantly reduces user import times.',
-      },
-      {
-        icon: PillBottle,
-        text: 'Led a full-stack rebuilding of the e-prescribing infrastructure by rewriting all front-end and back-end files and integrating with third-party APIs, increasing reliability and functionality.',
-      },
-      {
-        icon: UserRoundPlus,
-        text: 'Improve user activation by building a workflow to guide new users through password creation, profile setup, and initial training.',
-      },
-    ],
-    bullets: [
+    coreBullets: [
       'Streamline front-end development by building reusable, documented front-end components that reduce code redundancy.',
-      'Strengthen security by implementing a reusable multi-factor authentication component that supports email, text, and passkey.',
       'Onboard new software engineers through training and guidance to accelerate their understanding of the codebase.',
       'Establish a Figma component library to enable design-to-development workflows and ensure intuitive, consistent experiences.',
       'Present progress demonstrations directly to the CEO and Director of Software Development to gain feedback on priority projects.',
     ],
+    highlights: [
+      {
+        icon: Bot,
+        title: 'Automate User Import Using LLM',
+        text: 'Pioneer a tool that leverages a Large Language Model to intelligently parse and import user data from an unstructured CSV file, introducing automation to a tedious workflow that significantly reduces user import times.',
+      },
+      {
+        icon: PillBottle,
+        title: 'Rebuild e-prescribing Infrastructure',
+        text: 'Led a full-stack rebuilding of the e-prescribing infrastructure by rewriting all front-end and back-end files and integrating with third-party APIs, increasing reliability and functionality.',
+      },
+      {
+        icon: UserRoundPlus,
+        title: 'Improve User Activation Through Improved Onboarding',
+        text: 'Improve user activation by building a workflow to guide new users through password creation, profile setup, and initial training.',
+      },
+      {
+        icon: ShieldCheck,
+        title: 'Strengthen Security Through Multi-Factor Authentication',
+        text: 'Strengthen security by implementing a reusable multi-factor authentication component that supports email, text, and passkey.',
+      },
+    ],
+    bullets: [],
   },
   {
     id: 'allegion',
@@ -53,10 +61,11 @@ export const JOBS: Experience[] = [
     subheading: 'Intern, May 2023 - August 2023',
     body: 'Integrated with backend APIs to develop a scalable announcements feature within a component-based Angular site, allowing hundreds of users to access announcements and administrators to send targeted announcements.',
     keywords: ['Angular', 'Angular Material', 'Front-end', 'Scrum'],
-    bullets: [
+    coreBullets: [
       'Translated high-fidelity mockups to front-end code that conform with user experience specifications and feedback.',
       'Collaborated daily with Product Owner, Interaction Designer, and Backend Developer interns, following the Scrum methodology.',
     ],
+    bullets: [],
   },
   {
     id: 'qualifi',
@@ -74,10 +83,11 @@ export const JOBS: Experience[] = [
       'Scrum',
       'React Testing Library',
     ],
-    bullets: [
+    coreBullets: [
       'Followed the Scrum methodology to communicate daily with the Engineering, Product, and Product Designer teams.',
       'Ensured new contributions maintained system reliability and functionality by implementing test cases.',
     ],
+    bullets: [],
   },
 ];
 
@@ -94,6 +104,7 @@ export const MORE_JOBS: Experience[] = [
       'Working With Children',
       'Tennis Instruction',
     ],
+    coreBullets: [],
   },
   {
     color: '#E9CD2E',
@@ -108,6 +119,7 @@ export const MORE_JOBS: Experience[] = [
       'Web Design',
       'Digital Marketing',
     ],
+    coreBullets: [],
   },
   {
     color: '#E9CD2E',
@@ -124,6 +136,7 @@ export const MORE_JOBS: Experience[] = [
       'Employee Training',
       'Multi-Cultural Team Leadership',
     ],
+    coreBullets: [],
   },
   {
     color: '#696969',
@@ -132,6 +145,7 @@ export const MORE_JOBS: Experience[] = [
     subheading: 'Part-time, March 2018 - 2021',
     body: 'Worked with people of all ages to get food out quickly and accurately at sports stadium concession stands; set up, restock, and tear down.',
     keywords: ['Quick Service', 'Intercultural Communication'],
+    coreBullets: [],
   },
   {
     color: '#696969',
@@ -145,6 +159,7 @@ export const MORE_JOBS: Experience[] = [
       'Working With Children',
       'Tennis Instruction',
     ],
+    coreBullets: [],
   },
   {
     color: '#D95A00',
@@ -154,6 +169,7 @@ export const MORE_JOBS: Experience[] = [
     subheading: 'Part-time, December 2015 - November 2017',
     body: 'Designed and updated a website for a local gym viewed thousands of times a month.',
     keywords: ['Web Development', 'GoDaddy', 'Web Design', 'Digital Marketing'],
+    coreBullets: [],
   },
   {
     color: '#D95A00',
@@ -163,6 +179,7 @@ export const MORE_JOBS: Experience[] = [
     subheading: 'Part-time, December 2015 - November 2017',
     body: 'Curated a monthly newsletter sent to hundreds of email addresses by working with the leadership team.',
     keywords: ['Digital Marketing'],
+    coreBullets: [],
   },
   {
     color: '#696969',
@@ -171,5 +188,6 @@ export const MORE_JOBS: Experience[] = [
     subheading: 'Part-time, June 2016 - June 2017',
     body: 'Produced a public, navigable website for a local farm to grow its small business.',
     keywords: ['Web Development', 'GoDaddy', 'Web Design', 'Digital Marketing'],
+    coreBullets: [],
   },
 ];

@@ -15,7 +15,6 @@ export default function HighlightFeature({
   onClick,
   heading,
 }: HighlightProps & {
-  actionButton?: React.ReactNode;
   heading?: boolean;
 }) {
   const hasHeaderContent = Boolean(imagery || title || subtitle || subheading);

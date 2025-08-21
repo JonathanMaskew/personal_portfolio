@@ -13,10 +13,12 @@ export type HighlightProps = {
   nested?: boolean;
   onClick?: () => void;
   children?: ReactNode;
+  actionButton?: React.ReactNode;
 };
 
-export type JobHighlight = {
+export type ExperienceHighlight = {
   icon: Icon;
+  title?: string;
   text: string;
 };
 
@@ -29,7 +31,8 @@ export type Experience = {
   body?: string;
   bullets?: string[];
   keywords?: string[];
-  highlights?: JobHighlight[];
+  coreBullets?: string[];
+  highlights?: ExperienceHighlight[];
   color?: string;
   images?: StaticImageData[];
 };
