@@ -83,7 +83,7 @@ export const JOBS: Experience[] = [
 
 export const MORE_JOBS: Experience[] = [
   {
-    color: '#ffffff',
+    color: '#696969',
     subtitle: 'Noblesville Youth Tennis',
     title: 'Tennis Camp Instructor',
     subheading: 'Seasonal, June 2018 - July 2021',
@@ -126,7 +126,7 @@ export const MORE_JOBS: Experience[] = [
     ],
   },
   {
-    color: '#ffffff',
+    color: '#696969',
     subtitle: 'Premier Youth Fundraising Inc',
     title: 'Concession Attendant',
     subheading: 'Part-time, March 2018 - 2021',
@@ -134,7 +134,7 @@ export const MORE_JOBS: Experience[] = [
     keywords: ['Quick Service', 'Intercultural Communication'],
   },
   {
-    color: '#ffffff',
+    color: '#696969',
     subtitle: 'Self-employed',
     title: 'Private Tennis Lessons Instructor',
     subheading: 'Part-time, June 2018 - July 2020',
@@ -165,7 +165,7 @@ export const MORE_JOBS: Experience[] = [
     keywords: ['Digital Marketing'],
   },
   {
-    color: '#ffffff',
+    color: '#696969',
     subtitle: 'L&L Davis Farms',
     title: 'Website Designer and Manager',
     subheading: 'Part-time, June 2016 - June 2017',

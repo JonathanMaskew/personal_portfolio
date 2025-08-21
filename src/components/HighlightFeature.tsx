@@ -121,7 +121,7 @@ export default function HighlightFeature({
           )}
         </div>
       )}
-      {body && <div className="text-sm">{body}</div>}
+      {body && !heading && <div className="text-sm">{body}</div>}
       {children}
       {actionButton && (
         <div className="self-center absolute bottom-4">{actionButton}</div>

@@ -5,9 +5,19 @@ import HighlightFeature from '@/components/HighlightFeature';
 import { NavLink } from '@/components/NavLink';
 import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import HighlightDetailed from '../HighlightDetailed';
-import { HandHeart, Plus } from 'lucide-react';
+import {
+  HandHeart,
+  Plus,
+  LayoutDashboard,
+  Palette,
+  MousePointer,
+  Code,
+  MousePointerClick,
+} from 'lucide-react';
 import { Button } from '../Button';
 import JsLogo from '../../app/Js_logo.png';
+import JsLogoWhite from '../../app/Js_logo_white.png';
+import JsLogoBlack from '../../app/Js_logo_black.png';
 import { useModal } from '@/hooks/useModal';
 import Modal from '../Modal';
 import Image from 'next/image';
@@ -39,28 +49,32 @@ export default function Footer() {
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <HighlightDetailed
-          color="#ffffff"
+          color="#696969"
           imagery={HandHeart}
           title="Built with Passion"
           subtitle="Developed with Next.js"
-          body="From the layout to the color scheme, many intentional decisions were made to ensure a delightful experience."
-          //   actionButton={
-          //     <Button
-          //       icon={Plus}
-          //       text="Learn More"
-          //       clickDetail={() => {
-          //         // setOpenedJobId('myhelo');
-          //         // openModal();
-          //       }}
-          //     />
-          //   }
+          body="From the layout to the color scheme, and beyond, many intentional decisions were made to ensure a delightful experience."
+          onClick={() => {
+            setModalContent('this_site');
+            openModal();
+          }}
+          actionButton={
+            <Button
+              icon={Plus}
+              text="More"
+              clickDetail={() => {
+                setModalContent('this_site');
+                openModal();
+              }}
+            />
+          }
         />
         <HighlightDetailed
           color="#FF6B18"
           imagery={JsLogo}
           title="J's Page"
           subtitle="The Next Iteration of my Personal Brand"
-          body="My personal portfolio, which I've previously referred to as J's Page, has taken many forms. This, being the latest."
+          body="My personal portfolio, which I've previously referred to as J's Page, has taken many forms. This site being the latest."
           onClick={() => {
             setModalContent('js_page');
             openModal();
@@ -68,7 +82,7 @@ export default function Footer() {
           actionButton={
             <Button
               icon={Plus}
-              text="Learn More"
+              text="More"
               clickDetail={() => {
                 setModalContent('js_page');
                 openModal();
@@ -99,7 +113,7 @@ export default function Footer() {
       <Modal
         open={modalOpened && !!modalContent}
         onCloseCallback={closeModal}
-        color="#FF6B18"
+        color={modalContent === 'this_site' ? '#696969' : '#FF6B18'}
       >
         {modalContent === 'js_page' && (
           <>
@@ -113,8 +127,9 @@ export default function Footer() {
             />
             <div className="flex flex-col gap-4">
               <div>
-                I love to imagine the experience of the user, and building a
-                personal brand allowed me to be creative in that sense.
+                I love to imagine the experience that others perceive, and
+                building a personal brand allowed me to be creative in that
+                sense.
               </div>
               <div>
                 It all started when I discovered Google Sites. As a child,
@@ -142,9 +157,8 @@ export default function Footer() {
               </div>
               <div>
                 As I continued to expand the site and establish other sites
-                mirroring the &lsquo;J&rsquo;s&rsquo; branding, it was clear
-                that I was building a personal brand. And what does a brand
-                need? A logo.
+                mirroring the J&rsquo;s branding, it was clear that I was
+                building a personal brand. And what does a brand need? A logo.
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4 mb-4">
                 <Image
@@ -161,7 +175,7 @@ export default function Footer() {
               <div>
                 Eventually, as I continued to add content beyond just creations
                 and animations, the branding needed to reflect this. At last,
-                the &lsquo;J&rsquo;s&rsquo; brand was born.
+                the J&rsquo;s brand was born.
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4 mb-4">
                 <Image
@@ -181,11 +195,23 @@ export default function Footer() {
                 With this, I decided to go back to my roots, and build myself a
                 new logo.
               </div>
-              <Image
-                src={JsLogo}
-                alt="J's Page Logo"
-                className="w-full h-auto max-w-[100px] sm:max-w-[150px] mx-auto mb-4"
-              />
+              <div className="grid grid-cols-3 gap-4 md:gap-8 mb-4 w-fit mx-auto">
+                <Image
+                  src={JsLogo}
+                  alt="J's Page Logo"
+                  className="w-full h-auto max-w-[75px] sm:max-w-[100px]"
+                />
+                <Image
+                  src={JsLogoWhite}
+                  alt="J's Page Logo white"
+                  className="w-full h-auto max-w-[75px] sm:max-w-[100px]"
+                />
+                <Image
+                  src={JsLogoBlack}
+                  alt="J's Page Logo black"
+                  className="w-full h-auto max-w-[75px] sm:max-w-[100px]"
+                />
+              </div>
               <div>
                 Ultimately, this creative avenue contributed to my decision to
                 pursue a degree in Computer Science and a career in Software
@@ -193,9 +219,113 @@ export default function Footer() {
                 these sites.
               </div>
               <div>
+                Eventually, J&apos;s Page became more document based, as a more
+                long-term form of record-keeping. But, as I work to build a new
+                presence, I began iterating once again.
+              </div>
+              <div>
                 And here we are. Years of iterating on J&apos;s Page and the
                 J&apos;s branding ultimately culminates in the site you&apos;re
                 visiting now.
+              </div>
+            </div>
+          </>
+        )}
+        {modalContent === 'this_site' && (
+          <>
+            <HighlightFeature
+              color="#696969"
+              imagery={HandHeart}
+              title="Built with Passion"
+              subtitle="Developed with Next.js"
+              nested
+              heading
+            />
+            <div className="flex flex-col gap-4">
+              <div>
+                I put my full dedication into everything I do to achieve the
+                best possible output. Everything I do is done with care and I
+                put immense thought into every detail. Why should it be this
+                way? How should it be done? How will this scale and adapt?
+              </div>
+              <div>
+                This passion, of course, is present in this very site...
+              </div>
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <LayoutDashboard size={20} />
+                  <div className="font-header font-bold text-lg">Layout</div>
+                </div>
+                <div>
+                  The point of the site it to showcase my accomplishments. No
+                  thing is inherently more important than another, it&apos;s all
+                  contributing to the same goal - to gain an understanding of,
+                  well, me. So why separate it into pages? Therefore, we&apos;ve
+                  got a single, scrollable page that highlights various aspects
+                  of my accomplishments, providing a holistic view of me.
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <Palette size={20} />
+                  <div className="font-header font-bold text-lg">Colors</div>
+                </div>
+                <div>
+                  Again, the most important aspect of this site is the content
+                  within it. Therefore, I chose the color scheme to reflect
+                  that, with each color reflective of the corresponding data.
+                  This makes each chunk of content feel unified, helping to
+                  differentiate it from similar content within a single page. I
+                  strategically used gradients on content I wanted to draw more
+                  attention to. The dark background is intended to bring a sense
+                  of professionalism and helps the colors to pop.
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <MousePointerClick size={20} />
+                  <div className="font-header font-bold text-lg">
+                    Interactivity
+                  </div>
+                </div>
+                <div>
+                  Little interactions and animations make the site feel
+                  friendly, engaging, and lively. Hovering over content makes it
+                  apparent what is interactable. Little animations when
+                  interacting provide clarity and a sense of flow.
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <MousePointer size={20} />
+                  <div className="font-header font-bold text-lg">Usability</div>
+                </div>
+                <div>
+                  My intention with this site was not to shove it full of fancy
+                  technologies, contrarian user interface choices, or complex
+                  interactivity. My goal was to create a site that was practical
+                  and intuitive, that, again, prioritized the content. Of
+                  course, that doesn&apos;t mean the site couldn&apos;t be
+                  beautiful, interactive, and engaging.
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <Code size={20} />
+                  <div className="font-header font-bold text-lg">
+                    Technology
+                  </div>
+                </div>
+                <div>
+                  I built the site with Next.js, knowing that it&apos;s a
+                  popular, modern framework, perfect for a front-end portfolio.
+                  I also used Tailwind CSS to style items for efficiently. I
+                  think AI is a very powerful tool, and I believe it should be
+                  used as a tool, not a replacement. All design decisions and
+                  all content are my own. Any AI contributions to the code were
+                  well-understood, vetted, and adapted, with AI being used more
+                  as an assistant, rather than a developer.
+                </div>
               </div>
             </div>
           </>
