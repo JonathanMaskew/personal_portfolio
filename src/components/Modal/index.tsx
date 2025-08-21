@@ -30,17 +30,17 @@ export default function Modal({
 
   const closeButton = (
     <button
-      className="fixed right-8 top-8 md:right-12 md:top-12 z-[200] rounded-full w-fit h-fit p-1 group transition-all duration-200"
+      className="fixed right-8 top-8 md:right-12 md:top-12 z-[200] rounded-full w-fit h-fit p-1 group transition-all duration-200 backdrop-blur-2xl"
       onClick={onCloseCallback}
       style={{
-        backgroundColor: '#ffffff33',
+        backgroundColor: '#ffffff1A',
       }}
       onMouseEnter={(e) => {
         (e.currentTarget as HTMLButtonElement).style.backgroundColor = color;
       }}
       onMouseLeave={(e) => {
         (e.currentTarget as HTMLButtonElement).style.backgroundColor =
-          '#ffffff33';
+          '#ffffff1A';
       }}
     >
       <X size={24} className="text-white" />
