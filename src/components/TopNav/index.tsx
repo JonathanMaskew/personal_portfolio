@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import { NavLink } from '../NavLink';
+import { Button } from '../Button';
 import { MAIN_NAV_ITEMS, SECONDARY_NAV_ITEMS } from '@/data/nav';
 import { useActiveSection } from '@/hooks/useActiveSection';
 
@@ -69,7 +69,13 @@ export default function TopNav() {
           {SECONDARY_NAV_ITEMS.map((item) => {
             return (
               <div key={item.id} className="w-fit">
-                <NavLink item={item} iconOnly={true} />
+                <Button
+                  text={item.label}
+                  icon={item.icon}
+                  clickDetail={item.href}
+                  newTab={item.newTab}
+                  iconOnly={true}
+                />
               </div>
             );
           })}
@@ -85,15 +91,22 @@ export default function TopNav() {
       >
         <div className="flex flex-col gap-4">
           {MAIN_NAV_ITEMS.filter((item) => item.id !== current.id).map(
-            (item) => (
-              <div
-                key={item.id}
-                className="w-full"
-                onClick={() => setOpen(false)}
-              >
-                <NavLink item={item} isActive={current.id === item.id} />
-              </div>
-            )
+            (item) => {
+              return (
+                <div
+                  key={item.id}
+                  className="w-full"
+                  onClick={() => setOpen(false)}
+                >
+                  <Button
+                    text={item.label}
+                    icon={item.icon}
+                    clickDetail={item.href}
+                    newTab={item.newTab}
+                  />
+                </div>
+              );
+            }
           )}
         </div>
       </div>

@@ -70,7 +70,6 @@ export default function Work() {
           text={showMore ? 'Show less' : 'Show more'}
           clickDetail={() => setShowMore(!showMore)}
           icon={showMore ? ChevronUp : ChevronDown}
-          className="opacity-60 hover:opacity-100"
         />
       </div>
 

@@ -1,5 +1,5 @@
 'use client';
-import { NavLink } from '../NavLink';
+import { Button } from '../Button';
 import { MAIN_NAV_ITEMS, SECONDARY_NAV_ITEMS } from '@/data/nav';
 import { useActiveSection } from '@/hooks/useActiveSection';
 
@@ -41,19 +41,38 @@ export default function SidebarNav() {
         <div className="flex flex-col gap-10">
           {jsLogo}
           <div className="flex flex-col gap-4">
-            {MAIN_NAV_ITEMS.map((item) => (
-              <NavLink
-                key={item.id}
-                item={item}
-                isActive={current.id === item.id}
-              />
-            ))}
+            {MAIN_NAV_ITEMS.map((item) => {
+              const linkStyle =
+                current.id === item.id
+                  ? 'opacity-100 font-bold'
+                  : 'opacity-60 hover:opacity-100';
+
+              return (
+                <div key={item.id} className="w-full">
+                  <Button
+                    text={item.label}
+                    icon={item.icon}
+                    clickDetail={item.href}
+                    newTab={item.newTab}
+                    className={linkStyle}
+                    isFocused={current.id === item.id}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
 
         <div className="flex flex-col gap-4">
           {SECONDARY_NAV_ITEMS.map((item) => (
-            <NavLink key={item.id} item={item} />
+            <div key={item.id} className="w-full">
+              <Button
+                text={item.label}
+                icon={item.icon}
+                clickDetail={item.href}
+                newTab={item.newTab}
+              />
+            </div>
           ))}
         </div>
       </nav>

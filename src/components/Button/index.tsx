@@ -7,7 +7,9 @@ interface ButtonProps {
   iconOnly?: boolean;
   newTab?: boolean;
   color?: string;
+  background?: boolean;
   className?: string;
+  isFocused?: boolean;
 }
 
 export function Button({
@@ -16,10 +18,30 @@ export function Button({
   icon: IconComponent,
   iconOnly,
   newTab,
-  className,
+  background,
+  color,
+  isFocused,
 }: ButtonProps) {
   const { scrollToHash } = useHashScroll();
-  const buttonStyle = `flex items-center gap-3 w-full ${className}`;
+  const buttonClassName = `flex items-center gap-3 w-full ${background ? 'py-2 px-4 rounded-2xl' : ''} ${isFocused ? 'font-bold' : ''}`;
+  const buttonStyle = {
+    backgroundColor: background ? 'rgba(0,0,0,0.2)' : '',
+    opacity: background || isFocused ? '1' : '0.6',
+  };
+
+  const onMouseEnter = (
+    e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => {
+    e.currentTarget.style.backgroundColor =
+      color || (background ? 'rgba(0,0,0,0.5)' : '');
+    e.currentTarget.style.opacity = '1';
+  };
+  const onMouseLeave = (
+    e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => {
+    e.currentTarget.style.backgroundColor = buttonStyle.backgroundColor;
+    e.currentTarget.style.opacity = buttonStyle.opacity;
+  };
 
   const content = (
     <>
@@ -30,7 +52,13 @@ export function Button({
 
   if (typeof clickDetail === 'function') {
     return (
-      <button onClick={clickDetail} className={`${buttonStyle}`}>
+      <button
+        onClick={clickDetail}
+        className={`${buttonClassName}`}
+        style={buttonStyle}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
         {content}
       </button>
     );
@@ -45,7 +73,10 @@ export function Button({
       return (
         <button
           onClick={handleEmailClick}
-          className={`${buttonStyle} cursor-pointer`}
+          className={`${buttonClassName} cursor-pointer`}
+          style={buttonStyle}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
         >
           {content}
         </button>
@@ -57,7 +88,10 @@ export function Button({
       return (
         <button
           onClick={() => scrollToHash(clickDetail)}
-          className={`${buttonStyle}`}
+          className={`${buttonClassName}`}
+          style={buttonStyle}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
         >
           {content}
         </button>
@@ -70,7 +104,10 @@ export function Button({
         href={clickDetail}
         target={newTab ? '_blank' : '_self'}
         rel="noopener noreferrer"
-        className={`${buttonStyle}`}
+        className={`${buttonClassName}`}
+        style={buttonStyle}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
       >
         {content}
       </a>

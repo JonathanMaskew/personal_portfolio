@@ -5,7 +5,7 @@ import purdue_logo from '@/assets/images/purdue_logo.png';
 import InnerHighlight from '@/components/InnerHighlight';
 import Carousel, { CarouselImageItem } from '@/components/Carousel';
 import ModalSection from '@/components/ModalSection';
-import { FileText, Image, List, Megaphone, Users } from 'lucide-react';
+import { ExternalLink, Image, Megaphone, Users } from 'lucide-react';
 import design_and_marketing from '@/assets/images/hack_the_future/design_and_marketing.png';
 import design_and_marketing_2 from '@/assets/images/hack_the_future/design_and_marketing_2.png';
 import design_and_marketing_3 from '@/assets/images/hack_the_future/design_and_marketing_3.png';
@@ -57,16 +57,25 @@ export const EDUCATION: Experience[] = [
     keywords: ['Figma', 'UI/UX Design', 'Front-end', 'Marketing'],
     modalChildren: (
       <div className="flex flex-col gap-8">
-        <div className="flex gap-8 w-full justify-center">
-          {/* <div className="w-fit">
-            <Button icon={FileText} text="PDF Collage of Work" clickDetail="/api/htf-collage" />
-          </div> */}
+        <div className="flex gap-8 gap-y-2 w-full justify-center flex-wrap">
           <div className="w-fit">
             <Button
-              icon={List}
+              icon={ExternalLink}
+              newTab={true}
+              text="PDF Collage of Work"
+              clickDetail="/pdfs/htf_collage.pdf"
+              background
+              color="#00EB88"
+            />
+          </div>
+          <div className="w-fit">
+            <Button
+              icon={ExternalLink}
               newTab={true}
               text="List of Work with Descriptions"
               clickDetail="https://docs.google.com/document/d/1iJEBzMD-UZ55tUu14lbxTY1sf2zTvvQj90V-YAjeGos/edit?usp=sharing"
+              background
+              color="#00EB88"
             />
           </div>
         </div>

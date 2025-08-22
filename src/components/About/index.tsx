@@ -18,9 +18,8 @@ import travel from '@/assets/images/travel.png';
 import roundabouts from '@/assets/images/roundabouts.jpg';
 import HighlightFeature from '../HighlightFeature';
 import carousel_of_progress from '@/assets/images/carousel_of_progress.png';
-import { NavLink } from '../NavLink';
-import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import { Button } from '../Button';
+import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import { useHashScroll } from '@/hooks/useHashScroll';
 import type React from 'react';
 
@@ -48,7 +47,12 @@ export default function About() {
           {SECONDARY_NAV_ITEMS.map((item) => {
             return (
               <div key={item.id} className="w-fit">
-                <NavLink item={item} />
+                <Button
+                  text={item.label}
+                  icon={item.icon}
+                  clickDetail={item.href}
+                  newTab={item.newTab}
+                />
               </div>
             );
           })}

@@ -2,7 +2,6 @@
 
 import SectionWrapper from '@/components/SectionWrapper';
 import HighlightFeature from '@/components/HighlightFeature';
-import { NavLink } from '@/components/NavLink';
 import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import HighlightDetailed from '../HighlightDetailed';
 import {
@@ -44,7 +43,12 @@ export default function Footer() {
             {SECONDARY_NAV_ITEMS.map((item) => {
               return (
                 <div key={item.id} className="w-fit">
-                  <NavLink item={item} />
+                  <Button
+                    icon={item.icon}
+                    text={item.label}
+                    clickDetail={item.href}
+                    newTab={item.newTab}
+                  />
                 </div>
               );
             })}

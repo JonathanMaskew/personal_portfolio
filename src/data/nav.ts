@@ -69,7 +69,7 @@ export const SECONDARY_NAV_ITEMS: NavItem[] = [
     label: 'Resume',
     id: 'resume',
     icon: FileText,
-    href: '/api/resume',
+    href: '/pdfs/JonathanMaskew_Resume_SoftwareEngineer.pdf',
     newTab: true,
   },
 ];
