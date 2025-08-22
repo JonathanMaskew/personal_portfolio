@@ -487,7 +487,7 @@ export const getMoreEducationData = (): Experience[] => [
     imagery: cool_vending_machine_finder_pin,
     title: 'Cool Vending Machine Finder',
     subtitle: 'CS 407 - Software Engineering Senior Project',
-    subheading: 'Purdue University, Fall 2024',
+    subheading: 'Purdue University, Fall 2023',
     body: 'Practiced Scrum methodology to plan and develop from scratch a an interactive map of vending machines at Purdue University using React and Firebase with a team of four students.',
     coreBullets: [],
     highlightChildren: <Chips strings={['React', 'Firebase', 'Front-end']} />,
