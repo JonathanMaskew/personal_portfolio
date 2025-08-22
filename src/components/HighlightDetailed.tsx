@@ -66,14 +66,18 @@ export default function HighlightDetailed({
                 const IconComponent = imagery as Icon;
                 return (
                   <div className="rounded-2xl p-3 bg-black/10 min-h-[60px] max-h-[60px] min-w-[60px] max-w-[60px] justify-center items-center flex">
-                    <IconComponent size={40} />
+                    <IconComponent size={36} />
                   </div>
                 );
               }
 
               return (
-                <div className="rounded-2xl p-3 bg-black/10 min-h-[60px] max-h-[60px] min-w-[60px] max-w-[60px] justify-center items-center flex">
-                  <Image src={imagery} alt={`${title || 'highlight'} logo`} />
+                <div className="rounded-2xl p-3 bg-black/10 min-h-[60px] max-h-[60px] min-w-[60px] max-w-[60px] justify-center items-center flex overflow-hidden">
+                  <Image
+                    src={imagery}
+                    alt={`${title || 'highlight'} logo`}
+                    className="h-[36px] w-auto object-contain"
+                  />
                 </div>
               );
             })()}

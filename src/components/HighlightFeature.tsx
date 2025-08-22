@@ -77,7 +77,7 @@ export default function HighlightFeature({
                   const IconComponent = imagery as Icon;
                   return (
                     <div className="rounded-full p-4 bg-black/10 min-h-[70px] max-h-[70px] min-w-[70px] max-w-[70px] justify-center items-center flex">
-                      <IconComponent size={40} />
+                      <IconComponent size={38} />
                     </div>
                   );
                 }
@@ -87,6 +87,7 @@ export default function HighlightFeature({
                     <Image
                       src={imagery as StaticImageData}
                       alt={`${title || 'feature'} logo`}
+                      className="h-[38px] w-auto object-contain"
                     />
                   </div>
                 );
