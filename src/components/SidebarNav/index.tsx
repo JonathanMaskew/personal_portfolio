@@ -1,9 +1,7 @@
 'use client';
-
-import { useEffect, useState } from 'react';
 import { NavLink } from '../NavLink';
-import type { NavItem } from '@/types';
 import { MAIN_NAV_ITEMS, SECONDARY_NAV_ITEMS } from '@/data/nav';
+import { useActiveSection } from '@/hooks/useActiveSection';
 
 const jsLogo = (
   <svg
@@ -32,36 +30,10 @@ const jsLogo = (
 );
 
 export default function SidebarNav() {
-  const [current, setCurrent] = useState<NavItem>(MAIN_NAV_ITEMS[0]);
-
-  useEffect(() => {
-    const sections = MAIN_NAV_ITEMS.map((n) =>
-      document.getElementById(n.id)
-    ).filter(Boolean) as HTMLElement[];
-
-    sections.push(document.getElementById('footer') as HTMLElement);
-
-    if (sections.length === 0) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        const topMost = visible[0];
-        if (topMost?.target?.id) {
-          const match = MAIN_NAV_ITEMS.find((n) => n.id === topMost.target.id);
-          if (match) setCurrent(match);
-        }
-      },
-      {
-        threshold: [0.25, 1],
-      }
-    );
-
-    sections.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+  const { current } = useActiveSection({
+    items: MAIN_NAV_ITEMS,
+    activationOffset: 0,
+  });
 
   return (
     <aside className="h-screen w-[200px] overflow-y-auto">

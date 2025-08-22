@@ -36,7 +36,7 @@ export default function Footer() {
 
   return (
     <SectionWrapper
-      title="Thanks for visiting!"
+      title="Thanks for visiting my portfolio!"
       subtext={
         <div className="flex flex-col gap-2">
           Please don&apos;t hesitate to reach out. I&apos;d love to connect!

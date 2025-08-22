@@ -34,7 +34,8 @@ export type Experience = {
   coreBullets?: string[];
   highlights?: ExperienceHighlight[];
   color?: string;
-  images?: StaticImageData[];
+  highlightChildren?: React.ReactNode;
+  modalChildren?: React.ReactNode;
 };
 
 export type NavItem = {

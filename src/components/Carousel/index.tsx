@@ -86,17 +86,27 @@ export default function Carousel({
 interface CarouselItemProps {
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 }
 
-export function CarouselItem({ children, className = '' }: CarouselItemProps) {
-  return <div className={`flex-shrink-0 ${className}`}>{children}</div>;
+export function CarouselItem({
+  children,
+  className = '',
+  style,
+}: CarouselItemProps) {
+  return (
+    <div className={`flex-shrink-0 ${className}`} style={style}>
+      {children}
+    </div>
+  );
 }
 
 interface CarouselImageItemProps {
   image: StaticImageData;
-  text: string;
+  text?: string;
   className?: string;
   color?: string;
+  size?: number;
 }
 
 export function CarouselImageItem({
@@ -104,23 +114,26 @@ export function CarouselImageItem({
   text,
   className = '',
   color,
+  size = 150,
 }: CarouselImageItemProps) {
   return (
-    <CarouselItem className={`w-[150px] ${className}`}>
+    <CarouselItem className={className} style={{ width: `${size}px` }}>
       <div className="flex flex-col gap-4">
-        <div className="w-[150px] h-[150px]">
+        <div style={{ width: `${size}px`, height: `${size}px` }}>
           <Image
             src={image}
-            alt={text}
+            alt={text || ''}
             className="rounded-2xl object-cover w-full h-full"
           />
         </div>
-        <div
-          className="text-xs leading-tight pl-2 border-l-2"
-          style={{ borderColor: color }}
-        >
-          {text}
-        </div>
+        {text && (
+          <div
+            className="text-xs leading-tight pl-2 border-l-2"
+            style={{ borderColor: color }}
+          >
+            {text}
+          </div>
+        )}
       </div>
     </CarouselItem>
   );

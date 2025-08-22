@@ -27,3 +27,23 @@ body {
 button {
   cursor: pointer;
 }
+
+/* Reveal on scroll animations */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 500ms ease, transform 500ms ease;
+  will-change: opacity, transform;
+}
+
+[data-reveal="in"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    transition: none;
+    transform: none;
+  }
+}

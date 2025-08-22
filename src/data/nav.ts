@@ -8,6 +8,7 @@ import {
   House,
   User,
   Sparkles,
+  CircleEllipsis,
 } from 'lucide-react';
 
 export const MAIN_NAV_ITEMS: NavItem[] = [
@@ -40,6 +41,12 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
     id: 'education',
     icon: GraduationCap,
     href: '#education',
+  },
+  {
+    label: 'More',
+    id: 'footer',
+    icon: CircleEllipsis,
+    href: '#footer',
   },
 ];
 

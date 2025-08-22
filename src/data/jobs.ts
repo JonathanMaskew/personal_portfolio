@@ -31,12 +31,12 @@ export const JOBS: Experience[] = [
     highlights: [
       {
         icon: Bot,
-        title: 'Automate User Import Using LLM',
+        title: 'Utilize an LLM to Automate User Import',
         text: 'Pioneer a tool that leverages a Large Language Model to intelligently parse and import user data from an unstructured CSV file, introducing automation to a tedious workflow that significantly reduces user import times.',
       },
       {
         icon: PillBottle,
-        title: 'Rebuild e-prescribing Infrastructure',
+        title: 'Full-Stack Rebuild of e-Prescribing Infrastructure',
         text: 'Led a full-stack rebuilding of the e-prescribing infrastructure by rewriting all front-end and back-end files and integrating with third-party APIs, increasing reliability and functionality.',
       },
       {
@@ -46,7 +46,7 @@ export const JOBS: Experience[] = [
       },
       {
         icon: ShieldCheck,
-        title: 'Strengthen Security Through Multi-Factor Authentication',
+        title: 'Strengthen Security with Multi-Factor Authentication',
         text: 'Strengthen security by implementing a reusable multi-factor authentication component that supports email, text, and passkey.',
       },
     ],
