@@ -1,14 +1,13 @@
 'use client';
 
 import { BriefcaseBusiness, ChevronDown, ChevronUp, Plus } from 'lucide-react';
-import Chips from '../Chips';
 import HighlightDetailed from '../HighlightDetailed';
 import { useModal } from '@/hooks/useModal';
 import { useState } from 'react';
 import Modal from '../Modal';
 import SectionWrapper from '../SectionWrapper';
 import { Button } from '../Button';
-import { JOBS, MORE_JOBS } from '@/data/jobs';
+import { getJobsData, getMoreJobsData } from '@/data/jobs';
 import ExperienceDetails from '@/components/ExperienceDetails';
 
 export default function Work() {
@@ -17,6 +16,8 @@ export default function Work() {
 
   const [showMore, setShowMore] = useState<boolean>(false);
 
+  const JOBS = getJobsData();
+  const MORE_JOBS = getMoreJobsData();
   const openedJob = openedJobId
     ? JOBS.find((job) => job.id === openedJobId) || null
     : null;
@@ -58,16 +59,16 @@ export default function Work() {
                 />
               }
             >
-              {job.keywords && job.keywords.length > 0 && (
-                <Chips strings={job.keywords} />
-              )}
+              {job.highlightChildren}
             </HighlightDetailed>
           </div>
         ))}
       </div>
       <div className="w-fit">
         <Button
-          text={showMore ? 'Show less' : 'Show more'}
+          text={
+            showMore ? 'Hide earlier experience' : 'Show earlier experience'
+          }
           clickDetail={() => setShowMore(!showMore)}
           icon={showMore ? ChevronUp : ChevronDown}
         />
@@ -85,9 +86,7 @@ export default function Work() {
                 subheading={job.subheading}
                 body={job.body}
               >
-                {job.keywords && job.keywords.length > 0 && (
-                  <Chips strings={job.keywords} />
-                )}
+                {job.highlightChildren}
               </HighlightDetailed>
             </div>
           ))}

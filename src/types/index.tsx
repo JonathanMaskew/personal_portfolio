@@ -36,6 +36,7 @@ export type Experience = {
   color?: string;
   highlightChildren?: React.ReactNode;
   modalChildren?: React.ReactNode;
+  experienceId?: string;
 };
 
 export type NavItem = {

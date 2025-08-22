@@ -9,13 +9,9 @@ import InnerHighlight from '../InnerHighlight';
 
 type ExperienceDetailsProps = {
   data: Experience;
-  children?: React.ReactNode;
 };
 
-export default function ExperienceDetails({
-  data,
-  children,
-}: ExperienceDetailsProps) {
+export default function ExperienceDetails({ data }: ExperienceDetailsProps) {
   return (
     <>
       <HighlightFeature
@@ -27,8 +23,8 @@ export default function ExperienceDetails({
         heading
       />
 
-      <div className="flex flex-col gap-8">
-        {data.body && <div className="text-lg text-center">{data.body}</div>}
+      <div className="flex flex-col gap-12">
+        {data.body && <div className="text-center">{data.body}</div>}
 
         {data.coreBullets && data.coreBullets.length > 0 && (
           <ModalSection icon={ListTodo} title="Core Responsibilities">
@@ -68,7 +64,7 @@ export default function ExperienceDetails({
           </ModalSection>
         )}
 
-        {children}
+        {data.modalChildren}
       </div>
     </>
   );

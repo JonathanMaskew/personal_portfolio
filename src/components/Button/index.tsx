@@ -23,7 +23,7 @@ export function Button({
   isFocused,
 }: ButtonProps) {
   const { scrollToHash } = useHashScroll();
-  const buttonClassName = `flex items-center gap-3 w-full ${background ? 'py-2 px-4 rounded-2xl' : ''} ${isFocused ? 'font-bold' : ''}`;
+  const buttonClassName = `flex items-center gap-3 w-full transition-all duration-200 ${background ? 'py-2 px-4 rounded-2xl' : ''} ${isFocused ? 'font-bold' : ''}`;
   const buttonStyle = {
     backgroundColor: background ? 'rgba(0,0,0,0.2)' : '',
     opacity: background || isFocused ? '1' : '0.6',
@@ -32,8 +32,9 @@ export function Button({
   const onMouseEnter = (
     e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
   ) => {
-    e.currentTarget.style.backgroundColor =
-      color || (background ? 'rgba(0,0,0,0.5)' : '');
+    e.currentTarget.style.backgroundColor = background
+      ? color || 'rgba(0,0,0,0.5)'
+      : '';
     e.currentTarget.style.opacity = '1';
   };
   const onMouseLeave = (

@@ -64,7 +64,7 @@ export default function Modal({
                 background: `radial-gradient(circle at top middle, ${color}BF 0%, color-mix(in srgb, ${color} 30%, black) 100%)`,
               }}
             >
-              <div className="p-6 md:p-12">{children}</div>
+              <div className="">{children}</div>
             </div>
           </div>
         </div>,

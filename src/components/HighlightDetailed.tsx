@@ -85,7 +85,7 @@ export default function HighlightDetailed({
                 </div>
               )}
               {subtitle && (
-                <div className="text-base leading-tight">{subtitle}</div>
+                <div className="text-sm leading-tight">{subtitle}</div>
               )}
               {subheading && (
                 <div className="text-xs leading-tight">{subheading}</div>

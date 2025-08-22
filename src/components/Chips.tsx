@@ -9,7 +9,7 @@ export default function Chips({ strings, color }: ChipsProps) {
       {strings.map((chipText, index) => (
         <div
           key={index}
-          className="px-3 py-1.5 text-xs rounded-full text-nowrap bg-white/20"
+          className="px-3 py-1.5 text-xs rounded-full text-nowrap bg-black/20"
           style={color ? { background: color } : undefined}
         >
           {chipText}
