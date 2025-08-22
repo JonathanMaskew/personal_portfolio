@@ -104,7 +104,9 @@ export default function Work() {
               }
             >
               <div className="flex flex-col gap-6">
-                <Chips strings={item.keywords} />
+                {item.keywords && item.keywords.length > 0 && (
+                  <Chips strings={item.keywords} />
+                )}
                 {item.images && (
                   <div className="bg-white/30 rounded-2xl p-4">
                     <Carousel color={item.color}>
@@ -127,7 +129,7 @@ export default function Work() {
       </div>
       {openedEducation && (
         <Modal
-          color={openedEducation.color}
+          color={openedEducation?.color || ''}
           open={modalOpened && !!openedEducation}
           onCloseCallback={() => {
             setOpenedEducationIndex(null);

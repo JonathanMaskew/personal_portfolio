@@ -58,7 +58,9 @@ export default function Work() {
                 />
               }
             >
-              <Chips strings={job.keywords ?? []} />
+              {job.keywords && job.keywords.length > 0 && (
+                <Chips strings={job.keywords} />
+              )}
             </HighlightDetailed>
           </div>
         ))}
@@ -84,7 +86,9 @@ export default function Work() {
                 subheading={job.subheading}
                 body={job.body}
               >
-                <Chips strings={job.keywords ?? []} />
+                {job.keywords && job.keywords.length > 0 && (
+                  <Chips strings={job.keywords} />
+                )}
               </HighlightDetailed>
             </div>
           ))}
