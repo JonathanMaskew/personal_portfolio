@@ -65,7 +65,7 @@ export default function TopNav() {
           <div>{current.label}</div>
           {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </button>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-6">
           {SECONDARY_NAV_ITEMS.map((item) => {
             return (
               <Button
