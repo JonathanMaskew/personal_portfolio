@@ -14,6 +14,7 @@ import {
   MousePointerClick,
   MonitorSmartphone,
   Construction,
+  ExternalLink,
 } from 'lucide-react';
 import { Button } from '../Button';
 import jsLogo from '@/app/Js_logo.png';
@@ -202,6 +203,15 @@ export default function Footer() {
                 As various experiences continue to shape me, this site will
                 continue to evolve.
               </ModalSection>
+              <div className="flex justify-center">
+                <Button
+                  text="View GitHub Repository"
+                  clickDetail="https://github.com/JonathanMaskew/personal_portfolio"
+                  newTab={true}
+                  icon={ExternalLink}
+                  background
+                />
+              </div>
             </div>
           </>
         )}
