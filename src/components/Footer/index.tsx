@@ -16,18 +16,18 @@ import {
   Construction,
 } from 'lucide-react';
 import { Button } from '../Button';
-import JsLogo from '../../app/Js_logo.png';
-import JsLogoWhite from '../../app/Js_logo_white.png';
-import JsLogoBlack from '../../app/Js_logo_black.png';
+import jsLogo from '@/app/Js_logo.png';
+import jsLogoWhite from '@/app/Js_logo_white.png';
+import jsLogoBlack from '@/app/Js_logo_black.png';
 import { useModal } from '@/hooks/useModal';
 import Modal from '../Modal';
 import Image from 'next/image';
-import JonathanCreations from '../../assets/images/Js_page/Jonathan_creations.gif';
-import JonathanAnimation from '../../assets/images/Js_page/Jonathan_animation.gif';
-import JsGif from '../../assets/images/Js_page/Js.gif';
-import JsCreations from '../../assets/images/Js_page/Js_creations.gif';
-import JsAnimation from '../../assets/images/Js_page/Js_animation.gif';
-import JsMulticolor from '../../assets/images/Js_page/Js_multicolor.gif';
+import jonathanCreations from '@/assets/images/Js_page/Jonathan_creations.gif';
+import jonathanAnimation from '@/assets/images/Js_page/Jonathan_animation.gif';
+import jsGif from '@/assets/images/Js_page/Js.gif';
+import jsCreations from '@/assets/images/Js_page/Js_creations.gif';
+import jsAnimation from '@/assets/images/Js_page/Js_animation.gif';
+import jsMulticolor from '@/assets/images/Js_page/Js_multicolor.gif';
 import { useState } from 'react';
 import ModalSection from '../ModalSection';
 import ButtonRow from '../ButtonRow';
@@ -82,7 +82,7 @@ export default function Footer() {
         />
         <HighlightDetailed
           color="#FF6B18"
-          imagery={JsLogo}
+          imagery={jsLogo}
           title="J's Page"
           subtitle="The Next Iteration of my Personal Brand"
           body="My personal portfolio, which I've previously referred to as J's Page, has taken many forms. This site being the latest."
@@ -209,7 +209,7 @@ export default function Footer() {
           <>
             <HighlightFeature
               color="#FF6B18"
-              imagery={JsLogo}
+              imagery={jsLogo}
               title="The Evolution of J's Page"
               subtitle="The Next Iteration of my Personal Brand"
               nested
@@ -235,12 +235,12 @@ export default function Footer() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4">
                 <Image
-                  src={JonathanAnimation}
+                  src={jonathanAnimation}
                   alt="Jonathan Animation"
                   className="w-full h-auto max-w-full"
                 />
                 <Image
-                  src={JonathanCreations}
+                  src={jonathanCreations}
                   alt="Jonathan Creations"
                   className="w-full h-auto max-w-full"
                 />
@@ -252,12 +252,12 @@ export default function Footer() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4">
                 <Image
-                  src={JsCreations}
+                  src={jsCreations}
                   alt="Js Creations"
                   className="w-full h-auto max-w-full"
                 />
                 <Image
-                  src={JsAnimation}
+                  src={jsAnimation}
                   alt="Js Animation"
                   className="w-full h-auto max-w-full"
                 />
@@ -269,12 +269,12 @@ export default function Footer() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4">
                 <Image
-                  src={JsGif}
+                  src={jsGif}
                   alt="Js Gif"
                   className="w-full h-auto max-w-full"
                 />
                 <Image
-                  src={JsMulticolor}
+                  src={jsMulticolor}
                   alt="Js Multicolor"
                   className="w-full h-auto max-w-full"
                 />
@@ -287,17 +287,17 @@ export default function Footer() {
               </div>
               <div className="grid grid-cols-3 gap-4 md:gap-8 w-fit mx-auto">
                 <Image
-                  src={JsLogo}
+                  src={jsLogo}
                   alt="J's Page Logo"
                   className="w-full h-auto max-w-[75px] sm:max-w-[100px]"
                 />
                 <Image
-                  src={JsLogoWhite}
+                  src={jsLogoWhite}
                   alt="J's Page Logo white"
                   className="w-full h-auto max-w-[75px] sm:max-w-[100px]"
                 />
                 <Image
-                  src={JsLogoBlack}
+                  src={jsLogoBlack}
                   alt="J's Page Logo black"
                   className="w-full h-auto max-w-[75px] sm:max-w-[100px]"
                 />

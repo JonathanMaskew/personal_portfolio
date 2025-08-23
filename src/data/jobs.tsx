@@ -178,7 +178,7 @@ export const getMoreJobsData = (): Experience[] => [
               icon={ExternalLink}
               newTab={true}
               text="PDF of Stovetop Cheat Sheet"
-              clickDetail="/pdfs/texy_mexy_limited_stove_top_cheat_sheet.pdf"
+              clickDetail="/pdfs/texy_mexy_stovetop_cheat_sheet.pdf"
               background
               color="#E9CD2E"
             />
@@ -186,7 +186,7 @@ export const getMoreJobsData = (): Experience[] => [
               icon={ExternalLink}
               newTab={true}
               text="PDF of Product Waste Log"
-              clickDetail="/pdfs/texy_mexy_limited_product_waste_log.pdf"
+              clickDetail="/pdfs/texy_mexy_product_waste_log.pdf"
               background
               color="#E9CD2E"
             />

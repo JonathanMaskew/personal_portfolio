@@ -33,14 +33,14 @@ export default function Hero() {
           <div className="absolute transform z-10">
             <Image
               src={graduation}
-              alt="Costa Rica zip-lining"
+              alt="Purdue graduation"
               className="w-40 h-40 md:w-50 md:h-50 object-cover rounded-sm ring-6 border-white border-6 shadow-2xl shadow-black"
             />
           </div>
           <div className="absolute transform -rotate-6 right-0 top-35 md:top-5">
             <Image
               src={costaRica}
-              alt="Purdue graduation"
+              alt="Costa Rica zip-lining"
               className="w-30 h-30 md:w-40 md:h-40 object-cover rounded-sm ring-6 border-white border-6"
             />
           </div>

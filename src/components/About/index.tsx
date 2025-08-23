@@ -12,12 +12,12 @@ import tennis from '@/assets/images/tennis.jpg';
 import manatee from '@/assets/images/manatee_oof.gif';
 import lucy from '@/assets/images/lucy.png';
 import reeses from '@/assets/images/reeses.jpg';
-import tater_tots from '@/assets/images/tater_tots.jpg';
+import taterTots from '@/assets/images/tater_tots.jpg';
 import dinosaur from '@/assets/images/dinosaur.png';
 import travel from '@/assets/images/travel.png';
 import roundabouts from '@/assets/images/roundabouts.jpg';
 import HighlightFeature from '../HighlightFeature';
-import carousel_of_progress from '@/assets/images/carousel_of_progress.png';
+import carouselOfProgress from '@/assets/images/carousel_of_progress.png';
 import { Button } from '../Button';
 import ButtonRow from '../ButtonRow';
 import { SECONDARY_NAV_ITEMS } from '@/data/nav';
@@ -144,12 +144,12 @@ export default function About() {
         <Carousel color="#f97316">
           <CarouselImageItem
             image={tennis}
-            text="I played varisty tennis in high school and continue to play recreationally."
+            text="I played varsity tennis in high school and continue to play recreationally."
             color="#f97316"
           />
           <CarouselImageItem
             image={travel}
-            text="I love to explore new places, having travelled to 13 countries and 40 US states."
+            text="I love to explore new places, having traveled to 13 countries and 40 US states."
             color="#f97316"
           />
           <CarouselImageItem
@@ -168,7 +168,7 @@ export default function About() {
             color="#f97316"
           />
           <CarouselImageItem
-            image={tater_tots}
+            image={taterTots}
             text="Tater Tots are superior to french fries. Try to convince me otherwise."
             color="#f97316"
           />
@@ -178,7 +178,7 @@ export default function About() {
             color="#f97316"
           />
           <CarouselImageItem
-            image={carousel_of_progress}
+            image={carouselOfProgress}
             text="I could ride the Carousel of Progress in a loop. There's a Great Big Beautiful Tomorrow!"
             color="#f97316"
           />

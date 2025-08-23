@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Experience } from '@/types';
-import htf_logo_white from '@/assets/images/hack_the_future/htf_logo_white.png';
-import purdue_logo from '@/assets/images/purdue_logo.png';
+import htfLogoWhite from '@/assets/images/hack_the_future/htf_logo_white.png';
+import purdueLogo from '@/assets/images/purdue_logo.png';
 import InnerHighlight from '@/components/InnerHighlight';
 import Carousel, {
   CarouselItem,
@@ -11,70 +11,66 @@ import ModalSection from '@/components/ModalSection';
 import {
   ExternalLink,
   BookOpen,
-  ClipboardList,
-  Figma,
   Image as ImageIcon,
   Megaphone,
   SquarePlay,
-  Lightbulb,
   Users,
-  FlaskConical,
   Tally5,
 } from 'lucide-react';
-import design_and_marketing from '@/assets/images/hack_the_future/design_and_marketing.png';
-import design_and_marketing_2 from '@/assets/images/hack_the_future/design_and_marketing_2.png';
-import design_and_marketing_3 from '@/assets/images/hack_the_future/design_and_marketing_3.png';
-import design_and_marketing_4 from '@/assets/images/hack_the_future/design_and_marketing_4.png';
-import design_and_marketing_5 from '@/assets/images/hack_the_future/design_and_marketing_5.png';
-import design_and_marketing_6 from '@/assets/images/hack_the_future/design_and_marketing_6.png';
-import events_and_outreach from '@/assets/images/hack_the_future/events_and_outreach.png';
-import events_and_outreach_2 from '@/assets/images/hack_the_future/events_and_outreach_2.png';
-import events_and_outreach_3 from '@/assets/images/hack_the_future/events_and_outreach_3.png';
-import events_and_outreach_4 from '@/assets/images/hack_the_future/events_and_outreach_4.png';
-import non_profit_and_member_recruitment from '@/assets/images/hack_the_future/non_profit_and_member_recruitment.png';
-import non_profit_and_member_recruitment_2 from '@/assets/images/hack_the_future/non_profit_and_member_recruitment_2.png';
-import non_profit_and_member_recruitment_3 from '@/assets/images/hack_the_future/non_profit_and_member_recruitment_3.png';
-import non_profit_and_member_recruitment_4 from '@/assets/images/hack_the_future/non_profit_and_member_recruitment_4.png';
-import non_profit_and_member_recruitment_5 from '@/assets/images/hack_the_future/non_profit_and_member_recruitment_5.png';
-import non_profit_and_member_recruitment_6 from '@/assets/images/hack_the_future/non_profit_and_member_recruitment_6.png';
-import cool_vending_machine_finder_pin from '@/assets/images/cool_vending_machine_finder_pin.png';
-import reeses_ratings from '@/assets/images/reeses_ratings.png';
-import cool_card_games from '@/assets/images/cool_card_games.png';
+import designAndMarketing from '@/assets/images/hack_the_future/design_and_marketing.png';
+import designAndMarketing2 from '@/assets/images/hack_the_future/design_and_marketing_2.png';
+import designAndMarketing3 from '@/assets/images/hack_the_future/design_and_marketing_3.png';
+import designAndMarketing4 from '@/assets/images/hack_the_future/design_and_marketing_4.png';
+import designAndMarketing5 from '@/assets/images/hack_the_future/design_and_marketing_5.png';
+import designAndMarketing6 from '@/assets/images/hack_the_future/design_and_marketing_6.png';
+import eventsAndOutreach from '@/assets/images/hack_the_future/events_and_outreach.png';
+import eventsAndOutreach2 from '@/assets/images/hack_the_future/events_and_outreach_2.png';
+import eventsAndOutreach3 from '@/assets/images/hack_the_future/events_and_outreach_3.png';
+import eventsAndOutreach4 from '@/assets/images/hack_the_future/events_and_outreach_4.png';
+import nonProfitAndMemberRecruitment from '@/assets/images/hack_the_future/non_profit_and_member_recruitment.png';
+import nonProfitAndMemberRecruitment2 from '@/assets/images/hack_the_future/non_profit_and_member_recruitment_2.png';
+import nonProfitAndMemberRecruitment3 from '@/assets/images/hack_the_future/non_profit_and_member_recruitment_3.png';
+import nonProfitAndMemberRecruitment4 from '@/assets/images/hack_the_future/non_profit_and_member_recruitment_4.png';
+import nonProfitAndMemberRecruitment5 from '@/assets/images/hack_the_future/non_profit_and_member_recruitment_5.png';
+import nonProfitAndMemberRecruitment6 from '@/assets/images/hack_the_future/non_profit_and_member_recruitment_6.png';
+import coolVendingMachineFinderPin from '@/assets/images/cool_vending_machine_finder_pin.png';
+import reesesRatings from '@/assets/images/reeses_ratings.png';
+import coolCardGames from '@/assets/images/cool_card_games.png';
 import sundae from '@/assets/images/sundae.png';
-import noblesville_schools from '@/assets/images/noblesville_schools.png';
-import national_honors_society from '@/assets/images/national_honors_society.png';
-import key_club from '@/assets/images/key_club.png';
+import noblesvilleSchools from '@/assets/images/noblesville_schools.png';
+import nationalHonorsSociety from '@/assets/images/national_honors_society.png';
+import keyClub from '@/assets/images/key_club.png';
 import { Button } from '@/components/Button';
 import ButtonRow from '@/components/ButtonRow';
 import Chips from '@/components/Chips';
-import htf_carousel_of_progress from '@/assets/images/hack_the_future/htf_carousel_of_progress.png';
-import htf_catapult from '@/assets/images/hack_the_future/htf_catapult.png';
-import htf_code_round from '@/assets/images/hack_the_future/htf_code_round.png';
-import htf_code from '@/assets/images/hack_the_future/htf_code.png';
-import htf_gameshow from '@/assets/images/hack_the_future/htf_gameshow.png';
-import htf_graduation from '@/assets/images/hack_the_future/htf_graduation.png';
-import htf_innovateher from '@/assets/images/hack_the_future/htf_innovateher.png';
-import htf_jurassic from '@/assets/images/hack_the_future/htf_jurassic.png';
-import htf_neon from '@/assets/images/hack_the_future/htf_neon.png';
-import htf_profile from '@/assets/images/hack_the_future/htf_profile.png';
-import htf_thankful from '@/assets/images/hack_the_future/htf_thankful.png';
-import htf_your_future from '@/assets/images/hack_the_future/htf_your_future.png';
-import htf_spooky from '@/assets/images/hack_the_future/htf_spooky.png';
-import htf_snowglobe from '@/assets/images/hack_the_future/htf_snowglobe.png';
-import htf_pizza from '@/assets/images/hack_the_future/htf_pizza.png';
-import htf_ornament from '@/assets/images/hack_the_future/htf_ornament.png';
-import htf_back_to_the_future from '@/assets/images/hack_the_future/htf_back_to_the_future.png';
-import htf_logo from '@/assets/images/hack_the_future/htf_logo.png';
-import noblesville_millers from '@/assets/images/noblesville_millers.png';
-import cool_vending_machine_finder from '@/assets/images/cool_vending_machine_finder.png';
-import cool_vending_machine from '@/assets/images/cool_vending_machine.png';
+import htfCarouselOfProgress from '@/assets/images/hack_the_future/htf_carousel_of_progress.png';
+import htfCatapult from '@/assets/images/hack_the_future/htf_catapult.png';
+import htfCodeRound from '@/assets/images/hack_the_future/htf_code_round.png';
+import htfCode from '@/assets/images/hack_the_future/htf_code.png';
+import htfGameshow from '@/assets/images/hack_the_future/htf_gameshow.png';
+import htfGraduation from '@/assets/images/hack_the_future/htf_graduation.png';
+import htfInnovateHer from '@/assets/images/hack_the_future/htf_innovateher.png';
+import htfJurassic from '@/assets/images/hack_the_future/htf_jurassic.png';
+import htfNeon from '@/assets/images/hack_the_future/htf_neon.png';
+import htfProfile from '@/assets/images/hack_the_future/htf_profile.png';
+import htfThankful from '@/assets/images/hack_the_future/htf_thankful.png';
+import htfYourFuture from '@/assets/images/hack_the_future/htf_your_future.png';
+import htfSpooky from '@/assets/images/hack_the_future/htf_spooky.png';
+import htfSnowglobe from '@/assets/images/hack_the_future/htf_snowglobe.png';
+import htfPizza from '@/assets/images/hack_the_future/htf_pizza.png';
+import htfOrnament from '@/assets/images/hack_the_future/htf_ornament.png';
+import htfBackToTheFuture from '@/assets/images/hack_the_future/htf_back_to_the_future.png';
+import htfLogo from '@/assets/images/hack_the_future/htf_logo.png';
+import noblesvilleMillers from '@/assets/images/noblesville_millers.png';
+import coolVendingMachineFinder from '@/assets/images/cool_vending_machine_finder.png';
+import coolVendingMachine from '@/assets/images/cool_vending_machine.png';
 import Image from 'next/image';
 
 export const getEducationData = (): Experience[] => [
   {
     id: 'purdue',
     color: '#CFB991',
-    imagery: purdue_logo,
+    imagery: purdueLogo,
     title: 'Bachelor of Science in Computer Science',
     subtitle: 'Concentration in Software Engineering',
     subheading: 'Purdue University, 2020 - 2024',
@@ -89,7 +85,7 @@ export const getEducationData = (): Experience[] => [
   {
     id: 'htf-design-director',
     color: '#00EB88',
-    imagery: htf_logo_white,
+    imagery: htfLogoWhite,
     title: 'Design Director',
     subtitle: 'Hack the Future',
     subheading: 'Purdue University, March 2022 - May 2024',
@@ -124,126 +120,126 @@ export const getEducationData = (): Experience[] => [
         >
           <CarouselItem>
             <Image
-              src={htf_logo}
+              src={htfLogo}
               alt="HTF Logo"
               className="w-20 h-auto object-contain"
             />
           </CarouselItem>
           <CarouselItem>
             <Image
-              src={htf_profile}
+              src={htfProfile}
               alt="HTF Profile"
               className="w-20 h-auto object-contain"
             />
           </CarouselItem>
           <CarouselItem>
             <Image
-              src={htf_jurassic}
+              src={htfJurassic}
               alt="HTF Jurassic"
               className="w-20 h-auto object-contain"
             />
           </CarouselItem>
           <CarouselItem>
             <Image
-              src={htf_code}
+              src={htfCode}
               alt="HTF Code"
               className="w-20 h-auto object-contain"
             />
           </CarouselItem>
           <CarouselItem>
             <Image
-              src={htf_spooky}
+              src={htfSpooky}
               alt="HTF Spooky"
               className="w-20 h-auto object-contain"
             />
           </CarouselItem>
           <CarouselItem>
             <Image
-              src={htf_thankful}
+              src={htfThankful}
               alt="HTF Thankful"
               className="w-20 h-auto object-contain"
             />
           </CarouselItem>
           <CarouselItem>
             <Image
-              src={htf_ornament}
+              src={htfOrnament}
               alt="HTF Ornament"
               className="w-20 h-auto object-contain"
             />
           </CarouselItem>
           <CarouselItem>
             <Image
-              src={htf_snowglobe}
+              src={htfSnowglobe}
               alt="HTF Snowglobe"
               className="w-20 h-auto object-contain"
             />
           </CarouselItem>
           <CarouselItem>
             <Image
-              src={htf_your_future}
+              src={htfYourFuture}
               alt="HTF Your Future"
               className="w-20 h-auto object-contain"
             />
           </CarouselItem>
           <CarouselItem>
             <Image
-              src={htf_innovateher}
+              src={htfInnovateHer}
               alt="HTF InnovateHer"
               className="w-20 h-auto object-contain"
             />
           </CarouselItem>
           <CarouselItem>
             <Image
-              src={htf_catapult}
+              src={htfCatapult}
               alt="HTF Catapult"
               className="w-20 h-auto object-contain"
             />
           </CarouselItem>
           <CarouselItem>
             <Image
-              src={htf_gameshow}
+              src={htfGameshow}
               alt="HTF Gameshow"
               className="w-20 h-auto object-contain"
             />
           </CarouselItem>
           <CarouselItem>
             <Image
-              src={htf_code_round}
+              src={htfCodeRound}
               alt="HTF Code Round"
               className="w-20 h-auto object-contain"
             />
           </CarouselItem>
           <CarouselItem>
             <Image
-              src={htf_carousel_of_progress}
+              src={htfCarouselOfProgress}
               alt="HTF Carousel of Progress"
               className="w-20 h-auto object-contain"
             />
           </CarouselItem>
           <CarouselItem>
             <Image
-              src={htf_back_to_the_future}
+              src={htfBackToTheFuture}
               alt="HTF Back to the Future"
               className="w-20 h-auto object-contain"
             />
           </CarouselItem>
           <CarouselItem>
             <Image
-              src={htf_neon}
+              src={htfNeon}
               alt="HTF Neon"
               className="w-20 h-auto object-contain"
             />
           </CarouselItem>
           <CarouselItem>
             <Image
-              src={htf_graduation}
+              src={htfGraduation}
               alt="HTF Graduation"
               className="w-20 h-auto object-contain"
             />
           </CarouselItem>
           <CarouselItem>
             <Image
-              src={htf_pizza}
+              src={htfPizza}
               alt="HTF Pizza"
               className="w-20 h-auto object-contain"
             />
@@ -280,12 +276,12 @@ export const getEducationData = (): Experience[] => [
             />
           </ButtonRow>
           <Carousel color="#00EB88">
-            <CarouselImageItem image={design_and_marketing} size={256} />
-            <CarouselImageItem image={design_and_marketing_2} size={256} />
-            <CarouselImageItem image={design_and_marketing_3} size={256} />
-            <CarouselImageItem image={design_and_marketing_4} size={256} />
-            <CarouselImageItem image={design_and_marketing_5} size={256} />
-            <CarouselImageItem image={design_and_marketing_6} size={256} />
+            <CarouselImageItem image={designAndMarketing} size={256} />
+            <CarouselImageItem image={designAndMarketing2} size={256} />
+            <CarouselImageItem image={designAndMarketing3} size={256} />
+            <CarouselImageItem image={designAndMarketing4} size={256} />
+            <CarouselImageItem image={designAndMarketing5} size={256} />
+            <CarouselImageItem image={designAndMarketing6} size={256} />
           </Carousel>
         </ModalSection>
 
@@ -300,10 +296,10 @@ export const getEducationData = (): Experience[] => [
             beyond our graduation.
           </div>
           <Carousel color="#00EB88">
-            <CarouselImageItem image={events_and_outreach} size={256} />
-            <CarouselImageItem image={events_and_outreach_2} size={256} />
-            <CarouselImageItem image={events_and_outreach_3} size={256} />
-            <CarouselImageItem image={events_and_outreach_4} size={256} />
+            <CarouselImageItem image={eventsAndOutreach} size={256} />
+            <CarouselImageItem image={eventsAndOutreach2} size={256} />
+            <CarouselImageItem image={eventsAndOutreach3} size={256} />
+            <CarouselImageItem image={eventsAndOutreach4} size={256} />
           </Carousel>
         </ModalSection>
 
@@ -317,27 +313,27 @@ export const getEducationData = (): Experience[] => [
           </div>
           <Carousel color="#00EB88">
             <CarouselImageItem
-              image={non_profit_and_member_recruitment}
+              image={nonProfitAndMemberRecruitment}
               size={256}
             />
             <CarouselImageItem
-              image={non_profit_and_member_recruitment_2}
+              image={nonProfitAndMemberRecruitment2}
               size={256}
             />
             <CarouselImageItem
-              image={non_profit_and_member_recruitment_3}
+              image={nonProfitAndMemberRecruitment3}
               size={256}
             />
             <CarouselImageItem
-              image={non_profit_and_member_recruitment_4}
+              image={nonProfitAndMemberRecruitment4}
               size={256}
             />
             <CarouselImageItem
-              image={non_profit_and_member_recruitment_5}
+              image={nonProfitAndMemberRecruitment5}
               size={256}
             />
             <CarouselImageItem
-              image={non_profit_and_member_recruitment_6}
+              image={nonProfitAndMemberRecruitment6}
               size={256}
             />
           </Carousel>
@@ -363,7 +359,7 @@ export const getEducationData = (): Experience[] => [
         <div className="text-sm">
           Altogether, our ambitious efforts to grow the club were a success, and
           we&apos;ve continued to see the club grow after our graduation as our
-          efforts led to new oppurtunities for the club.
+          efforts led to new opportunities for the club.
         </div>
       </div>
     ),
@@ -371,7 +367,7 @@ export const getEducationData = (): Experience[] => [
   {
     id: 'htf-secretary',
     color: '#03C652',
-    imagery: htf_logo_white,
+    imagery: htfLogoWhite,
     title: 'Secretary',
     subtitle: 'Hack the Future',
     subheading: 'Purdue University, November 2023 - May 2024',
@@ -382,7 +378,7 @@ export const getEducationData = (): Experience[] => [
   {
     id: 'htf-software-developer',
     color: '#277D4A',
-    imagery: htf_logo_white,
+    imagery: htfLogoWhite,
     title: 'Software Developer',
     subtitle: 'Hack the Future',
     subheading: 'Purdue University, Sep 2021 - May 2022',
@@ -400,7 +396,7 @@ export const getMoreEducationData = (): Experience[] => [
   {
     id: 'reeses-ratings',
     color: '#FE5200',
-    imagery: reeses_ratings,
+    imagery: reesesRatings,
     title: "Reese's Ratings",
     subtitle: 'CS 348 - Information Systems',
     subheading: 'Purdue University, Spring 2024',
@@ -413,7 +409,7 @@ export const getMoreEducationData = (): Experience[] => [
   {
     id: 'cool-vending-machine-finder',
     color: '#D4B88C',
-    imagery: cool_vending_machine_finder_pin,
+    imagery: coolVendingMachineFinderPin,
     title: 'Cool Vending Machine Finder',
     subtitle: 'CS 407 - Software Engineering Senior Project',
     subheading: 'Purdue University, Fall 2023',
@@ -429,12 +425,12 @@ export const getMoreEducationData = (): Experience[] => [
           </div>
           <div className="flex justify-center gap-8 flex-wrap">
             <Image
-              src={cool_vending_machine_finder}
+              src={coolVendingMachineFinder}
               alt="Cool Vending Machine Finder"
               className="w-60 md:w-80 h-auto object-contain"
             />
             <Image
-              src={cool_vending_machine}
+              src={coolVendingMachine}
               alt="Cool Vending Machine"
               className="w-40 h-auto object-contain"
             />
@@ -446,7 +442,7 @@ export const getMoreEducationData = (): Experience[] => [
   {
     id: 'cool-card-games',
     color: '#696969',
-    imagery: cool_card_games,
+    imagery: coolCardGames,
     title: 'Cool Card Games',
     subtitle: 'CS 307 - Software Engineering',
     subheading: 'Purdue University, Fall 2022',
@@ -668,7 +664,7 @@ export const getMoreEducationData = (): Experience[] => [
   {
     id: 'noblesville-high-school',
     color: '#AA985D',
-    imagery: noblesville_schools,
+    imagery: noblesvilleSchools,
     title: 'Core 40 with Academic Honors',
     subtitle: 'Noblesville High School',
     subheading: 'Noblesville, IN, 2016 - 2020',
@@ -691,7 +687,7 @@ export const getMoreEducationData = (): Experience[] => [
   {
     id: 'national-honors-society',
     color: '#015395',
-    imagery: national_honors_society,
+    imagery: nationalHonorsSociety,
     title: 'National Honors Society',
     subheading: 'Noblesville High School, March 2019 - May 2020',
     body: 'Complete community service and tutoring hours. Students are held to strict attendance and due date policies in which students are expected to be present at every meeting and complete a minimum of 50 service hours by certain dates. Only students displaying the qualities of leadership, service, scholarship, and character with very high academic performance are invited into the NHS.',
@@ -700,7 +696,7 @@ export const getMoreEducationData = (): Experience[] => [
   {
     id: 'tennis-manager',
     color: '#AA985D',
-    imagery: noblesville_millers,
+    imagery: noblesvilleMillers,
     title: 'Manager for Girls Tennis Team',
     subheading: 'Noblesville High School, Spring 2018, 2019',
     body: 'Exhibit skills of leadership and responsibility in recording results of each tennis match during the girls season. Willingly participate in practice to help players improve. Independently and choicefully designed a new, more intuitive score sheet to record results of matches.',
@@ -729,7 +725,7 @@ export const getMoreEducationData = (): Experience[] => [
   {
     id: 'key-club',
     color: '#003975',
-    imagery: key_club,
+    imagery: keyClub,
     title: 'Publicity Coordinator',
     subtitle: 'Key Club',
     subheading: 'Noblesville High School, October 2017 - May 2020',
