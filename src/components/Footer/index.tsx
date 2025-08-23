@@ -38,7 +38,7 @@ export default function Footer() {
 
   return (
     <SectionWrapper
-      title="Thanks for visiting my portfolio!"
+      title="Thanks for visiting my site!"
       subtext={
         <div className="flex flex-col gap-2">
           Please don&apos;t hesitate to reach out. I&apos;d love to connect!
@@ -136,7 +136,7 @@ export default function Footer() {
               nested
               heading
             />
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-10">
               <div>
                 I put my full dedication into everything I do to achieve the
                 best possible output. Everything I do is done with care and I
@@ -215,7 +215,7 @@ export default function Footer() {
               nested
               heading
             />
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-10">
               <div>
                 I love to imagine the experience that others perceive, and
                 building a personal brand allowed me to be creative in that

@@ -23,7 +23,7 @@ export default function ExperienceDetails({ data }: ExperienceDetailsProps) {
         heading
       />
 
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-10">
         {data.body && <div className="text-center">{data.body}</div>}
 
         {data.coreBullets && data.coreBullets.length > 0 && (

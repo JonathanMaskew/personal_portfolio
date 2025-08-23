@@ -23,6 +23,7 @@ import ButtonRow from '../ButtonRow';
 import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import { useHashScroll } from '@/hooks/useHashScroll';
 import type React from 'react';
+import Chips from '../Chips';
 
 export default function About() {
   const { scrollToHash } = useHashScroll();
@@ -93,11 +94,46 @@ export default function About() {
         <div className="col-span-full">
           <HighlightFeature
             imagery={Blend}
-            title="Blended Experience"
-            subtitle="User-focused Development"
-            body="I've done a little bit of everything - website design & development, branding, marketing, and so much more. At the core of everything, I'm focused on how it makes an impact on the user."
+            title="Well-Rounded Experience"
+            subtitle="User-driven Development"
+            body="I've got a robust skillset - from website design & development, to user research and prototyping, to branding and marketing, and more. At the core of everything I do, I'm focused on how it impacts the user."
             color="#FF6B18"
-          />
+          >
+            <Chips
+              strings={[
+                'Front-end',
+                'Next.js',
+                'React',
+                'Tailwind CSS',
+                'Angular',
+                'Component-based Architecture',
+                'Responsive Web Development',
+                'TypeScript',
+                'Git',
+                'UX/UI Design',
+                'Figma',
+                'Scrum',
+                'Agile',
+                'Code Reviews',
+                'APIs',
+                'LLMs',
+                'User Research',
+                'Prototyping',
+                'Full-stack',
+                'JavaScript',
+                'HTML',
+                'CSS',
+                'PHP',
+                'Java',
+                'C',
+                'Unit Testing',
+                'Accessibility',
+                'Branding',
+                'Digital Marketing',
+                'Graphic Design',
+              ]}
+            />
+          </HighlightFeature>
         </div>
       </div>
 

@@ -1,5 +1,6 @@
 import { Icon } from '@/types';
 import { useHashScroll } from '@/hooks/useHashScroll';
+import { useHoverPressHandlers } from '@/hooks/useHoverPressHandlers';
 interface ButtonProps {
   text: string;
   clickDetail: string | (() => void);
@@ -30,20 +31,24 @@ export function Button({
     opacity: background || isFocused ? '1' : '0.6',
   };
 
-  const onMouseEnter = (
-    e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
-  ) => {
-    e.currentTarget.style.backgroundColor = background
-      ? color || 'rgba(0,0,0,0.5)'
-      : '';
-    e.currentTarget.style.opacity = '1';
+  const applyHoverStyle = (el: HTMLButtonElement | HTMLAnchorElement) => {
+    el.style.backgroundColor = background ? color || 'rgba(0,0,0,0.5)' : '';
+    el.style.opacity = '1';
   };
-  const onMouseLeave = (
-    e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
-  ) => {
-    e.currentTarget.style.backgroundColor = buttonStyle.backgroundColor;
-    e.currentTarget.style.opacity = buttonStyle.opacity;
+  const revertHoverStyle = (el: HTMLButtonElement | HTMLAnchorElement) => {
+    el.style.backgroundColor = buttonStyle.backgroundColor as string;
+    el.style.opacity = buttonStyle.opacity as string;
   };
+  const {
+    onPointerEnter,
+    onPointerLeave,
+    onPointerDown,
+    onPointerUp,
+    onPointerCancel,
+  } = useHoverPressHandlers<HTMLButtonElement | HTMLAnchorElement>(
+    applyHoverStyle as (el: HTMLButtonElement | HTMLAnchorElement) => void,
+    revertHoverStyle as (el: HTMLButtonElement | HTMLAnchorElement) => void
+  );
 
   const content = (
     <>
@@ -58,8 +63,11 @@ export function Button({
         onClick={clickDetail}
         className={`${buttonClassName}`}
         style={buttonStyle}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
+        onPointerEnter={onPointerEnter}
+        onPointerLeave={onPointerLeave}
+        onPointerDown={onPointerDown}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerCancel}
       >
         {content}
       </button>
@@ -77,8 +85,11 @@ export function Button({
           onClick={handleEmailClick}
           className={`${buttonClassName} cursor-pointer`}
           style={buttonStyle}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
+          onPointerEnter={onPointerEnter}
+          onPointerLeave={onPointerLeave}
+          onPointerDown={onPointerDown}
+          onPointerUp={onPointerUp}
+          onPointerCancel={onPointerCancel}
         >
           {content}
         </button>
@@ -92,8 +103,11 @@ export function Button({
           onClick={() => scrollToHash(clickDetail)}
           className={`${buttonClassName}`}
           style={buttonStyle}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
+          onPointerEnter={onPointerEnter}
+          onPointerLeave={onPointerLeave}
+          onPointerDown={onPointerDown}
+          onPointerUp={onPointerUp}
+          onPointerCancel={onPointerCancel}
         >
           {content}
         </button>
@@ -108,8 +122,11 @@ export function Button({
         rel="noopener noreferrer"
         className={`${buttonClassName}`}
         style={buttonStyle}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
+        onPointerEnter={onPointerEnter}
+        onPointerLeave={onPointerLeave}
+        onPointerDown={onPointerDown}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerCancel}
       >
         {content}
       </a>

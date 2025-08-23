@@ -102,8 +102,7 @@ export const getEducationData = (): Experience[] => [
     highlights: [
       {
         icon: Megaphone,
-        title:
-          'Revamped Outreach Efforts, Achieving a Nearly 90% Increase in Applicants',
+        title: 'Achieved a Nearly 90% Increase in Applicants',
         text: 'Revamped outreach efforts and designed marketing in Figma leading to a record-breaking nearly 90% increase in applicants YoY.',
       },
     ],
@@ -253,7 +252,7 @@ export const getEducationData = (): Experience[] => [
       </div>
     ),
     modalChildren: (
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-10">
         <ModalSection icon={ImageIcon} title="Design & Branding Summary">
           <div className="text-sm">
             The core of my work as Design Director, I created all graphics for
@@ -422,7 +421,7 @@ export const getMoreEducationData = (): Experience[] => [
     coreBullets: [],
     highlightChildren: <Chips strings={['React', 'Firebase', 'Front-end']} />,
     modalChildren: (
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-10">
         <ModalSection icon={ImageIcon} title="Branding & Graphics">
           <div className="text-sm">
             I designed a logo for this class project, and was largely in charge
@@ -481,7 +480,7 @@ export const getMoreEducationData = (): Experience[] => [
       />
     ),
     modalChildren: (
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-10">
         <ModalSection icon={BookOpen} title="Ideation">
           <div className="text-sm">
             First things first, I had a dream. Proposing the dream is the only

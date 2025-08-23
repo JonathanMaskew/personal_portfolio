@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHoverPressHandlers } from '@/hooks/useHoverPressHandlers';
 import type { HighlightProps, Icon } from '@/types';
 import Image, { StaticImageData } from 'next/image';
 
@@ -30,26 +31,34 @@ export default function HighlightFeature({
         };
   const paddingClass = heading ? 'p-0' : nested ? 'p-4' : 'p-6 md:p-8';
 
+  const {
+    onPointerEnter,
+    onPointerLeave,
+    onPointerDown,
+    onPointerUp,
+    onPointerCancel,
+  } = useHoverPressHandlers<HTMLDivElement>(
+    (el) => {
+      if (onClick && color) {
+        (el as HTMLDivElement).style.boxShadow = `inset 0 0 0 4px ${color}`;
+      }
+    },
+    (el) => {
+      if (onClick && color) {
+        (el as HTMLDivElement).style.boxShadow = 'none';
+      }
+    }
+  );
+
   return (
     <div
       className={`flex flex-col ${paddingClass} ${heading ? 'mb-8 items-center' : ''} ${actionButton ? 'pb-18 md:pb-18 cursor-pointer' : ''} rounded-2xl ${nested ? 'h-fit' : 'h-full'} w-full gap-6 relative`}
       style={containerStyle}
-      onMouseEnter={
-        onClick && color
-          ? (e) => {
-              (e.currentTarget as HTMLDivElement).style.boxShadow =
-                `inset 0 0 0 4px ${color}`;
-            }
-          : undefined
-      }
-      onMouseLeave={
-        onClick && color
-          ? (e) => {
-              (e.currentTarget as HTMLDivElement).style.boxShadow = 'none';
-              // `inset 0 0 0 2px ${color}90`;
-            }
-          : undefined
-      }
+      onPointerEnter={onClick && color ? onPointerEnter : undefined}
+      onPointerLeave={onClick && color ? onPointerLeave : undefined}
+      onPointerDown={onClick && color ? onPointerDown : undefined}
+      onPointerUp={onClick && color ? onPointerUp : undefined}
+      onPointerCancel={onClick && color ? onPointerCancel : undefined}
       onClick={onClick}
     >
       {hasHeaderContent && (

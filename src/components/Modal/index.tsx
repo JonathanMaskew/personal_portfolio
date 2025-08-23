@@ -1,6 +1,7 @@
 'use client';
 import { X } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { useHoverPressHandlers } from '@/hooks/useHoverPressHandlers';
 import { createPortal } from 'react-dom';
 
 type ModalProps = {
@@ -26,6 +27,21 @@ export default function Modal({
     }
   }, [open]);
 
+  const {
+    onPointerEnter,
+    onPointerLeave,
+    onPointerDown,
+    onPointerUp,
+    onPointerCancel,
+  } = useHoverPressHandlers<HTMLButtonElement>(
+    (el) => {
+      (el as HTMLButtonElement).style.backgroundColor = color;
+    },
+    (el) => {
+      (el as HTMLButtonElement).style.backgroundColor = '#ffffff1A';
+    }
+  );
+
   if (!open) return null;
 
   const closeButton = (
@@ -35,13 +51,11 @@ export default function Modal({
       style={{
         backgroundColor: '#ffffff1A',
       }}
-      onMouseEnter={(e) => {
-        (e.currentTarget as HTMLButtonElement).style.backgroundColor = color;
-      }}
-      onMouseLeave={(e) => {
-        (e.currentTarget as HTMLButtonElement).style.backgroundColor =
-          '#ffffff1A';
-      }}
+      onPointerEnter={onPointerEnter}
+      onPointerLeave={onPointerLeave}
+      onPointerDown={onPointerDown}
+      onPointerUp={onPointerUp}
+      onPointerCancel={onPointerCancel}
     >
       <X size={24} className="text-white" />
     </button>

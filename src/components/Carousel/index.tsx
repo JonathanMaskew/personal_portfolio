@@ -1,3 +1,5 @@
+import { useHoverPressHandlers } from '@/hooks/useHoverPressHandlers';
+import { useMobile } from '@/hooks/useMobile';
 import Image, { StaticImageData } from 'next/image';
 import React, { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -14,6 +16,7 @@ export default function Carousel({
   color,
 }: CarouselProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const { isMobile } = useMobile();
 
   const scrollLeft = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -31,6 +34,8 @@ export default function Carousel({
 
   return (
     <div className="relative group">
+      {/* Shared handlers for pointer interactions on arrows */}
+      {/* Left Arrow */}
       <div
         ref={scrollContainerRef}
         className={`flex overflow-x-auto gap-4 scrollbar-hide ${className}`}
@@ -38,19 +43,39 @@ export default function Carousel({
         {children}
       </div>
 
-      {/* Left Arrow */}
       <button
         onClick={scrollLeft}
-        className="absolute left-2 top-1/2 -translate-y-1/2 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-all duration-200 z-10"
+        className={`absolute left-2 top-1/2 -translate-y-1/2 text-white rounded-full p-1 transition-all duration-200 z-10 ${
+          isMobile ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+        }`}
         style={{
           backgroundColor: color ? `${color}80` : 'rgba(0, 0, 0, 0.5)',
         }}
-        onMouseEnter={(e) => {
+        onPointerEnter={(e) => {
+          if (e.pointerType === 'mouse') {
+            (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
+              ? `${color}`
+              : 'rgba(0, 0, 0)';
+          }
+        }}
+        onPointerLeave={(e) => {
+          if (e.pointerType === 'mouse') {
+            (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
+              ? `${color}80`
+              : 'rgba(0, 0, 0, 0.5)';
+          }
+        }}
+        onPointerDown={(e) => {
           (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
             ? `${color}`
             : 'rgba(0, 0, 0)';
         }}
-        onMouseLeave={(e) => {
+        onPointerUp={(e) => {
+          (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
+            ? `${color}80`
+            : 'rgba(0, 0, 0, 0.5)';
+        }}
+        onPointerCancel={(e) => {
           (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
             ? `${color}80`
             : 'rgba(0, 0, 0, 0.5)';
@@ -62,16 +87,37 @@ export default function Carousel({
       {/* Right Arrow */}
       <button
         onClick={scrollRight}
-        className="absolute right-2 top-1/2 -translate-y-1/2 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-all duration-200 z-10"
+        className={`absolute right-2 top-1/2 -translate-y-1/2 text-white rounded-full p-1 transition-all duration-200 z-10 ${
+          isMobile ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+        }`}
         style={{
           backgroundColor: color ? `${color}80` : 'rgba(0, 0, 0, 0.5)',
         }}
-        onMouseEnter={(e) => {
+        onPointerEnter={(e) => {
+          if (e.pointerType === 'mouse') {
+            (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
+              ? `${color}`
+              : 'rgba(0, 0, 0)';
+          }
+        }}
+        onPointerLeave={(e) => {
+          if (e.pointerType === 'mouse') {
+            (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
+              ? `${color}80`
+              : 'rgba(0, 0, 0, 0.5)';
+          }
+        }}
+        onPointerDown={(e) => {
           (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
             ? `${color}`
             : 'rgba(0, 0, 0)';
         }}
-        onMouseLeave={(e) => {
+        onPointerUp={(e) => {
+          (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
+            ? `${color}80`
+            : 'rgba(0, 0, 0, 0.5)';
+        }}
+        onPointerCancel={(e) => {
           (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
             ? `${color}80`
             : 'rgba(0, 0, 0, 0.5)';
