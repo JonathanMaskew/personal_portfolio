@@ -122,7 +122,7 @@ export function CarouselImageItem({
         <div style={{ width: `${size}px`, height: `${size}px` }}>
           <Image
             src={image}
-            alt={text || ''}
+            alt={text || 'Carousel image'}
             className="rounded-2xl object-cover w-full h-full"
           />
         </div>

@@ -19,6 +19,7 @@ import roundabouts from '@/assets/images/roundabouts.jpg';
 import HighlightFeature from '../HighlightFeature';
 import carousel_of_progress from '@/assets/images/carousel_of_progress.png';
 import { Button } from '../Button';
+import ButtonRow from '../ButtonRow';
 import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import { useHashScroll } from '@/hooks/useHashScroll';
 import type React from 'react';
@@ -43,20 +44,19 @@ export default function About() {
           As one who loves to dream big, I&apos;m always looking to transform
           these dreams into experiences that feel intuitive and engaging.
         </div>
-        <div className="flex gap-8 gap-y-2 items-center justify-center flex-wrap">
+        <ButtonRow>
           {SECONDARY_NAV_ITEMS.map((item) => {
             return (
-              <div key={item.id} className="w-fit">
-                <Button
-                  text={item.label}
-                  icon={item.icon}
-                  clickDetail={item.href}
-                  newTab={item.newTab}
-                />
-              </div>
+              <Button
+                key={item.id}
+                text={item.label}
+                icon={item.icon}
+                clickDetail={item.href}
+                newTab={item.newTab}
+              />
             );
           })}
-        </div>
+        </ButtonRow>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">

@@ -65,18 +65,17 @@ export default function TopNav() {
           <div>{current.label}</div>
           {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </button>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4">
           {SECONDARY_NAV_ITEMS.map((item) => {
             return (
-              <div key={item.id} className="w-fit">
-                <Button
-                  text={item.label}
-                  icon={item.icon}
-                  clickDetail={item.href}
-                  newTab={item.newTab}
-                  iconOnly={true}
-                />
-              </div>
+              <Button
+                key={item.id}
+                text={item.label}
+                icon={item.icon}
+                clickDetail={item.href}
+                newTab={item.newTab}
+                iconOnly={true}
+              />
             );
           })}
         </div>
@@ -95,7 +94,7 @@ export default function TopNav() {
               return (
                 <div
                   key={item.id}
-                  className="w-full"
+                  className="w-fit"
                   onClick={() => setOpen(false)}
                 >
                   <Button

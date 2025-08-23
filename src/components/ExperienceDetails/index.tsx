@@ -45,7 +45,9 @@ export default function ExperienceDetails({ data }: ExperienceDetailsProps) {
                   icon={highlight.icon}
                   title={highlight.title}
                   text={highlight.text}
-                />
+                >
+                  {highlight.children}
+                </InnerHighlight>
               ))}
             </div>
           </ModalSection>

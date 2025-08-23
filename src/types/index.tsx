@@ -20,12 +20,13 @@ export type ExperienceHighlight = {
   icon: Icon;
   title?: string;
   text: string;
+  children?: React.ReactNode;
 };
 
 export type Experience = {
-  id?: string;
+  id: string;
   imagery?: StaticImageData | Icon;
-  title: string;
+  title?: string;
   subtitle?: string;
   subheading?: string;
   body?: string;

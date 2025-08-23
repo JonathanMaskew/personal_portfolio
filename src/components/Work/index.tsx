@@ -19,16 +19,17 @@ export default function Work() {
   const JOBS = getJobsData();
   const MORE_JOBS = getMoreJobsData();
   const openedJob = openedJobId
-    ? JOBS.find((job) => job.id === openedJobId) || null
+    ? JOBS.find((job) => job.id === openedJobId) ||
+      MORE_JOBS.find((job) => job.id === openedJobId) ||
+      null
     : null;
 
   return (
     <SectionWrapper
       icon={BriefcaseBusiness}
       title="Work Experience"
-      subtext="Experienced in full-stack development, with a focus on building
-            user-focused front-end interfaces using frameworks including
-            Next.js, React, Angular, and more."
+      subtext="Focused on front-end development, with experience in full-stack. Familiar with
+            Next.js, React, Angular, and more. Experience working with Product, Design, and Engineering teams."
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
         {JOBS.map((job, index) => (
@@ -40,23 +41,31 @@ export default function Work() {
               subtitle={job.subtitle}
               subheading={job.subheading}
               body={job.body}
-              onClick={() => {
-                if (JOBS[index]?.id) {
-                  setOpenedJobId(JOBS[index].id as string);
-                  openModal();
-                }
-              }}
-              actionButton={
-                <Button
-                  icon={Plus}
-                  text="More"
-                  clickDetail={() => {
-                    if (JOBS[index]?.id) {
-                      setOpenedJobId(JOBS[index].id as string);
+              onClick={
+                (job.highlights && job.highlights.length > 0) ||
+                (job.coreBullets && job.coreBullets.length > 0) ||
+                (job.bullets && job.bullets.length > 0) ||
+                job.modalChildren
+                  ? () => {
+                      setOpenedJobId(job.id);
                       openModal();
                     }
-                  }}
-                />
+                  : undefined
+              }
+              actionButton={
+                (job.highlights && job.highlights.length > 0) ||
+                (job.coreBullets && job.coreBullets.length > 0) ||
+                (job.bullets && job.bullets.length > 0) ||
+                job.modalChildren ? (
+                  <Button
+                    icon={Plus}
+                    text="More"
+                    clickDetail={() => {
+                      setOpenedJobId(job.id);
+                      openModal();
+                    }}
+                  />
+                ) : undefined
               }
             >
               {job.highlightChildren}
@@ -64,15 +73,11 @@ export default function Work() {
           </div>
         ))}
       </div>
-      <div className="w-fit">
-        <Button
-          text={
-            showMore ? 'Hide earlier experience' : 'Show earlier experience'
-          }
-          clickDetail={() => setShowMore(!showMore)}
-          icon={showMore ? ChevronUp : ChevronDown}
-        />
-      </div>
+      <Button
+        text={showMore ? 'Hide earlier experience' : 'Show earlier experience'}
+        clickDetail={() => setShowMore(!showMore)}
+        icon={showMore ? ChevronUp : ChevronDown}
+      />
 
       {showMore && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
@@ -85,6 +90,32 @@ export default function Work() {
                 subtitle={job.subtitle}
                 subheading={job.subheading}
                 body={job.body}
+                onClick={
+                  (job.highlights && job.highlights.length > 0) ||
+                  (job.coreBullets && job.coreBullets.length > 0) ||
+                  (job.bullets && job.bullets.length > 0) ||
+                  job.modalChildren
+                    ? () => {
+                        setOpenedJobId(job.id);
+                        openModal();
+                      }
+                    : undefined
+                }
+                actionButton={
+                  (job.highlights && job.highlights.length > 0) ||
+                  (job.coreBullets && job.coreBullets.length > 0) ||
+                  (job.bullets && job.bullets.length > 0) ||
+                  job.modalChildren ? (
+                    <Button
+                      icon={Plus}
+                      text="More"
+                      clickDetail={() => {
+                        setOpenedJobId(job.id);
+                        openModal();
+                      }}
+                    />
+                  ) : undefined
+                }
               >
                 {job.highlightChildren}
               </HighlightDetailed>

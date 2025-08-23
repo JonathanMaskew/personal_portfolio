@@ -10,7 +10,19 @@ export const useHashScroll = () => {
       const scrollContainer = document.querySelector(
         '[data-scroll-container]'
       ) as HTMLElement | null;
-      const headerOffset = 64; // mobile TopNav offset
+      // If we're scrolling the window (TopNav fixed), subtract the main's top padding
+      // so the section header sits flush under the nav. This avoids guessing heights.
+      const mainEl = document.querySelector(
+        '[data-scroll-container]'
+      ) as HTMLElement | null;
+      const isWindowScroll =
+        !scrollContainer ||
+        getComputedStyle(scrollContainer).overflowY === 'visible';
+      const headerOffset = isWindowScroll
+        ? parseFloat(
+            getComputedStyle(mainEl as HTMLElement).paddingTop || '0'
+          ) || 0
+        : 0;
 
       if (
         scrollContainer &&

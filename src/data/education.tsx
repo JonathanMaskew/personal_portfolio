@@ -3,14 +3,23 @@ import type { Experience } from '@/types';
 import htf_logo_white from '@/assets/images/hack_the_future/htf_logo_white.png';
 import purdue_logo from '@/assets/images/purdue_logo.png';
 import InnerHighlight from '@/components/InnerHighlight';
-import Carousel, { CarouselItem } from '@/components/Carousel';
+import Carousel, {
+  CarouselItem,
+  CarouselImageItem,
+} from '@/components/Carousel';
 import ModalSection from '@/components/ModalSection';
 import {
   ExternalLink,
+  BookOpen,
+  ClipboardList,
+  Figma,
   Image as ImageIcon,
   Megaphone,
   SquarePlay,
+  Lightbulb,
   Users,
+  FlaskConical,
+  Tally5,
 } from 'lucide-react';
 import design_and_marketing from '@/assets/images/hack_the_future/design_and_marketing.png';
 import design_and_marketing_2 from '@/assets/images/hack_the_future/design_and_marketing_2.png';
@@ -36,6 +45,7 @@ import noblesville_schools from '@/assets/images/noblesville_schools.png';
 import national_honors_society from '@/assets/images/national_honors_society.png';
 import key_club from '@/assets/images/key_club.png';
 import { Button } from '@/components/Button';
+import ButtonRow from '@/components/ButtonRow';
 import Chips from '@/components/Chips';
 import htf_carousel_of_progress from '@/assets/images/hack_the_future/htf_carousel_of_progress.png';
 import htf_catapult from '@/assets/images/hack_the_future/htf_catapult.png';
@@ -55,9 +65,10 @@ import htf_pizza from '@/assets/images/hack_the_future/htf_pizza.png';
 import htf_ornament from '@/assets/images/hack_the_future/htf_ornament.png';
 import htf_back_to_the_future from '@/assets/images/hack_the_future/htf_back_to_the_future.png';
 import htf_logo from '@/assets/images/hack_the_future/htf_logo.png';
+import noblesville_millers from '@/assets/images/noblesville_millers.png';
+import cool_vending_machine_finder from '@/assets/images/cool_vending_machine_finder.png';
+import cool_vending_machine from '@/assets/images/cool_vending_machine.png';
 import Image from 'next/image';
-
-const CAROUSEL_IMAGE_SIZE = 300;
 
 export const getEducationData = (): Experience[] => [
   {
@@ -98,7 +109,16 @@ export const getEducationData = (): Experience[] => [
     ],
     highlightChildren: (
       <div className="flex flex-col gap-6">
-        <Chips strings={['Figma', 'UI/UX Design', 'Front-end', 'Marketing']} />
+        <Chips
+          strings={[
+            'Figma',
+            'UI/UX Design',
+            'Front-end',
+            'Digital Marketing',
+            'Branding',
+            'Graphic Design',
+          ]}
+        />
         <Carousel
           color="#00EB88"
           className="bg-black/20 rounded-2xl p-4 flex items-center"
@@ -242,71 +262,31 @@ export const getEducationData = (): Experience[] => [
             through the Year in Review posts I created that summarize my work,
             or navigate to a full listing.
           </div>
-          <div className="flex gap-8 gap-y-2 w-full justify-center flex-wrap">
-            <div className="w-fit">
-              <Button
-                icon={ExternalLink}
-                newTab={true}
-                text="PDF Collage of Work"
-                clickDetail="/pdfs/htf_collage.pdf"
-                background
-                color="#00EB88"
-              />
-            </div>
-            <div className="w-fit">
-              <Button
-                icon={ExternalLink}
-                newTab={true}
-                text="List of Work with Descriptions"
-                clickDetail="https://docs.google.com/document/d/1iJEBzMD-UZ55tUu14lbxTY1sf2zTvvQj90V-YAjeGos/edit?usp=sharing"
-                background
-                color="#00EB88"
-              />
-            </div>
-          </div>
+          <ButtonRow className="justify-center">
+            <Button
+              icon={ExternalLink}
+              newTab={true}
+              text="PDF Collage of Work"
+              clickDetail="/pdfs/htf_collage.pdf"
+              background
+              color="#00EB88"
+            />
+            <Button
+              icon={ExternalLink}
+              newTab={true}
+              text="List of Work with Descriptions"
+              clickDetail="https://docs.google.com/document/d/1iJEBzMD-UZ55tUu14lbxTY1sf2zTvvQj90V-YAjeGos/edit?usp=sharing"
+              background
+              color="#00EB88"
+            />
+          </ButtonRow>
           <Carousel color="#00EB88">
-            <CarouselItem>
-              <Image
-                src={design_and_marketing}
-                alt="Design and Marketing"
-                className="w-64 h-auto object-contain"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <Image
-                src={design_and_marketing_2}
-                alt="Design and Marketing 2"
-                className="w-64 h-auto object-contain"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <Image
-                src={design_and_marketing_3}
-                alt="Design and Marketing 3"
-                className="w-64 h-auto object-contain"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <Image
-                src={design_and_marketing_4}
-                alt="Design and Marketing 4"
-                className="w-64 h-auto object-contain"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <Image
-                src={design_and_marketing_5}
-                alt="Design and Marketing 5"
-                className="w-64 h-auto object-contain"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <Image
-                src={design_and_marketing_6}
-                alt="Design and Marketing 6"
-                className="w-64 h-auto object-contain"
-              />
-            </CarouselItem>
+            <CarouselImageItem image={design_and_marketing} size={256} />
+            <CarouselImageItem image={design_and_marketing_2} size={256} />
+            <CarouselImageItem image={design_and_marketing_3} size={256} />
+            <CarouselImageItem image={design_and_marketing_4} size={256} />
+            <CarouselImageItem image={design_and_marketing_5} size={256} />
+            <CarouselImageItem image={design_and_marketing_6} size={256} />
           </Carousel>
         </ModalSection>
 
@@ -321,34 +301,10 @@ export const getEducationData = (): Experience[] => [
             beyond our graduation.
           </div>
           <Carousel color="#00EB88">
-            <CarouselItem>
-              <Image
-                src={events_and_outreach}
-                alt="Events and Outreach"
-                className="w-64 h-auto object-contain"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <Image
-                src={events_and_outreach_2}
-                alt="Events and Outreach 2"
-                className="w-64 h-auto object-contain"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <Image
-                src={events_and_outreach_3}
-                alt="Events and Outreach 3"
-                className="w-64 h-auto object-contain"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <Image
-                src={events_and_outreach_4}
-                alt="Events and Outreach 4"
-                className="w-64 h-auto object-contain"
-              />
-            </CarouselItem>
+            <CarouselImageItem image={events_and_outreach} size={256} />
+            <CarouselImageItem image={events_and_outreach_2} size={256} />
+            <CarouselImageItem image={events_and_outreach_3} size={256} />
+            <CarouselImageItem image={events_and_outreach_4} size={256} />
           </Carousel>
         </ModalSection>
 
@@ -361,48 +317,30 @@ export const getEducationData = (): Experience[] => [
             our revamped outreach efforts.
           </div>
           <Carousel color="#00EB88">
-            <CarouselItem>
-              <Image
-                src={non_profit_and_member_recruitment}
-                alt="Non-Profit and Member Recruitment"
-                className="w-64 h-auto object-contain"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <Image
-                src={non_profit_and_member_recruitment_2}
-                alt="Non-Profit and Member Recruitment 2"
-                className="w-64 h-auto object-contain"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <Image
-                src={non_profit_and_member_recruitment_3}
-                alt="Non-Profit and Member Recruitment 3"
-                className="w-64 h-auto object-contain"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <Image
-                src={non_profit_and_member_recruitment_4}
-                alt="Non-Profit and Member Recruitment 4"
-                className="w-64 h-auto object-contain"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <Image
-                src={non_profit_and_member_recruitment_5}
-                alt="Non-Profit and Member Recruitment 5"
-                className="w-64 h-auto object-contain"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <Image
-                src={non_profit_and_member_recruitment_6}
-                alt="Non-Profit and Member Recruitment 6"
-                className="w-64 h-auto object-contain"
-              />
-            </CarouselItem>
+            <CarouselImageItem
+              image={non_profit_and_member_recruitment}
+              size={256}
+            />
+            <CarouselImageItem
+              image={non_profit_and_member_recruitment_2}
+              size={256}
+            />
+            <CarouselImageItem
+              image={non_profit_and_member_recruitment_3}
+              size={256}
+            />
+            <CarouselImageItem
+              image={non_profit_and_member_recruitment_4}
+              size={256}
+            />
+            <CarouselImageItem
+              image={non_profit_and_member_recruitment_5}
+              size={256}
+            />
+            <CarouselImageItem
+              image={non_profit_and_member_recruitment_6}
+              size={256}
+            />
           </Carousel>
         </ModalSection>
         <ModalSection icon={SquarePlay} title="23-24 Year in Review Video">
@@ -453,7 +391,9 @@ export const getEducationData = (): Experience[] => [
     coreBullets: [
       "Developed front-end interfaces using React that mimicked the Designer's mockups and integrated with a MongoDB database.",
     ],
-    highlightChildren: <Chips strings={['React', 'MongoDB', 'Front-end']} />,
+    highlightChildren: (
+      <Chips strings={['React', 'MongoDB', 'Front-end', 'Full-stack']} />
+    ),
   },
 ];
 
@@ -465,20 +405,10 @@ export const getMoreEducationData = (): Experience[] => [
     title: "Reese's Ratings",
     subtitle: 'CS 348 - Information Systems',
     subheading: 'Purdue University, Spring 2024',
-    body: '',
+    body: "Developed a front-end interface in React that connects to a MongoDB database, allowing users to rate Reese's products.",
     coreBullets: [],
     highlightChildren: (
       <Chips strings={['React', 'MongoDB', 'Full-stack', 'Tailwind CSS']} />
-    ),
-    modalChildren: (
-      <div className="flex flex-col gap-12">
-        <ModalSection icon={Image} title="Reese's Ratings">
-          <div className="text-sm">
-            I designed a logo for this class project, and was largely in charge
-            of front-end development, therefore guiding much of the UI.
-          </div>
-        </ModalSection>
-      </div>
     ),
   },
   {
@@ -493,10 +423,22 @@ export const getMoreEducationData = (): Experience[] => [
     highlightChildren: <Chips strings={['React', 'Firebase', 'Front-end']} />,
     modalChildren: (
       <div className="flex flex-col gap-12">
-        <ModalSection icon={Image} title="Cool Vending Machine Finder">
+        <ModalSection icon={ImageIcon} title="Branding & Graphics">
           <div className="text-sm">
             I designed a logo for this class project, and was largely in charge
             of front-end development, therefore guiding much of the UI.
+          </div>
+          <div className="flex justify-center gap-8 flex-wrap">
+            <Image
+              src={cool_vending_machine_finder}
+              alt="Cool Vending Machine Finder"
+              className="w-60 md:w-80 h-auto object-contain"
+            />
+            <Image
+              src={cool_vending_machine}
+              alt="Cool Vending Machine"
+              className="w-40 h-auto object-contain"
+            />
           </div>
         </ModalSection>
       </div>
@@ -509,15 +451,10 @@ export const getMoreEducationData = (): Experience[] => [
     title: 'Cool Card Games',
     subtitle: 'CS 307 - Software Engineering',
     subheading: 'Purdue University, Fall 2022',
-    body: '',
+    body: 'Practiced Scrum methodology to plan and develop from scratch a card game application using Unity and Firebase with a team of six students.',
     coreBullets: [],
     highlightChildren: (
       <Chips strings={['React', 'MongoDB', 'Full-stack', 'Tailwind CSS']} />
-    ),
-    modalChildren: (
-      <div className="flex flex-col gap-12">
-        {/* <ModalSection icon={Image} title="Reese's Ratings"></ModalSection> */}
-      </div>
     ),
   },
   {
@@ -527,12 +464,205 @@ export const getMoreEducationData = (): Experience[] => [
     title: 'Sundae',
     subtitle: 'CS 490 - Human-Computer Interaction',
     subheading: 'Purdue University, Spring 2022',
-    body: '',
+    body: 'Dove into the specifics of how to approach human-centric design, walking through the standard documentation process, including ideation, need-finding, prototyping, and user study and more, ultimately ending with a high-fidelity Figma prototype for a product called Sundae.',
     coreBullets: [],
-    highlightChildren: <Chips strings={[]} />,
+    highlightChildren: (
+      <Chips
+        strings={[
+          'Figma',
+          'User Research',
+          'Prototyping',
+          'User Interviews',
+          'Storyboarding',
+          'Personas',
+          'Cognitive Walkthrough',
+          'Affinity Diagramming',
+        ]}
+      />
+    ),
     modalChildren: (
       <div className="flex flex-col gap-12">
-        {/* <ModalSection icon={Image} title="Reese's Ratings"></ModalSection> */}
+        <ModalSection icon={BookOpen} title="Ideation">
+          <div className="text-sm">
+            First things first, I had a dream. Proposing the dream is the only
+            way to make it a reality.
+          </div>
+          <Button
+            icon={ExternalLink}
+            newTab={true}
+            clickDetail="https://docs.google.com/document/d/1ScsxHLDzicQHW1SaJjlw8Fy1nj5HCy6L/edit"
+            text="Open in Docs"
+            background
+            color="#696969"
+          />
+        </ModalSection>
+
+        <ModalSection icon={BookOpen} title="Need-finding Report">
+          <div className="text-sm">
+            Next, we needed to know whether my dream deserved to be a reality.
+            We completed interviews and various other need-finding activities to
+            determine what users are looking for in this product.
+          </div>
+          <Button
+            icon={ExternalLink}
+            newTab={true}
+            clickDetail="https://docs.google.com/document/d/17AJDqE56FnMe2re0LPlVyNRI12GOFAD_cRkcG14Zb4E/edit?tab=t.0"
+            text="Open in Docs"
+            background
+            color="#696969"
+          />
+          <ButtonRow>
+            <Button
+              icon={ExternalLink}
+              newTab={true}
+              clickDetail="https://docs.google.com/document/d/1hxHMWxzWMNqUmnA3d6McTMA_EmRdH4Fx4g35qxKZ1XI/edit?tab=t.0"
+              text="Open Interview Protocol Details"
+              background
+              color="#696969"
+            />
+            <Button
+              icon={ExternalLink}
+              newTab={true}
+              clickDetail="https://docs.google.com/document/d/1Idr1juzYePqK-qtwS0jk5l3XcK1fGO6n5t0NxttJtD8/edit?tab=t.0"
+              text="Open Affinity Diagram and Storyboarding Details"
+              background
+              color="#696969"
+            />
+          </ButtonRow>
+        </ModalSection>
+
+        <ModalSection icon={BookOpen} title="Prototype Design Report">
+          <div className="text-sm">
+            Now that we had a better idea of what users were looking for, it was
+            time to design the platform.
+          </div>
+          <ButtonRow>
+            <Button
+              icon={ExternalLink}
+              newTab={true}
+              clickDetail="https://docs.google.com/document/d/19nmjwmGBmXlPUqv5BdwezkyXAQziipnLeUFZLDvBan4/edit?tab=t.0"
+              text="Open in Docs"
+              background
+              color="#696969"
+            />
+
+            <Button
+              icon={ExternalLink}
+              newTab={true}
+              clickDetail="https://www.figma.com/proto/81djycTPurFwRTywOYsLzP/Prototype?page-id=0%3A1&node-id=58-353&p=f&viewport=379%2C197%2C0.03&t=6ZXJhKpbbaCoE6PY-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=124%3A26"
+              text="Open Digital Prototype in Figma"
+              background
+              color="#696969"
+            />
+            <Button
+              icon={ExternalLink}
+              newTab={true}
+              clickDetail="https://www.figma.com/design/81djycTPurFwRTywOYsLzP/Prototype?node-id=0-1&t=JBSYZYPaXHT4HO53-1"
+              text="Open Digital Design in Figma"
+              background
+              color="#696969"
+            />
+          </ButtonRow>
+          <ButtonRow>
+            <Button
+              icon={ExternalLink}
+              newTab={true}
+              clickDetail="https://docs.google.com/presentation/d/1CEnT7h0AAbcpGjXOdzsPYfutvYnmZRP3aeI_QFKNnnc/edit#slide=id.p"
+              text="Open Paper Prototype Details"
+              background
+              color="#696969"
+            />
+            <Button
+              icon={ExternalLink}
+              newTab={true}
+              clickDetail="https://docs.google.com/document/d/1AoVcmtwNB4k4plTBYTKO1krJr3G8K-U6PDkqGi5mTSk/edit?usp=sharing"
+              text="Open Digital Prototype Details"
+              background
+              color="#696969"
+            />
+          </ButtonRow>
+        </ModalSection>
+
+        <ModalSection icon={BookOpen} title="User Study Report">
+          <div className="text-sm">
+            With a platform designed, we needed to see if we had met users needs
+            and that users understood how to use the platform.
+          </div>
+          <Button
+            icon={ExternalLink}
+            newTab={true}
+            clickDetail="https://docs.google.com/document/d/1Z2dzZfhXVS7rrNJSVVdzXDb3FFkrNB6Td7YGY6rCdNc/edit?tab=t.0"
+            text="Open in Docs"
+            background
+            color="#696969"
+          />
+          <ButtonRow>
+            <Button
+              icon={ExternalLink}
+              newTab={true}
+              clickDetail="https://docs.google.com/spreadsheets/d/1waG0DCx1bCGwbXOhIZAxlEFjYYpBgFQ3IW1L0qiK6Hw/edit?usp=sharing"
+              text="Open Cognitive Walkthrough Details"
+              background
+              color="#696969"
+            />
+            <Button
+              icon={ExternalLink}
+              newTab={true}
+              clickDetail="https://docs.google.com/document/d/13PKofzMQqj0J1ZcEEIiN9IxuMCeSGPDkg_hKHX_52_A/edit?usp=sharing"
+              text="Open Digital Prototype Revision Details"
+              background
+              color="#696969"
+            />
+            <Button
+              icon={ExternalLink}
+              newTab={true}
+              clickDetail="https://docs.google.com/document/d/1LDfkLszmBrRJK9sD37tZi8qNnGCR6Ar8TL8Jk0lkUTc/edit?usp=sharing"
+              text="Open User Study Design Details"
+              background
+              color="#696969"
+            />
+            <Button
+              icon={ExternalLink}
+              newTab={true}
+              clickDetail="https://docs.google.com/document/d/100h5x2go3ch_Z-W_VUG_e53Z-E8vYBuUAT3tK6cfOuE/edit?usp=sharing"
+              text="Open User Study Details"
+              background
+              color="#696969"
+            />
+            <Button
+              icon={ExternalLink}
+              newTab={true}
+              clickDetail="https://docs.google.com/document/d/1W7yxvw0dPDuSUHfzuedLPnLiGZBKc-GgluMlhMpKVJM/edit?usp=sharing"
+              text="Open User Study Data Analysis Details"
+              background
+              color="#696969"
+            />
+          </ButtonRow>
+        </ModalSection>
+
+        <ModalSection icon={BookOpen} title="Final Report">
+          <div className="text-sm">
+            Bringing everything we&apos;ve learned to a close
+          </div>
+          <ButtonRow>
+            <Button
+              icon={ExternalLink}
+              newTab={true}
+              clickDetail="https://docs.google.com/document/d/1CBZ7DHtD7ULpGBwX0NEVReWqmbtXVOa_5i_qSF9Tf-U/edit?tab=t.0"
+              text="Open in Docs"
+              background
+              color="#696969"
+            />
+            <Button
+              icon={ExternalLink}
+              newTab={true}
+              clickDetail="https://www.figma.com/proto/81djycTPurFwRTywOYsLzP/Prototype?page-id=0%3A1&node-id=58-353&p=f&viewport=379%2C197%2C0.03&t=6ZXJhKpbbaCoE6PY-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=124%3A26"
+              text="Open Digital Prototype in Figma"
+              background
+              color="#696969"
+            />
+          </ButtonRow>
+        </ModalSection>
       </div>
     ),
   },
@@ -569,6 +699,35 @@ export const getMoreEducationData = (): Experience[] => [
     coreBullets: [],
   },
   {
+    id: 'tennis-manager',
+    color: '#AA985D',
+    imagery: noblesville_millers,
+    title: 'Manager for Girls Tennis Team',
+    subheading: 'Noblesville High School, Spring 2018, 2019',
+    body: 'Exhibit skills of leadership and responsibility in recording results of each tennis match during the girls season. Willingly participate in practice to help players improve. Independently and choicefully designed a new, more intuitive score sheet to record results of matches.',
+    coreBullets: [],
+    highlights: [
+      {
+        icon: Tally5,
+        title: 'Effectively Track Match Results',
+        text: 'Designed a new, more intuitive score sheet to record results of matches, designed to be scalable.',
+        children: (
+          <ButtonRow>
+            <Button
+              icon={ExternalLink}
+              newTab={true}
+              text="PDF of Score Sheet"
+              clickDetail="/pdfs/tennis_scoresheet.pdf"
+              background
+              color="#AA985D"
+            />
+          </ButtonRow>
+        ),
+      },
+    ],
+    highlightChildren: <Chips strings={['Document Design']} />,
+  },
+  {
     id: 'key-club',
     color: '#003975',
     imagery: key_club,
@@ -577,11 +736,8 @@ export const getMoreEducationData = (): Experience[] => [
     subheading: 'Noblesville High School, October 2017 - May 2020',
     body: 'Develop informational typed or promo video announcements to be displayed on the Noblesville  High School News as well as update Key Club social media accounts. The  NHS News is displayed to all students daily. Announcements include information regarding Key Club meetings or events.',
     coreBullets: [],
-    highlightChildren: <Chips strings={[]} />,
-    modalChildren: (
-      <div className="flex flex-col gap-12">
-        {/* <ModalSection icon={Image} title="Reese's Ratings"></ModalSection> */}
-      </div>
+    highlightChildren: (
+      <Chips strings={['Digital Marketing', 'Graphic Design']} />
     ),
   },
 ];

@@ -12,6 +12,8 @@ import {
   MousePointer,
   Code,
   MousePointerClick,
+  MonitorSmartphone,
+  Construction,
 } from 'lucide-react';
 import { Button } from '../Button';
 import JsLogo from '../../app/Js_logo.png';
@@ -28,6 +30,7 @@ import JsAnimation from '../../assets/images/Js_page/Js_animation.gif';
 import JsMulticolor from '../../assets/images/Js_page/Js_multicolor.gif';
 import { useState } from 'react';
 import ModalSection from '../ModalSection';
+import ButtonRow from '../ButtonRow';
 
 export default function Footer() {
   const [modalContent, setModalContent] = useState<string | null>(null);
@@ -39,20 +42,19 @@ export default function Footer() {
       subtext={
         <div className="flex flex-col gap-2">
           Please don&apos;t hesitate to reach out. I&apos;d love to connect!
-          <div className="flex gap-8 gap-y-2 items-center flex-wrap">
+          <ButtonRow>
             {SECONDARY_NAV_ITEMS.map((item) => {
               return (
-                <div key={item.id} className="w-fit">
-                  <Button
-                    icon={item.icon}
-                    text={item.label}
-                    clickDetail={item.href}
-                    newTab={item.newTab}
-                  />
-                </div>
+                <Button
+                  key={item.id}
+                  icon={item.icon}
+                  text={item.label}
+                  clickDetail={item.href}
+                  newTab={item.newTab}
+                />
               );
             })}
-          </div>
+          </ButtonRow>
         </div>
       }
     >
@@ -176,6 +178,16 @@ export default function Footer() {
                 that doesn&apos;t mean the site couldn&apos;t be beautiful,
                 interactive, and engaging.
               </ModalSection>
+              <ModalSection icon={MonitorSmartphone} title="Responsiveness">
+                I knew this site would likely be viewed on a variety of devices.
+                In professional contexts, it may be viewed on desktop. However,
+                in many instances, especially if sending a link, it may be
+                viewed on a phone. Therefore, I built the site to not only be
+                fully responsive, but to be optimized for mobile vs desktop
+                viewing. For example, on desktop you get a sidebar for
+                navigation and hover effects. On mobile, you get a top
+                navigation bar.
+              </ModalSection>
               <ModalSection icon={Code} title="Technology">
                 I built the site with Next.js, knowing that it&apos;s a popular,
                 modern framework, perfect for a front-end portfolio. I also used
@@ -185,6 +197,10 @@ export default function Footer() {
                 own. Any AI contributions to the code were well-understood,
                 vetted, and adapted, with AI being used more as an assistant,
                 rather than a developer.
+              </ModalSection>
+              <ModalSection icon={Construction} title="Never Complete">
+                As various experiences continue to shape me, this site will
+                continue to evolve.
               </ModalSection>
             </div>
           </>
@@ -217,7 +233,7 @@ export default function Footer() {
                 stories, and various other creative artifacts. It was
                 essentially a mix of a personal portfolio and a diary.
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4 mb-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4">
                 <Image
                   src={JonathanAnimation}
                   alt="Jonathan Animation"
@@ -234,7 +250,7 @@ export default function Footer() {
                 mirroring the J&rsquo;s branding, it was clear that I was
                 building a personal brand. And what does a brand need? A logo.
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4 mb-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4">
                 <Image
                   src={JsCreations}
                   alt="Js Creations"
@@ -251,7 +267,7 @@ export default function Footer() {
                 and animations, the branding needed to reflect this. At last,
                 the J&rsquo;s brand was born.
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4 mb-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4">
                 <Image
                   src={JsGif}
                   alt="Js Gif"
@@ -269,7 +285,7 @@ export default function Footer() {
                 With this, I decided to go back to my roots, and build myself a
                 new logo.
               </div>
-              <div className="grid grid-cols-3 gap-4 md:gap-8 mb-4 w-fit mx-auto">
+              <div className="grid grid-cols-3 gap-4 md:gap-8 w-fit mx-auto">
                 <Image
                   src={JsLogo}
                   alt="J's Page Logo"
@@ -301,6 +317,10 @@ export default function Footer() {
                 And here we are. Years of iterating on J&apos;s Page and the
                 J&apos;s branding ultimately culminates in the site you&apos;re
                 visiting now.
+              </div>
+              <div>
+                As I continue to grow, so will J&apos;s Page and the J&apos;s
+                branding.
               </div>
             </div>
           </>

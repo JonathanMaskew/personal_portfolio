@@ -21,9 +21,10 @@ export function Button({
   background,
   color,
   isFocused,
+  className,
 }: ButtonProps) {
   const { scrollToHash } = useHashScroll();
-  const buttonClassName = `flex items-center gap-3 w-full transition-all duration-200 ${background ? 'py-2 px-4 rounded-2xl' : ''} ${isFocused ? 'font-bold' : ''}`;
+  const buttonClassName = `inline-flex items-center gap-3 w-fit transition-all duration-200 ${background ? 'py-2 px-4 rounded-2xl' : ''} ${isFocused ? 'font-bold' : ''} ${className || ''}`;
   const buttonStyle = {
     backgroundColor: background ? 'rgba(0,0,0,0.2)' : '',
     opacity: background || isFocused ? '1' : '0.6',

@@ -37,7 +37,11 @@ export function useActiveSection({
               scrollContainerSelector
             ) as HTMLElement | null)
           : null;
-      const containerTop = container?.getBoundingClientRect().top ?? 0;
+      const isWindowScroll =
+        !container || getComputedStyle(container).overflowY === 'visible';
+      const containerTop = isWindowScroll
+        ? 0
+        : container.getBoundingClientRect().top;
 
       const thresholdBottom = thresholdRef?.current
         ? thresholdRef.current.getBoundingClientRect().bottom - containerTop

@@ -16,53 +16,68 @@ export default function Work() {
   const MORE_EDUCATION = getMoreEducationData();
 
   const { modalOpened, openModal, closeModal } = useModal();
-  const [openedEducationIndex, setOpenedEducationIndex] = useState<
-    number | null
-  >(null);
-  const openedEducation =
-    openedEducationIndex !== null && EDUCATION[openedEducationIndex]
-      ? EDUCATION[openedEducationIndex]
-      : null;
+  const [openedEducationId, setOpenedEducationId] = useState<string | null>(
+    null
+  );
+  const openedEducation = openedEducationId
+    ? EDUCATION.find((education) => education.id === openedEducationId) ||
+      MORE_EDUCATION.find((education) => education.id === openedEducationId) ||
+      null
+    : null;
 
   return (
-    <SectionWrapper icon={GraduationCap} title="Education">
+    <SectionWrapper
+      icon={GraduationCap}
+      title="Education"
+      subtext="Graduated in May 2024 with a BS in Computer Science from Purdue University. Served as the Design Director for Hack the Future, a volunteer-based organization that builds software for non-profits."
+    >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
-        {EDUCATION.map((item, index) => (
+        {EDUCATION.map((education, index) => (
           <div key={index} className={`${index < 2 ? 'col-span-full' : ''}`}>
             <HighlightDetailed
-              color={item.color}
-              imagery={item.imagery}
-              title={item.title}
-              subtitle={item.subtitle}
-              subheading={item.subheading}
-              body={item.body}
-              onClick={() => {
-                setOpenedEducationIndex(index);
-                openModal();
-              }}
+              color={education.color}
+              imagery={education.imagery}
+              title={education.title}
+              subtitle={education.subtitle}
+              subheading={education.subheading}
+              body={education.body}
+              onClick={
+                (education.highlights && education.highlights.length > 0) ||
+                (education.coreBullets && education.coreBullets.length > 0) ||
+                (education.bullets && education.bullets.length > 0) ||
+                education.modalChildren
+                  ? () => {
+                      setOpenedEducationId(education.id);
+                      openModal();
+                    }
+                  : undefined
+              }
               actionButton={
-                <Button
-                  icon={Plus}
-                  text="More"
-                  clickDetail={() => {
-                    setOpenedEducationIndex(0);
-                    openModal();
-                  }}
-                />
+                (education.highlights && education.highlights.length > 0) ||
+                (education.coreBullets && education.coreBullets.length > 0) ||
+                (education.bullets && education.bullets.length > 0) ||
+                education.modalChildren ? (
+                  <Button
+                    icon={Plus}
+                    text="More"
+                    clickDetail={() => {
+                      setOpenedEducationId(education.id);
+                      openModal();
+                    }}
+                  />
+                ) : undefined
               }
             >
-              {item.highlightChildren}
+              {education.highlightChildren}
             </HighlightDetailed>
           </div>
         ))}
       </div>
-      <div className="w-fit">
-        <Button
-          text={showMore ? 'Show less' : 'Show more'}
-          clickDetail={() => setShowMore(!showMore)}
-          icon={showMore ? ChevronUp : ChevronDown}
-        />
-      </div>
+      <Button
+        text={showMore ? 'Show less' : 'Show more'}
+        clickDetail={() => setShowMore(!showMore)}
+        icon={showMore ? ChevronUp : ChevronDown}
+      />
       {showMore && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
           {MORE_EDUCATION.map((education, index) => (
@@ -77,6 +92,32 @@ export default function Work() {
                 subtitle={education.subtitle}
                 subheading={education.subheading}
                 body={education.body}
+                onClick={
+                  (education.highlights && education.highlights.length > 0) ||
+                  (education.coreBullets && education.coreBullets.length > 0) ||
+                  (education.bullets && education.bullets.length > 0) ||
+                  education.modalChildren
+                    ? () => {
+                        setOpenedEducationId(education.id);
+                        openModal();
+                      }
+                    : undefined
+                }
+                actionButton={
+                  (education.highlights && education.highlights.length > 0) ||
+                  (education.coreBullets && education.coreBullets.length > 0) ||
+                  (education.bullets && education.bullets.length > 0) ||
+                  education.modalChildren ? (
+                    <Button
+                      icon={Plus}
+                      text="More"
+                      clickDetail={() => {
+                        setOpenedEducationId(education.id);
+                        openModal();
+                      }}
+                    />
+                  ) : undefined
+                }
               >
                 {education.highlightChildren}
               </HighlightDetailed>
@@ -89,7 +130,7 @@ export default function Work() {
           color={openedEducation?.color || ''}
           open={modalOpened && !!openedEducation}
           onCloseCallback={() => {
-            setOpenedEducationIndex(null);
+            setOpenedEducationId(null);
             closeModal();
           }}
         >
