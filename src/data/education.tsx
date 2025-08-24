@@ -15,7 +15,7 @@ import {
   Megaphone,
   SquarePlay,
   Users,
-  Tally5,
+  Trophy,
 } from 'lucide-react';
 import designAndMarketing from '@/assets/images/hack_the_future/design_and_marketing.png';
 import designAndMarketing2 from '@/assets/images/hack_the_future/design_and_marketing_2.png';
@@ -454,7 +454,7 @@ export const getMoreEducationData = (): Experience[] => [
   },
   {
     id: 'sundae',
-    color: '#696969',
+    color: '#7FCAC9',
     imagery: sundae,
     title: 'Sundae',
     subtitle: 'CS 490 - Human-Computer Interaction',
@@ -690,20 +690,21 @@ export const getMoreEducationData = (): Experience[] => [
     imagery: nationalHonorsSociety,
     title: 'National Honors Society',
     subheading: 'Noblesville High School, March 2019 - May 2020',
-    body: 'Complete community service and tutoring hours. Students are held to strict attendance and due date policies in which students are expected to be present at every meeting and complete a minimum of 50 service hours by certain dates. Only students displaying the qualities of leadership, service, scholarship, and character with very high academic performance are invited into the NHS.',
+    body: 'Completed community service and tutoring hours. Students are held to strict attendance and due date policies in which students are expected to be present at every meeting and complete a minimum of 50 service hours by certain dates. Only students displaying the qualities of leadership, service, scholarship, and character with very high academic performance are invited into the NHS.',
     coreBullets: [],
   },
   {
     id: 'tennis-manager',
     color: '#AA985D',
     imagery: noblesvilleMillers,
-    title: 'Manager for Girls Tennis Team',
+    title: 'Tennis Team Manager',
+    subtitle: 'Girls Tennis Team',
     subheading: 'Noblesville High School, Spring 2018, 2019',
-    body: 'Exhibit skills of leadership and responsibility in recording results of each tennis match during the girls season. Willingly participate in practice to help players improve. Independently and choicefully designed a new, more intuitive score sheet to record results of matches.',
+    body: 'Exhibited skills of leadership and responsibility in recording results of each tennis match during the girls season. Willingly participated in practice to help players improve. Independently and choicefully designed a new, more intuitive score sheet to record results of matches.',
     coreBullets: [],
     highlights: [
       {
-        icon: Tally5,
+        icon: Trophy,
         title: 'Effectively Track Match Results',
         text: 'Designed a new, more intuitive score sheet to record results of matches, designed to be scalable.',
         children: (
@@ -729,7 +730,7 @@ export const getMoreEducationData = (): Experience[] => [
     title: 'Publicity Coordinator',
     subtitle: 'Key Club',
     subheading: 'Noblesville High School, October 2017 - May 2020',
-    body: 'Develop informational typed or promo video announcements to be displayed on the Noblesville  High School News as well as update Key Club social media accounts. The  NHS News is displayed to all students daily. Announcements include information regarding Key Club meetings or events.',
+    body: 'Developed informational typed or promo video announcements to be displayed on the Noblesville High School News as well as update Key Club social media accounts. The NHS News is displayed to all students daily. Announcements included information regarding Key Club meetings or events.',
     coreBullets: [],
     highlightChildren: (
       <Chips strings={['Digital Marketing', 'Graphic Design']} />

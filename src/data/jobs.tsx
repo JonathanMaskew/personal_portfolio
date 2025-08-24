@@ -146,6 +146,28 @@ export const getMoreJobsData = (): Experience[] => [
     title: 'Website Designer',
     subheading: 'Part-time, October 2018 - January 2021',
     body: 'Created a WordPress website for a local tex-mex restaurant to promote products, market events, and expand reach.',
+    highlights: [
+      {
+        icon: SquarePlay,
+        title:
+          'Drove Engagement for Texy Mexy, Creating the Second Most-Viewed Video Ever Posted',
+        text: 'Amongst the COVID-19 limitations, I was asked to create a video to advertise the to-go margarita mix. Drove engagement, becoming the second most-viewed video ever posted by Texy Mexy, with over 2,400 views on Facebook.',
+        children: (
+          <div className="flex justify-center">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/4LQbmkFuNmI?si=-LAr29fl2xR9h_9O"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        ),
+      },
+    ],
     highlightChildren: (
       <Chips strings={['WordPress', 'Web Development', 'Web Design']} />
     ),
