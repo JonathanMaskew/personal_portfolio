@@ -23,26 +23,32 @@ export default function Hero() {
     <div className="flex flex-col gap-8 md:gap-16 justify-center items-center p-6 min-h-screen w-full">
       {!isMobileLandscape && (
         <div className="relative w-full max-w-[250px] md:max-w-[500px] h-[270px] md:h-[200px] flex justify-center">
-          <div className="absolute transform rotate-6 left-0 top-35 md:top-5">
-            <Image
-              src={turkeyRun}
-              alt="Turkey Run hiking"
-              className="w-30 h-30 md:w-40 md:h-40 object-cover rounded-sm ring-6 border-white border-6"
-            />
+          <div className="absolute transform rotate-6 left-0 top-36 md:top-5">
+            <div className="animate-slide-in-left">
+              <Image
+                src={turkeyRun}
+                alt="Turkey Run hiking"
+                className="w-30 h-30 md:w-40 md:h-40 object-cover rounded-sm ring-6 border-white border-6"
+              />
+            </div>
           </div>
           <div className="absolute transform z-10">
-            <Image
-              src={graduation}
-              alt="Purdue graduation"
-              className="w-40 h-40 md:w-50 md:h-50 object-cover rounded-sm ring-6 border-white border-6 shadow-2xl shadow-black"
-            />
+            <div className="animate-scale-in">
+              <Image
+                src={graduation}
+                alt="Purdue graduation"
+                className="w-40 h-40 md:w-50 md:h-50 object-cover rounded-sm ring-6 border-white border-6 shadow-2xl shadow-black"
+              />
+            </div>
           </div>
-          <div className="absolute transform -rotate-6 right-0 top-35 md:top-5">
-            <Image
-              src={costaRica}
-              alt="Costa Rica zip-lining"
-              className="w-30 h-30 md:w-40 md:h-40 object-cover rounded-sm ring-6 border-white border-6"
-            />
+          <div className="absolute transform -rotate-6 right-0 top-36 md:top-5">
+            <div className="animate-slide-in-right">
+              <Image
+                src={costaRica}
+                alt="Costa Rica zip-lining"
+                className="w-30 h-30 md:w-40 md:h-40 object-cover rounded-sm ring-6 border-white border-6"
+              />
+            </div>
           </div>
         </div>
       )}

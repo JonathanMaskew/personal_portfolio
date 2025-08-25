@@ -47,3 +47,45 @@ button {
     transform: none;
   }
 }
+
+@keyframes scaleIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideInLeftFromCenter {
+  0% { transform: translateY(-40%); opacity: 0; }
+  100% { transform: translateY(0%); opacity: 1; }
+}
+
+@keyframes slideInRightFromCenter {
+  0% { transform: translateY(-50%); opacity: 0; }
+  100% { transform: translateY(0%); opacity: 1; }
+}
+
+@keyframes slideInLeftFromCenterX {
+  0% { transform: translateX(50%); opacity: 0; }
+  100% { transform: translateX(0%); opacity: 1; }
+}
+
+@keyframes slideInRightFromCenterX {
+  0% { transform: translateX(-50%); opacity: 0; }
+  100% { transform: translateX(0%); opacity: 1; }
+}
+
+.animate-scale-in { animation: scaleIn 800ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-slide-in-left { animation: slideInLeftFromCenter 650ms cubic-bezier(0.2, 0.8, 0.2, 1) 150ms both; }
+.animate-slide-in-right { animation: slideInRightFromCenter 650ms cubic-bezier(0.2, 0.8, 0.2, 1) 250ms both; }
+
+@media (min-width: 768px) {
+  .animate-slide-in-left { animation-name: slideInLeftFromCenterX; }
+  .animate-slide-in-right { animation-name: slideInRightFromCenterX; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scale-in,
+  .animate-slide-in-left,
+  .animate-slide-in-right {
+    animation: none !important;
+  }
+}
