@@ -4,6 +4,8 @@ import './globals.css';
 import Script from 'next/script';
 import SidebarNav from '@/components/SidebarNav';
 import TopNav from '@/components/TopNav';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const header = Raleway({
   variable: '--font-header',
@@ -115,6 +117,8 @@ export default function RootLayout({
         >
           {children}
         </main>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
