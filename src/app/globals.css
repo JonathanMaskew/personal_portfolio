@@ -73,9 +73,9 @@ button {
   100% { transform: translateX(0%); opacity: 1; }
 }
 
-.animate-scale-in { animation: scaleIn 800ms cubic-bezier(0.16, 1, 0.3, 1) both; }
-.animate-slide-in-left { animation: slideInLeftFromCenter 650ms cubic-bezier(0.2, 0.8, 0.2, 1) 150ms both; }
-.animate-slide-in-right { animation: slideInRightFromCenter 650ms cubic-bezier(0.2, 0.8, 0.2, 1) 250ms both; }
+.animate-scale-in { animation: scaleIn 2500ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-slide-in-left { animation: slideInLeftFromCenter 1500ms cubic-bezier(0.2, 0.8, 0.2, 1) 150ms both; }
+.animate-slide-in-right { animation: slideInRightFromCenter 1500ms cubic-bezier(0.2, 0.8, 0.2, 1) 250ms both; }
 
 @media (min-width: 768px) {
   .animate-slide-in-left { animation-name: slideInLeftFromCenterX; }
