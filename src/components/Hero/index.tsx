@@ -28,6 +28,8 @@ export default function Hero() {
               <Image
                 src={turkeyRun}
                 alt="Turkey Run hiking"
+                priority
+                unoptimized
                 className="w-30 h-30 md:w-40 md:h-40 object-cover rounded-sm ring-6 border-white border-6"
               />
             </div>
@@ -37,6 +39,8 @@ export default function Hero() {
               <Image
                 src={graduation}
                 alt="Purdue graduation"
+                priority
+                unoptimized
                 className="w-40 h-40 md:w-50 md:h-50 object-cover rounded-sm ring-6 border-white border-6 shadow-2xl shadow-black"
               />
             </div>
@@ -46,6 +50,8 @@ export default function Hero() {
               <Image
                 src={costaRica}
                 alt="Costa Rica zip-lining"
+                priority
+                unoptimized
                 className="w-30 h-30 md:w-40 md:h-40 object-cover rounded-sm ring-6 border-white border-6"
               />
             </div>
