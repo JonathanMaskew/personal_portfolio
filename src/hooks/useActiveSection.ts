@@ -59,12 +59,48 @@ export function useActiveSection({
 
       if (measurements.length === 0) return;
 
-      const past = measurements.filter(
-        (m) => m.top - thresholdBottom <= activationOffset
-      );
-      const next = past.length
-        ? past.sort((a, b) => b.top - a.top)[0].item
-        : measurements.sort((a, b) => a.top - b.top)[0].item;
+      // Detect if we're at (or near) the bottom of the scrollable area.
+      // This handles very tall screens or short pages where the last section's
+      // top never crosses the activation threshold.
+      const { scrollTop, scrollHeight, clientHeight } = (() => {
+        if (isWindowScroll) {
+          const docEl =
+            (typeof document !== 'undefined' &&
+              (document.scrollingElement || document.documentElement)) ||
+            null;
+          return {
+            scrollTop: typeof window !== 'undefined' ? window.scrollY : 0,
+            scrollHeight: docEl ? docEl.scrollHeight : 0,
+            clientHeight:
+              typeof window !== 'undefined' ? window.innerHeight : 0,
+          };
+        }
+        if (container) {
+          return {
+            scrollTop: container.scrollTop,
+            scrollHeight: container.scrollHeight,
+            clientHeight: container.clientHeight,
+          };
+        }
+        return { scrollTop: 0, scrollHeight: 0, clientHeight: 0 };
+      })();
+
+      const remaining = Math.max(0, scrollHeight - (scrollTop + clientHeight));
+      const atBottom = remaining <= Math.max(activationOffset, 80);
+
+      let next;
+      if (atBottom) {
+        next = measurements.sort((a, b) => a.top - b.top)[
+          measurements.length - 1
+        ].item;
+      } else {
+        const past = measurements.filter(
+          (m) => m.top - thresholdBottom <= activationOffset
+        );
+        next = past.length
+          ? past.sort((a, b) => b.top - a.top)[0].item
+          : measurements.sort((a, b) => a.top - b.top)[0].item;
+      }
 
       setCurrent((prev) => (prev.id === next.id ? prev : next));
     };
