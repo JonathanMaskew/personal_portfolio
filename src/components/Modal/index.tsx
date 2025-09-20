@@ -66,19 +66,23 @@ export default function Modal({
       {createPortal(closeButton, document.body)}
       {createPortal(
         <div
-          className={`fixed inset-0 z-[100] backdrop-blur-2xl overscroll-contain transition-opacity duration-300 ${isAnimating ? 'opacity-100' : 'opacity-0'} overflow-y-auto overscroll-contain`}
+          className={`fixed inset-0 z-[100] overscroll-contain transition-opacity duration-300 ${
+            isAnimating ? 'opacity-100' : 'opacity-0'
+          }`}
           style={{
             background: `radial-gradient(circle at bottom, ${color}BF 0%, color-mix(in srgb, ${color} 30%, black) 100%)`,
           }}
         >
-          <div className="flex justify-center p-6 md:p-12">
+          <div className="flex justify-center p-6 md:p-12 min-h-full">
             <div
-              className={`relative w-full max-w-5xl rounded-t-2xl md:rounded-2xl transition-transform duration-350 ease-out ${isAnimating ? 'translate-y-0' : 'translate-y-full'}`}
+              className={`relative w-full max-w-5xl rounded-t-2xl md:rounded-2xl transition-transform duration-350 ease-out ${
+                isAnimating ? 'translate-y-0' : 'translate-y-full'
+              }`}
               style={{
                 background: `radial-gradient(circle at top middle, ${color}BF 0%, color-mix(in srgb, ${color} 30%, black) 100%)`,
               }}
             >
-              <div className="">{children}</div>
+              <div className="pb-[env(safe-area-inset-bottom)]">{children}</div>
             </div>
           </div>
         </div>,

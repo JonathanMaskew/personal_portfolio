@@ -27,6 +27,11 @@ export const metadata: Metadata = {
   },
   description:
     'Detail-oriented Software Engineer focused on user-driven front-end web development.',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    viewportFit: 'cover',
+  },
   openGraph: {
     title: "Hi, I'm Jonathan Maskew",
     description:
