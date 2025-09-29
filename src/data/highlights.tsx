@@ -4,9 +4,9 @@ import {
   PillBottle,
   SplinePointer,
   UserPlus,
-  View,
   Plus,
   Megaphone,
+  LayoutTemplate,
 } from 'lucide-react';
 import { Button } from '@/components/Button';
 
@@ -56,6 +56,26 @@ export const getHighlightsData = (
     ),
   },
   {
+    id: 'myhelo-patient-charts',
+    color: '#2396F0',
+    imagery: LayoutTemplate,
+    title:
+      'Re-architected the Site-wide UI Template to Spotlight Crucial Patient Data',
+    subtitle: 'Software Engineer @ myhELO',
+    body: 'Overhauled the base template, inherited by all other layers/pages within the system, to bring greater forcus to crucial patient data. Positioning logic was completely re-written to allow for more flexibile layouts, simplify developmental requirements, and improve scalability.',
+    experienceId: 'myhelo',
+    highlightChildren: (
+      <Button
+        icon={Plus}
+        text="More myhELO"
+        clickDetail={() => {
+          setOpenedExperienceId('myhelo');
+          openModal();
+        }}
+      />
+    ),
+  },
+  {
     id: 'allegion-announcements',
     color: '#F26F21',
     imagery: Megaphone,
@@ -81,25 +101,6 @@ export const getHighlightsData = (
     title: 'Implemented a New User Onboarding Workflow',
     subtitle: 'Software Engineer @ myhELO',
     body: 'Proptyping first in Figma, improved user activation by implementing a new user oboarding workflow that guides users though password creation, profile setup, and intial training. Prioritization was on intuitiveness and ease of use.',
-    experienceId: 'myhelo',
-    highlightChildren: (
-      <Button
-        icon={Plus}
-        text="More myhELO"
-        clickDetail={() => {
-          setOpenedExperienceId('myhelo');
-          openModal();
-        }}
-      />
-    ),
-  },
-  {
-    id: 'myhelo-patient-charts',
-    color: '#2396F0',
-    imagery: View,
-    title: 'Designed a Condensed View to Quickly Visualize Patient Charts',
-    subtitle: 'Software Engineer @ myhELO',
-    body: 'Settled on a consistent, minimalistic view, after many iterations in Figma, that aggregates data into a scannable format in patient charts, allowing providers to quickly visualize patient information. Developed to be reused and scaled to other features within the system.',
     experienceId: 'myhelo',
     highlightChildren: (
       <Button

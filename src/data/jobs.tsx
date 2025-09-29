@@ -8,6 +8,7 @@ import {
   Bot,
   ChefHat,
   ExternalLink,
+  LayoutTemplate,
   PillBottle,
   ShieldCheck,
   SquarePlay,
@@ -58,6 +59,11 @@ export const getJobsData = (): Experience[] => [
         text: 'Led a full-stack rebuilding of the e-prescribing infrastructure by rewriting all front-end and back-end files and integrating with third-party APIs, increasing reliability and functionality.',
       },
       {
+        icon: LayoutTemplate,
+        title: 'Overhaul the Site-wide UI Template',
+        text: 'Re-architected the site-wide UI template to spotlight crucial patient data, increase layout flexibility, and simplify development',
+      },
+      {
         icon: UserRoundPlus,
         title: 'Improve User Activation Through Improved Onboarding',
         text: 'Improve user activation by building a workflow to guide new users through password creation, profile setup, and initial training.',
@@ -77,12 +83,11 @@ export const getJobsData = (): Experience[] => [
     subtitle: 'Allegion',
     title: 'Software Engineer',
     subheading: 'Intern, May 2023 - August 2023',
-    body: 'Integrated with backend APIs to develop a scalable announcements feature within a component-based Angular site, allowing hundreds of users to access announcements and administrators to send targeted announcements.',
+    body: 'Translated mockups to front-end code for a scalable announcements feature within a component-based Angular site, integrating with back-end APIs, to allow hundreds of users to access announcements and administrators to send targeted announcements.',
     highlightChildren: (
       <Chips strings={['Angular', 'Angular Material', 'Front-end', 'Scrum']} />
     ),
     coreBullets: [
-      'Translated high-fidelity mockups to front-end code that conform with user experience specifications and feedback.',
       'Collaborated daily with Product Owner, Interaction Designer, and Backend Developer interns, following the Scrum methodology.',
     ],
     bullets: [],
@@ -121,7 +126,7 @@ export const getJobsData = (): Experience[] => [
     ),
     coreBullets: [
       'Followed the Scrum methodology to communicate daily with the Engineering, Product, and Product Designer teams.',
-      'Ensured new contributions maintained system reliability and functionality by implementing test cases.',
+      'Ensured contributions maintained system reliability and functionality by implementing unit test cases using React Testing Library.',
     ],
     bullets: [],
   },
