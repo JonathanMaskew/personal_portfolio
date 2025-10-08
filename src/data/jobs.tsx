@@ -43,8 +43,9 @@ export const getJobsData = (): Experience[] => [
     ),
     coreBullets: [
       'Streamline front-end development by building reusable, documented front-end components that reduce code redundancy.',
-      'Onboard new software engineers through training and guidance to accelerate their understanding of the codebase.',
       'Establish a Figma component library to enable design-to-development workflows and ensure intuitive, consistent experiences.',
+      'Entrusted to conduct interviews and decide who to advance by assessing their skillset and ability to communicate their work.',
+      'Onboard new software engineers through training and guidance to accelerate their understanding of the codebase.',
       'Present progress demonstrations directly to the CEO and Director of Software Development to gain feedback on priority projects.',
     ],
     highlights: [

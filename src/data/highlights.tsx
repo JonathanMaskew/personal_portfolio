@@ -94,6 +94,25 @@ export const getHighlightsData = (
       />
     ),
   },
+  // {
+  //   id: 'myhelo-interviewing',
+  //   color: '#2396F0',
+  //   imagery: UserPlus,
+  //   title: 'Interview Candidates and Onboarding New Engineers',
+  //   subtitle: 'Software Engineer @ myhELO',
+  //   body: 'Proptyping first in Figma, improved user activation by implementing a new user oboarding workflow that guides users though password creation, profile setup, and intial training. Prioritization was on intuitiveness and ease of use.',
+  //   experienceId: 'myhelo',
+  //   highlightChildren: (
+  //     <Button
+  //       icon={Plus}
+  //       text="More myhELO"
+  //       clickDetail={() => {
+  //         setOpenedExperienceId('myhelo');
+  //         openModal();
+  //       }}
+  //     />
+  //   ),
+  // },
   {
     id: 'myhelo-onboarding',
     color: '#2396F0',

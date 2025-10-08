@@ -365,17 +365,6 @@ export const getEducationData = (): Experience[] => [
     ),
   },
   {
-    id: 'htf-secretary',
-    color: '#03C652',
-    imagery: htfLogoWhite,
-    title: 'Secretary',
-    subtitle: 'Hack the Future',
-    subheading: 'Purdue University, November 2023 - May 2024',
-    body: 'Oversaw club logistics, including event planning, member communications, and administrative tasks, to keep members engaged.',
-    coreBullets: [],
-    highlightChildren: <Chips strings={['Communication', 'Event Planning']} />,
-  },
-  {
     id: 'htf-software-developer',
     color: '#277D4A',
     imagery: htfLogoWhite,
@@ -393,6 +382,17 @@ export const getEducationData = (): Experience[] => [
 ];
 
 export const getMoreEducationData = (): Experience[] => [
+  {
+    id: 'htf-secretary',
+    color: '#03C652',
+    imagery: htfLogoWhite,
+    title: 'Secretary',
+    subtitle: 'Hack the Future',
+    subheading: 'Purdue University, November 2023 - May 2024',
+    body: 'Oversaw club logistics, including event planning, member communications, and administrative tasks, to keep members engaged.',
+    coreBullets: [],
+    highlightChildren: <Chips strings={['Communication', 'Event Planning']} />,
+  },
   {
     id: 'reeses-ratings',
     color: '#FE5200',

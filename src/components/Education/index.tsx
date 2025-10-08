@@ -33,7 +33,7 @@ export default function Work() {
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
         {EDUCATION.map((education, index) => (
-          <div key={index} className={`${index < 2 ? 'col-span-full' : ''}`}>
+          <div key={index} className={`${index === 0 ? 'col-span-full' : ''}`}>
             <HighlightDetailed
               color={education.color}
               imagery={education.imagery}
@@ -83,7 +83,7 @@ export default function Work() {
           {MORE_EDUCATION.map((education, index) => (
             <div
               key={index}
-              className={`${education.id === 'noblesville-high-school' ? 'col-span-full' : ''}`}
+              className={`${education.id === 'noblesville-high-school' || education.id === 'sundae' ? 'col-span-full' : ''}`}
             >
               <HighlightDetailed
                 color={education.color}

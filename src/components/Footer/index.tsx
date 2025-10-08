@@ -138,6 +138,15 @@ export default function Footer() {
               heading
             />
             <div className="flex flex-col gap-10">
+              <div className="flex justify-center">
+                <Button
+                  text="View GitHub Repository"
+                  clickDetail="https://github.com/JonathanMaskew/personal_portfolio"
+                  newTab={true}
+                  icon={ExternalLink}
+                  background
+                />
+              </div>
               <div>
                 I put my full dedication into everything I do to achieve the
                 best possible output. Everything I do is done with care and I
@@ -203,15 +212,6 @@ export default function Footer() {
                 As various experiences continue to shape me, this site will
                 continue to evolve.
               </ModalSection>
-              <div className="flex justify-center">
-                <Button
-                  text="View GitHub Repository"
-                  clickDetail="https://github.com/JonathanMaskew/personal_portfolio"
-                  newTab={true}
-                  icon={ExternalLink}
-                  background
-                />
-              </div>
             </div>
           </>
         )}
