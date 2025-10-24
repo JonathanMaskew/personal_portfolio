@@ -10,15 +10,6 @@ export type ChatMessage = {
   content: string;
 };
 
-const SYSTEM_GREETING_ID = 'greeting';
-
-const systemGreeting: ChatMessage = {
-  id: SYSTEM_GREETING_ID,
-  role: 'assistant',
-  content:
-    "Hi there! Ask me anything about Jonathan's portfolio, experience, education, or projects.",
-};
-
 const generateId = () =>
   typeof crypto !== 'undefined' && crypto.randomUUID
     ? crypto.randomUUID()
@@ -33,7 +24,7 @@ export type ChatSession = {
 };
 
 export function useChatSession(): ChatSession {
-  const [messages, setMessages] = useState<ChatMessage[]>([systemGreeting]);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -64,9 +55,7 @@ export function useChatSession(): ChatSession {
       let success = false;
 
       try {
-        const conversation = pendingMessages.filter(
-          (message) => message.id !== SYSTEM_GREETING_ID
-        );
+        const conversation = pendingMessages;
 
         const response = await fetch('/api/chat', {
           method: 'POST',

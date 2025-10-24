@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import type { AnimationItem, LottiePlayer } from 'lottie-web';
 import { ChatSession, useChatSession } from '@/hooks/useChatSession';
+import { Sparkles } from 'lucide-react';
 
 type MessagesProps = {
   session?: ChatSession;
@@ -68,41 +69,71 @@ export default function Messages({ session }: MessagesProps) {
     };
   }, [isLoading]);
 
-  return (
-    <div className="flex flex-col gap-3 text-xs px-4">
-      <div ref={listRef} className="flex flex-col gap-3 pt-[64px] pb-[82px]">
-        {messages.map((message) => (
-          <div
-            key={message.id}
-            className={`flex ${
-              message.role === 'user'
-                ? 'justify-end pl-6 md:pl-8'
-                : 'justify-start pr-6 md:pr-8'
-            }`}
-          >
-            <div
-              className="rounded-2xl px-3 py-2 text-white border-1 border-white/10 whitespace-pre-wrap"
-              style={{
-                backgroundColor:
-                  message.role === 'user' ? '#00000080' : '#FF6B1880',
-              }}
-            >
-              {message.content}
-            </div>
-          </div>
-        ))}
+  const hasUserMessage = messages.some((m) => m.role === 'user');
 
-        {isLoading && (
-          <div className="flex justify-center w-full h-16 items-center">
-            <div
-              ref={lottieRef}
-              key={isLoading ? 'loading' : 'idle'}
-              className="h-16 w-16 pointer-events-none"
-              aria-label="Thinking animation"
+  return (
+    <div
+      className={`flex flex-col gap-3 text-sm ${hasUserMessage ? 'px-4' : ''} h-full`}
+    >
+      {!hasUserMessage ? (
+        <div className="blob-field overflow-hidden flex items-center justify-center h-full w-full">
+          {/* Blobs (decorative) */}
+          <div className="blob blob--1" aria-hidden />
+          <div className="blob blob--2" aria-hidden />
+          <div className="blob blob--3" aria-hidden />
+          <div className="blob blob--4" aria-hidden />
+          <div className="blob blob--5" aria-hidden />
+
+          {/* Content */}
+          <div className="flex flex-col items-center text-center gap-3 px-4">
+            <Sparkles
+              className="text-white"
+              size={56}
+              strokeWidth={1.5}
+              aria-hidden
             />
+            <p className="text-white text-lg whitespace-pre-wrap">
+              {
+                "Ask AI about Jonathan's portfolio, including his experience, education, and projects!"
+              }
+            </p>
           </div>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div ref={listRef} className="flex flex-col gap-3 pt-[64px] pb-[82px]">
+          {messages.map((message) => (
+            <div
+              key={message.id}
+              className={`flex ${
+                message.role === 'user'
+                  ? 'justify-end pl-6 md:pl-8'
+                  : 'justify-start pr-6 md:pr-8'
+              }`}
+            >
+              <div
+                className="rounded-2xl px-3 py-2 text-white border-1 border-white/10 whitespace-pre-wrap"
+                style={{
+                  backgroundColor:
+                    message.role === 'user' ? '#00000080' : '#FF6B1880',
+                }}
+              >
+                {message.content}
+              </div>
+            </div>
+          ))}
+
+          {isLoading && (
+            <div className="flex justify-center w-full h-16 items-center">
+              <div
+                ref={lottieRef}
+                key={isLoading ? 'loading' : 'idle'}
+                className="h-16 w-16 pointer-events-none"
+                aria-label="Thinking animation"
+              />
+            </div>
+          )}
+        </div>
+      )}
 
       {error && (
         <div className="text-xs text-red-400">
