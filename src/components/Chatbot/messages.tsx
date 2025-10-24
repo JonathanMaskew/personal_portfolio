@@ -77,7 +77,7 @@ export default function Messages({ session }: MessagesProps) {
               className="rounded-2xl px-3 py-2 text-white ring-1 ring-white/10 whitespace-pre-wrap"
               style={{
                 backgroundColor:
-                  message.role === 'user' ? `${'#000000'}90` : `${'#FF6B18'}90`,
+                  message.role === 'user' ? '#00000080' : '#FF6B1880',
               }}
             >
               {message.content}

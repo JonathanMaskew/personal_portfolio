@@ -73,12 +73,12 @@ export default function Chatbot() {
   const formElement = (
     <form
       onSubmit={handleSubmit}
-      className="flex items-center gap-2 rounded-2xl ring-1 ring-white/10 backdrop-blur-lg bg-[var(--background)]/30 px-4 py-2 pr-2 w-full"
+      className="flex items-center gap-3 rounded-2xl ring-1 ring-white/10 backdrop-blur-lg bg-[var(--background)]/30 px-4 py-2 pr-2 w-full"
     >
-      <Sparkles size={20} className="text-[#FF6B18]" aria-hidden />
+      <Sparkles size={24} className="text-[#FF6B18]" aria-hidden />
       <input
         ref={inputRef}
-        className="w-full bg-transparent text-sm outline-none placeholder:text-white/60"
+        className="w-full bg-transparent text-[16px] outline-none placeholder:text-white/60"
         value={draft}
         placeholder="Ask AI about my experience…"
         onFocus={() => setIsOpen(true)}
@@ -103,7 +103,7 @@ export default function Chatbot() {
   // Open state - full chat widget
   if (shouldShowMessages) {
     return (
-      <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 ml-4 mt-4 md:ml-6 md:mt-6 flex flex-col w-fit md:w-1/3 xl:w-1/4 max-w-7xl h-1/2 rounded-2xl bg-[var(--background)]/30 p-4 gap-3 justify-between ring-1 ring-white/10 backdrop-blur-lg">
+      <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 ml-4 mt-4 md:ml-6 md:mt-6 flex flex-col w-fit md:w-1/3 xl:w-1/4 max-w-7xl h-1/2 rounded-2xl bg-[var(--background)] p-4 gap-3 justify-between ring-1 ring-white/10">
         {/* Header */}
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
