@@ -1,7 +1,7 @@
 'use client';
 
 import {
-  Bot,
+  Sparkles,
   ChevronDown,
   Lightbulb,
   Paintbrush,
@@ -78,7 +78,7 @@ export default function Hero() {
       <div className="text-2xl font-bold text-center">
         <TypewriterText
           texts={[
-            { text: 'AI Enthusiast', icon: Bot },
+            { text: 'AI Enthusiast', icon: Sparkles },
             { text: 'Front-end Connoisseur', icon: SquareMousePointer },
             { text: 'Design Aficionado', icon: Paintbrush },
             { text: 'Idea Generator', icon: Lightbulb },
