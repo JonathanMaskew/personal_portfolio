@@ -126,15 +126,6 @@ export default function RootLayout({
 
         <Chatbot />
 
-        <div
-          className="pointer-events-none fixed inset-x-0 w-full bg-[var(--background)]"
-          style={{
-            bottom: 'calc(-1 * env(safe-area-inset-bottom, 0px))',
-            height: 'env(safe-area-inset-bottom, 1px)',
-            minHeight: '1px',
-          }}
-        ></div>
-
         <Analytics />
         <SpeedInsights />
       </body>
