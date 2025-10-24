@@ -110,7 +110,6 @@ export async function POST(request: NextRequest) {
       : contents;
 
     const client = new GoogleGenerativeAI(apiKey);
-    let lastError: Error | null = null;
 
     let sawEmptyResponse = false;
 
@@ -118,9 +117,10 @@ export async function POST(request: NextRequest) {
       response: EnhancedGenerateContentResponse | GenerateContentResponse
     ) => {
       let reply = '';
-      if (response?.text) {
+      // Prefer EnhancedGenerateContentResponse.text() when available
+      if ('text' in response && typeof response.text === 'function') {
         try {
-          const maybe = response.text();
+          const maybe = (response as EnhancedGenerateContentResponse).text();
           if (typeof maybe === 'string') {
             reply = maybe.trim();
           }
@@ -217,20 +217,12 @@ export async function POST(request: NextRequest) {
           continue;
         }
 
-        lastError =
+        const errObj =
           error instanceof Error ? error : new Error(String(error ?? ''));
 
-        console.error('Gemini API error', lastError.message);
-        return NextResponse.json({ error: lastError.message }, { status: 502 });
+        console.error('Gemini API error', errObj.message);
+        return NextResponse.json({ error: errObj.message }, { status: 502 });
       }
-    }
-
-    if (lastError) {
-      const message =
-        lastError.message ??
-        'No supported Gemini model is enabled for this API key.';
-      console.error('Gemini model negotiation failed', message);
-      return NextResponse.json({ error: message }, { status: 502 });
     }
 
     if (sawEmptyResponse) {
