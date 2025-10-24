@@ -95,7 +95,7 @@ export default function Chatbot() {
   // Open state - full chat widget
   if (isOpen) {
     return (
-      <div className="fixed bottom-3 inset-x-3 md:inset-x-auto md:right-3 md:w-1/2 lg:w-1/3 h-2/3 rounded-2xl bg-[var(--background)] border-1 border-white/10 z-[500] flex flex-col overflow-hidden">
+      <div className="fixed bottom-3 inset-x-3 md:inset-x-auto md:right-3 md:w-1/2 lg:w-1/3 h-2/3 rounded-2xl bg-[var(--background)] z-[500] flex flex-col overflow-hidden shadow-2xl shadow-black">
         <button
           className="absolute right-4 top-4 z-[200] rounded-full w-fit h-fit p-1 group transition-all duration-200 backdrop-blur-2xl"
           onClick={onCloseCallback}
@@ -122,7 +122,7 @@ export default function Chatbot() {
 
   // Collapsed state - mobile shows just button, desktop shows input
   return (
-    <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 ml-4 mt-4 md:ml-6 md:mt-6 flex flex-col w-fit md:w-1/3 xl:w-1/4 max-w-7xl">
+    <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 ml-4 mt-4 md:ml-6 md:mt-6 flex flex-col w-fit md:w-1/2 lg:w-1/3 max-w-7xl">
       {/* Mobile: Just the button */}
       <button
         type="button"
