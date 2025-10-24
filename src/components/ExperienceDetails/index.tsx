@@ -3,7 +3,7 @@
 import type { Experience } from '@/types';
 import React from 'react';
 import HighlightFeature from '../HighlightFeature';
-import { CircleEllipsis, ListTodo, Sparkles } from 'lucide-react';
+import { CircleEllipsis, ListTodo, Star } from 'lucide-react';
 import ModalSection from '../ModalSection';
 import InnerHighlight from '../InnerHighlight';
 
@@ -37,7 +37,7 @@ export default function ExperienceDetails({ data }: ExperienceDetailsProps) {
         )}
 
         {data.highlights && data.highlights.length > 0 && (
-          <ModalSection icon={Sparkles} title="Key Accomplishments">
+          <ModalSection icon={Star} title="Key Accomplishments">
             <div className="flex flex-wrap gap-3 justify-center">
               {data.highlights.map((highlight, i) => (
                 <InnerHighlight

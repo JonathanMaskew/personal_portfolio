@@ -1,6 +1,6 @@
 'use client';
 
-import { Sparkles } from 'lucide-react';
+import { Star } from 'lucide-react';
 import SectionWrapper from '../SectionWrapper';
 import Carousel, { CarouselItem } from '../Carousel';
 import { useModal } from '@/hooks/useModal';
@@ -30,7 +30,7 @@ export default function Highlights() {
 
   return (
     <SectionWrapper
-      icon={Sparkles}
+      icon={Star}
       title="Highlights"
       subtext="Some accomplishments worth noting."
     >

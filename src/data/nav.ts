@@ -7,7 +7,7 @@ import {
   Linkedin,
   House,
   User,
-  Sparkles,
+  Star,
   CircleEllipsis,
 } from 'lucide-react';
 
@@ -27,7 +27,7 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
   {
     label: 'Highlights',
     id: 'highlights',
-    icon: Sparkles,
+    icon: Star,
     href: '#highlights',
   },
   {
