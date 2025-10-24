@@ -1,4 +1,3 @@
-import { useHoverPressHandlers } from '@/hooks/useHoverPressHandlers';
 import { useMobile } from '@/hooks/useMobile';
 import Image, { StaticImageData } from 'next/image';
 import React, { useRef } from 'react';

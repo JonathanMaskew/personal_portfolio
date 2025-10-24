@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
 
-export async function GET(_req: NextRequest) {
+export async function GET() {
   const apiKey = process.env.GEMINI_API_KEY?.trim();
   if (!apiKey) {
     return NextResponse.json(
@@ -40,4 +40,3 @@ export async function GET(_req: NextRequest) {
     );
   }
 }
-

@@ -1,5 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import {
+  GoogleGenerativeAI,
+  type EnhancedGenerateContentResponse,
+  type GenerateContentResponse,
+  type GenerateContentResult,
+  type GenerateContentCandidate,
+  type Content,
+  type Part,
+} from '@google/generative-ai';
 
 export const runtime = 'nodejs';
 
@@ -77,7 +85,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const contents = messages.map((message) => ({
+    const contents: Content[] = messages.map((message) => ({
       role: message.role === 'assistant' ? 'model' : 'user',
       parts: [{ text: message.content }],
     }));
@@ -87,7 +95,7 @@ export async function POST(request: NextRequest) {
       .find((message) => message.role === 'user')
       ?.content.trim();
 
-    const conversationWithCue = latestUserMessage
+    const conversationWithCue: Content[] = latestUserMessage
       ? [
           ...contents,
           {
@@ -106,7 +114,9 @@ export async function POST(request: NextRequest) {
 
     let sawEmptyResponse = false;
 
-    const extractReply = (response: any) => {
+    const extractReply = (
+      response: EnhancedGenerateContentResponse | GenerateContentResponse
+    ) => {
       let reply = '';
       if (response?.text) {
         try {
@@ -120,11 +130,14 @@ export async function POST(request: NextRequest) {
       }
 
       if (!reply && Array.isArray(response?.candidates)) {
-        for (const candidate of response.candidates) {
-          const parts = candidate?.content?.parts ?? [];
+        for (const candidate of response.candidates as GenerateContentCandidate[]) {
+          const parts: Part[] = candidate?.content?.parts ?? [];
           const joined = parts
-            .map((part: any) =>
-              typeof part?.text === 'string' ? part.text.trim() : ''
+            .map((part) =>
+              typeof part === 'object' && part !== null && 'text' in part &&
+              typeof (part as { text?: unknown }).text === 'string'
+                ? String((part as { text: string }).text).trim()
+                : ''
             )
             .filter(Boolean)
             .join('\n')
@@ -138,9 +151,8 @@ export async function POST(request: NextRequest) {
 
       const blocked = Boolean(
         response?.promptFeedback?.blockReason ||
-          (response?.candidates ?? []).some((candidate: any) => {
-            const reason =
-              candidate?.finishReason ?? candidate?.finish_reason ?? '';
+          (response?.candidates ?? []).some((candidate) => {
+            const reason = (candidate as GenerateContentCandidate)?.finishReason;
             return (
               typeof reason === 'string' &&
               reason.toLowerCase().includes('safety')
@@ -161,11 +173,11 @@ export async function POST(request: NextRequest) {
         let triedSingleMessage = false;
 
         while (true) {
-          const result = await model.generateContent({
+          const result: GenerateContentResult = await model.generateContent({
             contents: attemptContents,
             generationConfig: DEFAULT_GENERATION_CONFIG,
           });
-          const resp = result.response as any;
+          const resp = result.response;
           const { reply, blocked } = extractReply(resp);
 
           if (reply) {

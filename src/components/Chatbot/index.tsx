@@ -43,10 +43,6 @@ export default function Chatbot() {
     }
   };
 
-  const handleFocus = () => {
-    setIsOpen(true);
-  };
-
   const handleBlur = () => {
     // keep open until user explicitly closes
   };

@@ -8,7 +8,9 @@ type MessagesProps = {
 };
 
 export default function Messages({ session }: MessagesProps) {
-  const chatSession = session ?? useChatSession();
+  // Always call hooks unconditionally; prefer prop session when provided
+  const fallbackSession = useChatSession();
+  const chatSession = session ?? fallbackSession;
   const { messages, isLoading, error, clearError } = chatSession;
   const listRef = useRef<HTMLDivElement | null>(null);
 
