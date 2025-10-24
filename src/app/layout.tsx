@@ -126,6 +126,8 @@ export default function RootLayout({
 
         <Chatbot />
 
+        <div className="fixed bottom-0 w-full h-[1px] bg-[var(--background)]"></div>
+
         <Analytics />
         <SpeedInsights />
       </body>
