@@ -6,6 +6,7 @@ import SidebarNav from '@/components/SidebarNav';
 import TopNav from '@/components/TopNav';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import Chatbot from '@/components/Chatbot';
 
 const header = Raleway({
   variable: '--font-header',
@@ -122,6 +123,9 @@ export default function RootLayout({
         >
           {children}
         </main>
+
+        <Chatbot />
+
         <Analytics />
         <SpeedInsights />
       </body>

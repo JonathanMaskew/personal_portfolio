@@ -1,11 +1,6 @@
 'use client';
 
-import {
-  ArrowDown,
-  Blend,
-  BriefcaseBusiness,
-  GraduationCap,
-} from 'lucide-react';
+import { ArrowDown, Blend, BriefcaseBusiness, GraduationCap } from 'lucide-react';
 import SectionWrapper from '../SectionWrapper';
 import Carousel, { CarouselImageItem } from '../Carousel';
 import tennis from '@/assets/images/tennis.jpg';
