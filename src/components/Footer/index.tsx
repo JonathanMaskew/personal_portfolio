@@ -64,7 +64,7 @@ export default function Footer() {
           color="#696969"
           imagery={HandHeart}
           title="Built with Passion"
-          subtitle="Developed with Next.js"
+          subtitle="Developed using Next.js"
           body="From the layout to the color scheme, and beyond, many intentional decisions were made to ensure a delightful experience."
           onClick={() => {
             setModalContent('this_site');
@@ -133,7 +133,7 @@ export default function Footer() {
               color="#696969"
               imagery={HandHeart}
               title="Built with Passion"
-              subtitle="Developed with Next.js"
+              subtitle="Developed using Next.js"
               nested
               heading
             />
