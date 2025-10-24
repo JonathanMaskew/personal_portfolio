@@ -18,7 +18,11 @@ export default function Messages({ session }: MessagesProps) {
 
   useEffect(() => {
     if (!listRef.current) return;
-    listRef.current.scrollTop = listRef.current.scrollHeight;
+    const scroller = listRef.current.closest(
+      '[data-chat-scroller]'
+    ) as HTMLElement | null;
+    const target = scroller ?? listRef.current;
+    target.scrollTop = target.scrollHeight;
   }, [messages, isLoading]);
 
   // Initialize Lottie animation for the thinking indicator when loading
@@ -30,11 +34,15 @@ export default function Messages({ session }: MessagesProps) {
 
     const load = async () => {
       try {
-        const mod = await import('lottie-web');
-        if (disposed || !lottieRef.current) return;
-        const lottie = mod.default as LottiePlayer;
+        // Import the standard build; support both ESM/CJS shapes
+        const mod = (await import('lottie-web')) as typeof import('lottie-web');
+        const container = lottieRef.current;
+        if (disposed || !container) return;
+        const lottie = (mod.default ?? (mod as unknown)) as LottiePlayer;
+        // Clear previous DOM (hot reloads, repeated loads)
+        container.innerHTML = '';
         anim = lottie.loadAnimation({
-          container: lottieRef.current,
+          container,
           renderer: 'svg',
           loop: true,
           autoplay: true,
@@ -61,20 +69,19 @@ export default function Messages({ session }: MessagesProps) {
   }, [isLoading]);
 
   return (
-    <div className="flex flex-col gap-4 text-xs h-full">
-      <div
-        ref={listRef}
-        className="h-full overflow-y-auto flex min-h-0 flex-col gap-3"
-      >
+    <div className="flex flex-col gap-3 text-xs px-4">
+      <div ref={listRef} className="flex flex-col gap-3 pt-[64px] pb-[82px]">
         {messages.map((message) => (
           <div
             key={message.id}
-            className={`flex px-1 ${
-              message.role === 'user' ? 'justify-end' : 'justify-start'
+            className={`flex ${
+              message.role === 'user'
+                ? 'justify-end pl-6 md:pl-8'
+                : 'justify-start pr-6 md:pr-8'
             }`}
           >
             <div
-              className="rounded-2xl px-3 py-2 text-white ring-1 ring-white/10 whitespace-pre-wrap"
+              className="rounded-2xl px-3 py-2 text-white border-1 border-white/10 whitespace-pre-wrap"
               style={{
                 backgroundColor:
                   message.role === 'user' ? '#00000080' : '#FF6B1880',
@@ -86,10 +93,11 @@ export default function Messages({ session }: MessagesProps) {
         ))}
 
         {isLoading && (
-          <div className="flex justify-center w-full h-16">
+          <div className="flex justify-center w-full h-16 items-center">
             <div
               ref={lottieRef}
-              className="h-16 w-16"
+              key={isLoading ? 'loading' : 'idle'}
+              className="h-16 w-16 pointer-events-none"
               aria-label="Thinking animation"
             />
           </div>
