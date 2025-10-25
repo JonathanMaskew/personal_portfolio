@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ArrowUp, Sparkles, X } from 'lucide-react';
 import { useHoverPressHandlers } from '@/hooks/useHoverPressHandlers';
+import { useMobile } from '@/hooks/useMobile';
 import Messages from '@/components/Chatbot/messages';
 import { useChatSession } from '@/hooks/useChatSession';
 
@@ -14,12 +15,13 @@ export default function Chatbot() {
   // Single source of truth for whether the widget is expanded
   const [isOpen, setIsOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement | null>(null);
+  const { isMobile } = useMobile();
 
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && !isMobile) {
       inputRef.current?.focus();
     }
-  }, [isOpen]);
+  }, [isOpen, isMobile]);
 
   const submitDraft = useCallback(
     async (value: string) => {
