@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { systemPrompt } from '@/data/chatContext';
 import {
   GoogleGenerativeAI,
   type EnhancedGenerateContentResponse,
@@ -167,7 +168,7 @@ export async function POST(request: NextRequest) {
       try {
         const model = client.getGenerativeModel({
           model: modelName,
-          systemInstruction: process.env.CHAT_SYSTEM_PROMPT,
+          systemInstruction: systemPrompt,
         });
         let attemptContents = conversationWithCue;
         let triedSingleMessage = false;
