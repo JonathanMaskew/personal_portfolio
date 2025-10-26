@@ -28,8 +28,8 @@ const MODEL_CANDIDATES = Array.from(
       normalizeModel(process.env.GEMINI_MODEL),
       // Prefer the newest text models first
       'gemini-2.5-flash',
-      'gemini-2.5-pro',
       'gemini-2.5-flash-lite',
+      'gemini-2.5-pro',
       // Solid 2.0 fallbacks
       'gemini-2.0-flash-001',
       'gemini-2.0-flash',
@@ -43,10 +43,10 @@ const MODEL_CANDIDATES = Array.from(
 ) as string[];
 
 const DEFAULT_GENERATION_CONFIG = {
-  temperature: 0.7,
+  temperature: 0.8,
   topK: 40,
   topP: 0.95,
-  maxOutputTokens: 512,
+  maxOutputTokens: 4096,
 };
 
 const isMissingModelError = (error: unknown) => {
@@ -135,7 +135,9 @@ export async function POST(request: NextRequest) {
           const parts: Part[] = candidate?.content?.parts ?? [];
           const joined = parts
             .map((part) =>
-              typeof part === 'object' && part !== null && 'text' in part &&
+              typeof part === 'object' &&
+              part !== null &&
+              'text' in part &&
               typeof (part as { text?: unknown }).text === 'string'
                 ? String((part as { text: string }).text).trim()
                 : ''
@@ -153,7 +155,8 @@ export async function POST(request: NextRequest) {
       const blocked = Boolean(
         response?.promptFeedback?.blockReason ||
           (response?.candidates ?? []).some((candidate) => {
-            const reason = (candidate as GenerateContentCandidate)?.finishReason;
+            const reason = (candidate as GenerateContentCandidate)
+              ?.finishReason;
             return (
               typeof reason === 'string' &&
               reason.toLowerCase().includes('safety')
