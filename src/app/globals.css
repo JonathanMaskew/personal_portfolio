@@ -109,7 +109,7 @@ button {
   top: 20%;
   left: 30%;
   background: radial-gradient(circle at 50% 50%, rgba(255, 107, 24, 0.85) 0%, rgba(255, 107, 24, 0) 60%);
-  animation: float1 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: float1 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   animation-delay: -6s;
 }
 .blob--2 {
@@ -118,7 +118,7 @@ button {
   top: 70%;
   left: 20%;
   background: radial-gradient(circle at 50% 50%, rgba(254, 240, 138, 0.8) 0%, rgba(254, 240, 138, 0) 60%);
-  animation: float2 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: float2 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   animation-delay: -12s;
 }
 .blob--3 {
@@ -127,7 +127,7 @@ button {
   top: 30%;
   left: 80%;
   background: radial-gradient(circle at 50% 50%, rgba(255, 107, 24, 0.8) 0%, rgba(255, 107, 24, 0) 60%);
-  animation: float3 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: float3 11s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   animation-delay: -3s;
 }
 .blob--4 {
@@ -136,7 +136,7 @@ button {
   top: 80%;
   left: 75%;
   background: radial-gradient(circle at 50% 50%, rgba(254, 240, 138, 0.75) 0%, rgba(254, 240, 138, 0) 60%);
-  animation: float2 11s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: float2 13s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   animation-delay: -18s;
 }
 .blob--5 {
@@ -145,7 +145,7 @@ button {
   top: 45%;
   left: 50%;
   background: radial-gradient(circle at 50% 50%, rgba(255, 107, 24, 0.75) 0%, rgba(255, 107, 24, 0) 60%);
-  animation: float1 9.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: float1 11.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   animation-delay: -9s;
 }
 
