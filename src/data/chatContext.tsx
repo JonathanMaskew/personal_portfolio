@@ -41,7 +41,7 @@ A detail-oriented Software Engineer with a B.S. in Computer Science from Purdue 
 
 Jonathan has a robust skillset that spans from website design and development to user research, prototyping, branding, and marketing. At the core of everything he does, he remains focused on how his work impacts the end-user. He is skilled in UX/UI design, Agile/Scrum methodologies, and onboarding new engineers.
 
-**Jonathan is actively seeking a new software engineering role. While he has a preference for front-end development, he also has valuable full-stack experience and is open to adapting to more design-oriented engineering roles.**
+**Jonathan is actively seeking a new software engineering role. He is a highly capable full-stack developer who has a strong preference for front-end and design-oriented engineering. While that is his preferred focus, he remains open to and well-equipped for various opportunities, including full-stack positions.**
 
 - Location: Noblesville, IN
 - Email: jmaskew1.softwareEngineer@gmail.com
@@ -80,7 +80,7 @@ Followed Scrum methodology, communicating daily with Engineering, Product, and D
 Technologies: Next.js, React, Tailwind CSS, TypeScript, React Testing Library, Scrum.
 
 - Website Designer | Texy Mexy (Noblesville, IN | Oct 2018 - Jan 2021)
-Created and-managed a WordPress website to promote products and market events.
+Created and managed a WordPress website to promote products and market events.
 Drove engagement during the COVID-19 pandemic by creating a promotional video for to-go margarita mix, which became the second most-viewed video on the company's Facebook with over 2,400 views.
 
 - Other Experience:
@@ -122,24 +122,24 @@ For a more personal touch, here are a few of Jonathan's interests:
 - He enjoys the Carousel of Progress ride at Disney. He also has this quote from the ride on his site: “Man has a dream and that's the start / He follows his dream with mind and heart / And when it becomes a reality / It's a dream come true for you and me” - Carousel of Progress (Sherman Brothers)
 - He also included a gif of a manatee on the site.
 
-About This Website (from the 'More' Section)
+Details from the 'More' Section
 
-Jonathan is passionate about putting his full dedication into his work to achieve the best possible output, and this portfolio site is an example of that.
-- **Design Philosophy:** The site was designed to be a single, scrollable page to provide a holistic view of his accomplishments, where no single piece is more important than another. The goal was to create a site that is practical, intuitive, and beautiful, prioritizing the content above all.
-- **Color Scheme:** The dark background provides a professional feel and makes the content pop. Colors are used strategically to unify different content sections, with gradients drawing attention to key areas.
-- **Interactivity:** Subtle interactions and animations are used to make the site feel friendly, engaging, and clear, helping to show what is interactable.
-- **Responsiveness:** The site is fully responsive and optimized for both desktop (with a sidebar and hover effects) and mobile (with a top navigation bar).
-- **Technology:** He built the site using Next.js (a popular, modern framework) and Tailwind CSS for efficient styling. He believes in using AI as a powerful tool and assistant, not a replacement; all design decisions and content on this site are his own. Any AI contributions to the code were thoroughly vetted, understood, and adapted.
-- **GitHub Repository:** The code for this site is available on GitHub (github.com/JonathanMaskew/personal_portfolio).
-- **Future:** He views the site as "never complete" and plans to evolve it as his experiences continue to shape him.
+This part of the site contains additional details about Jonathan's personal brand and the portfolio site itself.
 
-History of His Personal Brand (from the 'More' Section)
+- **Topic: About This Website (Built with Passion):** Jonathan is passionate about putting his full dedication into his work to achieve the best possible output, and this portfolio site is an example of that.
+  - **Design Philosophy:** The site was designed to be a single, scrollable page to provide a holistic view of his accomplishments, where no single piece is more important than another. The goal was to create a site that is practical, intuitive, and beautiful, prioritizing the content above all.
+  - **Color Scheme:** The dark background provides a professional feel and makes the content pop. Colors are used strategically to unify different content sections, with gradients drawing attention to key areas.
+  - **Interactivity:** Subtle interactions and animations are used to make the site feel friendly, engaging, and clear, helping to show what is interactable.
+  - **Responsiveness:** The site is fully responsive and optimized for both desktop (with a sidebar and hover effects) and mobile (with a top navigation bar).
+  - **Technology:** He built the site using Next.js (a popular, modern framework) and Tailwind CSS for efficient styling. He believes in using AI as a powerful tool and assistant, not a replacement; all design decisions and content on this site are his own. Any AI contributions to the code were thoroughly vetted, understood, and adapted.
+  - **GitHub Repository:** The code for this site is available on GitHub (github.com/JonathanMaskew/personal_portfolio).
+  - **Future:** He views the site as "never complete" and plans to evolve it as his experiences continue to shape him.
 
-Jonathan's interest in web development and branding started as a child when he discovered Google Sites and its power to build and publish a website without code.
-- This fascination led him to create "J's Page," which began as a personal portfolio and diary to share animations, videos, and stories.
-- As the site expanded, it evolved into a personal brand, complete with logos ("J's Creations," "J's Animation," and eventually "J's").
-- His exploration of creative outlets like logo design, graphic design, and UI design contributed to his decision to pursue a degree in Computer Science, where he learned the code behind the sites he loved to build.
-- After years of iteration, the site you are on now is the latest culmination of the "J's Page" brand, which will continue to grow and evolve with him.
+- **Topic: History of His Personal Brand (The Evolution of J's Page):** Jonathan's interest in web development and branding started as a child when he discovered Google Sites and its power to build and publish a website without code.
+  - This fascination led him to create "J's Page," which began as a personal portfolio and diary to share animations, videos, and stories.
+  - As the site expanded, it evolved into a personal brand, complete with logos ("J's Creations," "J's Animation," and eventually "J's").
+  - His exploration of creative outlets like logo design, graphic design, and UI design contributed to his decision to pursue a degree in Computer Science, where he learned the code behind the sites he loved to build.
+  - After years of iteration, the site you are on now is the latest culmination of the "J's Page" brand, which will continue to grow and evolve with him.
 
 Website Structure & Navigation
 
