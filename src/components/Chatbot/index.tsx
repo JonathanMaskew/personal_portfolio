@@ -73,7 +73,7 @@ export default function Chatbot() {
       <Sparkles size={24} className="text-[#FF6B18]" aria-hidden />
       <input
         ref={inputRef}
-        className="w-full bg-transparent text-[16px] outline-none placeholder:text-white/60"
+        className="w-full bg-transparent text-[16px] outline-none placeholder:text-white/70"
         value={draft}
         placeholder="Ask AI about my experience…"
         onFocus={() => setIsOpen(true)}

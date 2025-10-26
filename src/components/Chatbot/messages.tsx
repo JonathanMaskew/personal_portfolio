@@ -76,26 +76,31 @@ export default function Messages({ session }: MessagesProps) {
       className={`flex flex-col gap-3 text-sm ${hasUserMessage ? 'px-4' : ''} h-full`}
     >
       {!hasUserMessage ? (
-        <div className="blob-field overflow-hidden flex items-center justify-center h-full w-full">
-          {/* Blobs (decorative) */}
-          <div className="blob blob--1" aria-hidden />
-          <div className="blob blob--2" aria-hidden />
-          <div className="blob blob--3" aria-hidden />
-          <div className="blob blob--4" aria-hidden />
-          <div className="blob blob--5" aria-hidden />
+        <div className="overflow-hidden flex items-center justify-center h-full w-full relative">
+          <div className="blobl-field">
+            <div className="blob blob--1" aria-hidden />
+            <div className="blob blob--2" aria-hidden />
+            <div className="blob blob--3" aria-hidden />
+            <div className="blob blob--4" aria-hidden />
+            <div className="blob blob--5" aria-hidden />
+          </div>
 
-          {/* Content */}
-          <div className="flex flex-col items-center text-center gap-3 px-4">
+          <div className="flex flex-col items-center text-center gap-3 px-4 text-white/90">
             <Sparkles
               className="text-white"
               size={56}
               strokeWidth={1.5}
               aria-hidden
             />
-            <p className="text-white text-lg whitespace-pre-wrap">
+            <p className="text-lg whitespace-pre-wrap">
               {
                 "Ask AI about Jonathan's portfolio, including his experience, education, and projects!"
               }
+            </p>
+
+            <p className="absolute bottom-19 text-[10px] px-4 text-white/70">
+              Jonathan <b>CANNOT</b> access the requests or responses from any
+              conversation.
             </p>
           </div>
         </div>

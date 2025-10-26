@@ -101,6 +101,7 @@ button {
   opacity: 0.58;
   pointer-events: none;
   will-change: transform;
+  z-index: 0; /* ensure blobs sit behind content */
 }
 /* Orange / Yellow palette to match hero */
 .blob--1 {
