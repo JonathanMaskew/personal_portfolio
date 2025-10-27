@@ -91,8 +91,7 @@ export default function Messages({ session }: MessagesProps) {
             </p>
 
             <p className="absolute bottom-19 text-[10px] px-8 text-white/70">
-              Jonathan <b>CANNOT</b> access the requests or responses from any
-              conversation.
+              Jonathan <b>cannot</b> see any requests or responses.
             </p>
           </div>
 
