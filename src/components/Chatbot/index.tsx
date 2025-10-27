@@ -97,9 +97,9 @@ export default function Chatbot() {
   // Open state - full chat widget
   if (isOpen) {
     return (
-      <div className="fixed bottom-3 inset-x-3 md:inset-x-auto md:right-3 md:w-1/2 lg:w-1/3 h-2/3 rounded-2xl bg-[var(--background)] z-[500] flex flex-col overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.45)] border-1 border-white/10">
+      <div className="fixed bottom-3 inset-x-3 md:inset-x-auto md:right-3 md:w-1/2 lg:w-1/3 h-2/3 rounded-2xl bg-[var(--background)] z-40 flex flex-col overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.45)] border-1 border-white/10">
         <button
-          className="absolute right-4 top-4 z-[200] rounded-full w-fit h-fit p-1 group transition-all duration-200 backdrop-blur-2xl"
+          className="absolute right-4 top-4 z-50 rounded-full w-fit h-fit p-1 group transition-all duration-200 backdrop-blur-2xl"
           onClick={onCloseCallback}
           style={{
             backgroundColor: '#ffffff1A',

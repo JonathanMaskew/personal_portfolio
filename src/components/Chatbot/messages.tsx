@@ -76,8 +76,8 @@ export default function Messages({ session }: MessagesProps) {
       className={`flex flex-col gap-3 text-sm ${hasUserMessage ? 'px-4' : ''} h-full`}
     >
       {!hasUserMessage ? (
-        <div className="overflow-hidden flex items-center justify-center h-full w-full relative">
-          <div className="flex flex-col items-center text-center gap-3 pb-[82px] px-8 text-white/90">
+        <div className="overflow-hidden flex items-center justify-center h-full w-full text-white/70 relative">
+          <div className="flex flex-col items-center text-center gap-3 pb-[82px] px-8 z-10">
             <Sparkles size={56} strokeWidth={1.5} aria-hidden />
             <p className="text-lg whitespace-pre-wrap">
               {
@@ -85,7 +85,7 @@ export default function Messages({ session }: MessagesProps) {
               }
             </p>
 
-            <p className="absolute bottom-19 text-[10px] text-white/70">
+            <p className="absolute bottom-19 text-[10px]">
               Jonathan <b>cannot</b> see any requests or responses.
             </p>
           </div>
