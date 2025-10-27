@@ -77,7 +77,7 @@ export default function Messages({ session }: MessagesProps) {
     >
       {!hasUserMessage ? (
         <div className="overflow-hidden flex items-center justify-center h-full w-full relative">
-          <div className="flex flex-col items-center text-center gap-3 pb-19 px-8 text-white/90">
+          <div className="flex flex-col items-center text-center gap-3 pb-[82px] px-8 text-white/90">
             <Sparkles size={56} strokeWidth={1.5} aria-hidden />
             <p className="text-lg whitespace-pre-wrap">
               {
