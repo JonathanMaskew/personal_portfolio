@@ -18,10 +18,10 @@ export default function Chatbot() {
   const { isMobile } = useMobile();
 
   useEffect(() => {
-    if (isOpen && !isMobile) {
+    if (isOpen && !isMobile && !isLoading) {
       inputRef.current?.focus();
     }
-  }, [isOpen, isMobile]);
+  }, [isOpen, isMobile, isLoading]);
 
   const submitDraft = useCallback(
     async (value: string) => {
