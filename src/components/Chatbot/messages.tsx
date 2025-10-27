@@ -77,20 +77,15 @@ export default function Messages({ session }: MessagesProps) {
     >
       {!hasUserMessage ? (
         <div className="overflow-hidden flex items-center justify-center h-full w-full relative">
-          <div className="flex flex-col items-center text-center gap-3 px-8 text-white/90">
-            <Sparkles
-              className="text-white"
-              size={56}
-              strokeWidth={1.5}
-              aria-hidden
-            />
+          <div className="flex flex-col items-center text-center gap-3 pb-19 px-8 text-white/90">
+            <Sparkles size={56} strokeWidth={1.5} aria-hidden />
             <p className="text-lg whitespace-pre-wrap">
               {
-                "Ask AI about Jonathan's portfolio, including his experience, education, and projects!"
+                "Ask AI about Jonathan's portfolio, including his work, education, projects, skillset, and more!"
               }
             </p>
 
-            <p className="absolute bottom-19 text-[10px] px-8 text-white/70">
+            <p className="absolute bottom-19 text-[10px] text-white/70">
               Jonathan <b>cannot</b> see any requests or responses.
             </p>
           </div>
