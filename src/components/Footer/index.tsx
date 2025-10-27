@@ -65,7 +65,7 @@ export default function Footer() {
           imagery={HandHeart}
           title="Built with Passion"
           subtitle="Developed using Next.js"
-          body="From the layout to the color scheme, and beyond, many intentional decisions were made to ensure a delightful experience."
+          body="From the layout to the color scheme, and beyond, many intentional decisions were made to ensure a delightful experience on this website."
           onClick={() => {
             setModalContent('this_site');
             openModal();
