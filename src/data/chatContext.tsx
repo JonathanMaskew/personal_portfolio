@@ -58,7 +58,7 @@ Skills Summary
 - **Languages:** JavaScript, TypeScript, HTML, CSS, PHP, Java, C
 - **Frameworks & Libraries:** React, Next.js, Angular, Node.js, Tailwind CSS, React Testing Library
 - **Tools:** Git, GitHub, Figma, Sentry, WordPress
-- **Knowledge Areas:** Front-end Development, Full-stack Development, User-driven Development, Component-based Architecture, Responsive Web Design, UX/UI Design, Figma, Prototyping, User Research, Agile, Scrum, Code Reviews, APIs, Large Language Models (LLMs), Unit Testing, Accessibility, Employee Onboarding, Branding, Digital Marketing, Graphic Design
+- **Knowledge Areas:** Front-end Development, Full-stack Development, User-driven Development, Component-based Architecture, Responsive Web Design, UX/UI Design, Figma, Prototyping, User Research, Agile, Scrum, Code Reviews, APIs, AI / Large Language Models (LLMs), Prompt Engineering, Unit Testing, Accessibility, Employee Onboarding, Branding, Digital Marketing, Graphic Design
 
 Professional Experience (Work Section)
 
@@ -148,7 +148,7 @@ This part of the site contains additional details about Jonathan's personal bran
 
 Website Structure & Navigation
 
-The portfolio website is organized into the following main sections you can refer to:
+The portfolio website is organized into the following main sections you can refer to. You should never assume subheadings or attempt to name any other heading that is not listed below.
 - Intro: The landing page.
 - About: Information about Jonathan's background and skills.
 - Highlights: A showcase of his most impactful projects and achievements.

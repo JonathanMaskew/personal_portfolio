@@ -1,6 +1,11 @@
 'use client';
 
-import { ArrowDown, Blend, BriefcaseBusiness, GraduationCap } from 'lucide-react';
+import {
+  ArrowDown,
+  Blend,
+  BriefcaseBusiness,
+  GraduationCap,
+} from 'lucide-react';
 import SectionWrapper from '../SectionWrapper';
 import Carousel, { CarouselImageItem } from '../Carousel';
 import tennis from '@/assets/images/tennis.jpg';
@@ -107,11 +112,12 @@ export default function About() {
                 'Git',
                 'UX/UI Design',
                 'Figma',
+                'AI / LLMs',
+                'Prompt Engineering',
                 'Scrum',
                 'Agile',
                 'Code Reviews',
                 'APIs',
-                'LLMs',
                 'User Research',
                 'Prototyping',
                 'Full-stack',
