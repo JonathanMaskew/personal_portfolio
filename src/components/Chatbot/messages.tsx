@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import type { AnimationItem, LottiePlayer } from 'lottie-web';
 import { ChatSession, useChatSession } from '@/hooks/useChatSession';
 import { Sparkles } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 
 type MessagesProps = {
   session?: ChatSession;
@@ -110,13 +111,17 @@ export default function Messages({ session }: MessagesProps) {
               }`}
             >
               <div
-                className="rounded-2xl px-3 py-2 text-white border-1 border-white/10 whitespace-pre-wrap"
+                className="rounded-2xl px-3 py-2 text-white border-1 border-white/10"
                 style={{
                   backgroundColor:
                     message.role === 'user' ? '#00000080' : '#FF6B1880',
                 }}
               >
-                {message.content}
+                {message.role === 'assistant' ? (
+                  <ReactMarkdown skipHtml>{message.content}</ReactMarkdown>
+                ) : (
+                  <span className="whitespace-pre-wrap">{message.content}</span>
+                )}
               </div>
             </div>
           ))}
