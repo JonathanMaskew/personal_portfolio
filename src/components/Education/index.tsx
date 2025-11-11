@@ -58,7 +58,7 @@ export default function Work() {
                 (education.bullets && education.bullets.length > 0) ||
                 education.modalChildren ? (
                   <Button
-                    icon={Plus}
+                    imagery={Plus}
                     text="More"
                     clickDetail={() => {
                       setOpenedEducationId(education.id);
@@ -76,7 +76,7 @@ export default function Work() {
       <Button
         text={showMore ? 'Show less' : 'Show more'}
         clickDetail={() => setShowMore(!showMore)}
-        icon={showMore ? ChevronUp : ChevronDown}
+        imagery={showMore ? ChevronUp : ChevronDown}
       />
       {showMore && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
@@ -109,7 +109,7 @@ export default function Work() {
                   (education.bullets && education.bullets.length > 0) ||
                   education.modalChildren ? (
                     <Button
-                      icon={Plus}
+                      imagery={Plus}
                       text="More"
                       clickDetail={() => {
                         setOpenedEducationId(education.id);

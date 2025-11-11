@@ -71,10 +71,10 @@ export default function TopNav() {
               <Button
                 key={item.id}
                 text={item.label}
-                icon={item.icon}
+                imagery={item.icon}
                 clickDetail={item.href}
                 newTab={item.newTab}
-                iconOnly={true}
+                imageryOnly={true}
               />
             );
           })}
@@ -99,7 +99,7 @@ export default function TopNav() {
                 >
                   <Button
                     text={item.label}
-                    icon={item.icon}
+                    imagery={item.icon}
                     clickDetail={item.href}
                     newTab={item.newTab}
                   />

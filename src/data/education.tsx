@@ -259,7 +259,7 @@ export const getEducationData = (): Experience[] => [
           </div>
           <ButtonRow className="justify-center">
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               text="PDF Collage of Work"
               clickDetail="/pdfs/htf_collage.pdf"
@@ -267,7 +267,7 @@ export const getEducationData = (): Experience[] => [
               color="#00EB88"
             />
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               text="List of Work with Descriptions"
               clickDetail="https://docs.google.com/document/d/1iJEBzMD-UZ55tUu14lbxTY1sf2zTvvQj90V-YAjeGos/edit?usp=sharing"
@@ -483,7 +483,7 @@ export const getMoreEducationData = (): Experience[] => [
             way to make it a reality.
           </div>
           <Button
-            icon={ExternalLink}
+            imagery={ExternalLink}
             newTab={true}
             clickDetail="https://docs.google.com/document/d/1ScsxHLDzicQHW1SaJjlw8Fy1nj5HCy6L/edit"
             text="Open in Docs"
@@ -499,7 +499,7 @@ export const getMoreEducationData = (): Experience[] => [
             determine what users are looking for in this product.
           </div>
           <Button
-            icon={ExternalLink}
+            imagery={ExternalLink}
             newTab={true}
             clickDetail="https://docs.google.com/document/d/17AJDqE56FnMe2re0LPlVyNRI12GOFAD_cRkcG14Zb4E/edit?tab=t.0"
             text="Open in Docs"
@@ -508,7 +508,7 @@ export const getMoreEducationData = (): Experience[] => [
           />
           <ButtonRow>
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               clickDetail="https://docs.google.com/document/d/1hxHMWxzWMNqUmnA3d6McTMA_EmRdH4Fx4g35qxKZ1XI/edit?tab=t.0"
               text="Open Interview Protocol Details"
@@ -516,7 +516,7 @@ export const getMoreEducationData = (): Experience[] => [
               color="#696969"
             />
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               clickDetail="https://docs.google.com/document/d/1Idr1juzYePqK-qtwS0jk5l3XcK1fGO6n5t0NxttJtD8/edit?tab=t.0"
               text="Open Affinity Diagram and Storyboarding Details"
@@ -533,7 +533,7 @@ export const getMoreEducationData = (): Experience[] => [
           </div>
           <ButtonRow>
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               clickDetail="https://docs.google.com/document/d/19nmjwmGBmXlPUqv5BdwezkyXAQziipnLeUFZLDvBan4/edit?tab=t.0"
               text="Open in Docs"
@@ -542,7 +542,7 @@ export const getMoreEducationData = (): Experience[] => [
             />
 
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               clickDetail="https://www.figma.com/proto/81djycTPurFwRTywOYsLzP/Prototype?page-id=0%3A1&node-id=58-353&p=f&viewport=379%2C197%2C0.03&t=6ZXJhKpbbaCoE6PY-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=124%3A26"
               text="Open Digital Prototype in Figma"
@@ -550,7 +550,7 @@ export const getMoreEducationData = (): Experience[] => [
               color="#696969"
             />
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               clickDetail="https://www.figma.com/design/81djycTPurFwRTywOYsLzP/Prototype?node-id=0-1&t=JBSYZYPaXHT4HO53-1"
               text="Open Digital Design in Figma"
@@ -560,7 +560,7 @@ export const getMoreEducationData = (): Experience[] => [
           </ButtonRow>
           <ButtonRow>
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               clickDetail="https://docs.google.com/presentation/d/1CEnT7h0AAbcpGjXOdzsPYfutvYnmZRP3aeI_QFKNnnc/edit#slide=id.p"
               text="Open Paper Prototype Details"
@@ -568,7 +568,7 @@ export const getMoreEducationData = (): Experience[] => [
               color="#696969"
             />
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               clickDetail="https://docs.google.com/document/d/1AoVcmtwNB4k4plTBYTKO1krJr3G8K-U6PDkqGi5mTSk/edit?usp=sharing"
               text="Open Digital Prototype Details"
@@ -584,7 +584,7 @@ export const getMoreEducationData = (): Experience[] => [
             and that users understood how to use the platform.
           </div>
           <Button
-            icon={ExternalLink}
+            imagery={ExternalLink}
             newTab={true}
             clickDetail="https://docs.google.com/document/d/1Z2dzZfhXVS7rrNJSVVdzXDb3FFkrNB6Td7YGY6rCdNc/edit?tab=t.0"
             text="Open in Docs"
@@ -593,7 +593,7 @@ export const getMoreEducationData = (): Experience[] => [
           />
           <ButtonRow>
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               clickDetail="https://docs.google.com/spreadsheets/d/1waG0DCx1bCGwbXOhIZAxlEFjYYpBgFQ3IW1L0qiK6Hw/edit?usp=sharing"
               text="Open Cognitive Walkthrough Details"
@@ -601,7 +601,7 @@ export const getMoreEducationData = (): Experience[] => [
               color="#696969"
             />
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               clickDetail="https://docs.google.com/document/d/13PKofzMQqj0J1ZcEEIiN9IxuMCeSGPDkg_hKHX_52_A/edit?usp=sharing"
               text="Open Digital Prototype Revision Details"
@@ -609,7 +609,7 @@ export const getMoreEducationData = (): Experience[] => [
               color="#696969"
             />
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               clickDetail="https://docs.google.com/document/d/1LDfkLszmBrRJK9sD37tZi8qNnGCR6Ar8TL8Jk0lkUTc/edit?usp=sharing"
               text="Open User Study Design Details"
@@ -617,7 +617,7 @@ export const getMoreEducationData = (): Experience[] => [
               color="#696969"
             />
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               clickDetail="https://docs.google.com/document/d/100h5x2go3ch_Z-W_VUG_e53Z-E8vYBuUAT3tK6cfOuE/edit?usp=sharing"
               text="Open User Study Details"
@@ -625,7 +625,7 @@ export const getMoreEducationData = (): Experience[] => [
               color="#696969"
             />
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               clickDetail="https://docs.google.com/document/d/1W7yxvw0dPDuSUHfzuedLPnLiGZBKc-GgluMlhMpKVJM/edit?usp=sharing"
               text="Open User Study Data Analysis Details"
@@ -641,7 +641,7 @@ export const getMoreEducationData = (): Experience[] => [
           </div>
           <ButtonRow>
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               clickDetail="https://docs.google.com/document/d/1CBZ7DHtD7ULpGBwX0NEVReWqmbtXVOa_5i_qSF9Tf-U/edit?tab=t.0"
               text="Open in Docs"
@@ -649,7 +649,7 @@ export const getMoreEducationData = (): Experience[] => [
               color="#696969"
             />
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               clickDetail="https://www.figma.com/proto/81djycTPurFwRTywOYsLzP/Prototype?page-id=0%3A1&node-id=58-353&p=f&viewport=379%2C197%2C0.03&t=6ZXJhKpbbaCoE6PY-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=124%3A26"
               text="Open Digital Prototype in Figma"
@@ -710,7 +710,7 @@ export const getMoreEducationData = (): Experience[] => [
         children: (
           <ButtonRow>
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               text="PDF of Score Sheet"
               clickDetail="/pdfs/tennis_scoresheet.pdf"

@@ -95,7 +95,7 @@ export const getJobsData = (): Experience[] => [
     modalChildren: (
       <ButtonRow className="justify-center">
         <Button
-          icon={ExternalLink}
+          imagery={ExternalLink}
           newTab={true}
           text="PDF of Report Out Presentation"
           clickDetail="/pdfs/allegion_report_out.pdf"
@@ -195,7 +195,7 @@ export const getMoreJobsData = (): Experience[] => [
         children: (
           <ButtonRow>
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               text="PDF of Assembly Cheat Sheet"
               clickDetail="/pdfs/texy_mexy_limited_assembly_cheat_sheet.pdf"
@@ -203,7 +203,7 @@ export const getMoreJobsData = (): Experience[] => [
               color="#E9CD2E"
             />
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               text="PDF of Stovetop Cheat Sheet"
               clickDetail="/pdfs/texy_mexy_stovetop_cheat_sheet.pdf"
@@ -211,7 +211,7 @@ export const getMoreJobsData = (): Experience[] => [
               color="#E9CD2E"
             />
             <Button
-              icon={ExternalLink}
+              imagery={ExternalLink}
               newTab={true}
               text="PDF of Product Waste Log"
               clickDetail="/pdfs/texy_mexy_product_waste_log.pdf"

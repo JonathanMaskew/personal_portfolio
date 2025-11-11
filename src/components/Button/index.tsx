@@ -1,11 +1,13 @@
 import { Icon } from '@/types';
 import { useHashScroll } from '@/hooks/useHashScroll';
 import { useHoverPressHandlers } from '@/hooks/useHoverPressHandlers';
+import type { StaticImageData } from 'next/image';
+import { renderImagery } from '@/components/renderImagery';
 interface ButtonProps {
   text: string;
   clickDetail: string | (() => void);
-  icon?: Icon;
-  iconOnly?: boolean;
+  imagery?: StaticImageData | Icon;
+  imageryOnly?: boolean;
   newTab?: boolean;
   color?: string;
   background?: boolean;
@@ -16,8 +18,8 @@ interface ButtonProps {
 export function Button({
   text,
   clickDetail,
-  icon: IconComponent,
-  iconOnly,
+  imagery,
+  imageryOnly,
   newTab,
   background,
   color,
@@ -52,8 +54,13 @@ export function Button({
 
   const content = (
     <>
-      {IconComponent && <IconComponent size={18} />}
-      {!iconOnly && <div>{text}</div>}
+      {renderImagery(imagery, {
+        alt: `${text} icon`,
+        iconSize: 18,
+        imageClassName: 'h-[18px] w-auto object-contain',
+        boxed: false,
+      })}
+      {!imageryOnly && <div>{text}</div>}
     </>
   );
 

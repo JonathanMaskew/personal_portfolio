@@ -12,6 +12,10 @@ type ExperienceDetailsProps = {
 };
 
 export default function ExperienceDetails({ data }: ExperienceDetailsProps) {
+  if (data.overrideChildren) {
+    return data.overrideChildren;
+  }
+
   return (
     <>
       <HighlightFeature

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHoverPressHandlers } from '@/hooks/useHoverPressHandlers';
-import Image, { StaticImageData } from 'next/image';
-import type { HighlightProps, Icon } from '@/types';
+import type { HighlightProps } from '@/types';
+import { renderImagery, isStaticImageData } from '@/components/renderImagery';
 
 export default function HighlightDetailed({
   color,
@@ -55,41 +55,20 @@ export default function HighlightDetailed({
     >
       {hasHeaderContent && (
         <div className="flex items-center gap-4">
-          {imagery &&
-            (() => {
-              if (React.isValidElement(imagery)) {
-                return imagery;
-              }
-
-              const isStaticImageData = (
-                value: unknown
-              ): value is StaticImageData => {
-                return (
-                  !!value &&
-                  typeof value === 'object' &&
-                  'src' in (value as Record<string, unknown>)
-                );
-              };
-
-              if (!isStaticImageData(imagery)) {
-                const IconComponent = imagery as Icon;
-                return (
-                  <div className="rounded-2xl p-3 bg-black/10 min-h-[60px] max-h-[60px] min-w-[60px] max-w-[60px] justify-center items-center flex">
-                    <IconComponent size={36} />
-                  </div>
-                );
-              }
-
-              return (
-                <div className="rounded-2xl p-3 bg-black/10 min-h-[60px] max-h-[60px] min-w-[60px] max-w-[60px] justify-center items-center flex overflow-hidden">
-                  <Image
-                    src={imagery}
-                    alt={`${title || 'highlight'} logo`}
-                    className="h-[36px] w-auto object-contain"
-                  />
-                </div>
-              );
-            })()}
+          {imagery && (() => {
+            if (React.isValidElement(imagery)) return imagery;
+            const base = 'rounded-2xl p-3 bg-black/10 min-h-[60px] max-h-[60px] min-w-[60px] max-w-[60px] justify-center items-center flex';
+            const cls = isStaticImageData(imagery) ? `${base} overflow-hidden` : base;
+            return (
+              <div className={cls}>
+                {renderImagery(imagery, {
+                  alt: `${title || 'highlight'} logo`,
+                  iconSize: 36,
+                  imageClassName: 'h-[36px] w-auto object-contain',
+                })}
+              </div>
+            );
+          })()}
           {(title || subtitle || subheading) && (
             <div className="flex flex-col">
               {title && (

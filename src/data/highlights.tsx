@@ -4,9 +4,9 @@ import {
   PillBottle,
   SplinePointer,
   UserPlus,
-  Plus,
   Megaphone,
   LayoutTemplate,
+  Plus,
 } from 'lucide-react';
 import { Button } from '@/components/Button';
 
@@ -25,7 +25,7 @@ export const getHighlightsData = (
     experienceId: 'myhelo',
     highlightChildren: (
       <Button
-        icon={Plus}
+        imagery={Plus}
         text="More myhELO"
         color="#2396F0"
         clickDetail={() => {
@@ -46,7 +46,7 @@ export const getHighlightsData = (
     experienceId: 'htf-design-director',
     highlightChildren: (
       <Button
-        icon={Plus}
+        imagery={Plus}
         text="More Design Director"
         clickDetail={() => {
           setOpenedExperienceId('htf-design-director');
@@ -66,7 +66,7 @@ export const getHighlightsData = (
     experienceId: 'myhelo',
     highlightChildren: (
       <Button
-        icon={Plus}
+        imagery={Plus}
         text="More myhELO"
         clickDetail={() => {
           setOpenedExperienceId('myhelo');
@@ -85,7 +85,7 @@ export const getHighlightsData = (
     experienceId: 'allegion',
     highlightChildren: (
       <Button
-        icon={Plus}
+        imagery={Plus}
         text="More Allegion"
         clickDetail={() => {
           setOpenedExperienceId('allegion');
@@ -123,7 +123,7 @@ export const getHighlightsData = (
     experienceId: 'myhelo',
     highlightChildren: (
       <Button
-        icon={Plus}
+        imagery={Plus}
         text="More myhELO"
         clickDetail={() => {
           setOpenedExperienceId('myhelo');

@@ -51,7 +51,7 @@ export default function About() {
               <Button
                 key={item.id}
                 text={item.label}
-                icon={item.icon}
+                imagery={item.icon}
                 clickDetail={item.href}
                 newTab={item.newTab}
               />
@@ -70,7 +70,7 @@ export default function About() {
           onClick={() => scrollToHash('#work')}
           actionButton={
             <Button
-              icon={ArrowDown}
+              imagery={ArrowDown}
               text="Jump to 'Work'"
               clickDetail="#work"
             />
@@ -85,7 +85,7 @@ export default function About() {
           onClick={() => scrollToHash('#education')}
           actionButton={
             <Button
-              icon={ArrowDown}
+              imagery={ArrowDown}
               text="Jump to 'Education'"
               clickDetail="#education"
             />

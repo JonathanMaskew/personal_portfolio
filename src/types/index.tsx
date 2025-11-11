@@ -38,6 +38,7 @@ export type Experience = {
   highlightChildren?: React.ReactNode;
   modalChildren?: React.ReactNode;
   experienceId?: string;
+  overrideChildren?: React.ReactNode;
 };
 
 export type NavItem = {

@@ -51,7 +51,7 @@ export default function SidebarNav() {
                 <div key={item.id} className="w-full">
                   <Button
                     text={item.label}
-                    icon={item.icon}
+                    imagery={item.icon}
                     clickDetail={item.href}
                     newTab={item.newTab}
                     className={linkStyle}
@@ -68,7 +68,7 @@ export default function SidebarNav() {
             <div key={item.id} className="w-full">
               <Button
                 text={item.label}
-                icon={item.icon}
+                imagery={item.icon}
                 clickDetail={item.href}
                 newTab={item.newTab}
               />

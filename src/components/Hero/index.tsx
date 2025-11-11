@@ -92,9 +92,9 @@ export default function Hero() {
       <div>
         <Button
           text="Scroll to see more"
-          icon={ChevronDown}
+          imagery={ChevronDown}
           clickDetail="#about"
-          iconOnly={true}
+          imageryOnly={true}
         />
       </div>
     </div>

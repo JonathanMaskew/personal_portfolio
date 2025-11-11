@@ -58,7 +58,7 @@ export default function Work() {
                 (job.bullets && job.bullets.length > 0) ||
                 job.modalChildren ? (
                   <Button
-                    icon={Plus}
+                    imagery={Plus}
                     text="More"
                     clickDetail={() => {
                       setOpenedJobId(job.id);
@@ -76,7 +76,7 @@ export default function Work() {
       <Button
         text={showMore ? 'Hide earlier experience' : 'Show earlier experience'}
         clickDetail={() => setShowMore(!showMore)}
-        icon={showMore ? ChevronUp : ChevronDown}
+        imagery={showMore ? ChevronUp : ChevronDown}
       />
 
       {showMore && (
@@ -107,7 +107,7 @@ export default function Work() {
                   (job.bullets && job.bullets.length > 0) ||
                   job.modalChildren ? (
                     <Button
-                      icon={Plus}
+                      imagery={Plus}
                       text="More"
                       clickDetail={() => {
                         setOpenedJobId(job.id);
