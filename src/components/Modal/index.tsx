@@ -29,29 +29,25 @@ export default function Modal({
   }, [open]);
 
   // thanks ChatGPT
-  // Lock body scroll on mount (modal open) and restore on unmount (modal close)
+  // Lock body scroll only while the modal is open
   useEffect(() => {
-    // Only run on client
+    if (!open) return;
+
     const b = document.body;
     const html = document.documentElement;
 
-    // Record current scroll position and lock body to prevent background scroll
     scrollYRef.current =
       window.scrollY || document.documentElement.scrollTop || 0;
 
-    // Apply iOS-safe locking by fixing body at current position
     b.style.position = 'fixed';
     b.style.top = `-${scrollYRef.current}px`;
     b.style.left = '0';
     b.style.right = '0';
     b.style.width = '100%';
     b.style.overflow = 'hidden';
-
-    // Help prevent rubber-band/scroll chaining on newer iOS
     html.style.overscrollBehavior = 'none';
 
     return () => {
-      // Restore styles
       b.style.position = '';
       b.style.top = '';
       b.style.left = '';
@@ -60,11 +56,10 @@ export default function Modal({
       b.style.overflow = '';
       html.style.overscrollBehavior = '';
 
-      // Restore prior scroll position
       const y = Math.abs(parseInt(`${scrollYRef.current}`, 10)) || 0;
       window.scrollTo(0, y);
     };
-  }, []);
+  }, [open]);
 
   const {
     onPointerEnter,
