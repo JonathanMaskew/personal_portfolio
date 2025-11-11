@@ -1,7 +1,8 @@
 'use client';
 import { X } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useHoverPressHandlers } from '@/hooks/useHoverPressHandlers';
+import { lockBodyScroll, unlockBodyScroll } from '@/utils/scrollLock';
 import { createPortal } from 'react-dom';
 
 type ModalProps = {
@@ -18,7 +19,6 @@ export default function Modal({
   children,
 }: ModalProps) {
   const [isAnimating, setIsAnimating] = useState(false);
-  const scrollYRef = useRef(0);
 
   useEffect(() => {
     if (open) {
@@ -32,32 +32,9 @@ export default function Modal({
   // Lock body scroll only while the modal is open
   useEffect(() => {
     if (!open) return;
-
-    const b = document.body;
-    const html = document.documentElement;
-
-    scrollYRef.current =
-      window.scrollY || document.documentElement.scrollTop || 0;
-
-    b.style.position = 'fixed';
-    b.style.top = `-${scrollYRef.current}px`;
-    b.style.left = '0';
-    b.style.right = '0';
-    b.style.width = '100%';
-    b.style.overflow = 'hidden';
-    html.style.overscrollBehavior = 'none';
-
+    lockBodyScroll();
     return () => {
-      b.style.position = '';
-      b.style.top = '';
-      b.style.left = '';
-      b.style.right = '';
-      b.style.width = '';
-      b.style.overflow = '';
-      html.style.overscrollBehavior = '';
-
-      const y = Math.abs(parseInt(`${scrollYRef.current}`, 10)) || 0;
-      window.scrollTo(0, y);
+      unlockBodyScroll();
     };
   }, [open]);
 

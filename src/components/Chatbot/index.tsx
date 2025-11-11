@@ -5,6 +5,7 @@ import { ArrowUp, Sparkles, X } from 'lucide-react';
 import { useHoverPressHandlers } from '@/hooks/useHoverPressHandlers';
 import { useMobile } from '@/hooks/useMobile';
 import Messages from '@/components/Chatbot/messages';
+import { lockBodyScroll, unlockBodyScroll } from '@/utils/scrollLock';
 import { useChatSession } from '@/hooks/useChatSession';
 
 export default function Chatbot() {
@@ -22,6 +23,14 @@ export default function Chatbot() {
       inputRef.current?.focus();
     }
   }, [isOpen, isMobile, isLoading]);
+
+  useEffect(() => {
+    if (!isOpen || !isMobile) return;
+    lockBodyScroll();
+    return () => {
+      unlockBodyScroll();
+    };
+  }, [isOpen, isMobile]);
 
   const submitDraft = useCallback(
     async (value: string) => {

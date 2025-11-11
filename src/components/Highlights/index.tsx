@@ -41,41 +41,7 @@ export default function Highlights() {
     <SectionWrapper
       icon={Star}
       title="Highlights"
-      subtext={
-        <div className="flex flex-col gap-2">
-          <div>Major experiences and accomplishments worth noting.</div>
-          <ButtonRow>
-            <div>Featured links:</div>
-            <Button
-              text={'myhELO'}
-              imagery={myheloLogo}
-              clickDetail={() => {
-                setOpenedExperienceId('myhelo');
-                openModal();
-              }}
-              newTab={false}
-            />
-            <Button
-              text={'Design Director'}
-              imagery={htfLogo}
-              clickDetail={() => {
-                setOpenedExperienceId('htf-design-director');
-                openModal();
-              }}
-              newTab={false}
-            />
-            <Button
-              text={'This Site'}
-              imagery={jsLogo}
-              clickDetail={() => {
-                setOpenedExperienceId('this-site');
-                openModal();
-              }}
-              newTab={false}
-            />
-          </ButtonRow>
-        </div>
-      }
+      subtext="Major experiences and accomplishments worth noting."
     >
       <Carousel>
         {highlights.map((highlight, index) => (
@@ -146,6 +112,36 @@ export default function Highlights() {
           nested
         ></HighlightDetailed>
       </div> */}
+      <ButtonRow>
+        <div>Quick links...</div>
+        <Button
+          text={'myhELO'}
+          imagery={myheloLogo}
+          clickDetail={() => {
+            setOpenedExperienceId('myhelo');
+            openModal();
+          }}
+          newTab={false}
+        />
+        <Button
+          text={'Design Director'}
+          imagery={htfLogo}
+          clickDetail={() => {
+            setOpenedExperienceId('htf-design-director');
+            openModal();
+          }}
+          newTab={false}
+        />
+        <Button
+          text={'This Site'}
+          imagery={jsLogo}
+          clickDetail={() => {
+            setOpenedExperienceId('this-site');
+            openModal();
+          }}
+          newTab={false}
+        />
+      </ButtonRow>
       <Modal
         open={modalOpened && !!openedExperience}
         onCloseCallback={() => {
