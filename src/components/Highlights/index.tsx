@@ -1,6 +1,6 @@
 'use client';
 
-import { Star } from 'lucide-react';
+import { Spotlight } from 'lucide-react';
 import SectionWrapper from '../SectionWrapper';
 import Carousel, { CarouselItem } from '../Carousel';
 import { useModal } from '@/hooks/useModal';
@@ -39,7 +39,7 @@ export default function Highlights() {
 
   return (
     <SectionWrapper
-      icon={Star}
+      icon={Spotlight}
       title="Highlights"
       subtext="Major experiences and accomplishments worth noting."
     >
@@ -112,7 +112,7 @@ export default function Highlights() {
           nested
         ></HighlightDetailed>
       </div> */}
-      <ButtonRow>
+      {/* <ButtonRow>
         <div>Quick links...</div>
         <Button
           text={'myhELO'}
@@ -141,7 +141,7 @@ export default function Highlights() {
           }}
           newTab={false}
         />
-      </ButtonRow>
+      </ButtonRow> */}
       <Modal
         open={modalOpened && !!openedExperience}
         onCloseCallback={() => {
