@@ -16,7 +16,6 @@ export default function Chatbot() {
   // Single source of truth for whether the widget is expanded
   const [isOpen, setIsOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
   const { isMobile } = useMobile();
 
   useEffect(() => {
@@ -27,7 +26,7 @@ export default function Chatbot() {
 
   useEffect(() => {
     if (!isOpen || !isMobile) return;
-    lockBodyScroll(scrollRef.current);
+    lockBodyScroll();
     return () => {
       unlockBodyScroll();
     };
@@ -123,7 +122,7 @@ export default function Chatbot() {
           <X size={24} className="text-white" />
         </button>
 
-        <div className="flex-1 min-h-0 overflow-y-auto" data-chat-scroller ref={scrollRef}>
+        <div className="flex-1 min-h-0 overflow-y-auto" data-chat-scroller>
           <Messages session={session} />
         </div>
 
