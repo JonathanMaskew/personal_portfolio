@@ -94,7 +94,7 @@ export default function JurassicParkEasterEgg({
   };
 
   return createPortal(
-    <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-2xl shadow-2xl p-4 font-mono">
+    <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-2xl p-4 font-mono">
       <RetroWindow
         title="Central Park Control Console"
         onClose={onClose}
@@ -144,7 +144,7 @@ export default function JurassicParkEasterEgg({
       {/* Video Modal - appears after spam sequence */}
       {showVideo && (
         <div
-          className="fixed inset-0 z-[60] flex items-center justify-center shadow-2xl p-4"
+          className="fixed inset-0 z-[60] flex items-center justify-center p-4"
           onClick={() => {
             setShowVideo(false);
             onClose();
@@ -160,12 +160,12 @@ export default function JurassicParkEasterEgg({
           >
             <div className="aspect-video w-full relative">
               <iframe
-                src="https://www.youtube.com/embed/g_vZasFzMN4?si=A-c_Z1fI4QlJJUIl&autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&iv_load_policy=3&disablekb=1&playsinline=1"
+                src={`https://www.youtube.com/embed/g_vZasFzMN4?si=A-c_Z1fI4QlJJUIl&autoplay=1${isMobile ? '&mute=1' : ''}&controls=1&modestbranding=1&rel=0&showinfo=0&fs=0&iv_load_policy=3&disablekb=1&playsinline=1`}
                 title="You didn't say the magic word!"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
-                className="w-full h-full pointer-events-none"
+                className={`w-full h-full`}
               />
             </div>
           </RetroWindow>
