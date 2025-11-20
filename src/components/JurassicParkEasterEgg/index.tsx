@@ -51,6 +51,7 @@ export default function JurassicParkEasterEgg({
   const [locked, setLocked] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
   const logsEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const isMobile = useMobile();
 
   const scrollToBottom = () => {
@@ -67,6 +68,12 @@ export default function JurassicParkEasterEgg({
       unlockBodyScroll();
     };
   }, []);
+
+  useEffect(() => {
+    if (!isMobile && !locked) {
+      inputRef.current?.focus();
+    }
+  }, [isMobile, locked]);
 
   const handleAccess = () => {
     if (locked) return;
@@ -106,12 +113,12 @@ export default function JurassicParkEasterEgg({
             <div className="mt-4 flex items-center gap-2">
               <span>&gt;</span>
               <input
+                ref={inputRef}
                 type="password"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleAccess()}
                 className="bg-transparent border-none outline-none text-green-400 w-full font-mono"
-                autoFocus={!isMobile}
                 placeholder="Enter anything..."
               />
             </div>
