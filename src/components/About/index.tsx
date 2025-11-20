@@ -169,12 +169,15 @@ export default function About() {
             color="#f97316"
             onClick={() => setShowTerminal(true)}
           >
-            <div className='flex flex-col gap-1'>
-              <div className="flex items-center gap-2 text-xs leading-tight font-bold text-red-500 animate-urgent-flash">
+            <div className='flex flex-col gap-1 text-xs leading-tight'>
+              <div className='flex items-center'>
+                Jurassic Park Status
+              </div>
+              <div className="flex items-center gap-2 font-bold text-red-500 animate-urgent-flash">
                 <TriangleAlert size={14} />
                 SYSTEMS FAILING
               </div>
-              <div className='flex items-center text-xs leading-tight text-red-500'>
+              <div className='flex items-center text-red-500'>
                 Investigate failures
                 <ChevronRight size={14} />
               </div>
