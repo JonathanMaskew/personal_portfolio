@@ -30,7 +30,7 @@ export default function About() {
 
   return (
     <SectionWrapper>
-      <div className="flex flex-col gap-4 md:gap-6 items-center">
+      <div className="flex flex-col gap-6 items-center">
         <div
           className="text-3xl font-bold underline"
           style={{
