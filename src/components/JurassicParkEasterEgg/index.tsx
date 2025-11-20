@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { X, Sparkles } from 'lucide-react';
+import { X, VolumeOff } from 'lucide-react';
 import { lockBodyScroll, unlockBodyScroll } from '@/utils/scrollLock';
 import { useMobile } from '@/hooks/useMobile';
+import { useHoverPressHandlers } from '@/hooks/useHoverPressHandlers';
 
 interface JurassicParkEasterEggProps {
   onClose: () => void;
@@ -39,16 +40,38 @@ declare global {
 }
 
 function RetroWindow({ title, onClose, children, className = '' }: RetroWindowProps) {
+  const {
+    onPointerEnter,
+    onPointerLeave,
+    onPointerDown,
+    onPointerUp,
+    onPointerCancel,
+  } = useHoverPressHandlers<HTMLButtonElement>(
+    (el) => {
+      el.style.backgroundColor = '#ef4444';
+      el.style.color = 'white';
+    },
+    (el) => {
+      el.style.backgroundColor = '';
+      el.style.color = 'black';
+    }
+  );
+
   return (
-    <div className={`relative border-4 border-gray-500 rounded-2xl shadow-2xl overflow-hidden flex flex-col ${className}`}>
+    <div className={`relative border-4 border-gray-500 shadow-2xl overflow-hidden flex flex-col text-xl ${className}`}>
       {/* Header */}
-      <div className="bg-gray-300 px-4 py-2 flex justify-between items-center border-b-4 border-gray-500">
-        <div className="font-bold text-black text-lg">
+      <div className="bg-gray-300 pl-3 pr-1 py-1 flex justify-between items-center border-b-4 border-gray-500">
+        <div className="text-black">
           {title}
         </div>
         <button
           onClick={onClose}
-          className="text-black hover:bg-red-500 hover:text-white p-1 rounded transition-colors"
+          className="text-black p-1 rounded transition-colors"
+          onPointerEnter={onPointerEnter}
+          onPointerLeave={onPointerLeave}
+          onPointerDown={onPointerDown}
+          onPointerUp={onPointerUp}
+          onPointerCancel={onPointerCancel}
         >
           <X size={24} />
         </button>
@@ -68,7 +91,6 @@ export default function JurassicParkEasterEgg({
     'Jurassic Park, Security Systems Interface',
     'Version 4.0.5, Alpha E',
     'Ready...',
-    'Password required to access security',
   ]);
   const [locked, setLocked] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
@@ -152,62 +174,93 @@ export default function JurassicParkEasterEgg({
     setLogs(newLogs);
 
     let count = 0;
-    const spamInterval = setInterval(() => {
-      setLogs((prev) => [...prev, "YOU DIDN'T SAY THE MAGIC WORD!"]);
-      count++;
-      if (count > 20) {
-        clearInterval(spamInterval);
-        setShowVideo(true);
-      }
-    }, 100);
+    setTimeout(() => {
+      const spamInterval = setInterval(() => {
+        setLogs((prev) => [...prev, "YOU DIDN'T SAY THE MAGIC WORD!"]);
+        count++;
+        if (count > 20) {
+          setShowVideo(true);
+        }
+        if (count > 100) {
+          clearInterval(spamInterval);
+        }
+      }, 150);
+    }, 500);
   };
 
+  // Handlers for Authenticate Button
+  const {
+    onPointerEnter: onAuthEnter,
+    onPointerLeave: onAuthLeave,
+    onPointerDown: onAuthDown,
+    onPointerUp: onAuthUp,
+    onPointerCancel: onAuthCancel,
+  } = useHoverPressHandlers<HTMLButtonElement>(
+    (el) => {
+      if (!locked) {
+        el.style.backgroundColor = '#6b7280'; // gray-500
+        el.style.borderColor = '#374151'; // gray-700
+      }
+    },
+    (el) => {
+      if (!locked) {
+        el.style.backgroundColor = '';
+        el.style.borderColor = '';
+      }
+    }
+  );
+
   return createPortal(
-    <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-2xl shadow-2xl p-4 font-mono">
+    <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-2xl shadow-2xl p-4 font-retro">
       <RetroWindow
         title="Central Park Control Console"
         onClose={onClose}
-        className="w-full max-w-3xl h-[600px]"
+        className="w-full max-w-2xl h-[450px]"
       >
         {/* Terminal Screen */}
-        <div className="flex-1 bg-black p-6 overflow-y-auto text-green-400 text-lg font-bold font-mono">
-          <div className="flex flex-col gap-1">
-            {logs.map((log, i) => (
-              <div key={i}>{log}</div>
-            ))}
-            <div ref={logsEndRef} />
+        <div className="relative flex-1 flex flex-col min-h-0 bg-blue-800 font-retro text-white">
+          <div className="flex-1 p-4 overflow-y-auto">
+            <div className="flex flex-col gap-1">
+              {logs.map((log, i) => (
+                <div key={i}>{log}</div>
+              ))}
+              <div ref={logsEndRef} />
+            </div>
+
+            {!locked && (
+              <div className="mt-6 flex items-center gap-2">
+                <span>&gt;</span>
+                <input
+                  ref={inputRef}
+                  type="password"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && handleAccess()}
+                  className="bg-transparent border-none outline-none text-white-400 w-full font-retro"
+                  placeholder="Enter any password..."
+                />
+              </div>
+            )}
           </div>
 
-          {!locked && (
-            <div className="mt-4 flex items-center gap-2">
-              <span>&gt;</span>
-              <input
-                ref={inputRef}
-                type="password"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && handleAccess()}
-                className="bg-transparent border-none outline-none text-green-400 w-full font-mono"
-                placeholder="Enter anything..."
-              />
-            </div>
-          )}
-        </div>
-
-        {/* Footer / Controls */}
-        <div className="bg-gray-800 p-4 border-t-4 border-gray-500 flex justify-end">
           <button
             onClick={handleAccess}
             disabled={locked}
-            className={`px-4 py-2 font-bold text-lg transition-all border-2 ${
+            className={`absolute bottom-4 right-4 px-3 py-1 transition-all border-2 z-10 ${
               locked
                 ? 'bg-red-900 border-red-700 text-red-300 !cursor-not-allowed'
-                : 'bg-blue-600 border-blue-400 text-white hover:bg-blue-800 hover:border-blue-600'
+                : 'bg-gray-300 border-gray-500 text-black'
             }`}
+            onPointerEnter={onAuthEnter}
+            onPointerLeave={onAuthLeave}
+            onPointerDown={onAuthDown}
+            onPointerUp={onAuthUp}
+            onPointerCancel={onAuthCancel}
           >
             {locked ? 'SYSTEM LOCKOUT' : 'AUTHENTICATE'}
           </button>
         </div>
+
       </RetroWindow>
 
       {/* Video Modal - appears after spam sequence */}
@@ -225,7 +278,7 @@ export default function JurassicParkEasterEgg({
               setShowVideo(false);
               onClose();
             }}
-            className="w-full max-w-2xl"
+            className="w-full max-w-lg"
           >
             <div className="aspect-video w-full relative">
               <iframe
@@ -248,8 +301,9 @@ export default function JurassicParkEasterEgg({
                       setIsMuted(false);
                     }
                   }}
-                  className="absolute bottom-2 left-2 flex items-center gap-2 rounded-full px-4 py-2 text-sm text-white border-1 border-white/10 backdrop-blur-lg bg-[var(--background)]/30 hover:bg-[#FF6B18] transition-all"
+                  className="absolute bottom-2 left-2 flex items-center gap-2 rounded-2xl px-4 py-2 text-sm text-white border-1 border-white/10 backdrop-blur-lg bg-[var(--background)]/30 transition-all"
                 >
+                  <VolumeOff className="h-4 w-4 text-[#FF6B18]" aria-hidden />
                   <span>UNMUTE</span>
                 </button>
               )}

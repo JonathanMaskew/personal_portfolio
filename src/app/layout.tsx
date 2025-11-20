@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Raleway, Quicksand } from 'next/font/google';
+import { Raleway, Quicksand, VT323 } from 'next/font/google';
 import './globals.css';
 import Script from 'next/script';
 import SidebarNav from '@/components/SidebarNav';
@@ -9,15 +9,21 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import Chatbot from '@/components/Chatbot';
 
 const header = Raleway({
-  variable: '--font-header',
+  variable: '--font-raleway',
   subsets: ['latin'],
   weight: ['400', '700'],
 });
 
 const body = Quicksand({
-  variable: '--font-body',
+  variable: '--font-quicksand',
   subsets: ['latin'],
   weight: ['500', '700'],
+});
+
+const vt323 = VT323({
+  variable: '--font-vt323',
+  subsets: ['latin'],
+  weight: ['400'],
 });
 
 export const metadata: Metadata = {
@@ -108,7 +114,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${header.variable} ${body.variable} font-body antialiased flex h-screen`}
+        className={`${header.variable} ${body.variable} ${vt323.variable} font-body antialiased flex h-screen`}
       >
         <div className="hidden md:block">
           <SidebarNav />
