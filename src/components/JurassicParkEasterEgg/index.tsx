@@ -19,6 +19,7 @@ interface RetroWindowProps {
 interface YTPlayer {
   mute: () => void;
   unMute: () => void;
+  destroy: () => void;
 }
 
 declare global {
@@ -105,15 +106,7 @@ export default function JurassicParkEasterEgg({
     // Always start muted
     setIsMuted(true);
 
-    // Load YouTube API
-    const tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
-
-    // Create player when API is ready
-    // Create player when API is ready
-    window.onYouTubeIframeAPIReady = () => {
+    const createPlayer = () => {
       playerRef.current = new window.YT.Player('youtube-player', {
         events: {
           onReady: (event) => {
@@ -122,6 +115,32 @@ export default function JurassicParkEasterEgg({
           },
         },
       });
+    };
+
+    if (window.YT && window.YT.Player) {
+      createPlayer();
+    } else {
+      // Load YouTube API if not loaded
+      if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) {
+        const tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+      }
+
+      // Create player when API is ready
+      window.onYouTubeIframeAPIReady = createPlayer;
+    }
+
+    return () => {
+      if (playerRef.current) {
+        playerRef.current.destroy();
+        playerRef.current = null;
+      }
+      // Clean up the global callback if it was set by this component
+      if (window.onYouTubeIframeAPIReady === createPlayer) {
+        window.onYouTubeIframeAPIReady = () => {};
+      }
     };
   }, [showVideo]);
 
