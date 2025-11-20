@@ -16,6 +16,27 @@ interface RetroWindowProps {
   className?: string;
 }
 
+interface YTPlayer {
+  mute: () => void;
+  unMute: () => void;
+}
+
+declare global {
+  interface Window {
+    onYouTubeIframeAPIReady: () => void;
+    YT: {
+      Player: new (
+        elementId: string,
+        options: {
+          events: {
+            onReady: (event: { target: YTPlayer }) => void;
+          };
+        }
+      ) => YTPlayer;
+    };
+  }
+}
+
 function RetroWindow({ title, onClose, children, className = '' }: RetroWindowProps) {
   return (
     <div className={`relative border-4 border-gray-500 rounded-2xl shadow-2xl overflow-hidden flex flex-col ${className}`}>
@@ -53,7 +74,7 @@ export default function JurassicParkEasterEgg({
   const [isMuted, setIsMuted] = useState(false);
   const logsEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const playerRef = useRef<any>(null);
+  const playerRef = useRef<YTPlayer | null>(null);
   const isMobile = useMobile();
 
   const scrollToBottom = () => {
@@ -91,10 +112,11 @@ export default function JurassicParkEasterEgg({
     firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
 
     // Create player when API is ready
-    (window as any).onYouTubeIframeAPIReady = () => {
-      playerRef.current = new (window as any).YT.Player('youtube-player', {
+    // Create player when API is ready
+    window.onYouTubeIframeAPIReady = () => {
+      playerRef.current = new window.YT.Player('youtube-player', {
         events: {
-          onReady: (event: any) => {
+          onReady: (event) => {
             // Always start muted
             event.target.mute();
           },
