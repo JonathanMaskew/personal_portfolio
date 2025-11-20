@@ -14,7 +14,7 @@ export default function SectionWrapper({
   children,
 }: SectionWrapperProps) {
   return (
-    <div className="flex flex-col gap-6 md:gap-8 p-6 md:p-12 w-full max-w-7xl mx-auto">
+    <div className="flex flex-col gap-6 md:gap-8 p-6 md:p-8 w-full max-w-7xl mx-auto">
       {/* Section header */}
       {(IconComponent || title || subtext) && (
         <div className="flex flex-col gap-2">

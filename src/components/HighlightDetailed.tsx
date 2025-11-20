@@ -44,7 +44,7 @@ export default function HighlightDetailed({
 
   return (
     <div
-      className={`flex flex-col ${actionButton ? 'pb-16 md:pb-16 cursor-pointer' : ''} ${nested ? 'p-4' : 'p-6 md:p-8'} rounded-2xl h-full w-full gap-6 relative`}
+      className={`flex flex-col ${actionButton ? 'pb-18 cursor-pointer' : ''} ${nested ? 'p-4' : 'p-6'} rounded-2xl h-full w-full gap-6 relative`}
       style={containerStyle}
       onPointerEnter={onClick && color ? onPointerEnter : undefined}
       onPointerLeave={onClick && color ? onPointerLeave : undefined}
