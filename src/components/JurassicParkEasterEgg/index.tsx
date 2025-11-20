@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { lockBodyScroll, unlockBodyScroll } from '@/utils/scrollLock';
+import { useMobile } from '@/hooks/useMobile';
 
 interface JurassicParkEasterEggProps {
   onClose: () => void;
@@ -50,6 +51,7 @@ export default function JurassicParkEasterEgg({
   const [locked, setLocked] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
   const logsEndRef = useRef<HTMLDivElement>(null);
+  const isMobile = useMobile();
 
   const scrollToBottom = () => {
     logsEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -109,7 +111,7 @@ export default function JurassicParkEasterEgg({
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleAccess()}
                 className="bg-transparent border-none outline-none text-green-400 w-full font-mono"
-                autoFocus
+                autoFocus={!isMobile}
                 placeholder="Enter anything..."
               />
             </div>
