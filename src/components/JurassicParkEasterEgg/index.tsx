@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { X } from 'lucide-react';
+import { X, Sparkles } from 'lucide-react';
 import { lockBodyScroll, unlockBodyScroll } from '@/utils/scrollLock';
 import { useMobile } from '@/hooks/useMobile';
 
@@ -50,8 +50,10 @@ export default function JurassicParkEasterEgg({
   ]);
   const [locked, setLocked] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
   const logsEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const playerRef = useRef<any>(null);
   const isMobile = useMobile();
 
   const scrollToBottom = () => {
@@ -75,6 +77,32 @@ export default function JurassicParkEasterEgg({
     }
   }, [isMobile, locked]);
 
+  // Load YouTube IFrame API
+  useEffect(() => {
+    if (!showVideo) return;
+
+    // Always start muted
+    setIsMuted(true);
+
+    // Load YouTube API
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+
+    // Create player when API is ready
+    (window as any).onYouTubeIframeAPIReady = () => {
+      playerRef.current = new (window as any).YT.Player('youtube-player', {
+        events: {
+          onReady: (event: any) => {
+            // Always start muted
+            event.target.mute();
+          },
+        },
+      });
+    };
+  }, [showVideo]);
+
   const handleAccess = () => {
     if (locked) return;
     setLocked(true);
@@ -94,7 +122,7 @@ export default function JurassicParkEasterEgg({
   };
 
   return createPortal(
-    <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-2xl p-4 font-mono">
+    <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-2xl shadow-2xl p-4 font-mono">
       <RetroWindow
         title="Central Park Control Console"
         onClose={onClose}
@@ -160,13 +188,30 @@ export default function JurassicParkEasterEgg({
           >
             <div className="aspect-video w-full relative">
               <iframe
-                src={`https://www.youtube.com/embed/g_vZasFzMN4?si=A-c_Z1fI4QlJJUIl&autoplay=1${isMobile ? '&mute=1' : ''}&controls=1&modestbranding=1&rel=0&showinfo=0&fs=0&iv_load_policy=3&disablekb=1&playsinline=1`}
+                id="youtube-player"
+                src="https://www.youtube.com/embed/g_vZasFzMN4?si=A-c_Z1fI4QlJJUIl&autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&iv_load_policy=3&disablekb=1&playsinline=1&enablejsapi=1"
                 title="You didn't say the magic word!"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
-                className={`w-full h-full`}
+                className="w-full h-full"
               />
+              
+              {/* Unmute Button - only shows when muted */}
+              {isMuted && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                     if (playerRef.current) {
+                      playerRef.current.unMute();
+                      setIsMuted(false);
+                    }
+                  }}
+                  className="absolute bottom-2 left-2 flex items-center gap-2 rounded-full px-4 py-2 text-sm text-white border-1 border-white/10 backdrop-blur-lg bg-[var(--background)]/30 hover:bg-[#FF6B18] transition-all"
+                >
+                  <span>UNMUTE</span>
+                </button>
+              )}
             </div>
           </RetroWindow>
         </div>
