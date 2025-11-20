@@ -4,8 +4,11 @@ import {
   ArrowDown,
   Blend,
   BriefcaseBusiness,
+  ChevronRight,
   GraduationCap,
+  TriangleAlert,
 } from 'lucide-react';
+import { useState } from 'react';
 import SectionWrapper from '../SectionWrapper';
 import Carousel, { CarouselImageItem } from '../Carousel';
 import tennis from '@/assets/images/tennis.jpg';
@@ -24,9 +27,11 @@ import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import { useHashScroll } from '@/hooks/useHashScroll';
 import type React from 'react';
 import Chips from '../Chips';
+import JurassicParkEasterEgg from '../JurassicParkEasterEgg';
 
 export default function About() {
   const { scrollToHash } = useHashScroll();
+  const [showTerminal, setShowTerminal] = useState(false);
 
   return (
     <SectionWrapper>
@@ -154,20 +159,27 @@ export default function About() {
             color="#f97316"
           />
           <CarouselImageItem
-            image={lucy}
-            text="A goofy little cockapoo named Lucy."
-            color="#f97316"
-          />
-          <CarouselImageItem
             image={reeses}
             text="I am addicted to Reese's Peanut Butter Cups in every shape and size."
             color="#f97316"
           />
           <CarouselImageItem
             image={dinosaur}
-            text="Jurassic Park is a great movie! You just can't beat the original."
+            // text="Jurassic Park is a great movie! You just can't beat the original."
             color="#f97316"
-          />
+            onClick={() => setShowTerminal(true)}
+          >
+            <div className='flex flex-col gap-1'>
+              <div className="flex items-center gap-2 text-xs leading-tight font-bold text-red-500 animate-urgent-flash">
+                <TriangleAlert size={14} />
+                SYSTEMS FAILING
+              </div>
+              <div className='flex items-center text-xs leading-tight text-red-500'>
+                Investigate failures
+                <ChevronRight size={14} />
+              </div>
+            </div>
+          </CarouselImageItem>
           <CarouselImageItem
             image={taterTots}
             text="Tater Tots are superior to french fries. Try to convince me otherwise."
@@ -184,12 +196,19 @@ export default function About() {
             color="#f97316"
           />
           <CarouselImageItem
+            image={lucy}
+            text="A goofy little cockapoo named Lucy."
+            color="#f97316"
+          />
+          <CarouselImageItem
             image={manatee}
             text="This is a gif of a manatee. You're welcome."
             color="#f97316"
           />
         </Carousel>
       </div>
+
+      {showTerminal && <JurassicParkEasterEgg onClose={() => setShowTerminal(false)} />}
     </SectionWrapper>
   );
 }

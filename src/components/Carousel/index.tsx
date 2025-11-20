@@ -152,6 +152,8 @@ interface CarouselImageItemProps {
   className?: string;
   color?: string;
   size?: number;
+  onClick?: () => void;
+  children?: React.ReactNode
 }
 
 export function CarouselImageItem({
@@ -160,10 +162,15 @@ export function CarouselImageItem({
   className = '',
   color,
   size = 150,
+  onClick,
+  children,
 }: CarouselImageItemProps) {
   return (
     <CarouselItem className={className} style={{ width: `${size}px` }}>
-      <div className="flex flex-col gap-4">
+      <div
+        className={`flex flex-col gap-4 ${onClick ? 'cursor-pointer' : ''}`}
+        onClick={onClick}
+      >
         <div style={{ width: `${size}px`, height: `${size}px` }}>
           <Image
             src={image}
@@ -171,12 +178,13 @@ export function CarouselImageItem({
             className="rounded-2xl object-cover w-full h-full"
           />
         </div>
-        {text && (
+        {(text || children) && (
           <div
-            className="text-xs leading-tight pl-2 border-l-2"
+            className="flex flex-col gap-2 pl-2 border-l-2"
             style={{ borderColor: color }}
           >
-            {text}
+            {text && <div className="text-xs leading-tight">{text}</div>}
+            {children}
           </div>
         )}
       </div>
