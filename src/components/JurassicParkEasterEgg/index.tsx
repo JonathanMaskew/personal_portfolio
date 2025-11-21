@@ -98,7 +98,7 @@ export default function JurassicParkEasterEgg({
   const logsEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const playerRef = useRef<YTPlayer | null>(null);
-  const isMobile = useMobile();
+  const { isMobile } = useMobile();
 
   const scrollToBottom = () => {
     logsEndRef.current?.scrollIntoView({ behavior: 'smooth' });

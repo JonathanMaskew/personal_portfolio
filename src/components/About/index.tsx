@@ -31,7 +31,7 @@ import JurassicParkEasterEgg from '../JurassicParkEasterEgg';
 
 export default function About() {
   const { scrollToHash } = useHashScroll();
-  const [showTerminal, setShowTerminal] = useState(false);
+  const [showJurassicParkEasterEgg, setShowJurassicParkEasterEgg] = useState(false);
 
   return (
     <SectionWrapper>
@@ -167,7 +167,7 @@ export default function About() {
             image={dinosaur}
             // text="Jurassic Park is a great movie! You just can't beat the original."
             color="#f97316"
-            onClick={() => setShowTerminal(true)}
+            onClick={() => setShowJurassicParkEasterEgg(true)}
           >
             <div className='flex flex-col gap-1 text-xs leading-tight'>
               <div className='flex items-center'>
@@ -211,7 +211,7 @@ export default function About() {
         </Carousel>
       </div>
 
-      {showTerminal && <JurassicParkEasterEgg onClose={() => setShowTerminal(false)} />}
+      {showJurassicParkEasterEgg && <JurassicParkEasterEgg onClose={() => setShowJurassicParkEasterEgg(false)} />}
     </SectionWrapper>
   );
 }
