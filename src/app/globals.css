@@ -52,7 +52,7 @@
   --color-generic: #696969;
 
   /* Border radius - Tailwind defaults */
-  --radius-sm: 0.125rem; /* 2px - rounded-sm */
+  --radius-sm: 0.25rem; /* 2px - rounded-sm */
   --radius-2xl: 1rem; /* 16px - rounded-2xl */
   --radius-full: 9999px; /* fully rounded */
 }
