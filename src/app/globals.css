@@ -159,7 +159,7 @@ html[data-theme='past']::after {
   --color-generic: var(--color-primary);
 
   --radius-sm: 9999px;
-  --radius-2xl: 3rem;
+  --radius-2xl: .5rem;
   --radius-full: 9999px;
 }
 
