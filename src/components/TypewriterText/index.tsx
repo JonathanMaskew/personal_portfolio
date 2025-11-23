@@ -19,7 +19,7 @@ export default function TypewriterText({
   texts,
   speed = 100,
   delay = 3000,
-  cursorClassName = 'text-orange-500',
+  cursorClassName = 'text-primary',
   size = 32,
 }: TypewriterTextProps) {
   const typewriter = useTypewriter({ texts, speed, delay });

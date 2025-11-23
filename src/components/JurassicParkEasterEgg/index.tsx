@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import { X, VolumeOff } from 'lucide-react';
 import { lockBodyScroll, unlockBodyScroll } from '@/utils/scrollLock';
 import { useMobile } from '@/hooks/useMobile';
-import { useHoverPressHandlers } from '@/hooks/useHoverPressHandlers';
+import FloatingButton from '../FloatingButton';
 
 interface JurassicParkEasterEggProps {
   onClose: () => void;
@@ -39,39 +39,22 @@ declare global {
   }
 }
 
-function RetroWindow({ title, onClose, children, className = '' }: RetroWindowProps) {
-  const {
-    onPointerEnter,
-    onPointerLeave,
-    onPointerDown,
-    onPointerUp,
-    onPointerCancel,
-  } = useHoverPressHandlers<HTMLButtonElement>(
-    (el) => {
-      el.style.backgroundColor = '#ef4444';
-      el.style.color = 'white';
-    },
-    (el) => {
-      el.style.backgroundColor = '';
-      el.style.color = 'black';
-    }
-  );
-
+function RetroWindow({
+  title,
+  onClose,
+  children,
+  className = '',
+}: RetroWindowProps) {
   return (
-    <div className={`relative border-4 border-gray-500 shadow-2xl overflow-hidden flex flex-col text-xl ${className}`}>
+    <div
+      className={`relative border-4 border-gray-500 shadow-2xl overflow-hidden flex flex-col text-xl ${className}`}
+    >
       {/* Header */}
       <div className="bg-gray-300 pl-3 pr-1 py-1 flex justify-between items-center border-b-4 border-gray-500">
-        <div className="text-black">
-          {title}
-        </div>
+        <div className="text-black">{title}</div>
         <button
           onClick={onClose}
-          className="text-black p-1 rounded transition-colors"
-          onPointerEnter={onPointerEnter}
-          onPointerLeave={onPointerLeave}
-          onPointerDown={onPointerDown}
-          onPointerUp={onPointerUp}
-          onPointerCancel={onPointerCancel}
+          className="text-black p-1 rounded transition-colors hover:bg-red-500 hover:text-white active:bg-red-700"
         >
           <X size={24} />
         </button>
@@ -143,7 +126,11 @@ export default function JurassicParkEasterEgg({
       createPlayer();
     } else {
       // Load YouTube API if not loaded
-      if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) {
+      if (
+        !document.querySelector(
+          'script[src="https://www.youtube.com/iframe_api"]'
+        )
+      ) {
         const tag = document.createElement('script');
         tag.src = 'https://www.youtube.com/iframe_api';
         const firstScriptTag = document.getElementsByTagName('script')[0];
@@ -170,7 +157,11 @@ export default function JurassicParkEasterEgg({
     if (locked) return;
     setLocked(true);
 
-    const newLogs = [...logs, `> ${input}`, 'access: PERMISSION DENIED...and...'];
+    const newLogs = [
+      ...logs,
+      `> ${input}`,
+      'access: PERMISSION DENIED...and...',
+    ];
     setLogs(newLogs);
 
     let count = 0;
@@ -187,28 +178,6 @@ export default function JurassicParkEasterEgg({
       }, 150);
     }, 500);
   };
-
-  // Handlers for Authenticate Button
-  const {
-    onPointerEnter: onAuthEnter,
-    onPointerLeave: onAuthLeave,
-    onPointerDown: onAuthDown,
-    onPointerUp: onAuthUp,
-    onPointerCancel: onAuthCancel,
-  } = useHoverPressHandlers<HTMLButtonElement>(
-    (el) => {
-      if (!locked) {
-        el.style.backgroundColor = '#6b7280'; // gray-500
-        el.style.borderColor = '#374151'; // gray-700
-      }
-    },
-    (el) => {
-      if (!locked) {
-        el.style.backgroundColor = '';
-        el.style.borderColor = '';
-      }
-    }
-  );
 
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-2xl shadow-2xl p-4 font-retro">
@@ -249,18 +218,12 @@ export default function JurassicParkEasterEgg({
             className={`absolute bottom-4 right-4 px-3 py-1 transition-all border-2 z-10 ${
               locked
                 ? 'bg-red-900 border-red-700 text-red-300 !cursor-not-allowed'
-                : 'bg-gray-300 border-gray-500 text-black'
+                : 'bg-gray-300 border-gray-500 text-black hover:bg-gray-500 hover:border-gray-700 active:bg-gray-700 active:border-gray-900'
             }`}
-            onPointerEnter={onAuthEnter}
-            onPointerLeave={onAuthLeave}
-            onPointerDown={onAuthDown}
-            onPointerUp={onAuthUp}
-            onPointerCancel={onAuthCancel}
           >
             {locked ? 'SYSTEM LOCKOUT' : 'AUTHENTICATE'}
           </button>
         </div>
-
       </RetroWindow>
 
       {/* Video Modal - appears after spam sequence */}
@@ -290,22 +253,21 @@ export default function JurassicParkEasterEgg({
                 referrerPolicy="strict-origin-when-cross-origin"
                 className="w-full h-full"
               />
-              
+
               {/* Unmute Button - only shows when muted */}
               {isMuted && (
-                <button
-                  onClick={(e) => {
+                <FloatingButton
+                  onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                     e.stopPropagation();
-                     if (playerRef.current) {
+                    if (playerRef.current) {
                       playerRef.current.unMute();
                       setIsMuted(false);
                     }
                   }}
-                  className="absolute bottom-2 left-2 flex items-center gap-2 rounded-2xl px-4 py-2 text-sm text-white border-1 border-white/10 backdrop-blur-lg bg-[var(--background)]/30 transition-all"
-                >
-                  <VolumeOff className="h-4 w-4 text-[#FF6B18]" aria-hidden />
-                  <span>UNMUTE</span>
-                </button>
+                  icon={VolumeOff}
+                  text="Unmute"
+                  className="absolute bottom-2 left-2"
+                />
               )}
             </div>
           </RetroWindow>

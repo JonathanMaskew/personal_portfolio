@@ -69,7 +69,7 @@ import Image from 'next/image';
 export const getEducationData = (): Experience[] => [
   {
     id: 'purdue',
-    color: '#CFB991',
+    color: 'var(--color-purdue)',
     imagery: purdueLogo,
     title: 'Bachelor of Science in Computer Science',
     subtitle: 'Concentration in Software Engineering',
@@ -84,7 +84,7 @@ export const getEducationData = (): Experience[] => [
   },
   {
     id: 'htf-design-director',
-    color: '#00EB88',
+    color: 'var(--color-htf)',
     imagery: htfLogoWhite,
     title: 'Design Director',
     subtitle: 'Hack the Future',
@@ -115,8 +115,8 @@ export const getEducationData = (): Experience[] => [
           ]}
         />
         <Carousel
-          color="#00EB88"
-          className="bg-black/20 rounded-2xl p-4 flex items-center"
+          color="var(--color-htf)"
+          className="bg-background/12 rounded-2xl p-4 flex items-center"
         >
           <CarouselItem>
             <Image
@@ -264,7 +264,7 @@ export const getEducationData = (): Experience[] => [
               text="PDF Collage of Work"
               clickDetail="/pdfs/htf_collage.pdf"
               background
-              color="#00EB88"
+              color="var(--color-htf)"
             />
             <Button
               imagery={ExternalLink}
@@ -272,10 +272,10 @@ export const getEducationData = (): Experience[] => [
               text="List of Work with Descriptions"
               clickDetail="https://docs.google.com/document/d/1iJEBzMD-UZ55tUu14lbxTY1sf2zTvvQj90V-YAjeGos/edit?usp=sharing"
               background
-              color="#00EB88"
+              color="var(--color-htf)"
             />
           </ButtonRow>
-          <Carousel color="#00EB88">
+          <Carousel color="var(--color-htf)">
             <CarouselImageItem image={designAndMarketing} size={256} />
             <CarouselImageItem image={designAndMarketing2} size={256} />
             <CarouselImageItem image={designAndMarketing3} size={256} />
@@ -295,7 +295,7 @@ export const getEducationData = (): Experience[] => [
             and this outreach has continued to allow the club to scale and grow
             beyond our graduation.
           </div>
-          <Carousel color="#00EB88">
+          <Carousel color="var(--color-htf)">
             <CarouselImageItem image={eventsAndOutreach} size={256} />
             <CarouselImageItem image={eventsAndOutreach2} size={256} />
             <CarouselImageItem image={eventsAndOutreach3} size={256} />
@@ -311,7 +311,7 @@ export const getEducationData = (): Experience[] => [
             We broke records in terms of interest and applicants, largely due to
             our revamped outreach efforts.
           </div>
-          <Carousel color="#00EB88">
+          <Carousel color="var(--color-htf)">
             <CarouselImageItem
               image={nonProfitAndMemberRecruitment}
               size={256}
@@ -366,7 +366,7 @@ export const getEducationData = (): Experience[] => [
   },
   {
     id: 'htf-software-developer',
-    color: '#277D4A',
+    color: 'var(--color-htf)',
     imagery: htfLogoWhite,
     title: 'Software Developer',
     subtitle: 'Hack the Future',
@@ -384,7 +384,7 @@ export const getEducationData = (): Experience[] => [
 export const getMoreEducationData = (): Experience[] => [
   {
     id: 'htf-secretary',
-    color: '#03C652',
+    color: 'var(--color-htf)',
     imagery: htfLogoWhite,
     title: 'Secretary',
     subtitle: 'Hack the Future',
@@ -395,7 +395,7 @@ export const getMoreEducationData = (): Experience[] => [
   },
   {
     id: 'reeses-ratings',
-    color: '#FE5200',
+    color: 'var(--color-primary)',
     imagery: reesesRatings,
     title: "Reese's Ratings",
     subtitle: 'CS 348 - Information Systems',
@@ -408,7 +408,7 @@ export const getMoreEducationData = (): Experience[] => [
   },
   {
     id: 'cool-vending-machine-finder',
-    color: '#D4B88C',
+    color: 'var(--color-purdue)',
     imagery: coolVendingMachineFinderPin,
     title: 'Cool Vending Machine Finder',
     subtitle: 'CS 407 - Software Engineering Senior Project',
@@ -441,7 +441,7 @@ export const getMoreEducationData = (): Experience[] => [
   },
   {
     id: 'cool-card-games',
-    color: '#696969',
+    color: 'var(--color-generic)',
     imagery: coolCardGames,
     title: 'Cool Card Games',
     subtitle: 'CS 307 - Software Engineering',
@@ -454,7 +454,7 @@ export const getMoreEducationData = (): Experience[] => [
   },
   {
     id: 'sundae',
-    color: '#7FCAC9',
+    color: 'var(--color-generic)',
     imagery: sundae,
     title: 'Sundae',
     subtitle: 'CS 490 - Human-Computer Interaction',
@@ -488,7 +488,7 @@ export const getMoreEducationData = (): Experience[] => [
             clickDetail="https://docs.google.com/document/d/1ScsxHLDzicQHW1SaJjlw8Fy1nj5HCy6L/edit"
             text="Open in Docs"
             background
-            color="#696969"
+            color="var(--color-generic)"
           />
         </ModalSection>
 
@@ -504,7 +504,7 @@ export const getMoreEducationData = (): Experience[] => [
             clickDetail="https://docs.google.com/document/d/17AJDqE56FnMe2re0LPlVyNRI12GOFAD_cRkcG14Zb4E/edit?tab=t.0"
             text="Open in Docs"
             background
-            color="#696969"
+            color="var(--color-generic)"
           />
           <ButtonRow>
             <Button
@@ -513,7 +513,7 @@ export const getMoreEducationData = (): Experience[] => [
               clickDetail="https://docs.google.com/document/d/1hxHMWxzWMNqUmnA3d6McTMA_EmRdH4Fx4g35qxKZ1XI/edit?tab=t.0"
               text="Open Interview Protocol Details"
               background
-              color="#696969"
+              color="var(--color-generic)"
             />
             <Button
               imagery={ExternalLink}
@@ -521,7 +521,7 @@ export const getMoreEducationData = (): Experience[] => [
               clickDetail="https://docs.google.com/document/d/1Idr1juzYePqK-qtwS0jk5l3XcK1fGO6n5t0NxttJtD8/edit?tab=t.0"
               text="Open Affinity Diagram and Storyboarding Details"
               background
-              color="#696969"
+              color="var(--color-generic)"
             />
           </ButtonRow>
         </ModalSection>
@@ -538,7 +538,7 @@ export const getMoreEducationData = (): Experience[] => [
               clickDetail="https://docs.google.com/document/d/19nmjwmGBmXlPUqv5BdwezkyXAQziipnLeUFZLDvBan4/edit?tab=t.0"
               text="Open in Docs"
               background
-              color="#696969"
+              color="var(--color-generic)"
             />
 
             <Button
@@ -547,7 +547,7 @@ export const getMoreEducationData = (): Experience[] => [
               clickDetail="https://www.figma.com/proto/81djycTPurFwRTywOYsLzP/Prototype?page-id=0%3A1&node-id=58-353&p=f&viewport=379%2C197%2C0.03&t=6ZXJhKpbbaCoE6PY-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=124%3A26"
               text="Open Digital Prototype in Figma"
               background
-              color="#696969"
+              color="var(--color-generic)"
             />
             <Button
               imagery={ExternalLink}
@@ -555,7 +555,7 @@ export const getMoreEducationData = (): Experience[] => [
               clickDetail="https://www.figma.com/design/81djycTPurFwRTywOYsLzP/Prototype?node-id=0-1&t=JBSYZYPaXHT4HO53-1"
               text="Open Digital Design in Figma"
               background
-              color="#696969"
+              color="var(--color-generic)"
             />
           </ButtonRow>
           <ButtonRow>
@@ -565,7 +565,7 @@ export const getMoreEducationData = (): Experience[] => [
               clickDetail="https://docs.google.com/presentation/d/1CEnT7h0AAbcpGjXOdzsPYfutvYnmZRP3aeI_QFKNnnc/edit#slide=id.p"
               text="Open Paper Prototype Details"
               background
-              color="#696969"
+              color="var(--color-generic)"
             />
             <Button
               imagery={ExternalLink}
@@ -573,7 +573,7 @@ export const getMoreEducationData = (): Experience[] => [
               clickDetail="https://docs.google.com/document/d/1AoVcmtwNB4k4plTBYTKO1krJr3G8K-U6PDkqGi5mTSk/edit?usp=sharing"
               text="Open Digital Prototype Details"
               background
-              color="#696969"
+              color="var(--color-generic)"
             />
           </ButtonRow>
         </ModalSection>
@@ -589,7 +589,7 @@ export const getMoreEducationData = (): Experience[] => [
             clickDetail="https://docs.google.com/document/d/1Z2dzZfhXVS7rrNJSVVdzXDb3FFkrNB6Td7YGY6rCdNc/edit?tab=t.0"
             text="Open in Docs"
             background
-            color="#696969"
+            color="var(--color-generic)"
           />
           <ButtonRow>
             <Button
@@ -598,7 +598,7 @@ export const getMoreEducationData = (): Experience[] => [
               clickDetail="https://docs.google.com/spreadsheets/d/1waG0DCx1bCGwbXOhIZAxlEFjYYpBgFQ3IW1L0qiK6Hw/edit?usp=sharing"
               text="Open Cognitive Walkthrough Details"
               background
-              color="#696969"
+              color="var(--color-generic)"
             />
             <Button
               imagery={ExternalLink}
@@ -606,7 +606,7 @@ export const getMoreEducationData = (): Experience[] => [
               clickDetail="https://docs.google.com/document/d/13PKofzMQqj0J1ZcEEIiN9IxuMCeSGPDkg_hKHX_52_A/edit?usp=sharing"
               text="Open Digital Prototype Revision Details"
               background
-              color="#696969"
+              color="var(--color-generic)"
             />
             <Button
               imagery={ExternalLink}
@@ -614,7 +614,7 @@ export const getMoreEducationData = (): Experience[] => [
               clickDetail="https://docs.google.com/document/d/1LDfkLszmBrRJK9sD37tZi8qNnGCR6Ar8TL8Jk0lkUTc/edit?usp=sharing"
               text="Open User Study Design Details"
               background
-              color="#696969"
+              color="var(--color-generic)"
             />
             <Button
               imagery={ExternalLink}
@@ -646,7 +646,7 @@ export const getMoreEducationData = (): Experience[] => [
               clickDetail="https://docs.google.com/document/d/1CBZ7DHtD7ULpGBwX0NEVReWqmbtXVOa_5i_qSF9Tf-U/edit?tab=t.0"
               text="Open in Docs"
               background
-              color="#696969"
+              color="var(--color-generic)"
             />
             <Button
               imagery={ExternalLink}
@@ -654,7 +654,7 @@ export const getMoreEducationData = (): Experience[] => [
               clickDetail="https://www.figma.com/proto/81djycTPurFwRTywOYsLzP/Prototype?page-id=0%3A1&node-id=58-353&p=f&viewport=379%2C197%2C0.03&t=6ZXJhKpbbaCoE6PY-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=124%3A26"
               text="Open Digital Prototype in Figma"
               background
-              color="#696969"
+              color="var(--color-generic)"
             />
           </ButtonRow>
         </ModalSection>
@@ -663,7 +663,7 @@ export const getMoreEducationData = (): Experience[] => [
   },
   {
     id: 'noblesville-high-school',
-    color: '#AA985D',
+    color: 'var(--color-purdue)',
     imagery: noblesvilleSchools,
     title: 'Core 40 with Academic Honors',
     subtitle: 'Noblesville High School',
@@ -686,7 +686,7 @@ export const getMoreEducationData = (): Experience[] => [
   },
   {
     id: 'national-honors-society',
-    color: '#015395',
+    color: 'var(--color-generic)',
     imagery: nationalHonorsSociety,
     title: 'National Honors Society',
     subheading: 'Noblesville High School, March 2019 - May 2020',
@@ -695,7 +695,7 @@ export const getMoreEducationData = (): Experience[] => [
   },
   {
     id: 'tennis-manager',
-    color: '#AA985D',
+    color: 'var(--color-purdue)',
     imagery: noblesvilleMillers,
     title: 'Tennis Team Manager',
     subtitle: 'Girls Tennis Team',
@@ -715,7 +715,7 @@ export const getMoreEducationData = (): Experience[] => [
               text="PDF of Score Sheet"
               clickDetail="/pdfs/tennis_scoresheet.pdf"
               background
-              color="#AA985D"
+              color="var(--color-purdue)"
             />
           </ButtonRow>
         ),
@@ -725,7 +725,7 @@ export const getMoreEducationData = (): Experience[] => [
   },
   {
     id: 'key-club',
-    color: '#003975',
+    color: 'var(--color-generic)',
     imagery: keyClub,
     title: 'Publicity Coordinator',
     subtitle: 'Key Club',

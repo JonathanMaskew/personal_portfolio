@@ -23,7 +23,7 @@ export const getJobsData = (): Experience[] => [
   {
     id: 'myhelo',
     imagery: myheloLogo,
-    color: '#2396F0',
+    color: 'var(--color-myhelo)',
     subtitle: 'myhELO',
     title: 'Software Engineer',
     subheading: 'Full-time, June 2024 - Present',
@@ -80,7 +80,7 @@ export const getJobsData = (): Experience[] => [
   {
     id: 'allegion',
     imagery: allegionLogo,
-    color: '#F26F21',
+    color: 'var(--color-allegion)',
     subtitle: 'Allegion',
     title: 'Software Engineer',
     subheading: 'Intern, May 2023 - August 2023',
@@ -100,7 +100,7 @@ export const getJobsData = (): Experience[] => [
           text="PDF of Report Out Presentation"
           clickDetail="/pdfs/allegion_report_out.pdf"
           background
-          color="#F26F21"
+          color="var(--color-allegion)"
         />
       </ButtonRow>
     ),
@@ -108,7 +108,7 @@ export const getJobsData = (): Experience[] => [
   {
     id: 'qualifi',
     imagery: qualifiLogo,
-    color: '#6952E7',
+    color: 'var(--color-qualifi)',
     subtitle: 'Qualifi',
     title: 'Software Engineer',
     subheading: 'Intern, May 2022 - August 2022',
@@ -136,7 +136,7 @@ export const getJobsData = (): Experience[] => [
 export const getMoreJobsData = (): Experience[] => [
   {
     id: 'noblesville-youth-tennis',
-    color: '#696969',
+    color: 'var(--color-generic)',
     subtitle: 'Noblesville Youth Tennis',
     title: 'Tennis Camp Instructor',
     subheading: 'Seasonal, June 2018 - July 2021',
@@ -146,7 +146,7 @@ export const getMoreJobsData = (): Experience[] => [
   },
   {
     id: 'texy-mexy-website-designer',
-    color: '#E9CD2E',
+    color: 'var(--color-texy-mexy)',
     imagery: texMexyLogo,
     subtitle: 'Texy Mexy',
     title: 'Website Designer',
@@ -181,7 +181,7 @@ export const getMoreJobsData = (): Experience[] => [
   },
   {
     id: 'texy-mexy-kitchen-lead',
-    color: '#E9CD2E',
+    color: 'var(--color-texy-mexy)',
     imagery: texMexyLogo,
     subtitle: 'Texy Mexy',
     title: 'Kitchen Lead',
@@ -200,7 +200,7 @@ export const getMoreJobsData = (): Experience[] => [
               text="PDF of Assembly Cheat Sheet"
               clickDetail="/pdfs/texy_mexy_limited_assembly_cheat_sheet.pdf"
               background
-              color="#E9CD2E"
+              color="var(--color-texy-mexy)"
             />
             <Button
               imagery={ExternalLink}
@@ -208,7 +208,7 @@ export const getMoreJobsData = (): Experience[] => [
               text="PDF of Stovetop Cheat Sheet"
               clickDetail="/pdfs/texy_mexy_stovetop_cheat_sheet.pdf"
               background
-              color="#E9CD2E"
+              color="var(--color-texy-mexy)"
             />
             <Button
               imagery={ExternalLink}
@@ -216,7 +216,7 @@ export const getMoreJobsData = (): Experience[] => [
               text="PDF of Product Waste Log"
               clickDetail="/pdfs/texy_mexy_product_waste_log.pdf"
               background
-              color="#E9CD2E"
+              color="var(--color-texy-mexy)"
             />
           </ButtonRow>
         ),
@@ -231,7 +231,7 @@ export const getMoreJobsData = (): Experience[] => [
   },
   {
     id: 'premier-youth-concession-attendant',
-    color: '#696969',
+    color: 'var(--color-generic)',
     subtitle: 'Premier Youth Fundraising Inc',
     title: 'Concession Attendant',
     subheading: 'Part-time, March 2018 - 2021',
@@ -243,7 +243,7 @@ export const getMoreJobsData = (): Experience[] => [
   },
   {
     id: 'private-tennis-lessons-instructor',
-    color: '#696969',
+    color: 'var(--color-generic)',
     subtitle: 'Self-employed',
     title: 'Private Tennis Lessons Instructor',
     subheading: 'Part-time, June 2018 - July 2020',
@@ -255,7 +255,7 @@ export const getMoreJobsData = (): Experience[] => [
   },
   {
     id: 'nac-website-designer-and-manager',
-    color: '#D95A00',
+    color: 'var(--color-nac)',
     subtitle: 'Noblesville Athletic Club',
     imagery: noblesvilleAthleticClubLogo,
     title: 'Website Designer and Manager',
@@ -285,7 +285,7 @@ export const getMoreJobsData = (): Experience[] => [
   },
   {
     id: 'nac-email-marketing',
-    color: '#D95A00',
+    color: 'var(--color-nac)',
     subtitle: 'Noblesville Athletic Club',
     imagery: noblesvilleAthleticClubLogo,
     title: 'Email Marketing',
@@ -296,7 +296,7 @@ export const getMoreJobsData = (): Experience[] => [
   },
   {
     id: 'nac-childcare',
-    color: '#D95A00',
+    color: 'var(--color-nac)',
     subtitle: 'Noblesville Athletic Club',
     imagery: noblesvilleAthleticClubLogo,
     title: 'Childcare',
@@ -307,7 +307,7 @@ export const getMoreJobsData = (): Experience[] => [
   },
   {
     id: 'll-davis-farms',
-    color: '#696969',
+    color: 'var(--color-generic)',
     subtitle: 'L&L Davis Farms',
     title: 'Website Designer and Manager',
     subheading: 'Part-time, June 2016 - June 2017',

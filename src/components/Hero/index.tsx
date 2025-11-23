@@ -30,7 +30,7 @@ export default function Hero() {
                 alt="Turkey Run hiking"
                 priority
                 unoptimized
-                className="w-30 h-30 md:w-40 md:h-40 object-cover rounded-sm border-6 border-white"
+                className="w-30 h-30 md:w-40 md:h-40 object-cover rounded-sm border-6 border-foreground"
               />
             </div>
           </div>
@@ -41,7 +41,7 @@ export default function Hero() {
                 alt="Purdue graduation"
                 priority
                 unoptimized
-                className="w-40 h-40 md:w-50 md:h-50 object-cover rounded-sm border-6 border-white shadow-2xl shadow-black"
+                className="w-40 h-40 md:w-50 md:h-50 object-cover rounded-sm border-6 border-foreground shadow-2xl shadow-black"
               />
             </div>
           </div>
@@ -52,7 +52,7 @@ export default function Hero() {
                 alt="Costa Rica zip-lining"
                 priority
                 unoptimized
-                className="w-30 h-30 md:w-40 md:h-40 object-cover rounded-sm border-6 border-white"
+                className="w-30 h-30 md:w-40 md:h-40 object-cover rounded-sm border-6 border-foreground"
               />
             </div>
           </div>
@@ -64,9 +64,10 @@ export default function Hero() {
         <div
           className="text-5xl font-bold text-center font-header"
           style={{
-            background: 'linear-gradient(to right, #FF6B18, #fef08a)',
-            backgroundClip: 'text',
-            color: 'transparent',
+            background:
+              'linear-gradient(to right, var(--color-primary), var(--color-primary-accent))',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
           }}
         >
           Jonathan Maskew

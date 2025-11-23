@@ -1,33 +1,212 @@
 @import "tailwindcss";
 
-:root {
-  --background: #1c1c1c;
-  --foreground: #ffffff;
+@theme {
+  /* Base Colors */
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+
+  /* Brand Colors */
+  --color-primary: var(--color-primary);
+  --color-primary-accent: var(--color-primary-accent);
+
+  /* Experience Colors */
+  --color-myhelo: var(--color-myhelo);
+  --color-allegion: var(--color-allegion);
+  --color-qualifi: var(--color-qualifi);
+  --color-htf: var(--color-htf);
+  --color-texy-mexy: var(--color-texy-mexy);
+  --color-nac: var(--color-nac);
+  --color-purdue: var(--color-purdue);
+  --color-generic: var(--color-generic);
+
+  /* Border Radius */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-2xl: var(--radius-2xl);
+  --radius-full: var(--radius-full);
+
+  /* Fonts */
+  --font-header: var(--font-header);
+  --font-body: var(--font-body);
+  --font-retro: var(--font-retro);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+:root {
+  /* Base colors */
+  --color-background: #1c1c1c;
+  --color-foreground: #ffffff;
+
+  /* Brand colors */
+  --color-primary: #FF6B18;
+  --color-primary-accent: #fef08a;
+
+  /* Experience colors */
+  --color-myhelo: #2396F0;
+  --color-allegion: #F26F21;
+  --color-qualifi: #6952E7;
+  --color-htf: #00EB88;
+  --color-texy-mexy: #E9CD2E;
+  --color-nac: #D95A00;
+  --color-purdue: #CFB991;
+  --color-generic: #696969;
+
+  /* Border radius - Tailwind defaults */
+  --radius-sm: 0.125rem; /* 2px - rounded-sm */
+  --radius-2xl: 1rem; /* 16px - rounded-2xl */
+  --radius-full: 9999px; /* fully rounded */
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+
+  /* Fonts - defined here so they can access Next.js font variables */
   --font-header: var(--font-raleway);
   --font-body: var(--font-quicksand);
   --font-retro: var(--font-vt323);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1c1c1c;
-    --foreground: #ffffff;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-}
-
 button {
   cursor: pointer;
 }
+
+.highlight-feature {
+  background: radial-gradient(circle at top left,
+      color-mix(in srgb, var(--highlight-color) 75%, transparent) 0%,
+      color-mix(in srgb, var(--highlight-color) 30%, black) 100%);
+  border: 0px;
+  transition: box-shadow 0.2s;
+}
+
+.highlight-detailed {
+  background: color-mix(in srgb, var(--highlight-color) 50%, transparent);
+  border: 0px;
+  transition: box-shadow 0.2s;
+}
+
+/* 
+  Past Theme
+*/
+
+[data-theme='past'] {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+
+  --color-primary: #333333;
+  --color-primary-accent: #808080;
+
+  --color-myhelo: var(--color-primary);
+  --color-allegion: var(--color-primary);
+  --color-qualifi: var(--color-primary);
+  --color-htf: var(--color-primary);
+  --color-texy-mexy: var(--color-primary);
+  --color-nac: var(--color-primary);
+  --color-purdue: var(--color-primary);
+  --color-generic: var(--color-primary);
+
+  --radius-sm: 0px;
+  --radius-2xl: 0px;
+  --radius-full: 0px;
+}
+
+[data-theme='past'] body {
+  --font-header: var(--font-pixelify-sans);
+  --font-body: var(--font-vt323);
+}
+
+[data-theme='past'] img {
+  filter: grayscale(100%);
+}
+
+[data-theme='past'] .highlight-feature,
+[data-theme='past'] .highlight-detailed {
+  background: transparent !important;
+  border: 5px solid var(--highlight-color);
+}
+
+html[data-theme='past']::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.3;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* 
+  Future Theme
+*/
+
+[data-theme='future'] {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+
+  --color-primary: #00bbff;
+  --color-primary-accent: #75daff;
+
+  --color-myhelo: var(--color-primary);
+  --color-allegion: var(--color-primary);
+  --color-qualifi: var(--color-primary);
+  --color-htf: var(--color-primary);
+  --color-texy-mexy: var(--color-primary);
+  --color-nac: var(--color-primary);
+  --color-purdue: var(--color-primary);
+  --color-generic: var(--color-primary);
+
+  --radius-sm: 9999px;
+  --radius-2xl: 3rem;
+  --radius-full: 9999px;
+}
+
+[data-theme='future'] body {
+  --font-header: var(--font-audiowide);
+  --font-body: var(--font-tektur);
+}
+
+/* [data-theme='future'] img {
+  filter: sepia(100%) hue-rotate(190deg) saturate(400%) brightness(0.9);
+  transition: filter 0.3s ease;
+}
+
+[data-theme='future'] img:hover,
+[data-theme='future'] img:active {
+  filter: none;
+} */
+
+[data-theme='future'] .highlight-feature,
+[data-theme='future'] .highlight-detailed {
+  background: color-mix(in srgb, var(--color-primary) 25%, transparent) !important;
+  border: 2px dotted var(--color-primary) !important;
+  backdrop-filter: blur(2px);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme='future'] .highlight-feature::after,
+[data-theme='future'] .highlight-detailed::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      color-mix(in srgb, var(--color-primary) 25%, transparent) 50%,
+      transparent 100%);
+  transform: skewX(-20deg);
+  animation: holographic-scan 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+/* 
+  Animation stuff
+*/
 
 /* Reveal on scroll animations */
 [data-reveal] {
@@ -109,6 +288,16 @@ button {
   }
 }
 
+@keyframes holographic-scan {
+  0% {
+    left: -150%;
+  }
+
+  100% {
+    left: 150%;
+  }
+}
+
 .animate-scale-in {
   animation: scaleIn 2500ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -160,7 +349,7 @@ button {
   height: min(140vw, 900px);
   top: 20%;
   left: 30%;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 107, 24, 0.85) 0%, rgba(255, 107, 24, 0) 60%);
+  background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--color-primary) 85%, transparent) 0%, color-mix(in srgb, var(--color-primary) 0%, transparent) 60%);
   animation: float1 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   animation-delay: -6s;
 }
@@ -170,7 +359,7 @@ button {
   height: min(120vw, 750px);
   top: 70%;
   left: 20%;
-  background: radial-gradient(circle at 50% 50%, rgba(254, 240, 138, 0.8) 0%, rgba(254, 240, 138, 0) 60%);
+  background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--color-primary-accent) 80%, transparent) 0%, color-mix(in srgb, var(--color-primary-accent) 0%, transparent) 60%);
   animation: float2 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   animation-delay: -12s;
 }
@@ -180,7 +369,7 @@ button {
   height: min(100vw, 600px);
   top: 30%;
   left: 80%;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 107, 24, 0.8) 0%, rgba(255, 107, 24, 0) 60%);
+  background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--color-primary) 80%, transparent) 0%, color-mix(in srgb, var(--color-primary) 0%, transparent) 60%);
   animation: float3 11s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   animation-delay: -3s;
 }
@@ -190,7 +379,7 @@ button {
   height: min(160vw, 1000px);
   top: 80%;
   left: 75%;
-  background: radial-gradient(circle at 50% 50%, rgba(254, 240, 138, 0.75) 0%, rgba(254, 240, 138, 0) 60%);
+  background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--color-primary-accent) 75%, transparent) 0%, color-mix(in srgb, var(--color-primary-accent) 0%, transparent) 60%);
   animation: float2 13s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   animation-delay: -18s;
 }
@@ -200,7 +389,7 @@ button {
   height: min(90vw, 550px);
   top: 45%;
   left: 50%;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 107, 24, 0.75) 0%, rgba(255, 107, 24, 0) 60%);
+  background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--color-primary) 75%, transparent) 0%, color-mix(in srgb, var(--color-primary) 0%, transparent) 60%);
   animation: float1 11.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   animation-delay: -9s;
 }
@@ -288,4 +477,77 @@ button {
 
 .animate-urgent-flash {
   animation: urgent-flash .6s steps(2, start) infinite;
+}
+
+/* Theme Transition Animations */
+.theme-transition-wrapper {
+  perspective: 1500px;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+/* Forward: Content moves Left, New Content enters from Right */
+.carousel-forward-out {
+  animation: carouselForwardOut 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  pointer-events: none;
+}
+
+.carousel-forward-in {
+  animation: carouselForwardIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  pointer-events: none;
+}
+
+/* Backward: Content moves Right, New Content enters from Left */
+.carousel-backward-out {
+  animation: carouselBackwardOut 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  pointer-events: none;
+}
+
+.carousel-backward-in {
+  animation: carouselBackwardIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  pointer-events: none;
+}
+
+@keyframes carouselForwardOut {
+  0% {
+    transform: translateX(0) rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) rotateY(90deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes carouselForwardIn {
+  0% {
+    transform: translateX(50%) rotateY(-90deg) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes carouselBackwardOut {
+  0% {
+    transform: translateX(0) rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(50%) rotateY(-90deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes carouselBackwardIn {
+  0% {
+    transform: translateX(-50%) rotateY(90deg) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotateY(0deg) scale(1);
+    opacity: 1;
+  }
 }

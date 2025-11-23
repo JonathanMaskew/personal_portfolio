@@ -22,7 +22,7 @@ export default function SectionWrapper({
             <div className="flex items-center gap-3">
               {IconComponent && <IconComponent size={24} />}
               {title && (
-                <div className="font-header font-bold text-2xl">{title}</div>
+                <div className="font-bold text-2xl font-header">{title}</div>
               )}
             </div>
           )}

@@ -37,48 +37,26 @@ export default function Carousel({
       {/* Left Arrow */}
       <div
         ref={scrollContainerRef}
-        className={`flex overflow-x-auto gap-4 scrollbar-hide ${className}`}
+        className={`flex overflow-x-auto gap-4 scrollbar-hide pb-3 ${className}`}
       >
         {children}
       </div>
 
       <button
         onClick={scrollLeft}
-        className={`absolute left-2 top-1/2 -translate-y-1/2 text-white rounded-full p-1 transition-all duration-200 z-10 ${
-          isMobile ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-        }`}
-        style={{
-          backgroundColor: color ? `${color}80` : 'rgba(0, 0, 0, 0.5)',
-        }}
-        onPointerEnter={(e) => {
-          if (e.pointerType === 'mouse') {
-            (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
-              ? `${color}`
-              : 'rgba(0, 0, 0)';
-          }
-        }}
-        onPointerLeave={(e) => {
-          if (e.pointerType === 'mouse') {
-            (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
-              ? `${color}80`
-              : 'rgba(0, 0, 0, 0.5)';
-          }
-        }}
-        onPointerDown={(e) => {
-          (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
-            ? `${color}`
-            : 'rgba(0, 0, 0)';
-        }}
-        onPointerUp={(e) => {
-          (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
-            ? `${color}80`
-            : 'rgba(0, 0, 0, 0.5)';
-        }}
-        onPointerCancel={(e) => {
-          (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
-            ? `${color}80`
-            : 'rgba(0, 0, 0, 0.5)';
-        }}
+        className={`absolute left-2 top-1/2 -translate-y-1/2 text-foreground rounded-full p-1 transition-all duration-200 z-10 ${
+          color
+            ? 'bg-[var(--carousel-btn-bg)] hover:bg-[var(--carousel-btn-hover)] active:bg-[var(--carousel-btn-hover)]'
+            : 'bg-background/50 hover:bg-background'
+        } ${isMobile ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+        style={
+          {
+            '--carousel-btn-bg': color
+              ? `color-mix(in srgb, ${color} 50%, transparent)`
+              : undefined,
+            '--carousel-btn-hover': color,
+          } as React.CSSProperties
+        }
       >
         <ChevronLeft size={20} />
       </button>
@@ -86,41 +64,19 @@ export default function Carousel({
       {/* Right Arrow */}
       <button
         onClick={scrollRight}
-        className={`absolute right-2 top-1/2 -translate-y-1/2 text-white rounded-full p-1 transition-all duration-200 z-10 ${
-          isMobile ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-        }`}
-        style={{
-          backgroundColor: color ? `${color}80` : 'rgba(0, 0, 0, 0.5)',
-        }}
-        onPointerEnter={(e) => {
-          if (e.pointerType === 'mouse') {
-            (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
-              ? `${color}`
-              : 'rgba(0, 0, 0)';
-          }
-        }}
-        onPointerLeave={(e) => {
-          if (e.pointerType === 'mouse') {
-            (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
-              ? `${color}80`
-              : 'rgba(0, 0, 0, 0.5)';
-          }
-        }}
-        onPointerDown={(e) => {
-          (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
-            ? `${color}`
-            : 'rgba(0, 0, 0)';
-        }}
-        onPointerUp={(e) => {
-          (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
-            ? `${color}80`
-            : 'rgba(0, 0, 0, 0.5)';
-        }}
-        onPointerCancel={(e) => {
-          (e.currentTarget as HTMLButtonElement).style.backgroundColor = color
-            ? `${color}80`
-            : 'rgba(0, 0, 0, 0.5)';
-        }}
+        className={`absolute right-2 top-1/2 -translate-y-1/2 text-foreground rounded-full p-1 transition-all duration-200 z-10 ${
+          color
+            ? 'bg-[var(--carousel-btn-bg)] hover:bg-[var(--carousel-btn-hover)] active:bg-[var(--carousel-btn-hover)]'
+            : 'bg-background/50 hover:bg-background'
+        } ${isMobile ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+        style={
+          {
+            '--carousel-btn-bg': color
+              ? `color-mix(in srgb, ${color} 50%, transparent)`
+              : undefined,
+            '--carousel-btn-hover': color,
+          } as React.CSSProperties
+        }
       >
         <ChevronRight size={20} />
       </button>
@@ -153,7 +109,7 @@ interface CarouselImageItemProps {
   color?: string;
   size?: number;
   onClick?: () => void;
-  children?: React.ReactNode
+  children?: React.ReactNode;
 }
 
 export function CarouselImageItem({

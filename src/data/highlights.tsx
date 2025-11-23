@@ -16,7 +16,7 @@ export const getHighlightsData = (
 ): Experience[] => [
   {
     id: 'myhelo-eprescribe',
-    color: '#2396F0',
+    color: 'var(--color-myhelo)',
     imagery: PillBottle,
     title:
       'Increased Reliability and Functionality Through Full-Stack Rebuild of ePrescribe',
@@ -27,7 +27,7 @@ export const getHighlightsData = (
       <Button
         imagery={Plus}
         text="More myhELO"
-        color="#2396F0"
+        color="var(--color-myhelo)"
         clickDetail={() => {
           setOpenedExperienceId('myhelo');
           openModal();
@@ -37,7 +37,7 @@ export const getHighlightsData = (
   },
   {
     id: 'htf-outreach',
-    color: '#00EB88',
+    color: 'var(--color-htf)',
     imagery: SplinePointer,
     title:
       'Revamped Outreach Efforts, Achieving a Nearly 90% Increase in Applicants',
@@ -57,7 +57,7 @@ export const getHighlightsData = (
   },
   {
     id: 'myhelo-patient-charts',
-    color: '#2396F0',
+    color: 'var(--color-myhelo)',
     imagery: LayoutTemplate,
     title:
       'Re-architected the Site-wide UI Template to Spotlight Crucial Patient Data',
@@ -77,7 +77,7 @@ export const getHighlightsData = (
   },
   {
     id: 'allegion-announcements',
-    color: '#F26F21',
+    color: 'var(--color-allegion)',
     imagery: Megaphone,
     title: 'Introduced Rapid Communication through an Announcements System',
     subtitle: 'Software Engineer @ Allegion',
@@ -115,7 +115,7 @@ export const getHighlightsData = (
   // },
   {
     id: 'myhelo-onboarding',
-    color: '#2396F0',
+    color: 'var(--color-myhelo)',
     imagery: UserPlus,
     title: 'Implemented a New User Onboarding Workflow',
     subtitle: 'Software Engineer @ myhELO',

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useHoverPressHandlers } from '@/hooks/useHoverPressHandlers';
 import type { HighlightProps } from '@/types';
 import { renderImagery, isStaticImageData } from '@/components/renderImagery';
 
@@ -16,59 +15,36 @@ export default function HighlightDetailed({
   nested,
 }: HighlightProps) {
   const hasHeaderContent = Boolean(imagery || title || subtitle || subheading);
-  const containerStyle = color
-    ? {
-        background: `${color}80`,
-        // boxShadow: `inset 0 0 0 2px ${color}80`,
-        transition: 'box-shadow 0.2s',
-      }
-    : { transition: 'box-shadow 0.2s' };
-  const {
-    onPointerEnter,
-    onPointerLeave,
-    onPointerDown,
-    onPointerUp,
-    onPointerCancel,
-  } = useHoverPressHandlers<HTMLDivElement>(
-    (el) => {
-      if (onClick && color) {
-        (el as HTMLDivElement).style.boxShadow = `inset 0 0 0 4px ${color}`;
-      }
-    },
-    (el) => {
-      if (onClick && color) {
-        (el as HTMLDivElement).style.boxShadow = 'none';
-      }
-    }
-  );
+  const containerStyle = {
+    '--highlight-color': color || 'var(--color-primary)',
+  } as React.CSSProperties;
 
   return (
     <div
-      className={`flex flex-col ${actionButton ? 'pb-18 cursor-pointer' : ''} ${nested ? 'p-4' : 'p-6'} rounded-2xl h-full w-full gap-6 relative`}
+      className={`highlight-detailed flex flex-col ${actionButton ? 'pb-18 cursor-pointer' : ''} ${nested ? 'p-4' : 'p-6'} rounded-2xl h-full w-full gap-6 relative transition-shadow duration-200 ${onClick ? 'hover:shadow-[inset_0_0_0_4px_var(--highlight-color)] active:shadow-[inset_0_0_0_4px_var(--highlight-color)]' : ''}`}
       style={containerStyle}
-      onPointerEnter={onClick && color ? onPointerEnter : undefined}
-      onPointerLeave={onClick && color ? onPointerLeave : undefined}
-      onPointerDown={onClick && color ? onPointerDown : undefined}
-      onPointerUp={onClick && color ? onPointerUp : undefined}
-      onPointerCancel={onClick && color ? onPointerCancel : undefined}
       onClick={onClick}
     >
       {hasHeaderContent && (
         <div className="flex items-center gap-4">
-          {imagery && (() => {
-            if (React.isValidElement(imagery)) return imagery;
-            const base = 'rounded-2xl p-3 bg-black/10 min-h-[60px] max-h-[60px] min-w-[60px] max-w-[60px] justify-center items-center flex';
-            const cls = isStaticImageData(imagery) ? `${base} overflow-hidden` : base;
-            return (
-              <div className={cls}>
-                {renderImagery(imagery, {
-                  alt: `${title || 'highlight'} logo`,
-                  iconSize: 36,
-                  imageClassName: 'h-[36px] w-auto object-contain',
-                })}
-              </div>
-            );
-          })()}
+          {imagery &&
+            (() => {
+              if (React.isValidElement(imagery)) return imagery;
+              const base =
+                'rounded-2xl p-3 bg-background/12 min-h-[60px] max-h-[60px] min-w-[60px] max-w-[60px] justify-center items-center flex';
+              const cls = isStaticImageData(imagery)
+                ? `${base} overflow-hidden`
+                : base;
+              return (
+                <div className={cls}>
+                  {renderImagery(imagery, {
+                    alt: `${title || 'highlight'} logo`,
+                    iconSize: 36,
+                    imageClassName: 'h-[36px] w-auto object-contain',
+                  })}
+                </div>
+              );
+            })()}
           {(title || subtitle || subheading) && (
             <div className="flex flex-col">
               {title && (

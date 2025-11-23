@@ -4,8 +4,11 @@ import {
   ArrowDown,
   Blend,
   BriefcaseBusiness,
+  CalendarCheck,
   ChevronRight,
   GraduationCap,
+  HistoryIcon,
+  Sunrise,
   TriangleAlert,
 } from 'lucide-react';
 import { useState } from 'react';
@@ -28,10 +31,13 @@ import { useHashScroll } from '@/hooks/useHashScroll';
 import type React from 'react';
 import Chips from '../Chips';
 import JurassicParkEasterEgg from '../JurassicParkEasterEgg';
+import { useTheme } from '@/context/ThemeContext';
 
 export default function About() {
   const { scrollToHash } = useHashScroll();
-  const [showJurassicParkEasterEgg, setShowJurassicParkEasterEgg] = useState(false);
+  const { setTheme } = useTheme();
+  const [showJurassicParkEasterEgg, setShowJurassicParkEasterEgg] =
+    useState(false);
 
   return (
     <SectionWrapper>
@@ -39,7 +45,7 @@ export default function About() {
         <div
           className="text-3xl font-bold underline"
           style={{
-            textDecorationColor: '#FF6B18',
+            textDecorationColor: 'var(--color-primary)',
             textDecorationThickness: '4px',
             textUnderlineOffset: '4px',
           }}
@@ -71,7 +77,7 @@ export default function About() {
           title="Software Engineer"
           subtitle="myhELO"
           body="At myhELO, I've delivered high-impact full-stack solutions, worked with Large Language Models, and designed new user interfaces."
-          color="#FF6B18"
+          color="var(--color-primary)"
           onClick={() => scrollToHash('#work')}
           actionButton={
             <Button
@@ -86,7 +92,7 @@ export default function About() {
           title="BS in Computer Science"
           subtitle="Purdue University"
           body="In addition to coursework, I served as Design Director of a volunteer-based organization."
-          color="#FF6B18"
+          color="var(--color-primary)"
           onClick={() => scrollToHash('#education')}
           actionButton={
             <Button
@@ -102,7 +108,7 @@ export default function About() {
             title="Well-Rounded Experience"
             subtitle="User-driven Development"
             body="I've got a robust skillset - from website design & development, to user research and prototyping, to branding and marketing, and more. At the core of everything I do, I'm focused on how it impacts the user."
-            color="#FF6B18"
+            color="var(--color-primary)"
           >
             <Chips
               strings={[
@@ -147,37 +153,37 @@ export default function About() {
         <div className="font-bold text-lg font-header leading-tight">
           Get to know me a little better...
         </div>
-        <Carousel color="#f97316">
+        <Carousel color="var(--color-primary)">
           <CarouselImageItem
             image={tennis}
             text="I played varsity tennis in high school and continue to play recreationally."
-            color="#f97316"
+            color="var(--color-primary)"
           />
           <CarouselImageItem
             image={travel}
             text="I love to explore new places, having traveled to 13 countries and dozens of US states."
-            color="#f97316"
+            color="var(--color-primary)"
           />
           <CarouselImageItem
             image={reeses}
             text="I am addicted to Reese's Peanut Butter Cups in every shape and size."
-            color="#f97316"
+            color="var(--color-primary)"
           />
           <CarouselImageItem
             image={dinosaur}
-            // text="Jurassic Park is a great movie! You just can't beat the original."
-            color="#f97316"
+            text="Jurassic Park is a great movie!"
+            color="var(--color-primary)"
             onClick={() => setShowJurassicParkEasterEgg(true)}
           >
-            <div className='flex flex-col gap-1 text-xs leading-tight'>
-              <div className='flex items-center'>
-                Jurassic Park Status
-              </div>
+            <div className="flex flex-col gap-1 text-xs leading-tight">
+              {/* <div className='flex items-center'>
+                Status:
+              </div> */}
               <div className="flex items-center gap-2 font-bold text-red-500 animate-urgent-flash">
                 <TriangleAlert size={14} />
                 SYSTEMS FAILING
               </div>
-              <div className='flex items-center text-red-500'>
+              <div className="flex items-center text-red-500">
                 Investigate failures
                 <ChevronRight size={14} />
               </div>
@@ -186,32 +192,64 @@ export default function About() {
           <CarouselImageItem
             image={taterTots}
             text="Tater Tots are superior to french fries. Try to convince me otherwise."
-            color="#f97316"
+            color="var(--color-primary)"
           />
           <CarouselImageItem
             image={roundabouts}
             text="I love roundabouts. Give me a roundabout over a traffic light any day."
-            color="#f97316"
+            color="var(--color-primary)"
           />
           <CarouselImageItem
             image={carouselOfProgress}
-            text="I could ride the Carousel of Progress in a loop. There's a Great Big Beautiful Tomorrow!"
-            color="#f97316"
-          />
+            text="I could ride the Carousel of Progress in a loop."
+            color="var(--color-primary)"
+            onClick={() => scrollToHash('#carousel_of_progress_easter_egg')}
+          >
+            <div className="flex items-center text-xs leading-tight">
+              Travel through time
+              <ChevronRight size={14} />
+            </div>
+            {/* <div className="text-xs leading-tight">
+              <ButtonRow>
+                <Button
+                  imagery={HistoryIcon}
+                  text="Past"
+                  // imageryOnly
+                  clickDetail={() => setTheme('past')}
+                />
+                <Button
+                  imagery={CalendarCheck}
+                  text="Present"
+                  // imageryOnly
+                  clickDetail={() => setTheme('default')}
+                />
+                <Button
+                  imagery={Sunrise}
+                  text="Future"
+                  // imageryOnly
+                  clickDetail={() => setTheme('future')}
+                />
+              </ButtonRow>
+            </div> */}
+          </CarouselImageItem>
           <CarouselImageItem
             image={lucy}
             text="A goofy little cockapoo named Lucy."
-            color="#f97316"
+            color="var(--color-primary)"
           />
           <CarouselImageItem
             image={manatee}
             text="This is a gif of a manatee. You're welcome."
-            color="#f97316"
+            color="var(--color-primary)"
           />
         </Carousel>
       </div>
 
-      {showJurassicParkEasterEgg && <JurassicParkEasterEgg onClose={() => setShowJurassicParkEasterEgg(false)} />}
+      {showJurassicParkEasterEgg && (
+        <JurassicParkEasterEgg
+          onClose={() => setShowJurassicParkEasterEgg(false)}
+        />
+      )}
     </SectionWrapper>
   );
 }

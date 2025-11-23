@@ -1,8 +1,8 @@
 import { Icon } from '@/types';
 import { useHashScroll } from '@/hooks/useHashScroll';
-import { useHoverPressHandlers } from '@/hooks/useHoverPressHandlers';
 import type { StaticImageData } from 'next/image';
 import { renderImagery } from '@/components/renderImagery';
+
 interface ButtonProps {
   text: string;
   clickDetail: string | (() => void);
@@ -27,30 +27,18 @@ export function Button({
   className,
 }: ButtonProps) {
   const { scrollToHash } = useHashScroll();
-  const buttonClassName = `inline-flex items-center gap-3 w-fit transition-all duration-200 ${background ? 'py-2 px-4 rounded-2xl' : ''} ${isFocused ? 'font-bold' : ''} ${className || ''}`;
-  const buttonStyle = {
-    backgroundColor: background ? 'rgba(0,0,0,0.2)' : '',
-    opacity: background || isFocused ? '1' : '0.6',
-  };
 
-  const applyHoverStyle = (el: HTMLButtonElement | HTMLAnchorElement) => {
-    el.style.backgroundColor = background ? color || 'rgba(0,0,0,0.5)' : '';
-    el.style.opacity = '1';
-  };
-  const revertHoverStyle = (el: HTMLButtonElement | HTMLAnchorElement) => {
-    el.style.backgroundColor = buttonStyle.backgroundColor as string;
-    el.style.opacity = buttonStyle.opacity as string;
-  };
-  const {
-    onPointerEnter,
-    onPointerLeave,
-    onPointerDown,
-    onPointerUp,
-    onPointerCancel,
-  } = useHoverPressHandlers<HTMLButtonElement | HTMLAnchorElement>(
-    applyHoverStyle as (el: HTMLButtonElement | HTMLAnchorElement) => void,
-    revertHoverStyle as (el: HTMLButtonElement | HTMLAnchorElement) => void
-  );
+  const buttonClassName = `inline-flex items-center gap-3 w-fit transition-all duration-200 ${
+    background
+      ? 'py-2 px-4 rounded-2xl bg-background/12 hover:bg-[var(--btn-hover-color)] active:bg-[var(--btn-hover-color)]'
+      : ''
+  } ${background || isFocused ? 'opacity-100' : 'opacity-60 hover:opacity-100 active:opacity-100'} ${
+    isFocused ? 'font-bold' : ''
+  } ${className || ''}`;
+
+  const buttonStyle = {
+    '--btn-hover-color': color || 'rgba(0,0,0,0.5)',
+  } as React.CSSProperties;
 
   const content = (
     <>
@@ -68,13 +56,8 @@ export function Button({
     return (
       <button
         onClick={clickDetail}
-        className={`${buttonClassName}`}
+        className={buttonClassName}
         style={buttonStyle}
-        onPointerEnter={onPointerEnter}
-        onPointerLeave={onPointerLeave}
-        onPointerDown={onPointerDown}
-        onPointerUp={onPointerUp}
-        onPointerCancel={onPointerCancel}
       >
         {content}
       </button>
@@ -92,11 +75,6 @@ export function Button({
           onClick={handleEmailClick}
           className={`${buttonClassName} cursor-pointer`}
           style={buttonStyle}
-          onPointerEnter={onPointerEnter}
-          onPointerLeave={onPointerLeave}
-          onPointerDown={onPointerDown}
-          onPointerUp={onPointerUp}
-          onPointerCancel={onPointerCancel}
         >
           {content}
         </button>
@@ -108,13 +86,8 @@ export function Button({
       return (
         <button
           onClick={() => scrollToHash(clickDetail)}
-          className={`${buttonClassName}`}
+          className={buttonClassName}
           style={buttonStyle}
-          onPointerEnter={onPointerEnter}
-          onPointerLeave={onPointerLeave}
-          onPointerDown={onPointerDown}
-          onPointerUp={onPointerUp}
-          onPointerCancel={onPointerCancel}
         >
           {content}
         </button>
@@ -127,13 +100,8 @@ export function Button({
         href={clickDetail}
         target={newTab ? '_blank' : '_self'}
         rel="noopener noreferrer"
-        className={`${buttonClassName}`}
+        className={buttonClassName}
         style={buttonStyle}
-        onPointerEnter={onPointerEnter}
-        onPointerLeave={onPointerLeave}
-        onPointerDown={onPointerDown}
-        onPointerUp={onPointerUp}
-        onPointerCancel={onPointerCancel}
       >
         {content}
       </a>

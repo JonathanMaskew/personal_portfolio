@@ -48,12 +48,12 @@ export default function TopNav() {
     <div
       id="top-nav"
       ref={navRef}
-      className={`fixed top-0 left-0 right-0 rounded-b-2xl ${open ? 'bg-[var(--background)]' : 'bg-[var(--background)]/30'} mx-3 z-50 ring-1 ring-white/10 backdrop-blur-lg px-6 py-4 flex flex-col`}
+      className={`fixed top-0 left-0 right-0 rounded-b-2xl ${open ? 'bg-background' : 'bg-background/30'} mx-3 z-50 ring-1 ring-foreground/10 backdrop-blur-lg px-6 py-4 flex flex-col`}
     >
       <div className="flex justify-between">
         <button
           onClick={() => setOpen((v) => !v)}
-          className="flex items-center gap-2 rounded text-white font-bold"
+          className="flex items-center gap-2 rounded text-foreground font-bold"
         >
           {current.id === 'intro' ? (
             <div className="flex items-center justify-center h-[18px] w-[18px]">

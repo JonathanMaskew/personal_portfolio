@@ -19,7 +19,7 @@ export default function ModalSection({
             <IconComponent size={20} />
           </div>
         )}
-        <div className="font-header font-bold text-lg">{title}</div>
+        <div className="font-bold text-lg font-header">{title}</div>
       </div>
       <div className="flex flex-col gap-6">{children}</div>
     </div>

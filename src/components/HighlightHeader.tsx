@@ -30,7 +30,9 @@ export default function HighlightHeader({
   };
 
   return (
-    <div className={`flex gap-4 ${orientation === 'vertical' ? `flex-col ${centered ? 'text-center items-center' : ''}` : 'items-center'}`}>
+    <div
+      className={`flex gap-4 ${orientation === 'vertical' ? `flex-col ${centered ? 'text-center items-center' : ''}` : 'items-center'}`}
+    >
       {imagery && (
         <>
           {(() => {
@@ -41,14 +43,14 @@ export default function HighlightHeader({
             if (!isStaticImageData(imagery)) {
               const IconComponent = imagery as Icon;
               return (
-                <div className="rounded-full p-4 bg-black/10 min-h-[70px] max-h-[70px] min-w-[70px] max-w-[70px] justify-center items-center flex">
+                <div className="rounded-full p-4 bg-background/12 min-h-[70px] max-h-[70px] min-w-[70px] max-w-[70px] justify-center items-center flex">
                   <IconComponent size={38} />
                 </div>
               );
             }
 
             return (
-              <div className="rounded-full p-4 bg-black/10 min-h-[70px] max-h-[70px] min-w-[70px] max-w-[70px] justify-center items-center flex">
+              <div className="rounded-full p-4 bg-background/12 min-h-[70px] max-h-[70px] min-w-[70px] max-w-[70px] justify-center items-center flex">
                 <Image
                   src={imagery as StaticImageData}
                   alt={`${title || 'feature'} logo`}
@@ -76,9 +78,7 @@ export default function HighlightHeader({
               </span>
             </div>
           )}
-          {subtitle && (
-            <div className="text-sm leading-tight">{subtitle}</div>
-          )}
+          {subtitle && <div className="text-sm leading-tight">{subtitle}</div>}
           {subheading && (
             <div className="text-xs leading-tight">{subheading}</div>
           )}

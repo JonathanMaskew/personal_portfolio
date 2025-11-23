@@ -28,7 +28,7 @@ import jsMulticolor from '@/assets/images/Js_page/Js_multicolor.gif';
 export const getFooterData = (): Experience[] => [
   {
     id: 'this-site',
-    color: '#696969',
+    color: 'var(--color-generic)',
     imagery: HandHeart,
     title: 'Built with Passion',
     subtitle: 'Developed using Next.js',
@@ -112,7 +112,7 @@ export const getFooterData = (): Experience[] => [
   },
   {
     id: 'js-page',
-    color: '#FF6B18',
+    color: 'var(--color-primary)',
     imagery: jsLogo,
     title: "J's Page",
     subtitle: 'The Next Iteration of my Personal Brand',

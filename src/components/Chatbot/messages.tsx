@@ -77,7 +77,7 @@ export default function Messages({ session }: MessagesProps) {
       className={`flex flex-col gap-3 text-sm ${hasUserMessage ? 'px-4' : ''} h-full`}
     >
       {!hasUserMessage ? (
-        <div className="overflow-hidden flex items-center justify-center h-full w-full text-white/70 relative">
+        <div className="overflow-hidden flex items-center justify-center h-full w-full text-foreground/65 relative">
           <div className="flex flex-col items-center text-center gap-3 pb-[82px] px-8 z-10">
             <Sparkles size={56} strokeWidth={1.5} aria-hidden />
             <p className="text-lg whitespace-pre-wrap">
@@ -111,11 +111,7 @@ export default function Messages({ session }: MessagesProps) {
               }`}
             >
               <div
-                className="rounded-2xl px-3 py-2 text-white border-1 border-white/10"
-                style={{
-                  backgroundColor:
-                    message.role === 'user' ? '#00000080' : '#FF6B1880',
-                }}
+                className={`rounded-2xl px-3 py-2 text-foreground border-1 border-foreground/10 ${message.role === 'user' ? 'bg-foreground/20' : 'bg-primary/75'}`}
               >
                 {message.role === 'assistant' ? (
                   <ReactMarkdown skipHtml>{message.content}</ReactMarkdown>

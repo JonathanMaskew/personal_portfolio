@@ -1,10 +1,14 @@
 'use client';
 
 import SectionWrapper from '@/components/SectionWrapper';
-import HighlightFeature from '@/components/HighlightFeature';
 import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import HighlightDetailed from '../HighlightDetailed';
-import { Plus } from 'lucide-react';
+import {
+  Plus,
+  History as HistoryIcon,
+  Sunrise,
+  CalendarCheck,
+} from 'lucide-react';
 import { Button } from '../Button';
 import { useModal } from '@/hooks/useModal';
 import Modal from '../Modal';
@@ -12,9 +16,11 @@ import { useState } from 'react';
 import ButtonRow from '../ButtonRow';
 import { getFooterData } from '@/data/footer';
 import ExperienceDetails from '../ExperienceDetails';
+import { useTheme } from '@/context/ThemeContext';
 
 export default function Footer() {
   const { modalOpened, openModal, closeModal } = useModal();
+  const { setTheme } = useTheme();
   const [openFooterId, setOpenedFooterId] = useState<string | null>(null);
 
   const FOOTER = getFooterData();
@@ -70,24 +76,48 @@ export default function Footer() {
             }
           />
         ))}
-        <div className="col-span-full">
-          <HighlightFeature
-            color="#000000"
-            //   imagery={Cog}
-          >
-            <div>
-              “Man has a dream and that&apos;s the start
-              <br />
-              He follows his dream with mind and heart
-              <br />
-              And when it becomes a reality
-              <br />
-              It&apos;s a dream come true for you and me”
-            </div>
-            <div className="italic">
-              - Carousel of Progress (Sherman Brothers)
-            </div>
-          </HighlightFeature>
+        <div className="col-span-full" id="carousel_of_progress_easter_egg">
+          <HighlightDetailed
+            color="var(--color-generic)"
+            body={
+              <div className="flex flex-col gap-4">
+                <div>
+                  <div>
+                    “Man has a dream and that&apos;s the start
+                    <br />
+                    He follows his dream with mind and heart
+                    <br />
+                    And when it becomes a reality
+                    <br />
+                    It&apos;s a dream come true for you and me”
+                  </div>
+                  <div className="italic">
+                    - Carousel of Progress (Sherman Brothers)
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <div>Ride the Carousel into the...</div>
+                  <ButtonRow>
+                    <Button
+                      imagery={HistoryIcon}
+                      text="Good Ol' Days"
+                      clickDetail={() => setTheme('past')}
+                    />
+                    <Button
+                      imagery={CalendarCheck}
+                      text="Possible Present"
+                      clickDetail={() => setTheme('default')}
+                    />
+                    <Button
+                      imagery={Sunrise}
+                      text="Beautiful Tomorrow"
+                      clickDetail={() => setTheme('future')}
+                    />
+                  </ButtonRow>
+                </div>
+              </div>
+            }
+          ></HighlightDetailed>
         </div>
       </div>
       <Modal
