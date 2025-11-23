@@ -40,28 +40,28 @@ export default function About() {
   const { setTheme } = useTheme();
   const [showJurassicParkEasterEgg, setShowJurassicParkEasterEgg] =
     useState(false);
-  const [isSpinning, setIsSpinning] = useState(false);
+  // const [isSpinning, setIsSpinning] = useState(false);
 
-  useEffect(() => {
-    if (isSpinning) {
-      document.body.classList.add('animate-spin-page');
+  // useEffect(() => {
+  //   if (isSpinning) {
+  //     document.body.classList.add('animate-spin-page');
 
-      const handleAnimationEnd = () => {
-        setIsSpinning(false);
-      };
+  //     const handleAnimationEnd = () => {
+  //       setIsSpinning(false);
+  //     };
 
-      document.body.addEventListener('animationend', handleAnimationEnd, {
-        once: true,
-      });
+  //     document.body.addEventListener('animationend', handleAnimationEnd, {
+  //       once: true,
+  //     });
 
-      return () => {
-        document.body.classList.remove('animate-spin-page');
-        document.body.removeEventListener('animationend', handleAnimationEnd);
-      };
-    } else {
-      document.body.classList.remove('animate-spin-page');
-    }
-  }, [isSpinning]);
+  //     return () => {
+  //       document.body.classList.remove('animate-spin-page');
+  //       document.body.removeEventListener('animationend', handleAnimationEnd);
+  //     };
+  //   } else {
+  //     document.body.classList.remove('animate-spin-page');
+  //   }
+  // }, [isSpinning]);
 
   return (
     <SectionWrapper>
@@ -260,13 +260,13 @@ export default function About() {
             color="var(--color-primary)"
             onClick={() => setIsSpinning(true)}
           >
-            <div className="flex items-center text-xs leading-tight text-[#FFFA94]">
+            {/* <div className="flex items-center text-xs leading-tight text-[#FFFA94]">
               <div className="flex items-center gap-2">
                 <RefreshCcw size={14} />
                 Go for a spin
               </div>
               <ChevronRight size={14} />
-            </div>
+            </div> */}
           </CarouselImageItem>
           <CarouselImageItem
             image={lucy}
