@@ -44,7 +44,7 @@ export default function About() {
     <SectionWrapper>
       <div className="flex flex-col gap-6 items-center">
         <div
-          className="text-3xl font-bold underline"
+          className="text-3xl font-bold underline font-header"
           style={{
             textDecorationColor: 'var(--color-primary)',
             textDecorationThickness: '4px',
