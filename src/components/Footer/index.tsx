@@ -81,7 +81,7 @@ export default function Footer() {
             color="var(--color-generic)"
             body={
               <div className="flex flex-col gap-4">
-                <div>
+                <div className="flex flex-col gap-2">
                   <div>
                     “Man has a dream and that&apos;s the start
                     <br />
@@ -96,7 +96,7 @@ export default function Footer() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <div>Ride the Carousel into the...</div>
+                  <div>Rotate to the...</div>
                   <ButtonRow>
                     <Button
                       imagery={HistoryIcon}

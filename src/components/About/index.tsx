@@ -6,6 +6,7 @@ import {
   BriefcaseBusiness,
   CalendarCheck,
   ChevronRight,
+  Cog,
   GraduationCap,
   HistoryIcon,
   Sunrise,
@@ -206,7 +207,10 @@ export default function About() {
             onClick={() => scrollToHash('#carousel_of_progress_easter_egg')}
           >
             <div className="flex items-center text-xs leading-tight">
-              Travel through time
+              <div className="flex items-center gap-2">
+                <Cog size={14} />
+                Rotate time
+              </div>
               <ChevronRight size={14} />
             </div>
             {/* <div className="text-xs leading-tight">
