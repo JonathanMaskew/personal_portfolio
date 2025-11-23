@@ -42,7 +42,7 @@ export default function Modal({
   const closeButton = (
     <button
       onClick={onCloseCallback}
-      className="fixed right-8 top-8 md:right-12 md:top-12 z-[200] rounded-full p-1 transition-all duration-200 bg-foreground/10 hover:bg-[var(--modal-hover-color)] active:bg-[var(--modal-hover-color)]"
+      className="fixed right-8 top-8 md:right-12 md:top-12 z-[200] rounded-full p-1 transition-all duration-200 backdrop-blur-2xl bg-foreground/10 hover:bg-[var(--modal-hover-color)] active:bg-[var(--modal-hover-color)]"
       style={{ '--modal-hover-color': color } as React.CSSProperties}
     >
       <X size={24} className="text-foreground" />
