@@ -258,7 +258,7 @@ export default function About() {
             image={roundabouts}
             text="I love roundabouts. Give me a roundabout over a traffic light any day."
             color="var(--color-primary)"
-            onClick={() => setIsSpinning(true)}
+            // onClick={() => setIsSpinning(true)}
           >
             {/* <div className="flex items-center text-xs leading-tight text-[#FFFA94]">
               <div className="flex items-center gap-2">
