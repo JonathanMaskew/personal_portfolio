@@ -197,9 +197,9 @@ export default function About() {
             onClick={() => scrollToHash('#carousel-of-progress-easter-egg')}
           >
             <div className="flex items-center text-xs leading-tight">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 text-[#CA94FF]">
                 <Cog size={14} />
-                Rotate time
+                Rotate thru time
               </div>
               <ChevronRight size={14} />
             </div>
