@@ -9,10 +9,11 @@ import {
   Cog,
   GraduationCap,
   HistoryIcon,
+  RefreshCcw,
   Sunrise,
   TriangleAlert,
 } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SectionWrapper from '../SectionWrapper';
 import Carousel, { CarouselImageItem } from '../Carousel';
 import tennis from '@/assets/images/tennis.jpg';
@@ -39,6 +40,28 @@ export default function About() {
   const { setTheme } = useTheme();
   const [showJurassicParkEasterEgg, setShowJurassicParkEasterEgg] =
     useState(false);
+  const [isSpinning, setIsSpinning] = useState(false);
+
+  useEffect(() => {
+    if (isSpinning) {
+      document.body.classList.add('animate-spin-page');
+
+      const handleAnimationEnd = () => {
+        setIsSpinning(false);
+      };
+
+      document.body.addEventListener('animationend', handleAnimationEnd, {
+        once: true,
+      });
+
+      return () => {
+        document.body.classList.remove('animate-spin-page');
+        document.body.removeEventListener('animationend', handleAnimationEnd);
+      };
+    } else {
+      document.body.classList.remove('animate-spin-page');
+    }
+  }, [isSpinning]);
 
   return (
     <SectionWrapper>
@@ -196,8 +219,8 @@ export default function About() {
             color="var(--color-primary)"
             onClick={() => scrollToHash('#carousel-of-progress-easter-egg')}
           >
-            <div className="flex items-center text-xs leading-tight">
-              <div className="flex items-center gap-2 text-[#CA94FF]">
+            <div className="flex items-center text-xs leading-tight text-[#CA94FF]">
+              <div className="flex items-center gap-2">
                 <Cog size={14} />
                 Rotate thru time
               </div>
@@ -235,7 +258,16 @@ export default function About() {
             image={roundabouts}
             text="I love roundabouts. Give me a roundabout over a traffic light any day."
             color="var(--color-primary)"
-          />
+            onClick={() => setIsSpinning(true)}
+          >
+            <div className="flex items-center text-xs leading-tight text-[#FFFA94]">
+              <div className="flex items-center gap-2">
+                <RefreshCcw size={14} />
+                Go for a spin
+              </div>
+              <ChevronRight size={14} />
+            </div>
+          </CarouselImageItem>
           <CarouselImageItem
             image={lucy}
             text="A goofy little cockapoo named Lucy."
