@@ -15,7 +15,7 @@ export default function InnerHighlight({
   children,
 }: InnerHighlightProps) {
   return (
-    <div className="flex flex-col gap-4 bg-background/12 p-4 w-full rounded-2xl">
+    <div className="flex flex-col gap-4 bg-foreground/10 p-4 w-full rounded-2xl">
       <div className="flex items-start gap-4">
         {IconComponent && (
           <div>
