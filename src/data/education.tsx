@@ -116,7 +116,7 @@ export const getEducationData = (): Experience[] => [
         />
         <Carousel
           color="var(--color-htf)"
-          className="bg-background/12 rounded-2xl p-4 flex items-center"
+          className="bg-foreground/10 rounded-2xl p-4 flex items-center"
         >
           <CarouselItem>
             <Image
