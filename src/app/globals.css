@@ -168,15 +168,9 @@ html[data-theme='past']::after {
   --font-body: var(--font-tektur);
 }
 
-/* [data-theme='future'] img {
-  filter: sepia(100%) hue-rotate(190deg) saturate(400%) brightness(0.9);
-  transition: filter 0.3s ease;
+[data-theme='future'] img {
+  border-radius: 9999px;
 }
-
-[data-theme='future'] img:hover,
-[data-theme='future'] img:active {
-  filter: none;
-} */
 
 [data-theme='future'] .highlight-feature,
 [data-theme='future'] .highlight-detailed {

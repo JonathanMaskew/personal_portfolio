@@ -161,16 +161,6 @@ export default function About() {
             color="var(--color-primary)"
           />
           <CarouselImageItem
-            image={travel}
-            text="I love to explore new places, having traveled to 13 countries and dozens of US states."
-            color="var(--color-primary)"
-          />
-          <CarouselImageItem
-            image={reeses}
-            text="I am addicted to Reese's Peanut Butter Cups in every shape and size."
-            color="var(--color-primary)"
-          />
-          <CarouselImageItem
             image={dinosaur}
             text="Jurassic Park is a great movie!"
             color="var(--color-primary)"
@@ -191,13 +181,13 @@ export default function About() {
             </div>
           </CarouselImageItem>
           <CarouselImageItem
-            image={taterTots}
-            text="Tater Tots are superior to french fries. Try to convince me otherwise."
+            image={reeses}
+            text="I am addicted to Reese's Peanut Butter Cups in every shape and size."
             color="var(--color-primary)"
           />
           <CarouselImageItem
-            image={roundabouts}
-            text="I love roundabouts. Give me a roundabout over a traffic light any day."
+            image={taterTots}
+            text="Tater Tots are superior to french fries. Try to convince me otherwise."
             color="var(--color-primary)"
           />
           <CarouselImageItem
@@ -236,6 +226,16 @@ export default function About() {
               </ButtonRow>
             </div> */}
           </CarouselImageItem>
+          <CarouselImageItem
+            image={travel}
+            text="I love to explore new places, having traveled to 13 countries and dozens of US states."
+            color="var(--color-primary)"
+          />
+          <CarouselImageItem
+            image={roundabouts}
+            text="I love roundabouts. Give me a roundabout over a traffic light any day."
+            color="var(--color-primary)"
+          />
           <CarouselImageItem
             image={lucy}
             text="A goofy little cockapoo named Lucy."
