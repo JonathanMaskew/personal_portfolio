@@ -204,7 +204,7 @@ export default function About() {
             image={carouselOfProgress}
             text="I could ride the Carousel of Progress in a loop."
             color="var(--color-primary)"
-            onClick={() => scrollToHash('#carousel_of_progress_easter_egg')}
+            onClick={() => scrollToHash('#carousel-of-progress-easter-egg')}
           >
             <div className="flex items-center text-xs leading-tight">
               <div className="flex items-center gap-2">

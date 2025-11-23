@@ -17,10 +17,12 @@ import ButtonRow from '../ButtonRow';
 import { getFooterData } from '@/data/footer';
 import ExperienceDetails from '../ExperienceDetails';
 import { useTheme } from '@/context/ThemeContext';
+import { useHashScroll } from '@/hooks/useHashScroll';
 
 export default function Footer() {
   const { modalOpened, openModal, closeModal } = useModal();
   const { setTheme } = useTheme();
+  const { scrollToHash } = useHashScroll();
   const [openFooterId, setOpenedFooterId] = useState<string | null>(null);
 
   const FOOTER = getFooterData();
@@ -76,7 +78,7 @@ export default function Footer() {
             }
           />
         ))}
-        <div className="col-span-full" id="carousel_of_progress_easter_egg">
+        <div className="col-span-full" id="carousel-of-progress-easter-egg">
           <HighlightDetailed
             color="var(--color-generic)"
             body={
@@ -101,17 +103,26 @@ export default function Footer() {
                     <Button
                       imagery={HistoryIcon}
                       text="Good Ol' Days"
-                      clickDetail={() => setTheme('past')}
+                      clickDetail={() => {
+                        setTheme('past');
+                        scrollToHash('#carousel-of-progress-easter-egg');
+                      }}
                     />
                     <Button
                       imagery={CalendarCheck}
                       text="Possible Present"
-                      clickDetail={() => setTheme('default')}
+                      clickDetail={() => {
+                        setTheme('default');
+                        scrollToHash('#carousel-of-progress-easter-egg');
+                      }}
                     />
                     <Button
                       imagery={Sunrise}
                       text="Beautiful Tomorrow"
-                      clickDetail={() => setTheme('future')}
+                      clickDetail={() => {
+                        setTheme('future');
+                        scrollToHash('#carousel-of-progress-easter-egg');
+                      }}
                     />
                   </ButtonRow>
                 </div>

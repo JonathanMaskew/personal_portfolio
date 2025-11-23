@@ -147,7 +147,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${header.variable} ${body.variable} ${quicksand.variable} ${vt323.variable} ${pixelifySans.variable} ${audiowide.variable} ${tektur.variable} antialiased flex h-screen`}
+        className={`${header.variable} ${body.variable} ${quicksand.variable} ${vt323.variable} ${pixelifySans.variable} ${audiowide.variable} ${tektur.variable} antialiased flex min-h-screen md:h-screen`}
         style={{ fontFamily: 'var(--font-body), sans-serif' }}
       >
         <ThemeProvider>
@@ -160,7 +160,7 @@ export default function RootLayout({
           </div>
           <main
             data-scroll-container
-            className="flex-1 min-w-0 overflow-y-visible md:overflow-y-auto pt-14 md:pt-0 pb-20"
+            className="flex-1 min-w-0 overflow-y-visible md:overflow-y-auto pt-14 md:pt-0 pb-12 md:pb-20"
           >
             {children}
           </main>
