@@ -11,7 +11,6 @@ interface TypewriterTextProps {
   }[];
   speed?: number;
   delay?: number;
-  cursorClassName?: string;
   size?: number;
 }
 
@@ -19,7 +18,6 @@ export default function TypewriterText({
   texts,
   speed = 100,
   delay = 3000,
-  cursorClassName = 'text-primary',
   size = 32,
 }: TypewriterTextProps) {
   const typewriter = useTypewriter({ texts, speed, delay });
@@ -47,7 +45,7 @@ export default function TypewriterText({
         {typewriter.displayText}
       </div>
       <div
-        className={`${cursorClassName} ${showCursor && typewriter.displayText.length > 0 ? 'opacity-100' : 'opacity-0'} rounded-full w-[3px] transition-opacity duration-150`}
+        className={`${'bg-primary'} ${showCursor && typewriter.displayText.length > 0 ? 'opacity-100' : 'opacity-0'} rounded-full w-[3px] transition-opacity duration-150`}
         style={{ height: `${size}px` }}
       />
     </div>
