@@ -85,7 +85,6 @@ export default function Hero() {
             { text: 'Idea Generator', icon: Lightbulb },
             { text: 'User Experience Architect', icon: User },
           ]}
-          size={24}
         />
       </div>
 

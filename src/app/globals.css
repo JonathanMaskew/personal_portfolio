@@ -565,3 +565,16 @@ html[data-theme='past']::after {
   animation: spin-page 2s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: center center;
 }
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  50.1%, 100% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}

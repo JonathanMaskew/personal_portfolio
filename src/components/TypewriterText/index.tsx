@@ -18,18 +18,9 @@ export default function TypewriterText({
   texts,
   speed = 100,
   delay = 3000,
-  size = 32,
+  size = 24,
 }: TypewriterTextProps) {
   const typewriter = useTypewriter({ texts, speed, delay });
-  const [showCursor, setShowCursor] = useState(true);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setShowCursor((prev) => !prev);
-    }, 500);
-
-    return () => clearInterval(interval);
-  }, []);
 
   const IconComponent = texts[typewriter.currentIndex].icon;
 
@@ -45,7 +36,7 @@ export default function TypewriterText({
         {typewriter.displayText}
       </div>
       <div
-        className={`${'bg-primary'} ${showCursor && typewriter.displayText.length > 0 ? 'opacity-100' : 'opacity-0'} rounded-full w-[3px] transition-opacity duration-150`}
+        className="bg-primary rounded-full w-[3px] animate-blink"
         style={{ height: `${size}px` }}
       />
     </div>
