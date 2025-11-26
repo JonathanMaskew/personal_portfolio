@@ -35,6 +35,11 @@ export default function FloatingControls() {
     <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 ml-4 mt-4 md:ml-6 md:mt-6 z-50 flex items-end gap-3">
       {showRevert && (
         <>
+          <FloatingButton
+            onClick={() => setTheme('default')}
+            icon={Undo2}
+            text="Reset theme"
+          />
           {current.id !== 'intro' && !hasScrolledToTop && (
             <FloatingButton
               onClick={() => {
@@ -45,11 +50,6 @@ export default function FloatingControls() {
               text="Top"
             />
           )}
-          <FloatingButton
-            onClick={() => setTheme('default')}
-            icon={Undo2}
-            text="Reset theme"
-          />
         </>
       )}
       <Chatbot />

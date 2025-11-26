@@ -223,25 +223,25 @@ html[data-theme='future']::after {
   z-index: 10;
 }
 
-[data-theme='future'] .highlight-feature::after,
+/* [data-theme='future'] .highlight-feature::after,
 [data-theme='future'] .highlight-detailed::after {
   content: "";
   position: absolute;
   top: -100%;
   left: -100%;
-  width: 300px; /* Massive width for very soft gradient */
+  width: 300px;
   height: 300%;
   background: linear-gradient(
     to right,
     transparent 0%,
-    rgba(0, 243, 255, 0.2) 50%, /* Very low opacity */
+    rgba(0, 243, 255, 0.2) 50%,
     transparent 100%
   );
   transform: rotate(-25deg);
   animation: holographic-scan 3.5s linear infinite;
   pointer-events: none;
-  filter: blur(30px); /* Heavy blur to remove ANY line definition */
-}
+  filter: blur(30px);
+} */
 
 /* 
   Animation stuff
