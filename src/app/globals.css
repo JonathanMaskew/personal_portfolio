@@ -52,9 +52,12 @@
   --color-generic: #696969;
 
   /* Border radius - Tailwind defaults */
-  --radius-sm: 0.25rem; /* 2px - rounded-sm */
-  --radius-2xl: 1rem; /* 16px - rounded-2xl */
-  --radius-full: 9999px; /* fully rounded */
+  --radius-sm: 0.25rem;
+  /* 2px - rounded-sm */
+  --radius-2xl: 1rem;
+  /* 16px - rounded-2xl */
+  --radius-full: 9999px;
+  /* fully rounded */
 }
 
 body {
@@ -139,63 +142,105 @@ html[data-theme='past']::after {
 }
 
 /* 
-  Future Theme
+  Future Theme (Movie Sci-Fi / Cyberpunk)
 */
 
 [data-theme='future'] {
-  --color-background: #000000;
-  --color-foreground: #ffffff;
+  --color-background: #020205; /* Deepest Void */
+  --color-foreground: #e0f7ff;
 
-  --color-primary: #00bbff;
-  --color-primary-accent: #75daff;
+  --color-primary: #00f3ff; /* Electric Cyan */
+  --color-primary-accent: #bc13fe; /* Neon Purple */
 
-  --color-myhelo: var(--color-primary);
-  --color-allegion: var(--color-primary);
-  --color-qualifi: var(--color-primary);
-  --color-htf: var(--color-primary);
-  --color-texy-mexy: var(--color-primary);
-  --color-nac: var(--color-primary);
-  --color-purdue: var(--color-primary);
-  --color-generic: var(--color-primary);
-
-  --radius-sm: 9999px;
-  --radius-2xl: .5rem;
-  --radius-full: 9999px;
+  --radius-2xl: 4px; /* Sharper corners for tech feel */
 }
 
 [data-theme='future'] body {
   --font-header: var(--font-audiowide);
   --font-body: var(--font-tektur);
+
+  text-shadow: 0 0 2px var(--color-primary); /* Much more subtle glow for legibility */
+  
+  /* Sci-Fi Grid Background */
+  background-color: var(--color-background);
+  background-image: 
+    linear-gradient(rgba(0, 243, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 243, 255, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center top;
 }
 
-[data-theme='future'] img {
-  border-radius: 9999px;
+/* Scanline Overlay */
+html[data-theme='future']::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 9999;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
 }
 
+/* Holographic Panels */
 [data-theme='future'] .highlight-feature,
 [data-theme='future'] .highlight-detailed {
-  background: color-mix(in srgb, var(--color-primary) 25%, transparent) !important;
-  border: 2px dotted var(--color-primary) !important;
-  backdrop-filter: blur(2px);
+  background: 
+    linear-gradient(to top, rgba(0, 243, 255, 0.15) 0%, transparent 40%), /* Persistent bottom glow on card */
+    rgba(0, 243, 255, 0.05) !important;
+  border: 1px solid var(--color-primary) !important;
+  box-shadow: 
+    0 0 15px rgba(0, 243, 255, 0.3),
+    inset 0 0 30px rgba(0, 243, 255, 0.1);
   position: relative;
   overflow: hidden;
+}
+
+/* Tech Corners for Panels */
+[data-theme='future'] .highlight-feature::before,
+[data-theme='future'] .highlight-detailed::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(to right, var(--color-primary) 2px, transparent 2px) 0 0,
+    linear-gradient(to bottom, var(--color-primary) 2px, transparent 2px) 0 0,
+    linear-gradient(to left, var(--color-primary) 2px, transparent 2px) 100% 0,
+    linear-gradient(to bottom, var(--color-primary) 2px, transparent 2px) 100% 0,
+    linear-gradient(to right, var(--color-primary) 2px, transparent 2px) 0 100%,
+    linear-gradient(to top, var(--color-primary) 2px, transparent 2px) 0 100%,
+    linear-gradient(to left, var(--color-primary) 2px, transparent 2px) 100% 100%,
+    linear-gradient(to top, var(--color-primary) 2px, transparent 2px) 100% 100%;
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 10;
 }
 
 [data-theme='future'] .highlight-feature::after,
 [data-theme='future'] .highlight-detailed::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: -150%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg,
-      transparent 0%,
-      color-mix(in srgb, var(--color-primary) 25%, transparent) 50%,
-      transparent 100%);
-  transform: skewX(-20deg);
-  animation: holographic-scan 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  top: -100%;
+  left: -100%;
+  width: 300px; /* Massive width for very soft gradient */
+  height: 300%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 243, 255, 0.2) 50%, /* Very low opacity */
+    transparent 100%
+  );
+  transform: rotate(-25deg);
+  animation: holographic-scan 3.5s linear infinite;
   pointer-events: none;
+  filter: blur(30px); /* Heavy blur to remove ANY line definition */
 }
 
 /* 
@@ -577,4 +622,14 @@ html[data-theme='past']::after {
 
 .animate-blink {
   animation: blink 1s infinite;
+}
+
+@keyframes holographic-scan {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 200%;
+  }
 }
