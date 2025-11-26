@@ -2,9 +2,25 @@
 
 import { useState, useEffect } from 'react';
 
+// Initialize with actual values if window is available (client-side)
+// This prevents the race condition on mount
+const getInitialMobile = () => {
+  if (typeof window !== 'undefined') {
+    return window.innerWidth < 768;
+  }
+  return false; // SSR fallback
+};
+
+const getInitialLandscape = () => {
+  if (typeof window !== 'undefined') {
+    return window.innerWidth > window.innerHeight;
+  }
+  return false; // SSR fallback
+};
+
 export function useMobile() {
-  const [isLandscape, setIsLandscape] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isLandscape, setIsLandscape] = useState(getInitialLandscape);
+  const [isMobile, setIsMobile] = useState(getInitialMobile);
 
   useEffect(() => {
     const checkOrientation = () => {
@@ -17,7 +33,7 @@ export function useMobile() {
       setIsLandscape(isLandscapeOrientation);
     };
 
-    // Check on mount
+    // Check on mount (in case window size changed)
     checkOrientation();
 
     // Listen for resize events
