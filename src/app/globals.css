@@ -89,56 +89,87 @@ button {
 }
 
 /* 
-  Past Theme
+  Past Theme (Old Fashioned Black & White TV - Analog Era)
 */
 
 [data-theme='past'] {
-  --color-background: #000000;
-  --color-foreground: #ffffff;
+  --color-background: #101010; /* Very dark gray, almost black */
+  --color-foreground: #e0e0e0; /* Off-white, slightly soft */
 
-  --color-primary: #333333;
-  --color-primary-accent: #808080;
+  --color-primary: #ffffff; /* Pure white */
+  --color-primary-accent: #a0a0a0; /* Medium gray */
 
-  --color-myhelo: var(--color-primary);
-  --color-allegion: var(--color-primary);
-  --color-qualifi: var(--color-primary);
-  --color-htf: var(--color-primary);
-  --color-texy-mexy: var(--color-primary);
-  --color-nac: var(--color-primary);
-  --color-purdue: var(--color-primary);
-  --color-generic: var(--color-primary);
+  /* Map all experience colors to grayscale for authentic B&W TV look */
+  --color-myhelo: #cccccc;
+  --color-allegion: #bbbbbb;
+  --color-qualifi: #aaaaaa;
+  --color-htf: #999999;
+  --color-texy-mexy: #888888;
+  --color-nac: #777777;
+  --color-purdue: #666666;
+  --color-generic: #555555;
 
+  /* Soft rounded corners - like an old TV tube */
   --radius-sm: 0px;
-  --radius-2xl: 0px;
-  --radius-full: 0px;
+  --radius-2xl: 2rem;
+  /* --radius-full: 0px; */
 }
 
 [data-theme='past'] body {
-  --font-header: var(--font-pixelify-sans);
-  --font-body: var(--font-vt323);
+  /* Soft analog glow/bleed effect */
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.6), 0 0 4px rgba(255, 255, 255, 0.3);
 }
 
 [data-theme='past'] img {
-  filter: grayscale(100%);
+  /* Grayscale with high contrast and slight brightness reduction */
+  filter: grayscale(100%) contrast(1.1) brightness(0.9);
 }
 
+/* Analog TV Panels */
 [data-theme='past'] .highlight-feature,
 [data-theme='past'] .highlight-detailed {
-  background: transparent !important;
-  border: 5px solid var(--highlight-color);
+  background: rgba(40, 40, 40, 1) !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
+/* TV Screen Overlay (Vignette + Scanlines + Noise) */
 html[data-theme='past']::after {
-  content: '';
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: 
+    /* Vignette (Dark corners) */
+    radial-gradient(circle, transparent 60%, black 100%),
+    /* Soft Scanlines */
+    repeating-linear-gradient(
+      transparent 0px, 
+      transparent 2px, 
+      rgba(0, 0, 0, 0.1) 3px, 
+      rgba(0, 0, 0, 0.1) 4px
+    );
+  /* Combine with noise */
+}
+
+/* Separate noise layer to allow animation without moving the vignette */
+[data-theme='past'] body::before {
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 0.08; /* Subtle static */
   pointer-events: none;
-  z-index: 9999;
-  opacity: 0.3;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  z-index: 9998;
+  /* Noise pattern */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  animation: static-noise 0.2s steps(4) infinite;
 }
 
 /* 
@@ -631,5 +662,16 @@ html[data-theme='future']::after {
 
   100% {
     left: 200%;
+  }
+}
+
+/* Static Noise Animation */
+@keyframes static-noise {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 100% 100%;
   }
 }
