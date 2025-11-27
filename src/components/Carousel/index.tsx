@@ -1,4 +1,3 @@
-import { useMobile } from '@/hooks/useMobile';
 import Image, { StaticImageData } from 'next/image';
 import React, { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -15,7 +14,6 @@ export default function Carousel({
   color,
 }: CarouselProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const { isMobile } = useMobile();
 
   const scrollLeft = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -47,8 +45,8 @@ export default function Carousel({
         className={`absolute left-2 top-1/2 -translate-y-1/2 text-foreground rounded-full p-1 transition-all duration-200 z-10 ${
           color
             ? 'bg-[var(--carousel-btn-bg)] hover:bg-[var(--carousel-btn-hover)] active:bg-[var(--carousel-btn-hover)]'
-            : 'bg-background/50 hover:bg-background'
-        } ${isMobile ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+            : 'bg-background/60 hover:bg-background'
+        } opacity-60 md:opacity-0 md:group-hover:opacity-100`}
         style={
           {
             '--carousel-btn-bg': color
@@ -67,8 +65,8 @@ export default function Carousel({
         className={`absolute right-2 top-1/2 -translate-y-1/2 text-foreground rounded-full p-1 transition-all duration-200 z-10 ${
           color
             ? 'bg-[var(--carousel-btn-bg)] hover:bg-[var(--carousel-btn-hover)] active:bg-[var(--carousel-btn-hover)]'
-            : 'bg-background/50 hover:bg-background'
-        } ${isMobile ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+            : 'bg-background/60 hover:bg-background'
+        } opacity-60 md:opacity-0 md:group-hover:opacity-100`}
         style={
           {
             '--carousel-btn-bg': color
