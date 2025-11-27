@@ -44,15 +44,12 @@ export default function Carousel({
         onClick={scrollLeft}
         className={`absolute left-2 top-1/2 -translate-y-1/2 text-foreground rounded-full p-1 transition-all duration-200 z-10 ${
           color
-            ? 'bg-[var(--carousel-btn-bg)] hover:bg-[var(--carousel-btn-hover)] active:bg-[var(--carousel-btn-hover)]'
-            : 'bg-background/60 hover:bg-background'
-        } opacity-60 md:opacity-0 md:group-hover:opacity-100`}
+            ? 'bg-[var(--carousel-btn-bg)] hover:bg-[var(--carousel-btn-bg)] active:bg-[var(--carousel-btn-bg)]'
+            : 'bg-background hover:bg-background'
+        } opacity-60 active:opacity-100 md:opacity-0 md:group-hover:opacity-60 md:hover:opacity-100`}
         style={
           {
-            '--carousel-btn-bg': color
-              ? `color-mix(in srgb, ${color} 50%, transparent)`
-              : undefined,
-            '--carousel-btn-hover': color,
+            '--carousel-btn-bg': color,
           } as React.CSSProperties
         }
       >
@@ -64,15 +61,12 @@ export default function Carousel({
         onClick={scrollRight}
         className={`absolute right-2 top-1/2 -translate-y-1/2 text-foreground rounded-full p-1 transition-all duration-200 z-10 ${
           color
-            ? 'bg-[var(--carousel-btn-bg)] hover:bg-[var(--carousel-btn-hover)] active:bg-[var(--carousel-btn-hover)]'
-            : 'bg-background/60 hover:bg-background'
-        } opacity-60 md:opacity-0 md:group-hover:opacity-100`}
+            ? 'bg-[var(--carousel-btn-bg)] hover:bg-[var(--carousel-btn-bg)] active:bg-[var(--carousel-btn-bg)]'
+            : 'bg-background hover:bg-background'
+        } opacity-60 active:opacity-100 md:opacity-0 md:group-hover:opacity-60 md:hover:opacity-100`}
         style={
           {
-            '--carousel-btn-bg': color
-              ? `color-mix(in srgb, ${color} 50%, transparent)`
-              : undefined,
-            '--carousel-btn-hover': color,
+            '--carousel-btn-bg': color,
           } as React.CSSProperties
         }
       >
