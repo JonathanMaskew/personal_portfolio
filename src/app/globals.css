@@ -163,7 +163,7 @@ button {
   [data-theme='past'] body::after {
     background: 
       /* Vignette (Tall ellipse to keep top/bottom clear but sides dark) */
-      radial-gradient(ellipse 95% 95% at 50% 50%,
+      radial-gradient(ellipse 100% 100% at 50% 50%,
       transparent 20%,
       black 90%),
       /* Soft Scanlines */
@@ -184,7 +184,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.08; /* Subtle static */
+  opacity: 0.1; /* Subtle static */
   pointer-events: none;
   z-index: 9998;
   /* Noise pattern */
