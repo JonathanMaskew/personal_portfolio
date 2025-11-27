@@ -100,14 +100,14 @@ button {
   --color-primary-accent: #a0a0a0; /* Medium gray */
 
   /* Map all experience colors to grayscale for authentic B&W TV look */
-  --color-myhelo: #cccccc;
-  --color-allegion: #bbbbbb;
-  --color-qualifi: #aaaaaa;
-  --color-htf: #999999;
-  --color-texy-mexy: #888888;
-  --color-nac: #777777;
-  --color-purdue: #666666;
-  --color-generic: #555555;
+  --color-myhelo: #282828;
+  --color-allegion: #282828;
+  --color-qualifi: #282828;
+  --color-htf: #282828;
+  --color-texy-mexy: #282828;
+  --color-nac: #282828;
+  --color-purdue: #282828;
+  --color-generic: #282828;
 
   /* Soft rounded corners - like an old TV tube */
   --radius-2xl: 30px;
