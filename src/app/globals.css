@@ -184,7 +184,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.1; /* Subtle static */
+  opacity: 0.08; /* Subtle static */
   pointer-events: none;
   z-index: 9998;
   /* Noise pattern */
