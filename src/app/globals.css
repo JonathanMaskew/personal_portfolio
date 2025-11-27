@@ -110,17 +110,18 @@ button {
   --color-generic: #555555;
 
   /* Soft rounded corners - like an old TV tube */
-  --radius-sm: 0px;
-  --radius-2xl: 2rem;
-  /* --radius-full: 0px; */
+  --radius-2xl: 30px;
 }
 
 [data-theme='past'] body {
+  --font-header: var(--font-pixelify-sans);
+  --font-body: var(--font-vt323);
   /* Soft analog glow/bleed effect */
   text-shadow: 0 0 2px rgba(255, 255, 255, 0.6), 0 0 4px rgba(255, 255, 255, 0.3);
 }
 
 [data-theme='past'] img {
+  border-radius: 0px;
   /* Grayscale with high contrast and slight brightness reduction */
   filter: grayscale(100%) contrast(1.1) brightness(0.9);
 }
@@ -128,12 +129,14 @@ button {
 /* Analog TV Panels */
 [data-theme='past'] .highlight-feature,
 [data-theme='past'] .highlight-detailed {
-  background: rgba(40, 40, 40, 1) !important;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  background: rgba(40, 40, 40, 0.8) !important;
+  box-shadow:
+    inset 0 0 30px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 /* TV Screen Overlay (Vignette + Scanlines + Noise) */
-html[data-theme='past']::after {
+[data-theme='past'] body::after {
   content: " ";
   display: block;
   position: fixed;
@@ -154,6 +157,23 @@ html[data-theme='past']::after {
       rgba(0, 0, 0, 0.1) 4px
     );
   /* Combine with noise */
+}
+
+@media (max-width: 768px) {
+  [data-theme='past'] body::after {
+    background: 
+      /* Vignette (Tall ellipse to keep top/bottom clear but sides dark) */
+      radial-gradient(ellipse 95% 95% at 50% 50%,
+      transparent 20%,
+      black 90%),
+      /* Soft Scanlines */
+      repeating-linear-gradient(
+        transparent 0px, 
+        transparent 2px, 
+        rgba(0, 0, 0, 0.1) 3px, 
+        rgba(0, 0, 0, 0.1) 4px
+      );
+  }
 }
 
 /* Separate noise layer to allow animation without moving the vignette */

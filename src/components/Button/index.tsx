@@ -63,48 +63,36 @@ export function Button({
       </button>
     );
   } else if (typeof clickDetail === 'string') {
-    // check for email protection
-    if (clickDetail === 'email-protection') {
-      const handleEmailClick = () => {
+    const handleClick = () => {
+      // check for email protection
+      if (clickDetail === 'email-protection') {
         const email = 'jmaskew1.softwareEngineer@gmail.com';
         window.location.href = `mailto:${email}`;
-      };
+        return;
+      }
 
-      return (
-        <button
-          onClick={handleEmailClick}
-          className={`${buttonClassName} cursor-pointer`}
-          style={buttonStyle}
-        >
-          {content}
-        </button>
-      );
-    }
+      // check for hash link
+      if (!newTab && clickDetail.startsWith('#')) {
+        scrollToHash(clickDetail);
+        return;
+      }
 
-    // check for hash link
-    if (!newTab && clickDetail.startsWith('#')) {
-      return (
-        <button
-          onClick={() => scrollToHash(clickDetail)}
-          className={buttonClassName}
-          style={buttonStyle}
-        >
-          {content}
-        </button>
-      );
-    }
+      // all other links
+      if (newTab) {
+        window.open(clickDetail, '_blank', 'noopener,noreferrer');
+      } else {
+        window.location.href = clickDetail;
+      }
+    };
 
-    // all other links
     return (
-      <a
-        href={clickDetail}
-        target={newTab ? '_blank' : '_self'}
-        rel="noopener noreferrer"
+      <button
+        onClick={handleClick}
         className={buttonClassName}
         style={buttonStyle}
       >
         {content}
-      </a>
+      </button>
     );
   }
 }
