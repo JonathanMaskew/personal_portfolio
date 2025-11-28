@@ -112,7 +112,7 @@ export const getFooterData = (): Experience[] => [
   },
   {
     id: 'js-page',
-    color: 'var(--color-primary)',
+    color: 'var(--color-brand)',
     imagery: jsLogo,
     title: "J's Page",
     subtitle: 'The Next Iteration of my Personal Brand',

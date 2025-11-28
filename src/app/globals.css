@@ -9,6 +9,7 @@
   /* Brand Colors */
   --color-primary: var(--color-primary);
   --color-primary-accent: var(--color-primary-accent);
+  --color-brand: var(--color-brand);
 
   /* Experience Colors */
   --color-myhelo: var(--color-myhelo);
@@ -42,6 +43,7 @@
   /* Brand colors */
   --color-primary: #FF6B18;
   --color-primary-accent: #fef08a;
+  --color-brand: #FF6B18;
 
   /* Experience colors */
   --color-myhelo: #2396F0;
