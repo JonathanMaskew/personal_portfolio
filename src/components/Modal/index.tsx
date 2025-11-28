@@ -45,7 +45,7 @@ export default function Modal({
       className="fixed right-8 top-8 md:right-12 md:top-12 z-[200] rounded-full p-1 transition-all duration-200 backdrop-blur-2xl bg-foreground/10 hover:bg-[var(--modal-hover-color)] active:bg-[var(--modal-hover-color)]"
       style={{ '--modal-hover-color': color } as React.CSSProperties}
     >
-      <X size={24} className="text-foreground" />
+      <X size={24} className="text-foreground-2" />
     </button>
   );
 
@@ -63,7 +63,7 @@ export default function Modal({
         >
           <div className="flex justify-center p-6 md:p-12">
             <div
-              className={`relative w-full max-w-5xl rounded-t-2xl md:rounded-2xl transition-transform duration-350 ease-out ${isAnimating ? 'translate-y-0' : 'translate-y-full'}`}
+              className={`relative text-foreground-2 w-full max-w-5xl rounded-t-2xl md:rounded-2xl transition-transform duration-350 ease-out ${isAnimating ? 'translate-y-0' : 'translate-y-full'}`}
               style={{
                 background: color.startsWith('var(')
                   ? `radial-gradient(circle at top middle, color-mix(in srgb, ${color} 75%, transparent) 0%, color-mix(in srgb, ${color} 30%, black) 100%)`

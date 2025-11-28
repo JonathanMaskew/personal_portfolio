@@ -3,7 +3,7 @@
 import { useTheme } from '@/context/ThemeContext';
 import FloatingButton from '@/components/FloatingButton';
 import Chatbot from '@/components/Chatbot';
-import { ArrowDown, ArrowUp, Undo2 } from 'lucide-react';
+import { ArrowUp, Undo2 } from 'lucide-react';
 import { useHashScroll } from '@/hooks/useHashScroll';
 import { useActiveSection } from '@/hooks/useActiveSection';
 import { MAIN_NAV_ITEMS } from '@/data/nav';
@@ -19,7 +19,7 @@ export default function FloatingControls() {
     activationOffset: 0,
   });
 
-  const showRevert = theme === 'future' || theme === 'past';
+  const showRevert = theme !== 'default';
 
   useEffect(() => {
     setHasScrolledToTop(false);
@@ -51,6 +51,9 @@ export default function FloatingControls() {
             />
           )}
         </>
+      )}
+      {theme !== 'winter' && (
+        <FloatingButton onClick={() => setTheme('winter')} text="❄️" />
       )}
       <Chatbot />
     </div>

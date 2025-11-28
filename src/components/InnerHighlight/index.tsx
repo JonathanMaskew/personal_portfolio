@@ -19,7 +19,7 @@ export default function InnerHighlight({
       <div className="flex items-start gap-4">
         {IconComponent && (
           <div>
-            <IconComponent size={30} className="text-foreground" />
+            <IconComponent size={30} className="text-foreground-2" />
           </div>
         )}
         <div className="flex flex-col gap-1 text-sm">

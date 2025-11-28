@@ -4,6 +4,7 @@
   /* Base Colors */
   --color-background: var(--color-background);
   --color-foreground: var(--color-foreground);
+  --color-foreground-2: var(--color-foreground-2);
 
   /* Brand Colors */
   --color-primary: var(--color-primary);
@@ -36,6 +37,7 @@
   /* Base colors */
   --color-background: #1c1c1c;
   --color-foreground: #ffffff;
+  --color-foreground-2: #ffffff; /* Default secondary foreground */
 
   /* Brand colors */
   --color-primary: #FF6B18;
@@ -74,18 +76,22 @@ button {
   cursor: pointer;
 }
 
+
+
 .highlight-feature {
   background: radial-gradient(circle at top left,
       color-mix(in srgb, var(--highlight-color) 75%, transparent) 0%,
       color-mix(in srgb, var(--highlight-color) 30%, black) 100%);
   border: 0px;
   transition: box-shadow 0.2s;
+  color: var(--color-foreground-2);
 }
 
 .highlight-detailed {
   background: color-mix(in srgb, var(--highlight-color) 50%, transparent);
   border: 0px;
   transition: box-shadow 0.2s;
+  color: var(--color-foreground-2);
 }
 
 /* 
@@ -95,6 +101,7 @@ button {
 [data-theme='past'] {
   --color-background: #101010; /* Very dark gray, almost black */
   --color-foreground: #e0e0e0; /* Off-white, slightly soft */
+  --color-foreground-2: #e0e0e0;
 
   --color-primary: #ffffff; /* Pure white */
   --color-primary-accent: #a0a0a0; /* Medium gray */
@@ -199,6 +206,7 @@ button {
 [data-theme='future'] {
   --color-background: #020205; /* Deepest Void */
   --color-foreground: #e0f7ff;
+  --color-foreground-2: #e0f7ff;
 
   --color-primary: #00f3ff; /* Electric Cyan */
   --color-primary-accent: #bc13fe; /* Neon Purple */
@@ -293,6 +301,91 @@ html[data-theme='future']::after {
   pointer-events: none;
   filter: blur(30px);
 } */
+
+/* 
+  Winter Theme (Frosted Glass / Icy)
+*/
+
+[data-theme='winter'] {
+  --color-background: #81ace8; /* Slate 900 - Dark Winter Night */
+  --color-foreground: #1e293b; /* Dark Slate - Contrast on Blue Background */
+  --color-foreground-2: #ffffff; /* Darker Slate - Contrast on White Highlights */
+
+  --color-primary: #00d9ff; /* Sky 400 */
+  --color-primary-accent: #ffffff; /* Sky 300 */
+}
+
+[data-theme='winter'] body {
+  overflow-x: hidden; /* Prevent horizontal scroll from snow if any */
+}
+
+/* Snow Animation */
+[data-theme='winter'] body::before {
+  content: "";
+  position: fixed;
+  top: -100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 200%;
+  pointer-events: none;
+  z-index: 1;
+  background-image: 
+    radial-gradient(4px 4px at 10% 50%, rgba(255, 255, 255, 0.8) 50%, transparent 50%),
+    radial-gradient(6px 6px at 20% 70%, rgba(255, 255, 255, 0.7) 50%, transparent 50%),
+    radial-gradient(3px 3px at 30% 20%, rgba(255, 255, 255, 0.8) 50%, transparent 50%),
+    radial-gradient(4px 4px at 40% 80%, rgba(255, 255, 255, 0.6) 50%, transparent 50%),
+    radial-gradient(6px 6px at 50% 40%, rgba(255, 255, 255, 0.8) 50%, transparent 50%),
+    radial-gradient(3px 3px at 60% 90%, rgba(255, 255, 255, 0.7) 50%, transparent 50%),
+    radial-gradient(5px 5px at 70% 30%, rgba(255, 255, 255, 0.8) 50%, transparent 50%),
+    radial-gradient(4px 4px at 80% 60%, rgba(255, 255, 255, 0.6) 50%, transparent 50%),
+    radial-gradient(3px 3px at 90% 10%, rgba(255, 255, 255, 0.8) 50%, transparent 50%);
+  background-size: 600px 600px;
+  animation: snow-fall 15s linear infinite;
+}
+
+[data-theme='winter'] body::after {
+  content: "";
+  position: fixed;
+  top: -100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 200%;
+  pointer-events: none;
+  z-index: 1;
+  background-image: 
+    radial-gradient(3px 3px at 15% 15%, rgba(255, 255, 255, 0.5) 50%, transparent 50%),
+    radial-gradient(2px 2px at 25% 85%, rgba(255, 255, 255, 0.4) 50%, transparent 50%),
+    radial-gradient(4px 4px at 35% 45%, rgba(255, 255, 255, 0.5) 50%, transparent 50%),
+    radial-gradient(2px 2px at 45% 25%, rgba(255, 255, 255, 0.4) 50%, transparent 50%),
+    radial-gradient(3px 3px at 55% 65%, rgba(255, 255, 255, 0.5) 50%, transparent 50%),
+    radial-gradient(4px 4px at 65% 35%, rgba(255, 255, 255, 0.4) 50%, transparent 50%),
+    radial-gradient(2px 2px at 75% 75%, rgba(255, 255, 255, 0.5) 50%, transparent 50%),
+    radial-gradient(3px 3px at 85% 55%, rgba(255, 255, 255, 0.4) 50%, transparent 50%);
+  background-size: 400px 400px;
+  animation: snow-fall 25s linear infinite;
+}
+
+@keyframes snow-fall {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50%);
+  }
+}
+
+/* Frosted Glass Panels */
+[data-theme='winter'] .highlight-feature,
+[data-theme='winter'] .highlight-detailed {
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+  backdrop-filter: blur(16px);
+  box-shadow: 
+    inset 0 0 40px 10px rgba(255, 255, 255, 0.4);
+}
+
+
 
 /* 
   Animation stuff
