@@ -12,24 +12,29 @@ import { useEffect, useState } from 'react';
 export default function FloatingControls() {
   const { theme, setTheme } = useTheme();
   const { scrollToHash } = useHashScroll();
-  const [hasScrolledToTop, setHasScrolledToTop] = useState(false);
 
   const { current } = useActiveSection({
     items: MAIN_NAV_ITEMS,
     activationOffset: 0,
   });
 
-  const showRevert = theme !== 'default';
+  const [hasScrolledToTop, setHasScrolledToTop] = useState(
+    current.id === 'intro'
+  );
 
-  useEffect(() => {
-    setHasScrolledToTop(false);
-  }, [theme]);
+  const showRevert = theme !== 'default';
 
   useEffect(() => {
     if (current.id === 'intro') {
       setHasScrolledToTop(true);
     }
   }, [current]);
+
+  useEffect(() => {
+    if (theme !== 'default' && current.id !== 'intro') {
+      setHasScrolledToTop(false);
+    }
+  }, [theme]);
 
   return (
     <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 ml-4 mt-4 md:ml-6 md:mt-6 z-50 flex items-end gap-3">
@@ -52,7 +57,7 @@ export default function FloatingControls() {
           )}
         </>
       )}
-      {theme !== 'winter' && (
+      {theme === 'default' && (
         <FloatingButton onClick={() => setTheme('winter')} text="❄️" />
       )}
       <Chatbot />
