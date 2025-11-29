@@ -15,9 +15,12 @@ import graduation from '@/assets/images/graduation.png';
 import Image from 'next/image';
 import { useMobile } from '@/hooks/useMobile';
 import { Button } from '../Button';
+import { useTheme } from '@/context/ThemeContext';
+import snowglobe from '@/assets/images/snowglobe.png';
 
 export default function Hero() {
   const { isMobileLandscape } = useMobile();
+  const { theme } = useTheme();
 
   return (
     <div className="flex flex-col gap-8 md:gap-16 justify-center items-center p-6 md:p-8 min-h-screen w-full">
@@ -87,6 +90,18 @@ export default function Hero() {
           ]}
         />
       </div>
+
+      {theme === 'winter' && (
+        <div className="animate-scale-in">
+          <Image
+            src={snowglobe}
+            alt="Snowglobe"
+            width={125}
+            height={125}
+            className="object-contain"
+          />
+        </div>
+      )}
 
       <div>
         <Button
