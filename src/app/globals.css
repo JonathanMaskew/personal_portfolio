@@ -306,7 +306,12 @@ html[data-theme='future']::after {
 
 /* 
   Winter
-*/
+*/  
+
+[data-theme='winter'] {
+    --color-primary: #00bfdc;
+    --color-primary-accent: #6b69fd;
+}
 
 /* Snow Animation */
 [data-theme='winter'] body::before {
