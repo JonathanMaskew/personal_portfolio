@@ -305,21 +305,8 @@ html[data-theme='future']::after {
 } */
 
 /* 
-  Winter Theme (Frosted Glass / Icy)
+  Winter
 */
-
-[data-theme='winter'] {
-  --color-background: #81ace8; /* Slate 900 - Dark Winter Night */
-  --color-foreground: #1e293b; /* Dark Slate - Contrast on Blue Background */
-  --color-foreground-2: #ffffff; /* Darker Slate - Contrast on White Highlights */
-
-  --color-primary: #00d9ff; /* Sky 400 */
-  --color-primary-accent: #ffffff; /* Sky 300 */
-}
-
-[data-theme='winter'] body {
-  overflow-x: hidden; /* Prevent horizontal scroll from snow if any */
-}
 
 /* Snow Animation */
 [data-theme='winter'] body::before {
@@ -369,25 +356,11 @@ html[data-theme='future']::after {
   animation: snow-fall 25s linear infinite;
 }
 
-@keyframes snow-fall {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(50%);
-  }
-}
-
 /* Frosted Glass Panels */
 [data-theme='winter'] .highlight-feature,
 [data-theme='winter'] .highlight-detailed {
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
-  backdrop-filter: blur(16px);
-  box-shadow: 
-    inset 0 0 40px 10px rgba(255, 255, 255, 0.4);
+  border-top: 3px solid rgba(255, 255, 255, 1);
 }
-
-
 
 /* 
   Animation stuff
@@ -788,5 +761,15 @@ html[data-theme='future']::after {
 
   100% {
     background-position: 100% 100%;
+  }
+}
+
+@keyframes snow-fall {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(50%);
   }
 }
