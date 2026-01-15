@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import type { Experience } from '@/types';
 import {
   PillBottle,
@@ -7,6 +7,7 @@ import {
   Megaphone,
   LayoutTemplate,
   Plus,
+  Sparkles,
 } from 'lucide-react';
 import { Button } from '@/components/Button';
 
@@ -56,18 +57,18 @@ export const getHighlightsData = (
     ),
   },
   {
-    id: 'myhelo-patient-charts',
+    id: 'myhelo-llm',
     color: 'var(--color-myhelo)',
-    imagery: LayoutTemplate,
-    title:
-      'Re-architected the Site-wide UI Template to Spotlight Crucial Patient Data',
+    imagery: Sparkles,
+    title: 'Pioneered AI Automation for Data Imports',
     subtitle: 'Software Engineer @ myhELO',
-    body: 'Overhauled the base template, inherited by all other layers/pages within the system, to bring greater forcus to crucial patient data. Positioning logic was completely re-written to allow for more flexibile layouts, simplify developmental requirements, and improve scalability.',
+    body: 'Pioneered a tool that leverages a Large Language Model (LLM) to intelligently parse and import user data from unstructured CSV files. This introduced automation to a tedious workflow and significantly reduced user import times.',
     experienceId: 'myhelo',
     highlightChildren: (
       <Button
         imagery={Plus}
         text="More myhELO"
+        color="var(--color-myhelo)"
         clickDetail={() => {
           setOpenedExperienceId('myhelo');
           openModal();
@@ -81,7 +82,7 @@ export const getHighlightsData = (
     imagery: Megaphone,
     title: 'Introduced Rapid Communication through an Announcements System',
     subtitle: 'Software Engineer @ Allegion',
-    body: 'Developed an announcements system to allow for rapid communications with 100s of users by translating designs to code that integrates with backend APIs. Allowed administrators to target announcements to specific groups of individuals, with the option to require recipients to acknowledge the announcement.',
+    body: 'Developed an announcements system to allow for rapid communications with 100s of users by translating designs to code that integrates with backend APIs. Allowed administrators to target announcements to specific groups of individuals.',
     experienceId: 'allegion',
     highlightChildren: (
       <Button
@@ -95,16 +96,16 @@ export const getHighlightsData = (
     ),
   },
   // {
-  //   id: 'myhelo-interviewing',
-  //   color: '#2396F0',
-  //   imagery: UserPlus,
-  //   title: 'Interview Candidates and Onboarding New Engineers',
+  //   id: 'myhelo-components',
+  //   color: 'var(--color-myhelo)',
+  //   imagery: Component,
+  //   title: 'Optimized Development with Reusable Components',
   //   subtitle: 'Software Engineer @ myhELO',
-  //   body: 'Proptyping first in Figma, improved user activation by implementing a new user oboarding workflow that guides users though password creation, profile setup, and intial training. Prioritization was on intuitiveness and ease of use.',
+  //   body: 'Built a library of documented, reusable front-end components to minimize code redundancy. This streamlined the development process and ensured consistent implementation across the application.',
   //   experienceId: 'myhelo',
   //   highlightChildren: (
   //     <Button
-  //       icon={Plus}
+  //       imagery={Plus}
   //       text="More myhELO"
   //       clickDetail={() => {
   //         setOpenedExperienceId('myhelo');
@@ -113,23 +114,4 @@ export const getHighlightsData = (
   //     />
   //   ),
   // },
-  {
-    id: 'myhelo-onboarding',
-    color: 'var(--color-myhelo)',
-    imagery: UserPlus,
-    title: 'Implemented a New User Onboarding Workflow',
-    subtitle: 'Software Engineer @ myhELO',
-    body: 'Proptyping first in Figma, improved user activation by implementing a new user oboarding workflow that guides users though password creation, profile setup, and intial training. Prioritization was on intuitiveness and ease of use.',
-    experienceId: 'myhelo',
-    highlightChildren: (
-      <Button
-        imagery={Plus}
-        text="More myhELO"
-        clickDetail={() => {
-          setOpenedExperienceId('myhelo');
-          openModal();
-        }}
-      />
-    ),
-  },
 ];
