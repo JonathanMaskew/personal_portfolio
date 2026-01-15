@@ -53,7 +53,7 @@ export const getFooterData = (): Experience[] => [
           </div>
           <div>This passion, of course, is present in this very site...</div>
           <ModalSection icon={LayoutDashboard} title="Layout">
-            The point of the site it to showcase my accomplishments. No thing is
+            The point of the site it to showcase my accomplishments. Nothing is
             inherently more important than another, it&apos;s all contributing
             to the same goal - to gain an understanding of, well, me. So why
             separate it into pages? Therefore, we&apos;ve got a single,
@@ -63,7 +63,7 @@ export const getFooterData = (): Experience[] => [
           <ModalSection icon={Palette} title="Colors">
             Again, the most important aspect of this site is the content within
             it. Therefore, I chose the color scheme to reflect that, with each
-            color reflective of the corresponding data. This makes each chunk of
+            color representing the corresponding data. This makes each chunk of
             content feel unified, helping to differentiate it from similar
             content within a single page. I strategically used gradients on
             content I wanted to draw more attention to. The dark background is
@@ -77,7 +77,7 @@ export const getFooterData = (): Experience[] => [
             and a sense of flow.
           </ModalSection>
           <ModalSection icon={MousePointer} title="Usability">
-            My intention with this site was not to shove it full of fancy
+            My intention with this site was not to clutter it with fancy
             technologies, contrarian user interface choices, or complex
             interactivity. My goal was to create a site that was practical and
             intuitive, that, again, prioritized the content. Of course, that
@@ -96,7 +96,7 @@ export const getFooterData = (): Experience[] => [
           <ModalSection icon={Code} title="Technology">
             I built the site with Next.js, knowing that it&apos;s a popular,
             modern framework, perfect for a front-end portfolio. I also used
-            Tailwind CSS to style items for efficiently. I think AI is a very
+            Tailwind CSS to style items efficiently. I think AI is a very
             powerful tool, and I believe it should be used as a tool, not a
             replacement. All design decisions and all content are my own. Any AI
             contributions to the code were well-understood, vetted, and adapted,
@@ -116,7 +116,7 @@ export const getFooterData = (): Experience[] => [
     imagery: jsLogo,
     title: "J's Page",
     subtitle: 'The Next Iteration of my Personal Brand',
-    body: "My personal portfolio, which I've previously referred to as J's Page, has taken many forms. This site being the latest.",
+    body: "My personal portfolio, which I've previously referred to as J's Page, has taken many forms. This site is the latest.",
     modalChildren: (
       <>
         <div className="flex flex-col gap-10">
