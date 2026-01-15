@@ -42,11 +42,10 @@ export const getJobsData = (): Experience[] => [
       />
     ),
     coreBullets: [
-      'Streamline front-end development by building reusable, documented front-end components that reduce code redundancy.',
-      'Establish a Figma component library to enable design-to-development workflows and ensure intuitive, consistent experiences.',
-      'Entrusted to conduct interviews and decide who to advance by assessing their skillset and ability to communicate their work.',
-      'Onboard new software engineers through training and guidance to accelerate their understanding of the codebase.',
-      'Present progress demonstrations directly to the CEO and Director of Software Development to gain feedback on priority projects.',
+      'Incorporate persistent logging to visualize real-time loading metrics and locally track events to improve system observability.',
+      'Streamline design-to-development workflows by establishing a Figma design library that translates to consistent, reusable, and documented front-end components that minimize code redundancy.',
+      'Earn high-performance evaluation ratings, recognized for dependability, work quality, initiative, and clear communication.',
+      'Lead technical growth by conducting interviews, onboarding new engineers, and presenting milestones to executive leadership.',
     ],
     highlights: [
       {
@@ -57,12 +56,12 @@ export const getJobsData = (): Experience[] => [
       {
         icon: PillBottle,
         title: 'Full-Stack Rebuild of e-Prescribing Infrastructure',
-        text: 'Led a full-stack rebuilding of the e-prescribing infrastructure by rewriting all front-end and back-end files and integrating with third-party APIs, increasing reliability and functionality.',
+        text: 'Lead a full-stack rebuild of the e-prescribing infrastructure by rewriting all front-end and back-end files and integrating with third-party APIs, increasing reliability and functionality.',
       },
       {
         icon: LayoutTemplate,
         title: 'Overhaul the Site-wide UI Template',
-        text: 'Re-architected the site-wide UI template to spotlight crucial patient data, increase layout flexibility, and simplify development',
+        text: 'Re-architect the site-wide UI template to spotlight crucial patient data, increase layout flexibility, and simplify development.',
       },
       {
         icon: UserRoundPlus,
@@ -89,7 +88,7 @@ export const getJobsData = (): Experience[] => [
       <Chips strings={['Angular', 'Angular Material', 'Front-end', 'Scrum']} />
     ),
     coreBullets: [
-      'Collaborated daily with Product Owner, Interaction Designer, and Backend Developer interns, following the Scrum methodology.',
+      'Collaborated daily with Product Owner, Interaction Designer, and Back-end Developer interns, following the Scrum methodology.',
     ],
     bullets: [],
     modalChildren: (
@@ -126,7 +125,7 @@ export const getJobsData = (): Experience[] => [
       />
     ),
     coreBullets: [
-      'Followed the Scrum methodology to communicate daily with the Engineering, Product, and Product Designer teams.',
+      'Communicated daily with the Engineering and Product teams within a Scrum environment to iterate on features.',
       'Ensured contributions maintained system reliability and functionality by implementing unit test cases using React Testing Library.',
     ],
     bullets: [],

@@ -7,6 +7,7 @@ import {
   Paintbrush,
   SquareMousePointer,
   User,
+  Code,
 } from 'lucide-react';
 import TypewriterText from '../TypewriterText';
 import turkeyRun from '@/assets/images/turkey_run.png';
@@ -82,6 +83,7 @@ export default function Hero() {
         <TypewriterText
           texts={[
             { text: 'AI Enthusiast', icon: Sparkles },
+            { text: 'Full-stack Engineer', icon: Code },
             { text: 'Front-end Connoisseur', icon: SquareMousePointer },
             { text: 'Design Aficionado', icon: Paintbrush },
             { text: 'Idea Generator', icon: Lightbulb },

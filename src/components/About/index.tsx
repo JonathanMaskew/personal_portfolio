@@ -147,7 +147,7 @@ export default function About() {
                 'Git',
                 'UX/UI Design',
                 'Figma',
-                'AI / LLMs',
+                'Agentic AI / LLMs',
                 'Prompt Engineering',
                 'Scrum',
                 'Agile',
@@ -167,6 +167,10 @@ export default function About() {
                 'Branding',
                 'Digital Marketing',
                 'Graphic Design',
+                'Node.js',
+                'React Testing Library',
+                'GitHub',
+                'Sentry',
               ]}
             />
           </HighlightFeature>

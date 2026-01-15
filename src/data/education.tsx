@@ -92,7 +92,7 @@ export const getEducationData = (): Experience[] => [
     body: 'Managed branding, marketing, and outreach efforts, and mentored four project teams on UX/UI principles.',
     coreBullets: [
       'Mentored four project teams on UX/UI principles and provided resources to translate Figma mockups into front-end code.',
-      'Designed marketing materials in Figma, including flyers, social media posts, and merchandise.',
+      'Revamped outreach efforts and designed marketing in Figma leading to a record-breaking nearly 90% increase in applicants YoY.',
       'Established branded components in React to streamline development and maintain consistency across all team projects.',
     ],
     highlights: [
