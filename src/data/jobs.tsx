@@ -7,6 +7,7 @@ import noblesvilleAthleticClubLogo from '@/assets/images/noblesville_athletic_cl
 import {
   Bot,
   ChefHat,
+  ClipboardClock,
   ExternalLink,
   LayoutTemplate,
   PillBottle,
@@ -42,7 +43,8 @@ export const getJobsData = (): Experience[] => [
       />
     ),
     coreBullets: [
-      'Incorporate persistent logging to visualize real-time loading metrics and locally track events to improve system observability.',
+      'Re-architect the site-wide UI template to spotlight crucial patient data, increase layout flexibility, and simplify development.',
+      'Improve user activation by building a workflow to guide new users through password creation, profile setup, and initial training.',
       'Streamline design-to-development workflows by establishing a Figma design library that translates to consistent, reusable, and documented front-end components that minimize code redundancy.',
       'Earn high-performance evaluation ratings, recognized for dependability, work quality, initiative, and clear communication.',
       'Lead technical growth by conducting interviews, onboarding new engineers, and presenting milestones to executive leadership.',
@@ -59,19 +61,14 @@ export const getJobsData = (): Experience[] => [
         text: 'Lead a full-stack rebuild of the e-prescribing infrastructure by rewriting all front-end and back-end files and integrating with third-party APIs, increasing reliability and functionality.',
       },
       {
-        icon: LayoutTemplate,
-        title: 'Overhaul the Site-wide UI Template',
-        text: 'Re-architect the site-wide UI template to spotlight crucial patient data, increase layout flexibility, and simplify development.',
-      },
-      {
-        icon: UserRoundPlus,
-        title: 'Improve User Activation Through Improved Onboarding',
-        text: 'Improve user activation by building a workflow to guide new users through password creation, profile setup, and initial training.',
-      },
-      {
         icon: ShieldCheck,
         title: 'Strengthen Security with Multi-Factor Authentication',
         text: 'Strengthen security by implementing a reusable multi-factor authentication component that supports email, text, and passkey.',
+      },
+      {
+        icon: ClipboardClock,
+        title: 'Improve System Observability with Persistent Logging',
+        text: 'Incorporate persistent logging to visualize real-time loading metrics and locally track events to improve system observability.',
       },
     ],
     bullets: [],
