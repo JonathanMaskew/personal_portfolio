@@ -100,7 +100,7 @@ export default function About() {
           imagery={BriefcaseBusiness}
           title="Software Engineer"
           subtitle="myhELO"
-          body="At myhELO, I've delivered high-impact full-stack solutions, worked with Large Language Models, and designed new user interfaces."
+          body="At myhELO, I've delivered high-impact full-stack solutions in JavaScript and PHP, worked with Large Language Models, and designed new user interfaces."
           color="var(--color-primary)"
           onClick={() => scrollToHash('#work')}
           actionButton={
@@ -115,7 +115,7 @@ export default function About() {
           imagery={GraduationCap}
           title="BS in Computer Science"
           subtitle="Purdue University"
-          body="In addition to coursework, I served as Design Director of a volunteer-based organization."
+          body="In addition to a variety of challenging coursework, I served as Design Director of Hack the Future, a volunteer-based organization that builds software for non-profits."
           color="var(--color-primary)"
           onClick={() => scrollToHash('#education')}
           actionButton={
@@ -130,8 +130,8 @@ export default function About() {
           <HighlightFeature
             imagery={Blend}
             title="Well-Rounded Experience"
-            subtitle="User-driven Development"
-            body="I've got a robust skillset - from website design & development, to user research and prototyping, to branding and marketing, and more. At the core of everything I do, I'm focused on how it impacts the user."
+            subtitle="Product-minded Software Engineer"
+            body="I've got a robust skillset - from website design & development, to UI/UX design, and beyond. At the core of all my work is a focus on quality, meaningful products."
             color="var(--color-primary)"
           >
             <Chips
@@ -165,7 +165,6 @@ export default function About() {
                 'Unit Testing',
                 'Accessibility',
                 'Branding',
-                'Digital Marketing',
                 'Graphic Design',
                 'Node.js',
                 'React Testing Library',

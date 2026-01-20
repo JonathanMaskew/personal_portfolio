@@ -2,7 +2,7 @@
 
 import type { Experience } from '@/types';
 import React from 'react';
-import { CircleEllipsis, ListTodo, Star } from 'lucide-react';
+import { CircleEllipsis, ClipboardCheck, ListTodo, Star } from 'lucide-react';
 import ModalSection from '../ModalSection';
 import InnerHighlight from '../InnerHighlight';
 import HighlightHeader from '../HighlightHeader';
@@ -28,10 +28,24 @@ export default function ExperienceDetails({ data }: ExperienceDetailsProps) {
         centered
       />
 
-      {data.body && <div className="text-center">{data.body}</div>}
+      {data.body && (
+        <div className="text-center bg-foreground/10 p-4 w-full rounded-2xl">
+          {data.body}
+        </div>
+      )}
+
+      {data.coreBullets && data.coreBullets.length > 0 && (
+        <ModalSection icon={ListTodo} title="Core Responsibilities">
+          <ul className="list-disc pl-4 space-y-2 text-sm leading-tight">
+            {data.coreBullets.map((bullet, i) => (
+              <li key={i}>{bullet}</li>
+            ))}
+          </ul>
+        </ModalSection>
+      )}
 
       {data.highlights && data.highlights.length > 0 && (
-        <ModalSection icon={Star} title="Key Accomplishments">
+        <ModalSection icon={Star} title="Highlighted Accomplishments">
           <div className="flex flex-wrap gap-3 justify-center">
             {data.highlights.map((highlight, i) => (
               <InnerHighlight
@@ -47,23 +61,20 @@ export default function ExperienceDetails({ data }: ExperienceDetailsProps) {
         </ModalSection>
       )}
 
-      {data.coreBullets && data.coreBullets.length > 0 && (
-        <ModalSection
-          icon={ListTodo}
-          title="Core Responsibilities & Accomplishments"
-        >
+      {data.moreAccomplishments && data.moreAccomplishments.length > 0 && (
+        <ModalSection icon={ClipboardCheck} title="Additional Accomplishments">
           <ul className="list-disc pl-4 space-y-2 text-sm leading-tight">
-            {data.coreBullets.map((bullet, i) => (
+            {data.moreAccomplishments.map((bullet, i) => (
               <li key={i}>{bullet}</li>
             ))}
           </ul>
         </ModalSection>
       )}
 
-      {data.bullets && data.bullets.length > 0 && (
-        <ModalSection icon={CircleEllipsis} title="Additional Responsibilities">
+      {data.moreBullets && data.moreBullets.length > 0 && (
+        <ModalSection icon={CircleEllipsis} title="More...">
           <ul className="list-disc pl-4 space-y-2 text-sm leading-tight">
-            {data.bullets.map((bullet, i) => (
+            {data.moreBullets.map((bullet, i) => (
               <li key={i}>{bullet}</li>
             ))}
           </ul>

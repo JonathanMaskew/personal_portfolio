@@ -7,13 +7,11 @@ import noblesvilleAthleticClubLogo from '@/assets/images/noblesville_athletic_cl
 import {
   Bot,
   ChefHat,
-  ClipboardClock,
   ExternalLink,
-  LayoutTemplate,
+  Megaphone,
   PillBottle,
   ShieldCheck,
   SquarePlay,
-  UserRoundPlus,
 } from 'lucide-react';
 import Chips from '@/components/Chips';
 import { Button } from '@/components/Button';
@@ -42,13 +40,6 @@ export const getJobsData = (): Experience[] => [
         ]}
       />
     ),
-    coreBullets: [
-      'Re-architect the site-wide UI template to spotlight crucial patient data, increase layout flexibility, and simplify development.',
-      'Improve user activation by building a workflow to guide new users through password creation, profile setup, and initial training.',
-      'Streamline design-to-development workflows by establishing a Figma design library that translates to consistent, reusable, and documented front-end components that minimize code redundancy.',
-      'Earn high-performance evaluation ratings, recognized for dependability, work quality, initiative, and clear communication.',
-      'Lead technical growth by conducting interviews, onboarding new engineers, and presenting milestones to executive leadership.',
-    ],
     highlights: [
       {
         icon: Bot,
@@ -65,13 +56,19 @@ export const getJobsData = (): Experience[] => [
         title: 'Strengthen Security with Multi-Factor Authentication',
         text: 'Strengthen security by implementing a reusable multi-factor authentication component that supports email, text, and passkey.',
       },
-      {
-        icon: ClipboardClock,
-        title: 'Improve System Observability with Persistent Logging',
-        text: 'Incorporate persistent logging to visualize real-time loading metrics and locally track events to improve system observability.',
-      },
     ],
-    bullets: [],
+    moreAccomplishments: [
+      'Re-architect the site-wide UI template to spotlight crucial patient data, increase layout flexibility, and simplify development.',
+      'Improve user activation by building a workflow to guide new users through password creation, profile setup, and initial training.',
+      'Incorporate persistent logging to visualize real-time loading metrics and locally track events to improve system observability.',
+    ],
+    coreBullets: [
+      // "Engineer new features using a custom JavaScript framework and PHP, empowering doctor's offices nationwide and giving thousands of patients access to their health data.",
+      'Earn high-performance evaluation ratings, recognized for dependability, work quality, initiative, and clear communication.',
+      'Streamline design-to-development workflows by establishing a Figma design library that translates to consistent, reusable, and documented front-end components that minimize code redundancy.',
+      'Lead technical growth by conducting interviews, onboarding new engineers, and presenting milestones to executive leadership.',
+    ],
+    moreBullets: [],
   },
   {
     id: 'allegion',
@@ -84,10 +81,16 @@ export const getJobsData = (): Experience[] => [
     highlightChildren: (
       <Chips strings={['Angular', 'Angular Material', 'Front-end', 'Scrum']} />
     ),
+    highlights: [
+      {
+        icon: Megaphone,
+        title: 'Establish Announcements System',
+        text: 'Translated mockups to front-end code for a scalable announcements feature within a component-based Angular site, integrating with back-end APIs, to allow hundreds of users to access announcements and administrators to send targeted announcements.',
+      },
+    ],
     coreBullets: [
       'Collaborated daily with Product Owner, Interaction Designer, and Back-end Developer interns, following the Scrum methodology.',
     ],
-    bullets: [],
     modalChildren: (
       <ButtonRow className="justify-center">
         <Button
@@ -122,10 +125,10 @@ export const getJobsData = (): Experience[] => [
       />
     ),
     coreBullets: [
+      // 'Shipped new features and improved usability within a Next.js codebase by translating designs into front-end code.',
       'Communicated daily with the Engineering and Product teams within a Scrum environment to iterate on features.',
       'Ensured contributions maintained system reliability and functionality by implementing unit test cases using React Testing Library.',
     ],
-    bullets: [],
   },
 ];
 

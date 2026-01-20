@@ -44,7 +44,6 @@ export default function Work() {
               onClick={
                 (job.highlights && job.highlights.length > 0) ||
                 (job.coreBullets && job.coreBullets.length > 0) ||
-                (job.bullets && job.bullets.length > 0) ||
                 job.modalChildren
                   ? () => {
                       setOpenedJobId(job.id);
@@ -55,7 +54,6 @@ export default function Work() {
               actionButton={
                 (job.highlights && job.highlights.length > 0) ||
                 (job.coreBullets && job.coreBullets.length > 0) ||
-                (job.bullets && job.bullets.length > 0) ||
                 job.modalChildren ? (
                   <Button
                     imagery={Plus}
@@ -93,7 +91,6 @@ export default function Work() {
                 onClick={
                   (job.highlights && job.highlights.length > 0) ||
                   (job.coreBullets && job.coreBullets.length > 0) ||
-                  (job.bullets && job.bullets.length > 0) ||
                   job.modalChildren
                     ? () => {
                         setOpenedJobId(job.id);
@@ -104,7 +101,6 @@ export default function Work() {
                 actionButton={
                   (job.highlights && job.highlights.length > 0) ||
                   (job.coreBullets && job.coreBullets.length > 0) ||
-                  (job.bullets && job.bullets.length > 0) ||
                   job.modalChildren ? (
                     <Button
                       imagery={Plus}

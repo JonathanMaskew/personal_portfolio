@@ -30,15 +30,15 @@ export type Experience = {
   subtitle?: string;
   subheading?: string;
   body?: string;
-  bullets?: string[];
   keywords?: string[];
   coreBullets?: string[];
   highlights?: ExperienceHighlight[];
   color?: string;
   highlightChildren?: React.ReactNode;
   modalChildren?: React.ReactNode;
-  experienceId?: string;
   overrideChildren?: React.ReactNode;
+  moreAccomplishments?: string[];
+  moreBullets?: string[];
 };
 
 export type NavItem = {
