@@ -39,6 +39,7 @@ export type Experience = {
   overrideChildren?: React.ReactNode;
   moreAccomplishments?: string[];
   moreBullets?: string[];
+  experienceId?: string;
 };
 
 export type NavItem = {

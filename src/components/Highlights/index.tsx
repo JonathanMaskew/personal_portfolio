@@ -55,7 +55,7 @@ export default function Highlights() {
               subtitle={highlight.subtitle}
               body={highlight.body}
               color={highlight.color}
-              headerOrientation='vertical'
+              headerOrientation="vertical"
               onClick={
                 highlight.experienceId
                   ? () => {
