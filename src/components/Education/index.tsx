@@ -44,7 +44,9 @@ export default function Work() {
               onClick={
                 (education.highlights && education.highlights.length > 0) ||
                 (education.coreBullets && education.coreBullets.length > 0) ||
-                (education.bullets && education.bullets.length > 0) ||
+                (education.moreAccomplishments &&
+                  education.moreAccomplishments.length > 0) ||
+                (education.moreBullets && education.moreBullets.length > 0) ||
                 education.modalChildren
                   ? () => {
                       setOpenedEducationId(education.id);
@@ -55,7 +57,9 @@ export default function Work() {
               actionButton={
                 (education.highlights && education.highlights.length > 0) ||
                 (education.coreBullets && education.coreBullets.length > 0) ||
-                (education.bullets && education.bullets.length > 0) ||
+                (education.moreAccomplishments &&
+                  education.moreAccomplishments.length > 0) ||
+                (education.moreBullets && education.moreBullets.length > 0) ||
                 education.modalChildren ? (
                   <Button
                     imagery={Plus}
@@ -95,7 +99,9 @@ export default function Work() {
                 onClick={
                   (education.highlights && education.highlights.length > 0) ||
                   (education.coreBullets && education.coreBullets.length > 0) ||
-                  (education.bullets && education.bullets.length > 0) ||
+                  (education.moreAccomplishments &&
+                    education.moreAccomplishments.length > 0) ||
+                  (education.moreBullets && education.moreBullets.length > 0) ||
                   education.modalChildren
                     ? () => {
                         setOpenedEducationId(education.id);
@@ -106,7 +112,9 @@ export default function Work() {
                 actionButton={
                   (education.highlights && education.highlights.length > 0) ||
                   (education.coreBullets && education.coreBullets.length > 0) ||
-                  (education.bullets && education.bullets.length > 0) ||
+                  (education.moreAccomplishments &&
+                    education.moreAccomplishments.length > 0) ||
+                  (education.moreBullets && education.moreBullets.length > 0) ||
                   education.modalChildren ? (
                     <Button
                       imagery={Plus}

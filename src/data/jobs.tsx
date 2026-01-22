@@ -5,12 +5,12 @@ import qualifiLogo from '@/assets/images/qualifi_logo.png';
 import texMexyLogo from '@/assets/images/texy_mexy_logo.png';
 import noblesvilleAthleticClubLogo from '@/assets/images/noblesville_athletic_club_logo.png';
 import {
-  Bot,
   ChefHat,
   ExternalLink,
   Megaphone,
   PillBottle,
   ShieldCheck,
+  Sparkles,
   SquarePlay,
 } from 'lucide-react';
 import Chips from '@/components/Chips';
@@ -42,7 +42,7 @@ export const getJobsData = (): Experience[] => [
     ),
     highlights: [
       {
-        icon: Bot,
+        icon: Sparkles,
         title: 'Utilize an LLM to Automate User Import',
         text: 'Pioneer a tool that leverages a Large Language Model to intelligently parse and import user data from an unstructured CSV file, introducing automation to a tedious workflow that significantly reduces user import times.',
       },

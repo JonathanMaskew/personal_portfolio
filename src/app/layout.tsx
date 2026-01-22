@@ -16,6 +16,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import FloatingControls from '@/components/FloatingControls';
 import { ThemeProvider } from '@/context/ThemeContext';
+import MeshBackground from '@/components/MeshBackground';
 
 const header = Raleway({
   variable: '--font-raleway',
@@ -151,6 +152,7 @@ export default function RootLayout({
         style={{ fontFamily: 'var(--font-body), sans-serif' }}
       >
         <ThemeProvider>
+          <MeshBackground />
           <div className="hidden md:block">
             <SidebarNav />
           </div>

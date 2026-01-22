@@ -196,7 +196,9 @@ export default function About() {
               {/* <div className='flex items-center'>
                 Status:
               </div> */}
-              <div className="flex items-center gap-2 font-bold text-red-500 animate-urgent-flash">
+              <div className="flex items-center gap-2 font-bold text-red-500">
+                {' '}
+                {/*animate-urgent-flash*/}
                 <TriangleAlert size={14} />
                 SYSTEMS FAILING
               </div>
