@@ -649,86 +649,17 @@ html[data-theme='future']::after {
   z-index: -1;
   pointer-events: none;
   background: var(--color-background);
+  background-image:
+    radial-gradient(circle at 15% 15%, color-mix(in srgb, var(--color-primary), transparent 60%) 0%, transparent 70%),
+    radial-gradient(circle at 85% 85%, color-mix(in srgb, var(--color-primary-accent), transparent 60%) 0%, transparent 70%);
   transition: opacity 0.3s ease-in-out;
 }
 
-.mesh-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.45;
-  will-change: transform;
-}
-
 @media (max-width: 768px) {
-  .mesh-blob {
-    filter: blur(120px);
-    opacity: 0.65;
-  }
-}
-
-.mesh-blob--1 {
-  width: 80vw;
-  height: 80vw;
-  top: -10%;
-  left: -10%;
-  background: radial-gradient(
-    circle at center,
-    var(--color-primary) 0%,
-    transparent 70%
-  );
-}
-
-@media (max-width: 768px) {
-  .mesh-blob--1 {
-    width: 120vw;
-    height: 120vw;
-    top: -20%;
-    left: -20%;
-  }
-}
-
-.mesh-blob--2 {
-  width: 70vw;
-  height: 70vw;
-  bottom: -10%;
-  right: -10%;
-  background: radial-gradient(
-    circle at center,
-    var(--color-primary-accent) 0%,
-    transparent 70%
-  );
-}
-
-@media (max-width: 768px) {
-  .mesh-blob--2 {
-    width: 110vw;
-    height: 110vw;
-    bottom: -15%;
-    right: -15%;
-  }
-}
-
-.mesh-blob--3 {
-  width: 60vw;
-  height: 60vw;
-  top: 40%;
-  left: 30%;
-  background: radial-gradient(
-    circle at center,
-    var(--color-primary) 0%,
-    transparent 70%
-  );
-  opacity: 0.3;
-}
-
-@media (max-width: 768px) {
-  .mesh-blob--3 {
-    width: 100vw;
-    height: 100vw;
-    top: 30%;
-    left: 0%;
-    opacity: 0.6;
+  .mesh-container {
+    background-image:
+      radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--color-primary), transparent 50%) 0%, transparent 70%),
+      radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--color-primary-accent), transparent 50%) 0%, transparent 70%);
   }
 }
 

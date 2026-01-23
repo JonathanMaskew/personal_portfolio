@@ -34,10 +34,6 @@ export default function MeshBackground() {
         opacity: opacity,
         transition: 'opacity 0.2s ease-out',
       }}
-    >
-      <div className="mesh-blob mesh-blob--1" />
-      <div className="mesh-blob mesh-blob--2" />
-      <div className="mesh-blob mesh-blob--3" />
-    </div>
+    ></div>
   );
 }
