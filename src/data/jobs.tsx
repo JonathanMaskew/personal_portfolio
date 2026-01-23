@@ -13,7 +13,6 @@ import {
   Sparkles,
   SquarePlay,
 } from 'lucide-react';
-import Chips from '@/components/Chips';
 import { Button } from '@/components/Button';
 import ButtonRow from '@/components/ButtonRow';
 import ModalSection from '@/components/ModalSection';
@@ -27,19 +26,15 @@ export const getJobsData = (): Experience[] => [
     title: 'Software Engineer',
     subheading: 'Full-time, June 2024 - Present',
     body: "Engineer new features using a custom JavaScript framework and PHP, empowering doctor's offices nationwide and giving thousands of patients access to their health data.",
-    highlightChildren: (
-      <Chips
-        strings={[
-          'JavaScript',
-          'Front-end',
-          'Full-stack',
-          'Large Language Models',
-          'UI/UX Design',
-          'Figma',
-          'Employee Onboarding',
-        ]}
-      />
-    ),
+    keywords: [
+      'JavaScript',
+      'Front-end',
+      'Full-stack',
+      'Large Language Models',
+      'UI/UX Design',
+      'Figma',
+      'Employee Onboarding',
+    ],
     highlights: [
       {
         icon: Sparkles,
@@ -78,9 +73,7 @@ export const getJobsData = (): Experience[] => [
     title: 'Software Engineer',
     subheading: 'Intern, May 2023 - August 2023',
     body: 'Translated mockups to front-end code for a scalable announcements feature within a component-based Angular site, integrating with back-end APIs, to allow hundreds of users to access announcements and administrators to send targeted announcements.',
-    highlightChildren: (
-      <Chips strings={['Angular', 'Angular Material', 'Front-end', 'Scrum']} />
-    ),
+    keywords: ['Angular', 'Angular Material', 'Front-end', 'Scrum'],
     highlights: [
       {
         icon: Megaphone,
@@ -112,18 +105,14 @@ export const getJobsData = (): Experience[] => [
     title: 'Software Engineer',
     subheading: 'Intern, May 2022 - August 2022',
     body: 'Shipped new features and improved usability within a Next.js codebase by translating designs into front-end code.',
-    highlightChildren: (
-      <Chips
-        strings={[
-          'Next.js',
-          'Tailwind CSS',
-          'TypeScript',
-          'Front-end',
-          'Scrum',
-          'React Testing Library',
-        ]}
-      />
-    ),
+    keywords: [
+      'Next.js',
+      'Tailwind CSS',
+      'TypeScript',
+      'Front-end',
+      'Scrum',
+      'React Testing Library',
+    ],
     coreBullets: [
       // 'Shipped new features and improved usability within a Next.js codebase by translating designs into front-end code.',
       'Communicated daily with the Engineering and Product teams within a Scrum environment to iterate on features.',
@@ -140,7 +129,7 @@ export const getMoreJobsData = (): Experience[] => [
     title: 'Tennis Camp Instructor',
     subheading: 'Seasonal, June 2018 - July 2021',
     body: 'Supervised groups of approximately ten children daily while providing engaging instruction.',
-    highlightChildren: <Chips strings={['Leadership', 'Lesson Planning']} />,
+    keywords: ['Leadership', 'Lesson Planning'],
     coreBullets: [],
   },
   {
@@ -151,6 +140,7 @@ export const getMoreJobsData = (): Experience[] => [
     title: 'Website Designer',
     subheading: 'Part-time, October 2018 - January 2021',
     body: 'Created a WordPress website for a local tex-mex restaurant to promote products, market events, and expand reach.',
+    keywords: ['WordPress', 'Web Development', 'Web Design'],
     highlights: [
       {
         icon: SquarePlay,
@@ -173,9 +163,6 @@ export const getMoreJobsData = (): Experience[] => [
         ),
       },
     ],
-    highlightChildren: (
-      <Chips strings={['WordPress', 'Web Development', 'Web Design']} />
-    ),
     coreBullets: [],
   },
   {
@@ -186,6 +173,7 @@ export const getMoreJobsData = (): Experience[] => [
     title: 'Kitchen Lead',
     subheading: 'Part-time, April 2016 - January 2021',
     body: 'Led and trained the kitchen team of three to six people in a high-paced atmosphere to quickly complete customer orders.',
+    keywords: ['Leadership', 'Document Design', 'Employee Onboarding'],
     highlights: [
       {
         icon: ChefHat,
@@ -221,11 +209,6 @@ export const getMoreJobsData = (): Experience[] => [
         ),
       },
     ],
-    highlightChildren: (
-      <Chips
-        strings={['Leadership', 'Document Design', 'Employee Onboarding']}
-      />
-    ),
     coreBullets: [],
   },
   {
@@ -247,9 +230,7 @@ export const getMoreJobsData = (): Experience[] => [
     title: 'Private Tennis Lessons Instructor',
     subheading: 'Part-time, June 2018 - July 2020',
     body: 'Instructed elementary and middle school players weekly to enhance their tennis skill set.',
-    highlightChildren: (
-      <Chips strings={['Entrepreneurship', 'Leadership', 'Lesson Planning']} />
-    ),
+    keywords: ['Entrepreneurship', 'Leadership', 'Lesson Planning'],
     coreBullets: [],
   },
   {
@@ -260,9 +241,7 @@ export const getMoreJobsData = (): Experience[] => [
     title: 'Website Designer and Manager',
     subheading: 'Part-time, December 2015 - November 2017',
     body: 'Designed and updated a website for a local gym viewed thousands of times a month.',
-    highlightChildren: (
-      <Chips strings={['GoDaddy', 'Web Development', 'Web Design']} />
-    ),
+    keywords: ['GoDaddy', 'Web Development', 'Web Design'],
     modalChildren: (
       <ModalSection title="Website Demo" icon={SquarePlay}>
         <div>A quick demo of the website I designed and managed.</div>
@@ -290,7 +269,7 @@ export const getMoreJobsData = (): Experience[] => [
     title: 'Email Marketing',
     subheading: 'Part-time, December 2015 - November 2017',
     body: 'Curated a monthly newsletter sent to hundreds of email addresses by working with the leadership team.',
-    highlightChildren: <Chips strings={['GoDaddy', 'Email Marketing']} />,
+    keywords: ['GoDaddy', 'Email Marketing'],
     coreBullets: [],
   },
   {
@@ -301,7 +280,7 @@ export const getMoreJobsData = (): Experience[] => [
     title: 'Childcare',
     subheading: 'Part-time, December 2015 - November 2017',
     body: 'Display excellent leadership skills while monitoring a room of kids of all ages while parents exercised in various other parts of the building.',
-    highlightChildren: <Chips strings={['Leadership']} />,
+    keywords: ['Leadership'],
     coreBullets: [],
   },
   {
@@ -311,9 +290,45 @@ export const getMoreJobsData = (): Experience[] => [
     title: 'Website Designer and Manager',
     subheading: 'Part-time, June 2016 - June 2017',
     body: 'Produced a public, navigable website for a local farm to grow its small business.',
-    highlightChildren: (
-      <Chips strings={['GoDaddy', 'Web Development', 'Web Design']} />
-    ),
+    keywords: ['GoDaddy', 'Web Development', 'Web Design'],
     coreBullets: [],
   },
 ];
+
+export const generateChatContext = (): string => {
+  const jobs = getJobsData();
+  const moreJobs = getMoreJobsData();
+
+  const jobStrings: string[] = [];
+
+  [...jobs, ...moreJobs].forEach((job) => {
+    let jobStr = `${job.title || ''} | ${job.subtitle || ''} (${job.subheading || ''})`;
+
+    if (job.body) {
+      jobStr += `\n\n->Descriptive Bullet:\n- ${job.body}`;
+    }
+
+    if (job.coreBullets && job.coreBullets.length > 0) {
+      jobStr += `\n\n->Core Responsibilities:\n`;
+      jobStr += job.coreBullets.map((b) => `- ${b}`).join('\n');
+    }
+
+    if (job.highlights && job.highlights.length > 0) {
+      jobStr += '\n\n->Highlighted Accomplishments:\n';
+      jobStr += job.highlights.map((h) => `- ${h.title}: ${h.text}`).join('\n');
+    }
+
+    if (job.moreAccomplishments && job.moreAccomplishments.length > 0) {
+      jobStr += '\n\n->Additional Accomplishments:\n';
+      jobStr += job.moreAccomplishments.map((ma) => `- ${ma}`).join('\n');
+    }
+
+    if (job.keywords && job.keywords.length > 0) {
+      jobStr += `\n\n->Keywords: ${job.keywords.join(', ')}`;
+    }
+
+    jobStrings.push(jobStr);
+  });
+
+  return '-| Work Experience |-\n\n' + jobStrings.join('\n\n');
+};

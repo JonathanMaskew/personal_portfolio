@@ -66,6 +66,29 @@ import coolVendingMachineFinder from '@/assets/images/cool_vending_machine_finde
 import coolVendingMachine from '@/assets/images/cool_vending_machine.png';
 import Image from 'next/image';
 
+interface StatHighlight {
+  title: string;
+  text: string;
+}
+
+const purdueStats: StatHighlight[] = [
+  { title: 'GPA', text: '3.69 / 4.0' },
+  { title: "Dean's List", text: 'Spring 2022 - Fall 2023' },
+  { title: 'Semester Honors', text: 'Fall 2021 - Fall 2023' },
+];
+
+const noblesvilleStats: StatHighlight[] = [
+  { title: 'GPA', text: '4.27 / 4.0 (weighted)' },
+  {
+    title: 'Challenging Classes',
+    text: '2+ Honors/AP/ACP/Dual Credit classes each year',
+  },
+  {
+    title: 'High Grades',
+    text: 'Received an A- or higher in all but 4 classes during K-12 years. Never received worse than a B.',
+  },
+];
+
 export const getEducationData = (): Experience[] => [
   {
     id: 'purdue',
@@ -76,9 +99,13 @@ export const getEducationData = (): Experience[] => [
     subheading: 'Purdue University, 2020 - 2024',
     highlightChildren: (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
-        <InnerHighlight title="GPA" text="3.69 / 4.0" />
-        <InnerHighlight title="Dean's List" text="Spring 2022 - Fall 2023" />
-        <InnerHighlight title="Semester Honors" text="Fall 2021 - Fall 2023" />
+        {purdueStats.map((highlight, index) => (
+          <InnerHighlight
+            key={index}
+            title={highlight.title}
+            text={highlight.text}
+          />
+        ))}
       </div>
     ),
   },
@@ -101,6 +128,14 @@ export const getEducationData = (): Experience[] => [
         title: 'Achieved a Nearly 90% Increase in Applicants',
         text: 'Revamped outreach efforts and designed marketing in Figma leading to a record-breaking nearly 90% increase in applicants YoY.',
       },
+    ],
+    keywords: [
+      'Figma',
+      'UI/UX Design',
+      'Front-end',
+      'Digital Marketing',
+      'Branding',
+      'Graphic Design',
     ],
     highlightChildren: (
       <div className="flex flex-col gap-6">
@@ -375,9 +410,7 @@ export const getEducationData = (): Experience[] => [
     coreBullets: [
       "Developed front-end interfaces using React that mimicked the Designer's mockups and integrated with a MongoDB database.",
     ],
-    highlightChildren: (
-      <Chips strings={['React', 'MongoDB', 'Front-end', 'Full-stack']} />
-    ),
+    keywords: ['React', 'MongoDB', 'Front-end', 'Full-stack'],
   },
 ];
 
@@ -391,7 +424,7 @@ export const getMoreEducationData = (): Experience[] => [
     subheading: 'Purdue University, November 2023 - May 2024',
     body: 'Oversaw club logistics, including event planning, member communications, and administrative tasks, to keep members engaged.',
     coreBullets: [],
-    highlightChildren: <Chips strings={['Communication', 'Event Planning']} />,
+    keywords: ['Communication', 'Event Planning'],
   },
   {
     id: 'reeses-ratings',
@@ -402,9 +435,7 @@ export const getMoreEducationData = (): Experience[] => [
     subheading: 'Purdue University, Spring 2024',
     body: "Developed a front-end interface in React that connects to a MongoDB database, allowing users to rate Reese's products.",
     coreBullets: [],
-    highlightChildren: (
-      <Chips strings={['React', 'MongoDB', 'Full-stack', 'Tailwind CSS']} />
-    ),
+    keywords: ['React', 'MongoDB', 'Full-stack', 'Tailwind CSS'],
   },
   {
     id: 'cool-vending-machine-finder',
@@ -415,7 +446,7 @@ export const getMoreEducationData = (): Experience[] => [
     subheading: 'Purdue University, Fall 2023',
     body: 'Practiced Scrum methodology to plan and develop from scratch a an interactive map of vending machines at Purdue University using React and Firebase with a team of four students.',
     coreBullets: [],
-    highlightChildren: <Chips strings={['React', 'Firebase', 'Front-end']} />,
+    keywords: ['React', 'Firebase', 'Front-end'],
     modalChildren: (
       <div className="flex flex-col gap-10">
         <ModalSection icon={ImageIcon} title="Branding & Graphics">
@@ -448,9 +479,7 @@ export const getMoreEducationData = (): Experience[] => [
     subheading: 'Purdue University, Fall 2022',
     body: 'Practiced Scrum methodology to plan and develop from scratch a card game application using Unity and Firebase with a team of six students.',
     coreBullets: [],
-    highlightChildren: (
-      <Chips strings={['React', 'MongoDB', 'Full-stack', 'Tailwind CSS']} />
-    ),
+    keywords: ['Unity', 'Firebase', 'Game Development', 'Scrum'],
   },
   {
     id: 'sundae',
@@ -461,20 +490,16 @@ export const getMoreEducationData = (): Experience[] => [
     subheading: 'Purdue University, Spring 2022',
     body: 'Dove into the specifics of how to approach human-centric design, walking through the standard documentation process, including ideation, need-finding, prototyping, and user study and more, ultimately ending with a high-fidelity Figma prototype for a product called Sundae.',
     coreBullets: [],
-    highlightChildren: (
-      <Chips
-        strings={[
-          'Figma',
-          'User Research',
-          'Prototyping',
-          'User Interviews',
-          'Storyboarding',
-          'Personas',
-          'Cognitive Walkthrough',
-          'Affinity Diagramming',
-        ]}
-      />
-    ),
+    keywords: [
+      'Figma',
+      'User Research',
+      'Prototyping',
+      'User Interviews',
+      'Storyboarding',
+      'Personas',
+      'Cognitive Walkthrough',
+      'Affinity Diagramming',
+    ],
     modalChildren: (
       <div className="flex flex-col gap-10">
         <ModalSection icon={BookOpen} title="Ideation">
@@ -672,15 +697,9 @@ export const getMoreEducationData = (): Experience[] => [
     coreBullets: [],
     highlightChildren: (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
-        <InnerHighlight title="GPA" text="4.27 / 4.0 (weighted)" />
-        <InnerHighlight
-          title="Challenging Classes"
-          text="2+ Honors/AP/ACP/Dual Credit classes each year"
-        />
-        <InnerHighlight
-          title="High Grades"
-          text="Received an A- or higher in all but 4 classes during K-12 years. Never received worse than a B."
-        />
+        {noblesvilleStats.map((h, i) => (
+          <InnerHighlight key={i} title={h.title} text={h.text} />
+        ))}
       </div>
     ),
   },
@@ -721,7 +740,7 @@ export const getMoreEducationData = (): Experience[] => [
         ),
       },
     ],
-    highlightChildren: <Chips strings={['Document Design']} />,
+    keywords: ['Document Design'],
   },
   {
     id: 'key-club',
@@ -732,8 +751,89 @@ export const getMoreEducationData = (): Experience[] => [
     subheading: 'Noblesville High School, October 2017 - May 2020',
     body: 'Developed informational typed or promo video announcements to be displayed on the Noblesville High School News as well as update Key Club social media accounts. The NHS News is displayed to all students daily. Announcements included information regarding Key Club meetings or events.',
     coreBullets: [],
-    highlightChildren: (
-      <Chips strings={['Digital Marketing', 'Graphic Design']} />
-    ),
+    keywords: ['Digital Marketing', 'Graphic Design'],
   },
 ];
+
+export const generateChatContext = (): string => {
+  const education = getEducationData();
+  // Filter out HTF from education main section, keep Purdue
+  const educationItems = education.filter((e) => e.id === 'purdue');
+  const projectItems = education.filter((e) => e.id !== 'purdue');
+
+  const moreEducation = getMoreEducationData();
+  // Filter Noblesville HS related to Education, others to Projects
+  const hsItems = moreEducation.filter(
+    (e) => e.id === 'noblesville-high-school'
+  );
+  const otherItems = moreEducation.filter(
+    (e) => e.id !== 'noblesville-high-school'
+  );
+
+  const sections: string[] = [];
+
+  // Leadership & Projects
+  const projectStrings: string[] = [];
+  const allProjects = [...projectItems, ...otherItems];
+  allProjects.forEach((item) => {
+    let itemStr = `${item.title || ''} | ${item.subtitle || ''} (${item.subheading || ''})`;
+
+    if (item.body) {
+      itemStr += `\n\n->Descriptive Bullet:\n- ${item.body}`;
+    }
+
+    if (item.coreBullets && item.coreBullets.length > 0) {
+      itemStr += `\n\n->Core Responsibilities:\n`;
+      itemStr += item.coreBullets.map((b) => `- ${b}`).join('\n');
+    }
+
+    if (item.highlights && item.highlights.length > 0) {
+      itemStr += `\n\n->Highlighted Accomplishments:\n`;
+      itemStr += item.highlights
+        .map((h) => `- ${h.title}: ${h.text}`)
+        .join('\n');
+    }
+
+    if (item.keywords && item.keywords.length > 0) {
+      itemStr += `\n\n->Keywords: ${item.keywords.join(', ')}`;
+    }
+    projectStrings.push(itemStr);
+  });
+
+  if (projectStrings.length > 0) {
+    sections.push(
+      '-| Leadership & Projects |-\n\n' + projectStrings.join('\n\n')
+    );
+  }
+
+  // Education
+  const educationStrings: string[] = [];
+  const allEducation = [...educationItems, ...hsItems];
+  allEducation.forEach((item) => {
+    let itemStr = `${item.title || ''} | ${item.subtitle || ''} (${item.subheading || ''})`;
+
+    const statsToUse =
+      item.id === 'purdue'
+        ? purdueStats
+        : item.id === 'noblesville-high-school'
+          ? noblesvilleStats
+          : [];
+
+    if (statsToUse.length > 0) {
+      itemStr += `\n\n->Stats:\n`;
+      itemStr += statsToUse.map((s) => `- ${s.title}: ${s.text}`).join('\n');
+    }
+
+    if (item.body) {
+      itemStr += `\n\n->Descriptive Bullet:\n- ${item.body}`;
+    }
+
+    educationStrings.push(itemStr);
+  });
+
+  if (educationStrings.length > 0) {
+    sections.push('-| Education |-\n\n' + educationStrings.join('\n\n'));
+  }
+
+  return sections.join('\n\n');
+};

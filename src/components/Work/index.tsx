@@ -9,6 +9,7 @@ import SectionWrapper from '../SectionWrapper';
 import { Button } from '../Button';
 import { getJobsData, getMoreJobsData } from '@/data/jobs';
 import ExperienceDetails from '@/components/ExperienceDetails';
+import Chips from '../Chips';
 
 export default function Work() {
   const { modalOpened, openModal } = useModal();
@@ -72,7 +73,8 @@ export default function Work() {
                 ) : undefined
               }
             >
-              {job.highlightChildren}
+              {job.highlightChildren ||
+                (job.keywords && <Chips strings={job.keywords} />)}
             </HighlightDetailed>
           </div>
         ))}
@@ -125,7 +127,8 @@ export default function Work() {
                   ) : undefined
                 }
               >
-                {job.highlightChildren}
+                {job.highlightChildren ||
+                  (job.keywords && <Chips strings={job.keywords} />)}
               </HighlightDetailed>
             </div>
           ))}

@@ -73,3 +73,29 @@ export const SECONDARY_NAV_ITEMS: NavItem[] = [
     newTab: true,
   },
 ];
+
+export const generateChatContext = (): string => {
+  const sections: string[] = [];
+
+  sections.push('-| Website Structure & Navigation |-');
+  sections.push(
+    'The portfolio website is organized into the following main sections you can refer to. You should never assume subheadings or attempt to name any other heading that is not listed below.'
+  );
+
+  const descriptions: Record<string, string> = {
+    Intro: 'The hero section.',
+    About: "Overview of Jonathan's skills, and some of his interests.",
+    Highlights: 'A showcase of his most impactful projects and achievements.',
+    Work: 'A detailed breakdown of his professional experience.',
+    Education:
+      'Details on his university degree, academic projects, and leadership roles.',
+    More: 'Contains additional details, including the history of his personal brand and information about this website.',
+  };
+
+  const navItems = MAIN_NAV_ITEMS.map(
+    (item) => `- ${item.label}: ${descriptions[item.label] || ''}`
+  );
+  sections.push(navItems.join('\n'));
+
+  return sections.join('\n\n');
+};

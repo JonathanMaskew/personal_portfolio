@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import type { Experience } from '@/types';
 import {
   PillBottle,
@@ -115,3 +115,24 @@ export const getHighlightsData = (
   //   ),
   // },
 ];
+
+export const generateChatContext = (): string => {
+  const highlights = getHighlightsData(
+    () => {},
+    () => {}
+  );
+
+  const highlightStrings: string[] = [];
+
+  highlights.forEach((h) => {
+    let highlightStr = `${h.title || ''} | ${h.subtitle || ''}`;
+    if (h.body) {
+      highlightStr += `\n\n->Descriptive Bullet:\n- ${h.body}`;
+    }
+    highlightStrings.push(highlightStr);
+  });
+
+  return (
+    '-| Highlights (Major Achievements) |-\n\n' + highlightStrings.join('\n\n')
+  );
+};

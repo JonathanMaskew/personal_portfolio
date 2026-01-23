@@ -8,6 +8,7 @@ import SectionWrapper from '../SectionWrapper';
 import { Button } from '../Button';
 import ExperienceDetails from '../ExperienceDetails';
 import { getEducationData, getMoreEducationData } from '@/data/education';
+import Chips from '../Chips';
 
 export default function Work() {
   const [showMore, setShowMore] = useState<boolean>(false);
@@ -72,7 +73,8 @@ export default function Work() {
                 ) : undefined
               }
             >
-              {education.highlightChildren}
+              {education.highlightChildren ||
+                (education.keywords && <Chips strings={education.keywords} />)}
             </HighlightDetailed>
           </div>
         ))}
@@ -127,7 +129,10 @@ export default function Work() {
                   ) : undefined
                 }
               >
-                {education.highlightChildren}
+                {education.highlightChildren ||
+                  (education.keywords && (
+                    <Chips strings={education.keywords} />
+                  ))}
               </HighlightDetailed>
             </div>
           ))}
