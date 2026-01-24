@@ -31,7 +31,7 @@ export const getFooterData = (): Experience[] => [
     color: 'var(--color-generic)',
     imagery: HandHeart,
     title: 'Built with Passion',
-    subtitle: 'Designed from scratch; Developed in Next.js',
+    subtitle: 'Designed from scratch; Developed in Next.js and TypeScript',
     body: 'Every aspect of this website was conceptualized, designed, and built by me - no templates, no portfolio builders. From the layout to the theming, and everything in between, every aspect of the site was implemented with purpose, ensuring a delightful yet practical experience.',
     modalChildren: (
       <>
@@ -114,8 +114,8 @@ export const getFooterData = (): Experience[] => [
           </ModalSection>
           <ModalSection icon={Code} title="Technology">
             I built the site with Next.js, knowing that it&apos;s a popular,
-            modern framework, perfect for a front-end portfolio. I also used
-            Tailwind CSS to style items efficiently.
+            modern framework perfect for a front-end portfolio, as well as
+            TypeScript. I also used Tailwind CSS to style items efficiently.
             <div>
               I think AI is a very powerful tool that will continue to change
               the workforce and the world, and I believe it is important to be

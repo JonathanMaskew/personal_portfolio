@@ -8,6 +8,7 @@ import {
   LayoutTemplate,
   Plus,
   Sparkles,
+  HandHeart,
 } from 'lucide-react';
 import { Button } from '@/components/Button';
 
@@ -90,6 +91,26 @@ export const getHighlightsData = (
         text="More Allegion"
         clickDetail={() => {
           setOpenedExperienceId('allegion');
+          openModal();
+        }}
+      />
+    ),
+  },
+  {
+    id: 'this-site',
+    color: 'var(--color-generic)',
+    imagery: HandHeart,
+    title:
+      'Independently Designed and Developed a Portfolio to Increase Visibility',
+    subtitle: 'This website, developed with Next.js and TypeScript',
+    body: 'Designed this website from scratch, and developed it using Next.js and TypeScript. This site is meant to be a testament to my skills in front-end development, and showcases my various experience while giving a glimpse of my personality.',
+    experienceId: 'this-site',
+    highlightChildren: (
+      <Button
+        imagery={Plus}
+        text="About this Site"
+        clickDetail={() => {
+          setOpenedExperienceId('this-site');
           openModal();
         }}
       />
