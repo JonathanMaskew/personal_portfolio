@@ -7,6 +7,7 @@ import Education from '@/components/Education';
 import About from '@/components/About';
 import Footer from '@/components/Footer';
 import Highlights from '@/components/Highlights';
+import CarouselOfProgress from '@/components/Footer/CarouselOfProgress';
 
 export default function Home() {
   useEffect(() => {
@@ -64,6 +65,9 @@ export default function Home() {
       </section>
       <section id="education" data-reveal>
         <Education />
+      </section>
+      <section data-reveal>
+        <CarouselOfProgress />
       </section>
       <section id="footer" data-reveal>
         <Footer />

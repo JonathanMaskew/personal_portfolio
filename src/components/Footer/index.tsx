@@ -79,58 +79,6 @@ export default function Footer() {
             }
           />
         ))}
-        <div className="col-span-full" id="carousel-of-progress-easter-egg">
-          <HighlightDetailed
-            color="var(--color-generic)"
-            body={
-              <div className="flex flex-col gap-4">
-                <div className="flex flex-col gap-2">
-                  <div>
-                    “Man has a dream and that&apos;s the start
-                    <br />
-                    He follows his dream with mind and heart
-                    <br />
-                    And when it becomes a reality
-                    <br />
-                    It&apos;s a dream come true for you and me”
-                  </div>
-                  <div className="italic">
-                    - Carousel of Progress (Sherman Brothers)
-                  </div>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <div>Rotate to the...</div>
-                  <ButtonRow>
-                    <Button
-                      imagery={HistoryIcon}
-                      text="Good Ol' Days"
-                      clickDetail={() => {
-                        setTheme('past');
-                        scrollToHash('#carousel-of-progress-easter-egg');
-                      }}
-                    />
-                    <Button
-                      imagery={CalendarCheck}
-                      text="Possible Present"
-                      clickDetail={() => {
-                        setTheme('default');
-                        scrollToHash('#carousel-of-progress-easter-egg');
-                      }}
-                    />
-                    <Button
-                      imagery={Sunrise}
-                      text="Beautiful Tomorrow"
-                      clickDetail={() => {
-                        setTheme('future');
-                        scrollToHash('#carousel-of-progress-easter-egg');
-                      }}
-                    />
-                  </ButtonRow>
-                </div>
-              </div>
-            }
-          ></HighlightDetailed>
-        </div>
       </div>
       <Modal
         open={modalOpened && !!openedFooter}
