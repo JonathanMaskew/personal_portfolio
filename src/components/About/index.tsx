@@ -74,9 +74,9 @@ export default function About() {
 
   return (
     <SectionWrapper>
-      <div className="font-header font-bold text-4xl md:text-5xl">
+      {/* <div className="font-header font-bold text-4xl md:text-5xl">
         <TextUnderline>Hi, I'm Jonathan!</TextUnderline>{' '}
-      </div>
+      </div> */}
 
       <div
         className="text-3xl md:text-4xl leading-normal"
