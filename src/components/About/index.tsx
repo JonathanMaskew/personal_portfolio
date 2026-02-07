@@ -59,7 +59,7 @@ function TextUnderline({
 }) {
   return (
     <span
-      className={`font-bold underline underline-offset-[4px] decoration-[4px] md:decoration-[5px] ${className}`}
+      className={`font-bold underline underline-offset-[4px] decoration-[3px] md:decoration-[4px] lg:decoration-[5px] ${className}`}
       style={{
         textDecorationColor: color,
       }}
