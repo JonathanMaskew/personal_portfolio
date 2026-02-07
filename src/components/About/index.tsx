@@ -1,6 +1,6 @@
 'use client';
 
-import { ChevronRight, Cog, TriangleAlert } from 'lucide-react';
+import { ArrowDown, ChevronRight, Cog, TriangleAlert } from 'lucide-react';
 import { useState } from 'react';
 import SectionWrapper from '../SectionWrapper';
 import Carousel, { CarouselImageItem } from '../Carousel';
@@ -12,7 +12,6 @@ import taterTots from '@/assets/images/tater_tots.png';
 import dinosaur from '@/assets/images/raptor_encounter.png';
 import travel from '@/assets/images/travel.png';
 import roundabouts from '@/assets/images/roundabouts.jpg';
-import HighlightFeature from '../HighlightFeature';
 import carouselOfProgress from '@/assets/images/carousel_of_progress.png';
 import { Button } from '../Button';
 import ButtonRow from '../ButtonRow';
@@ -20,26 +19,29 @@ import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import { useHashScroll } from '@/hooks/useHashScroll';
 import type React from 'react';
 import JurassicParkEasterEgg from '../JurassicParkEasterEgg';
-import { useTheme } from '@/context/ThemeContext';
 import HighlightHero from '../HighlightHero';
 import SkillsComputer from '../SkillsComputer';
 import SmileyLines from '@/assets/images/site_graphics/Smiley_lines.svg';
+import { useModalContext } from '@/context/ModalContext';
 
 function TextHighlight({
   children,
   color = 'var(--color-primary)',
   className = '',
+  onClick,
 }: {
   children: React.ReactNode;
   color?: string;
   className?: string;
+  onClick?: () => void;
 }) {
   return (
     <span
-      className={`px-2 box-decoration-clone font-bold ${className}`}
+      className={`px-2 box-decoration-clone font-bold ${className} ${onClick ? 'cursor-pointer hover:brightness-75 transition-all' : ''}`}
       style={{
         backgroundColor: `color-mix(in srgb, ${color}, transparent 20%)`,
       }}
+      onClick={onClick}
     >
       {children}
     </span>
@@ -69,6 +71,7 @@ function TextUnderline({
 
 export default function About() {
   const { scrollToHash } = useHashScroll();
+  const { openExperienceModal } = useModalContext();
   const [showJurassicParkEasterEgg, setShowJurassicParkEasterEgg] =
     useState(false);
 
@@ -79,7 +82,7 @@ export default function About() {
       </div> */}
 
       <div
-        className="text-3xl md:text-4xl leading-normal"
+        className="text-2xl md:text-3xl lg:text-4xl leading-normal"
         // style={{
         //   color: 'var(--color-generic)',
         // }}
@@ -87,22 +90,33 @@ export default function About() {
         I am a <TextUnderline>Software Engineer</TextUnderline> passionate about{' '}
         <TextHighlight>Front-end development</TextHighlight>. I've delivered
         high-impact features as a{' '}
-        <TextHighlight color="var(--color-myhelo)">
+        <TextHighlight
+          color="var(--color-myhelo)"
+          onClick={() => openExperienceModal('myhelo')}
+        >
           Full-stack Engineer
         </TextHighlight>{' '}
-        at <TextUnderline color="var(--color-myhelo)">myhELO</TextUnderline>. As
-        the{' '}
-        <TextHighlight color="var(--color-htf)">Design Director</TextHighlight>{' '}
+        at <TextUnderline color="var(--color-myhelo)">myhELO</TextUnderline>,
+        and guided UI/UX design as the{' '}
+        <TextHighlight
+          color="var(--color-htf)"
+          onClick={() => openExperienceModal('htf-design-director')}
+        >
+          Design Director
+        </TextHighlight>{' '}
         for{' '}
-        <TextUnderline color="var(--color-htf)">Hack the Future</TextUnderline>,
-        I guided UI/UX design. I graduated from{' '}
+        <TextUnderline color="var(--color-htf)">Hack the Future</TextUnderline>.
+        I hold a{' '}
+        <TextHighlight
+          color="var(--color-purdue)"
+          onClick={() => scrollToHash('#education')}
+        >
+          BS in Computer Science
+        </TextHighlight>{' '}
+        from{' '}
         <TextUnderline color="var(--color-purdue)">
           Purdue University
-        </TextUnderline>{' '}
-        with a{' '}
-        <TextHighlight color="var(--color-purdue)">
-          BS in Computer Science
-        </TextHighlight>
+        </TextUnderline>
         .
       </div>
 
@@ -143,13 +157,13 @@ export default function About() {
           className="md:row-span-2"
           color="var(--color-generic)"
         >
-          <div className="w-full flex items-end justify-center -mt-24">
+          <div className="w-full flex items-end justify-center -mt-20">
             <SkillsComputer />
           </div>
         </HighlightHero>
 
         <HighlightHero
-          title="UI/UX Focused"
+          title="Front-end Focused"
           subtitle="Passionate about creating beautiful yet practical experiences."
           chips={[
             'Front-end',
@@ -187,6 +201,13 @@ export default function About() {
             'Sentry',
           ]}
           color="var(--color-generic)"
+          actionButton={
+            <Button
+              text="Jump to Work"
+              imagery={ArrowDown}
+              clickDetail="#work"
+            />
+          }
         />
       </div>
 

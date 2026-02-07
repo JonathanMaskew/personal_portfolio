@@ -9,6 +9,7 @@ interface HighlightHeroProps {
   subtitleClassName?: string;
   chipsClassName?: string;
   children?: React.ReactNode;
+  actionButton?: React.ReactNode;
   color?: string;
 }
 
@@ -20,6 +21,7 @@ export default function HighlightHero({
   subtitleClassName = '',
   chipsClassName = '',
   children,
+  actionButton,
   color = 'var(--color-generic)',
 }: HighlightHeroProps) {
   const containerStyle = {
@@ -28,31 +30,31 @@ export default function HighlightHero({
 
   return (
     <div
-      className={`highlight-feature relative rounded-4xl ${className}`}
+      className={`highlight-feature relative rounded-4xl p-6 flex flex-col gap-6 ${actionButton ? 'pb-18' : ''} ${className}`}
       style={containerStyle}
     >
-      <div className="p-6 flex flex-col gap-6">
-        <div className="flex flex-col gap-2">
-          <h3 className="font-header font-bold text-2xl md:text-3xl">
-            {title}
-          </h3>
-          {subtitle && (
-            <p
-              className={`text-md md:text-lg w-[90%] opacity-80 ${subtitleClassName}`}
-            >
-              {subtitle}
-            </p>
-          )}
-        </div>
-
-        {chips && (
-          <div className={`w-full ${chipsClassName}`}>
-            <Chips strings={chips} />
-          </div>
+      <div className="flex flex-col gap-2">
+        <h3 className="font-header font-bold text-2xl md:text-3xl">{title}</h3>
+        {subtitle && (
+          <p
+            className={`text-md md:text-lg w-[90%] opacity-80 ${subtitleClassName}`}
+          >
+            {subtitle}
+          </p>
         )}
       </div>
 
+      {chips && (
+        <div className={`w-full ${chipsClassName}`}>
+          <Chips strings={chips} />
+        </div>
+      )}
+
       {children && <div>{children}</div>}
+
+      {actionButton && (
+        <div className="self-center absolute bottom-4">{actionButton}</div>
+      )}
     </div>
   );
 }

@@ -10,20 +10,14 @@ import { Button } from '../Button';
 import { getJobsData, getMoreJobsData } from '@/data/jobs';
 import ExperienceDetails from '@/components/ExperienceDetails';
 import Chips from '../Chips';
+import { useModalContext } from '@/context/ModalContext';
 
 export default function Work() {
-  const { modalOpened, openModal } = useModal();
-  const [openedJobId, setOpenedJobId] = useState<string | null>(null);
-
+  const { openExperienceModal } = useModalContext();
   const [showMore, setShowMore] = useState<boolean>(false);
 
   const JOBS = getJobsData();
   const MORE_JOBS = getMoreJobsData();
-  const openedJob = openedJobId
-    ? JOBS.find((job) => job.id === openedJobId) ||
-      MORE_JOBS.find((job) => job.id === openedJobId) ||
-      null
-    : null;
 
   return (
     <SectionWrapper
@@ -50,8 +44,7 @@ export default function Work() {
                 (job.moreBullets && job.moreBullets.length > 0) ||
                 job.modalChildren
                   ? () => {
-                      setOpenedJobId(job.id);
-                      openModal();
+                      openExperienceModal(job.id);
                     }
                   : undefined
               }
@@ -66,8 +59,7 @@ export default function Work() {
                     imagery={Plus}
                     text="More"
                     clickDetail={() => {
-                      setOpenedJobId(job.id);
-                      openModal();
+                      openExperienceModal(job.id);
                     }}
                   />
                 ) : undefined
@@ -104,8 +96,7 @@ export default function Work() {
                   (job.moreBullets && job.moreBullets.length > 0) ||
                   job.modalChildren
                     ? () => {
-                        setOpenedJobId(job.id);
-                        openModal();
+                        openExperienceModal(job.id);
                       }
                     : undefined
                 }
@@ -120,8 +111,7 @@ export default function Work() {
                       imagery={Plus}
                       text="More"
                       clickDetail={() => {
-                        setOpenedJobId(job.id);
-                        openModal();
+                        openExperienceModal(job.id);
                       }}
                     />
                   ) : undefined
@@ -134,16 +124,6 @@ export default function Work() {
           ))}
         </div>
       )}
-
-      <Modal
-        open={modalOpened && !!openedJob}
-        onCloseCallback={() => {
-          setOpenedJobId(null);
-        }}
-        color={openedJob?.color || ''}
-      >
-        {openedJob && <ExperienceDetails data={openedJob} />}
-      </Modal>
     </SectionWrapper>
   );
 }

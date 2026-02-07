@@ -2,29 +2,19 @@
 import { ChevronDown, ChevronUp, GraduationCap, Plus } from 'lucide-react';
 import HighlightDetailed from '../HighlightDetailed';
 import { useState } from 'react';
-import { useModal } from '@/hooks/useModal';
-import Modal from '../Modal';
 import SectionWrapper from '../SectionWrapper';
 import { Button } from '../Button';
 import ExperienceDetails from '../ExperienceDetails';
 import { getEducationData, getMoreEducationData } from '@/data/education';
 import Chips from '../Chips';
+import { useModalContext } from '@/context/ModalContext';
 
 export default function Work() {
+  const { openExperienceModal } = useModalContext();
   const [showMore, setShowMore] = useState<boolean>(false);
 
   const EDUCATION = getEducationData();
   const MORE_EDUCATION = getMoreEducationData();
-
-  const { modalOpened, openModal, closeModal } = useModal();
-  const [openedEducationId, setOpenedEducationId] = useState<string | null>(
-    null
-  );
-  const openedEducation = openedEducationId
-    ? EDUCATION.find((education) => education.id === openedEducationId) ||
-      MORE_EDUCATION.find((education) => education.id === openedEducationId) ||
-      null
-    : null;
 
   return (
     <SectionWrapper
@@ -50,8 +40,7 @@ export default function Work() {
                 (education.moreBullets && education.moreBullets.length > 0) ||
                 education.modalChildren
                   ? () => {
-                      setOpenedEducationId(education.id);
-                      openModal();
+                      openExperienceModal(education.id);
                     }
                   : undefined
               }
@@ -66,8 +55,7 @@ export default function Work() {
                     imagery={Plus}
                     text="More"
                     clickDetail={() => {
-                      setOpenedEducationId(education.id);
-                      openModal();
+                      openExperienceModal(education.id);
                     }}
                   />
                 ) : undefined
@@ -106,8 +94,7 @@ export default function Work() {
                   (education.moreBullets && education.moreBullets.length > 0) ||
                   education.modalChildren
                     ? () => {
-                        setOpenedEducationId(education.id);
-                        openModal();
+                        openExperienceModal(education.id);
                       }
                     : undefined
                 }
@@ -122,8 +109,7 @@ export default function Work() {
                       imagery={Plus}
                       text="More"
                       clickDetail={() => {
-                        setOpenedEducationId(education.id);
-                        openModal();
+                        openExperienceModal(education.id);
                       }}
                     />
                   ) : undefined
@@ -137,18 +123,6 @@ export default function Work() {
             </div>
           ))}
         </div>
-      )}
-      {openedEducation && (
-        <Modal
-          color={openedEducation?.color || ''}
-          open={modalOpened && !!openedEducation}
-          onCloseCallback={() => {
-            setOpenedEducationId(null);
-            closeModal();
-          }}
-        >
-          {openedEducation && <ExperienceDetails data={openedEducation} />}
-        </Modal>
       )}
     </SectionWrapper>
   );

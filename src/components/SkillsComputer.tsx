@@ -87,7 +87,7 @@ const SkillsComputer = () => {
   ];
 
   return (
-    <div className="w-full max-w-[500px] aspect-square relative select-none">
+    <div className="w-full max-w-[600px] aspect-square relative select-none">
       {/* Background Stars */}
       <motion.div
         className="absolute inset-x-0 bottom-[40%] z-0 flex justify-center"

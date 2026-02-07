@@ -3,8 +3,8 @@
 import { Spotlight } from 'lucide-react';
 import SectionWrapper from '../SectionWrapper';
 import Carousel, { CarouselItem } from '../Carousel';
-import { useModal } from '@/hooks/useModal';
 import { useState } from 'react';
+import { useModalContext } from '@/context/ModalContext';
 import Modal from '../Modal';
 import ExperienceDetails from '@/components/ExperienceDetails';
 import { getJobsData } from '@/data/jobs';
@@ -19,23 +19,11 @@ import htfLogo from '@/assets/images/hack_the_future/htf_logo.png';
 import jsLogo from '@/app/Js_logo.png';
 
 export default function Highlights() {
-  const { modalOpened, openModal, closeModal } = useModal();
-  const [openedExperienceId, setOpenedExperienceId] = useState<string | null>(
-    null
-  );
+  const { openExperienceModal } = useModalContext();
 
-  const EDUCATION = getEducationData();
-  const JOBS = getJobsData();
-  const FOOTER = getFooterData();
-
-  const openedExperience = openedExperienceId
-    ? JOBS.find((job) => job.id === openedExperienceId) ||
-      EDUCATION.find((education) => education.id === openedExperienceId) ||
-      FOOTER.find((footer) => footer.id === openedExperienceId)
-    : null;
   const carouselItemStyle = 'w-[300px] md:w-[400px]';
 
-  const highlights = getHighlightsData(setOpenedExperienceId, openModal);
+  const highlights = getHighlightsData(openExperienceModal);
 
   return (
     <SectionWrapper
@@ -59,8 +47,7 @@ export default function Highlights() {
               onClick={
                 highlight.experienceId
                   ? () => {
-                      setOpenedExperienceId(highlight.experienceId || null);
-                      openModal();
+                      openExperienceModal(highlight.experienceId!);
                     }
                   : undefined
               }
@@ -143,16 +130,6 @@ export default function Highlights() {
           newTab={false}
         />
       </ButtonRow> */}
-      <Modal
-        open={modalOpened && !!openedExperience}
-        onCloseCallback={() => {
-          setOpenedExperienceId(null);
-          closeModal();
-        }}
-        color={openedExperience?.color || ''}
-      >
-        {openedExperience && <ExperienceDetails data={openedExperience} />}
-      </Modal>
     </SectionWrapper>
   );
 }

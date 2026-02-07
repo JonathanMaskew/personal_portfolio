@@ -13,8 +13,7 @@ import {
 import { Button } from '@/components/Button';
 
 export const getHighlightsData = (
-  setOpenedExperienceId: (id: string | null) => void,
-  openModal: () => void
+  openExperienceModal: (id: string) => void
 ): Experience[] => [
   {
     id: 'myhelo-eprescribe',
@@ -31,8 +30,7 @@ export const getHighlightsData = (
         text="More myhELO"
         color="var(--color-myhelo)"
         clickDetail={() => {
-          setOpenedExperienceId('myhelo');
-          openModal();
+          openExperienceModal('myhelo');
         }}
       />
     ),
@@ -51,8 +49,7 @@ export const getHighlightsData = (
         imagery={Plus}
         text="More Design Director"
         clickDetail={() => {
-          setOpenedExperienceId('htf-design-director');
-          openModal();
+          openExperienceModal('htf-design-director');
         }}
       />
     ),
@@ -71,8 +68,7 @@ export const getHighlightsData = (
         text="More myhELO"
         color="var(--color-myhelo)"
         clickDetail={() => {
-          setOpenedExperienceId('myhelo');
-          openModal();
+          openExperienceModal('myhelo');
         }}
       />
     ),
@@ -90,8 +86,7 @@ export const getHighlightsData = (
         imagery={Plus}
         text="More Allegion"
         clickDetail={() => {
-          setOpenedExperienceId('allegion');
-          openModal();
+          openExperienceModal('allegion');
         }}
       />
     ),
@@ -110,8 +105,7 @@ export const getHighlightsData = (
         imagery={Plus}
         text="About this Site"
         clickDetail={() => {
-          setOpenedExperienceId('this-site');
-          openModal();
+          openExperienceModal('this-site');
         }}
       />
     ),
@@ -138,10 +132,7 @@ export const getHighlightsData = (
 ];
 
 export const generateChatContext = (): string => {
-  const highlights = getHighlightsData(
-    () => {},
-    () => {}
-  );
+  const highlights = getHighlightsData(() => {});
 
   const highlightStrings: string[] = [];
 

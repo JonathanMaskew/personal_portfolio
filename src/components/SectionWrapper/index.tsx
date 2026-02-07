@@ -20,15 +20,23 @@ export default function SectionWrapper({
         <div className="flex flex-col gap-2">
           {(IconComponent || title) && (
             <div className="flex items-center gap-3">
-              {IconComponent && <IconComponent size={24} />}
+              {IconComponent && (
+                <div className="w-6 h-6 md:w-8 md:h-8">
+                  <IconComponent size="100%" />
+                </div>
+              )}
               {title && (
-                <div className="font-bold text-2xl font-header">{title}</div>
+                <div className="font-bold text-2xl md:text-3xl font-header">
+                  {title}
+                </div>
               )}
             </div>
           )}
 
           {subtext && (
-            <div className="flex flex-col gap-2 opacity-80">{subtext}</div>
+            <div className="flex flex-col gap-2 text-md md:text-lg opacity-80">
+              {subtext}
+            </div>
           )}
         </div>
       )}
