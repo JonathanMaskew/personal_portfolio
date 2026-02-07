@@ -65,7 +65,7 @@ export default function Hero() {
       {/* Text */}
       <div className="flex flex-col items-center gap-1">
         <div
-          className="text-5xl font-bold text-center font-header"
+          className="text-4xl md:text-5xl font-bold text-center font-header"
           style={{
             background:
               'linear-gradient(to right, var(--color-primary), var(--color-primary-accent))',
@@ -75,11 +75,13 @@ export default function Hero() {
         >
           Jonathan Maskew
         </div>
-        <div className="text-2xl font-bold text-center">Software Engineer</div>
+        <div className="text-3xl md:text-4xl font-bold text-center">
+          Software Engineer
+        </div>
       </div>
 
       {/* Highlights */}
-      <div className="text-2xl font-bold text-center">
+      <div className="text-center">
         <TypewriterText
           texts={[
             { text: 'AI Enthusiast', icon: Sparkles },

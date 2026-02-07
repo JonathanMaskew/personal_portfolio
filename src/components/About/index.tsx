@@ -1,19 +1,7 @@
 'use client';
 
-import {
-  ArrowDown,
-  Blend,
-  BriefcaseBusiness,
-  CalendarCheck,
-  ChevronRight,
-  Cog,
-  GraduationCap,
-  HistoryIcon,
-  RefreshCcw,
-  Sunrise,
-  TriangleAlert,
-} from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { ChevronRight, Cog, TriangleAlert } from 'lucide-react';
+import { useState } from 'react';
 import SectionWrapper from '../SectionWrapper';
 import Carousel, { CarouselImageItem } from '../Carousel';
 import tennis from '@/assets/images/tennis.jpg';
@@ -31,55 +19,96 @@ import ButtonRow from '../ButtonRow';
 import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import { useHashScroll } from '@/hooks/useHashScroll';
 import type React from 'react';
-import Chips from '../Chips';
 import JurassicParkEasterEgg from '../JurassicParkEasterEgg';
 import { useTheme } from '@/context/ThemeContext';
+import HighlightHero from '../HighlightHero';
+import SkillsComputer from '../SkillsComputer';
+import SmileyLines from '@/assets/images/site_graphics/Smiley_lines.svg';
+
+function TextHighlight({
+  children,
+  color = 'var(--color-brand)',
+  className = '',
+}: {
+  children: React.ReactNode;
+  color?: string;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`py-0.5 px-2 inline-block font-bold leading-none ${className}`}
+      style={{
+        backgroundColor: `color-mix(in srgb, ${color}, transparent 20%)`,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+function TextUnderline({
+  children,
+  color = 'var(--color-brand)',
+  className = '',
+}: {
+  children: React.ReactNode;
+  color?: string;
+  className?: string;
+}) {
+  return (
+    <span
+      className={`font-bold underline underline-offset-[4px] decoration-[4px] md:decoration-[5px] ${className}`}
+      style={{
+        textDecorationColor: color,
+      }}
+    >
+      {children}
+    </span>
+  );
+}
 
 export default function About() {
   const { scrollToHash } = useHashScroll();
   const { setTheme } = useTheme();
   const [showJurassicParkEasterEgg, setShowJurassicParkEasterEgg] =
     useState(false);
-  // const [isSpinning, setIsSpinning] = useState(false);
-
-  // useEffect(() => {
-  //   if (isSpinning) {
-  //     document.body.classList.add('animate-spin-page');
-
-  //     const handleAnimationEnd = () => {
-  //       setIsSpinning(false);
-  //     };
-
-  //     document.body.addEventListener('animationend', handleAnimationEnd, {
-  //       once: true,
-  //     });
-
-  //     return () => {
-  //       document.body.classList.remove('animate-spin-page');
-  //       document.body.removeEventListener('animationend', handleAnimationEnd);
-  //     };
-  //   } else {
-  //     document.body.classList.remove('animate-spin-page');
-  //   }
-  // }, [isSpinning]);
 
   return (
     <SectionWrapper>
-      <div className="flex flex-col gap-6 items-center">
-        <div
-          className="text-3xl font-bold underline font-header"
-          style={{
-            textDecorationColor: 'var(--color-primary)',
-            textDecorationThickness: '4px',
-            textUnderlineOffset: '4px',
-          }}
-        >
-          Hi, I&apos;m Jonathan!
-        </div>
-        <div className="text-center max-w-2xl">
-          As one who loves to dream big, I&apos;m always looking to transform
-          these dreams into experiences that feel intuitive and engaging.
-        </div>
+      <div className="font-header font-bold text-4xl md:text-5xl">
+        <TextUnderline>Hi, I'm Jonathan!</TextUnderline>{' '}
+      </div>
+
+      <div
+        className="text-3xl md:text-4xl leading-10 md:leading-12"
+        // style={{
+        //   color: 'var(--color-generic)',
+        // }}
+      >
+        I am a <TextUnderline>Software Engineer</TextUnderline> passionate about{' '}
+        <TextHighlight>Front-end development</TextHighlight>. I've delivered
+        high-impact features as a{' '}
+        <TextHighlight color="var(--color-myhelo)">
+          Full-stack Engineer
+        </TextHighlight>{' '}
+        at <TextUnderline color="var(--color-myhelo)">myhELO</TextUnderline>. As
+        the{' '}
+        <TextHighlight color="var(--color-htf)">Design Director</TextHighlight>{' '}
+        for{' '}
+        <TextUnderline color="var(--color-htf)">Hack the Future</TextUnderline>,
+        I guided UI/UX design. I graduated from{' '}
+        <TextUnderline color="var(--color-purdue)">
+          Purdue University
+        </TextUnderline>{' '}
+        with a{' '}
+        <TextHighlight color="var(--color-purdue)">
+          BS in Computer Science
+        </TextHighlight>
+        .
+      </div>
+
+      <div className="flex gap-8">
+        I'd love to hear from you...
         <ButtonRow>
           {SECONDARY_NAV_ITEMS.map((item) => {
             return (
@@ -95,101 +124,87 @@ export default function About() {
         </ButtonRow>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
-        <HighlightFeature
-          imagery={BriefcaseBusiness}
-          title="Software Engineer"
-          subtitle="myhELO"
-          body="At myhELO, I've delivered high-impact full-stack solutions in JavaScript and PHP, worked with Large Language Models, and designed new user interfaces."
-          color="var(--color-primary)"
-          onClick={() => scrollToHash('#work')}
-          actionButton={
-            <Button
-              imagery={ArrowDown}
-              text="Jump to 'Work'"
-              clickDetail="#work"
-            />
-          }
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
+        <HighlightHero
+          title="Technically Skilled"
+          subtitle="Significantly experienced in a variety of popular frameworks and languages."
+          chips={[
+            'Next.js',
+            'React',
+            'JavaScript',
+            'TypeScript',
+            'Angular',
+            'Agentic AI / LLMs',
+            'HTML',
+            'CSS',
+            'PHP',
+            'Node.js',
+            'React Testing Library',
+          ]}
+          className="md:row-span-2"
+          color="var(--color-generic)"
+        >
+          <div className="w-full flex items-end justify-center -mt-24">
+            <SkillsComputer />
+          </div>
+        </HighlightHero>
+
+        <HighlightHero
+          title="UI/UX Focused"
+          subtitle="Passionate about creating beautiful yet practical experiences."
+          chips={[
+            'Front-end',
+            'Tailwind CSS',
+            'UX/UI Design',
+            'Figma',
+            'User Research',
+            'Prototyping',
+            'Accessibility',
+            'Branding',
+          ]}
+          subtitleClassName="max-w-[70%]"
+          chipsClassName="max-w-[60%]"
+          color="var(--color-generic)"
+        >
+          <img
+            src={SmileyLines.src}
+            alt="Smiley"
+            className="absolute bottom-0 right-2 w-[40%] h-auto max-h-[220px] object-contain"
+          />
+        </HighlightHero>
+
+        <HighlightHero
+          title="Real-World Experienced"
+          subtitle="Prepared to navigate the complexities of real-world engineering."
+          chips={[
+            'Component-based Architecture',
+            'Responsive Web Development',
+            'Git',
+            'Prompt Engineering',
+            'Scrum & Agile',
+            'Code Reviews',
+            'APIs',
+            'Unit Testing',
+            'Sentry',
+          ]}
+          color="var(--color-generic)"
         />
-        <HighlightFeature
-          imagery={GraduationCap}
-          title="BS in Computer Science"
-          subtitle="Purdue University"
-          body="In addition to a variety of challenging coursework, I served as Design Director of Hack the Future, a volunteer-based organization that builds software for non-profits."
-          color="var(--color-primary)"
-          onClick={() => scrollToHash('#education')}
-          actionButton={
-            <Button
-              imagery={ArrowDown}
-              text="Jump to 'Education'"
-              clickDetail="#education"
-            />
-          }
-        />
-        <div className="col-span-full">
-          <HighlightFeature
-            imagery={Blend}
-            title="Well-Rounded Experience"
-            subtitle="Product-minded Software Engineer"
-            body="I've got a robust skillset - from website design & development, to UI/UX design, and beyond. At the core of all my work is a focus on quality, meaningful products."
-            color="var(--color-primary)"
-          >
-            <Chips
-              strings={[
-                'Front-end',
-                'Next.js',
-                'React',
-                'Tailwind CSS',
-                'Angular',
-                'Component-based Architecture',
-                'Responsive Web Development',
-                'TypeScript',
-                'Git',
-                'UX/UI Design',
-                'Figma',
-                'Agentic AI / LLMs',
-                'Prompt Engineering',
-                'Scrum',
-                'Agile',
-                'Code Reviews',
-                'APIs',
-                'User Research',
-                'Prototyping',
-                'Full-stack',
-                'JavaScript',
-                'HTML',
-                'CSS',
-                'PHP',
-                'Java',
-                'C',
-                'Unit Testing',
-                'Accessibility',
-                'Branding',
-                'Graphic Design',
-                'Node.js',
-                'React Testing Library',
-                'GitHub',
-                'Sentry',
-              ]}
-            />
-          </HighlightFeature>
-        </div>
       </div>
 
       <div className="flex flex-col gap-4">
-        <div className="font-bold text-lg font-header leading-tight">
+        <div className="font-bold text-xl md:text-2xl font-header leading-tight">
           Get to know me a little better...
         </div>
-        <Carousel color="var(--color-primary)">
+        <Carousel color="var(--color-brand)">
           <CarouselImageItem
             image={tennis}
             text="I played varsity tennis in high school and continue to play recreationally."
-            color="var(--color-primary)"
+            color="var(--color-brand)"
           />
           <CarouselImageItem
             image={dinosaur}
             text="Jurassic Park is a great movie!"
-            color="var(--color-primary)"
+            color="var(--color-brand)"
             onClick={() => setShowJurassicParkEasterEgg(true)}
           >
             <div className="flex flex-col gap-1 text-xs leading-tight">
@@ -211,17 +226,17 @@ export default function About() {
           <CarouselImageItem
             image={reeses}
             text="I am addicted to Reese's Peanut Butter Cups in every shape and size."
-            color="var(--color-primary)"
+            color="var(--color-brand)"
           />
           <CarouselImageItem
             image={taterTots}
             text="Tater Tots are superior to french fries. Try to convince me otherwise."
-            color="var(--color-primary)"
+            color="var(--color-brand)"
           />
           <CarouselImageItem
             image={carouselOfProgress}
             text="I could ride the Carousel of Progress in a loop."
-            color="var(--color-primary)"
+            color="var(--color-brand)"
             onClick={() => scrollToHash('#carousel-of-progress-easter-egg')}
           >
             <div className="flex items-center text-xs leading-tight text-[#CA94FF]">
@@ -231,61 +246,29 @@ export default function About() {
               </div>
               <ChevronRight size={14} />
             </div>
-            {/* <div className="text-xs leading-tight">
-              <ButtonRow>
-                <Button
-                  imagery={HistoryIcon}
-                  text="Past"
-                  // imageryOnly
-                  clickDetail={() => setTheme('past')}
-                />
-                <Button
-                  imagery={CalendarCheck}
-                  text="Present"
-                  // imageryOnly
-                  clickDetail={() => setTheme('default')}
-                />
-                <Button
-                  imagery={Sunrise}
-                  text="Future"
-                  // imageryOnly
-                  clickDetail={() => setTheme('future')}
-                />
-              </ButtonRow>
-            </div> */}
           </CarouselImageItem>
           <CarouselImageItem
             image={travel}
             text="I love to explore new places, having traveled to 13 countries and dozens of US states."
-            color="var(--color-primary)"
+            color="var(--color-brand)"
           />
           <CarouselImageItem
             image={roundabouts}
             text="I love roundabouts. Give me a roundabout over a traffic light any day."
-            color="var(--color-primary)"
-            // onClick={() => setIsSpinning(true)}
-          >
-            {/* <div className="flex items-center text-xs leading-tight text-[#FFFA94]">
-              <div className="flex items-center gap-2">
-                <RefreshCcw size={14} />
-                Go for a spin
-              </div>
-              <ChevronRight size={14} />
-            </div> */}
-          </CarouselImageItem>
+            color="var(--color-brand)"
+          ></CarouselImageItem>
           <CarouselImageItem
             image={lucy}
             text="A goofy little cockapoo named Lucy."
-            color="var(--color-primary)"
+            color="var(--color-brand)"
           />
           <CarouselImageItem
             image={manatee}
             text="This is a gif of a manatee. You're welcome."
-            color="var(--color-primary)"
+            color="var(--color-brand)"
           />
         </Carousel>
       </div>
-
       {showJurassicParkEasterEgg && (
         <JurassicParkEasterEgg
           onClose={() => setShowJurassicParkEasterEgg(false)}
