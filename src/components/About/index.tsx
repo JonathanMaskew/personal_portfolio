@@ -35,14 +35,14 @@ function TextHighlight({
   className?: string;
 }) {
   return (
-    <div
-      className={`py-0.5 px-2 inline-block font-bold leading-none ${className}`}
+    <span
+      className={`px-2 box-decoration-clone font-bold ${className}`}
       style={{
         backgroundColor: `color-mix(in srgb, ${color}, transparent 20%)`,
       }}
     >
       {children}
-    </div>
+    </span>
   );
 }
 
@@ -69,7 +69,6 @@ function TextUnderline({
 
 export default function About() {
   const { scrollToHash } = useHashScroll();
-  const { setTheme } = useTheme();
   const [showJurassicParkEasterEgg, setShowJurassicParkEasterEgg] =
     useState(false);
 
@@ -80,7 +79,7 @@ export default function About() {
       </div>
 
       <div
-        className="text-3xl md:text-4xl leading-10 md:leading-12"
+        className="text-3xl md:text-4xl leading-normal"
         // style={{
         //   color: 'var(--color-generic)',
         // }}
@@ -107,7 +106,7 @@ export default function About() {
         .
       </div>
 
-      <div className="flex gap-8">
+      <div className="flex gap-2 sm:gap-8 flex-wrap">
         I'd love to hear from you...
         <ButtonRow>
           {SECONDARY_NAV_ITEMS.map((item) => {
