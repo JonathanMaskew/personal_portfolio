@@ -30,7 +30,7 @@ export default function HighlightHero({
 
   return (
     <div
-      className={`highlight-feature relative rounded-4xl p-6 flex flex-col gap-6 ${actionButton ? 'pb-18' : ''} ${className}`}
+      className={`highlight-feature relative rounded-2xl p-6 flex flex-col gap-6 ${actionButton ? 'pb-18' : ''} ${className}`}
       style={containerStyle}
     >
       <div className="flex flex-col gap-2">

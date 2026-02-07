@@ -5,6 +5,8 @@ type SectionWrapperProps = {
   icon?: Icon;
   subtext?: string | React.ReactElement;
   children: React.ReactNode;
+  className?: string;
+  styles?: React.CSSProperties;
 };
 
 export default function SectionWrapper({
@@ -12,9 +14,14 @@ export default function SectionWrapper({
   icon: IconComponent,
   subtext,
   children,
+  className,
+  styles,
 }: SectionWrapperProps) {
   return (
-    <div className="flex flex-col gap-6 md:gap-8 p-6 md:p-8 w-full max-w-7xl mx-auto">
+    <div
+      className={`flex flex-col gap-6 md:gap-8 p-6 py-8 md:p-8 md:py-12 w-full max-w-7xl mx-auto ${className}`}
+      style={styles}
+    >
       {/* Section header */}
       {(IconComponent || title || subtext) && (
         <div className="flex flex-col gap-2">

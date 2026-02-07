@@ -21,7 +21,7 @@ export default function HighlightDetailed({
 
   return (
     <div
-      className={`highlight-detailed flex flex-col ${actionButton ? 'pb-18 cursor-pointer' : ''} ${nested ? 'p-4' : 'p-6'} rounded-4xl h-full w-full gap-6 relative transition-shadow duration-200 ${onClick ? 'hover:shadow-[inset_0_0_0_4px_var(--highlight-color)] active:shadow-[inset_0_0_0_4px_var(--highlight-color)]' : ''}`}
+      className={`highlight-detailed flex flex-col ${actionButton ? 'pb-18 cursor-pointer' : ''} ${nested ? 'p-4' : 'p-6'} rounded-2xl h-full w-full gap-6 relative transition-shadow duration-200 ${onClick ? 'hover:shadow-[inset_0_0_0_4px_var(--highlight-color)] active:shadow-[inset_0_0_0_4px_var(--highlight-color)]' : ''}`}
       style={containerStyle}
       onClick={onClick}
     >

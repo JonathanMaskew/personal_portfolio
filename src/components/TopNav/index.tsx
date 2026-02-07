@@ -48,7 +48,7 @@ export default function TopNav() {
     <div
       id="top-nav"
       ref={navRef}
-      className={`fixed top-0 left-0 right-0 rounded-b-4xl ${open ? 'bg-background' : 'bg-background/30'} mx-3 z-50 ring-1 ring-foreground/10 backdrop-blur-lg px-6 py-4 flex flex-col`}
+      className={`fixed top-0 left-0 right-0 rounded-b-2xl ${open ? 'bg-background' : 'bg-background/30'} mx-3 z-50 ring-1 ring-foreground/10 backdrop-blur-lg px-6 py-4 flex flex-col`}
     >
       <div className="flex justify-between">
         <button

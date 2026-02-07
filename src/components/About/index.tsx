@@ -82,7 +82,7 @@ export default function About() {
       </div> */}
 
       <div
-        className="text-2xl md:text-3xl lg:text-4xl leading-normal"
+        className="text-2xl md:text-3xl lg:text-4xl leading-normal md:max-w-[80%]"
         // style={{
         //   color: 'var(--color-generic)',
         // }}

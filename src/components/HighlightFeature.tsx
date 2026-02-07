@@ -27,7 +27,7 @@ export default function HighlightFeature({
 
   return (
     <div
-      className={`highlight-feature flex flex-col ${paddingClass} ${actionButton ? 'pb-18 cursor-pointer' : ''} rounded-4xl ${nested ? 'h-fit' : 'h-full'} w-full gap-6 relative transition-shadow duration-200 ${onClick ? 'hover:shadow-[inset_0_0_0_4px_var(--highlight-color)] active:shadow-[inset_0_0_0_4px_var(--highlight-color)]' : ''} ${className || ''}`}
+      className={`highlight-feature flex flex-col ${paddingClass} ${actionButton ? 'pb-18 cursor-pointer' : ''} rounded-2xl ${nested ? 'h-fit' : 'h-full'} w-full gap-6 relative transition-shadow duration-200 ${onClick ? 'hover:shadow-[inset_0_0_0_4px_var(--highlight-color)] active:shadow-[inset_0_0_0_4px_var(--highlight-color)]' : ''} ${className || ''}`}
       style={containerStyle}
       onClick={onClick}
     >
