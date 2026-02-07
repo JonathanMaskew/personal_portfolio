@@ -76,7 +76,7 @@ export default function About() {
     useState(false);
 
   return (
-    <SectionWrapper>
+    <SectionWrapper className="gap-14 md:gap-16">
       {/* <div className="font-header font-bold text-4xl md:text-5xl">
         <TextUnderline>Hi, I'm Jonathan!</TextUnderline>{' '}
       </div> */}
@@ -201,13 +201,13 @@ export default function About() {
             'Sentry',
           ]}
           color="var(--color-generic)"
-          actionButton={
-            <Button
-              text="Jump to Work"
-              imagery={ArrowDown}
-              clickDetail="#work"
-            />
-          }
+          // actionButton={
+          //   <Button
+          //     text="Jump to Work"
+          //     imagery={ArrowDown}
+          //     clickDetail="#work"
+          //   />
+          // }
         />
       </div>
 
