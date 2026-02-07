@@ -162,7 +162,7 @@ export default function About() {
             'Branding',
           ]}
           subtitleClassName="max-w-[70%]"
-          chipsClassName="max-w-[60%]"
+          chipsClassName="max-w-[55%]"
           color="var(--color-generic)"
         >
           <img
