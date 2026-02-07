@@ -30,11 +30,11 @@ export default function Highlights() {
       icon={Spotlight}
       title="Highlights"
       subtext="Major experiences and accomplishments worth noting."
-      className="rounded-2xl bg-foreground/10"
-      // styles={{
-      //   background:
-      //     'linear-gradient(to right, color-mix(in srgb, white, transparent 90%), transparent)',
-      // }}
+      className="rounded-2xl"
+      styles={{
+        background:
+          'linear-gradient(to bottom, color-mix(in srgb, var(--color-foreground), transparent 90%), transparent 50%)',
+      }}
     >
       <Carousel>
         {highlights.map((highlight, index) => (
