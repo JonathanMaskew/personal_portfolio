@@ -81,15 +81,13 @@ export default function About() {
         <TextUnderline>Hi, I'm Jonathan!</TextUnderline>{' '}
       </div> */}
 
-      <div
-        className="text-2xl md:text-3xl lg:text-4xl leading-normal md:max-w-[80%]"
-        // style={{
-        //   color: 'var(--color-generic)',
-        // }}
-      >
-        I am a <TextUnderline>Software Engineer</TextUnderline> passionate about{' '}
-        <TextHighlight>Front-end development</TextHighlight>. I've delivered
-        high-impact features as a{' '}
+      <div className="text-2xl md:text-3xl lg:text-4xl leading-normal md:max-w-[80%]">
+        Combining <TextUnderline>technical expertise</TextUnderline> with{' '}
+        <TextUnderline>creative leadership</TextUnderline>, I build{' '}
+        <TextHighlight color="var(--color-primary)">
+          scalable, user-focused experiences
+        </TextHighlight>
+        . As a{' '}
         <TextHighlight
           color="var(--color-myhelo)"
           onClick={() => openExperienceModal('myhelo')}
@@ -97,7 +95,15 @@ export default function About() {
           Full-stack Engineer
         </TextHighlight>{' '}
         at <TextUnderline color="var(--color-myhelo)">myhELO</TextUnderline>,
-        and guided UI/UX design as the{' '}
+        I&apos;ve delivered high-impact features like an{' '}
+        <TextUnderline color="var(--color-myhelo)">
+          ePrescribe rebuild
+        </TextUnderline>{' '}
+        and{' '}
+        <TextUnderline color="var(--color-myhelo)">
+          AI-powered automation
+        </TextUnderline>
+        . Serving as{' '}
         <TextHighlight
           color="var(--color-htf)"
           onClick={() => openExperienceModal('htf-design-director')}
@@ -105,8 +111,14 @@ export default function About() {
           Design Director
         </TextHighlight>{' '}
         for{' '}
-        <TextUnderline color="var(--color-htf)">Hack the Future</TextUnderline>.
-        I hold a{' '}
+        <TextUnderline color="var(--color-htf)">Hack the Future</TextUnderline>,
+        I guided{' '}
+        <TextUnderline color="var(--color-htf)">UI/UX principles</TextUnderline>{' '}
+        and drove a nearly{' '}
+        <TextUnderline color="var(--color-htf)">
+          90% YoY increase in applicants
+        </TextUnderline>
+        . I hold a{' '}
         <TextHighlight
           color="var(--color-purdue)"
           onClick={() => scrollToHash('#education')}
