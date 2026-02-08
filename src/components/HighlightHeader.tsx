@@ -65,7 +65,7 @@ export default function HighlightHeader({
       {(title || subtitle || subheading) && (
         <div>
           {title && (
-            <div className="font-bold text-xl font-header leading-tight mb-2">
+            <div className="font-bold text-xl lg:text-2xl font-header leading-tight mb-2">
               <span
                 className="underline"
                 style={{
@@ -78,10 +78,8 @@ export default function HighlightHeader({
               </span>
             </div>
           )}
-          {subtitle && <div className="text-sm leading-tight">{subtitle}</div>}
-          {subheading && (
-            <div className="text-xs leading-tight">{subheading}</div>
-          )}
+          {subtitle && <div className="text-sm opacity-80">{subtitle}</div>}
+          {subheading && <div className="text-xs opacity-80">{subheading}</div>}
         </div>
       )}
     </div>

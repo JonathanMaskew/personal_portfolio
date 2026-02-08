@@ -132,7 +132,7 @@ export default function About() {
         .
       </div>
 
-      <div className="flex gap-2 sm:gap-8 flex-wrap">
+      <div className="flex gap-x-8 gap-y-1 flex-wrap">
         I'd love to hear from you...
         <ButtonRow>
           {SECONDARY_NAV_ITEMS.map((item) => {
@@ -151,20 +151,20 @@ export default function About() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
         <HighlightHero
-          title="Technically Skilled"
-          subtitle="Significantly experienced in a variety of popular frameworks and languages."
+          title="Modern Tech Stack"
+          subtitle="Building scalable products using popular frameworks and languages, like React and TypeScript, and practical AI integrations."
           chips={[
-            'Next.js',
             'React',
-            'JavaScript',
+            'Next.js',
             'TypeScript',
+            'JavaScript',
             'Angular',
             'Agentic AI / LLMs',
+            'Prompt Engineering',
             'HTML',
             'CSS',
             'PHP',
             'Node.js',
-            'React Testing Library',
           ]}
           className="md:row-span-2"
           color="var(--color-generic)"
@@ -175,11 +175,12 @@ export default function About() {
         </HighlightHero>
 
         <HighlightHero
-          title="Front-end Focused"
-          subtitle="Passionate about creating beautiful yet practical experiences."
+          title="Design Engineering"
+          subtitle="With a passion for front-end development, I excel at translating Figma prototypes into production-ready interfaces."
           chips={[
             'Front-end',
             'Tailwind CSS',
+            'Core Web Vitals',
             'UX/UI Design',
             'Figma',
             'User Research',
@@ -199,18 +200,19 @@ export default function About() {
         </HighlightHero>
 
         <HighlightHero
-          title="Real-World Experienced"
-          subtitle="Prepared to navigate the complexities of real-world engineering."
+          title="Production-Ready Code"
+          subtitle="Ensuring code is reliable and maintainable through rigorous testing and agile collaboration."
           chips={[
-            'Component-based Architecture',
-            'Responsive Web Development',
+            'System Architecture',
+            'Responsive Web Design',
+            'CI/CD Pipeline',
             'Git',
-            'Prompt Engineering',
-            'Scrum & Agile',
-            'Code Reviews',
+            'Scrum / Agile',
+            'Code Quality & Reviews',
             'APIs',
-            'Unit Testing',
-            'Sentry',
+            'End-to-End Testing',
+            'Error Monitoring',
+            'Web Security',
           ]}
           color="var(--color-generic)"
           // actionButton={
@@ -235,7 +237,7 @@ export default function About() {
           />
           <CarouselImageItem
             image={dinosaur}
-            text="Jurassic Park is a great movie!"
+            text="Jurassic Park - a great movie, and a cautionary tale about IT security!"
             color="var(--color-primary)"
             onClick={() => setShowJurassicParkEasterEgg(true)}
           >
@@ -261,11 +263,6 @@ export default function About() {
             color="var(--color-primary)"
           />
           <CarouselImageItem
-            image={taterTots}
-            text="Tater Tots are superior to french fries. Try to convince me otherwise."
-            color="var(--color-primary)"
-          />
-          <CarouselImageItem
             image={carouselOfProgress}
             text="I could ride the Carousel of Progress in a loop."
             color="var(--color-primary)"
@@ -288,7 +285,12 @@ export default function About() {
             image={roundabouts}
             text="I love roundabouts. Give me a roundabout over a traffic light any day."
             color="var(--color-primary)"
-          ></CarouselImageItem>
+          />
+          <CarouselImageItem
+            image={taterTots}
+            text="Tater Tots are superior to french fries. Try to convince me otherwise."
+            color="var(--color-primary)"
+          />
           <CarouselImageItem
             image={lucy}
             text="A goofy little cockapoo named Lucy."

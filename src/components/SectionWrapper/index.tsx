@@ -41,7 +41,7 @@ export default function SectionWrapper({
           )}
 
           {subtext && (
-            <div className="flex flex-col gap-2 text-md md:text-lg opacity-80">
+            <div className="flex flex-col gap-2 text-base md:text-lg opacity-80">
               {subtext}
             </div>
           )}

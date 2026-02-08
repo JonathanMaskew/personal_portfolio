@@ -39,7 +39,7 @@ export default function CarouselOfProgress() {
             - Carousel of Progress (Sherman Brothers)
           </div>
           <div className="flex flex-col gap-2">
-            <div>Rotate to the...</div>
+            <div>Rotate theming to the...</div>
             <ButtonRow>
               <Button
                 imagery={HistoryIcon}

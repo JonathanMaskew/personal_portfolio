@@ -16,10 +16,10 @@ export default function ModalSection({
       <div className="flex items-center gap-2">
         {IconComponent && (
           <div>
-            <IconComponent size={20} />
+            <IconComponent size={24} />
           </div>
         )}
-        <div className="font-bold text-lg font-header">{title}</div>
+        <div className="font-bold text-xl lg:text-2xl font-header">{title}</div>
       </div>
       <div className="flex flex-col gap-6">{children}</div>
     </div>

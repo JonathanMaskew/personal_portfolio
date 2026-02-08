@@ -19,10 +19,9 @@ export const getHighlightsData = (
     id: 'myhelo-eprescribe',
     color: 'var(--color-myhelo)',
     imagery: PillBottle,
-    title:
-      'Increased Reliability and Functionality Through Full-Stack Rebuild of ePrescribe',
+    title: 'Architected a Modern, Scalable ePrescribing Infrastructure',
     subtitle: 'Software Engineer @ myhELO',
-    body: 'Led a full-stack rebuilding of the e-prescribing infrastructure by rewriting all front-end and back-end files and integrating with third-party APIs, increasing reliability and functionality.',
+    body: 'Re-engineered the e-prescribing infrastructure by migrating legacy code to a full-stack architecture for increased reliability and a streamlined workflow.',
     experienceId: 'myhelo',
     highlightChildren: (
       <Button
@@ -39,10 +38,9 @@ export const getHighlightsData = (
     id: 'htf-outreach',
     color: 'var(--color-htf)',
     imagery: SplinePointer,
-    title:
-      'Revamped Outreach Efforts, Achieving a Nearly 90% Increase in Applicants',
+    title: 'Led a Branding Overhaul, Driving Growth by 90%',
     subtitle: 'Design Director @ Hack the Future',
-    body: 'Initiated by a branding refresh, our new handouts, collaborations, events, and revamped social media presence led to a nearly 90% increase in applicants year-over-year, shattering previous records.',
+    body: 'Unified branding and messaging across print, digital, and social presences. This cohesive, strategic approach shattered records, bringing a nearly 90% year-over-year increase in applicants.',
     experienceId: 'htf-design-director',
     highlightChildren: (
       <Button
@@ -60,7 +58,7 @@ export const getHighlightsData = (
     imagery: Sparkles,
     title: 'Pioneered AI Automation for Data Imports',
     subtitle: 'Software Engineer @ myhELO',
-    body: 'Pioneered a tool that leverages a Large Language Model (LLM) to intelligently parse and import user data from unstructured CSV files. This introduced automation to a tedious workflow and significantly reduced user import times.',
+    body: 'Engineered an intelligent pipeline that leverages a Large Language Model to parse and import unstructured user data. This agentic workflow introduced automation to a tedious task, reducing manual entry bottlenecks.',
     experienceId: 'myhelo',
     highlightChildren: (
       <Button
@@ -77,9 +75,9 @@ export const getHighlightsData = (
     id: 'allegion-announcements',
     color: 'var(--color-allegion)',
     imagery: Megaphone,
-    title: 'Introduced Rapid Communication through an Announcements System',
+    title: 'Introduced a Targeted Communication System',
     subtitle: 'Software Engineer @ Allegion',
-    body: 'Developed an announcements system to allow for rapid communications with 100s of users by translating designs to code that integrates with backend APIs. Allowed administrators to target announcements to specific groups of individuals.',
+    body: 'Developed a notification system in Angular to enable targeted communications. By integrating APIs with an intuitive interface, administrators could send announcements to specific user groups.',
     experienceId: 'allegion',
     highlightChildren: (
       <Button
@@ -95,10 +93,9 @@ export const getHighlightsData = (
     id: 'this-site',
     color: 'var(--color-generic)',
     imagery: HandHeart,
-    title:
-      'Independently Designed and Developed a Portfolio to Increase Visibility',
-    subtitle: 'This website, developed with Next.js and TypeScript',
-    body: 'Designed this website from scratch, and developed it using Next.js and TypeScript. This site is meant to be a testament to my skills in front-end development, and showcases my various experience while giving a glimpse of my personality.',
+    title: 'Designed and Developed an Interactive Portfolio',
+    subtitle: 'Independently built this website',
+    body: 'Designed from scratch and built using Next.js and TypeScript. This fully responsive site goes beyond a showcase, serving as a live demonstration of modern front-end frameworks, custom design systems, and integrated AI features.',
     experienceId: 'this-site',
     highlightChildren: (
       <Button

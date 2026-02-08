@@ -29,23 +29,19 @@ export default function ExperienceDetails({ data }: ExperienceDetailsProps) {
       />
 
       {data.body && (
-        <div className="text-center bg-foreground/10 p-4 w-full rounded-2xl">
+        <div
+          className="border-l-4 border-l-foreground px-4 w-full"
+          // style={{
+          //   background:
+          //     'linear-gradient(to right, color-mix(in srgb, white, transparent 90%), transparent)',
+          // }}
+        >
           {data.body}
         </div>
       )}
 
-      {data.coreBullets && data.coreBullets.length > 0 && (
-        <ModalSection icon={ListTodo} title="Core Responsibilities">
-          <ul className="list-disc pl-4 space-y-2 text-sm leading-tight">
-            {data.coreBullets.map((bullet, i) => (
-              <li key={i}>{bullet}</li>
-            ))}
-          </ul>
-        </ModalSection>
-      )}
-
       {data.highlights && data.highlights.length > 0 && (
-        <ModalSection icon={Star} title="Highlighted Accomplishments">
+        <ModalSection icon={Star} title="Highlights">
           <div className="flex flex-wrap gap-3 justify-center">
             {data.highlights.map((highlight, i) => (
               <InnerHighlight
@@ -58,6 +54,16 @@ export default function ExperienceDetails({ data }: ExperienceDetailsProps) {
               </InnerHighlight>
             ))}
           </div>
+        </ModalSection>
+      )}
+
+      {data.coreBullets && data.coreBullets.length > 0 && (
+        <ModalSection icon={ListTodo} title="Core Responsibilities">
+          <ul className="list-disc pl-4 space-y-2 text-sm leading-tight">
+            {data.coreBullets.map((bullet, i) => (
+              <li key={i}>{bullet}</li>
+            ))}
+          </ul>
         </ModalSection>
       )}
 

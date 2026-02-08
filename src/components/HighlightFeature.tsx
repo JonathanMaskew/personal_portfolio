@@ -41,7 +41,7 @@ export default function HighlightFeature({
           orientation={headerOrientation}
         />
       )}
-      {body && <div className="text-sm">{body}</div>}
+      {body && <div className="text-sm lg:text-base">{body}</div>}
       {children}
       {actionButton && (
         <div className="self-center absolute bottom-4">{actionButton}</div>
