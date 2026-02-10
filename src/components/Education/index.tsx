@@ -17,14 +17,10 @@ export default function Work() {
   const MORE_EDUCATION = getMoreEducationData();
 
   return (
-    <SectionWrapper
-      icon={GraduationCap}
-      title="Education"
-      subtext="Graduated in May 2024 with a BS in Computer Science from Purdue University. Served as the Design Director for Hack the Future, a volunteer-based organization that builds software for non-profits."
-    >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
+    <SectionWrapper icon={GraduationCap} title="Education">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7 w-full">
         {EDUCATION.map((education, index) => (
-          <div key={index} className={`${index === 0 ? 'col-span-full' : ''}`}>
+          <div key={index} className={`${index === 2 ? 'col-span-full' : ''}`}>
             <HighlightDetailed
               color={education.color}
               imagery={education.imagery}
@@ -73,7 +69,7 @@ export default function Work() {
         imagery={showMore ? ChevronUp : ChevronDown}
       />
       {showMore && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7 w-full">
           {MORE_EDUCATION.map((education, index) => (
             <div
               key={index}

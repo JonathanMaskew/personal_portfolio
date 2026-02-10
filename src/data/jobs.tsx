@@ -31,9 +31,9 @@ export const getJobsData = (): Experience[] => [
       'Front-end',
       'Full-stack',
       'Large Language Models',
+      'System Architecture',
       'UI/UX Design',
       'Figma',
-      'Employee Onboarding',
     ],
     highlights: [
       {
@@ -73,7 +73,13 @@ export const getJobsData = (): Experience[] => [
     title: 'Software Engineer',
     subheading: 'Intern, May 2023 - August 2023',
     body: 'Translated mockups to front-end code for a scalable announcements feature within a component-based Angular site, integrating with back-end APIs, to allow hundreds of users to access announcements and administrators to send targeted announcements.',
-    keywords: ['Angular', 'Angular Material', 'Front-end', 'Scrum'],
+    keywords: [
+      'Angular',
+      'Angular Material',
+      'Front-end',
+      'Scrum / Agile',
+      'APIs',
+    ],
     highlights: [
       {
         icon: Megaphone,
@@ -107,10 +113,10 @@ export const getJobsData = (): Experience[] => [
     body: 'Shipped new features and improved usability within a Next.js codebase by translating designs into front-end code.',
     keywords: [
       'Next.js',
-      'Tailwind CSS',
       'TypeScript',
+      'Tailwind CSS',
       'Front-end',
-      'Scrum',
+      'Scrum / Agile',
       'React Testing Library',
     ],
     coreBullets: [

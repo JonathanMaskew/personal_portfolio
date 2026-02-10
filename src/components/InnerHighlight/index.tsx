@@ -16,13 +16,13 @@ export default function InnerHighlight({
 }: InnerHighlightProps) {
   return (
     <div className="flex flex-col gap-4 bg-foreground/10 p-4 w-full rounded-3xl">
-      <div className="flex items-center gap-4">
+      <div className="flex gap-4">
         {IconComponent && (
           <div>
-            <IconComponent size={30} className="text-foreground-2" />
+            <IconComponent size={30} className="text-foreground-2 mt-1" />
           </div>
         )}
-        <div className="flex flex-col gap-1 text-sm">
+        <div className="flex flex-col text-sm md:text-base">
           {title && <div className="font-bold font-header">{title}</div>}
           {text && <div>{text}</div>}
         </div>

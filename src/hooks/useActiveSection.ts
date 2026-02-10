@@ -24,7 +24,7 @@ export function useActiveSection({
   deps = [],
   scrollContainerSelector = '[data-scroll-container]',
 }: UseActiveSectionOptions) {
-  const [current, setCurrent] = useState<NavItem>(items[0]);
+  const [current, setCurrent] = useState<NavItem | null>(items[0]);
   const rafIdRef = useRef<number>(0);
 
   useEffect(() => {
@@ -51,11 +51,12 @@ export function useActiveSection({
         .map((item) => {
           const el = document.getElementById(item.id);
           if (!el) return null;
-          const top =
-            (el as HTMLElement).getBoundingClientRect().top - containerTop;
-          return { item, top };
+          const rect = (el as HTMLElement).getBoundingClientRect();
+          const top = rect.top - containerTop;
+          const bottom = rect.bottom - containerTop;
+          return { item, top, bottom };
         })
-        .filter(Boolean) as { item: NavItem; top: number }[];
+        .filter(Boolean) as { item: NavItem; top: number; bottom: number }[];
 
       if (measurements.length === 0) return;
 
@@ -88,7 +89,7 @@ export function useActiveSection({
       const remaining = Math.max(0, scrollHeight - (scrollTop + clientHeight));
       const atBottom = remaining <= Math.max(activationOffset, 80);
 
-      let next;
+      let next: NavItem | null = null;
       if (atBottom) {
         next = measurements.sort((a, b) => a.top - b.top)[
           measurements.length - 1
@@ -97,12 +98,30 @@ export function useActiveSection({
         const past = measurements.filter(
           (m) => m.top - thresholdBottom <= activationOffset
         );
-        next = past.length
-          ? past.sort((a, b) => b.top - a.top)[0].item
-          : measurements.sort((a, b) => a.top - b.top)[0].item;
+
+        if (past.length) {
+          const candidate = past.sort((a, b) => b.top - a.top)[0];
+          // If the candidate section has explicitly finished (scrolled past),
+          // and we haven't entered the next one (covered by `past` filter not finding it),
+          // then we are in a gap.
+          if (candidate.bottom - thresholdBottom <= 0) {
+            next = null;
+          } else {
+            next = candidate.item;
+          }
+        } else {
+          // We are above the first section or in a gap before anything starts?
+          // Usually measurements[0] if we want to default to first, but maybe null is better if pre-scroll.
+          // Existing logic defaulted to first item.
+          // next = measurements.sort((a, b) => a.top - b.top)[0].item;
+
+          // If we are really far up (intro), typically intro starts at 0.
+          // If we are in negative space (?), keep defaults.
+          next = measurements.sort((a, b) => a.top - b.top)[0].item;
+        }
       }
 
-      setCurrent((prev) => (prev.id === next.id ? prev : next));
+      setCurrent((prev) => (prev?.id === next?.id ? prev : next));
     };
 
     const onScrollOrResize = () => {

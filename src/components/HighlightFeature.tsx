@@ -13,10 +13,8 @@ export default function HighlightFeature({
   children,
   actionButton,
   onClick,
-  headerOrientation,
   className,
 }: HighlightProps & {
-  headerOrientation?: 'vertical' | 'horizontal';
   className?: string;
 }) {
   const hasHeaderContent = Boolean(imagery || title || subtitle || subheading);
@@ -38,7 +36,7 @@ export default function HighlightFeature({
           subheading={subheading}
           imagery={imagery}
           color={color}
-          orientation={headerOrientation}
+          variant="feature"
         />
       )}
       {body && <div className="text-sm lg:text-base">{body}</div>}

@@ -24,8 +24,7 @@ export default function ExperienceDetails({ data }: ExperienceDetailsProps) {
         title={data.title}
         subtitle={data.subtitle}
         subheading={data.subheading}
-        orientation="vertical"
-        centered
+        className="text-center items-center"
       />
 
       {data.body && (
@@ -59,7 +58,7 @@ export default function ExperienceDetails({ data }: ExperienceDetailsProps) {
 
       {data.coreBullets && data.coreBullets.length > 0 && (
         <ModalSection icon={ListTodo} title="Core Responsibilities">
-          <ul className="list-disc pl-4 space-y-2 text-sm leading-tight">
+          <ul className="list-disc pl-4 space-y-2 text-base leading-tight">
             {data.coreBullets.map((bullet, i) => (
               <li key={i}>{bullet}</li>
             ))}
@@ -69,7 +68,7 @@ export default function ExperienceDetails({ data }: ExperienceDetailsProps) {
 
       {data.moreAccomplishments && data.moreAccomplishments.length > 0 && (
         <ModalSection icon={ClipboardCheck} title="Additional Accomplishments">
-          <ul className="list-disc pl-4 space-y-2 text-sm leading-tight">
+          <ul className="list-disc pl-4 space-y-2 text-base leading-tight">
             {data.moreAccomplishments.map((bullet, i) => (
               <li key={i}>{bullet}</li>
             ))}
@@ -79,7 +78,7 @@ export default function ExperienceDetails({ data }: ExperienceDetailsProps) {
 
       {data.moreBullets && data.moreBullets.length > 0 && (
         <ModalSection icon={CircleEllipsis} title="More...">
-          <ul className="list-disc pl-4 space-y-2 text-sm leading-tight">
+          <ul className="list-disc pl-4 space-y-2 text-base leading-tight">
             {data.moreBullets.map((bullet, i) => (
               <li key={i}>{bullet}</li>
             ))}

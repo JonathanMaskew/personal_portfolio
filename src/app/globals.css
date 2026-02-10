@@ -103,8 +103,8 @@ button {
   --color-foreground: #e0e0e0; /* Off-white, slightly soft */
   --color-foreground-2: #e0e0e0;
 
-  --color-primary: #ffffff; /* Pure white */
-  --color-primary-accent: #a0a0a0; /* Medium gray */
+  --color-primary: #282828; /* Pure white */
+  --color-primary-accent: #282828; /* Medium gray */
 
   /* Map all experience colors to grayscale for authentic B&W TV look */
   --color-myhelo: #282828;

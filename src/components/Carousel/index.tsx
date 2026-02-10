@@ -37,7 +37,7 @@ export default function Carousel({
       {/* Left Arrow */}
       <div
         ref={scrollContainerRef}
-        className={`flex overflow-x-auto gap-4 scrollbar-hide pb-3 ${className}`}
+        className={`flex overflow-x-auto gap-5 scrollbar-hide pb-3 ${className}`}
       >
         {children}
       </div>

@@ -43,7 +43,7 @@ export default function SidebarNav() {
           <div className="flex flex-col gap-4">
             {MAIN_NAV_ITEMS.map((item) => {
               const linkStyle =
-                current.id === item.id
+                current?.id === item.id
                   ? 'opacity-100 font-bold'
                   : 'opacity-60 hover:opacity-100';
 
@@ -55,7 +55,7 @@ export default function SidebarNav() {
                     clickDetail={item.href}
                     newTab={item.newTab}
                     className={linkStyle}
-                    isFocused={current.id === item.id}
+                    isFocused={current?.id === item.id}
                   />
                 </div>
               );

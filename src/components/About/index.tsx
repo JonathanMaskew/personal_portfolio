@@ -1,26 +1,13 @@
 'use client';
 
-import { ArrowDown, ChevronRight, Cog, TriangleAlert } from 'lucide-react';
-import { useState } from 'react';
 import SectionWrapper from '../SectionWrapper';
-import Carousel, { CarouselImageItem } from '../Carousel';
-import tennis from '@/assets/images/tennis.jpg';
-import manatee from '@/assets/images/manatee_oof.gif';
-import lucy from '@/assets/images/lucy.png';
-import reeses from '@/assets/images/reeses.jpg';
-import taterTots from '@/assets/images/tater_tots.png';
-import dinosaur from '@/assets/images/raptor_encounter.png';
-import travel from '@/assets/images/travel.png';
-import roundabouts from '@/assets/images/roundabouts.jpg';
-import carouselOfProgress from '@/assets/images/carousel_of_progress.png';
 import { Button } from '../Button';
 import ButtonRow from '../ButtonRow';
 import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import { useHashScroll } from '@/hooks/useHashScroll';
 import type React from 'react';
-import JurassicParkEasterEgg from '../JurassicParkEasterEgg';
 import HighlightHero from '../HighlightHero';
-import SkillsComputer from '../SkillsComputer';
+import SkillsComputer from './SkillsComputer';
 import SmileyLines from '@/assets/images/site_graphics/Smiley_lines.svg';
 import { useModalContext } from '@/context/ModalContext';
 
@@ -72,11 +59,9 @@ function TextUnderline({
 export default function About() {
   const { scrollToHash } = useHashScroll();
   const { openExperienceModal } = useModalContext();
-  const [showJurassicParkEasterEgg, setShowJurassicParkEasterEgg] =
-    useState(false);
 
   return (
-    <SectionWrapper className="gap-14 md:gap-16">
+    <SectionWrapper>
       {/* <div className="font-header font-bold text-4xl md:text-5xl">
         <TextUnderline>Hi, I'm Jonathan!</TextUnderline>{' '}
       </div> */}
@@ -149,7 +134,7 @@ export default function About() {
         </ButtonRow>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-7 w-full">
         <HighlightHero
           title="Modern Tech Stack"
           subtitle="Building scalable products using popular frameworks and languages, like React and TypeScript, and practical AI integrations."
@@ -224,90 +209,6 @@ export default function About() {
           // }
         />
       </div>
-
-      <div className="flex flex-col gap-4">
-        <div className="font-bold text-xl md:text-2xl font-header leading-tight">
-          Get to know me a little better...
-        </div>
-        <Carousel color="var(--color-primary)">
-          <CarouselImageItem
-            image={tennis}
-            text="I played varsity tennis in high school and continue to play recreationally."
-            color="var(--color-primary)"
-          />
-          <CarouselImageItem
-            image={dinosaur}
-            text="Jurassic Park - a great movie, and a cautionary tale about IT security!"
-            color="var(--color-primary)"
-            onClick={() => setShowJurassicParkEasterEgg(true)}
-          >
-            <div className="flex flex-col gap-1 text-xs leading-tight">
-              {/* <div className='flex items-center'>
-                Status:
-              </div> */}
-              <div className="flex items-center gap-2 font-bold text-red-500">
-                {' '}
-                {/*animate-urgent-flash*/}
-                <TriangleAlert size={14} />
-                SYSTEMS FAILING
-              </div>
-              <div className="flex items-center text-red-500">
-                Investigate failures
-                <ChevronRight size={14} />
-              </div>
-            </div>
-          </CarouselImageItem>
-          <CarouselImageItem
-            image={reeses}
-            text="I am addicted to Reese's Peanut Butter Cups in every shape and size."
-            color="var(--color-primary)"
-          />
-          <CarouselImageItem
-            image={carouselOfProgress}
-            text="I could ride the Carousel of Progress in a loop."
-            color="var(--color-primary)"
-            onClick={() => scrollToHash('#carousel-of-progress-easter-egg')}
-          >
-            <div className="flex items-center text-xs leading-tight text-[#CA94FF]">
-              <div className="flex items-center gap-2">
-                <Cog size={14} />
-                Rotate thru time
-              </div>
-              <ChevronRight size={14} />
-            </div>
-          </CarouselImageItem>
-          <CarouselImageItem
-            image={travel}
-            text="I love to explore new places, having traveled to 13 countries and dozens of US states."
-            color="var(--color-primary)"
-          />
-          <CarouselImageItem
-            image={roundabouts}
-            text="I love roundabouts. Give me a roundabout over a traffic light any day."
-            color="var(--color-primary)"
-          />
-          <CarouselImageItem
-            image={taterTots}
-            text="Tater Tots are superior to french fries. Try to convince me otherwise."
-            color="var(--color-primary)"
-          />
-          <CarouselImageItem
-            image={lucy}
-            text="A goofy little cockapoo named Lucy."
-            color="var(--color-primary)"
-          />
-          <CarouselImageItem
-            image={manatee}
-            text="This is a gif of a manatee. You're welcome."
-            color="var(--color-primary)"
-          />
-        </Carousel>
-      </div>
-      {showJurassicParkEasterEgg && (
-        <JurassicParkEasterEgg
-          onClose={() => setShowJurassicParkEasterEgg(false)}
-        />
-      )}
     </SectionWrapper>
   );
 }

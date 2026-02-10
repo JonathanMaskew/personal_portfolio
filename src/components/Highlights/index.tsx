@@ -29,7 +29,6 @@ export default function Highlights() {
     <SectionWrapper
       icon={Spotlight}
       title="Highlights"
-      subtext="Major experiences and accomplishments worth noting."
       className="rounded-2xl"
       styles={{
         background:
@@ -48,7 +47,6 @@ export default function Highlights() {
               subtitle={highlight.subtitle}
               body={highlight.body}
               color={highlight.color}
-              headerOrientation="vertical"
               onClick={
                 highlight.experienceId
                   ? () => {

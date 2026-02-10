@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
       }
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7">
         {FOOTER.map((item) => (
           <HighlightDetailed
             key={item.id}

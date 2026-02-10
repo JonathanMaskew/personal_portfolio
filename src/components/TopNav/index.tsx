@@ -42,7 +42,7 @@ export default function TopNav() {
     deps: [open],
   });
 
-  const IconComponent = current.icon;
+  const IconComponent = current?.icon;
 
   return (
     <div
@@ -55,14 +55,14 @@ export default function TopNav() {
           onClick={() => setOpen((v) => !v)}
           className="flex items-center gap-2 rounded text-foreground font-bold"
         >
-          {current.id === 'intro' ? (
+          {!current || current.id === 'intro' ? (
             <div className="flex items-center justify-center h-[18px] w-[18px]">
               {jsLogo}
             </div>
           ) : (
-            <IconComponent size={18} />
+            IconComponent && <IconComponent size={18} />
           )}
-          <div>{current.label}</div>
+          <div className="min-h-6">{current?.label}</div>
           {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </button>
         <div className="flex items-center gap-6">
@@ -89,7 +89,7 @@ export default function TopNav() {
         }`}
       >
         <div className="flex flex-col gap-4">
-          {MAIN_NAV_ITEMS.filter((item) => item.id !== current.id).map(
+          {MAIN_NAV_ITEMS.filter((item) => item.id !== current?.id).map(
             (item) => {
               return (
                 <div

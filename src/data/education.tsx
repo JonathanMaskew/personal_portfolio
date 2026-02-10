@@ -91,25 +91,6 @@ const noblesvilleStats: StatHighlight[] = [
 
 export const getEducationData = (): Experience[] => [
   {
-    id: 'purdue',
-    color: 'var(--color-purdue)',
-    imagery: purdueLogo,
-    title: 'Bachelor of Science in Computer Science',
-    subtitle: 'Concentration in Software Engineering',
-    subheading: 'Purdue University, 2020 - 2024',
-    highlightChildren: (
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
-        {purdueStats.map((highlight, index) => (
-          <InnerHighlight
-            key={index}
-            title={highlight.title}
-            text={highlight.text}
-          />
-        ))}
-      </div>
-    ),
-  },
-  {
     id: 'htf-design-director',
     color: 'var(--color-htf)',
     imagery: htfLogoWhite,
@@ -144,9 +125,8 @@ export const getEducationData = (): Experience[] => [
             'Figma',
             'UI/UX Design',
             'Front-end',
-            'Digital Marketing',
             'Branding',
-            'Graphic Design',
+            'Digital Marketing',
           ]}
         />
         <Carousel
@@ -411,6 +391,25 @@ export const getEducationData = (): Experience[] => [
       "Developed front-end interfaces using React that mimicked the Designer's mockups and integrated with a MongoDB database.",
     ],
     keywords: ['React', 'MongoDB', 'Front-end', 'Full-stack'],
+  },
+  {
+    id: 'purdue',
+    color: 'var(--color-purdue)',
+    imagery: purdueLogo,
+    title: 'Bachelor of Science in Computer Science',
+    subtitle: 'Concentration in Software Engineering',
+    subheading: 'Purdue University, 2020 - 2024',
+    highlightChildren: (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+        {purdueStats.map((highlight, index) => (
+          <InnerHighlight
+            key={index}
+            title={highlight.title}
+            text={highlight.text}
+          />
+        ))}
+      </div>
+    ),
   },
 ];
 

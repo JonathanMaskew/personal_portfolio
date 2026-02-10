@@ -19,22 +19,28 @@ export default function FloatingControls() {
   });
 
   const [hasScrolledToTop, setHasScrolledToTop] = useState(
-    current.id === 'intro'
+    current?.id === 'intro'
   );
 
   const showRevert = theme !== 'default';
 
   useEffect(() => {
-    if (current.id === 'intro') {
+    if (current?.id === 'intro') {
       setHasScrolledToTop(true);
     }
   }, [current]);
 
   useEffect(() => {
-    if (theme !== 'default' && current.id !== 'intro') {
+    if (theme !== 'default' && current?.id !== 'intro') {
       setHasScrolledToTop(false);
     }
   }, [theme]);
+
+  useEffect(() => {
+    if (current?.id !== 'intro') {
+      setHasScrolledToTop(false);
+    }
+  }, [current]);
 
   return (
     <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 ml-4 mt-4 md:ml-6 md:mt-6 z-50 flex items-end gap-3">
@@ -45,7 +51,7 @@ export default function FloatingControls() {
             icon={Undo2}
             text="Reset theme"
           />
-          {current.id !== 'intro' && !hasScrolledToTop && (
+          {current?.id !== 'intro' && !hasScrolledToTop && (
             <FloatingButton
               onClick={() => {
                 setHasScrolledToTop(true);

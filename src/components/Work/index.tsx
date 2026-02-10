@@ -20,13 +20,8 @@ export default function Work() {
   const MORE_JOBS = getMoreJobsData();
 
   return (
-    <SectionWrapper
-      icon={BriefcaseBusiness}
-      title="Work Experience"
-      subtext="Focused on front-end development, with experience in full-stack. Familiar with
-            Next.js, React, Angular, and more. Experience working with Product, Design, and Engineering teams."
-    >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
+    <SectionWrapper icon={BriefcaseBusiness} title="Work Experience">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7 w-full">
         {JOBS.map((job, index) => (
           <div key={index} className={`${index === 0 ? 'col-span-full' : ''}`}>
             <HighlightDetailed
@@ -78,7 +73,7 @@ export default function Work() {
       />
 
       {showMore && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7 w-full">
           {MORE_JOBS.map((job, index) => (
             <div key={index}>
               <HighlightDetailed
