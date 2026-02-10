@@ -66,7 +66,7 @@ export default function About() {
         <TextUnderline>Hi, I'm Jonathan!</TextUnderline>{' '}
       </div> */}
 
-      <div className="text-2xl md:text-3xl lg:text-4xl leading-normal md:max-w-[80%]">
+      <div className="text-xl md:text-2xl lg:text-3xl leading-normal md:max-w-[80%]">
         Combining <TextUnderline>technical expertise</TextUnderline> with{' '}
         <TextUnderline>creative leadership</TextUnderline>, I build{' '}
         <TextHighlight color="var(--color-primary)">

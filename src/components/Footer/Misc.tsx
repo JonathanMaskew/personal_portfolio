@@ -39,7 +39,7 @@ export default function Misc() {
               - Carousel of Progress (Sherman Brothers)
             </div>
             <div className="flex flex-col gap-2">
-              <div>Rotate theming to the...</div>
+              <div>Rotate site theme to the...</div>
               <ButtonRow>
                 <Button
                   imagery={HistoryIcon}
