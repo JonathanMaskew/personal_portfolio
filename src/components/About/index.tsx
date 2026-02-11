@@ -24,7 +24,7 @@ function TextHighlight({
 }) {
   return (
     <span
-      className={`px-2 box-decoration-clone font-bold ${className} ${onClick ? 'cursor-pointer hover:brightness-75 transition-all' : ''}`}
+      className={`px-1 box-decoration-clone font-bold ${className} ${onClick ? 'cursor-pointer hover:brightness-75 transition-all' : ''}`}
       style={{
         backgroundColor: `color-mix(in srgb, ${color}, transparent 20%)`,
       }}
@@ -49,6 +49,8 @@ function TextUnderline({
       className={`font-bold underline underline-offset-[4px] decoration-[3px] md:decoration-[4px] lg:decoration-[5px] ${className}`}
       style={{
         textDecorationColor: color,
+        textDecorationThickness: '3px',
+        textUnderlineOffset: '2px',
       }}
     >
       {children}
@@ -70,19 +72,18 @@ export default function About() {
         Combining <TextUnderline>technical expertise</TextUnderline> with{' '}
         <TextUnderline>creative leadership</TextUnderline>, I build{' '}
         <TextHighlight color="var(--color-primary)">
-          scalable, user-focused experiences
+          production-ready, user-focused experiences
         </TextHighlight>
         . As a{' '}
         <TextHighlight
           color="var(--color-myhelo)"
           onClick={() => openExperienceModal('myhelo')}
         >
-          Full-stack Engineer
-        </TextHighlight>{' '}
-        at <TextUnderline color="var(--color-myhelo)">myhELO</TextUnderline>,
-        I&apos;ve delivered high-impact features like an{' '}
+          Full-stack Engineer at myhELO
+        </TextHighlight>
+        , I&apos;ve delivered high-impact features such as a{' '}
         <TextUnderline color="var(--color-myhelo)">
-          ePrescribe rebuild
+          rebuild of ePrescribe
         </TextUnderline>{' '}
         and{' '}
         <TextUnderline color="var(--color-myhelo)">
@@ -93,11 +94,9 @@ export default function About() {
           color="var(--color-htf)"
           onClick={() => openExperienceModal('htf-design-director')}
         >
-          Design Director
-        </TextHighlight>{' '}
-        for{' '}
-        <TextUnderline color="var(--color-htf)">Hack the Future</TextUnderline>,
-        I guided{' '}
+          Design Director for Hack the Future
+        </TextHighlight>
+        , I guided{' '}
         <TextUnderline color="var(--color-htf)">UI/UX principles</TextUnderline>{' '}
         and drove a nearly{' '}
         <TextUnderline color="var(--color-htf)">
@@ -108,12 +107,8 @@ export default function About() {
           color="var(--color-purdue)"
           onClick={() => scrollToHash('#education')}
         >
-          BS in Computer Science
+          BS in Computer Science from Purdue University
         </TextHighlight>{' '}
-        from{' '}
-        <TextUnderline color="var(--color-purdue)">
-          Purdue University
-        </TextUnderline>
         .
       </div>
 
@@ -161,7 +156,7 @@ export default function About() {
 
         <HighlightHero
           title="Design Engineering"
-          subtitle="With a passion for front-end development, I excel at translating Figma prototypes into production-ready interfaces."
+          subtitle="With a passion for front-end development, I excel at translating prototypes into production-ready interfaces."
           chips={[
             'Front-end',
             'Tailwind CSS',
