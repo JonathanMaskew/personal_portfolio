@@ -138,6 +138,7 @@ export default function About() {
             'React',
             'TypeScript',
             'JavaScript',
+            'Tailwind CSS',
             'Angular',
             'LLMs / Prompt Engineering',
             'HTML',

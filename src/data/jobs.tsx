@@ -55,11 +55,11 @@ export const getJobsData = (): Experience[] => [
       },
     ],
     moreAccomplishments: [
-      'Redesign the site-wide UI template to prioritize critical patient data, increase layout flexibility, and reduce front-end complexity.',
+      'Redesign the site-wide UI template in JavaScript and CSS to prioritize critical patient data, increase layout flexibility, and reduce front-end complexity.',
       'Build a workflow guiding users through password creation, profile setup, and interactive training that is curated based on role to improve user activation rates and reduce support requests.',
     ],
     coreBullets: [
-      'Streamline design-to-development workflows by establishing a Figma design library that translates to consistent, reusable, and documented front-end components that minimize code redundancy.',
+      'Streamline design-to-development workflows by establishing a Figma design library to ensure front-end consistency, visualized expectations, and efficient development.',
       'Drive technical growth by conducting interviews, onboarding new engineers, and presenting milestones to executive leadership.',
     ],
     moreBullets: [],
@@ -120,7 +120,7 @@ export const getJobsData = (): Experience[] => [
       'React Testing Library',
     ],
     coreBullets: [
-      'Shipped front-end features and usability improvements by translating high-fidelity mockups into Next.js components.',
+      'Shipped features and usability improvements by translating high-fidelity mockups into Next.js and TypeScript components.',
       'Enforced system reliability by implementing unit test cases using React Testing Library.',
     ],
   },
