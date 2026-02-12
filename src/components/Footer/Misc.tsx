@@ -7,7 +7,7 @@ import {
   CalendarCheck,
 } from 'lucide-react';
 import { Button } from '@/components/Button';
-import ButtonRow from '@/components/ButtonRow';
+import ButtonRow from '@/components/Button/ButtonRow';
 import { useTheme } from '@/context/ThemeContext';
 import { useHashScroll } from '@/hooks/useHashScroll';
 import PersonalCarousel from '@/components/About/PersonalCarousel';

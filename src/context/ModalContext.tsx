@@ -9,7 +9,7 @@ import React, {
 } from 'react';
 import type { Experience } from '@/types';
 import Modal from '@/components/Modal';
-import ExperienceDetails from '@/components/ExperienceDetails';
+import ExperienceDetails from '@/components/Modal/ExperienceDetails';
 import { getJobsData } from '@/data/jobs';
 import { getEducationData, getMoreEducationData } from '@/data/education';
 import { getFooterData } from '@/data/footer';

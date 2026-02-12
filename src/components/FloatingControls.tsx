@@ -1,7 +1,7 @@
 'use client';
 
 import { useTheme } from '@/context/ThemeContext';
-import FloatingButton from '@/components/FloatingButton';
+import FloatingButton from '@/components/Button/FloatingButton';
 import Chatbot from '@/components/Chatbot';
 import { ArrowUp, Undo2 } from 'lucide-react';
 import { useHashScroll } from '@/hooks/useHashScroll';

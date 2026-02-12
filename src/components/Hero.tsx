@@ -9,13 +9,13 @@ import {
   User,
   Code,
 } from 'lucide-react';
-import TypewriterText from '../TypewriterText';
+import TypewriterText from './TypewriterText';
 import turkeyRun from '@/assets/images/turkey_run.png';
 import costaRica from '@/assets/images/costa_rica.png';
 import graduation from '@/assets/images/graduation.png';
 import Image from 'next/image';
 import { useMobile } from '@/hooks/useMobile';
-import { Button } from '../Button';
+import { Button } from './Button';
 import { useTheme } from '@/context/ThemeContext';
 
 export default function Hero() {

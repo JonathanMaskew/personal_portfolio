@@ -14,8 +14,8 @@ import {
   SquarePlay,
 } from 'lucide-react';
 import { Button } from '@/components/Button';
-import ButtonRow from '@/components/ButtonRow';
-import ModalSection from '@/components/ModalSection';
+import ButtonRow from '@/components/Button/ButtonRow';
+import ModalSection from '@/components/Modal/ModalSection';
 
 export const getJobsData = (): Experience[] => [
   {
@@ -25,7 +25,7 @@ export const getJobsData = (): Experience[] => [
     subtitle: 'myhELO',
     title: 'Software Engineer',
     subheading: 'Full-time, June 2024 - Present',
-    body: "Engineer new features using a custom JavaScript framework and PHP, empowering doctor's offices nationwide and giving thousands of patients access to their health data.",
+    body: 'Engineer full-stack solutions within a nationwide healthcare platform using a custom JavaScript framework and PHP. Deliver high-impact infrastructure including an ePrescribing system, multi-factor authentication, and an AI-powered data importer.',
     keywords: [
       'JavaScript',
       'PHP',
@@ -71,7 +71,7 @@ export const getJobsData = (): Experience[] => [
     subtitle: 'Allegion',
     title: 'Software Engineer',
     subheading: 'Intern, May 2023 - August 2023',
-    body: 'Translated mockups to front-end code for a scalable announcements feature within a component-based Angular site, integrating with back-end APIs, to allow hundreds of users to access announcements and administrators to send targeted announcements.',
+    body: 'Built Angular components and integrated with back-end APIs to enable seamless communication from administrators to employees.',
     keywords: [
       'Angular',
       'Angular Material',
@@ -83,7 +83,7 @@ export const getJobsData = (): Experience[] => [
       {
         icon: Megaphone,
         title: 'Engineered a Targeted Communication System',
-        text: 'Developed an intuitive announcements feature within a component-based Angular site by integrating with back-end APIs, allowing administrators to target messages to hundreds of users.',
+        text: 'Developed an intuitive announcements feature within a component-based Angular site by integrating with back-end APIs, allowing administrators to target messages to hundreds of employees.',
       },
     ],
     coreBullets: [
@@ -109,13 +109,14 @@ export const getJobsData = (): Experience[] => [
     subtitle: 'Qualifi',
     title: 'Software Engineer',
     subheading: 'Intern, May 2022 - August 2022',
-    body: 'Shipped new features and improved usability within a Next.js codebase by translating designs into front-end code.',
+    body: 'Developed new features within a Next.js and TypeScript codebase, implementing responsive design and providing usability enhancements. Ensured relaiability by implementing unit test cases.',
     keywords: [
       'Next.js',
       'TypeScript',
       'Tailwind CSS',
       'Front-end',
       'Scrum / Agile',
+      'Unit Testing',
       'React Testing Library',
     ],
     coreBullets: [

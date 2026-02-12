@@ -1,6 +1,6 @@
 import React from 'react';
 import type { HighlightProps } from '@/types';
-import HighlightHeader from '@/components/HighlightHeader';
+import HighlightHeader from './HighlightHeader';
 
 export default function HighlightDetailed({
   color,

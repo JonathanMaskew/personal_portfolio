@@ -1,7 +1,7 @@
 import { Icon } from '@/types';
 import { useHashScroll } from '@/hooks/useHashScroll';
 import type { StaticImageData } from 'next/image';
-import { renderImagery } from '@/components/renderImagery';
+import { renderImagery } from '@/utils/renderImagery';
 
 interface ButtonProps {
   text: string;

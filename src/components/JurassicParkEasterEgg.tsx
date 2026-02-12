@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import { X, VolumeOff } from 'lucide-react';
 import { lockBodyScroll, unlockBodyScroll } from '@/utils/scrollLock';
 import { useMobile } from '@/hooks/useMobile';
-import FloatingButton from '../FloatingButton';
+import FloatingButton from '@/components/Button/FloatingButton';
 
 interface JurassicParkEasterEggProps {
   onClose: () => void;

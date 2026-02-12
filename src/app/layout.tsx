@@ -10,8 +10,8 @@ import {
 } from 'next/font/google';
 import './globals.css';
 import Script from 'next/script';
-import SidebarNav from '@/components/SidebarNav';
-import TopNav from '@/components/TopNav';
+import SidebarNav from '@/components/Navigation/SidebarNav';
+import TopNav from '@/components/Navigation/TopNav';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import FloatingControls from '@/components/FloatingControls';

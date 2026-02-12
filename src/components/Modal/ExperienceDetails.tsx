@@ -3,9 +3,9 @@
 import type { Experience } from '@/types';
 import React from 'react';
 import { CircleEllipsis, ClipboardCheck, ListTodo, Star } from 'lucide-react';
-import ModalSection from '../ModalSection';
-import InnerHighlight from '../InnerHighlight';
-import HighlightHeader from '../HighlightHeader';
+import ModalSection from './ModalSection';
+import InnerHighlight from '@/components/InnerHighlight';
+import HighlightHeader from '@/components/HighlightHeader';
 
 type ExperienceDetailsProps = {
   data: Experience;

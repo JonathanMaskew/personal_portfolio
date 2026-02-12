@@ -3,10 +3,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ArrowUp, Sparkles, X } from 'lucide-react';
 import { useMobile } from '@/hooks/useMobile';
-import Messages from '@/components/Chatbot/messages';
+import Messages from '@/components/Chatbot/Messages';
 import { lockBodyScroll, unlockBodyScroll } from '@/utils/scrollLock';
 import { useChatSession } from '@/hooks/useChatSession';
-import FloatingButton from '../FloatingButton';
+import FloatingButton from '@/components/Button/FloatingButton';
 
 export default function Chatbot() {
   const session = useChatSession();

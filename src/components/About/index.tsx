@@ -2,7 +2,7 @@
 
 import SectionWrapper from '../SectionWrapper';
 import { Button } from '../Button';
-import ButtonRow from '../ButtonRow';
+import ButtonRow from '../Button/ButtonRow';
 import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import { useHashScroll } from '@/hooks/useHashScroll';
 import type React from 'react';

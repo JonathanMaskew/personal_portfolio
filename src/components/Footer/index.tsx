@@ -3,19 +3,14 @@
 import SectionWrapper from '@/components/SectionWrapper';
 import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import HighlightDetailed from '../HighlightDetailed';
-import {
-  Plus,
-  History as HistoryIcon,
-  Sunrise,
-  CalendarCheck,
-} from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { Button } from '../Button';
 import { useModal } from '@/hooks/useModal';
 import Modal from '../Modal';
 import { useState } from 'react';
-import ButtonRow from '../ButtonRow';
+import ButtonRow from '../Button/ButtonRow';
 import { getFooterData } from '@/data/footer';
-import ExperienceDetails from '../ExperienceDetails';
+import ExperienceDetails from '@/components/Modal/ExperienceDetails';
 import { useTheme } from '@/context/ThemeContext';
 import { useHashScroll } from '@/hooks/useHashScroll';
 

@@ -1,10 +1,10 @@
 'use client';
 
 import { Spotlight } from 'lucide-react';
-import SectionWrapper from '../SectionWrapper';
-import Carousel, { CarouselItem } from '../Carousel';
+import SectionWrapper from './SectionWrapper';
+import Carousel, { CarouselItem } from './Carousel';
 import { useModalContext } from '@/context/ModalContext';
-import HighlightFeature from '../HighlightFeature';
+import HighlightFeature from './HighlightFeature';
 import { getHighlightsData } from '@/data/highlights';
 
 export default function Highlights() {

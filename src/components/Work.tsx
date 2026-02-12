@@ -1,12 +1,12 @@
 'use client';
 
 import { BriefcaseBusiness, ChevronDown, ChevronUp, Plus } from 'lucide-react';
-import HighlightDetailed from '../HighlightDetailed';
+import HighlightDetailed from './HighlightDetailed';
 import { useState } from 'react';
-import SectionWrapper from '../SectionWrapper';
-import { Button } from '../Button';
+import SectionWrapper from './SectionWrapper';
+import { Button } from './Button';
 import { getJobsData, getMoreJobsData } from '@/data/jobs';
-import Chips from '../Chips';
+import Chips from './Chips';
 import { useModalContext } from '@/context/ModalContext';
 
 export default function Work() {

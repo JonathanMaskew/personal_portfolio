@@ -2,7 +2,7 @@ import React from 'react';
 import type { Experience } from '@/types';
 import HighlightFeature from '@/components/HighlightFeature';
 import { Button } from '@/components/Button';
-import ModalSection from '@/components/ModalSection';
+import ModalSection from '@/components/Modal/ModalSection';
 import Image from 'next/image';
 import {
   HandHeart,
@@ -152,7 +152,7 @@ export const getFooterData = (): Experience[] => [
     imagery: jsLogo,
     title: "J's Page",
     subtitle: 'The Next Iteration of my Personal Brand',
-    body: "My personal portfolio, which I've previously referred to as J's Page, has taken many forms. This site is the latest.",
+    body: "My personal portfolio, which I've previously referred to as J's Page, has taken many forms. Starting with a fascination with site-making, leading to the development of a J's \"brand,\" and ultimately culminating in this very site, the J's brand continues to evolve.",
     modalChildren: (
       <>
         <div className="flex flex-col gap-10">

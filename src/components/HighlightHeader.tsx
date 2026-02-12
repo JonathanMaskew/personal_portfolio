@@ -3,7 +3,7 @@ import {
   renderImagery,
   isStaticImageData,
   type ImageryInput,
-} from '@/components/renderImagery';
+} from '@/utils/renderImagery';
 
 interface HighlightHeaderProps {
   title?: string;

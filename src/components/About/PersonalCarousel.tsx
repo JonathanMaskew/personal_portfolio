@@ -39,7 +39,7 @@ export default function PersonalCarousel() {
             <div className="flex flex-col gap-1 text-xs leading-tight">
               <div className="flex items-center gap-2 font-bold text-red-500">
                 {' '}
-                <TriangleAlert size={14} />
+                <TriangleAlert size={14} className="animate-urgent-flash" />
                 SYSTEMS FAILING
               </div>
               <div className="flex items-center text-red-500">

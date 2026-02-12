@@ -7,7 +7,7 @@ import Carousel, {
   CarouselItem,
   CarouselImageItem,
 } from '@/components/Carousel';
-import ModalSection from '@/components/ModalSection';
+import ModalSection from '@/components/Modal/ModalSection';
 import {
   ExternalLink,
   BookOpen,
@@ -42,7 +42,7 @@ import noblesvilleSchools from '@/assets/images/noblesville_schools.png';
 import nationalHonorsSociety from '@/assets/images/national_honors_society.png';
 import keyClub from '@/assets/images/key_club.png';
 import { Button } from '@/components/Button';
-import ButtonRow from '@/components/ButtonRow';
+import ButtonRow from '@/components/Button/ButtonRow';
 import Chips from '@/components/Chips';
 import htfCarouselOfProgress from '@/assets/images/hack_the_future/htf_carousel_of_progress.png';
 import htfCatapult from '@/assets/images/hack_the_future/htf_catapult.png';
@@ -98,7 +98,7 @@ export const getEducationData = (): Experience[] => [
     title: 'Design Director',
     subtitle: 'Hack the Future',
     subheading: 'Purdue University, March 2022 - May 2024',
-    body: 'Managed branding, marketing, and outreach efforts, and mentored four project teams on UX/UI principles.',
+    body: "Led a re-branding initiative that amplified the organization's visibility resulting in a record-breaking nearly 90% increase in applications YoY. Created resources to guide four teams on UX/UI principles and front-end development.",
     coreBullets: [
       'Mentored four project teams on UX/UI principles and created resources to guide translating Figma mockups into front-end code.',
       'Established branded components in React to streamline development and maintain consistency across all team projects.',
@@ -386,7 +386,7 @@ export const getEducationData = (): Experience[] => [
     title: 'Software Developer',
     subtitle: 'Hack the Future',
     subheading: 'Purdue University, Sep 2021 - May 2022',
-    body: 'Worked with a team of eight to deliver a website on schedule that allows Leadership Lafayette to collect and browse testimonials.',
+    body: "Engineered a testimonial management system using React and MongoDB, coordinating with a team of eight to deliver within Leadership Lafayette's deadline.",
     coreBullets: [
       'Delivered a testimonial management system to Leadership Lafayette by collaborating with an eight-person agile team.',
       'Implemented React components by translating the designer’s mockups and integrating with a MongoDB database.',
