@@ -72,7 +72,7 @@ export default function About() {
         Combining <TextUnderline>technical expertise</TextUnderline> with{' '}
         <TextUnderline>creative leadership</TextUnderline>, I build{' '}
         <TextHighlight color="var(--color-primary)">
-          production-ready, user-focused experiences
+          scalable, user-focused experiences
         </TextHighlight>
         . As a{' '}
         <TextHighlight
@@ -135,14 +135,14 @@ export default function About() {
           subtitle="Building scalable products using popular frameworks and languages, like React and TypeScript, and practical AI integrations."
           chips={[
             'Next.js',
-            'React',
             'TypeScript',
             'JavaScript',
+            'React',
             'Tailwind CSS',
             'Angular',
             'LLMs / Prompt Engineering',
-            'HTML',
             'CSS',
+            'HTML',
             'PHP',
             'Node.js',
           ]}
@@ -184,7 +184,6 @@ export default function About() {
           subtitle="Ensuring code is reliable and maintainable through rigorous testing and agile collaboration."
           chips={[
             'System Architecture',
-            'Responsive Web Design',
             'CI/CD Pipeline',
             'Git',
             'Scrum / Agile',

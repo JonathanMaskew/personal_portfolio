@@ -19,7 +19,7 @@ export const getHighlightsData = (
     imagery: PillBottle,
     title: 'Architected a Modern, Scalable ePrescribing Infrastructure',
     subtitle: 'Software Engineer @ myhELO',
-    body: 'Re-engineered the ePrescribing infrastructure by re-building the full-stack codebase for increased reliability and a streamlined workflow. The infrastructure now reliably processes around 4,000 prescription transactions each month (and even more providers are to begin using ePrescribe in coming months), with fewer operational issues.',
+    body: 'Re-engineered the ePrescribing infrastructure by re-building the full-stack JavaScript and PHP codebase for increased reliability and a streamlined workflow. The infrastructure now reliably processes around 4,000 prescription transactions each month, with fewer operational issues (with more providers expected to begin using ePrescribe in the coming months).',
     experienceId: 'myhelo',
     highlightChildren: (
       <Button
@@ -77,7 +77,7 @@ export const getHighlightsData = (
     imagery: Megaphone,
     title: 'Engineered a Targeted Communication System',
     subtitle: 'Software Engineer @ Allegion',
-    body: 'Developed a notification system in Angular to enable targeted communications. By integrating APIs with an intuitive interface, administrators could send announcements to specific user groups without the messages getting lost in Teams conversations or emails.',
+    body: 'Developed a notification system in Angular to enable targeted communications. By integrating APIs with an intuitive interface, administrators could send announcements to specific employee groups without the messages getting lost in Teams conversations or emails.',
     experienceId: 'allegion',
     highlightChildren: (
       <Button

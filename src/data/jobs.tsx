@@ -71,7 +71,7 @@ export const getJobsData = (): Experience[] => [
     subtitle: 'Allegion',
     title: 'Software Engineer',
     subheading: 'Intern, May 2023 - August 2023',
-    body: 'Built Angular components and integrated with back-end APIs to enable seamless communication from administrators to employees.',
+    body: 'Built Angular components and integrated with back-end APIs to deliver a seamless announcements system. The system allows administrators to rapidly communicate important updates to employees, preventing announcements from getting lost in Teams threads or emails.',
     keywords: [
       'Angular',
       'Angular Material',
