@@ -156,7 +156,7 @@ export default function About() {
 
         <HighlightHero
           title="Design Engineering"
-          subtitle="With a passion for front-end development, I excel at translating prototypes into production-ready interfaces."
+          subtitle="Bridging the gap between engineering and design by translating complex requirements into intuitive full-stack experiences."
           chips={[
             'Front-end',
             'Tailwind CSS',
