@@ -48,7 +48,7 @@ export default function ChatMessages({ session }: MessagesProps) {
           renderer: 'svg',
           loop: true,
           autoplay: true,
-          path: '/ai_thinking.json',
+          path: '/ai-thinking.json',
           rendererSettings: {
             preserveAspectRatio: 'xMidYMid meet',
           },

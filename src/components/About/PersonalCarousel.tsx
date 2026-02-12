@@ -3,15 +3,15 @@
 import { ChevronRight, Cog, TriangleAlert } from 'lucide-react';
 import { useState } from 'react';
 import Carousel, { CarouselImageItem } from '../Carousel';
-import tennis from '@/assets/images/tennis.jpg';
-import manatee from '@/assets/images/manatee_oof.gif';
-import lucy from '@/assets/images/lucy.png';
-import reeses from '@/assets/images/reeses.jpg';
-import taterTots from '@/assets/images/tater_tots.png';
-import dinosaur from '@/assets/images/raptor_encounter.png';
-import travel from '@/assets/images/travel.png';
-import roundabouts from '@/assets/images/roundabouts.jpg';
-import carouselOfProgress from '@/assets/images/carousel_of_progress.png';
+import tennis from '@/assets/images/personal/tennis.jpg';
+import manatee from '@/assets/images/personal/manatee-oof.gif';
+import lucy from '@/assets/images/personal/lucy.png';
+import reeses from '@/assets/images/personal/reeses.jpg';
+import taterTots from '@/assets/images/personal/tater-tots.png';
+import dinosaur from '@/assets/images/personal/raptor-encounter.png';
+import travel from '@/assets/images/personal/travel.png';
+import roundabouts from '@/assets/images/personal/roundabouts.jpg';
+import carouselOfProgress from '@/assets/images/personal/carousel-of-progress.png';
 import JurassicParkEasterEgg from '../JurassicParkEasterEgg';
 
 export default function PersonalCarousel() {

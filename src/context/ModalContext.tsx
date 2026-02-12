@@ -10,7 +10,7 @@ import React, {
 import type { Experience } from '@/types';
 import Modal from '@/components/Modal';
 import ExperienceDetails from '@/components/Modal/ExperienceDetails';
-import { getJobsData } from '@/data/jobs';
+import { getJobsData, getMoreJobsData } from '@/data/jobs';
 import { getEducationData, getMoreEducationData } from '@/data/education';
 import { getFooterData } from '@/data/footer';
 
@@ -30,13 +30,14 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
   );
 
   const JOBS = useMemo(() => getJobsData(), []);
+  const MORE_JOBS = useMemo(() => getMoreJobsData(), []);
   const EDUCATION = useMemo(() => getEducationData(), []);
   const MORE_EDUCATION = useMemo(() => getMoreEducationData(), []);
   const FOOTER = useMemo(() => getFooterData(), []);
 
   const allExperiences = useMemo(
-    () => [...JOBS, ...EDUCATION, ...MORE_EDUCATION, ...FOOTER],
-    [JOBS, EDUCATION, MORE_EDUCATION, FOOTER]
+    () => [...JOBS, ...MORE_JOBS, ...EDUCATION, ...MORE_EDUCATION, ...FOOTER],
+    [JOBS, MORE_JOBS, EDUCATION, MORE_EDUCATION, FOOTER]
   );
 
   const openedExperience = useMemo(

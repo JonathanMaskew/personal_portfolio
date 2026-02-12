@@ -15,15 +15,15 @@ import {
   Construction,
   ExternalLink,
 } from 'lucide-react';
-import jsLogo from '@/app/Js_logo.png';
-import jsLogoWhite from '@/app/Js_logo_white.png';
-import jsLogoBlack from '@/app/Js_logo_black.png';
-import jonathanCreations from '@/assets/images/Js_page/Jonathan_creations.gif';
-import jonathanAnimation from '@/assets/images/Js_page/Jonathan_animation.gif';
-import jsGif from '@/assets/images/Js_page/Js.gif';
-import jsCreations from '@/assets/images/Js_page/Js_creations.gif';
-import jsAnimation from '@/assets/images/Js_page/Js_animation.gif';
-import jsMulticolor from '@/assets/images/Js_page/Js_multicolor.gif';
+import jsLogo from '@/assets/images/js-page/js-logo.png';
+import jsLogoWhite from '@/assets/images/js-page/js-logo-white.png';
+import jsLogoBlack from '@/assets/images/js-page/js-logo-black.png';
+import jonathanCreations from '@/assets/images/js-page/jonathan-creations.gif';
+import jonathanAnimation from '@/assets/images/js-page/jonathan-animation.gif';
+import jsGif from '@/assets/images/js-page/js.gif';
+import jsCreations from '@/assets/images/js-page/js-creations.gif';
+import jsAnimation from '@/assets/images/js-page/js-animation.gif';
+import jsMulticolor from '@/assets/images/js-page/js-multicolor.gif';
 
 export const getFooterData = (): Experience[] => [
   {

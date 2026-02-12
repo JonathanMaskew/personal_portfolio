@@ -1,15 +1,15 @@
 'use client';
 
 import { motion, type Variants } from 'framer-motion';
-import Computer from '@/assets/images/site_graphics/Computer.svg';
-import CodeLogo from '@/assets/images/site_graphics/Code_logo.svg';
-import ReactLogo from '@/assets/images/site_graphics/React_logo.svg';
-import NextJSLogo from '@/assets/images/site_graphics/NextJS_logo.svg';
-import HTMLLogo from '@/assets/images/site_graphics/HTML_logo.svg';
-import TypeScriptLogo from '@/assets/images/site_graphics/TypeScript_logo.svg';
-import JavaScriptLogo from '@/assets/images/site_graphics/JavaScript_logo.svg';
-import AngularLogo from '@/assets/images/site_graphics/Angular_logo.svg';
-import Stars from '@/assets/images/site_graphics/Stars.svg';
+import Computer from '@/assets/images/site-graphics/computer.svg';
+import CodeLogo from '@/assets/images/site-graphics/code-logo.svg';
+import ReactLogo from '@/assets/images/site-graphics/react-logo.svg';
+import NextJSLogo from '@/assets/images/site-graphics/nextjs-logo.svg';
+import HTMLLogo from '@/assets/images/site-graphics/html-logo.svg';
+import TypeScriptLogo from '@/assets/images/site-graphics/typescript-logo.svg';
+import JavaScriptLogo from '@/assets/images/site-graphics/javascript-logo.svg';
+import AngularLogo from '@/assets/images/site-graphics/angular-logo.svg';
+import Stars from '@/assets/images/site-graphics/stars.svg';
 
 const SkillsComputer = () => {
   const floatingVariants: Variants = {

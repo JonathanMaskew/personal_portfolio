@@ -8,7 +8,7 @@ import { useHashScroll } from '@/hooks/useHashScroll';
 import type React from 'react';
 import HighlightHero from '../HighlightHero';
 import SkillsComputer from './SkillsComputer';
-import SmileyLines from '@/assets/images/site_graphics/Smiley_lines.svg';
+import SmileyLines from '@/assets/images/site-graphics/smiley-lines.svg';
 import { useModalContext } from '@/context/ModalContext';
 
 function TextHighlight({

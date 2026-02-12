@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Experience } from '@/types';
-import htfLogoWhite from '@/assets/images/hack_the_future/htf_logo_white.png';
-import purdueLogo from '@/assets/images/purdue_logo.png';
+import htfLogoWhite from '@/assets/images/experience/hack-the-future/htf-logo-white.png';
+import purdueLogo from '@/assets/images/experience/purdue-logo.png';
 import InnerHighlight from '@/components/InnerHighlight';
 import Carousel, {
   CarouselItem,
@@ -18,53 +18,83 @@ import {
   Trophy,
   SplinePointer,
 } from 'lucide-react';
-import designAndMarketing from '@/assets/images/hack_the_future/design_and_marketing.png';
-import designAndMarketing2 from '@/assets/images/hack_the_future/design_and_marketing_2.png';
-import designAndMarketing3 from '@/assets/images/hack_the_future/design_and_marketing_3.png';
-import designAndMarketing4 from '@/assets/images/hack_the_future/design_and_marketing_4.png';
-import designAndMarketing5 from '@/assets/images/hack_the_future/design_and_marketing_5.png';
-import designAndMarketing6 from '@/assets/images/hack_the_future/design_and_marketing_6.png';
-import eventsAndOutreach from '@/assets/images/hack_the_future/events_and_outreach.png';
-import eventsAndOutreach2 from '@/assets/images/hack_the_future/events_and_outreach_2.png';
-import eventsAndOutreach3 from '@/assets/images/hack_the_future/events_and_outreach_3.png';
-import eventsAndOutreach4 from '@/assets/images/hack_the_future/events_and_outreach_4.png';
-import nonProfitAndMemberRecruitment from '@/assets/images/hack_the_future/non_profit_and_member_recruitment.png';
-import nonProfitAndMemberRecruitment2 from '@/assets/images/hack_the_future/non_profit_and_member_recruitment_2.png';
-import nonProfitAndMemberRecruitment3 from '@/assets/images/hack_the_future/non_profit_and_member_recruitment_3.png';
-import nonProfitAndMemberRecruitment4 from '@/assets/images/hack_the_future/non_profit_and_member_recruitment_4.png';
-import nonProfitAndMemberRecruitment5 from '@/assets/images/hack_the_future/non_profit_and_member_recruitment_5.png';
-import nonProfitAndMemberRecruitment6 from '@/assets/images/hack_the_future/non_profit_and_member_recruitment_6.png';
-import coolVendingMachineFinderPin from '@/assets/images/cool_vending_machine_finder_pin.png';
-import reesesRatings from '@/assets/images/reeses_ratings.png';
-import coolCardGames from '@/assets/images/cool_card_games.png';
-import sundae from '@/assets/images/sundae.png';
-import noblesvilleSchools from '@/assets/images/noblesville_schools.png';
-import nationalHonorsSociety from '@/assets/images/national_honors_society.png';
-import keyClub from '@/assets/images/key_club.png';
+import designAndMarketing from '@/assets/images/experience/hack-the-future/design-and-marketing.png';
+import designAndMarketing2 from '@/assets/images/experience/hack-the-future/design-and-marketing-2.png';
+import designAndMarketing3 from '@/assets/images/experience/hack-the-future/design-and-marketing-3.png';
+import designAndMarketing4 from '@/assets/images/experience/hack-the-future/design-and-marketing-4.png';
+import designAndMarketing5 from '@/assets/images/experience/hack-the-future/design-and-marketing-5.png';
+import designAndMarketing6 from '@/assets/images/experience/hack-the-future/design-and-marketing-6.png';
+import eventsAndOutreach from '@/assets/images/experience/hack-the-future/events-and-outreach.png';
+import eventsAndOutreach1 from '@/assets/images/experience/hack-the-future/events-and-outreach-1.png';
+import eventsAndOutreach2 from '@/assets/images/experience/hack-the-future/events-and-outreach-2.png';
+import eventsAndOutreach3 from '@/assets/images/experience/hack-the-future/events-and-outreach-3.png';
+import eventsAndOutreach4 from '@/assets/images/experience/hack-the-future/events-and-outreach-4.png';
+import nonProfitAndMemberRecruitment from '@/assets/images/experience/hack-the-future/non-profit-and-member-recruitment.png';
+import nonProfitAndMemberRecruitment2 from '@/assets/images/experience/hack-the-future/non-profit-and-member-recruitment-2.png';
+import nonProfitAndMemberRecruitment3 from '@/assets/images/experience/hack-the-future/non-profit-and-member-recruitment-3.png';
+import nonProfitAndMemberRecruitment4 from '@/assets/images/experience/hack-the-future/non-profit-and-member-recruitment-4.png';
+import nonProfitAndMemberRecruitment5 from '@/assets/images/experience/hack-the-future/non-profit-and-member-recruitment-5.png';
+import nonProfitAndMemberRecruitment6 from '@/assets/images/experience/hack-the-future/non-profit-and-member-recruitment-6.png';
+import coolVendingMachineFinderPin from '@/assets/images/experience/cool-vending-machine-finder-pin.png';
+import coolCardGames from '@/assets/images/experience/cool-card-games.png';
+import socialMediaAndDesign1 from '@/assets/images/experience/hack-the-future/social-media-and-design-1.png';
+import socialMediaAndDesign2 from '@/assets/images/experience/hack-the-future/social-media-and-design-2.png';
+import socialMediaAndDesign3 from '@/assets/images/experience/hack-the-future/social-media-and-design-3.png';
+import socialMediaAndDesign4 from '@/assets/images/experience/hack-the-future/social-media-and-design-4.png';
+import reesesRatings from '@/assets/images/personal/reeses-ratings.png';
+import sundae from '@/assets/images/personal/sundae.png';
+import noblesvilleSchools from '@/assets/images/experience/noblesville-schools.png';
+import noblesvilleAthleticClub from '@/assets/images/experience/noblesville-athletic-club-logo.png';
+import texyMexyLogo from '@/assets/images/experience/texy-mexy-logo.png';
+import tennis from '@/assets/images/personal/tennis.jpg';
+import graduation from '@/assets/images/personal/graduation.png';
+import travel from '@/assets/images/personal/travel.png';
+import turkeyRun from '@/assets/images/personal/turkey-run.png';
+import costaRica from '@/assets/images/personal/costa-rica.png';
+import reeses from '@/assets/images/personal/reeses.jpg';
+import reesesShape from '@/assets/images/personal/reeses-shape.png';
+import roundabouts from '@/assets/images/personal/roundabouts.jpg';
+import taterTots from '@/assets/images/personal/tater-tots.png';
+import snowglobe from '@/assets/images/personal/snowglobe.png';
+import manatee from '@/assets/images/personal/manatee-oof.gif';
+import nationalHonorsSociety from '@/assets/images/experience/national-honors-society.png';
+import keyClub from '@/assets/images/experience/key-club.png';
 import { Button } from '@/components/Button';
 import ButtonRow from '@/components/Button/ButtonRow';
 import Chips from '@/components/Chips';
-import htfCarouselOfProgress from '@/assets/images/hack_the_future/htf_carousel_of_progress.png';
-import htfCatapult from '@/assets/images/hack_the_future/htf_catapult.png';
-import htfCodeRound from '@/assets/images/hack_the_future/htf_code_round.png';
-import htfCode from '@/assets/images/hack_the_future/htf_code.png';
-import htfGameshow from '@/assets/images/hack_the_future/htf_gameshow.png';
-import htfGraduation from '@/assets/images/hack_the_future/htf_graduation.png';
-import htfInnovateHer from '@/assets/images/hack_the_future/htf_innovateher.png';
-import htfJurassic from '@/assets/images/hack_the_future/htf_jurassic.png';
-import htfNeon from '@/assets/images/hack_the_future/htf_neon.png';
-import htfProfile from '@/assets/images/hack_the_future/htf_profile.png';
-import htfThankful from '@/assets/images/hack_the_future/htf_thankful.png';
-import htfYourFuture from '@/assets/images/hack_the_future/htf_your_future.png';
-import htfSpooky from '@/assets/images/hack_the_future/htf_spooky.png';
-import htfSnowglobe from '@/assets/images/hack_the_future/htf_snowglobe.png';
-import htfPizza from '@/assets/images/hack_the_future/htf_pizza.png';
-import htfOrnament from '@/assets/images/hack_the_future/htf_ornament.png';
-import htfBackToTheFuture from '@/assets/images/hack_the_future/htf_back_to_the_future.png';
-import htfLogo from '@/assets/images/hack_the_future/htf_logo.png';
-import noblesvilleMillers from '@/assets/images/noblesville_millers.png';
-import coolVendingMachineFinder from '@/assets/images/cool_vending_machine_finder.png';
-import coolVendingMachine from '@/assets/images/cool_vending_machine.png';
+import htfCarouselOfProgress from '@/assets/images/experience/hack-the-future/htf-carousel-of-progress.png';
+import htfCatapult from '@/assets/images/experience/hack-the-future/htf-catapult.png';
+import htfCodeRound from '@/assets/images/experience/hack-the-future/htf-code-round.png';
+import htfCode from '@/assets/images/experience/hack-the-future/htf-code.png';
+import htfGameshow from '@/assets/images/experience/hack-the-future/htf-gameshow.png';
+import htfGraduation from '@/assets/images/experience/hack-the-future/htf-graduation.png';
+import htfInnovateHer from '@/assets/images/experience/hack-the-future/htf-innovateher.png';
+import htfJurassic from '@/assets/images/experience/hack-the-future/htf-jurassic.png';
+import htfNeon from '@/assets/images/experience/hack-the-future/htf-neon.png';
+import htfProfile from '@/assets/images/experience/hack-the-future/htf-profile.png';
+import htfThankful from '@/assets/images/experience/hack-the-future/htf-thankful.png';
+import htfYourFuture from '@/assets/images/experience/hack-the-future/htf-your-future.png';
+import htfSpooky from '@/assets/images/experience/hack-the-future/htf-spooky.png';
+import htfSnowglobe from '@/assets/images/experience/hack-the-future/htf-snowglobe.png';
+import htfPizza from '@/assets/images/experience/hack-the-future/htf-pizza.png';
+import htfOrnament from '@/assets/images/experience/hack-the-future/htf-ornament.png';
+import htfEscapeRoom from '@/assets/images/experience/hack-the-future/htf-escape-room.png';
+import htfCommunity from '@/assets/images/experience/hack-the-future/htf-community.png';
+import htfKeynote from '@/assets/images/experience/hack-the-future/htf-keynote.png';
+import htfJudging from '@/assets/images/experience/hack-the-future/htf-judging.png';
+import htfLunch from '@/assets/images/experience/hack-the-future/htf-lunch.png';
+import htfMentorship from '@/assets/images/experience/hack-the-future/htf-mentorship.png';
+import htfPrizes from '@/assets/images/experience/hack-the-future/htf-prizes.png';
+import htfProjectExhibition from '@/assets/images/experience/hack-the-future/htf-project-exhibition.png';
+import htfRetroGaming from '@/assets/images/experience/hack-the-future/htf-retro-gaming.png';
+import htfTeamBuilding from '@/assets/images/experience/hack-the-future/htf-team-building.png';
+import htfWorkshops from '@/assets/images/experience/hack-the-future/htf-workshops.png';
+import htfCheckIn from '@/assets/images/experience/hack-the-future/htf-check-in.png';
+import htfBackToTheFuture from '@/assets/images/experience/hack-the-future/htf-back-to-the-future.png';
+import htfLogo from '@/assets/images/experience/hack-the-future/htf-logo.png';
+import noblesvilleMillers from '@/assets/images/experience/noblesville-millers.png';
+import coolVendingMachineFinder from '@/assets/images/experience/cool-vending-machine-finder.png';
+import coolVendingMachine from '@/assets/images/experience/cool-vending-machine.png';
 import Image from 'next/image';
 
 interface StatHighlight {
@@ -277,7 +307,7 @@ export const getEducationData = (): Experience[] => [
               imagery={ExternalLink}
               newTab={true}
               text="PDF Collage of Work"
-              clickDetail="/pdfs/htf_collage.pdf"
+              clickDetail="/pdfs/htf-collage.pdf"
               background
               color="var(--color-htf)"
             />
@@ -732,7 +762,7 @@ export const getMoreEducationData = (): Experience[] => [
               imagery={ExternalLink}
               newTab={true}
               text="PDF of Score Sheet"
-              clickDetail="/pdfs/tennis_scoresheet.pdf"
+              clickDetail="/pdfs/tennis-scoresheet.pdf"
               background
               color="var(--color-purdue)"
             />

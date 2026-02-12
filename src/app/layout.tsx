@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     siteName: 'Jonathan Maskew',
     images: [
       {
-        url: '/Js_poster.png',
+        url: '/js-poster.png',
         alt: 'Jonathan Maskew — Software Engineer',
       },
     ],
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     title: "Hi, I'm Jonathan Maskew",
     description:
       'Detail-oriented Software Engineer focused on user-driven front-end web development.',
-    images: ['/Js_poster.png'],
+    images: ['/js-poster.png'],
   },
   alternates: {
     canonical: '/',
@@ -129,7 +129,7 @@ export default function RootLayout({
             '@type': 'Person',
             name: 'Jonathan Maskew',
             url: 'https://jonathanmaskew.com',
-            image: 'https://jonathanmaskew.com/Js_poster.png',
+            image: 'https://jonathanmaskew.com/js-poster.png',
             jobTitle: 'Software Engineer',
             description:
               'Detail-oriented Software Engineer focused on user-driven front-end web development.',

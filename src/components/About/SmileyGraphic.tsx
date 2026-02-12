@@ -1,10 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import GreenThing from '@/assets/images/site_graphics/Green_thing.svg';
-import PurpleThing from '@/assets/images/site_graphics/Purple_thing.svg';
-import BlueThing from '@/assets/images/site_graphics/Blue_thing.svg';
-import Eyes from '@/assets/images/site_graphics/Eyes.svg';
+import GreenThing from '@/assets/images/site-graphics/green-thing.svg';
+import PurpleThing from '@/assets/images/site-graphics/purple-thing.svg';
+import BlueThing from '@/assets/images/site-graphics/blue-thing.svg';
+import Eyes from '@/assets/images/site-graphics/eyes.svg';
 
 const SmileyGraphic = ({ className = '' }: { className?: string }) => {
   const blinkVariants = {

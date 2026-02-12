@@ -10,9 +10,9 @@ import {
   Code,
 } from 'lucide-react';
 import TypewriterText from './TypewriterText';
-import turkeyRun from '@/assets/images/turkey_run.png';
-import costaRica from '@/assets/images/costa_rica.png';
-import graduation from '@/assets/images/graduation.png';
+import turkeyRun from '@/assets/images/personal/turkey-run.png';
+import costaRica from '@/assets/images/personal/costa-rica.png';
+import graduation from '@/assets/images/personal/graduation.png';
 import Image from 'next/image';
 import { useMobile } from '@/hooks/useMobile';
 import { Button } from './Button';

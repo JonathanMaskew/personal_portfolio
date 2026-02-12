@@ -1,9 +1,9 @@
 import type { Experience } from '@/types';
-import myheloLogo from '@/assets/images/myhelo_logo.png';
-import allegionLogo from '@/assets/images/allegion_logo.png';
-import qualifiLogo from '@/assets/images/qualifi_logo.png';
-import texMexyLogo from '@/assets/images/texy_mexy_logo.png';
-import noblesvilleAthleticClubLogo from '@/assets/images/noblesville_athletic_club_logo.png';
+import myheloLogo from '@/assets/images/experience/myhelo-logo.png';
+import allegionLogo from '@/assets/images/experience/allegion-logo.png';
+import qualifiLogo from '@/assets/images/experience/qualifi-logo.png';
+import texMexyLogo from '@/assets/images/experience/texy-mexy-logo.png';
+import noblesvilleAthleticClubLogo from '@/assets/images/experience/noblesville-athletic-club-logo.png';
 import {
   ChefHat,
   ExternalLink,
@@ -95,7 +95,7 @@ export const getJobsData = (): Experience[] => [
           imagery={ExternalLink}
           newTab={true}
           text="PDF of Report Out Presentation"
-          clickDetail="/pdfs/allegion_report_out.pdf"
+          clickDetail="/pdfs/allegion-report-out.pdf"
           background
           color="var(--color-allegion)"
         />
@@ -190,7 +190,7 @@ export const getMoreJobsData = (): Experience[] => [
               imagery={ExternalLink}
               newTab={true}
               text="PDF of Assembly Cheat Sheet"
-              clickDetail="/pdfs/texy_mexy_limited_assembly_cheat_sheet.pdf"
+              clickDetail="/pdfs/texy-mexy-limited-assembly-cheat-sheet.pdf"
               background
               color="var(--color-texy-mexy)"
             />
@@ -198,7 +198,7 @@ export const getMoreJobsData = (): Experience[] => [
               imagery={ExternalLink}
               newTab={true}
               text="PDF of Stovetop Cheat Sheet"
-              clickDetail="/pdfs/texy_mexy_stovetop_cheat_sheet.pdf"
+              clickDetail="/pdfs/texy-mexy-stovetop-cheat-sheet.pdf"
               background
               color="var(--color-texy-mexy)"
             />
@@ -206,7 +206,7 @@ export const getMoreJobsData = (): Experience[] => [
               imagery={ExternalLink}
               newTab={true}
               text="PDF of Product Waste Log"
-              clickDetail="/pdfs/texy_mexy_product_waste_log.pdf"
+              clickDetail="/pdfs/texy-mexy-product-waste-log.pdf"
               background
               color="var(--color-texy-mexy)"
             />
