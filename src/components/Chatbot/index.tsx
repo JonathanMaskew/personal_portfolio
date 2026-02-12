@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ArrowUp, Sparkles, X } from 'lucide-react';
 import { useMobile } from '@/hooks/useMobile';
-import Messages from '@/components/Chatbot/Messages';
+import ChatMessages from './ChatMessages';
 import { lockBodyScroll, unlockBodyScroll } from '@/utils/scrollLock';
 import { useChatSession } from '@/hooks/useChatSession';
 import FloatingButton from '@/components/Button/FloatingButton';
@@ -101,7 +101,7 @@ export default function Chatbot() {
         </button>
 
         <div className="flex-1 min-h-0 overflow-y-auto" data-chat-scroller>
-          <Messages session={session} />
+          <ChatMessages session={session} />
         </div>
 
         <div className="absolute bottom-4 inset-x-4">{formElement}</div>

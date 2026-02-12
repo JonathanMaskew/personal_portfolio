@@ -8,7 +8,7 @@ import { getEducationData, getMoreEducationData } from '@/data/education';
 import Chips from './Chips';
 import { useModalContext } from '@/context/ModalContext';
 
-export default function Work() {
+export default function Education() {
   const { openExperienceModal } = useModalContext();
   const [showMore, setShowMore] = useState<boolean>(false);
 

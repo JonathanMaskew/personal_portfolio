@@ -10,7 +10,7 @@ type MessagesProps = {
   session?: ChatSession;
 };
 
-export default function Messages({ session }: MessagesProps) {
+export default function ChatMessages({ session }: MessagesProps) {
   // Always call hooks unconditionally; prefer prop session when provided
   const fallbackSession = useChatSession();
   const chatSession = session ?? fallbackSession;
