@@ -134,13 +134,12 @@ export default function About() {
           title="Modern Tech Stack"
           subtitle="Building scalable products using popular frameworks and languages, like React and TypeScript, and practical AI integrations."
           chips={[
-            'React',
             'Next.js',
+            'React',
             'TypeScript',
             'JavaScript',
             'Angular',
-            'Agentic AI / LLMs',
-            'Prompt Engineering',
+            'LLMs / Prompt Engineering',
             'HTML',
             'CSS',
             'PHP',

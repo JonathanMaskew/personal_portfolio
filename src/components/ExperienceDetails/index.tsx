@@ -56,20 +56,20 @@ export default function ExperienceDetails({ data }: ExperienceDetailsProps) {
         </ModalSection>
       )}
 
-      {data.coreBullets && data.coreBullets.length > 0 && (
-        <ModalSection icon={ListTodo} title="Core Responsibilities">
+      {data.moreAccomplishments && data.moreAccomplishments.length > 0 && (
+        <ModalSection icon={ClipboardCheck} title="Additional Accomplishments">
           <ul className="list-disc pl-4 space-y-2 text-base leading-tight">
-            {data.coreBullets.map((bullet, i) => (
+            {data.moreAccomplishments.map((bullet, i) => (
               <li key={i}>{bullet}</li>
             ))}
           </ul>
         </ModalSection>
       )}
 
-      {data.moreAccomplishments && data.moreAccomplishments.length > 0 && (
-        <ModalSection icon={ClipboardCheck} title="Additional Accomplishments">
+      {data.coreBullets && data.coreBullets.length > 0 && (
+        <ModalSection icon={ListTodo} title="Core Responsibilities">
           <ul className="list-disc pl-4 space-y-2 text-base leading-tight">
-            {data.moreAccomplishments.map((bullet, i) => (
+            {data.coreBullets.map((bullet, i) => (
               <li key={i}>{bullet}</li>
             ))}
           </ul>

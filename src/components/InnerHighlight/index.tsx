@@ -22,9 +22,13 @@ export default function InnerHighlight({
             <IconComponent size={30} className="text-foreground-2 mt-1" />
           </div>
         )}
-        <div className="flex flex-col text-sm md:text-base">
-          {title && <div className="font-bold font-header">{title}</div>}
-          {text && <div>{text}</div>}
+        <div className="flex flex-col">
+          {title && (
+            <div className="font-bold font-header text-base md:text-lg">
+              {title}
+            </div>
+          )}
+          {text && <div className="text-sm md:text-base">{text}</div>}
         </div>
       </div>
       {children}

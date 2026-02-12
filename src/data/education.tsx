@@ -16,6 +16,7 @@ import {
   SquarePlay,
   Users,
   Trophy,
+  SplinePointer,
 } from 'lucide-react';
 import designAndMarketing from '@/assets/images/hack_the_future/design_and_marketing.png';
 import designAndMarketing2 from '@/assets/images/hack_the_future/design_and_marketing_2.png';
@@ -99,15 +100,14 @@ export const getEducationData = (): Experience[] => [
     subheading: 'Purdue University, March 2022 - May 2024',
     body: 'Managed branding, marketing, and outreach efforts, and mentored four project teams on UX/UI principles.',
     coreBullets: [
-      'Mentored four project teams on UX/UI principles and provided resources to translate Figma mockups into front-end code.',
-      'Revamped outreach efforts and designed marketing in Figma leading to a record-breaking nearly 90% increase in applicants YoY.',
+      'Mentored four project teams on UX/UI principles and created resources to guide translating Figma mockups into front-end code.',
       'Established branded components in React to streamline development and maintain consistency across all team projects.',
     ],
     highlights: [
       {
-        icon: Megaphone,
-        title: 'Achieved a Nearly 90% Increase in Applicants',
-        text: 'Revamped outreach efforts and designed marketing in Figma leading to a record-breaking nearly 90% increase in applicants YoY.',
+        icon: SplinePointer,
+        title: 'Led a Branding Overhaul, Driving Growth by 90%',
+        text: 'Led a branding revamp and increased outreach efforts leading to a record-breaking nearly 90% increase in applicants YoY.',
       },
     ],
     keywords: [
@@ -388,7 +388,8 @@ export const getEducationData = (): Experience[] => [
     subheading: 'Purdue University, Sep 2021 - May 2022',
     body: 'Worked with a team of eight to deliver a website on schedule that allows Leadership Lafayette to collect and browse testimonials.',
     coreBullets: [
-      "Developed front-end interfaces using React that mimicked the Designer's mockups and integrated with a MongoDB database.",
+      'Delivered a testimonial management system to Leadership Lafayette by collaborating with an eight-person agile team.',
+      'Implemented React components by translating the designer’s mockups and integrating with a MongoDB database.',
     ],
     keywords: ['React', 'MongoDB', 'Front-end', 'Full-stack'],
   },

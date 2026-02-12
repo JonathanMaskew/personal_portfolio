@@ -28,6 +28,7 @@ export const getJobsData = (): Experience[] => [
     body: "Engineer new features using a custom JavaScript framework and PHP, empowering doctor's offices nationwide and giving thousands of patients access to their health data.",
     keywords: [
       'JavaScript',
+      'PHP',
       'Front-end',
       'Full-stack',
       'Large Language Models',
@@ -37,31 +38,29 @@ export const getJobsData = (): Experience[] => [
     ],
     highlights: [
       {
-        icon: Sparkles,
-        title: 'Utilize an LLM to Automate User Import',
-        text: 'Pioneer a tool that leverages a Large Language Model to intelligently parse and import user data from an unstructured CSV file, introducing automation to a tedious workflow that significantly reduces user import times.',
+        icon: PillBottle,
+        title: 'Architected a Modern, Scalable ePrescribing Infrastructure',
+        text: 'Re-architect the ePrescribing infrastructure by re-writing the full-stack codebase for increased reliability and a streamlined workflow while processing around 4,000 prescription transactions per month.',
       },
       {
-        icon: PillBottle,
-        title: 'Full-Stack Rebuild of e-Prescribing Infrastructure',
-        text: 'Lead a full-stack rebuild of the e-prescribing infrastructure by rewriting all front-end and back-end files and integrating with third-party APIs, increasing reliability and functionality.',
+        icon: Sparkles,
+        title: 'Pioneered AI Automation for Data Import',
+        text: 'Pioneer an intelligent pipeline that leverages a Large Language Model to parse and import from unstructured user data, eliminating hours of manual data entry.',
       },
       {
         icon: ShieldCheck,
-        title: 'Strengthen Security with Multi-Factor Authentication',
-        text: 'Strengthen security by implementing a reusable multi-factor authentication component that supports email, text, and passkey.',
+        title:
+          'Introduced Multi-Factor Authentication, Strengthening User Security',
+        text: 'Engineer a reusable multi-factor authentication component that supports SMS, email, and passkey, empowering a secure login experience, password reset, provider identity verification, and controlled-substance ePrescribing.',
       },
     ],
     moreAccomplishments: [
-      'Re-architect the site-wide UI template to spotlight crucial patient data, increase layout flexibility, and simplify development.',
-      'Improve user activation by building a workflow to guide new users through password creation, profile setup, and initial training.',
-      'Incorporate persistent logging to visualize real-time loading metrics and locally track events to improve system observability.',
+      'Redesign the site-wide UI template to prioritize critical patient data, increase layout flexibility, and reduce front-end complexity.',
+      'Build a workflow guiding users through password creation, profile setup, and interactive training that is curated based on role to improve user activation rates and reduce support requests.',
     ],
     coreBullets: [
-      // "Engineer new features using a custom JavaScript framework and PHP, empowering doctor's offices nationwide and giving thousands of patients access to their health data.",
-      'Earn high-performance evaluation ratings, recognized for dependability, work quality, initiative, and clear communication.',
       'Streamline design-to-development workflows by establishing a Figma design library that translates to consistent, reusable, and documented front-end components that minimize code redundancy.',
-      'Lead technical growth by conducting interviews, onboarding new engineers, and presenting milestones to executive leadership.',
+      'Drive technical growth by conducting interviews, onboarding new engineers, and presenting milestones to executive leadership.',
     ],
     moreBullets: [],
   },
@@ -83,12 +82,12 @@ export const getJobsData = (): Experience[] => [
     highlights: [
       {
         icon: Megaphone,
-        title: 'Establish Announcements System',
-        text: 'Translated mockups to front-end code for a scalable announcements feature within a component-based Angular site, integrating with back-end APIs, to allow hundreds of users to access announcements and administrators to send targeted announcements.',
+        title: 'Engineered a Targeted Communication System',
+        text: 'Developed an intuitive announcements feature within a component-based Angular site by integrating with back-end APIs, allowing administrators to target messages to hundreds of users.',
       },
     ],
     coreBullets: [
-      'Collaborated daily with Product Owner, Interaction Designer, and Back-end Developer interns, following the Scrum methodology.',
+      'Collaborated with Product Owners, Interaction Designers, and Back-end Developers to translate mockups into production-ready interfaces.',
     ],
     modalChildren: (
       <ButtonRow className="justify-center">
@@ -120,9 +119,8 @@ export const getJobsData = (): Experience[] => [
       'React Testing Library',
     ],
     coreBullets: [
-      // 'Shipped new features and improved usability within a Next.js codebase by translating designs into front-end code.',
-      'Communicated daily with the Engineering and Product teams within a Scrum environment to iterate on features.',
-      'Ensured contributions maintained system reliability and functionality by implementing unit test cases using React Testing Library.',
+      'Shipped front-end features and usability improvements by translating high-fidelity mockups into Next.js components.',
+      'Enforced system reliability by implementing unit test cases using React Testing Library.',
     ],
   },
 ];
@@ -285,7 +283,7 @@ export const getMoreJobsData = (): Experience[] => [
     imagery: noblesvilleAthleticClubLogo,
     title: 'Childcare',
     subheading: 'Part-time, December 2015 - November 2017',
-    body: 'Display excellent leadership skills while monitoring a room of kids of all ages while parents exercised in various other parts of the building.',
+    body: 'Displayed excellent leadership skills while monitoring a room of kids of all ages while parents exercised in various other parts of the building.',
     keywords: ['Leadership'],
     coreBullets: [],
   },

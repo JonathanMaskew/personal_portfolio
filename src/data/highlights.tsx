@@ -3,12 +3,10 @@ import type { Experience } from '@/types';
 import {
   PillBottle,
   SplinePointer,
-  UserPlus,
   Megaphone,
-  LayoutTemplate,
   Plus,
   Sparkles,
-  HandHeart,
+  Shield,
 } from 'lucide-react';
 import { Button } from '@/components/Button';
 
@@ -21,7 +19,7 @@ export const getHighlightsData = (
     imagery: PillBottle,
     title: 'Architected a Modern, Scalable ePrescribing Infrastructure',
     subtitle: 'Software Engineer @ myhELO',
-    body: 'Re-engineered the e-prescribing infrastructure by migrating legacy code to a full-stack architecture for increased reliability and a streamlined workflow.',
+    body: 'Re-engineered the ePrescribing infrastructure by re-building the full-stack codebase for increased reliability and a streamlined workflow. The infrastructure now reliably processes around 4,000 prescription transactions each month (and even more providers are to begin using ePrescribe in coming months), with fewer operational issues.',
     experienceId: 'myhelo',
     highlightChildren: (
       <Button
@@ -35,30 +33,32 @@ export const getHighlightsData = (
     ),
   },
   {
-    id: 'htf-outreach',
-    color: 'var(--color-htf)',
-    imagery: SplinePointer,
-    title: 'Led a Branding Overhaul, Driving Growth by 90%',
-    subtitle: 'Design Director @ Hack the Future',
-    body: 'Unified branding and messaging across print, digital, and social presences. This cohesive, strategic approach shattered records, bringing a nearly 90% year-over-year increase in applicants.',
-    experienceId: 'htf-design-director',
-    highlightChildren: (
-      <Button
-        imagery={Plus}
-        text="More Design Director"
-        clickDetail={() => {
-          openExperienceModal('htf-design-director');
-        }}
-      />
-    ),
-  },
-  {
     id: 'myhelo-llm',
     color: 'var(--color-myhelo)',
     imagery: Sparkles,
     title: 'Pioneered AI Automation for Data Imports',
     subtitle: 'Software Engineer @ myhELO',
-    body: 'Engineered an intelligent pipeline that leverages a Large Language Model to parse and import unstructured user data. This agentic workflow introduced automation to a tedious task, reducing manual entry bottlenecks.',
+    body: 'Implemented an intelligent pipeline that leverages a Large Language Model to parse and import unstructured user data. This LLM-assisted import tool introduced automation to a tedious task, eliminating hours of manual data entry.',
+    experienceId: 'myhelo',
+    highlightChildren: (
+      <Button
+        imagery={Plus}
+        text="More myhELO"
+        color="var(--color-myhelo)"
+        clickDetail={() => {
+          openExperienceModal('myhelo');
+        }}
+      />
+    ),
+  },
+  {
+    id: 'strengthened-user-security',
+    color: 'var(--color-myhelo)',
+    imagery: Shield,
+    title:
+      'Introduced Multi-Factor Authentication, Strengthening User Security',
+    subtitle: 'Software Engineer @ myhELO',
+    body: 'Built a reusable multi-factor authentication system that supports SMS, email, and passkey authentication methods. Empowers a more secure login experience and password reset, and new features such as provider identity verification and ePrescribing of controlled substances.',
     experienceId: 'myhelo',
     highlightChildren: (
       <Button
@@ -75,9 +75,9 @@ export const getHighlightsData = (
     id: 'allegion-announcements',
     color: 'var(--color-allegion)',
     imagery: Megaphone,
-    title: 'Introduced a Targeted Communication System',
+    title: 'Engineered a Targeted Communication System',
     subtitle: 'Software Engineer @ Allegion',
-    body: 'Developed a notification system in Angular to enable targeted communications. By integrating APIs with an intuitive interface, administrators could send announcements to specific user groups.',
+    body: 'Developed a notification system in Angular to enable targeted communications. By integrating APIs with an intuitive interface, administrators could send announcements to specific user groups without the messages getting lost in Teams conversations or emails.',
     experienceId: 'allegion',
     highlightChildren: (
       <Button
@@ -90,23 +90,41 @@ export const getHighlightsData = (
     ),
   },
   {
-    id: 'this-site',
-    color: 'var(--color-generic)',
-    imagery: HandHeart,
-    title: 'Designed and Developed an Interactive Portfolio',
-    subtitle: 'Independently built this website',
-    body: 'Designed from scratch and built using Next.js and TypeScript. This fully responsive site goes beyond a showcase, serving as a live demonstration of modern front-end frameworks, custom design systems, and integrated AI features.',
-    experienceId: 'this-site',
+    id: 'htf-outreach',
+    color: 'var(--color-htf)',
+    imagery: SplinePointer,
+    title: 'Led a Branding Overhaul, Driving Growth by 90%',
+    subtitle: 'Design Director @ Hack the Future',
+    body: 'Unified branding and messaging across print, digital, and social presences. This strategic approach increased visibility and interest, leading to a record-shattering nearly 90% year-over-year increase in applicants.',
+    experienceId: 'htf-design-director',
     highlightChildren: (
       <Button
         imagery={Plus}
-        text="About this Site"
+        text="More Design Director"
         clickDetail={() => {
-          openExperienceModal('this-site');
+          openExperienceModal('htf-design-director');
         }}
       />
     ),
   },
+  // {
+  //   id: 'this-site',
+  //   color: 'var(--color-generic)',
+  //   imagery: HandHeart,
+  //   title: 'Designed and Developed an Interactive Portfolio',
+  //   subtitle: 'Independently built this website',
+  //   body: 'Designed from scratch and built using Next.js and TypeScript. This fully responsive site goes beyond a showcase, serving as a live demonstration of modern front-end frameworks, custom design systems, and integrated AI features.',
+  //   experienceId: 'this-site',
+  //   highlightChildren: (
+  //     <Button
+  //       imagery={Plus}
+  //       text="About this Site"
+  //       clickDetail={() => {
+  //         openExperienceModal('this-site');
+  //       }}
+  //     />
+  //   ),
+  // },
   // {
   //   id: 'myhelo-components',
   //   color: 'var(--color-myhelo)',

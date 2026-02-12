@@ -89,13 +89,13 @@ export const getFooterData = (): Experience[] => [
             apparent what is interactable by affecting the border. Certain
             actions, such as clicking on content, have slight animations to help
             illustrate the result of the user's action. And when content loads
-            or is scrolled into view, it slowly fades into view, providng a
+            or is scrolled into view, it slowly fades into view, providing a
             sense of polish and professionalism.
           </ModalSection>
           <ModalSection icon={MousePointer} title="Usability">
             From the getgo, I wanted this site to be practical and intuitive,
-            demonstrating my skills and personlity while striking a sense of
-            real-world professionalism. I intetionally avoided cluttering it
+            demonstrating my skills and personality while striking a sense of
+            real-world professionalism. I intentionally avoided cluttering it
             with fancy technologies, contrarian user interface choices, or
             complex interactivity. Rather, I focused on a real-world, practical
             implementation, with a focus on the content. Of course, that
@@ -106,7 +106,7 @@ export const getFooterData = (): Experience[] => [
             In the modern age, it's almost certain this site would be viewed on
             a variety of devices, including phones, tablets, and desktops.
             Therefore, I built the site to not only be fully responsive, but to
-            be adjust the layout of the site for the device. For example, on
+            adjust the layout of the site for the device. For example, on
             desktop, navigation lives in the sidebar, hover effects help
             indicate interactivity, and content is displayed in a grid. On
             mobile, however, navigation lives in the top bar, padding is
@@ -119,7 +119,7 @@ export const getFooterData = (): Experience[] => [
             <div>
               I think AI is a very powerful tool that will continue to change
               the workforce and the world, and I believe it is important to be
-              transparent about it's use. My use of AI is as a tool; I{' '}
+              transparent about its use. My use of AI is as a tool; I{' '}
               <span className="italic">refuse</span> to use the term
               vibe-coding, preferring to think of it as AI-assisted development,
               where I fully understand and vet all AI-contributions. AI is not
@@ -133,7 +133,7 @@ export const getFooterData = (): Experience[] => [
               me, and all content was curated by me.{' '}
               <span className="italic font-bold">
                 Any AI-contributed code was well-understood to increase my
-                understanding and abilites, thoroughly vetted, and adapted as I
+                understanding and abilities, thoroughly vetted, and adapted as I
                 saw fit.
               </span>
             </div>
@@ -248,8 +248,8 @@ export const getFooterData = (): Experience[] => [
             Ultimately, "J's Page" and the creativity surrounding it contributed
             to my decision to pursue a degree in Computer Science and a career
             in Software Engineering, where I now understand the powerful code
-            behind these sites. And, of course, now withold much greater
-            capabilities and knowledge, to build and contribute to practival and
+            behind these sites. And, of course, now wield much greater
+            capabilities and knowledge, to build and contribute to practical and
             powerful products.
           </div>
           <div>
@@ -257,7 +257,7 @@ export const getFooterData = (): Experience[] => [
             as a more long-term form of record-keeping, and the J's Page of
             yesterday was no more. As I work to build a new presence, J's Page
             has evolved into the site you are presented with here today. And who
-            we know what the J's Page of tomorrow may look like ('Augmented
+            knows what the J's Page of tomorrow may look like ('Augmented
             Reality', perhaps?)
           </div>
         </div>
