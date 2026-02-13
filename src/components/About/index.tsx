@@ -156,7 +156,7 @@ export default function About() {
 
         <HighlightHero
           title="Design Engineering"
-          subtitle="Bridging the gap between engineering and design by translating complex requirements into intuitive full-stack experiences."
+          subtitle="Bridging the gap between engineering and design by translating complex requirements into intuitive experiences."
           chips={[
             'Front-end',
             'Tailwind CSS',
