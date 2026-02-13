@@ -133,7 +133,7 @@ export function CarouselImageItem({
             className="flex flex-col gap-2 pl-2 border-l-2"
             style={{ borderColor: color }}
           >
-            {text && <div className="text-xs leading-tight">{text}</div>}
+            {text && <div className="text-xs">{text}</div>}
             {children}
           </div>
         )}

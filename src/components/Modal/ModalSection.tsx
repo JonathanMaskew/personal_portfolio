@@ -21,7 +21,7 @@ export default function ModalSection({
         )}
         <div className="font-bold text-xl lg:text-2xl font-header">{title}</div>
       </div>
-      <div className="flex flex-col gap-6">{children}</div>
+      <div className="flex flex-col gap-6 text-base">{children}</div>
     </div>
   );
 }

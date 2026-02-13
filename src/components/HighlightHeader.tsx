@@ -65,7 +65,7 @@ export default function HighlightHeader({
         <div className="flex flex-col">
           {title && (
             <div
-              className={`font-bold text-xl lg:text-2xl font-header leading-tight ${isFeature ? 'mb-2' : ''}`}
+              className={`font-bold text-xl lg:text-2xl font-header ${isFeature ? 'mb-2' : ''}`}
             >
               {isFeature ? (
                 <span
@@ -84,18 +84,10 @@ export default function HighlightHeader({
             </div>
           )}
           {subtitle && (
-            <div
-              className={`text-sm md:text-base opacity-80 ${!isFeature ? 'leading-tight' : ''}`}
-            >
-              {subtitle}
-            </div>
+            <div className={`text-sm md:text-base opacity-80`}>{subtitle}</div>
           )}
           {subheading && (
-            <div
-              className={`text-xs md:text-sm opacity-80 ${!isFeature ? 'leading-tight' : ''}`}
-            >
-              {subheading}
-            </div>
+            <div className={`text-xs md:text-sm opacity-80`}>{subheading}</div>
           )}
         </div>
       )}

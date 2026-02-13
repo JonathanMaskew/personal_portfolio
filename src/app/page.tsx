@@ -57,7 +57,8 @@ export default function Home() {
       <section id="about" data-reveal>
         <About />
       </section>
-      <section id="highlights" data-reveal>
+      {/* Hijack in some extra padding to make it look right since we added a background to the Highlights section */}
+      <section className="pt-8 md:pt-12" id="highlights" data-reveal>
         <Highlights />
       </section>
       <section id="work" data-reveal>

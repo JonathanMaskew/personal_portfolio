@@ -36,7 +36,7 @@ export default function PersonalCarousel() {
             color="var(--color-primary)"
             onClick={() => setShowJurassicParkEasterEgg(true)}
           >
-            <div className="flex flex-col gap-1 text-xs leading-tight">
+            <div className="flex flex-col gap-1 text-xs">
               <div className="flex items-center gap-2 font-bold text-red-500">
                 {' '}
                 <TriangleAlert size={14} className="animate-urgent-flash" />

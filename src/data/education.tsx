@@ -295,13 +295,21 @@ export const getEducationData = (): Experience[] => [
     modalChildren: (
       <div className="flex flex-col gap-10">
         <ModalSection icon={ImageIcon} title="Design & Branding Summary">
-          <div className="text-sm">
+          <div>
             The core of my work as Design Director, I created all graphics for
             the club, including branding, flyers, posters, social media posts,
             t-shirts, mugs, buttons, stickers, and more. Below you can scroll
             through the Year in Review posts I created that summarize my work,
             or navigate to a full listing.
           </div>
+          <Carousel color="var(--color-htf)">
+            <CarouselImageItem image={designAndMarketing} size={256} />
+            <CarouselImageItem image={designAndMarketing2} size={256} />
+            <CarouselImageItem image={designAndMarketing3} size={256} />
+            <CarouselImageItem image={designAndMarketing4} size={256} />
+            <CarouselImageItem image={designAndMarketing5} size={256} />
+            <CarouselImageItem image={designAndMarketing6} size={256} />
+          </Carousel>
           <ButtonRow className="justify-center">
             <Button
               imagery={ExternalLink}
@@ -320,18 +328,10 @@ export const getEducationData = (): Experience[] => [
               color="var(--color-htf)"
             />
           </ButtonRow>
-          <Carousel color="var(--color-htf)">
-            <CarouselImageItem image={designAndMarketing} size={256} />
-            <CarouselImageItem image={designAndMarketing2} size={256} />
-            <CarouselImageItem image={designAndMarketing3} size={256} />
-            <CarouselImageItem image={designAndMarketing4} size={256} />
-            <CarouselImageItem image={designAndMarketing5} size={256} />
-            <CarouselImageItem image={designAndMarketing6} size={256} />
-          </Carousel>
         </ModalSection>
 
         <ModalSection icon={Megaphone} title="Events & Outreach Summary">
-          <div className="text-sm">
+          <div>
             Outreach was a team effort, but largely fell under the Design
             Director role. After all, branding is the first impression. We made
             significant efforts to spread our footprint, partnering with other
@@ -352,7 +352,7 @@ export const getEducationData = (): Experience[] => [
           icon={Users}
           title="Non-Profit & Member Recruitment Summary"
         >
-          <div className="text-sm">
+          <div>
             We broke records in terms of interest and applicants, largely due to
             our revamped outreach efforts.
           </div>
@@ -384,7 +384,7 @@ export const getEducationData = (): Experience[] => [
           </Carousel>
         </ModalSection>
         <ModalSection icon={SquarePlay} title="23-24 Year in Review Video">
-          <div className="text-sm">
+          <div>
             Using photos taken throughout the year, I created a Year in Review
             video to showcase the club&apos;s accomplishments.
           </div>
@@ -401,7 +401,7 @@ export const getEducationData = (): Experience[] => [
             />
           </div>
         </ModalSection>
-        <div className="text-sm">
+        <div>
           Altogether, our ambitious efforts to grow the club were a success, and
           we&apos;ve continued to see the club grow after our graduation as our
           efforts led to new opportunities for the club.
@@ -480,7 +480,7 @@ export const getMoreEducationData = (): Experience[] => [
     modalChildren: (
       <div className="flex flex-col gap-10">
         <ModalSection icon={ImageIcon} title="Branding & Graphics">
-          <div className="text-sm">
+          <div>
             I designed a logo for this class project, and was largely in charge
             of front-end development, therefore guiding much of the UI.
           </div>
@@ -533,7 +533,7 @@ export const getMoreEducationData = (): Experience[] => [
     modalChildren: (
       <div className="flex flex-col gap-10">
         <ModalSection icon={BookOpen} title="Ideation">
-          <div className="text-sm">
+          <div>
             First things first, I had a dream. Proposing the dream is the only
             way to make it a reality.
           </div>
@@ -548,7 +548,7 @@ export const getMoreEducationData = (): Experience[] => [
         </ModalSection>
 
         <ModalSection icon={BookOpen} title="Need-finding Report">
-          <div className="text-sm">
+          <div>
             Next, we needed to know whether my dream deserved to be a reality.
             We completed interviews and various other need-finding activities to
             determine what users are looking for in this product.
@@ -582,7 +582,7 @@ export const getMoreEducationData = (): Experience[] => [
         </ModalSection>
 
         <ModalSection icon={BookOpen} title="Prototype Design Report">
-          <div className="text-sm">
+          <div>
             Now that we had a better idea of what users were looking for, it was
             time to design the platform.
           </div>
@@ -634,7 +634,7 @@ export const getMoreEducationData = (): Experience[] => [
         </ModalSection>
 
         <ModalSection icon={BookOpen} title="User Study Report">
-          <div className="text-sm">
+          <div>
             With a platform designed, we needed to see if we had met users needs
             and that users understood how to use the platform.
           </div>
@@ -691,9 +691,7 @@ export const getMoreEducationData = (): Experience[] => [
         </ModalSection>
 
         <ModalSection icon={BookOpen} title="Final Report">
-          <div className="text-sm">
-            Bringing everything we&apos;ve learned to a close
-          </div>
+          <div>Bringing everything we&apos;ve learned to a close</div>
           <ButtonRow>
             <Button
               imagery={ExternalLink}
