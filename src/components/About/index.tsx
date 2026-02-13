@@ -7,9 +7,8 @@ import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import { useHashScroll } from '@/hooks/useHashScroll';
 import type React from 'react';
 import HighlightHero from '../HighlightHero';
-import SkillsComputer from './SkillsComputer';
-import SmileyLines from '@/assets/images/site-graphics/smiley-lines.svg';
 import { useModalContext } from '@/context/ModalContext';
+import { getAboutData } from '@/data/about';
 
 function TextHighlight({
   children,
@@ -61,6 +60,7 @@ function TextUnderline({
 export default function About() {
   const { scrollToHash } = useHashScroll();
   const { openExperienceModal } = useModalContext();
+  const aboutData = getAboutData();
 
   return (
     <SectionWrapper>
@@ -130,78 +130,35 @@ export default function About() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-7 w-full">
-        <HighlightHero
-          title="Modern Tech Stack"
-          subtitle="Building scalable products using popular frameworks and languages, like React and TypeScript, and practical AI integrations."
-          chips={[
-            'Next.js',
-            'TypeScript',
-            'JavaScript',
-            'React',
-            'Tailwind CSS',
-            'Angular',
-            'LLMs / Prompt Engineering',
-            'CSS',
-            'HTML',
-            'PHP',
-            'Node.js',
-          ]}
-          className="md:row-span-2"
-          color="var(--color-generic)"
-        >
-          <div className="w-full flex items-end justify-center -mt-20">
-            <SkillsComputer />
-          </div>
-        </HighlightHero>
+        {aboutData.map((data) => {
+          const styles: {
+            className?: string;
+            subtitleClassName?: string;
+            chipsClassName?: string;
+          } =
+            {
+              'modern-tech-stack': { className: 'md:row-span-2' },
+              'design-engineering': {
+                subtitleClassName: 'max-w-[70%]',
+                chipsClassName: 'max-w-[55%]',
+              },
+            }[data.id] || {};
 
-        <HighlightHero
-          title="Design Engineering"
-          subtitle="Bridging the gap between engineering and design by translating complex requirements into intuitive experiences."
-          chips={[
-            'Front-end',
-            'Tailwind CSS',
-            'Core Web Vitals',
-            'UX/UI Design',
-            'Figma',
-            'User Research',
-            'Prototyping',
-            'Accessibility',
-            'Branding',
-          ]}
-          subtitleClassName="max-w-[70%]"
-          chipsClassName="max-w-[55%]"
-          color="var(--color-generic)"
-        >
-          <img
-            src={SmileyLines.src}
-            alt="Smiley"
-            className="absolute bottom-0 right-2 w-[40%] h-auto max-h-[220px] object-contain"
-          />
-        </HighlightHero>
-
-        <HighlightHero
-          title="Production-Ready Code"
-          subtitle="Ensuring code is reliable and maintainable through rigorous testing and agile collaboration."
-          chips={[
-            'System Architecture',
-            'CI/CD Pipeline',
-            'Git',
-            'Scrum / Agile',
-            'Code Quality & Reviews',
-            'APIs',
-            'End-to-End Testing',
-            'Error Monitoring',
-            'Web Security',
-          ]}
-          color="var(--color-generic)"
-          // actionButton={
-          //   <Button
-          //     text="Jump to Work"
-          //     imagery={ArrowDown}
-          //     clickDetail="#work"
-          //   />
-          // }
-        />
+          return (
+            <HighlightHero
+              key={data.id}
+              title={data.title || ''}
+              subtitle={data.subtitle}
+              chips={data.keywords}
+              className={styles.className}
+              subtitleClassName={styles.subtitleClassName}
+              chipsClassName={styles.chipsClassName}
+              color={data.color}
+            >
+              {data.highlightChildren}
+            </HighlightHero>
+          );
+        })}
       </div>
     </SectionWrapper>
   );

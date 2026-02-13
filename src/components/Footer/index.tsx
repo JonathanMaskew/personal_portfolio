@@ -31,8 +31,7 @@ export default function Footer() {
       title="I hope to hear from you!"
       subtext={
         <div className="flex flex-col gap-2">
-          Please don&apos;t hesitate to reach out. I&apos;d love to connect to
-          discuss anything and everything!
+          I&apos;d love to connect to discuss anything and everything!
           <ButtonRow>
             {SECONDARY_NAV_ITEMS.map((item) => {
               return (

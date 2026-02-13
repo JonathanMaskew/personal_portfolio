@@ -154,7 +154,7 @@ export const generateChatContext = (): string => {
   highlights.forEach((h) => {
     let highlightStr = `${h.title || ''} | ${h.subtitle || ''}`;
     if (h.body) {
-      highlightStr += `\n\n->Descriptive Bullet:\n- ${h.body}`;
+      highlightStr += `\n\n->Summary:\n- ${h.body}`;
     }
     highlightStrings.push(highlightStr);
   });

@@ -312,7 +312,7 @@ export const generateChatContext = (): string => {
     let jobStr = `${job.title || ''} | ${job.subtitle || ''} (${job.subheading || ''})`;
 
     if (job.body) {
-      jobStr += `\n\n->Descriptive Bullet:\n- ${job.body}`;
+      jobStr += `\n\n->Summary:\n- ${job.body}`;
     }
 
     if (job.coreBullets && job.coreBullets.length > 0) {
@@ -321,7 +321,7 @@ export const generateChatContext = (): string => {
     }
 
     if (job.highlights && job.highlights.length > 0) {
-      jobStr += '\n\n->Highlighted Accomplishments:\n';
+      jobStr += '\n\n->Highlights:\n';
       jobStr += job.highlights.map((h) => `- ${h.title}: ${h.text}`).join('\n');
     }
 

@@ -802,12 +802,17 @@ export const generateChatContext = (): string => {
 
   // Leadership & Projects
   const projectStrings: string[] = [];
-  const allProjects = [...projectItems, ...otherItems];
+  const allProjects = [
+    ...educationItems,
+    ...hsItems,
+    ...projectItems,
+    ...otherItems,
+  ];
   allProjects.forEach((item) => {
     let itemStr = `${item.title || ''} | ${item.subtitle || ''} (${item.subheading || ''})`;
 
     if (item.body) {
-      itemStr += `\n\n->Descriptive Bullet:\n- ${item.body}`;
+      itemStr += `\n\n->Summary:\n- ${item.body}`;
     }
 
     if (item.coreBullets && item.coreBullets.length > 0) {
@@ -816,15 +821,26 @@ export const generateChatContext = (): string => {
     }
 
     if (item.highlights && item.highlights.length > 0) {
-      itemStr += `\n\n->Highlighted Accomplishments:\n`;
+      itemStr += '\n\n->Highlights:\n';
       itemStr += item.highlights
         .map((h) => `- ${h.title}: ${h.text}`)
         .join('\n');
     }
 
+    if (item.moreAccomplishments && item.moreAccomplishments.length > 0) {
+      itemStr += '\n\n->Additional Accomplishments:\n';
+      itemStr += item.moreAccomplishments.map((ma) => `- ${ma}`).join('\n');
+    }
+
+    if (item.moreBullets && item.moreBullets.length > 0) {
+      itemStr += '\n\n->More...:\n';
+      itemStr += item.moreBullets.map((mb) => `- ${mb}`).join('\n');
+    }
+
     if (item.keywords && item.keywords.length > 0) {
       itemStr += `\n\n->Keywords: ${item.keywords.join(', ')}`;
     }
+
     projectStrings.push(itemStr);
   });
 
@@ -853,7 +869,7 @@ export const generateChatContext = (): string => {
     }
 
     if (item.body) {
-      itemStr += `\n\n->Descriptive Bullet:\n- ${item.body}`;
+      itemStr += `\n\n->Summary:\n- ${item.body}`;
     }
 
     educationStrings.push(itemStr);

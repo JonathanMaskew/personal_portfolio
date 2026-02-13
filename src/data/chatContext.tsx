@@ -2,6 +2,7 @@ import { generateChatContext as generateJobsContext } from './jobs';
 import { generateChatContext as generateEducationContext } from './education';
 import { generateChatContext as generateNavContext } from './nav';
 import { generateChatContext as generateHighlightsContext } from './highlights';
+import { generateChatContext as generateAboutContext } from './about';
 
 const instructionPrompt = `You are an AI assistant for the professional portfolio website of Jonathan Maskew, a Software Engineer. Your primary purpose is to answer questions from visitors, such as recruiters and hiring managers, about Jonathan's skills, experience, and projects.
 
@@ -61,41 +62,6 @@ Beyond code, Jonathan has a robust skillset spanning website design, user resear
 - Website: jonathanmaskew.com
 `;
 
-const generateSkillsSummary = (): string => {
-  const skills = [
-    'Next.js',
-    'TypeScript',
-    'JavaScript',
-    'React',
-    'Tailwind CSS',
-    'Angular',
-    'LLMs / Prompt Engineering',
-    'CSS',
-    'HTML',
-    'PHP',
-    'Node.js',
-    'Front-end',
-    'Core Web Vitals',
-    'UX/UI Design',
-    'Figma',
-    'User Research',
-    'Prototyping',
-    'Accessibility',
-    'Branding',
-    'System Architecture',
-    'CI/CD Pipeline',
-    'Git',
-    'Scrum / Agile',
-    'Code Quality & Reviews',
-    'APIs',
-    'End-to-End Testing',
-    'Error Monitoring',
-    'Web Security',
-  ];
-
-  return `-| Skills Summary |-\n\n->Combined Skills & Technologies:\n${skills.join(', ')}`;
-};
-
 const interestsPrompt = `-| Personal Interests & Fun Facts |-
 
 For a more personal touch, here are a few of Jonathan's interests:
@@ -111,19 +77,27 @@ For a more personal touch, here are a few of Jonathan's interests:
 
 const footerContextPrompt = `-| Details from the 'More' Section |-
 
-This part of the site contains additional details about Jonathan's personal brand and the portfolio site itself.
-
-- **Topic: About This Website (Built with Passion):** I take great pride in my work and fully dedicate myself to my projects to achieve the best possible output. I put immense thought into every detail, and it is my hope that these intentional details make a difference. I hope to detail some of my thought processes and how they impacted this site below. This site was developed for one purpose: to showcase, well, me! I wanted to not only provide an overview of my skills, experiences, and interests, but also demonstrate my technical skills and passion for design/product-focused development.
+About This Website (Built with Passion)
+  -> Summary:
+  Every aspect of this website was conceptualized, designed, and built by me - no templates, no portfolio builders. From the layout to the theming, and everything in between, every aspect of the site was implemented with purpose, ensuring a delightful yet practical experience.
+  
+  -> Bullets:
+  - I take great pride in my work and fully dedicate myself to my projects to achieve the best possible output. I put immense thought into every detail, and it is my hope that these intentional details make a difference. I hope to detail some of my thought processes and how they impacted this site below. This site was developed for one purpose: to showcase, well, me! I wanted to not only provide an overview of my skills, experiences, and interests, but also demonstrate my technical skills and passion for design/product-focused development.
   - **Navigation:** In terms of navigation, I felt that no content on the site is inherently more important, it's all contributing to the same goal - to gain an understanding of me. I want visitors to be able to access the core content fast, not have to find it. So, rather than separate it into pages, I opted for a single, scrollable page that highlights various aspects of my accomplishments, highlighting the core content with the ability to click into more information, ultimately providing a holistic view of me.
   - **Theming:** I want the site to feel lively and engaging, not monotonous, while remaining engaging, professional, and accessible. With the focus being on the content, I chose to use colors that reflected that of the content, following their branding colors. This helps to tie together related content in separate sections through the familiarity of their colors, while differentiating it from content unrelated content nearby. I additionally strategically used gradients to call attention to certain items, differentiating it through the emotional impact of the gradient. If you click around a bit, you may even find some Easter eggs that affect the theme of the site!
   - **Interactivity:** Some of the most popular systems seem to place a focus on interactivity, as they provide better context and confirmation to a user. Little interactions and animations make the site feel friendly, engaging, and lively. Hovering over content makes it apparent what is interactable by affecting the border. Certain actions, such as clicking on content, have slight animations to help illustrate the result of the user's action. And when content loads or is scrolled into view, it slowly fades into view, providng a sense of polish and professionalism.
-  - **Usability:** From the getgo, I wanted this site to be practical and intuitive, demonstrating my skills and personlity while striking a sense of real-world professionalism. I intetionally avoided cluttering it with fancy technologies, contrarian user interface choices, or complex interactivity. Rather, I focused on a real-world, practical implementation, with a focus on the content. Of course, that doesn't mean the site couldn't be beautiful, interactive, and engaging!
-  - **Responsiveness:** In the modern age, it's almost certain this site would be viewed on a variety of devices, including phones, tablets, and desktops. Therefore, I built the site to not only be fully responsive, but to be adjust the layout of the site for the device. For example, on desktop, navigation lives in the sidebar, hover effects help indicate interactivity, and content is displayed in a grid. On mobile, however, navigation lives in the top bar, padding is reduced, etc.
-  - **Technology:** I built the site with Next.js, knowing that it's a popular, modern framework, perfect for a front-end portfolio. I also used Tailwind CSS to style items efficiently. I think AI is a very powerful tool that will continue to change the workforce and the world, and I believe it is important to be transparent about it's use. My use of AI is as a tool; I refuse to use the term vibe-coding, preferring to think of it as AI-assisted development, where I fully understand and vet all AI-contributions. AI is not to replace my own work nor limit my critical thinking, but rather increase my productivity and efficiency, aiding my abilities and increasing my understanding rather than replacing. This site contains NO AI-generated text, images, or content. The design, layout, theming - all design decisions - were made by me, and all content was curated by me. Any AI-contributed code was well-understood to increase my understanding and abilities, thoroughly vetted, and adapted as I saw fit.
+  - **Usability:** From the getgo, I wanted this site to be practical and intuitive, demonstrating my skills and personality while striking a sense of real-world professionalism. I intentionally avoided cluttering it with fancy technologies, contrarian user interface choices, or complex interactivity. Rather, I focused on a real-world, practical implementation, with a focus on the content. Of course, that doesn't mean the site couldn't be beautiful, interactive, and engaging!
+  - **Responsiveness:** In the modern age, it's almost certain this site would be viewed on a variety of devices, including phones, tablets, and desktops. Therefore, I built the site to not only be fully responsive, but to adjust the layout of the site for the device. For example, on desktop, navigation lives in the sidebar, hover effects help indicate interactivity, and content is displayed in a grid. On mobile, however, navigation lives in the top bar, padding is reduced, etc.
+  - **Technology:** I built the site with Next.js, knowing that it's a popular, modern framework, perfect for a front-end portfolio, as well as TypeScript. I also used Tailwind CSS to style items efficiently. I think AI is a very powerful tool that will continue to change the workforce and the world, and I believe it is important to be transparent about it's use. My use of AI is as a tool; I refuse to use the term vibe-coding, preferring to think of it as AI-assisted development, where I fully understand and vet all AI-contributions. AI is not to replace my own work nor limit my critical thinking, but rather increase my productivity and efficiency, aiding my abilities and increasing my understanding rather than replacing. This site contains NO AI-generated text, images, or content. The design, layout, theming - all design decisions - were made by me, and all content was curated by me. Any AI-contributed code was well-understood to increase my understanding and abilities, thoroughly vetted, and adapted as I saw fit.
   - **Always Evolving:** As various experiences continue to shape me, and inspiration continues to strike, this site will continue to evolve.
   - **GitHub Repository:** The code for this site is available on GitHub (github.com/JonathanMaskew/personal_portfolio).
 
-- **Topic: History of His Personal Brand (The Evolution of J's Page):** I love to imagine and craft 'experiences', and building a personal brand allowed me to be creative in that sense.
+The Evolution of J's Page
+  -> Summary:
+  My personal portfolio, which I've previously referred to as J's Page, has taken many forms. Starting with a fascination with site-making, leading to the development of a J's "brand," and ultimately culminating in this very site, the J's brand continues to evolve.
+  
+  ->Bullets:
+  - I love to imagine and craft 'experiences', and building a personal brand allowed me to be creative in that sense.
   - It started when I was just a wee lad and discovered Google Sites. At the time, Google Sites was fascinating to me. I could build a website all on my own while lacking the technical skills at the time. Then, I could publish it for free. I could create my own little experience on the web. Suddenly, a dream was born.
   - This dream took to reality in the shape of what I called J's Page. Initially, it began as a way for me to organize and share animations, videos, stories, and various other creative artifacts that I enjoyed creating at the time. It was essentially a mix of a personal portfolio and a diary.
   - As I continued to expand the site and establish other sites mirroring the J’s branding, such as a holiday-specific site, it was clear that I was building a personal brand. As it continued to grow, I realized I needed a log. Reflecting the "J's Page" name, the J's branding was born.
@@ -134,7 +108,7 @@ This part of the site contains additional details about Jonathan's personal bran
 
 export const systemPrompt = [
   instructionPrompt.trim(),
-  generateSkillsSummary(),
+  generateAboutContext(),
   generateJobsContext(),
   generateEducationContext(),
   interestsPrompt,
