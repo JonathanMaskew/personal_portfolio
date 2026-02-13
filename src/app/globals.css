@@ -650,16 +650,16 @@ html[data-theme='future']::after {
   pointer-events: none;
   background: var(--color-background);
   background-image:
-    radial-gradient(circle at 15% 15%, color-mix(in srgb, var(--color-primary), transparent 60%) 0%, transparent 70%),
-    radial-gradient(circle at 85% 85%, color-mix(in srgb, var(--color-primary-accent), transparent 60%) 0%, transparent 70%);
+    radial-gradient(circle at 15% 15%, color-mix(in srgb, var(--color-primary), transparent 60%) 0%, transparent 70%); /*,*/
+    /* radial-gradient(circle at 85% 85%, color-mix(in srgb, var(--color-primary-accent), transparent 60%) 0%, transparent 70%); */
   transition: opacity 0.3s ease-in-out;
 }
 
 @media (max-width: 768px) {
   .mesh-container {
     background-image:
-      radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--color-primary), transparent 50%) 0%, transparent 70%),
-      radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--color-primary-accent), transparent 50%) 0%, transparent 70%);
+      radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--color-primary), transparent 50%) 0%, transparent 70%); /*,*/
+      /* radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--color-primary-accent), transparent 50%) 0%, transparent 70%); */
   }
 }
 
