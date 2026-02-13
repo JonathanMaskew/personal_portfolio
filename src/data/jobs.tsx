@@ -33,8 +33,10 @@ export const getJobsData = (): Experience[] => [
       'Full-stack',
       'Large Language Models',
       'System Architecture',
+      'APIs',
       'UI/UX Design',
       'Figma',
+      'Sentry',
     ],
     highlights: [
       {
@@ -76,8 +78,8 @@ export const getJobsData = (): Experience[] => [
       'Angular',
       'Angular Material',
       'Front-end',
-      'Scrum / Agile',
       'APIs',
+      'Scrum / Agile',
     ],
     highlights: [
       {
