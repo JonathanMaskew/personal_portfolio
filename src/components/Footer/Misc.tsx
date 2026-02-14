@@ -19,7 +19,7 @@ export default function Misc() {
 
   return (
     <SectionWrapper>
-      <div className="flex flex-col gap-4 w-full max-w-7xl mx-auto">
+      <div className="flex flex-col gap-4 w-full">
         <div
           className="flex gap-6 rounded-2xl p-6 md:p-8 border-l-4 border-[var(--color-primary)]"
           style={{

@@ -63,7 +63,7 @@ export default function Modal({
         >
           <div className="flex justify-center p-6 md:p-8">
             <div
-              className={`relative text-foreground-2 w-full max-w-7xl transition-transform duration-350 ease-out ${isAnimating ? 'translate-y-0' : 'translate-y-full'}`}
+              className={`relative text-foreground-2 w-full max-w-5xl transition-transform duration-350 ease-out ${isAnimating ? 'translate-y-0' : 'translate-y-full'}`}
               style={{
                 background: color.startsWith('var(')
                   ? `radial-gradient(circle at top middle, color-mix(in srgb, ${color}x 75%, transparent) 0%, color-mix(in srgb, ${color} 30%, black) 100%)`
