@@ -11,7 +11,6 @@ import { useModalContext } from '@/context/ModalContext';
 
 import {
   Pill,
-  Bot,
   Shield,
   Megaphone,
   Palette,
@@ -22,6 +21,7 @@ import {
   Award,
   Brain,
   Plus,
+  Sparkles,
 } from 'lucide-react';
 
 function HighlightCore({
@@ -134,7 +134,7 @@ export default function About() {
                 text: 'Architect full-stack ePrescribe',
               },
               {
-                icon: Bot,
+                icon: Sparkles,
                 text: 'Pioneer AI-automation',
               },
               {
@@ -155,7 +155,7 @@ export default function About() {
               },
               {
                 icon: Code,
-                text: 'Translated mockups',
+                text: 'Translated mockups to code',
               },
             ]}
             color="var(--color-allegion)"

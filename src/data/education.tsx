@@ -128,7 +128,7 @@ export const getEducationData = (): Experience[] => [
     title: 'Design Director',
     subtitle: 'Hack the Future',
     subheading: 'Purdue University, March 2022 - May 2024',
-    body: "Led a re-branding initiative that amplified the organization's visibility resulting in a record-breaking nearly 90% increase in applications YoY. Created resources to guide four teams on UX/UI principles and front-end development.",
+    body: "Led a re-branding initiative that amplified the organization's visibility resulting in a record-breaking nearly 90% year-over-year increase in applications. Created resources to guide four teams on UX/UI principles and front-end development.",
     coreBullets: [
       'Mentored four project teams on UX/UI principles and created resources to guide translating Figma mockups into front-end code.',
       'Established branded components in React to streamline development and maintain consistency across all team projects.',
@@ -137,7 +137,7 @@ export const getEducationData = (): Experience[] => [
       {
         icon: SplinePointer,
         title: 'Led a Branding Overhaul, Driving Growth by 90%',
-        text: 'Led a branding revamp and increased outreach efforts leading to a record-breaking nearly 90% increase in applicants YoY.',
+        text: 'Led a branding revamp and increased outreach efforts leading to a record-breaking nearly 90% YoY increase in applicants.',
       },
     ],
     keywords: [
