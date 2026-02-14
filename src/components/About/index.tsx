@@ -91,7 +91,7 @@ export default function About() {
 
   return (
     <SectionWrapper>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-2 md:gap-4">
         <div
           className={`font-bold underline underline-offset-[3px] md:underline-offset-[4px] decoration-[4px] md:decoration-[5px] font-header text-4xl md:text-5xl`}
           style={{
@@ -122,9 +122,11 @@ export default function About() {
         </ButtonRow>
       </div>
 
-      <div className="flex flex-col gap-3 w-full">
-        <span className="font-header font-bold text-xl">In a nutshell...</span>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 w-full">
+      <div className="flex flex-col gap-2 w-full">
+        <span className="font-header font-bold text-xl md:text-2xl">
+          In a nutshell...
+        </span>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-3 w-full">
           <HighlightCore
             title="Full-stack Engineer"
             subtitle="myhELO"
