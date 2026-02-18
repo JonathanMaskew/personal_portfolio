@@ -8,12 +8,14 @@ interface CarouselProps {
   children: React.ReactNode;
   color?: string;
   className?: string;
+  showArrows?: boolean;
 }
 
 export default function Carousel({
   children,
   className = '',
   color,
+  showArrows = false,
 }: CarouselProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -48,7 +50,7 @@ export default function Carousel({
           color
             ? 'bg-[var(--carousel-btn-bg)] hover:bg-[var(--carousel-btn-bg)] active:bg-[var(--carousel-btn-bg)]'
             : 'bg-background hover:bg-background'
-        } opacity-60 active:opacity-100 md:opacity-0 md:group-hover:opacity-60 md:hover:opacity-100`}
+        } ${showArrows ? 'opacity-60 active:opacity-100' : 'opacity-0 active:opacity-100 group-hover:opacity-60 hover:!opacity-100'} md:opacity-0 md:group-hover:opacity-60 md:hover:!opacity-100`}
         style={
           {
             '--carousel-btn-bg': color,
@@ -59,13 +61,14 @@ export default function Carousel({
       </button>
 
       {/* Right Arrow */}
+      {/* Right Arrow */}
       <button
         onClick={scrollRight}
         className={`absolute right-2 top-1/2 -translate-y-1/2 text-foreground rounded-full p-1 transition-all duration-200 z-10 ${
           color
             ? 'bg-[var(--carousel-btn-bg)] hover:bg-[var(--carousel-btn-bg)] active:bg-[var(--carousel-btn-bg)]'
             : 'bg-background hover:bg-background'
-        } opacity-60 active:opacity-100 md:opacity-0 md:group-hover:opacity-60 md:hover:opacity-100`}
+        } ${showArrows ? 'opacity-60 active:opacity-100' : 'opacity-0 active:opacity-100 group-hover:opacity-60 hover:!opacity-100'} md:opacity-0 md:group-hover:opacity-60 md:hover:!opacity-100`}
         style={
           {
             '--carousel-btn-bg': color,
