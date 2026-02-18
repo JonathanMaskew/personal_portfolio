@@ -1,14 +1,33 @@
 'use client';
 
-import { Spotlight } from 'lucide-react';
+import {
+  ArrowDown,
+  Award,
+  Brain,
+  BriefcaseBusiness,
+  Code,
+  GraduationCap,
+  Megaphone,
+  Palette,
+  Pill,
+  Shield,
+  Sparkles,
+  SplinePointer,
+  Spotlight,
+  TrendingUp,
+} from 'lucide-react';
 import SectionWrapper from './SectionWrapper';
 import Carousel, { CarouselItem } from './Carousel';
 import { useModalContext } from '@/context/ModalContext';
 import HighlightFeature from './HighlightFeature';
+import HighlightSnippet from './HighlightSnippet';
 import { getHighlightsData } from '@/data/highlights';
+import { Button } from './Button';
+import { useHashScroll } from '@/hooks/useHashScroll';
 
 export default function Highlights() {
   const { openExperienceModal } = useModalContext();
+  const { scrollToHash } = useHashScroll();
 
   const carouselItemStyle = 'w-[300px] md:w-[400px]';
 
@@ -18,7 +37,7 @@ export default function Highlights() {
     <SectionWrapper
       icon={Spotlight}
       title="Highlights"
-      className="rounded-2xl"
+      className="rounded-2xl !pb-0 !gap-5"
       styles={{
         background:
           'linear-gradient(to bottom, color-mix(in srgb, var(--color-foreground), transparent 90%), transparent 50%)',
@@ -48,6 +67,21 @@ export default function Highlights() {
           </CarouselItem>
         ))}
       </Carousel>
+
+      {/* <div className="flex flex-col gap-2 w-full">
+        <div className="flex items-center justify-between">
+          <span className="font-header font-bold text-xl md:text-2xl">
+            In a nutshell...
+          </span>
+          <Button
+            imagery={BriefcaseBusiness}
+            text="Scroll to 'Work'"
+            clickDetail={() => {
+              scrollToHash('#work');
+            }}
+          />
+        </div>
+      </div> */}
       {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
         <HighlightDetailed
           imagery={myheloLogo}

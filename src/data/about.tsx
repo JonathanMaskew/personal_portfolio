@@ -36,7 +36,6 @@ export const getAboutData = (): Experience[] => [
       'Bridging the gap between engineering and design by translating complex requirements into intuitive experiences.',
     keywords: [
       'Front-end',
-      'Tailwind CSS',
       'Core Web Vitals',
       'UX/UI Design',
       'Figma',

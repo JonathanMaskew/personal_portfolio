@@ -34,10 +34,10 @@ export default function HighlightHero({
       style={containerStyle}
     >
       <div className="flex flex-col gap-2">
-        <h3 className="font-header font-bold text-2xl lg:text-3xl">{title}</h3>
+        <h3 className="font-header font-bold text-xl lg:text-2xl">{title}</h3>
         {subtitle && (
           <p
-            className={`text-base lg:text-lg w-[90%] opacity-80 ${subtitleClassName}`}
+            className={`text-sm lg:text-base w-[90%] opacity-80 ${subtitleClassName}`}
           >
             {subtitle}
           </p>

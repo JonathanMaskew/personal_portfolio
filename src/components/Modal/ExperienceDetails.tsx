@@ -24,7 +24,7 @@ export default function ExperienceDetails({ data }: ExperienceDetailsProps) {
         title={data.title}
         subtitle={data.subtitle}
         subheading={data.subheading}
-        className="text-center items-center"
+        className="text-center items-center flex-col"
       />
 
       {data.body && (

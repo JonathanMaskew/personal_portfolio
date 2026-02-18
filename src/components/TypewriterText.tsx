@@ -11,33 +11,30 @@ interface TypewriterTextProps {
   }[];
   speed?: number;
   delay?: number;
-  size?: number;
+  className?: string;
 }
 
 export default function TypewriterText({
   texts,
   speed = 100,
   delay = 3000,
-  size = 24,
+  className = '',
 }: TypewriterTextProps) {
   const typewriter = useTypewriter({ texts, speed, delay });
 
   const IconComponent = texts[typewriter.currentIndex].icon;
 
   return (
-    <div
-      className="flex items-center"
-      style={{ height: `${size}px`, fontSize: `${size}px` }}
-    >
+    <div className={`flex items-center min-h-[1.2em] ${className}`}>
       <div className="flex items-center gap-4">
         {typewriter.displayText.length > 0 && IconComponent && (
-          <IconComponent size={size + 4} />
+          <IconComponent className="w-[1em] h-[1em]" />
         )}
         {typewriter.displayText}
       </div>
       <div
         className="bg-primary rounded-full w-[3px] animate-blink"
-        style={{ height: `${size}px` }}
+        style={{ height: '1em' }}
       />
     </div>
   );
