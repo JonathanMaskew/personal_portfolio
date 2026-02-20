@@ -72,30 +72,14 @@ export default function About() {
       </Carousel> */}
 
       {/* <SectionWrapper className="!py-0"> */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-7 w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-7 w-full">
         {aboutData.map((data) => {
-          const styles: {
-            className?: string;
-            subtitleClassName?: string;
-            chipsClassName?: string;
-          } =
-            {
-              'modern-tech-stack': { className: 'md:row-span-2' },
-              'design-engineering': {
-                subtitleClassName: 'max-w-[70%]',
-                chipsClassName: 'max-w-[55%]',
-              },
-            }[data.id] || {};
-
           return (
             <HighlightHero
               key={data.id}
               title={data.title || ''}
               subtitle={data.subtitle}
               chips={data.keywords}
-              className={styles.className}
-              subtitleClassName={styles.subtitleClassName}
-              chipsClassName={styles.chipsClassName}
               color={data.color}
             >
               {data.highlightChildren}

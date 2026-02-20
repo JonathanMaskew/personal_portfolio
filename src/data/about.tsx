@@ -1,6 +1,4 @@
 import type { Experience } from '@/types';
-import SkillsComputer from '@/components/About/SkillsComputer';
-import SmileyLines from '@/assets/images/site-graphics/smiley-lines.svg';
 
 export const getAboutData = (): Experience[] => [
   {
@@ -23,11 +21,15 @@ export const getAboutData = (): Experience[] => [
       'Node.js',
     ],
     color: 'var(--color-generic)',
-    highlightChildren: (
-      <div className="w-full flex items-end justify-center -mt-20">
-        <SkillsComputer />
+    /* highlightChildren: (
+      <div className="flex items-end justify-center">
+        <img
+          src={SkillsComputerImg.src}
+          alt="Skills Computer"
+          className="w-[200%] h-auto object-contain"
+        />
       </div>
-    ),
+    ), */
   },
   {
     id: 'design-engineering',
@@ -45,13 +47,13 @@ export const getAboutData = (): Experience[] => [
       'Branding',
     ],
     color: 'var(--color-generic)',
-    highlightChildren: (
+    /* highlightChildren: (
       <img
         src={SmileyLines.src}
         alt="Smiley"
         className="absolute bottom-0 right-2 w-[40%] h-auto max-h-[220px] object-contain"
       />
-    ),
+    ), */
   },
   {
     id: 'production-ready-code',

@@ -118,7 +118,7 @@ export default function Hero() {
   ];
 
   return (
-    <SectionWrapper className="min-h-screen !pb-25">
+    <SectionWrapper className="min-h-screen">
       <div className="flex-grow flex flex-col justify-center items-center gap-8 md:gap-16 w-full">
         {!isMobileLandscape && (
           <div className="relative w-full max-w-[250px] md:max-w-[500px] h-[270px] md:h-[200px] flex justify-center">
@@ -203,7 +203,7 @@ export default function Hero() {
         </span>
 
         {/* Desktop Grid */}
-        <div className="hidden md:grid grid-cols-4 gap-3 lg:gap-5 w-full">
+        <div className="hidden lg:grid grid-cols-4 gap-3 lg:gap-5 w-full">
           {highlights.map((highlight, index) => (
             <InnerHighlight
               key={index}
@@ -224,7 +224,7 @@ export default function Hero() {
         </div>
 
         {/* Mobile Carousel */}
-        <div className="md:hidden w-full">
+        <div className="lg:hidden w-full">
           <Carousel className="!gap-3 !pb-0" color="var(--color-primary)">
             {highlights.map((highlight, index) => (
               <CarouselItem key={index} className="w-[250px]">

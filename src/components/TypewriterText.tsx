@@ -25,7 +25,7 @@ export default function TypewriterText({
   const IconComponent = texts[typewriter.currentIndex].icon;
 
   return (
-    <div className={`flex items-center min-h-[1.2em] ${className}`}>
+    <div className={`flex items-center min-h-[1.3em] ${className}`}>
       <div className="flex items-center gap-4">
         {typewriter.displayText.length > 0 && IconComponent && (
           <IconComponent className="w-[1em] h-[1em]" />
