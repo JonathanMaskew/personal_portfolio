@@ -66,7 +66,7 @@ export default function FloatingControls() {
       {/* {theme === 'default' && (
         <FloatingButton onClick={() => setTheme('winter')} text="❄️" />
       )} */}
-      <Chatbot />
+      {current?.id !== 'intro' && <Chatbot mode="floating" />}
     </div>
   );
 }

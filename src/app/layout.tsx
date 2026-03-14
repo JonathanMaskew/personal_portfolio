@@ -18,6 +18,7 @@ import FloatingControls from '@/components/FloatingControls';
 import { ThemeProvider } from '@/context/ThemeContext';
 import MeshBackground from '@/components/MeshBackground';
 import { ModalProvider } from '@/context/ModalContext';
+import { ChatSessionProvider } from '@/context/ChatSessionContext';
 
 const header = Raleway({
   variable: '--font-raleway',
@@ -153,24 +154,26 @@ export default function RootLayout({
         style={{ fontFamily: 'var(--font-body), sans-serif' }}
       >
         <ThemeProvider>
-          <ModalProvider>
-            <MeshBackground />
-            <div className="hidden md:block">
-              <SidebarNav />
-            </div>
+          <ChatSessionProvider>
+            <ModalProvider>
+              <MeshBackground />
+              <div className="hidden md:block">
+                <SidebarNav />
+              </div>
 
-            <div className="block md:hidden">
-              <TopNav />
-            </div>
-            <main
-              data-scroll-container
-              className="flex-1 min-w-0 overflow-y-visible md:overflow-y-auto pt-14 md:pt-0 pb-12 md:pb-18"
-            >
-              {children}
-            </main>
+              <div className="block md:hidden">
+                <TopNav />
+              </div>
+              <main
+                data-scroll-container
+                className="flex-1 min-w-0 overflow-y-visible md:overflow-y-auto pt-14 md:pt-0 pb-12 md:pb-18"
+              >
+                {children}
+              </main>
 
-            <FloatingControls />
-          </ModalProvider>
+              <FloatingControls />
+            </ModalProvider>
+          </ChatSessionProvider>
         </ThemeProvider>
 
         <Analytics />

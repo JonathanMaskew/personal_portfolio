@@ -21,12 +21,15 @@ export type ChatSession = {
   error: string | null;
   sendMessage: (content: string) => Promise<boolean>;
   clearError: () => void;
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
 };
 
 export function useChatSession(): ChatSession {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   const messagesRef = useRef(messages);
   useEffect(() => {
@@ -117,5 +120,7 @@ export function useChatSession(): ChatSession {
     error,
     sendMessage,
     clearError,
+    isOpen,
+    setIsOpen,
   };
 }

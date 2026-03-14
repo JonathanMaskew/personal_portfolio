@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from 'react';
 import type { AnimationItem, LottiePlayer } from 'lottie-web';
-import { ChatSession, useChatSession } from '@/hooks/useChatSession';
+import { ChatSession } from '@/hooks/useChatSession';
+import { useSharedChatSession } from '@/context/ChatSessionContext';
 import { Sparkles } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
@@ -12,7 +13,7 @@ type MessagesProps = {
 
 export default function ChatMessages({ session }: MessagesProps) {
   // Always call hooks unconditionally; prefer prop session when provided
-  const fallbackSession = useChatSession();
+  const fallbackSession = useSharedChatSession();
   const chatSession = session ?? fallbackSession;
   const { messages, isLoading, error, clearError } = chatSession;
   const listRef = useRef<HTMLDivElement | null>(null);
@@ -114,7 +115,31 @@ export default function ChatMessages({ session }: MessagesProps) {
                 className={`rounded-2xl px-3 py-2 text-foreground border-1 border-foreground/10 ${message.role === 'user' ? 'bg-foreground/20' : 'bg-primary/75'}`}
               >
                 {message.role === 'assistant' ? (
-                  <ReactMarkdown skipHtml>{message.content}</ReactMarkdown>
+                  <ReactMarkdown
+                    skipHtml
+                    components={{
+                      p: ({ node, ...props }) => (
+                        <p className="mb-3 last:mb-0" {...props} />
+                      ),
+                      ul: ({ node, ...props }) => (
+                        <ul
+                          className="list-disc pl-5 mb-3 last:mb-0"
+                          {...props}
+                        />
+                      ),
+                      ol: ({ node, ...props }) => (
+                        <ol
+                          className="list-decimal pl-5 mb-3 last:mb-0"
+                          {...props}
+                        />
+                      ),
+                      li: ({ node, ...props }) => (
+                        <li className="mb-1 last:mb-0" {...props} />
+                      ),
+                    }}
+                  >
+                    {message.content}
+                  </ReactMarkdown>
                 ) : (
                   <span className="whitespace-pre-wrap">{message.content}</span>
                 )}

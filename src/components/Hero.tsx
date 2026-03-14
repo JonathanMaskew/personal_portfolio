@@ -28,6 +28,7 @@ import { useMobile } from '@/hooks/useMobile';
 import InnerHighlight from './InnerHighlight';
 import SectionWrapper from './SectionWrapper';
 import Carousel, { CarouselItem } from './Carousel';
+import Chatbot from './Chatbot';
 
 export default function Hero() {
   const { isMobileLandscape } = useMobile();
@@ -197,10 +198,12 @@ export default function Hero() {
       /> */}
       </div>
 
-      <div className="flex flex-col gap-1 w-full">
-        <span className="text-sm md:text-base font-header font-bold">
+      <div className="flex flex-col gap-3 lg:gap-5 w-full">
+        {/* <span className="text-sm md:text-base font-header font-bold">
           At a Glance...
-        </span>
+        </span> */}
+
+        <Chatbot mode="inline" />
 
         {/* Desktop Grid */}
         <div className="hidden lg:grid grid-cols-4 gap-3 lg:gap-5 w-full">
@@ -225,7 +228,7 @@ export default function Hero() {
 
         {/* Mobile Carousel */}
         <div className="lg:hidden w-full">
-          <Carousel className="!gap-3 !pb-0" color="var(--color-primary)">
+          <Carousel className="!gap-3 !pb-0">
             {highlights.map((highlight, index) => (
               <CarouselItem key={index} className="w-[250px]">
                 <InnerHighlight

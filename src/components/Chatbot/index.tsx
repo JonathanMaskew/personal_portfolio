@@ -5,16 +5,20 @@ import { ArrowUp, Sparkles, X } from 'lucide-react';
 import { useMobile } from '@/hooks/useMobile';
 import ChatMessages from './ChatMessages';
 import { lockBodyScroll, unlockBodyScroll } from '@/utils/scrollLock';
-import { useChatSession } from '@/hooks/useChatSession';
+import { useSharedChatSession } from '@/context/ChatSessionContext';
 import FloatingButton from '@/components/Button/FloatingButton';
 
-export default function Chatbot() {
-  const session = useChatSession();
-  const { sendMessage, isLoading } = session;
+type ChatbotProps = {
+  /** 'inline' renders only the input bar (for the Hero section).
+   *  'floating' renders the floating button/input (for bottom-right controls). */
+  mode?: 'inline' | 'floating';
+};
+
+export default function Chatbot({ mode = 'inline' }: ChatbotProps) {
+  const session = useSharedChatSession();
+  const { sendMessage, isLoading, isOpen, setIsOpen } = session;
 
   const [draft, setDraft] = useState('');
-  // Single source of truth for whether the widget is expanded
-  const [isOpen, setIsOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const { isMobile } = useMobile();
 
@@ -59,10 +63,18 @@ export default function Chatbot() {
     setDraft('');
   };
 
+  const inlineFormClasses =
+    'flex items-center gap-3 rounded-2xl bg-foreground/10 px-4 py-3 pr-2 w-full transition-all duration-200 hover:bg-foreground/20';
+
+  const floatingFormClasses =
+    'flex items-center gap-3 rounded-2xl border-1 border-foreground/10 backdrop-blur-lg bg-background/30 px-4 py-2 pr-2 w-full';
+
   const formElement = (
     <form
       onSubmit={handleSubmit}
-      className="flex items-center gap-3 rounded-2xl border-1 border-foreground/10 backdrop-blur-lg bg-background/30 px-4 py-2 pr-2 w-full"
+      className={
+        mode === 'inline' && !isOpen ? inlineFormClasses : floatingFormClasses
+      }
     >
       <Sparkles size={24} className="text-primary" aria-hidden />
       <input
@@ -70,7 +82,9 @@ export default function Chatbot() {
         className="w-full bg-transparent text-[16px] outline-none placeholder:text-foreground/70"
         value={draft}
         placeholder="Ask AI about my experience…"
-        onFocus={() => setIsOpen(true)}
+        onFocus={() => {
+          if (mode !== 'inline') setIsOpen(true);
+        }}
         onChange={(event) => setDraft(event.target.value)}
         disabled={isLoading}
         aria-label="Ask a question"
@@ -89,7 +103,7 @@ export default function Chatbot() {
     </form>
   );
 
-  // Open state - full chat widget
+  // Open state - full chat widget (same modal regardless of mode)
   if (isOpen) {
     return (
       <div className="fixed bottom-3 inset-x-3 md:inset-x-auto md:right-3 md:w-1/2 lg:w-1/3 h-2/3 rounded-2xl bg-background z-40 flex flex-col overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.45)] border-1 border-foreground/10">
@@ -109,7 +123,18 @@ export default function Chatbot() {
     );
   }
 
-  // Collapsed state - mobile shows just button, desktop shows input
+  // ── Collapsed states differ by mode ──
+
+  if (mode === 'inline') {
+    // Hero: just the input bar, no floating button
+    // Always render the inline input visibly underneath the opened modal
+    return <div className="w-full">{formElement}</div>;
+  }
+
+  // If floating mode and already open, don't show the floating duplicate element
+  if (isOpen) return null;
+
+  // Floating mode: mobile shows button, desktop shows input
   return (
     <>
       {/* Mobile: Just the button */}
