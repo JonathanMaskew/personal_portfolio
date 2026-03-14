@@ -64,25 +64,27 @@ export default function Chatbot({ mode = 'inline' }: ChatbotProps) {
   };
 
   const inlineFormClasses =
-    'flex items-center gap-2.5 rounded-2xl bg-foreground/10 p-3 w-full transition-all duration-200 hover:bg-foreground/20';
+    'flex items-center gap-1.5 rounded-2xl bg-foreground/10 p-3 w-full transition-all duration-200 hover:bg-foreground/20';
 
   const floatingFormClasses =
     'flex items-center gap-3 rounded-2xl border-1 border-foreground/10 backdrop-blur-lg bg-background/30 px-4 py-2 pr-2 w-full';
 
   const formElement = (
     <form
+      onClick={() => inputRef.current?.focus()}
       onSubmit={handleSubmit}
       className={
         mode === 'inline' && !isOpen ? inlineFormClasses : floatingFormClasses
       }
     >
       <Sparkles
-        className={`${mode === 'inline' && !isOpen ? 'text-foreground h-4 w-4' : 'text-primary h-6 w-6'}`}
+        size={mode === 'inline' && !isOpen ? 14 : 24}
+        className={`${mode === 'inline' && !isOpen ? 'text-foreground shrink-0' : 'text-primary shrink-0'}`}
         aria-hidden
       />
       <input
         ref={inputRef}
-        className={`w-full bg-transparent outline-none ${mode === 'inline' && !isOpen ? 'placeholder:text-foreground text-xs' : 'placeholder:text-foreground/70 text-[16px]'}`}
+        className={`w-full bg-transparent outline-none placeholder:text-foreground/70 ${mode === 'inline' && !isOpen ? 'text-xs' : 'text-[16px]'}`}
         value={draft}
         placeholder="Ask AI about my experience…"
         onFocus={() => {
