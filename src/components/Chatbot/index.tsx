@@ -64,7 +64,7 @@ export default function Chatbot({ mode = 'inline' }: ChatbotProps) {
   };
 
   const inlineFormClasses =
-    'flex items-center gap-3 rounded-2xl bg-foreground/10 px-4 py-3 pr-2 w-full transition-all duration-200 hover:bg-foreground/20';
+    'flex items-center gap-2.5 rounded-2xl bg-foreground/10 p-3 w-full transition-all duration-200 hover:bg-foreground/20';
 
   const floatingFormClasses =
     'flex items-center gap-3 rounded-2xl border-1 border-foreground/10 backdrop-blur-lg bg-background/30 px-4 py-2 pr-2 w-full';
@@ -76,10 +76,13 @@ export default function Chatbot({ mode = 'inline' }: ChatbotProps) {
         mode === 'inline' && !isOpen ? inlineFormClasses : floatingFormClasses
       }
     >
-      <Sparkles size={24} className="text-primary" aria-hidden />
+      <Sparkles
+        className={`${mode === 'inline' && !isOpen ? 'text-foreground h-4 w-4' : 'text-primary h-6 w-6'}`}
+        aria-hidden
+      />
       <input
         ref={inputRef}
-        className="w-full bg-transparent text-[16px] outline-none placeholder:text-foreground/70"
+        className={`w-full bg-transparent outline-none ${mode === 'inline' && !isOpen ? 'placeholder:text-foreground text-xs' : 'placeholder:text-foreground/70 text-[16px]'}`}
         value={draft}
         placeholder="Ask AI about my experience…"
         onFocus={() => {
@@ -91,14 +94,23 @@ export default function Chatbot({ mode = 'inline' }: ChatbotProps) {
       />
       <button
         type="submit"
-        className="flex min-h-8 min-w-8 items-center justify-center rounded-full text-foreground disabled:text-black"
+        className={`flex items-center justify-center rounded-full text-foreground disabled:text-black ${mode === 'inline' && !isOpen ? 'min-h-6 min-w-6' : 'min-h-8 min-w-8'}`}
         disabled={!draft.trim() || isLoading}
         style={{
-          backgroundColor: 'var(--color-primary)',
+          backgroundColor:
+            mode === 'inline' && !isOpen
+              ? 'var(--color-foreground)'
+              : 'var(--color-primary)',
           opacity: draft.trim() ? '1' : '0.4',
         }}
       >
-        <ArrowUp aria-hidden />
+        <ArrowUp
+          className={
+            mode === 'inline' && !isOpen
+              ? 'text-background h-4 w-4'
+              : 'text-background h-6 w-6'
+          }
+        />
       </button>
     </form>
   );
