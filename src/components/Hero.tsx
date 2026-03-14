@@ -119,7 +119,7 @@ export default function Hero() {
   ];
 
   return (
-    <SectionWrapper className="min-h-screen">
+    <SectionWrapper className="min-h-[calc(100dvh-3.5rem)] md:min-h-dvh">
       <div className="flex-grow flex flex-col justify-center items-center gap-8 md:gap-16 w-full">
         {!isMobileLandscape && (
           <div className="relative w-full max-w-[250px] md:max-w-[500px] h-[270px] md:h-[200px] flex justify-center">
