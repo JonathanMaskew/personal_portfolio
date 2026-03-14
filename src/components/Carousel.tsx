@@ -1,23 +1,49 @@
 'use client';
 
 import Image, { StaticImageData } from 'next/image';
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface CarouselProps {
   children: React.ReactNode;
   color?: string;
   className?: string;
-  showArrows?: boolean;
 }
 
 export default function Carousel({
   children,
   className = '',
   color,
-  showArrows = false,
 }: CarouselProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  const updateScrollState = useCallback(() => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 1);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+
+    updateScrollState();
+
+    el.addEventListener('scroll', updateScrollState, { passive: true });
+    window.addEventListener('resize', updateScrollState);
+
+    const observer = new MutationObserver(updateScrollState);
+    observer.observe(el, { childList: true, subtree: true });
+
+    return () => {
+      el.removeEventListener('scroll', updateScrollState);
+      window.removeEventListener('resize', updateScrollState);
+      observer.disconnect();
+    };
+  }, [updateScrollState]);
 
   const scrollLeft = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -35,8 +61,6 @@ export default function Carousel({
 
   return (
     <div className="relative group">
-      {/* Shared handlers for pointer interactions on arrows */}
-      {/* Left Arrow */}
       <div
         ref={scrollContainerRef}
         className={`flex overflow-x-auto gap-5 scrollbar-hide pb-3 ${className}`}
@@ -44,39 +68,41 @@ export default function Carousel({
         {children}
       </div>
 
-      <button
-        onClick={scrollLeft}
-        className={`absolute left-2 top-1/2 -translate-y-1/2 text-foreground rounded-full p-1 transition-all duration-200 z-10 ${
-          color
-            ? 'bg-[var(--carousel-btn-bg)] hover:bg-[var(--carousel-btn-bg)] active:bg-[var(--carousel-btn-bg)]'
-            : 'bg-background hover:bg-background'
-        } ${showArrows ? 'opacity-60 active:opacity-100' : 'opacity-0 active:opacity-100 group-hover:opacity-60 hover:!opacity-100'} md:opacity-0 md:group-hover:opacity-60 md:hover:!opacity-100`}
-        style={
-          {
-            '--carousel-btn-bg': color,
-          } as React.CSSProperties
-        }
-      >
-        <ChevronLeft size={20} />
-      </button>
+      {canScrollLeft && (
+        <button
+          onClick={scrollLeft}
+          className={`absolute left-2 top-1/2 -translate-y-1/2 text-foreground rounded-full p-1 transition-all duration-200 z-10 ${
+            color
+              ? 'bg-[var(--carousel-btn-bg)] hover:bg-[var(--carousel-btn-bg)] active:bg-[var(--carousel-btn-bg)]'
+              : 'bg-background hover:bg-background'
+          } opacity-60 active:opacity-100 md:opacity-0 md:group-hover:opacity-60 md:hover:!opacity-100`}
+          style={
+            {
+              '--carousel-btn-bg': color,
+            } as React.CSSProperties
+          }
+        >
+          <ChevronLeft size={20} />
+        </button>
+      )}
 
-      {/* Right Arrow */}
-      {/* Right Arrow */}
-      <button
-        onClick={scrollRight}
-        className={`absolute right-2 top-1/2 -translate-y-1/2 text-foreground rounded-full p-1 transition-all duration-200 z-10 ${
-          color
-            ? 'bg-[var(--carousel-btn-bg)] hover:bg-[var(--carousel-btn-bg)] active:bg-[var(--carousel-btn-bg)]'
-            : 'bg-background hover:bg-background'
-        } ${showArrows ? 'opacity-60 active:opacity-100' : 'opacity-0 active:opacity-100 group-hover:opacity-60 hover:!opacity-100'} md:opacity-0 md:group-hover:opacity-60 md:hover:!opacity-100`}
-        style={
-          {
-            '--carousel-btn-bg': color,
-          } as React.CSSProperties
-        }
-      >
-        <ChevronRight size={20} />
-      </button>
+      {canScrollRight && (
+        <button
+          onClick={scrollRight}
+          className={`absolute right-2 top-1/2 -translate-y-1/2 text-foreground rounded-full p-1 transition-all duration-200 z-10 ${
+            color
+              ? 'bg-[var(--carousel-btn-bg)] hover:bg-[var(--carousel-btn-bg)] active:bg-[var(--carousel-btn-bg)]'
+              : 'bg-background hover:bg-background'
+          } opacity-60 active:opacity-100 md:opacity-0 md:group-hover:opacity-60 md:hover:!opacity-100`}
+          style={
+            {
+              '--carousel-btn-bg': color,
+            } as React.CSSProperties
+          }
+        >
+          <ChevronRight size={20} />
+        </button>
+      )}
     </div>
   );
 }
