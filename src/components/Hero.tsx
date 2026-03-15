@@ -15,6 +15,7 @@ import {
   Shield,
   SplinePointer,
   TrendingUp,
+  Users,
 } from 'lucide-react';
 import { useModalContext } from '@/context/ModalContext';
 import { useHashScroll } from '@/hooks/useHashScroll';
@@ -73,6 +74,10 @@ export default function Hero() {
             <Code size={11} className="shrink-0" />
             <span>Translated mockups to code</span>
           </div>
+          <div className="flex gap-1.5 items-center opacity-80">
+            <Users size={11} className="shrink-0" />
+            <span>Collaborated with Product & Design</span>
+          </div>
         </div>
       ),
     },
@@ -93,7 +98,7 @@ export default function Hero() {
           </div>
           <div className="flex gap-1.5 items-center opacity-80">
             <TrendingUp size={11} className="shrink-0" />
-            <span>~90% increase in applicants</span>
+            <span>Increased applicants by ~90%</span>
           </div>
         </div>
       ),
