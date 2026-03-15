@@ -64,7 +64,7 @@ export default function Chatbot({ mode = 'inline' }: ChatbotProps) {
   };
 
   const inlineFormClasses =
-    'flex items-center gap-1.5 rounded-2xl bg-foreground/10 p-3 w-full transition-all duration-200 hover:bg-foreground/20';
+    'flex items-center gap-1.5 rounded-2xl bg-foreground/10 p-2.5 w-full transition-all duration-200 hover:bg-foreground/20';
 
   const floatingFormClasses =
     'flex items-center gap-3 rounded-2xl border-1 border-foreground/10 backdrop-blur-lg bg-background/30 px-4 py-2 pr-2 w-full';
@@ -78,13 +78,13 @@ export default function Chatbot({ mode = 'inline' }: ChatbotProps) {
       }
     >
       <Sparkles
-        size={mode === 'inline' && !isOpen ? 14 : 24}
+        size={mode === 'inline' && !isOpen ? 12 : 24}
         className={`${mode === 'inline' && !isOpen ? 'text-foreground shrink-0' : 'text-primary shrink-0'}`}
         aria-hidden
       />
       <input
         ref={inputRef}
-        className={`w-full bg-transparent outline-none placeholder:text-foreground/70 ${mode === 'inline' && !isOpen ? 'text-xs' : 'text-[16px]'}`}
+        className={`w-full bg-transparent outline-none placeholder:text-foreground/70 ${mode === 'inline' && !isOpen ? 'text-[10px] leading-tight' : 'text-[10px] leading-tight'}`}
         value={draft}
         placeholder="Ask AI about my experience…"
         onFocus={() => {
@@ -96,7 +96,7 @@ export default function Chatbot({ mode = 'inline' }: ChatbotProps) {
       />
       <button
         type="submit"
-        className={`flex items-center justify-center rounded-full text-foreground disabled:text-black ${mode === 'inline' && !isOpen ? 'min-h-6 min-w-6' : 'min-h-8 min-w-8'}`}
+        className={`flex items-center justify-center rounded-full text-foreground disabled:text-black ${mode === 'inline' && !isOpen ? 'h-5 w-5 shrink-0' : 'min-h-8 min-w-8'}`}
         disabled={!draft.trim() || isLoading}
         style={{
           backgroundColor:
@@ -109,7 +109,7 @@ export default function Chatbot({ mode = 'inline' }: ChatbotProps) {
         <ArrowUp
           className={
             mode === 'inline' && !isOpen
-              ? 'text-background h-4 w-4'
+              ? 'text-background h-3 w-3'
               : 'text-background h-6 w-6'
           }
         />

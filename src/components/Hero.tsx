@@ -39,19 +39,20 @@ export default function Hero() {
     {
       title: 'Full-stack Engineer',
       text: 'myhELO',
+      color: 'var(--color-myhelo)',
       onClick: () => openExperienceModal('myhelo'),
       children: (
-        <div className="flex flex-col gap-0.5 text-xs">
+        <div className="flex flex-col gap-0.5 text-[10px] leading-tight">
           <div className="flex gap-1.5 items-center opacity-80">
-            <Pill size={14} className="shrink-0" />
+            <Pill size={11} className="shrink-0" />
             <span>Architect full-stack ePrescribe</span>
           </div>
           <div className="flex gap-1.5 items-center opacity-80">
-            <Sparkles size={14} className="shrink-0" />
+            <Sparkles size={11} className="shrink-0" />
             <span>Pioneer AI-automation</span>
           </div>
           <div className="flex gap-1.5 items-center opacity-80">
-            <Shield size={14} className="shrink-0" />
+            <Shield size={11} className="shrink-0" />
             <span>Implement 2FA</span>
           </div>
         </div>
@@ -60,15 +61,16 @@ export default function Hero() {
     {
       title: 'Front-end Engineer',
       text: 'Allegion',
+      color: 'var(--color-allegion)',
       onClick: () => openExperienceModal('allegion'),
       children: (
-        <div className="flex flex-col gap-0.5 text-xs">
+        <div className="flex flex-col gap-0.5 text-[10px] leading-tight">
           <div className="flex gap-1.5 items-center opacity-80">
-            <Megaphone size={14} className="shrink-0" />
+            <Megaphone size={11} className="shrink-0" />
             <span>Developed announcements system</span>
           </div>
           <div className="flex gap-1.5 items-center opacity-80">
-            <Code size={14} className="shrink-0" />
+            <Code size={11} className="shrink-0" />
             <span>Translated mockups to code</span>
           </div>
         </div>
@@ -77,19 +79,20 @@ export default function Hero() {
     {
       title: 'Design Director',
       text: 'Hack the Future',
+      color: 'var(--color-htf)',
       onClick: () => openExperienceModal('htf-design-director'),
       children: (
-        <div className="flex flex-col gap-0.5 text-xs">
+        <div className="flex flex-col gap-0.5 text-[10px] leading-tight">
           <div className="flex gap-1.5 items-center opacity-80">
-            <SplinePointer size={14} className="shrink-0" />
+            <SplinePointer size={11} className="shrink-0" />
             <span>Guided UX/UI</span>
           </div>
           <div className="flex gap-1.5 items-center opacity-80">
-            <Palette size={14} className="shrink-0" />
+            <Palette size={11} className="shrink-0" />
             <span>Led rebranding</span>
           </div>
           <div className="flex gap-1.5 items-center opacity-80">
-            <TrendingUp size={14} className="shrink-0" />
+            <TrendingUp size={11} className="shrink-0" />
             <span>~90% increase in applicants</span>
           </div>
         </div>
@@ -98,19 +101,20 @@ export default function Hero() {
     {
       title: 'BS in Computer Science',
       text: 'Purdue University',
+      color: 'var(--color-purdue)',
       onClick: () => scrollToHash('#education'),
       children: (
-        <div className="flex flex-col gap-0.5 text-xs">
+        <div className="flex flex-col gap-0.5 text-[10px] leading-tight">
           <div className="flex gap-1.5 items-center opacity-80">
-            <Code size={14} className="shrink-0" />
+            <Code size={11} className="shrink-0" />
             <span>Software Engineering concentration</span>
           </div>
           <div className="flex gap-1.5 items-center opacity-80">
-            <Brain size={14} className="shrink-0" />
+            <Brain size={11} className="shrink-0" />
             <span>3.69 GPA</span>
           </div>
           <div className="flex gap-1.5 items-center opacity-80">
-            <Award size={14} className="shrink-0" />
+            <Award size={11} className="shrink-0" />
             <span>Dean's List & Semester Honors</span>
           </div>
         </div>
@@ -198,27 +202,29 @@ export default function Hero() {
       /> */}
       </div>
 
-      <div className="flex flex-col gap-3 lg:gap-5 w-full">
-        {/* <span className="text-sm md:text-base font-header font-bold">
+      <div className="flex flex-col gap-2 lg:gap-3 w-full">
+        <span className="text-xs leading-tight font-header font-bold">
           At a Glance...
-        </span> */}
+        </span>
 
         <Chatbot mode="inline" />
 
         {/* Desktop Grid */}
-        <div className="hidden lg:grid grid-cols-4 gap-3 lg:gap-5 w-full">
+        <div className="hidden lg:grid grid-cols-4 gap-3 w-full">
           {highlights.map((highlight, index) => (
             <InnerHighlight
               key={index}
               title={highlight.title}
               text={highlight.text}
               onClick={highlight.onClick}
-              className="text-xs h-full"
+              color={highlight.color}
+              className="h-full"
+              orientation="horizontal"
               classNames={{
-                container: '!p-3 !gap-2 !rounded-2xl',
+                container: '!p-3 !gap-1 !rounded-2xl',
                 header: '!gap-2',
-                title: '!text-xs',
-                text: '!text-xs opacity-80',
+                title: '!text-[10px] leading-tight',
+                text: '!text-[10px] leading-tight opacity-80',
               }}
             >
               {highlight.children}
@@ -228,7 +234,7 @@ export default function Hero() {
 
         {/* Mobile Carousel */}
         <div className="lg:hidden w-full">
-          <Carousel className="!gap-3 !pb-0">
+          <Carousel className="!gap-2 !pb-0">
             {highlights.map((highlight, index) => (
               <CarouselItem key={index} className="w-[250px]">
                 <InnerHighlight
@@ -236,11 +242,13 @@ export default function Hero() {
                   text={highlight.text}
                   onClick={highlight.onClick}
                   className="text-xs h-full"
+                  orientation="horizontal"
+                  color={highlight.color}
                   classNames={{
-                    container: '!p-3 !gap-2 !rounded-2xl',
+                    container: '!p-3 !gap-1 !rounded-2xl',
                     header: '!gap-2',
-                    title: '!text-xs',
-                    text: '!text-xs opacity-80',
+                    title: '!text-[10px] leading-tight',
+                    text: '!text-[10px] leading-tight opacity-80',
                   }}
                 >
                   {highlight.children}
