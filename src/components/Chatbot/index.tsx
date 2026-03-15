@@ -84,7 +84,7 @@ export default function Chatbot({ mode = 'inline' }: ChatbotProps) {
       />
       <input
         ref={inputRef}
-        className={`w-full bg-transparent outline-none placeholder:text-foreground/70 ${mode === 'inline' && !isOpen ? 'text-[10px] leading-tight' : 'text-[10px] leading-tight'}`}
+        className={`w-full bg-transparent outline-none placeholder:text-foreground/70 ${mode === 'inline' && !isOpen ? 'text-[10px] leading-tight' : 'text-[16px]'}`}
         value={draft}
         placeholder="Ask AI about my experience…"
         onFocus={() => {
