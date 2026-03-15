@@ -94,6 +94,16 @@ button {
   color: var(--color-foreground-2);
 }
 
+.inner-highlight {
+  background: color-mix(in srgb, var(--highlight-color) 10%, transparent);
+  transition: background 0.2s;
+}
+
+.inner-highlight-interactive:hover,
+.inner-highlight-interactive:active {
+  background: color-mix(in srgb, var(--highlight-color) 20%, transparent);
+}
+
 /* 
   Past Theme (Old Fashioned Black & White TV - Analog Era)
 */

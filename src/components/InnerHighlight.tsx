@@ -31,11 +31,10 @@ export default function InnerHighlight({
 }: InnerHighlightProps) {
   return (
     <div
-      className={`flex flex-col gap-4 ${color ? '' : 'bg-foreground/10'} p-4 w-full rounded-3xl relative transition-all duration-200 ${onClick ? 'cursor-pointer hover:bg-foreground/20 active:bg-foreground/20' : ''} ${className || ''} ${classNames?.container || ''}`}
+      className={`inner-highlight ${onClick ? 'inner-highlight-interactive cursor-pointer' : ''} flex flex-col gap-4 ${color ? '' : 'bg-foreground/10'} p-4 w-full rounded-3xl relative transition-all duration-200 ${className || ''} ${classNames?.container || ''}`}
       style={
         {
           '--highlight-color': color || 'var(--color-foreground)',
-          ...(color ? { background: 'color-mix(in srgb, var(--highlight-color) 10%, transparent)' } : {}),
         } as React.CSSProperties
       }
       onClick={onClick}
