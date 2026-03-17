@@ -16,6 +16,7 @@ import {
   SplinePointer,
   TrendingUp,
   Users,
+  Plus,
 } from 'lucide-react';
 import { useModalContext } from '@/context/ModalContext';
 import { useHashScroll } from '@/hooks/useHashScroll';
@@ -26,6 +27,7 @@ import raptorEncounter from '@/assets/images/personal/raptor-encounter-hero.png'
 import graduation from '@/assets/images/personal/graduation.png';
 import Image from 'next/image';
 import { useMobile } from '@/hooks/useMobile';
+import { Button } from './Button';
 import InnerHighlight from './InnerHighlight';
 import SectionWrapper from './SectionWrapper';
 import Carousel, { CarouselItem } from './Carousel';
@@ -233,6 +235,14 @@ export default function Hero() {
               }}
             >
               {highlight.children}
+              <div className="absolute bottom-1 right-2">
+                <Button
+                  imagery={Plus}
+                  text="More"
+                  imageryOnly
+                  clickDetail={highlight.onClick}
+                />
+              </div>
             </InnerHighlight>
           ))}
         </div>
@@ -257,6 +267,14 @@ export default function Hero() {
                   }}
                 >
                   {highlight.children}
+                  <div className="absolute bottom-1 right-2">
+                    <Button
+                      imagery={Plus}
+                      text="More"
+                      imageryOnly
+                      clickDetail={highlight.onClick}
+                    />
+                  </div>
                 </InnerHighlight>
               </CarouselItem>
             ))}

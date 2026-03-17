@@ -8,8 +8,11 @@ import About from '@/components/About';
 import Footer from '@/components/Footer';
 import Highlights from '@/components/Highlights';
 import Misc from '@/components/Footer/Misc';
+import { ChevronDown } from 'lucide-react';
+import { useHashScroll } from '@/hooks/useHashScroll';
 
 export default function Home() {
+  const { scrollToHash } = useHashScroll();
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
@@ -53,6 +56,13 @@ export default function Home() {
     <>
       <section id="intro">
         <Hero />
+        <div className="flex justify-center">
+          <ChevronDown
+            size={24}
+            className="animate-bounce cursor-pointer"
+            onClick={() => scrollToHash('#about')}
+          />
+        </div>
       </section>
       <section id="about" data-reveal>
         <About />
