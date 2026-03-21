@@ -99,11 +99,11 @@ export default function ArtGallery() {
         color="var(--color-generic)"
       >
         {expandedImage && (
-          <div className="flex justify-center w-full">
+          <div className="flex justify-center w-full px-4">
             <Image
               src={expandedImage}
               alt="Expanded Art"
-              className="object-contain w-auto h-auto max-w-2xl mt-16"
+              className="object-contain w-full h-auto max-w-2xl mt-16"
             />
           </div>
         )}
