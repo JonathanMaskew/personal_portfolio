@@ -302,14 +302,6 @@ export const getEducationData = (): Experience[] => [
             through the Year in Review posts I created that summarize my work,
             or navigate to a full listing.
           </div>
-          <Carousel color="var(--color-htf)">
-            <CarouselImageItem image={designAndMarketing} size={256} />
-            <CarouselImageItem image={designAndMarketing2} size={256} />
-            <CarouselImageItem image={designAndMarketing3} size={256} />
-            <CarouselImageItem image={designAndMarketing4} size={256} />
-            <CarouselImageItem image={designAndMarketing5} size={256} />
-            <CarouselImageItem image={designAndMarketing6} size={256} />
-          </Carousel>
           <ButtonRow className="justify-center">
             <Button
               imagery={ExternalLink}
@@ -328,6 +320,14 @@ export const getEducationData = (): Experience[] => [
               color="var(--color-htf)"
             />
           </ButtonRow>
+          <Carousel color="var(--color-htf)">
+            <CarouselImageItem image={designAndMarketing} size={256} />
+            <CarouselImageItem image={designAndMarketing2} size={256} />
+            <CarouselImageItem image={designAndMarketing3} size={256} />
+            <CarouselImageItem image={designAndMarketing4} size={256} />
+            <CarouselImageItem image={designAndMarketing5} size={256} />
+            <CarouselImageItem image={designAndMarketing6} size={256} />
+          </Carousel>
         </ModalSection>
 
         <ModalSection icon={Megaphone} title="Events & Outreach Summary">

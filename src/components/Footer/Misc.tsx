@@ -11,6 +11,7 @@ import ButtonRow from '@/components/Button/ButtonRow';
 import { useTheme } from '@/context/ThemeContext';
 import { useHashScroll } from '@/hooks/useHashScroll';
 import PersonalCarousel from '@/components/About/PersonalCarousel';
+import ArtGallery from '@/components/About/ArtGallery';
 import SectionWrapper from '../SectionWrapper';
 
 export default function Misc() {
@@ -72,6 +73,7 @@ export default function Misc() {
       </div>
 
       <PersonalCarousel />
+      <ArtGallery />
     </SectionWrapper>
   );
 }
