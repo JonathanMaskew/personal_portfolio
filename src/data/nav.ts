@@ -18,12 +18,12 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
     icon: House,
     href: '#intro',
   },
-  {
-    label: 'About',
-    id: 'about',
-    icon: User,
-    href: '#about',
-  },
+  // {
+  //   label: 'About',
+  //   id: 'about',
+  //   icon: User,
+  //   href: '#about',
+  // },
   {
     label: 'Highlights',
     id: 'highlights',

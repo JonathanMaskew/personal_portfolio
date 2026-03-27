@@ -1,4 +1,12 @@
-import type { Experience } from '@/types';
+import type { Experience, Keyword } from '@/types';
+import angularLogo from '@/assets/images/logos/angular.svg';
+import cssLogo from '@/assets/images/logos/css.svg';
+import javascriptLogo from '@/assets/images/logos/javascript.svg';
+import nextjsLogo from '@/assets/images/logos/nextjs.svg';
+import phpLogo from '@/assets/images/logos/php.svg';
+import reactLogo from '@/assets/images/logos/react.svg';
+import tailwindLogo from '@/assets/images/logos/tailwind.svg';
+import typescriptLogo from '@/assets/images/logos/typescript.svg';
 
 export const getAboutData = (): Experience[] => [
   {
@@ -7,29 +15,20 @@ export const getAboutData = (): Experience[] => [
     subtitle:
       'Building scalable products using popular frameworks and languages, like React and TypeScript, and practical AI integrations.',
     keywords: [
-      'Next.js',
-      'TypeScript',
-      'JavaScript',
-      'React',
-      'Tailwind CSS',
-      'Angular',
-      'PHP',
-      'LLMs / Prompt Engineering',
-      'APIs',
-      'CSS',
-      'HTML',
-      'Node.js',
+      { label: 'Next.js', logo: nextjsLogo },
+      { label: 'TypeScript', logo: typescriptLogo },
+      { label: 'JavaScript', logo: javascriptLogo },
+      { label: 'React', logo: reactLogo },
+      { label: 'Tailwind CSS', logo: tailwindLogo },
+      { label: 'Angular', logo: angularLogo },
+      { label: 'PHP', logo: phpLogo },
+      { label: 'LLMs / Prompt Engineering' },
+      { label: 'APIs' },
+      { label: 'CSS', logo: cssLogo },
+      { label: 'HTML' },
+      { label: 'Node.js' },
     ],
     color: 'var(--color-generic)',
-    /* highlightChildren: (
-      <div className="flex items-end justify-center">
-        <img
-          src={SkillsComputerImg.src}
-          alt="Skills Computer"
-          className="w-[200%] h-auto object-contain"
-        />
-      </div>
-    ), */
   },
   {
     id: 'design-engineering',
@@ -37,23 +36,16 @@ export const getAboutData = (): Experience[] => [
     subtitle:
       'Bridging the gap between engineering and design by translating complex requirements into intuitive experiences.',
     keywords: [
-      'Front-end',
-      'Core Web Vitals',
-      'UX/UI Design',
-      'Figma',
-      'User Research',
-      'Prototyping',
-      'Accessibility',
-      'Branding',
+      { label: 'Front-end' },
+      { label: 'Core Web Vitals' },
+      { label: 'UX/UI Design' },
+      { label: 'Figma' },
+      { label: 'User Research' },
+      { label: 'Prototyping' },
+      { label: 'Accessibility' },
+      { label: 'Branding' },
     ],
     color: 'var(--color-generic)',
-    /* highlightChildren: (
-      <img
-        src={SmileyLines.src}
-        alt="Smiley"
-        className="absolute bottom-0 right-2 w-[40%] h-auto max-h-[220px] object-contain"
-      />
-    ), */
   },
   {
     id: 'production-ready-code',
@@ -61,18 +53,19 @@ export const getAboutData = (): Experience[] => [
     subtitle:
       'Ensuring code is reliable and maintainable through rigorous testing and agile collaboration.',
     keywords: [
-      'System Architecture',
-      'CI/CD Pipeline',
-      'Git',
-      'Scrum / Agile',
-      'Code Quality & Reviews',
-      'End-to-End Testing',
-      'Error Monitoring',
-      'Web Security',
+      { label: 'System Architecture' },
+      { label: 'CI/CD Pipeline' },
+      { label: 'Git' },
+      { label: 'Scrum / Agile' },
+      { label: 'Code Quality & Reviews' },
+      { label: 'End-to-End Testing' },
+      { label: 'Error Monitoring' },
+      { label: 'Web Security' },
     ],
     color: 'var(--color-generic)',
   },
 ];
+
 
 export const generateChatContext = (): string => {
   const aboutData = getAboutData();

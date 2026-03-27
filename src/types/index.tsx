@@ -3,6 +3,11 @@ import React, { ReactNode } from 'react';
 
 export type Icon = React.ElementType;
 
+export type Keyword = {
+  label: string;
+  logo?: StaticImageData;
+};
+
 export type HighlightProps = {
   color?: string;
   title?: string;
@@ -12,8 +17,10 @@ export type HighlightProps = {
   body?: string | React.ReactElement;
   nested?: boolean;
   onClick?: () => void;
+  onExpand?: () => void;
   children?: ReactNode;
   actionButton?: React.ReactNode;
+  collapsed?: boolean;
 };
 
 export type ExperienceHighlight = {
@@ -30,7 +37,7 @@ export type Experience = {
   subtitle?: string;
   subheading?: string;
   body?: string;
-  keywords?: string[];
+  keywords?: Keyword[];
   coreBullets?: string[];
   highlights?: ExperienceHighlight[];
   color?: string;

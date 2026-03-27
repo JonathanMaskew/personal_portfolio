@@ -20,7 +20,6 @@ import {
 } from 'lucide-react';
 import { useModalContext } from '@/context/ModalContext';
 import { useHashScroll } from '@/hooks/useHashScroll';
-import TypewriterText from './TypewriterText';
 import turkeyRun from '@/assets/images/personal/turkey-run.png';
 import costaRica from '@/assets/images/personal/costa-rica.png';
 import raptorEncounter from '@/assets/images/personal/raptor-encounter-hero.png';
@@ -28,6 +27,8 @@ import graduation from '@/assets/images/personal/graduation.png';
 import Image from 'next/image';
 import { useMobile } from '@/hooks/useMobile';
 import { Button } from './Button';
+import ButtonRow from './Button/ButtonRow';
+import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import InnerHighlight from './InnerHighlight';
 import SectionWrapper from './SectionWrapper';
 import Carousel, { CarouselItem } from './Carousel';
@@ -171,34 +172,35 @@ export default function Hero() {
         )}
 
         {/* Text */}
-        <div className="flex flex-col items-center gap-1">
+        <div className="flex flex-col items-center gap-5 md:gap-6 w-full">
           <div
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-center font-header"
+            className={`font-bold underline underline-offset-[4px] md:underline-offset-[5px] decoration-[5px] md:decoration-[6px] font-header text-4xl md:text-5xl lg:text-6xl text-center`}
             style={{
-              background:
-                'linear-gradient(to right, var(--color-primary), var(--color-primary-accent))',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              textDecorationColor: 'var(--color-primary)',
             }}
           >
-            Jonathan Maskew
+            Hi, I'm Jonathan!{' '}
           </div>
-          {/* <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">
-          Software Engineer
-        </div> */}
-          <div className="text-center">
-            <TypewriterText
-              className="text-2xl md:text-3xl lg:text-4xl font-bold"
-              texts={[
-                { text: 'AI Enthusiast', icon: Sparkles },
-                { text: 'Full-stack Engineer', icon: Code },
-                { text: 'Front-end Connoisseur', icon: SquareMousePointer },
-                { text: 'Design Aficionado', icon: Paintbrush },
-                { text: 'Idea Generator', icon: Lightbulb },
-                { text: 'User Experience Architect', icon: User },
-              ]}
-            />
-          </div>
+
+          <span className="text-md/6 md:text-xl/7 lg:text-2xl/8 lg:max-w-[65%] text-center opacity-90">
+            As a Full-stack Engineer passionate about Front-end Development, I
+            combine technical expertise with creative leadership to build
+            scalable, user-focused experiences.
+          </span>
+
+          <ButtonRow className="justify-center">
+            {SECONDARY_NAV_ITEMS.map((item) => {
+              return (
+                <Button
+                  key={item.id}
+                  text={item.label}
+                  imagery={item.icon}
+                  clickDetail={item.href}
+                  newTab={item.newTab}
+                />
+              );
+            })}
+          </ButtonRow>
         </div>
 
         {/* <Button
