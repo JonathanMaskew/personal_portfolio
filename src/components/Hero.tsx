@@ -17,6 +17,7 @@ import {
   TrendingUp,
   Users,
   Plus,
+  Maximize2,
 } from 'lucide-react';
 import { useModalContext } from '@/context/ModalContext';
 import { useHashScroll } from '@/hooks/useHashScroll';
@@ -237,13 +238,8 @@ export default function Hero() {
               }}
             >
               {highlight.children}
-              <div className="absolute bottom-1 right-2">
-                <Button
-                  imagery={Plus}
-                  text="More"
-                  imageryOnly
-                  clickDetail={highlight.onClick}
-                />
+              <div className="absolute right-3 bottom-3 opacity-60 z-10">
+                <Maximize2 size={14} />
               </div>
             </InnerHighlight>
           ))}

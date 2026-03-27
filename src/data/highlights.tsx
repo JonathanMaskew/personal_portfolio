@@ -4,7 +4,7 @@ import {
   PillBottle,
   SplinePointer,
   Megaphone,
-  Plus,
+  Maximize2,
   Sparkles,
   Shield,
 } from 'lucide-react';
@@ -23,7 +23,7 @@ export const getHighlightsData = (
     experienceId: 'myhelo',
     highlightChildren: (
       <Button
-        imagery={Plus}
+        imagery={Maximize2}
         text="More myhELO"
         color="var(--color-myhelo)"
         clickDetail={() => {
@@ -42,7 +42,7 @@ export const getHighlightsData = (
     experienceId: 'myhelo',
     highlightChildren: (
       <Button
-        imagery={Plus}
+        imagery={Maximize2}
         text="More myhELO"
         color="var(--color-myhelo)"
         clickDetail={() => {
@@ -62,7 +62,7 @@ export const getHighlightsData = (
     experienceId: 'myhelo',
     highlightChildren: (
       <Button
-        imagery={Plus}
+        imagery={Maximize2}
         text="More myhELO"
         color="var(--color-myhelo)"
         clickDetail={() => {
@@ -81,7 +81,7 @@ export const getHighlightsData = (
     experienceId: 'allegion',
     highlightChildren: (
       <Button
-        imagery={Plus}
+        imagery={Maximize2}
         text="More Allegion"
         clickDetail={() => {
           openExperienceModal('allegion');
@@ -99,7 +99,7 @@ export const getHighlightsData = (
     experienceId: 'htf-design-director',
     highlightChildren: (
       <Button
-        imagery={Plus}
+        imagery={Maximize2}
         text="More Design Director"
         clickDetail={() => {
           openExperienceModal('htf-design-director');
@@ -117,7 +117,7 @@ export const getHighlightsData = (
   //   experienceId: 'this-site',
   //   highlightChildren: (
   //     <Button
-  //       imagery={Plus}
+  //       imagery={Maximize2}
   //       text="About this Site"
   //       clickDetail={() => {
   //         openExperienceModal('this-site');
@@ -135,7 +135,7 @@ export const getHighlightsData = (
   //   experienceId: 'myhelo',
   //   highlightChildren: (
   //     <Button
-  //       imagery={Plus}
+  //       imagery={Maximize2}
   //       text="More myhELO"
   //       clickDetail={() => {
   //         setOpenedExperienceId('myhelo');
