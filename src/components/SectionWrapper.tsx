@@ -7,6 +7,7 @@ type SectionWrapperProps = {
   children: React.ReactNode;
   className?: string;
   styles?: React.CSSProperties;
+  actionButton?: React.ReactNode;
 };
 
 export default function SectionWrapper({
@@ -16,6 +17,7 @@ export default function SectionWrapper({
   children,
   className,
   styles,
+  actionButton,
 }: SectionWrapperProps) {
   return (
     <div
@@ -25,20 +27,23 @@ export default function SectionWrapper({
       {/* Section header */}
       {(IconComponent || title || subtext) && (
         <div className="flex flex-col gap-2">
-          {(IconComponent || title) && (
-            <div className="flex items-center gap-3">
-              {IconComponent && (
-                <div className="w-6 h-6 md:w-8 md:h-8">
-                  <IconComponent size="100%" />
-                </div>
-              )}
-              {title && (
-                <div className="font-bold text-2xl md:text-3xl font-header">
-                  {title}
-                </div>
-              )}
-            </div>
-          )}
+          <div className="flex flex-row items-center justify-between gap-8 w-full">
+            {(IconComponent || title) && (
+              <div className="flex items-center gap-3">
+                {IconComponent && (
+                  <div className="w-6 h-6 md:w-8 md:h-8">
+                    <IconComponent size="100%" />
+                  </div>
+                )}
+                {title && (
+                  <div className="font-bold text-2xl md:text-3xl font-header">
+                    {title}
+                  </div>
+                )}
+              </div>
+            )}
+            {actionButton && <div className="shrink-0">{actionButton}</div>}
+          </div>
 
           {subtext && (
             <div className="flex flex-col gap-2 text-base md:text-lg opacity-80">
