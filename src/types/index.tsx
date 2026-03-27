@@ -37,7 +37,7 @@ export type Experience = {
   subtitle?: string;
   subheading?: string;
   body?: string;
-  keywords?: Keyword[];
+  keywords?: Array<Keyword | string>;
   coreBullets?: string[];
   highlights?: ExperienceHighlight[];
   color?: string;

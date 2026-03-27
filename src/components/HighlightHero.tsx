@@ -1,10 +1,11 @@
 import React from 'react';
 import Chips from './Chips';
+import type { Keyword } from '@/types';
 
 interface HighlightHeroProps {
   title: string;
   subtitle?: string;
-  chips?: string[];
+  chips?: Array<Keyword | string>;
   className?: string;
   subtitleClassName?: string;
   chipsClassName?: string;

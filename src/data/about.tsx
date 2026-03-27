@@ -80,7 +80,7 @@ export const generateChatContext = (): string => {
     }
 
     if (item.keywords && item.keywords.length > 0) {
-      str += `\n\n->Keywords: ${item.keywords.join(', ')}`;
+      str += `\n\n->Keywords: ${item.keywords.map((k) => (typeof k === 'string' ? k : k.label)).join(', ')}`;
     }
     aboutStrings.push(str);
   });

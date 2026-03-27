@@ -838,7 +838,7 @@ export const generateChatContext = (): string => {
     }
 
     if (item.keywords && item.keywords.length > 0) {
-      itemStr += `\n\n->Keywords: ${item.keywords.join(', ')}`;
+      itemStr += `\n\n->Keywords: ${item.keywords.map((k) => (typeof k === 'string' ? k : k.label)).join(', ')}`;
     }
 
     projectStrings.push(itemStr);

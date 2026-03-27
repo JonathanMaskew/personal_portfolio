@@ -331,7 +331,7 @@ export const generateChatContext = (): string => {
     }
 
     if (job.keywords && job.keywords.length > 0) {
-      jobStr += `\n\n->Keywords: ${job.keywords.join(', ')}`;
+      jobStr += `\n\n->Keywords: ${job.keywords.map((k) => (typeof k === 'string' ? k : k.label)).join(', ')}`;
     }
 
     jobStrings.push(jobStr);
