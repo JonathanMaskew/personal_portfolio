@@ -4,10 +4,10 @@ import SectionWrapper from '../SectionWrapper';
 import { Button } from '../Button';
 import ButtonRow from '../Button/ButtonRow';
 import { SECONDARY_NAV_ITEMS } from '@/data/nav';
-import HighlightHero from '../HighlightHero';
 import { getAboutData } from '@/data/about';
 import { useModalContext } from '@/context/ModalContext';
-import Highlights from '../Highlights';
+import { BadgeCheck } from 'lucide-react';
+import Chips from '../Chips';
 
 export default function About() {
   const aboutData = getAboutData();
@@ -15,79 +15,42 @@ export default function About() {
 
   return (
     <SectionWrapper>
-      <div className="flex flex-col gap-2 md:gap-4">
-        <div
-          className={`font-bold underline underline-offset-[3px] md:underline-offset-[4px] decoration-[4px] md:decoration-[5px] font-header text-4xl md:text-5xl`}
-          style={{
-            textDecorationColor: 'var(--color-primary)',
-          }}
-        >
-          Hi, I'm Jonathan!{' '}
-        </div>
-
-        <span className="text-base lg:text-lg max-w-[90%] lg:max-w-[75%]">
-          As a Full-stack Engineer passionate about Front-end Development, I
-          combine technical expertise with creative leadership to build
-          scalable, user-focused experiences.
-        </span>
-
-        <ButtonRow>
-          {SECONDARY_NAV_ITEMS.map((item) => {
-            return (
-              <Button
-                key={item.id}
-                text={item.label}
-                imagery={item.icon}
-                clickDetail={item.href}
-                newTab={item.newTab}
-              />
-            );
-          })}
-        </ButtonRow>
-      </div>
-
-      {/* <Carousel>
-        {highlights.map((highlight, index) => (
-          <CarouselItem
-            key={highlight.id || index}
-            className={carouselItemStyle}
-          >
-            <HighlightFeature
-              title={highlight.title}
-              imagery={highlight.imagery}
-              subtitle={highlight.subtitle}
-              body={highlight.body}
-              color={highlight.color}
-              onClick={
-                highlight.experienceId
-                  ? () => {
-                      openExperienceModal(highlight.experienceId!);
-                    }
-                  : undefined
-              }
-              actionButton={highlight.highlightChildren}
-            />
-          </CarouselItem>
-        ))}
-      </Carousel> */}
-
-      {/* <SectionWrapper className="!py-0"> */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-7 w-full">
+      <div className="flex flex-col gap-10 md:gap-12 w-full">
         {aboutData.map((data) => {
           return (
-            <HighlightHero
-              key={data.id}
-              title={data.title || ''}
-              subtitle={data.subtitle}
-              chips={data.keywords}
-              color={data.color}
-            >
-              {data.highlightChildren}
-            </HighlightHero>
+            <div key={data.id} className="flex flex-col gap-4 md:gap-5">
+              <div className="flex flex-col gap-2 md:gap-3">
+                <div className="flex items-center gap-2 md:gap-3">
+                  <BadgeCheck
+                    size={40}
+                    className="shrink-0"
+                    style={{ color: 'var(--color-primary)' }}
+                  />
+                  <h3 className="font-header font-bold text-3xl md:text-4xl">
+                    {data.title}
+                  </h3>
+                </div>
+
+                {data.subtitle && (
+                  <p className="text-md/6 md:text-xl/7 lg:max-w-[85%]">
+                    {data.subtitle}
+                  </p>
+                )}
+              </div>
+
+              {data.keywords && (
+                <div className="w-full lg:max-w-[75%]">
+                  <Chips
+                    strings={data.keywords}
+                    color="var(--color-primary)"
+                    className="md:!text-sm"
+                  />
+                </div>
+              )}
+            </div>
           );
         })}
       </div>
-      {/* </SectionWrapper> */}
     </SectionWrapper>
   );
 }
