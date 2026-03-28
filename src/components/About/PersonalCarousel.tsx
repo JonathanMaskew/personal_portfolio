@@ -20,9 +20,9 @@ export default function PersonalCarousel() {
 
   return (
     <>
-      <div className="flex flex-col gap-4">
-        <div className="font-bold text-xl md:text-2xl font-header">
-          Get to know me a little better...
+      <div className="flex flex-col gap-2">
+        <div className="font-bold text-lg md:text-xl font-header">
+          Beyond the code...
         </div>
         <Carousel color="var(--color-primary)">
           <CarouselImageItem
@@ -39,7 +39,7 @@ export default function PersonalCarousel() {
             <div className="flex flex-col gap-1 text-xs">
               <div className="flex items-center gap-2 font-bold text-red-500">
                 {' '}
-                <TriangleAlert size={14} className="animate-urgent-flash" />
+                <TriangleAlert size={14} />
                 SYSTEMS FAILING
               </div>
               <div className="flex items-center text-red-500">

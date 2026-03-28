@@ -78,7 +78,7 @@ export default function ExpandableHighlight({
 
       {collapsed && (
         <div className="absolute right-3 bottom-3 opacity-60 z-10">
-          <Plus size={18} />
+          <Plus size={24} />
         </div>
       )}
     </div>

@@ -3,7 +3,7 @@
 import SectionWrapper from '@/components/SectionWrapper';
 import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import HighlightDetailed from '../HighlightDetailed';
-import { Plus } from 'lucide-react';
+import { Maximize2, Plus } from 'lucide-react';
 import { Button } from '../Button';
 import { useModal } from '@/hooks/useModal';
 import Modal from '../Modal';
@@ -11,13 +11,11 @@ import { useState } from 'react';
 import ButtonRow from '../Button/ButtonRow';
 import { getFooterData } from '@/data/footer';
 import ExperienceDetails from '@/components/Modal/ExperienceDetails';
-import { useTheme } from '@/context/ThemeContext';
-import { useHashScroll } from '@/hooks/useHashScroll';
+import Accordion from '../Accordion';
+import jsLogo from '@/assets/images/js-page/js-logo.png';
 
 export default function Footer() {
   const { modalOpened, openModal, closeModal } = useModal();
-  const { setTheme } = useTheme();
-  const { scrollToHash } = useHashScroll();
   const [openFooterId, setOpenedFooterId] = useState<string | null>(null);
 
   const FOOTER = getFooterData();
@@ -28,10 +26,13 @@ export default function Footer() {
 
   return (
     <SectionWrapper
-      title="I hope to hear from you!"
+      title="Let's build something extraordinary"
       subtext={
         <div className="flex flex-col gap-2">
-          I&apos;d love to connect to discuss anything and everything!
+          Open to new opportunities, great conversations, and everything in
+          between.
+          <br />
+          Please feel free to reach out!
           <ButtonRow>
             {SECONDARY_NAV_ITEMS.map((item) => {
               return (
@@ -48,7 +49,7 @@ export default function Footer() {
         </div>
       }
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7">
+      <Accordion>
         {FOOTER.map((item) => (
           <HighlightDetailed
             key={item.id}
@@ -63,8 +64,8 @@ export default function Footer() {
             }}
             actionButton={
               <Button
-                imagery={Plus}
-                text="More"
+                imagery={Maximize2}
+                text="Show details"
                 clickDetail={() => {
                   setOpenedFooterId(item.id);
                   openModal();
@@ -73,7 +74,7 @@ export default function Footer() {
             }
           />
         ))}
-      </div>
+      </Accordion>
       <Modal
         open={modalOpened && !!openedFooter}
         onCloseCallback={closeModal}

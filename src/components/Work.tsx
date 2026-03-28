@@ -95,7 +95,7 @@ export default function Work() {
   return (
     <SectionWrapper
       title="Work"
-      icon={BriefcaseBusiness}
+      imagery={BriefcaseBusiness}
       actionButton={headerAction}
     >
       {showAll ? (

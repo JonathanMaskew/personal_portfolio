@@ -73,7 +73,7 @@ export default function Misc() {
       </div>
 
       <PersonalCarousel />
-      <ArtGallery />
+      {/* <ArtGallery /> */}
     </SectionWrapper>
   );
 }

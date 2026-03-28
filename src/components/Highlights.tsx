@@ -34,7 +34,7 @@ export default function Highlights() {
 
   return (
     <SectionWrapper
-      icon={Spotlight}
+      imagery={Spotlight}
       title="Highlights"
       className="rounded-2xl"
       styles={{

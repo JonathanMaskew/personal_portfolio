@@ -1,8 +1,9 @@
-import { Icon } from '@/types';
+import React from 'react';
+import { renderImagery, type ImageryInput } from '@/utils/renderImagery';
 
 type SectionWrapperProps = {
   title?: string;
-  icon?: Icon;
+  imagery?: ImageryInput;
   subtext?: string | React.ReactElement;
   children: React.ReactNode;
   className?: string;
@@ -12,7 +13,7 @@ type SectionWrapperProps = {
 
 export default function SectionWrapper({
   title,
-  icon: IconComponent,
+  imagery,
   subtext,
   children,
   className,
@@ -25,16 +26,15 @@ export default function SectionWrapper({
       style={styles}
     >
       {/* Section header */}
-      {(IconComponent || title || subtext) && (
+      {(imagery || title || subtext) && (
         <div className="flex flex-col gap-2">
           <div className="flex flex-row items-center justify-between gap-8 w-full">
-            {(IconComponent || title) && (
+            {(imagery || title) && (
               <div className="flex items-center gap-3">
-                {IconComponent && (
-                  <div className="w-6 h-6 md:w-8 md:h-8">
-                    <IconComponent size="100%" />
-                  </div>
-                )}
+                {renderImagery(imagery, {
+                  iconSize: 32,
+                  imageClassName: 'w-6 h-6 md:w-8 md:h-8 object-contain',
+                })}
                 {title && (
                   <div className="font-bold text-2xl md:text-3xl font-header">
                     {title}

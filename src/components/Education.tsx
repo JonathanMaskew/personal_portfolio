@@ -92,7 +92,7 @@ export default function Education() {
   return (
     <SectionWrapper
       title="Education"
-      icon={GraduationCap}
+      imagery={GraduationCap}
       actionButton={headerAction}
     >
       {showAll ? (
