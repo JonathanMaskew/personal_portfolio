@@ -2,10 +2,6 @@
 
 import {
   Sparkles,
-  Lightbulb,
-  Paintbrush,
-  SquareMousePointer,
-  User,
   Code,
   Award,
   Brain,
@@ -48,16 +44,16 @@ export default function Hero() {
       children: (
         <div className="flex flex-col gap-0.5 text-[10px] leading-tight">
           <div className="flex gap-1.5 items-center opacity-80">
+            <Shield size={11} className="shrink-0" />
+            <span>Architect authentication infrastructure</span>
+          </div>
+          <div className="flex gap-1.5 items-center opacity-80">
             <Pill size={11} className="shrink-0" />
-            <span>Architect full-stack ePrescribe</span>
+            <span>Re-engineer full-stack ePrescribe</span>
           </div>
           <div className="flex gap-1.5 items-center opacity-80">
             <Sparkles size={11} className="shrink-0" />
             <span>Pioneer AI-automation</span>
-          </div>
-          <div className="flex gap-1.5 items-center opacity-80">
-            <Shield size={11} className="shrink-0" />
-            <span>Implement 2FA</span>
           </div>
         </div>
       ),
