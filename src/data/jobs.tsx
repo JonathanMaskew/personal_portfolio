@@ -9,7 +9,7 @@ import {
   ExternalLink,
   Megaphone,
   PillBottle,
-  ShieldCheck,
+  Shield,
   Sparkles,
   SquarePlay,
 } from 'lucide-react';
@@ -40,7 +40,7 @@ export const getJobsData = (): Experience[] => [
     ],
     highlights: [
       {
-        icon: ShieldCheck,
+        icon: Shield,
         title:
           'Introduced Multi-Factor Authentication, Strengthening User Security',
         text: 'Re-architect the authentication infrastructure in JavaScript and PHP, integrating Passkeys, TOTP, SMS/email MFA, and traditional methods into a scalable architecture to ensure compliance on login, identity verification, prescribing of controlled substances, etc.',
