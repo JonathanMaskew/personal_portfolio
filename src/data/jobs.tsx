@@ -25,7 +25,7 @@ export const getJobsData = (): Experience[] => [
     subtitle: 'myhELO',
     title: 'Software Engineer',
     subheading: 'Full-time, June 2024 - Present',
-    body: 'Engineer full-stack solutions within a nationwide healthcare platform using a custom JavaScript framework and PHP. Deliver high-impact infrastructure including an ePrescribing system, multi-factor authentication, and an AI-powered data importer.',
+    body: 'Engineer full-stack solutions within a nationwide healthcare platform using a custom JavaScript framework and PHP. Deliver high-impact infrastructure including an authentication overhaul, ePrescribing system, and an AI-powered data importer.',
     keywords: [
       'JavaScript',
       'PHP',
@@ -40,20 +40,20 @@ export const getJobsData = (): Experience[] => [
     ],
     highlights: [
       {
+        icon: ShieldCheck,
+        title:
+          'Introduced Multi-Factor Authentication, Strengthening User Security',
+        text: 'Re-architect the authentication infrastructure in JavaScript and PHP, integrating Passkeys, TOTP, SMS/email MFA, and traditional methods into a scalable architecture to ensure compliance on login, identity verification, prescribing of controlled substances, etc.',
+      },
+      {
         icon: PillBottle,
         title: 'Architected a Modern, Scalable ePrescribing Infrastructure',
-        text: 'Re-architect the ePrescribing infrastructure by re-writing the full-stack codebase for increased reliability and a streamlined workflow while processing around 4,000 prescription transactions per month.',
+        text: 'Re-engineer the full-stack ePrescribing infrastructure for increased reliability and a streamlined workflow while processing around 4,000 prescription transactions per month.',
       },
       {
         icon: Sparkles,
         title: 'Pioneered AI Automation for Data Import',
         text: 'Pioneer an intelligent pipeline that leverages a Large Language Model to parse and import from unstructured user data, eliminating hours of manual data entry.',
-      },
-      {
-        icon: ShieldCheck,
-        title:
-          'Introduced Multi-Factor Authentication, Strengthening User Security',
-        text: 'Engineer a reusable multi-factor authentication component that supports SMS, email, and passkey, empowering a secure login experience, password reset, provider identity verification, and controlled-substance ePrescribing.',
       },
     ],
     moreAccomplishments: [

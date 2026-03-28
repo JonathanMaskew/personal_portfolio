@@ -14,12 +14,32 @@ export const getHighlightsData = (
   openExperienceModal: (id: string) => void
 ): Experience[] => [
   {
+    id: 'strengthened-user-security',
+    color: 'var(--color-myhelo)',
+    imagery: Shield,
+    title:
+      'Introduced Multi-Factor Authentication, Strengthening User Security',
+    subtitle: 'Software Engineer @ myhELO',
+    body: 'Re-architected the authentication infrastructure in JavaScript and PHP, integrating Passkeys, TOTP, SMS/email MFA, and traditional methods into a scalable architecture to ensure compliance on login, identity verification, and the prescribing of controlled substances.',
+    experienceId: 'myhelo',
+    highlightChildren: (
+      <Button
+        imagery={Maximize2}
+        text="More myhELO"
+        color="var(--color-myhelo)"
+        clickDetail={() => {
+          openExperienceModal('myhelo');
+        }}
+      />
+    ),
+  },
+  {
     id: 'myhelo-eprescribe',
     color: 'var(--color-myhelo)',
     imagery: PillBottle,
     title: 'Architected a Modern, Scalable ePrescribing Infrastructure',
     subtitle: 'Software Engineer @ myhELO',
-    body: 'Re-engineered the ePrescribing infrastructure by re-building the full-stack JavaScript and PHP codebase for increased reliability and a streamlined workflow. The infrastructure now reliably processes around 4,000 prescription transactions each month, with fewer operational issues (with more providers expected to begin using ePrescribe in the coming months).',
+    body: 'Re-engineered the ePrescribing infrastructure by re-building the full-stack JavaScript and PHP codebase for increased reliability and a streamlined workflow. The infrastructure now reliably processes around 4,000 prescription transactions each month, with fewer operational issues (and more providers are expected to begin using ePrescribe in the coming months).',
     experienceId: 'myhelo',
     highlightChildren: (
       <Button
@@ -39,26 +59,6 @@ export const getHighlightsData = (
     title: 'Pioneered AI Automation for Data Imports',
     subtitle: 'Software Engineer @ myhELO',
     body: 'Implemented an intelligent pipeline that leverages a Large Language Model to parse and import unstructured user data. This LLM-assisted import tool introduced automation to a tedious task, eliminating hours of manual data entry.',
-    experienceId: 'myhelo',
-    highlightChildren: (
-      <Button
-        imagery={Maximize2}
-        text="More myhELO"
-        color="var(--color-myhelo)"
-        clickDetail={() => {
-          openExperienceModal('myhelo');
-        }}
-      />
-    ),
-  },
-  {
-    id: 'strengthened-user-security',
-    color: 'var(--color-myhelo)',
-    imagery: Shield,
-    title:
-      'Introduced Multi-Factor Authentication, Strengthening User Security',
-    subtitle: 'Software Engineer @ myhELO',
-    body: 'Built a reusable multi-factor authentication system that supports SMS, email, and passkey authentication methods. Empowers a more secure login experience and password reset, and new features such as provider identity verification and ePrescribing of controlled substances.',
     experienceId: 'myhelo',
     highlightChildren: (
       <Button
