@@ -19,12 +19,10 @@ export default function ExperienceDetails({ data }: ExperienceDetailsProps) {
   return (
     <div className="flex flex-col gap-10">
       <HighlightHeader
-        color={data.color}
         imagery={data.imagery}
         title={data.title}
         subtitle={data.subtitle}
         subheading={data.subheading}
-        className="text-center items-center flex-col"
       />
 
       {data.body && (

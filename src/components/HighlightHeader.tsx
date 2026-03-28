@@ -10,7 +10,6 @@ interface HighlightHeaderProps {
   subtitle?: string;
   subheading?: string;
   imagery?: ImageryInput;
-  color?: string;
   className?: string;
   variant?: 'feature' | 'compact';
 }
@@ -20,9 +19,8 @@ export default function HighlightHeader({
   subtitle,
   subheading,
   imagery,
-  color,
   className,
-  variant = 'feature',
+  variant = 'compact',
 }: HighlightHeaderProps) {
   const isFeature = variant === 'feature';
 

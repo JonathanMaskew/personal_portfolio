@@ -60,7 +60,7 @@ export default function Home() {
           <ChevronDown
             size={24}
             className="animate-bounce cursor-pointer"
-            onClick={() => scrollToHash('#about')}
+            onClick={() => scrollToHash('#highlights')}
           />
         </div>
       </section>
