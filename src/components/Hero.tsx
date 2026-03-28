@@ -187,7 +187,7 @@ export default function Hero() {
             </span>{' '}
           </div>
 
-          <span className="text-xl/7 lg:text-2xl/8 lg:max-w-[55%] text-center opacity-90">
+          <span className="text-lg/7 lg:text-2xl/8 lg:max-w-[55%] text-center opacity-90">
             As a Full-stack Engineer passionate about Front-end Development, I
             combine technical expertise with creative leadership to build
             scalable, user-focused experiences.
