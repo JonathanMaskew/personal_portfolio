@@ -79,9 +79,13 @@ button {
 }
 
 .highlight-feature {
-  background: radial-gradient(circle at top left,
+  /* background: linear-gradient(to bottom right,
     color-mix(in srgb, var(--highlight-color) 75%, transparent) 0%,
       color-mix(in srgb, var(--highlight-color) 30%, black) 100%);
+  border: 0px;
+  transition: box-shadow 0.2s;
+  color: var(--color-foreground-2); */
+  background: color-mix(in srgb, var(--highlight-color) 50%, transparent);
   border: 0px;
   transition: box-shadow 0.2s;
   color: var(--color-foreground-2);

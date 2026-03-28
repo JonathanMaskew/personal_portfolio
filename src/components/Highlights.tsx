@@ -19,10 +19,9 @@ import {
 import SectionWrapper from './SectionWrapper';
 import Carousel, { CarouselItem } from './Carousel';
 import { useModalContext } from '@/context/ModalContext';
+import Accordion from './Accordion';
 import HighlightFeature from './HighlightFeature';
-import HighlightSnippet from './HighlightSnippet';
 import { getHighlightsData } from '@/data/highlights';
-import { Button } from './Button';
 import { useHashScroll } from '@/hooks/useHashScroll';
 
 export default function Highlights() {
@@ -37,36 +36,32 @@ export default function Highlights() {
     <SectionWrapper
       icon={Spotlight}
       title="Highlights"
-      className="rounded-2xl !pb-0 !gap-5"
+      className="rounded-2xl"
       styles={{
         background:
           'linear-gradient(to bottom, color-mix(in srgb, var(--color-foreground), transparent 90%), transparent 50%)',
       }}
     >
-      <Carousel>
-        {highlights.map((highlight, index) => (
-          <CarouselItem
+      <Accordion>
+        {highlights.map((highlight: any, index: number) => (
+          <HighlightFeature
             key={highlight.id || index}
-            className={carouselItemStyle}
-          >
-            <HighlightFeature
-              title={highlight.title}
-              imagery={highlight.imagery}
-              subtitle={highlight.subtitle}
-              body={highlight.body}
-              color={highlight.color}
-              onClick={
-                highlight.experienceId
-                  ? () => {
-                      openExperienceModal(highlight.experienceId!);
-                    }
-                  : undefined
-              }
-              actionButton={highlight.highlightChildren}
-            />
-          </CarouselItem>
+            title={highlight.title}
+            imagery={highlight.imagery}
+            subtitle={highlight.subtitle}
+            body={highlight.body}
+            color={highlight.color}
+            onClick={
+              highlight.experienceId
+                ? () => {
+                    openExperienceModal(highlight.experienceId!);
+                  }
+                : undefined
+            }
+            actionButton={highlight.highlightChildren}
+          />
         ))}
-      </Carousel>
+      </Accordion>
 
       {/* <div className="flex flex-col gap-2 w-full">
         <div className="flex items-center justify-between">

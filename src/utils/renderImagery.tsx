@@ -2,7 +2,7 @@ import React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import type { Icon } from '@/types';
 
-export type ImageryInput = StaticImageData | Icon | React.ReactElement;
+export type ImageryInput = StaticImageData | Icon | React.ReactNode;
 
 type Options = {
   alt?: string;

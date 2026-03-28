@@ -1,6 +1,7 @@
 import React from 'react';
 import type { HighlightProps } from '@/types';
 import HighlightHeader from './HighlightHeader';
+import ExpandableHighlight from './ExpandableHighlight';
 
 export default function HighlightFeature({
   color,
@@ -9,41 +10,47 @@ export default function HighlightFeature({
   subtitle,
   subheading,
   body,
-  nested,
   children,
   actionButton,
   onClick,
+  onExpand,
+  collapsed,
   className,
 }: HighlightProps & {
   className?: string;
 }) {
   const hasHeaderContent = Boolean(imagery || title || subtitle || subheading);
-  const containerStyle = {
-    '--highlight-color': color || 'var(--color-primary)',
-  } as React.CSSProperties;
-  const paddingClass = nested ? 'p-4' : 'p-6';
+
+  const header = hasHeaderContent ? (
+    <HighlightHeader
+      title={title}
+      // subtitle={subtitle}
+      subheading={subheading}
+      imagery={imagery}
+      color={color}
+      variant="feature"
+    />
+  ) : null;
+
+  const content = (
+    <>
+      {body && (
+        <div className="text-base/5 md:text-lg/6 opacity-80">{body}</div>
+      )}
+      {children}
+    </>
+  );
 
   return (
-    <div
-      className={`highlight-feature flex flex-col ${paddingClass} ${actionButton ? 'pb-18 cursor-pointer' : ''} rounded-2xl ${nested ? 'h-fit' : 'h-full'} w-full gap-6 relative transition-shadow duration-200 ${onClick ? 'hover:shadow-[inset_0_0_0_4px_var(--highlight-color)] active:shadow-[inset_0_0_0_4px_var(--highlight-color)]' : ''} ${className || ''}`}
-      style={containerStyle}
+    <ExpandableHighlight
+      color={color}
       onClick={onClick}
-    >
-      {hasHeaderContent && (
-        <HighlightHeader
-          title={title}
-          subtitle={subtitle}
-          subheading={subheading}
-          imagery={imagery}
-          color={color}
-          variant="feature"
-        />
-      )}
-      {body && <div className="text-sm lg:text-base">{body}</div>}
-      {children}
-      {actionButton && (
-        <div className="self-center absolute bottom-4">{actionButton}</div>
-      )}
-    </div>
+      onExpand={onExpand}
+      collapsed={collapsed}
+      actionButton={actionButton}
+      header={header}
+      content={content}
+      className={`highlight-feature ${className}`}
+    />
   );
 }

@@ -36,7 +36,6 @@ import Carousel, { CarouselItem } from './Carousel';
 import Chatbot from './Chatbot';
 
 export default function Hero() {
-  const { isMobileLandscape } = useMobile();
   const { openExperienceModal } = useModalContext();
   const { scrollToHash } = useHashScroll();
 
@@ -134,7 +133,7 @@ export default function Hero() {
   return (
     <SectionWrapper className="min-h-[calc(100dvh-3.5rem)] md:min-h-dvh">
       <div className="flex-grow flex flex-col justify-center items-center gap-8 md:gap-16 w-full">
-        {!isMobileLandscape && (
+        {/* {!isMobileLandscape && (
           <div className="relative w-full max-w-[250px] md:max-w-[500px] h-[270px] md:h-[200px] flex justify-center">
             <div className="absolute transform rotate-6 left-0 top-36 md:top-5">
               <div className="animate-slide-in-left">
@@ -170,20 +169,25 @@ export default function Hero() {
               </div>
             </div>
           </div>
-        )}
+        )} */}
 
         {/* Text */}
-        <div className="flex flex-col items-center gap-5 md:gap-6 w-full">
+        <div className="flex flex-col items-center gap-8 md:gap-10 w-full">
           <div
-            className={`font-bold underline underline-offset-[4px] md:underline-offset-[5px] decoration-[5px] md:decoration-[6px] font-header text-4xl md:text-5xl lg:text-6xl text-center`}
-            style={{
-              textDecorationColor: 'var(--color-primary)',
-            }}
+            className={`font-bold font-header text-center flex flex-col items-center gap-2 md:gap-3 w-full`}
           >
-            Hi, I'm Jonathan!{' '}
+            <span className="text-4xl lg:text-5xl">Hello 👋</span>
+            <span
+              className="text-5xl lg:text-6xl underline underline-offset-[4px] md:underline-offset-[5px] decoration-[5px] md:decoration-[6px]"
+              style={{
+                textDecorationColor: 'var(--color-primary)',
+              }}
+            >
+              I'm Jonathan
+            </span>{' '}
           </div>
 
-          <span className="text-md/6 md:text-xl/7 lg:text-2xl/8 lg:max-w-[65%] text-center opacity-90">
+          <span className="text-xl/7 lg:text-2xl/8 lg:max-w-[55%] text-center opacity-90">
             As a Full-stack Engineer passionate about Front-end Development, I
             combine technical expertise with creative leadership to build
             scalable, user-focused experiences.

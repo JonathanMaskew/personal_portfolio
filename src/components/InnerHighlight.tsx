@@ -39,42 +39,44 @@ export default function InnerHighlight({
       }
       onClick={onClick}
     >
-      <div
-        className={`flex gap-4 ${orientation === 'horizontal' ? 'w-full' : ''} ${classNames?.header || ''}`}
-      >
-        {IconComponent && (
-          <div>
-            <IconComponent size={30} className="text-foreground-2 mt-1" />
-          </div>
-        )}
+      {(IconComponent || title || text) && (
         <div
-          className={`flex flex-col text-left ${orientation === 'horizontal' ? 'flex-1' : ''}`}
+          className={`flex gap-4 ${orientation === 'horizontal' ? 'w-full' : ''} ${classNames?.header || ''}`}
         >
+          {IconComponent && (
+            <div>
+              <IconComponent size={30} className="text-foreground-2 mt-1" />
+            </div>
+          )}
           <div
-            className={
-              orientation === 'horizontal'
-                ? 'flex justify-between items-baseline gap-2 w-full'
-                : 'flex flex-col'
-            }
+            className={`flex flex-col text-left ${orientation === 'horizontal' ? 'flex-1' : ''}`}
           >
-            {title && (
-              <div
-                className={`font-bold font-header text-base md:text-lg ${classNames?.title || ''}`}
-                style={{ color: 'var(--highlight-color)' }}
-              >
-                {title}
-              </div>
-            )}
-            {text && (
-              <div
-                className={`text-sm md:text-base ${orientation === 'horizontal' ? 'text-right shrink-0' : ''} ${classNames?.text || ''}`}
-              >
-                {text}
-              </div>
-            )}
+            <div
+              className={
+                orientation === 'horizontal'
+                  ? 'flex justify-between items-baseline gap-2 w-full'
+                  : 'flex flex-col'
+              }
+            >
+              {title && (
+                <div
+                  className={`font-bold font-header text-base md:text-lg ${classNames?.title || ''}`}
+                  style={{ color: 'var(--highlight-color)' }}
+                >
+                  {title}
+                </div>
+              )}
+              {text && (
+                <div
+                  className={`text-sm md:text-base ${orientation === 'horizontal' ? 'text-right shrink-0' : ''} ${classNames?.text || ''}`}
+                >
+                  {text}
+                </div>
+              )}
+            </div>
           </div>
         </div>
-      </div>
+      )}
       {children}
     </div>
   );

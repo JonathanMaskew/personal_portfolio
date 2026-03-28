@@ -225,9 +225,6 @@ export const getMoreJobsData = (): Experience[] => [
     title: 'Concession Attendant',
     subheading: 'Part-time, March 2018 - 2021',
     body: 'Worked with people of all ages to get food out quickly and accurately at sports stadium concession stands; set up, restock, and tear down.',
-    // highlightChildren: (
-    //   <Chips strings={['Quick Service', 'Intercultural Communication']} />
-    // ),
     coreBullets: [],
   },
   {

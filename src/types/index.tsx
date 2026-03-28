@@ -11,11 +11,10 @@ export type Keyword = {
 export type HighlightProps = {
   color?: string;
   title?: string;
-  imagery?: StaticImageData | Icon;
+  imagery?: StaticImageData | Icon | React.ReactNode;
   subtitle?: string;
   subheading?: string;
   body?: string | React.ReactElement;
-  nested?: boolean;
   onClick?: () => void;
   onExpand?: () => void;
   children?: ReactNode;
@@ -32,7 +31,7 @@ export type ExperienceHighlight = {
 
 export type Experience = {
   id: string;
-  imagery?: StaticImageData | Icon;
+  imagery?: StaticImageData | Icon | React.ReactNode;
   title?: string;
   subtitle?: string;
   subheading?: string;

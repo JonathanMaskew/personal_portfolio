@@ -28,7 +28,7 @@ export const getAboutData = (): Experience[] => [
       { label: 'HTML' },
       { label: 'Node.js' },
     ],
-    color: 'var(--color-generic)',
+    color: 'var(--color-primary)',
   },
   {
     id: 'design-engineering',
@@ -45,7 +45,7 @@ export const getAboutData = (): Experience[] => [
       { label: 'Accessibility' },
       { label: 'Branding' },
     ],
-    color: 'var(--color-generic)',
+    color: 'var(--color-primary)',
   },
   {
     id: 'production-ready-code',
@@ -62,10 +62,9 @@ export const getAboutData = (): Experience[] => [
       { label: 'Error Monitoring' },
       { label: 'Web Security' },
     ],
-    color: 'var(--color-generic)',
+    color: 'var(--color-primary)',
   },
 ];
-
 
 export const generateChatContext = (): string => {
   const aboutData = getAboutData();

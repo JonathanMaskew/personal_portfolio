@@ -29,9 +29,7 @@ export default function HighlightHeader({
   // Imagery container styles
   const baseContainerClass =
     'bg-background/12 justify-center items-center flex';
-  const startImageryContainerClass = isFeature
-    ? `rounded-full p-4 min-h-[72px] max-h-[72px] min-w-[72px] max-w-[72px] ${baseContainerClass}`
-    : `rounded-2xl p-3 min-h-[65px] max-h-[65px] min-w-[65px] max-w-[65px] ${baseContainerClass}`;
+  const startImageryContainerClass = `rounded-2xl p-3 min-h-[72px] max-h-[72px] min-w-[72px] max-w-[72px] ${baseContainerClass}`;
 
   // For static images in compact mode, we might want overflow-hidden (from HighlightDetailed)
   const finalImageryContainerClass = isStaticImageData(imagery)
@@ -42,10 +40,8 @@ export default function HighlightHeader({
   const imageClass = 'h-[41px] w-auto object-contain';
 
   return (
-    <div
-      className={`flex gap-4 ${isFeature ? 'flex-col' : 'items-center'} ${className}`}
-    >
-      {imagery && (
+    <div className={`flex gap-4 items-center ${className}`}>
+      {imagery && !isFeature && (
         <>
           {React.isValidElement(imagery) ? (
             imagery
@@ -63,28 +59,35 @@ export default function HighlightHeader({
 
       {(title || subtitle || subheading) && (
         <div className="flex flex-col">
-          {title && (
-            <div
-              className={`font-bold text-xl lg:text-2xl font-header ${isFeature ? 'mb-2' : ''}`}
-            >
-              {isFeature ? (
-                <span
-                  className="underline"
-                  style={{
-                    textDecorationColor: color,
-                    textDecorationThickness: '3px',
-                    textUnderlineOffset: '2px',
-                  }}
-                >
-                  {title}
-                </span>
-              ) : (
-                title
+          {title && !isFeature && (
+            <div className="font-bold text-xl lg:text-2xl font-header">
+              {title}
+            </div>
+          )}
+          {title && isFeature && (
+            <div className="flex items-center gap-5">
+              {imagery && (
+                <>
+                  {React.isValidElement(imagery) ? (
+                    imagery
+                  ) : (
+                    <div>
+                      {renderImagery(imagery, {
+                        alt: `${title || 'feature'} logo`,
+                        iconSize,
+                        // imageClassName: imageClass,
+                      })}
+                    </div>
+                  )}
+                </>
               )}
+              <h3 className="font-header font-bold text-2xl md:text-3xl">
+                {title}
+              </h3>
             </div>
           )}
           {subtitle && (
-            <div className={`text-sm md:text-base opacity-80`}>{subtitle}</div>
+            <div className={`text-sm md:text-base opacity-80 `}>{subtitle}</div>
           )}
           {subheading && (
             <div className={`text-xs md:text-sm opacity-80`}>{subheading}</div>
