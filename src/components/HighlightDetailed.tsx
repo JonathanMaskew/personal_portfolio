@@ -24,7 +24,6 @@ export default function HighlightDetailed({
       subtitle={subtitle}
       subheading={subheading}
       imagery={imagery}
-      color={color}
       variant="compact"
     />
   ) : null;
