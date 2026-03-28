@@ -17,10 +17,9 @@ export const getHighlightsData = (
     id: 'strengthened-user-security',
     color: 'var(--color-myhelo)',
     imagery: Shield,
-    title:
-      'Introduced Multi-Factor Authentication, Strengthening User Security',
+    title: 'Architected a Modern, Scalable Authentication Infrastructure',
     subtitle: 'Software Engineer @ myhELO',
-    body: 'Re-architected the authentication infrastructure in JavaScript and PHP, integrating Passkeys, TOTP, SMS/email MFA, and traditional methods into a scalable architecture to ensure compliance on login, identity verification, and the prescribing of controlled substances.',
+    body: 'Built a new, modern, and scalable authentication infrastructure for myhELO, separating the concepts of authentication actions (e.g. logging in) vs events (e.g. password attempt) to allow for more reliable tracking throughout the system. The new architecture integrates Passkeys, time-based one-time passwords, SMS/email multi-factor authentication, and traditional methods to ensure compliance on login, identity verification, prescribing of controlled substances, and more.',
     experienceId: 'myhelo',
     highlightChildren: (
       <Button
@@ -37,9 +36,9 @@ export const getHighlightsData = (
     id: 'myhelo-eprescribe',
     color: 'var(--color-myhelo)',
     imagery: PillBottle,
-    title: 'Architected a Modern, Scalable ePrescribing Infrastructure',
+    title: 'Re-engineered ePrescribing Infrastructure, Increasing Reliability',
     subtitle: 'Software Engineer @ myhELO',
-    body: 'Re-engineered the ePrescribing infrastructure by re-building the full-stack JavaScript and PHP codebase for increased reliability and a streamlined workflow. The infrastructure now reliably processes around 4,000 prescription transactions each month, with fewer operational issues (and more providers are expected to begin using ePrescribe in the coming months).',
+    body: 'Overhauled the ePrescribing infrastructure by re-building the full-stack JavaScript and PHP codebase for increased reliability and a streamlined workflow. The infrastructure now reliably processes around 4,000 prescription transactions each month, with fewer operational issues (and more providers are expected to begin using ePrescribe in the coming months).',
     experienceId: 'myhelo',
     highlightChildren: (
       <Button
