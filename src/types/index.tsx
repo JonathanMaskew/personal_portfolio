@@ -46,6 +46,9 @@ export type Experience = {
   moreAccomplishments?: string[];
   moreBullets?: string[];
   experienceId?: string;
+  heroBody?: { icon: Icon; label: string }[];
+  heroTitle?: string;
+  heroSubtitle?: string;
 };
 
 export type NavItem = {

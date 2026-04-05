@@ -8,10 +8,13 @@ import {
   ChefHat,
   ExternalLink,
   Megaphone,
+  Pill,
   PillBottle,
   Shield,
   Sparkles,
   SquarePlay,
+  Users,
+  Code,
 } from 'lucide-react';
 import { Button } from '@/components/Button';
 import ButtonRow from '@/components/Button/ButtonRow';
@@ -24,8 +27,24 @@ export const getJobsData = (): Experience[] => [
     color: 'var(--color-myhelo)',
     subtitle: 'myhELO',
     title: 'Software Engineer',
+    heroTitle: 'Full-stack Engineer',
+    heroSubtitle: 'myhELO',
     subheading: 'Full-time, June 2024 - Present',
     body: 'Engineer full-stack solutions within a nationwide healthcare platform using a custom JavaScript framework and PHP. Deliver high-impact infrastructure including an authentication overhaul, ePrescribing system, and an AI-powered data importer.',
+    heroBody: [
+      {
+        icon: Shield,
+        label: 'Architect authentication infrastructure',
+      },
+      {
+        icon: Pill,
+        label: 'Re-engineer full-stack ePrescribe',
+      },
+      {
+        icon: Sparkles,
+        label: 'Pioneer AI-automation',
+      },
+    ],
     keywords: [
       'JavaScript',
       'PHP',
@@ -41,13 +60,13 @@ export const getJobsData = (): Experience[] => [
     highlights: [
       {
         icon: Shield,
-        title:
-          'Introduced Multi-Factor Authentication, Strengthening User Security',
+        title: 'Architected a Modern, Scalable Authentication Infrastructure',
         text: 'Re-architect the authentication infrastructure in JavaScript and PHP, integrating Passkeys, TOTP, SMS/email MFA, and traditional methods into a scalable architecture to ensure compliance on login, identity verification, prescribing of controlled substances, etc.',
       },
       {
         icon: PillBottle,
-        title: 'Architected a Modern, Scalable ePrescribing Infrastructure',
+        title:
+          'Re-engineered ePrescribing Infrastructure, Increasing Reliability',
         text: 'Re-engineer the full-stack ePrescribing infrastructure for increased reliability and a streamlined workflow while processing around 4,000 prescription transactions per month.',
       },
       {
@@ -72,8 +91,24 @@ export const getJobsData = (): Experience[] => [
     color: 'var(--color-allegion)',
     subtitle: 'Allegion',
     title: 'Software Engineer',
+    heroTitle: 'Front-end Engineer',
+    heroSubtitle: 'Allegion',
     subheading: 'Intern, May 2023 - August 2023',
     body: 'Built Angular components and integrated with back-end APIs to deliver a seamless announcements system. The system allows administrators to rapidly communicate important updates to employees, preventing announcements from getting lost in Teams threads or emails.',
+    heroBody: [
+      {
+        icon: Megaphone,
+        label: 'Developed announcements system',
+      },
+      {
+        icon: Code,
+        label: 'Translated mockups to code',
+      },
+      {
+        icon: Users,
+        label: 'Collaborated with Product & Design',
+      },
+    ],
     keywords: [
       'Angular',
       'Angular Material',

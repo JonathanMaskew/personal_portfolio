@@ -1,28 +1,8 @@
 'use client';
 
-import {
-  Sparkles,
-  Code,
-  Award,
-  Brain,
-  Megaphone,
-  Palette,
-  Pill,
-  Shield,
-  SplinePointer,
-  TrendingUp,
-  Users,
-  Plus,
-  Maximize2,
-} from 'lucide-react';
+import { Plus, Maximize2 } from 'lucide-react';
 import { useModalContext } from '@/context/ModalContext';
 import { useHashScroll } from '@/hooks/useHashScroll';
-import turkeyRun from '@/assets/images/personal/turkey-run.png';
-import costaRica from '@/assets/images/personal/costa-rica.png';
-import raptorEncounter from '@/assets/images/personal/raptor-encounter-hero.png';
-import graduation from '@/assets/images/personal/graduation.png';
-import Image from 'next/image';
-import { useMobile } from '@/hooks/useMobile';
 import { Button } from './Button';
 import ButtonRow from './Button/ButtonRow';
 import { SECONDARY_NAV_ITEMS } from '@/data/nav';
@@ -30,101 +10,56 @@ import InnerHighlight from './InnerHighlight';
 import SectionWrapper from './SectionWrapper';
 import Carousel, { CarouselItem } from './Carousel';
 import Chatbot from './Chatbot';
+import { getJobsData } from '@/data/jobs';
+import { getEducationData } from '@/data/education';
 
 export default function Hero() {
   const { openExperienceModal } = useModalContext();
   const { scrollToHash } = useHashScroll();
 
-  const highlights = [
-    {
-      title: 'Full-stack Engineer',
-      text: 'myhELO',
-      color: 'var(--color-myhelo)',
-      onClick: () => openExperienceModal('myhelo'),
-      children: (
-        <div className="flex flex-col gap-0.5 text-[10px] leading-tight">
-          <div className="flex gap-1.5 items-center opacity-80">
-            <Shield size={11} className="shrink-0" />
-            <span>Architect authentication infrastructure</span>
-          </div>
-          <div className="flex gap-1.5 items-center opacity-80">
-            <Pill size={11} className="shrink-0" />
-            <span>Re-engineer full-stack ePrescribe</span>
-          </div>
-          <div className="flex gap-1.5 items-center opacity-80">
-            <Sparkles size={11} className="shrink-0" />
-            <span>Pioneer AI-automation</span>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: 'Front-end Engineer',
-      text: 'Allegion',
-      color: 'var(--color-allegion)',
-      onClick: () => openExperienceModal('allegion'),
-      children: (
-        <div className="flex flex-col gap-0.5 text-[10px] leading-tight">
-          <div className="flex gap-1.5 items-center opacity-80">
-            <Megaphone size={11} className="shrink-0" />
-            <span>Developed announcements system</span>
-          </div>
-          <div className="flex gap-1.5 items-center opacity-80">
-            <Code size={11} className="shrink-0" />
-            <span>Translated mockups to code</span>
-          </div>
-          <div className="flex gap-1.5 items-center opacity-80">
-            <Users size={11} className="shrink-0" />
-            <span>Collaborated with Product & Design</span>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: 'Design Director',
-      text: 'Hack the Future',
-      color: 'var(--color-htf)',
-      onClick: () => openExperienceModal('htf-design-director'),
-      children: (
-        <div className="flex flex-col gap-0.5 text-[10px] leading-tight">
-          <div className="flex gap-1.5 items-center opacity-80">
-            <SplinePointer size={11} className="shrink-0" />
-            <span>Guided UX/UI</span>
-          </div>
-          <div className="flex gap-1.5 items-center opacity-80">
-            <Palette size={11} className="shrink-0" />
-            <span>Led rebranding</span>
-          </div>
-          <div className="flex gap-1.5 items-center opacity-80">
-            <TrendingUp size={11} className="shrink-0" />
-            <span>Increased applicants by ~90%</span>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: 'BS in Computer Science',
-      text: 'Purdue University',
-      color: 'var(--color-purdue)',
-      onClick: () => scrollToHash('#education'),
-      children: (
-        <div className="flex flex-col gap-0.5 text-[10px] leading-tight">
-          <div className="flex gap-1.5 items-center opacity-80">
-            <Code size={11} className="shrink-0" />
-            <span>Software Engineering concentration</span>
-          </div>
-          <div className="flex gap-1.5 items-center opacity-80">
-            <Brain size={11} className="shrink-0" />
-            <span>3.69 GPA</span>
-          </div>
-          <div className="flex gap-1.5 items-center opacity-80">
-            <Award size={11} className="shrink-0" />
-            <span>Dean's List & Semester Honors</span>
-          </div>
-        </div>
-      ),
-    },
+  const jobsData = getJobsData();
+  const educationData = getEducationData();
+
+  const highlightIds = [
+    { id: 'myhelo', type: 'job' },
+    { id: 'allegion', type: 'job' },
+    { id: 'htf-design-director', type: 'edu' },
+    { id: 'purdue', type: 'edu' },
   ];
+
+  const highlights = highlightIds
+    .map(({ id, type }) => {
+      const data =
+        type === 'job'
+          ? jobsData.find((j) => j.id === id)
+          : educationData.find((e) => e.id === id);
+
+      if (!data) return null;
+
+      return {
+        title: data.heroTitle || data.title,
+        text: data.heroSubtitle || data.subtitle,
+        color: data.color,
+        onClick: id === 'purdue' ? undefined : () => openExperienceModal(id),
+        children: (
+          <div className="flex flex-col gap-0.5 text-[10px] leading-tight">
+            {data.heroBody?.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={index}
+                  className="flex gap-1.5 items-center opacity-80"
+                >
+                  <Icon size={11} className="shrink-0" />
+                  <span>{item.label}</span>
+                </div>
+              );
+            })}
+          </div>
+        ),
+      };
+    })
+    .filter((h) => h !== null);
 
   return (
     <SectionWrapper className="min-h-[calc(100dvh-3.5rem)] md:min-h-dvh">
@@ -238,9 +173,11 @@ export default function Hero() {
               }}
             >
               {highlight.children}
-              <div className="absolute right-3 bottom-3 opacity-60 z-10">
-                <Maximize2 size={14} />
-              </div>
+              {highlight.onClick && (
+                <div className="absolute right-3 bottom-3 opacity-60 z-10">
+                  <Maximize2 size={14} />
+                </div>
+              )}
             </InnerHighlight>
           ))}
         </div>
@@ -265,14 +202,11 @@ export default function Hero() {
                   }}
                 >
                   {highlight.children}
-                  <div className="absolute bottom-1 right-2">
-                    <Button
-                      imagery={Plus}
-                      text="More"
-                      imageryOnly
-                      clickDetail={highlight.onClick}
-                    />
-                  </div>
+                  {highlight.onClick && (
+                    <div className="absolute right-3 bottom-3 opacity-60 z-10">
+                      <Maximize2 size={14} />
+                    </div>
+                  )}
                 </InnerHighlight>
               </CarouselItem>
             ))}

@@ -17,6 +17,11 @@ import {
   Users,
   Trophy,
   SplinePointer,
+  Palette,
+  TrendingUp,
+  Code,
+  Brain,
+  Award,
 } from 'lucide-react';
 import designAndMarketing from '@/assets/images/experience/hack-the-future/design-and-marketing.png';
 import designAndMarketing2 from '@/assets/images/experience/hack-the-future/design-and-marketing-2.png';
@@ -126,9 +131,25 @@ export const getEducationData = (): Experience[] => [
     color: 'var(--color-htf)',
     imagery: htfLogoWhite,
     title: 'Design Director',
+    heroTitle: 'Design Director',
     subtitle: 'Hack the Future',
+    heroSubtitle: 'Hack the Future',
     subheading: 'Purdue University, March 2022 - May 2024',
     body: "Led a re-branding initiative that amplified the organization's visibility resulting in a record-breaking nearly 90% year-over-year increase in applications. Created resources to guide four teams on UX/UI principles and front-end development.",
+    heroBody: [
+      {
+        icon: TrendingUp,
+        label: 'Increased applicants by ~90%',
+      },
+      {
+        icon: SplinePointer,
+        label: 'Guided UX/UI principles',
+      },
+      {
+        icon: Palette,
+        label: 'Led organization rebranding',
+      },
+    ],
     coreBullets: [
       'Mentored four project teams on UX/UI principles and created resources to guide translating Figma mockups into front-end code.',
       'Established branded components in React to streamline development and maintain consistency across all team projects.',
@@ -428,8 +449,24 @@ export const getEducationData = (): Experience[] => [
     color: 'var(--color-purdue)',
     imagery: purdueLogo,
     title: 'Bachelor of Science in Computer Science',
+    heroTitle: 'BS in Computer Science',
     subtitle: 'Concentration in Software Engineering',
+    heroSubtitle: 'Purdue University',
     subheading: 'Purdue University, 2020 - 2024',
+    heroBody: [
+      {
+        icon: Code,
+        label: 'Software Engineering concentration',
+      },
+      {
+        icon: Brain,
+        label: '3.69 GPA',
+      },
+      {
+        icon: Award,
+        label: "Dean's List & Semester Honors",
+      },
+    ],
     highlightChildren: (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
         {purdueStats.map((highlight, index) => (
