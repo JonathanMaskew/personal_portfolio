@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 
 interface AccordionProps {
   children: React.ReactNode;
@@ -20,10 +19,8 @@ export default function Accordion({
         const isExpanded = activeIndex === index;
 
         return (
-          <motion.div
+          <div
             key={index}
-            layout="position"
-            transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
             className="w-full"
           >
             {React.isValidElement(child)
@@ -32,7 +29,7 @@ export default function Accordion({
                   onExpand: () => setActiveIndex(index),
                 })
               : child}
-          </motion.div>
+          </div>
         );
       })}
     </div>
