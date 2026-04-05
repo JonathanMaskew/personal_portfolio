@@ -40,16 +40,18 @@ export default function ExperienceDetails({ data }: ExperienceDetailsProps) {
       {data.highlights && data.highlights.length > 0 && (
         <ModalSection icon={Star} title="Highlights">
           <div className="flex flex-wrap gap-3 justify-center">
-            {data.highlights.map((highlight, i) => (
-              <InnerHighlight
-                key={i}
-                icon={highlight.icon}
-                title={highlight.title}
-                text={highlight.text}
-              >
-                {highlight.children}
-              </InnerHighlight>
-            ))}
+            {data.highlights
+              .filter((highlight) => highlight.title)
+              .map((highlight, i) => (
+                <InnerHighlight
+                  key={i}
+                  icon={highlight.icon}
+                  title={highlight.title}
+                  text={highlight.text}
+                >
+                  {highlight.children}
+                </InnerHighlight>
+              ))}
           </div>
         </ModalSection>
       )}

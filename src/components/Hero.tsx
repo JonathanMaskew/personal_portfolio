@@ -43,18 +43,20 @@ export default function Hero() {
         onClick: id === 'purdue' ? undefined : () => openExperienceModal(id),
         children: (
           <div className="flex flex-col gap-0.5 text-[10px] leading-tight">
-            {data.heroBody?.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={index}
-                  className="flex gap-1.5 items-center opacity-80"
-                >
-                  <Icon size={11} className="shrink-0" />
-                  <span>{item.label}</span>
-                </div>
-              );
-            })}
+            {data.highlights
+              ?.filter((h) => h.heroTitle)
+              .map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={index}
+                    className="flex gap-1.5 items-center opacity-80"
+                  >
+                    <Icon size={11} className="shrink-0" />
+                    <span>{item.heroTitle}</span>
+                  </div>
+                );
+              })}
           </div>
         ),
       };

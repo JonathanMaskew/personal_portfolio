@@ -102,29 +102,6 @@ import coolVendingMachineFinder from '@/assets/images/experience/cool-vending-ma
 import coolVendingMachine from '@/assets/images/experience/cool-vending-machine.png';
 import Image from 'next/image';
 
-interface StatHighlight {
-  title: string;
-  text: string;
-}
-
-const purdueStats: StatHighlight[] = [
-  { title: 'GPA', text: '3.69 / 4.0' },
-  { title: "Dean's List", text: 'Spring 2022 - Fall 2023' },
-  { title: 'Semester Honors', text: 'Fall 2021 - Fall 2023' },
-];
-
-const noblesvilleStats: StatHighlight[] = [
-  { title: 'GPA', text: '4.27 / 4.0 (weighted)' },
-  {
-    title: 'Challenging Classes',
-    text: '2+ Honors/AP/ACP/Dual Credit classes each year',
-  },
-  {
-    title: 'High Grades',
-    text: 'Received an A- or higher in all but 4 classes during K-12 years. Never received worse than a B.',
-  },
-];
-
 export const getEducationData = (): Experience[] => [
   {
     id: 'htf-design-director',
@@ -136,29 +113,20 @@ export const getEducationData = (): Experience[] => [
     heroSubtitle: 'Hack the Future',
     subheading: 'Purdue University, March 2022 - May 2024',
     body: "Led a re-branding initiative that amplified the organization's visibility resulting in a record-breaking nearly 90% year-over-year increase in applications. Created resources to guide four teams on UX/UI principles and front-end development.",
-    heroBody: [
+    highlights: [
       {
         icon: TrendingUp,
-        label: 'Increased applicants by ~90%',
+        title: 'Led a Branding Overhaul, Driving Growth by 90%',
+        text: 'Led a branding revamp and increased outreach efforts leading to a record-breaking nearly 90% YoY increase in applicants.',
+        heroTitle: 'Increased applicants by ~90%',
       },
       {
         icon: SplinePointer,
-        label: 'Guided UX/UI principles',
+        heroTitle: 'Guided UX/UI principles',
       },
       {
         icon: Palette,
-        label: 'Led organization rebranding',
-      },
-    ],
-    coreBullets: [
-      'Mentored four project teams on UX/UI principles and created resources to guide translating Figma mockups into front-end code.',
-      'Established branded components in React to streamline development and maintain consistency across all team projects.',
-    ],
-    highlights: [
-      {
-        icon: SplinePointer,
-        title: 'Led a Branding Overhaul, Driving Growth by 90%',
-        text: 'Led a branding revamp and increased outreach efforts leading to a record-breaking nearly 90% YoY increase in applicants.',
+        heroTitle: 'Led organization rebranding',
       },
     ],
     keywords: [
@@ -169,7 +137,10 @@ export const getEducationData = (): Experience[] => [
       'Branding',
       'Graphic Design',
     ],
-    // highlightChildren: (
+    coreBullets: [
+      'Mentored four project teams on UX/UI principles and created resources to guide translating Figma mockups into front-end code.',
+      'Established branded components in React to streamline development and maintain consistency across all team projects.',
+    ],
     //   <div className="flex flex-col gap-6">
     //     <Chips
     //       strings={[
@@ -453,31 +424,24 @@ export const getEducationData = (): Experience[] => [
     subtitle: 'Concentration in Software Engineering',
     heroSubtitle: 'Purdue University',
     subheading: 'Purdue University, 2020 - 2024',
-    heroBody: [
+    highlights: [
       {
         icon: Code,
-        label: 'Software Engineering concentration',
+        title: 'Software Engineering Concentration',
+        heroTitle: 'Software Engineering concentration',
       },
       {
         icon: Brain,
-        label: '3.69 GPA',
+        title: '3.69 GPA',
+        heroTitle: '3.69 GPA',
       },
       {
         icon: Award,
-        label: "Dean's List & Semester Honors",
+        title:
+          "Dean's List (4 semesters, Spring 2022 - Fall 2023) & Semester Honors (5 semesters, Fall 2021 - Fall 2023)",
+        heroTitle: "Dean's List & Semester Honors",
       },
     ],
-    highlightChildren: (
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
-        {purdueStats.map((highlight, index) => (
-          <InnerHighlight
-            key={index}
-            title={highlight.title}
-            text={highlight.text}
-          />
-        ))}
-      </div>
-    ),
   },
 ];
 
@@ -758,15 +722,21 @@ export const getMoreEducationData = (): Experience[] => [
     title: 'Core 40 with Academic Honors',
     subtitle: 'Noblesville High School',
     subheading: 'Noblesville, IN, 2016 - 2020',
-    body: '',
-    coreBullets: [],
-    highlightChildren: (
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
-        {noblesvilleStats.map((h, i) => (
-          <InnerHighlight key={i} title={h.title} text={h.text} />
-        ))}
-      </div>
-    ),
+    highlights: [
+      {
+        icon: Brain,
+        title: '4.27 / 4.0 GPA (weighted)',
+      },
+      {
+        icon: BookOpen,
+        title: '2+ Honors/AP/ACP/Dual Credit classes each year',
+      },
+      {
+        icon: Award,
+        title:
+          'Received an A- or higher in all but 4 classes during K-12 years. Never received worse than a B.',
+      },
+    ],
   },
   {
     id: 'national-honors-society',
@@ -892,18 +862,6 @@ export const generateChatContext = (): string => {
   const allEducation = [...educationItems, ...hsItems];
   allEducation.forEach((item) => {
     let itemStr = `${item.title || ''} | ${item.subtitle || ''} (${item.subheading || ''})`;
-
-    const statsToUse =
-      item.id === 'purdue'
-        ? purdueStats
-        : item.id === 'noblesville-high-school'
-          ? noblesvilleStats
-          : [];
-
-    if (statsToUse.length > 0) {
-      itemStr += `\n\n->Stats:\n`;
-      itemStr += statsToUse.map((s) => `- ${s.title}: ${s.text}`).join('\n');
-    }
 
     if (item.body) {
       itemStr += `\n\n->Summary:\n- ${item.body}`;

@@ -31,18 +31,25 @@ export const getJobsData = (): Experience[] => [
     heroSubtitle: 'myhELO',
     subheading: 'Full-time, June 2024 - Present',
     body: 'Engineer full-stack solutions within a nationwide healthcare platform using a custom JavaScript framework and PHP. Deliver high-impact infrastructure including an authentication overhaul, ePrescribing system, and an AI-powered data importer.',
-    heroBody: [
+    highlights: [
       {
         icon: Shield,
-        label: 'Architect authentication infrastructure',
+        title: 'Architected a Modern, Scalable Authentication Infrastructure',
+        text: 'Re-architect the authentication infrastructure in JavaScript and PHP, integrating Passkeys, TOTP, SMS/email MFA, and traditional methods into a scalable architecture to ensure compliance on login, identity verification, prescribing of controlled substances, etc.',
+        heroTitle: 'Architect authentication infrastructure',
       },
       {
-        icon: Pill,
-        label: 'Re-engineer full-stack ePrescribe',
+        icon: PillBottle,
+        title:
+          'Re-engineered ePrescribing Infrastructure, Increasing Reliability',
+        text: 'Re-engineer the full-stack ePrescribing infrastructure for increased reliability and a streamlined workflow while processing around 4,000 prescription transactions per month.',
+        heroTitle: 'Re-engineer full-stack ePrescribe',
       },
       {
         icon: Sparkles,
-        label: 'Pioneer AI-automation',
+        title: 'Pioneered AI Automation for Data Import',
+        text: 'Pioneer an intelligent pipeline that leverages a Large Language Model to parse and import from unstructured user data, eliminating hours of manual data entry.',
+        heroTitle: 'Pioneer AI-automation',
       },
     ],
     keywords: [
@@ -56,24 +63,6 @@ export const getJobsData = (): Experience[] => [
       'UI/UX Design',
       'Figma',
       'Sentry',
-    ],
-    highlights: [
-      {
-        icon: Shield,
-        title: 'Architected a Modern, Scalable Authentication Infrastructure',
-        text: 'Re-architect the authentication infrastructure in JavaScript and PHP, integrating Passkeys, TOTP, SMS/email MFA, and traditional methods into a scalable architecture to ensure compliance on login, identity verification, prescribing of controlled substances, etc.',
-      },
-      {
-        icon: PillBottle,
-        title:
-          'Re-engineered ePrescribing Infrastructure, Increasing Reliability',
-        text: 'Re-engineer the full-stack ePrescribing infrastructure for increased reliability and a streamlined workflow while processing around 4,000 prescription transactions per month.',
-      },
-      {
-        icon: Sparkles,
-        title: 'Pioneered AI Automation for Data Import',
-        text: 'Pioneer an intelligent pipeline that leverages a Large Language Model to parse and import from unstructured user data, eliminating hours of manual data entry.',
-      },
     ],
     moreAccomplishments: [
       'Redesign the site-wide UI template in JavaScript and CSS to prioritize critical patient data, increase layout flexibility, and reduce front-end complexity.',
@@ -95,18 +84,20 @@ export const getJobsData = (): Experience[] => [
     heroSubtitle: 'Allegion',
     subheading: 'Intern, May 2023 - August 2023',
     body: 'Built Angular components and integrated with back-end APIs to deliver a seamless announcements system. The system allows administrators to rapidly communicate important updates to employees, preventing announcements from getting lost in Teams threads or emails.',
-    heroBody: [
+    highlights: [
       {
         icon: Megaphone,
-        label: 'Developed announcements system',
+        title: 'Engineered a Targeted Communication System',
+        text: 'Developed an intuitive announcements feature within a component-based Angular site by integrating with back-end APIs, allowing administrators to target messages to hundreds of employees.',
+        heroTitle: 'Developed announcements system',
       },
       {
         icon: Code,
-        label: 'Translated mockups to code',
+        heroTitle: 'Translated mockups to code',
       },
       {
         icon: Users,
-        label: 'Collaborated with Product & Design',
+        heroTitle: 'Collaborated with Product & Design',
       },
     ],
     keywords: [
@@ -115,13 +106,6 @@ export const getJobsData = (): Experience[] => [
       'Front-end',
       'APIs',
       'Scrum / Agile',
-    ],
-    highlights: [
-      {
-        icon: Megaphone,
-        title: 'Engineered a Targeted Communication System',
-        text: 'Developed an intuitive announcements feature within a component-based Angular site by integrating with back-end APIs, allowing administrators to target messages to hundreds of employees.',
-      },
     ],
     coreBullets: [
       'Collaborated with Product Owners, Interaction Designers, and Back-end Developers to translate mockups into production-ready interfaces.',

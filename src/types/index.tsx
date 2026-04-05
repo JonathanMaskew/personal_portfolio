@@ -25,8 +25,10 @@ export type HighlightProps = {
 export type ExperienceHighlight = {
   icon: Icon;
   title?: string;
-  text: string;
+  text?: string;
   children?: React.ReactNode;
+  heroTitle?: string;
+  heroText?: string;
 };
 
 export type Experience = {
@@ -46,7 +48,6 @@ export type Experience = {
   moreAccomplishments?: string[];
   moreBullets?: string[];
   experienceId?: string;
-  heroBody?: { icon: Icon; label: string }[];
   heroTitle?: string;
   heroSubtitle?: string;
 };
