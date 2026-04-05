@@ -28,15 +28,17 @@ export default function Misc() {
           }}
         >
           <Quote size={40} className="mt-1 -scale-x-100 shrink-0" />
-          <div className="flex flex-col gap-4">
-            <div className="flex flex-col gap-2 text-xl md:text-2xl">
-              <div>Man has a dream and that's the start</div>
-              <div>He follows his dream with mind and heart</div>
-              <div>And when it becomes a reality</div>
-              <div>It's a dream come true for you and me</div>
-            </div>
-            <div className="italic">
-              - Carousel of Progress (Sherman Brothers)
+          <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-4 text-2xl md:text-4xl">
+                <div>Man has a dream and that's the start</div>
+                <div>He follows his dream with mind and heart</div>
+                <div>And when it becomes a reality</div>
+                <div>It's a dream come true for you and me</div>
+              </div>
+              <div className="italic text-xs opacity-80">
+                Carousel of Progress (Sherman Brothers)
+              </div>
             </div>
             <div className="flex flex-col gap-2">
               <div>Rotate site theme to the...</div>
