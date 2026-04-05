@@ -28,7 +28,7 @@ export default function Highlights() {
             key={highlight.id || index}
             title={highlight.title}
             imagery={highlight.imagery}
-            subtitle={highlight.subtitle}
+            // subtitle={highlight.subtitle}
             body={highlight.body}
             color={highlight.color}
             onClick={
