@@ -8,7 +8,6 @@ import {
   ChefHat,
   ExternalLink,
   Megaphone,
-  Pill,
   PillBottle,
   Shield,
   Sparkles,

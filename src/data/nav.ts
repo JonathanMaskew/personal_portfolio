@@ -6,7 +6,6 @@ import {
   BriefcaseBusiness,
   Linkedin,
   House,
-  User,
   CircleEllipsis,
   Spotlight,
 } from 'lucide-react';

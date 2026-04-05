@@ -59,3 +59,16 @@ export type NavItem = {
   href: string;
   newTab?: boolean;
 };
+
+/** Whether an Experience has enough detail to warrant opening a modal. */
+export function hasModalContent(item: Experience): boolean {
+  return Boolean(
+    (item.highlights && item.highlights.length > 0) ||
+    (item.coreBullets && item.coreBullets.length > 0) ||
+    (item.moreAccomplishments && item.moreAccomplishments.length > 0) ||
+    (item.moreBullets && item.moreBullets.length > 0) ||
+    item.modalChildren
+  );
+}
+
+

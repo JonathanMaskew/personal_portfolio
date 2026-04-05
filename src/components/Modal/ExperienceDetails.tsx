@@ -17,7 +17,7 @@ export default function ExperienceDetails({ data }: ExperienceDetailsProps) {
   }
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10 mt-10">
       <HighlightHeader
         imagery={data.imagery}
         title={data.title}

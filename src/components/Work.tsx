@@ -15,6 +15,8 @@ import Chips from './Chips';
 import { useModalContext } from '@/context/ModalContext';
 import InnerHighlight from './InnerHighlight';
 import Accordion from './Accordion';
+import type { Experience, ExperienceHighlight } from '@/types';
+import { hasModalContent } from '@/types';
 
 export default function Work() {
   const { openExperienceModal } = useModalContext();
@@ -33,7 +35,7 @@ export default function Work() {
   );
 
   const renderJobContent = (
-    job: any,
+    job: Experience,
     keyProp: string | number,
     collapsed?: boolean,
     onExpand?: () => void
@@ -49,20 +51,12 @@ export default function Work() {
       collapsed={collapsed}
       onExpand={onExpand}
       onClick={
-        (job.highlights && job.highlights.length > 0) ||
-        (job.coreBullets && job.coreBullets.length > 0) ||
-        (job.moreAccomplishments && job.moreAccomplishments.length > 0) ||
-        (job.moreBullets && job.moreBullets.length > 0) ||
-        job.modalChildren
+        hasModalContent(job)
           ? () => openExperienceModal(job.id)
           : undefined
       }
       actionButton={
-        (job.highlights && job.highlights.length > 0) ||
-        (job.coreBullets && job.coreBullets.length > 0) ||
-        (job.moreAccomplishments && job.moreAccomplishments.length > 0) ||
-        (job.moreBullets && job.moreBullets.length > 0) ||
-        job.modalChildren ? (
+        hasModalContent(job) ? (
           <Button
             text="Show details"
             clickDetail={() => openExperienceModal(job.id)}
@@ -76,8 +70,8 @@ export default function Work() {
           <InnerHighlight>
             <div className="flex flex-col gap-2">
               {job.highlights
-                .filter((hl: any) => hl.title)
-                .map((hl: any, i: number) => (
+                .filter((hl: ExperienceHighlight) => hl.title)
+                .map((hl: ExperienceHighlight, i: number) => (
                   <div
                     key={i}
                     className="flex items-center gap-3 text-base/5 md:text-lg/6 opacity-80"

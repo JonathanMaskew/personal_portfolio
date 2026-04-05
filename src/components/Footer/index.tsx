@@ -3,7 +3,7 @@
 import SectionWrapper from '@/components/SectionWrapper';
 import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import HighlightDetailed from '../HighlightDetailed';
-import { Maximize2, Plus } from 'lucide-react';
+import { Maximize2 } from 'lucide-react';
 import { Button } from '../Button';
 import { useModal } from '@/hooks/useModal';
 import Modal from '../Modal';
@@ -12,7 +12,6 @@ import ButtonRow from '../Button/ButtonRow';
 import { getFooterData } from '@/data/footer';
 import ExperienceDetails from '@/components/Modal/ExperienceDetails';
 import Accordion from '../Accordion';
-import jsLogo from '@/assets/images/js-page/js-logo.png';
 
 export default function Footer() {
   const { modalOpened, openModal, closeModal } = useModal();

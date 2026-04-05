@@ -9,6 +9,8 @@ import Chips from './Chips';
 import { useModalContext } from '@/context/ModalContext';
 import InnerHighlight from './InnerHighlight';
 import Accordion from './Accordion';
+import type { Experience, ExperienceHighlight } from '@/types';
+import { hasModalContent } from '@/types';
 
 export default function Education() {
   const { openExperienceModal } = useModalContext();
@@ -27,7 +29,7 @@ export default function Education() {
   );
 
   const renderEducationContent = (
-    education: any,
+    education: Experience,
     keyProp: string | number,
     collapsed?: boolean,
     onExpand?: () => void
@@ -43,22 +45,12 @@ export default function Education() {
       collapsed={collapsed}
       onExpand={onExpand}
       onClick={
-        (education.highlights && education.highlights.length > 0) ||
-        (education.coreBullets && education.coreBullets.length > 0) ||
-        (education.moreAccomplishments &&
-          education.moreAccomplishments.length > 0) ||
-        (education.moreBullets && education.moreBullets.length > 0) ||
-        education.modalChildren
+        hasModalContent(education)
           ? () => openExperienceModal(education.id)
           : undefined
       }
       actionButton={
-        (education.highlights && education.highlights.length > 0) ||
-        (education.coreBullets && education.coreBullets.length > 0) ||
-        (education.moreAccomplishments &&
-          education.moreAccomplishments.length > 0) ||
-        (education.moreBullets && education.moreBullets.length > 0) ||
-        education.modalChildren ? (
+        hasModalContent(education) ? (
           <Button
             imagery={Maximize2}
             text="Show details"
@@ -73,8 +65,8 @@ export default function Education() {
           <InnerHighlight>
             <div className="flex flex-col gap-2">
               {education.highlights
-                .filter((hl: any) => hl.title)
-                .map((hl: any, i: number) => (
+                .filter((hl: ExperienceHighlight) => hl.title)
+                .map((hl: ExperienceHighlight, i: number) => (
                   <div
                     key={i}
                     className="flex items-center gap-3 text-base/5 md:text-lg/6 opacity-80"

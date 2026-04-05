@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import Hero from '@/components/Hero';
 import Work from '@/components/Work';
 import Education from '@/components/Education';
-import About from '@/components/About';
 import Footer from '@/components/Footer';
 import Highlights from '@/components/Highlights';
 import Misc from '@/components/Footer/Misc';

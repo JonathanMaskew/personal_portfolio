@@ -1,8 +1,6 @@
-import React from 'react';
 import type { Experience } from '@/types';
 import htfLogoWhite from '@/assets/images/experience/hack-the-future/htf-logo-white.png';
 import purdueLogo from '@/assets/images/experience/purdue-logo.png';
-import InnerHighlight from '@/components/InnerHighlight';
 import Carousel, {
   CarouselItem,
   CarouselImageItem,
@@ -30,7 +28,6 @@ import designAndMarketing4 from '@/assets/images/experience/hack-the-future/desi
 import designAndMarketing5 from '@/assets/images/experience/hack-the-future/design-and-marketing-5.png';
 import designAndMarketing6 from '@/assets/images/experience/hack-the-future/design-and-marketing-6.png';
 import eventsAndOutreach from '@/assets/images/experience/hack-the-future/events-and-outreach.png';
-import eventsAndOutreach1 from '@/assets/images/experience/hack-the-future/events-and-outreach-1.png';
 import eventsAndOutreach2 from '@/assets/images/experience/hack-the-future/events-and-outreach-2.png';
 import eventsAndOutreach3 from '@/assets/images/experience/hack-the-future/events-and-outreach-3.png';
 import eventsAndOutreach4 from '@/assets/images/experience/hack-the-future/events-and-outreach-4.png';
@@ -42,31 +39,13 @@ import nonProfitAndMemberRecruitment5 from '@/assets/images/experience/hack-the-
 import nonProfitAndMemberRecruitment6 from '@/assets/images/experience/hack-the-future/non-profit-and-member-recruitment-6.png';
 import coolVendingMachineFinderPin from '@/assets/images/experience/cool-vending-machine-finder-pin.png';
 import coolCardGames from '@/assets/images/experience/cool-card-games.png';
-import socialMediaAndDesign1 from '@/assets/images/experience/hack-the-future/social-media-and-design-1.png';
-import socialMediaAndDesign2 from '@/assets/images/experience/hack-the-future/social-media-and-design-2.png';
-import socialMediaAndDesign3 from '@/assets/images/experience/hack-the-future/social-media-and-design-3.png';
-import socialMediaAndDesign4 from '@/assets/images/experience/hack-the-future/social-media-and-design-4.png';
 import reesesRatings from '@/assets/images/personal/reeses-ratings.png';
 import sundae from '@/assets/images/personal/sundae.png';
 import noblesvilleSchools from '@/assets/images/experience/noblesville-schools.png';
-import noblesvilleAthleticClub from '@/assets/images/experience/noblesville-athletic-club-logo.png';
-import texyMexyLogo from '@/assets/images/experience/texy-mexy-logo.png';
-import tennis from '@/assets/images/personal/tennis.jpg';
-import graduation from '@/assets/images/personal/graduation.png';
-import travel from '@/assets/images/personal/travel.png';
-import turkeyRun from '@/assets/images/personal/turkey-run.png';
-import costaRica from '@/assets/images/personal/costa-rica.png';
-import reeses from '@/assets/images/personal/reeses.jpg';
-import reesesShape from '@/assets/images/personal/reeses-shape.png';
-import roundabouts from '@/assets/images/personal/roundabouts.jpg';
-import taterTots from '@/assets/images/personal/tater-tots.png';
-import snowglobe from '@/assets/images/personal/snowglobe.png';
-import manatee from '@/assets/images/personal/manatee-oof.gif';
 import nationalHonorsSociety from '@/assets/images/experience/national-honors-society.png';
 import keyClub from '@/assets/images/experience/key-club.png';
 import { Button } from '@/components/Button';
 import ButtonRow from '@/components/Button/ButtonRow';
-import Chips from '@/components/Chips';
 import htfCarouselOfProgress from '@/assets/images/experience/hack-the-future/htf-carousel-of-progress.png';
 import htfCatapult from '@/assets/images/experience/hack-the-future/htf-catapult.png';
 import htfCodeRound from '@/assets/images/experience/hack-the-future/htf-code-round.png';
@@ -437,9 +416,12 @@ export const getEducationData = (): Experience[] => [
       },
       {
         icon: Award,
-        title:
-          "Dean's List (4 semesters, Spring 2022 - Fall 2023) & Semester Honors (5 semesters, Fall 2021 - Fall 2023)",
+        title: "Dean's List for 4 semesters (Spring 2022 - Fall 2023)",
         heroTitle: "Dean's List & Semester Honors",
+      },
+      {
+        icon: Award,
+        title: 'Semester Honors for 5 semesters (Fall 2021 - Fall 2023)',
       },
     ],
   },

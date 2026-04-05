@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function MeshBackground() {
   const [opacity, setOpacity] = useState(1);

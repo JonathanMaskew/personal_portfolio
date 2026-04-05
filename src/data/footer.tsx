@@ -1,6 +1,4 @@
-import React from 'react';
 import type { Experience } from '@/types';
-import HighlightFeature from '@/components/HighlightFeature';
 import { Button } from '@/components/Button';
 import ModalSection from '@/components/Modal/ModalSection';
 import Image from 'next/image';

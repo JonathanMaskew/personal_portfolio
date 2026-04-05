@@ -1,6 +1,6 @@
 'use client';
 
-import { ChevronRight, Cog, TriangleAlert } from 'lucide-react';
+import { ChevronRight, TriangleAlert } from 'lucide-react';
 import { useState } from 'react';
 import Carousel, { CarouselImageItem } from '../Carousel';
 import tennis from '@/assets/images/personal/tennis.jpg';

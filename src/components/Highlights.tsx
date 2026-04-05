@@ -1,34 +1,14 @@
 'use client';
 
-import {
-  ArrowDown,
-  Award,
-  Brain,
-  BriefcaseBusiness,
-  Code,
-  GraduationCap,
-  Megaphone,
-  Palette,
-  Pill,
-  Shield,
-  Sparkles,
-  SplinePointer,
-  Spotlight,
-  TrendingUp,
-} from 'lucide-react';
+import { Spotlight } from 'lucide-react';
 import SectionWrapper from './SectionWrapper';
-import Carousel, { CarouselItem } from './Carousel';
 import { useModalContext } from '@/context/ModalContext';
 import Accordion from './Accordion';
 import HighlightFeature from './HighlightFeature';
 import { getHighlightsData } from '@/data/highlights';
-import { useHashScroll } from '@/hooks/useHashScroll';
 
 export default function Highlights() {
   const { openExperienceModal } = useModalContext();
-  const { scrollToHash } = useHashScroll();
-
-  const carouselItemStyle = 'w-[300px] md:w-[400px]';
 
   const highlights = getHighlightsData(openExperienceModal);
 
