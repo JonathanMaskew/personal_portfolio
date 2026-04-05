@@ -21,19 +21,21 @@ export default function Chips({ strings, color, className }: ChipsProps) {
         return (
           <div
             key={index}
-            className={`px-3 py-1.5 text-xs rounded-full text-nowrap flex items-center gap-1.5 ${className}`}
+            className={`px-3 py-1.5 text-sm rounded-full text-nowrap flex items-center gap-1.5 ${className}`}
             style={chipStyle}
           >
-            {logo && (
-              <Image
-                src={logo}
-                alt={`${label} logo`}
-                width={16}
-                height={16}
-                className="shrink-0"
-              />
-            )}
-            {label}
+            <div className="flex items-center gap-1.5 opacity-80">
+              {logo && (
+                <Image
+                  src={logo}
+                  alt={`${label} logo`}
+                  width={16}
+                  height={16}
+                  className="shrink-0"
+                />
+              )}
+              {label}
+            </div>
           </div>
         );
       })}
