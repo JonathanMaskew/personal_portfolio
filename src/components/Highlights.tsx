@@ -4,7 +4,7 @@ import { Spotlight } from 'lucide-react';
 import SectionWrapper from './SectionWrapper';
 import { useModalContext } from '@/context/ModalContext';
 import Accordion from './Accordion';
-import HighlightFeature from './HighlightFeature';
+import HighlightDetailed from './HighlightDetailed';
 import { getHighlightsData } from '@/data/highlights';
 
 export default function Highlights() {
@@ -24,7 +24,7 @@ export default function Highlights() {
     >
       <Accordion>
         {highlights.map((highlight: any, index: number) => (
-          <HighlightFeature
+          <HighlightDetailed
             key={highlight.id || index}
             title={highlight.title}
             imagery={highlight.imagery}

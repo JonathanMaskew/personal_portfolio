@@ -6,7 +6,7 @@ import ButtonRow from '../Button/ButtonRow';
 import { SECONDARY_NAV_ITEMS } from '@/data/nav';
 import { getAboutData } from '@/data/about';
 import { useModalContext } from '@/context/ModalContext';
-import HighlightFeature from '../HighlightFeature';
+import HighlightDetailed from '../HighlightDetailed';
 import { BadgeCheck, User } from 'lucide-react';
 import Chips from '../Chips';
 
@@ -19,7 +19,7 @@ export default function About() {
       <div className="flex flex-col gap-4 w-full">
         {aboutData.map((data) => {
           return (
-            <HighlightFeature
+            <HighlightDetailed
               key={data.id}
               title={data.title}
               // body={data.subtitle}
@@ -41,7 +41,7 @@ export default function About() {
                   />
                 </div>
               )}
-            </HighlightFeature>
+            </HighlightDetailed>
           );
         })}
       </div>
