@@ -91,7 +91,7 @@ export const getHighlightsData = (
     id: 'htf-outreach',
     color: 'var(--color-htf)',
     imagery: SplinePointer,
-    title: 'Led a Branding Overhaul, Driving Growth by 90%',
+    title: 'Led a Branding Overhaul, Driving Growth by ~90%',
     subtitle: 'Design Director @ Hack the Future',
     body: 'Unified branding and messaging across print, digital, and social presences. This strategic approach increased visibility and interest, leading to a record-shattering nearly 90% year-over-year increase in applicants.',
     experienceId: 'htf-design-director',
