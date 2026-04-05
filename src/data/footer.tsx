@@ -118,23 +118,20 @@ export const getFooterData = (): Experience[] => [
               I think AI is a very powerful tool that will continue to change
               the workforce and the world, and I believe it is important to be
               transparent about its use. My use of AI is as a tool; I{' '}
-              <span className="italic">refuse</span> to use the term
-              vibe-coding, preferring to think of it as AI-assisted development,
-              where I fully understand and vet all AI-contributions. AI is not
-              to replace my own work nor limit my critical thinking, but rather
+              <span className="">refuse</span> to use the term vibe-coding,
+              preferring to think of it as AI-assisted development, where I
+              fully understand and vet all AI-contributions. AI is not to
+              replace my own work nor limit my critical thinking, but rather
               increase my productivity and efficiency, aiding my abilities and
               increasing my understanding rather than replacing.{' '}
-              <span className="italic font-bold">
-                This site contains NO AI-generated text, images, or content.
-              </span>{' '}
-              The design, layout, theming - all design decisions - were made by
-              me, and all content was curated by me.{' '}
-              <span className="italic font-bold">
-                Any AI-contributed code was well-understood to increase my
-                understanding and abilities, thoroughly vetted, and adapted as I
-                saw fit.
-              </span>
             </div>
+            <div className="">
+              This site contains NO AI-generated text, images, or content. The
+              design, layout, theming - all design decisions - were made by me,
+              and all content was curated by me. Any AI-contributed code was
+              well-understood to increase my understanding and abilities,
+              thoroughly vetted, and adapted as I saw fit.
+            </div>{' '}
           </ModalSection>
           <ModalSection icon={Construction} title="Always Evolving">
             As various experiences continue to shape me, and inspiration

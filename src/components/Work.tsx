@@ -51,9 +51,7 @@ export default function Work() {
       collapsed={collapsed}
       onExpand={onExpand}
       onClick={
-        hasModalContent(job)
-          ? () => openExperienceModal(job.id)
-          : undefined
+        hasModalContent(job) ? () => openExperienceModal(job.id) : undefined
       }
       actionButton={
         hasModalContent(job) ? (

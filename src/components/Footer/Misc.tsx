@@ -40,40 +40,40 @@ export default function Misc() {
                 Carousel of Progress (Sherman Brothers)
               </div>
             </div>
-            <div className="flex flex-col gap-2">
-              <div>Rotate site theme to the...</div>
-              <ButtonRow>
-                <Button
-                  imagery={HistoryIcon}
-                  text="Good Ol' Days"
-                  clickDetail={() => {
-                    setTheme('past');
-                    scrollToHash('#carousel-of-progress-easter-egg');
-                  }}
-                />
-                <Button
-                  imagery={CalendarCheck}
-                  text="Possible Present"
-                  clickDetail={() => {
-                    setTheme('default');
-                    scrollToHash('#carousel-of-progress-easter-egg');
-                  }}
-                />
-                <Button
-                  imagery={Sunrise}
-                  text="Beautiful Tomorrow"
-                  clickDetail={() => {
-                    setTheme('future');
-                    scrollToHash('#carousel-of-progress-easter-egg');
-                  }}
-                />
-              </ButtonRow>
-            </div>
           </div>
+        </div>
+        <div className="flex flex-col gap-2">
+          <div>Rotate site theme to the...</div>
+          <ButtonRow>
+            <Button
+              imagery={HistoryIcon}
+              text="Good Ol' Days"
+              clickDetail={() => {
+                setTheme('past');
+                scrollToHash('#carousel-of-progress-easter-egg');
+              }}
+            />
+            <Button
+              imagery={CalendarCheck}
+              text="Possible Present"
+              clickDetail={() => {
+                setTheme('default');
+                scrollToHash('#carousel-of-progress-easter-egg');
+              }}
+            />
+            <Button
+              imagery={Sunrise}
+              text="Beautiful Tomorrow"
+              clickDetail={() => {
+                setTheme('future');
+                scrollToHash('#carousel-of-progress-easter-egg');
+              }}
+            />
+          </ButtonRow>
         </div>
       </div>
 
-      <PersonalCarousel />
+      {/* <PersonalCarousel /> */}
       {/* <ArtGallery /> */}
     </SectionWrapper>
   );

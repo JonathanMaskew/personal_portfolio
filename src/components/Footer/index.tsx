@@ -12,6 +12,7 @@ import ButtonRow from '../Button/ButtonRow';
 import { getFooterData } from '@/data/footer';
 import ExperienceDetails from '@/components/Modal/ExperienceDetails';
 import Accordion from '../Accordion';
+import PersonalCarousel from '../About/PersonalCarousel';
 
 export default function Footer() {
   const { modalOpened, openModal, closeModal } = useModal();
@@ -74,6 +75,7 @@ export default function Footer() {
           />
         ))}
       </Accordion>
+      <PersonalCarousel />
       <Modal
         open={modalOpened && !!openedFooter}
         onCloseCallback={closeModal}

@@ -80,6 +80,7 @@ import noblesvilleMillers from '@/assets/images/experience/noblesville-millers.p
 import coolVendingMachineFinder from '@/assets/images/experience/cool-vending-machine-finder.png';
 import coolVendingMachine from '@/assets/images/experience/cool-vending-machine.png';
 import Image from 'next/image';
+import Chips from '@/components/Chips';
 
 export const getEducationData = (): Experience[] => [
   {
@@ -91,11 +92,11 @@ export const getEducationData = (): Experience[] => [
     subtitle: 'Hack the Future',
     heroSubtitle: 'Hack the Future',
     subheading: 'Purdue University, March 2022 - May 2024',
-    body: "Led a re-branding initiative that amplified the organization's visibility resulting in a record-breaking nearly 90% year-over-year increase in applications. Created resources to guide four teams on UX/UI principles and front-end development.",
+    body: 'Led branding, outreach, and recruitment initiatives for the organization, as well as created resources to guide four teams on UX/UI principles and front-end development.',
     highlights: [
       {
         icon: TrendingUp,
-        title: 'Led a Branding Overhaul, Driving Growth by 90%',
+        title: 'Led a Branding Overhaul, Driving Growth by ~90%',
         text: 'Led a branding revamp and increased outreach efforts leading to a record-breaking nearly 90% YoY increase in applicants.',
         heroTitle: 'Increased applicants by ~90%',
       },
@@ -120,149 +121,6 @@ export const getEducationData = (): Experience[] => [
       'Mentored four project teams on UX/UI principles and created resources to guide translating Figma mockups into front-end code.',
       'Established branded components in React to streamline development and maintain consistency across all team projects.',
     ],
-    //   <div className="flex flex-col gap-6">
-    //     <Chips
-    //       strings={[
-    //         'Figma',
-    //         'UI/UX Design',
-    //         'Front-end',
-    //         'Branding',
-    //         'Digital Marketing',
-    //       ]}
-    //     />
-    //     <Carousel
-    //       color="var(--color-htf)"
-    //       className="bg-foreground/10 rounded-2xl p-4 flex items-center"
-    //     >
-    //       <CarouselItem>
-    //         <Image
-    //           src={htfLogo}
-    //           alt="HTF Logo"
-    //           className="w-20 h-auto object-contain"
-    //         />
-    //       </CarouselItem>
-    //       <CarouselItem>
-    //         <Image
-    //           src={htfProfile}
-    //           alt="HTF Profile"
-    //           className="w-20 h-auto object-contain"
-    //         />
-    //       </CarouselItem>
-    //       <CarouselItem>
-    //         <Image
-    //           src={htfJurassic}
-    //           alt="HTF Jurassic"
-    //           className="w-20 h-auto object-contain"
-    //         />
-    //       </CarouselItem>
-    //       <CarouselItem>
-    //         <Image
-    //           src={htfCode}
-    //           alt="HTF Code"
-    //           className="w-20 h-auto object-contain"
-    //         />
-    //       </CarouselItem>
-    //       <CarouselItem>
-    //         <Image
-    //           src={htfSpooky}
-    //           alt="HTF Spooky"
-    //           className="w-20 h-auto object-contain"
-    //         />
-    //       </CarouselItem>
-    //       <CarouselItem>
-    //         <Image
-    //           src={htfThankful}
-    //           alt="HTF Thankful"
-    //           className="w-20 h-auto object-contain"
-    //         />
-    //       </CarouselItem>
-    //       <CarouselItem>
-    //         <Image
-    //           src={htfOrnament}
-    //           alt="HTF Ornament"
-    //           className="w-20 h-auto object-contain"
-    //         />
-    //       </CarouselItem>
-    //       <CarouselItem>
-    //         <Image
-    //           src={htfSnowglobe}
-    //           alt="HTF Snowglobe"
-    //           className="w-20 h-auto object-contain"
-    //         />
-    //       </CarouselItem>
-    //       <CarouselItem>
-    //         <Image
-    //           src={htfYourFuture}
-    //           alt="HTF Your Future"
-    //           className="w-20 h-auto object-contain"
-    //         />
-    //       </CarouselItem>
-    //       <CarouselItem>
-    //         <Image
-    //           src={htfInnovateHer}
-    //           alt="HTF InnovateHer"
-    //           className="w-20 h-auto object-contain"
-    //         />
-    //       </CarouselItem>
-    //       <CarouselItem>
-    //         <Image
-    //           src={htfCatapult}
-    //           alt="HTF Catapult"
-    //           className="w-20 h-auto object-contain"
-    //         />
-    //       </CarouselItem>
-    //       <CarouselItem>
-    //         <Image
-    //           src={htfGameshow}
-    //           alt="HTF Gameshow"
-    //           className="w-20 h-auto object-contain"
-    //         />
-    //       </CarouselItem>
-    //       <CarouselItem>
-    //         <Image
-    //           src={htfCodeRound}
-    //           alt="HTF Code Round"
-    //           className="w-20 h-auto object-contain"
-    //         />
-    //       </CarouselItem>
-    //       <CarouselItem>
-    //         <Image
-    //           src={htfCarouselOfProgress}
-    //           alt="HTF Carousel of Progress"
-    //           className="w-20 h-auto object-contain"
-    //         />
-    //       </CarouselItem>
-    //       <CarouselItem>
-    //         <Image
-    //           src={htfBackToTheFuture}
-    //           alt="HTF Back to the Future"
-    //           className="w-20 h-auto object-contain"
-    //         />
-    //       </CarouselItem>
-    //       <CarouselItem>
-    //         <Image
-    //           src={htfNeon}
-    //           alt="HTF Neon"
-    //           className="w-20 h-auto object-contain"
-    //         />
-    //       </CarouselItem>
-    //       <CarouselItem>
-    //         <Image
-    //           src={htfGraduation}
-    //           alt="HTF Graduation"
-    //           className="w-20 h-auto object-contain"
-    //         />
-    //       </CarouselItem>
-    //       <CarouselItem>
-    //         <Image
-    //           src={htfPizza}
-    //           alt="HTF Pizza"
-    //           className="w-20 h-auto object-contain"
-    //         />
-    //       </CarouselItem>
-    //     </Carousel>
-    //   </div>
-    // ),
     modalChildren: (
       <div className="flex flex-col gap-10">
         <ModalSection icon={ImageIcon} title="Design & Branding Summary">
@@ -273,24 +131,6 @@ export const getEducationData = (): Experience[] => [
             through the Year in Review posts I created that summarize my work,
             or navigate to a full listing.
           </div>
-          <ButtonRow className="justify-center">
-            <Button
-              imagery={ExternalLink}
-              newTab={true}
-              text="PDF Collage of Work"
-              clickDetail="/pdfs/htf-collage.pdf"
-              background
-              color="var(--color-htf)"
-            />
-            <Button
-              imagery={ExternalLink}
-              newTab={true}
-              text="List of Work with Descriptions"
-              clickDetail="https://docs.google.com/document/d/1iJEBzMD-UZ55tUu14lbxTY1sf2zTvvQj90V-YAjeGos/edit?usp=sharing"
-              background
-              color="var(--color-htf)"
-            />
-          </ButtonRow>
           <Carousel color="var(--color-htf)">
             <CarouselImageItem image={designAndMarketing} size={256} />
             <CarouselImageItem image={designAndMarketing2} size={256} />
@@ -299,13 +139,161 @@ export const getEducationData = (): Experience[] => [
             <CarouselImageItem image={designAndMarketing5} size={256} />
             <CarouselImageItem image={designAndMarketing6} size={256} />
           </Carousel>
+          <div className="flex flex-col gap-6">
+            <Carousel color="var(--color-htf)" className="flex items-center">
+              <CarouselItem>
+                <Image
+                  src={htfLogo}
+                  alt="HTF Logo"
+                  className="w-20 h-auto object-contain"
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src={htfProfile}
+                  alt="HTF Profile"
+                  className="w-20 h-auto object-contain"
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src={htfJurassic}
+                  alt="HTF Jurassic"
+                  className="w-20 h-auto object-contain"
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src={htfCode}
+                  alt="HTF Code"
+                  className="w-20 h-auto object-contain"
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src={htfSpooky}
+                  alt="HTF Spooky"
+                  className="w-20 h-auto object-contain"
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src={htfThankful}
+                  alt="HTF Thankful"
+                  className="w-20 h-auto object-contain"
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src={htfOrnament}
+                  alt="HTF Ornament"
+                  className="w-20 h-auto object-contain"
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src={htfSnowglobe}
+                  alt="HTF Snowglobe"
+                  className="w-20 h-auto object-contain"
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src={htfYourFuture}
+                  alt="HTF Your Future"
+                  className="w-20 h-auto object-contain"
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src={htfInnovateHer}
+                  alt="HTF InnovateHer"
+                  className="w-20 h-auto object-contain"
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src={htfCatapult}
+                  alt="HTF Catapult"
+                  className="w-20 h-auto object-contain"
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src={htfGameshow}
+                  alt="HTF Gameshow"
+                  className="w-20 h-auto object-contain"
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src={htfCodeRound}
+                  alt="HTF Code Round"
+                  className="w-20 h-auto object-contain"
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src={htfCarouselOfProgress}
+                  alt="HTF Carousel of Progress"
+                  className="w-20 h-auto object-contain"
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src={htfBackToTheFuture}
+                  alt="HTF Back to the Future"
+                  className="w-20 h-auto object-contain"
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src={htfNeon}
+                  alt="HTF Neon"
+                  className="w-20 h-auto object-contain"
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src={htfGraduation}
+                  alt="HTF Graduation"
+                  className="w-20 h-auto object-contain"
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src={htfPizza}
+                  alt="HTF Pizza"
+                  className="w-20 h-auto object-contain"
+                />
+              </CarouselItem>
+            </Carousel>
+            <ButtonRow className="justify-center">
+              <Button
+                imagery={ExternalLink}
+                newTab={true}
+                text="PDF Collage of Work"
+                clickDetail="/pdfs/htf-collage.pdf"
+                background
+                color="var(--color-htf)"
+              />
+              <Button
+                imagery={ExternalLink}
+                newTab={true}
+                text="List of Work with Descriptions"
+                clickDetail="https://docs.google.com/document/d/1iJEBzMD-UZ55tUu14lbxTY1sf2zTvvQj90V-YAjeGos/edit?usp=sharing"
+                background
+                color="var(--color-htf)"
+              />
+            </ButtonRow>
+          </div>
         </ModalSection>
 
         <ModalSection icon={Megaphone} title="Events & Outreach Summary">
           <div>
             Outreach was a team effort, but largely fell under the Design
             Director role. After all, branding is the first impression. We made
-            significant efforts to spread our footprint, partnering with other
+            significant efforts to expand our reach, partnering with other
             student organizations, hosting public events, and attending
             organization fairs. This degree of outreach was new for the club,
             and this outreach has continued to allow the club to scale and grow
@@ -325,7 +313,10 @@ export const getEducationData = (): Experience[] => [
         >
           <div>
             We broke records in terms of interest and applicants, largely due to
-            our revamped outreach efforts.
+            our revamped outreach efforts. We achieved a nearly 90% YoY increase
+            in applicants, breaking records for the organization. Our efforts
+            had a lasting impact, with the club continuing to see
+            record-breaking numbers.
           </div>
           <Carousel color="var(--color-htf)">
             <CarouselImageItem
@@ -372,11 +363,6 @@ export const getEducationData = (): Experience[] => [
             />
           </div>
         </ModalSection>
-        <div>
-          Altogether, our ambitious efforts to grow the club were a success, and
-          we&apos;ve continued to see the club grow after our graduation as our
-          efforts led to new opportunities for the club.
-        </div>
       </div>
     ),
   },

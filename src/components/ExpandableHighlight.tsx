@@ -51,13 +51,12 @@ export default function ExpandableHighlight({
         style={{
           gridTemplateRows: collapsed ? '0fr' : '1fr',
           opacity: collapsed ? 0 : 1,
-          transition: 'grid-template-rows 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.25s ease-out',
+          transition:
+            'grid-template-rows 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.25s ease-out',
         }}
       >
         <div className="overflow-hidden min-h-0">
-          <div className="flex flex-col gap-5 pt-5">
-            {content}
-          </div>
+          <div className="flex flex-col gap-5 pt-5">{content}</div>
         </div>
       </div>
 

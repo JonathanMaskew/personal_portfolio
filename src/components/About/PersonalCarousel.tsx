@@ -22,7 +22,7 @@ export default function PersonalCarousel() {
     <>
       <div className="flex flex-col gap-2">
         <div className="font-bold text-lg md:text-xl font-header">
-          Beyond the code...
+          Get to know me a little better...
         </div>
         <Carousel color="var(--color-primary)">
           <CarouselImageItem

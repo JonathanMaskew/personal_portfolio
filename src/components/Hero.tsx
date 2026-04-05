@@ -12,6 +12,7 @@ import Carousel, { CarouselItem } from './Carousel';
 import Chatbot from './Chatbot';
 import { getJobsData } from '@/data/jobs';
 import { getEducationData } from '@/data/education';
+import { hasModalContent } from '@/types';
 
 export default function Hero() {
   const { openExperienceModal } = useModalContext();
@@ -40,7 +41,9 @@ export default function Hero() {
         title: data.heroTitle || data.title,
         text: data.heroSubtitle || data.subtitle,
         color: data.color,
-        onClick: id === 'purdue' ? undefined : () => openExperienceModal(id),
+        onClick: hasModalContent(data)
+          ? () => openExperienceModal(id)
+          : undefined,
         children: (
           <div className="flex flex-col gap-0.5 text-[10px] leading-tight">
             {data.highlights

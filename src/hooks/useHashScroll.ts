@@ -15,11 +15,10 @@ export const useHashScroll = () => {
         getComputedStyle(scrollContainer).overflowY === 'visible';
       // If we're scrolling the window (TopNav fixed), subtract the main's top padding
       // so the section header sits flush under the nav. This avoids guessing heights.
-      const headerOffset = isWindowScroll && scrollContainer
-        ? parseFloat(
-            getComputedStyle(scrollContainer).paddingTop || '0'
-          ) || 0
-        : 0;
+      const headerOffset =
+        isWindowScroll && scrollContainer
+          ? parseFloat(getComputedStyle(scrollContainer).paddingTop || '0') || 0
+          : 0;
 
       if (
         scrollContainer &&

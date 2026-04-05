@@ -29,7 +29,7 @@ export const getJobsData = (): Experience[] => [
     heroTitle: 'Full-stack Engineer',
     heroSubtitle: 'myhELO',
     subheading: 'Full-time, June 2024 - Present',
-    body: 'Engineer full-stack solutions within a nationwide healthcare platform using a custom JavaScript framework and PHP. Deliver high-impact infrastructure including an authentication overhaul, ePrescribing system, and an AI-powered data importer.',
+    body: 'Engineer full-stack solutions within a nationwide healthcare platform using a custom JavaScript framework and PHP, delivering high-impact infrastructure.',
     highlights: [
       {
         icon: Shield,

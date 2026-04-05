@@ -27,7 +27,6 @@ export default function HighlightFeature({
       // subtitle={subtitle}
       subheading={subheading}
       imagery={imagery}
-      variant="feature"
     />
   ) : null;
 

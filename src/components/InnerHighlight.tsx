@@ -40,42 +40,62 @@ export default function InnerHighlight({
       onClick={onClick}
     >
       {(IconComponent || title || text) && (
-        <div
-          className={`flex gap-4 ${orientation === 'horizontal' ? 'w-full' : ''} ${classNames?.header || ''}`}
-        >
-          {IconComponent && (
-            <div>
-              <IconComponent size={30} className="text-foreground-2 mt-1" />
+        <>
+          {orientation === 'horizontal' ? (
+            <div className={`flex gap-4 w-full ${classNames?.header || ''}`}>
+              {IconComponent && (
+                <div>
+                  <IconComponent size={30} className="text-foreground-2 mt-1 shrink-0" />
+                </div>
+              )}
+              <div className="flex flex-col text-left flex-1">
+                <div className="flex justify-between items-baseline gap-2 w-full">
+                  {title && (
+                    <div
+                      className={`font-bold font-header text-base md:text-lg ${classNames?.title || ''}`}
+                      style={{ color: 'var(--highlight-color)' }}
+                    >
+                      {title}
+                    </div>
+                  )}
+                  {text && (
+                    <div
+                      className={`text-sm md:text-base text-right shrink-0 ${classNames?.text || ''}`}
+                    >
+                      {text}
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
-          )}
-          <div
-            className={`flex flex-col text-left ${orientation === 'horizontal' ? 'flex-1' : ''}`}
-          >
-            <div
-              className={
-                orientation === 'horizontal'
-                  ? 'flex justify-between items-baseline gap-2 w-full'
-                  : 'flex flex-col'
-              }
-            >
-              {title && (
-                <div
-                  className={`font-bold font-header text-base md:text-lg ${classNames?.title || ''}`}
-                  style={{ color: 'var(--highlight-color)' }}
-                >
-                  {title}
+          ) : (
+            <div className={`flex flex-col gap-2 w-full ${classNames?.header || ''}`}>
+              {(IconComponent || title) && (
+                <div className="flex items-center gap-3">
+                  {IconComponent && (
+                    <IconComponent
+                      size={30}
+                      className="text-foreground-2 shrink-0"
+                    />
+                  )}
+                  {title && (
+                    <div
+                      className={`font-bold font-header text-base md:text-lg ${classNames?.title || ''}`}
+                      style={{ color: 'var(--highlight-color)' }}
+                    >
+                      {title}
+                    </div>
+                  )}
                 </div>
               )}
               {text && (
-                <div
-                  className={`text-sm md:text-base ${orientation === 'horizontal' ? 'text-right shrink-0' : ''} ${classNames?.text || ''}`}
-                >
+                <div className={`text-sm md:text-base text-left ${classNames?.text || ''}`}>
                   {text}
                 </div>
               )}
             </div>
-          </div>
-        </div>
+          )}
+        </>
       )}
       {children}
     </div>

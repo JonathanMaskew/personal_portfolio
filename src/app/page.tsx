@@ -9,6 +9,7 @@ import Highlights from '@/components/Highlights';
 import Misc from '@/components/Footer/Misc';
 import { ChevronDown } from 'lucide-react';
 import { useHashScroll } from '@/hooks/useHashScroll';
+import PersonalCarousel from '@/components/About/PersonalCarousel';
 
 export default function Home() {
   const { scrollToHash } = useHashScroll();
