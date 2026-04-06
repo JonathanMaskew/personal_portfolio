@@ -40,7 +40,7 @@ export default function ExpandableHighlight({
 
   return (
     <div
-      className={`flex flex-col overflow-hidden ${isInteractive ? 'cursor-pointer' : ''} p-5 md:p-6 rounded-2xl ${collapsed ? 'h-auto' : 'min-h-full'} w-full relative transition-shadow duration-200 ${onClick ? 'hover:shadow-[inset_0_0_0_4px_var(--highlight-color)] active:shadow-[inset_0_0_0_4px_var(--highlight-color)]' : ''} ${actionButton && !collapsed ? 'pb-14 md:pb-15' : ''} ${className}`}
+      className={`flex flex-col overflow-hidden ${isInteractive ? 'cursor-pointer' : ''} p-5 md:p-6 rounded-2xl ${collapsed ? 'h-auto' : 'min-h-full'} w-full relative transition-shadow duration-200 ${isInteractive ? 'hover:shadow-[inset_0_0_0_4px_var(--highlight-color)] active:shadow-[inset_0_0_0_4px_var(--highlight-color)]' : ''} ${actionButton && !collapsed ? 'pb-14 md:pb-15' : ''} ${className}`}
       style={containerStyle}
       onClick={handleInteraction}
     >

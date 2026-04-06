@@ -124,7 +124,7 @@ export default function Hero() {
           </div>
 
           <span className="text-lg/7 lg:text-2xl/8 lg:max-w-[55%] text-center opacity-90">
-            As a Full-stack Engineer passionate about Front-end Development, I
+            As a Full-Stack Engineer passionate about Front-End Development, I
             combine technical expertise with creative leadership to build
             scalable, user-focused experiences.
           </span>
