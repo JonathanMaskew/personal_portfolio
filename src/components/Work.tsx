@@ -63,26 +63,28 @@ export default function Work() {
         ) : undefined
       }
     >
-      <div className="flex flex-col gap-5">
-        {job.highlights && (
-          <InnerHighlight>
-            <div className="flex flex-col gap-2">
-              {job.highlights
-                .filter((hl: ExperienceHighlight) => hl.title)
-                .map((hl: ExperienceHighlight, i: number) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-3 text-base/5 md:text-lg/6 opacity-80"
-                  >
-                    <hl.icon size={20} className="shrink-0" />
-                    <span>{hl.title}</span>
-                  </div>
-                ))}
-            </div>
-          </InnerHighlight>
-        )}
-        {job.keywords && <Chips strings={job.keywords} />}
-      </div>
+      {(job.highlights?.length || job.keywords?.length) ? (
+        <div className="flex flex-col gap-5">
+          {job.highlights && job.highlights.length > 0 && (
+            <InnerHighlight>
+              <div className="flex flex-col gap-2">
+                {job.highlights
+                  .filter((hl: ExperienceHighlight) => hl.title)
+                  .map((hl: ExperienceHighlight, i: number) => (
+                    <div
+                      key={i}
+                      className="flex items-center gap-3 text-base/5 md:text-lg/6 opacity-80"
+                    >
+                      <hl.icon size={20} className="shrink-0" />
+                      <span>{hl.title}</span>
+                    </div>
+                  ))}
+              </div>
+            </InnerHighlight>
+          )}
+          {job.keywords && job.keywords.length > 0 && <Chips strings={job.keywords} />}
+        </div>
+      ) : null}
     </HighlightDetailed>
   );
 

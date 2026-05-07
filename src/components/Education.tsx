@@ -59,27 +59,29 @@ export default function Education() {
         ) : undefined
       }
     >
-      <div className="flex flex-col gap-5">
-        {education.highlightChildren}
-        {education.highlights && (
-          <InnerHighlight>
-            <div className="flex flex-col gap-2">
-              {education.highlights
-                .filter((hl: ExperienceHighlight) => hl.title)
-                .map((hl: ExperienceHighlight, i: number) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-3 text-base/5 md:text-lg/6 opacity-80"
-                  >
-                    <hl.icon size={20} className="shrink-0" />
-                    <span>{hl.title}</span>
-                  </div>
-                ))}
-            </div>
-          </InnerHighlight>
-        )}
-        {education.keywords && <Chips strings={education.keywords} />}
-      </div>
+      {(education.highlightChildren || education.highlights?.length || education.keywords?.length) ? (
+        <div className="flex flex-col gap-5">
+          {education.highlightChildren}
+          {education.highlights && education.highlights.length > 0 && (
+            <InnerHighlight>
+              <div className="flex flex-col gap-2">
+                {education.highlights
+                  .filter((hl: ExperienceHighlight) => hl.title)
+                  .map((hl: ExperienceHighlight, i: number) => (
+                    <div
+                      key={i}
+                      className="flex items-center gap-3 text-base/5 md:text-lg/6 opacity-80"
+                    >
+                      <hl.icon size={20} className="shrink-0" />
+                      <span>{hl.title}</span>
+                    </div>
+                  ))}
+              </div>
+            </InnerHighlight>
+          )}
+          {education.keywords && education.keywords.length > 0 && <Chips strings={education.keywords} />}
+        </div>
+      ) : null}
     </HighlightDetailed>
   );
 

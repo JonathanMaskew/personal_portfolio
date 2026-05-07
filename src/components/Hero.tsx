@@ -22,18 +22,18 @@ export default function Hero() {
   const educationData = getEducationData();
 
   const highlightIds = [
-    { id: 'myhelo', type: 'job' },
-    { id: 'allegion', type: 'job' },
-    { id: 'htf-design-director', type: 'edu' },
-    { id: 'purdue', type: 'edu' },
+    { id: 'the-difference-card' },
+    { id: 'myhelo' },
+    { id: 'allegion' },
+    { id: 'htf-design-director' },
+    { id: 'purdue' },
   ];
 
   const highlights = highlightIds
-    .map(({ id, type }) => {
+    .map(({ id }) => {
       const data =
-        type === 'job'
-          ? jobsData.find((j) => j.id === id)
-          : educationData.find((e) => e.id === id);
+        jobsData.find((j) => j.id === id) ||
+        educationData.find((e) => e.id === id);
 
       if (!data) return null;
 

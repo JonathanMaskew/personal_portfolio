@@ -32,7 +32,7 @@ export default function About() {
               color={'var(--color-generic)'}
               collapsed={false}
             >
-              {data.keywords && (
+              {data.keywords && data.keywords.length > 0 && (
                 <div className="w-full lg:max-w-[75%]">
                   <Chips
                     strings={data.keywords}

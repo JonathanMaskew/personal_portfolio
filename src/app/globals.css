@@ -20,6 +20,7 @@
   --color-nac: var(--color-nac);
   --color-purdue: var(--color-purdue);
   --color-generic: var(--color-generic);
+  --color-the-difference-card: var(--color-the-difference-card)
 
   /* Border Radius */
   --radius-sm: var(--radius-sm);
@@ -54,6 +55,7 @@
   --color-nac: #D95A00;
   --color-purdue: #CFB991;
   --color-generic: #696969;
+  --color-the-difference-card: #5E3286;
 
   /* Border radius - Tailwind defaults */
   --radius-sm: 0.25rem;
