@@ -59,7 +59,9 @@ export default function Education() {
         ) : undefined
       }
     >
-      {(education.highlightChildren || education.highlights?.length || education.keywords?.length) ? (
+      {education.highlightChildren ||
+      education.highlights?.length ||
+      education.keywords?.length ? (
         <div className="flex flex-col gap-5">
           {education.highlightChildren}
           {education.highlights && education.highlights.length > 0 && (
@@ -79,7 +81,9 @@ export default function Education() {
               </div>
             </InnerHighlight>
           )}
-          {education.keywords && education.keywords.length > 0 && <Chips strings={education.keywords} />}
+          {education.keywords && education.keywords.length > 0 && (
+            <Chips strings={education.keywords} />
+          )}
         </div>
       ) : null}
     </HighlightDetailed>
@@ -92,7 +96,7 @@ export default function Education() {
       actionButton={headerAction}
     >
       {showAll ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7 w-full">
+        <div className="grid grid-cols-1 gap-4 w-full">
           {ALL_EDUCATION.map((education, index) => (
             <div
               key={education.id || index}

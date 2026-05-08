@@ -63,7 +63,7 @@ export default function Work() {
         ) : undefined
       }
     >
-      {(job.highlights?.length || job.keywords?.length) ? (
+      {job.highlights?.length || job.keywords?.length ? (
         <div className="flex flex-col gap-5">
           {job.highlights && job.highlights.length > 0 && (
             <InnerHighlight>
@@ -82,7 +82,9 @@ export default function Work() {
               </div>
             </InnerHighlight>
           )}
-          {job.keywords && job.keywords.length > 0 && <Chips strings={job.keywords} />}
+          {job.keywords && job.keywords.length > 0 && (
+            <Chips strings={job.keywords} />
+          )}
         </div>
       ) : null}
     </HighlightDetailed>
@@ -95,12 +97,9 @@ export default function Work() {
       actionButton={headerAction}
     >
       {showAll ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7 w-full">
+        <div className="grid grid-cols-1 gap-4 w-full">
           {ALL_JOBS.map((job, index) => (
-            <div
-              key={job.id || index}
-              className={`${index === 0 ? 'col-span-full' : ''}`}
-            >
+            <div key={job.id || index}>
               {renderJobContent(job, job.id || index)}
             </div>
           ))}
