@@ -39,56 +39,58 @@ export default function Work() {
     keyProp: string | number,
     collapsed?: boolean,
     onExpand?: () => void
-  ) => (
-    <HighlightDetailed
-      key={keyProp}
-      color={job.color}
-      imagery={job.imagery}
-      title={job.title}
-      subtitle={job.subtitle}
-      subheading={job.subheading}
-      body={job.body}
-      collapsed={collapsed}
-      onExpand={onExpand}
-      onClick={
-        hasModalContent(job) ? () => openExperienceModal(job.id) : undefined
-      }
-      actionButton={
-        hasModalContent(job) ? (
-          <Button
-            text="Show details"
-            clickDetail={() => openExperienceModal(job.id)}
-            imagery={Maximize2}
-          />
-        ) : undefined
-      }
-    >
-      {job.highlights?.length || job.keywords?.length ? (
-        <div className="flex flex-col gap-5">
-          {job.highlights && job.highlights.length > 0 && (
-            <InnerHighlight>
-              <div className="flex flex-col gap-2">
-                {job.highlights
-                  .filter((hl: ExperienceHighlight) => hl.title)
-                  .map((hl: ExperienceHighlight, i: number) => (
+  ) => {
+    const displayHighlights = job.highlights?.filter((hl: ExperienceHighlight) => hl.title) || [];
+    
+    return (
+      <HighlightDetailed
+        key={keyProp}
+        color={job.color}
+        imagery={job.imagery}
+        title={job.title}
+        subtitle={job.subtitle}
+        subheading={job.subheading}
+        body={job.body}
+        collapsed={collapsed}
+        onExpand={onExpand}
+        onClick={
+          hasModalContent(job) ? () => openExperienceModal(job.id) : undefined
+        }
+        actionButton={
+          hasModalContent(job) ? (
+            <Button
+              text="Show details"
+              clickDetail={() => openExperienceModal(job.id)}
+              imagery={Maximize2}
+            />
+          ) : undefined
+        }
+      >
+        {displayHighlights.length > 0 || (job.keywords && job.keywords.length > 0) ? (
+          <div className="flex flex-col gap-5">
+            {displayHighlights.length > 0 && (
+              <InnerHighlight>
+                <div className="flex flex-col gap-2">
+                  {displayHighlights.map((hl: ExperienceHighlight, i: number) => (
                     <div
                       key={i}
                       className="flex items-center gap-3 text-base/5 md:text-lg/6 opacity-80"
                     >
-                      <hl.icon size={20} className="shrink-0" />
+                      {hl.icon && <hl.icon size={20} className="shrink-0" />}
                       <span>{hl.title}</span>
                     </div>
                   ))}
-              </div>
-            </InnerHighlight>
-          )}
-          {job.keywords && job.keywords.length > 0 && (
-            <Chips strings={job.keywords} />
-          )}
-        </div>
-      ) : null}
-    </HighlightDetailed>
-  );
+                </div>
+              </InnerHighlight>
+            )}
+            {job.keywords && job.keywords.length > 0 && (
+              <Chips strings={job.keywords} />
+            )}
+          </div>
+        ) : null}
+      </HighlightDetailed>
+    );
+  };
 
   return (
     <SectionWrapper

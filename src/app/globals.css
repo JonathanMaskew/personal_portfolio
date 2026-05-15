@@ -55,7 +55,7 @@
   --color-nac: #D95A00;
   --color-purdue: #CFB991;
   --color-generic: #696969;
-  --color-the-difference-card: #5E3286;
+  --color-the-difference-card: #7D81BA;
 
   /* Border radius - Tailwind defaults */
   --radius-sm: 0.25rem;
@@ -81,33 +81,27 @@ button {
 }
 
 .highlight-feature {
-  /* background: linear-gradient(to bottom right,
-    color-mix(in srgb, var(--highlight-color) 75%, transparent) 0%,
-      color-mix(in srgb, var(--highlight-color) 30%, black) 100%);
-  border: 0px;
-  transition: box-shadow 0.2s;
-  color: var(--color-foreground-2); */
-  background: color-mix(in srgb, var(--highlight-color) 50%, transparent);
+  background: color-mix(in srgb, var(--highlight-color) 50%, var(--color-background));
   border: 0px;
   transition: box-shadow 0.2s;
   color: var(--color-foreground-2);
 }
 
 .highlight-detailed {
-  background: color-mix(in srgb, var(--highlight-color) 50%, transparent);
+  background: color-mix(in srgb, var(--highlight-color) 50%, var(--color-background));
   border: 0px;
   transition: box-shadow 0.2s;
   color: var(--color-foreground-2);
 }
 
 .inner-highlight {
-  background: color-mix(in srgb, var(--highlight-color) 10%, transparent);
+  background: color-mix(in srgb, var(--highlight-color) 25%, var(--color-background));
   transition: background 0.2s;
 }
 
 .inner-highlight-interactive:hover,
 .inner-highlight-interactive:active {
-  background: color-mix(in srgb, var(--highlight-color) 20%, transparent);
+  background: color-mix(in srgb, var(--highlight-color) 35%, var(--color-background));
 }
 
 /* 
