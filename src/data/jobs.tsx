@@ -14,12 +14,35 @@ import {
   SquarePlay,
   Users,
   Code,
+  PartyPopper,
 } from 'lucide-react';
 import { Button } from '@/components/Button';
 import ButtonRow from '@/components/Button/ButtonRow';
 import ModalSection from '@/components/Modal/ModalSection';
+import theDifferenceCardLogo from '@/assets/images/experience/the-difference-card-logo.png';
 
 export const getJobsData = (): Experience[] => [
+  {
+    id: 'the-difference-card',
+    imagery: theDifferenceCardLogo,
+    color: 'var(--color-the-difference-card)',
+    subtitle: 'The Difference Card',
+    title: 'Software Engineer',
+    heroTitle: 'Full-stack Engineer',
+    heroSubtitle: 'The Difference Card',
+    subheading: 'Full-time, June 2026 - Present',
+    body: 'New role...more details coming soon!',
+    highlights: [
+      {
+        icon: PartyPopper,
+        heroTitle: 'New role...more details coming soon!',
+      },
+    ],
+    keywords: [],
+    moreAccomplishments: [],
+    coreBullets: [],
+    moreBullets: [],
+  },
   {
     id: 'myhelo',
     imagery: myheloLogo,
@@ -28,7 +51,7 @@ export const getJobsData = (): Experience[] => [
     title: 'Software Engineer',
     heroTitle: 'Full-stack Engineer',
     heroSubtitle: 'myhELO',
-    subheading: 'Full-time, June 2024 - Present',
+    subheading: 'Full-time, June 2024 - May 2026',
     body: 'Engineer full-stack solutions within a nationwide healthcare platform using a custom JavaScript framework and PHP, delivering high-impact infrastructure.',
     highlights: [
       {

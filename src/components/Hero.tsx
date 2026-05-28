@@ -26,7 +26,7 @@ export default function Hero() {
     { id: 'myhelo' },
     { id: 'allegion' },
     { id: 'htf-design-director' },
-    { id: 'purdue' },
+    // { id: 'purdue' },
   ];
 
   const highlights = highlightIds
