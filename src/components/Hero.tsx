@@ -112,7 +112,6 @@ export default function Hero() {
           <div
             className={`font-bold font-header text-center flex flex-col items-center gap-2 md:gap-3 w-full`}
           >
-            <span className="text-4xl lg:text-5xl">Hello 👋</span>
             <span
               className="text-5xl lg:text-6xl underline underline-offset-[4px] md:underline-offset-[5px] decoration-[5px] md:decoration-[6px]"
               style={{
