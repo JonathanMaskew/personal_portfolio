@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Carousel, { CarouselImageItem } from '../Carousel';
 import tennis from '@/assets/images/personal/tennis.jpg';
 import manatee from '@/assets/images/personal/manatee-oof.gif';
-import lucy from '@/assets/images/personal/lucy.png';
+import penny from '@/assets/images/personal/penny.png';
 import reeses from '@/assets/images/personal/reeses.jpg';
 import taterTots from '@/assets/images/personal/tater-tots.png';
 import dinosaur from '@/assets/images/personal/raptor-encounter.png';
@@ -74,8 +74,8 @@ export default function PersonalCarousel() {
             color="var(--color-primary)"
           />
           <CarouselImageItem
-            image={lucy}
-            text="A goofy little cockapoo named Lucy."
+            image={penny}
+            text="A clumsy cavapoo (and sometimes gremlin) named Penny."
             color="var(--color-primary)"
           />
           <CarouselImageItem
