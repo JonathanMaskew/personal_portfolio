@@ -61,7 +61,7 @@ export function useChatSession(): ChatSession {
           id: generateId(),
           role: 'assistant',
           content:
-            "I can't help with that, but I'm happy to answer any questions about Jonathan's professional experience.",
+            "Please let me know how I can help with questions about Jonathan's professional experience.",
         };
 
         const updatedMessages = [...messagesRef.current, assistantMessage];
@@ -161,9 +161,14 @@ function isPromptInjection(input: string): boolean {
   // Normalize the input to lowercase for easier matching
   const normalizedInput = input.toLowerCase();
 
+  // Block prompts that contain both "role" and "system" anywhere in the text
+  if (normalizedInput.includes('role') && normalizedInput.includes('system')) {
+    return true;
+  }
+
   const injectionPatterns = [
-    // Matches: "ignore previous instructions", "disregard all rules", "forget previous prompts"
-    /(ignore|disregard|forget)\s+(all\s+)?(previous\s+)?(instructions|rules|prompts|directions|guidelines)/i,
+    // Matches: "ignore previous instructions", "disregard all rules", "forget/override previous prompts"
+    /(ignore|disregard|forget|override)\s+(all\s+)?(previous\s+)?(instructions|rules|prompts|directions|guidelines)/i,
 
     // Matches: "system prompt", "core guidelines", "initial instructions"
     /(system|core|initial|secret)\s+(prompt|instructions|rules|guidelines)/i,
@@ -172,10 +177,17 @@ function isPromptInjection(input: string): boolean {
     /you are (a|an|now)/i,
     /act as (a|an) (?!assistant|ai)/i,
 
-    // Matches developer/jailbreak commands
+    // Matches developer/jailbreak commands (e.g. "developer mode", "bypass", "jailbreak", "dan")
     /developer mode/i,
     /bypass(ing)?/i,
     /new (instructions|rules|prompt)/i,
+    /\b(jailbreak|jailbroken|dan)\b/i,
+
+    // Matches XML tag injection attempts trying to escape standard query wrappers
+    /<\/?(user_query|assistant_response|system|instruction|prompt)/i,
+
+    // Matches prompts asking the AI to leak/reveal its system prompt/rules
+    /(reveal|output|print|show|tell)\s+(your\s+)?(system\s+)?(instructions|rules|prompts|directions|guidelines)/i,
   ];
 
   // Test the input against all patterns; returns true if any pattern matches
