@@ -70,7 +70,7 @@ export function useChatSession(): ChatSession {
 
         setIsLoading(false);
 
-        return false;
+        return true;
       }
 
       const pendingMessages = [...messagesRef.current, userMessage];
