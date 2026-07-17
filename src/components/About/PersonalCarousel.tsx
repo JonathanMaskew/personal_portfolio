@@ -75,7 +75,7 @@ export default function PersonalCarousel() {
           />
           <CarouselImageItem
             image={penny}
-            text="A clumsy cavapoo (and sometimes gremlin) named Penny."
+            text="A clumsy cavapoo (and sometimes a gremlin) named Penny."
             color="var(--color-primary)"
           />
           <CarouselImageItem
