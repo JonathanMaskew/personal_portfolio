@@ -365,7 +365,19 @@ export const generateChatContext = (): string => {
 
     if (job.highlights && job.highlights.length > 0) {
       jobStr += '\n\n->Highlights:\n';
-      jobStr += job.highlights.map((h) => `- ${h.title}: ${h.text}`).join('\n');
+      jobStr += job.highlights
+        .map((h) => {
+          const title = h.title || h.heroTitle || '';
+          const text = h.text || h.heroText || '';
+          if (title && text) {
+            return `- ${title}: ${text}`;
+          } else if (title || text) {
+            return `- ${title || text}`;
+          }
+          return '';
+        })
+        .filter(Boolean)
+        .join('\n');
     }
 
     if (job.moreAccomplishments && job.moreAccomplishments.length > 0) {

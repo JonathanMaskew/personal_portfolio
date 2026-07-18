@@ -778,8 +778,6 @@ export const generateChatContext = (): string => {
   // Leadership & Projects
   const projectStrings: string[] = [];
   const allProjects = [
-    ...educationItems,
-    ...hsItems,
     ...projectItems,
     ...otherItems,
   ];
@@ -798,7 +796,17 @@ export const generateChatContext = (): string => {
     if (item.highlights && item.highlights.length > 0) {
       itemStr += '\n\n->Highlights:\n';
       itemStr += item.highlights
-        .map((h) => `- ${h.title}: ${h.text}`)
+        .map((h) => {
+          const title = h.title || h.heroTitle || '';
+          const text = h.text || h.heroText || '';
+          if (title && text) {
+            return `- ${title}: ${text}`;
+          } else if (title || text) {
+            return `- ${title || text}`;
+          }
+          return '';
+        })
+        .filter(Boolean)
         .join('\n');
     }
 

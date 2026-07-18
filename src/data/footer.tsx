@@ -72,7 +72,7 @@ export const getFooterData = (): Experience[] => [
             being on the content, I chose to use colors that reflected that of
             the content, following their branding colors. This helps to tie
             together related content in separate sections through the
-            familiarity of their colors, while differentiating it from content
+            familiarity of their colors, while differentiating it from
             unrelated content nearby. I additionally strategically used
             gradients to call attention to certain items, differentiating it
             through the emotional impact of the gradient. If you click around a
@@ -91,7 +91,7 @@ export const getFooterData = (): Experience[] => [
             sense of polish and professionalism.
           </ModalSection>
           <ModalSection icon={MousePointer} title="Usability">
-            From the getgo, I wanted this site to be practical and intuitive,
+            From the get-go, I wanted this site to be practical and intuitive,
             demonstrating my skills and personality while striking a sense of
             real-world professionalism. I intentionally avoided cluttering it
             with fancy technologies, contrarian user interface choices, or
