@@ -14,7 +14,8 @@ import {
   SquarePlay,
   Users,
   Code,
-  PartyPopper,
+  Hammer,
+  CircleEllipsis,
 } from 'lucide-react';
 import { Button } from '@/components/Button';
 import ButtonRow from '@/components/Button/ButtonRow';
@@ -31,11 +32,15 @@ export const getJobsData = (): Experience[] => [
     heroTitle: 'Full-stack Engineer',
     heroSubtitle: 'The Difference Card',
     subheading: 'Full-time, June 2026 - Present',
-    body: 'New role...more details coming soon!',
+    body: 'Deliver enhanced member experiences by improving and expanding user account management capabilities, allowing members to maximize their insurance benefits.',
     highlights: [
       {
-        icon: PartyPopper,
-        heroTitle: 'New role...more details coming soon!',
+        icon: Hammer,
+        heroTitle: 'Rebuilding user account management portal',
+      },
+      {
+        icon: CircleEllipsis,
+        heroTitle: 'More details to come...',
       },
     ],
     keywords: [],
