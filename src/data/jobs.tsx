@@ -16,6 +16,7 @@ import {
   Code,
   Hammer,
   CircleEllipsis,
+  WandSparkles,
 } from 'lucide-react';
 import { Button } from '@/components/Button';
 import ButtonRow from '@/components/Button/ButtonRow';
@@ -37,6 +38,10 @@ export const getJobsData = (): Experience[] => [
       {
         icon: Hammer,
         heroTitle: 'Rebuilding user account management portal',
+      },
+      {
+        icon: WandSparkles,
+        heroTitle: 'Enhancing member portal experience',
       },
       {
         icon: CircleEllipsis,
