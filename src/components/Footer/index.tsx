@@ -13,6 +13,9 @@ import { getFooterData } from '@/data/footer';
 import ExperienceDetails from '@/components/Modal/ExperienceDetails';
 import Accordion from '../Accordion';
 import PersonalCarousel from '../About/PersonalCarousel';
+import TRex from '@/assets/images/gallery/T-Rex.png';
+import LongNeck from '@/assets/images/gallery/Long-Neck-O-Sauras.png';
+import Image from 'next/image';
 
 export default function Footer() {
   const { modalOpened, openModal, closeModal } = useModal();
@@ -83,6 +86,17 @@ export default function Footer() {
       >
         {openedFooter && <ExperienceDetails data={openedFooter} />}
       </Modal>
+
+      <div className="w-full flex justify-center items-end gap-4">
+        <div className="border-b-1 border-primary w-full h-0 mr-8"></div>
+        <Image
+          src={LongNeck}
+          alt="Long-Neck-O-Sauras"
+          className="w-auto h-[150px]"
+        />
+        <Image src={TRex} alt="T-Rex" className="w-auto h-[120px]" />
+        <div className="border-b-1 border-primary w-full h-0 ml-8"></div>
+      </div>
     </SectionWrapper>
   );
 }

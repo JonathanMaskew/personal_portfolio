@@ -45,7 +45,10 @@ export default function InnerHighlight({
             <div className={`flex gap-4 w-full ${classNames?.header || ''}`}>
               {IconComponent && (
                 <div>
-                  <IconComponent size={30} className="text-foreground-2 mt-1 shrink-0" />
+                  <IconComponent
+                    size={30}
+                    className="text-foreground-2 mt-1 shrink-0"
+                  />
                 </div>
               )}
               <div className="flex flex-col text-left flex-1">
@@ -69,7 +72,9 @@ export default function InnerHighlight({
               </div>
             </div>
           ) : (
-            <div className={`flex flex-col gap-2 w-full ${classNames?.header || ''}`}>
+            <div
+              className={`flex flex-col gap-2 w-full ${classNames?.header || ''}`}
+            >
               {(IconComponent || title) && (
                 <div className="flex items-center gap-3">
                   {IconComponent && (
@@ -89,7 +94,9 @@ export default function InnerHighlight({
                 </div>
               )}
               {text && (
-                <div className={`text-sm md:text-base text-left ${classNames?.text || ''}`}>
+                <div
+                  className={`text-sm md:text-base text-left ${classNames?.text || ''}`}
+                >
                   {text}
                 </div>
               )}

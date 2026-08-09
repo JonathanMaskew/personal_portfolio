@@ -72,12 +72,11 @@ export const getFooterData = (): Experience[] => [
             being on the content, I chose to use colors that reflected that of
             the content, following their branding colors. This helps to tie
             together related content in separate sections through the
-            familiarity of their colors, while differentiating it from
-            unrelated content nearby. I additionally strategically used
-            gradients to call attention to certain items, differentiating it
-            through the emotional impact of the gradient. If you click around a
-            bit, you may even find some Easter eggs that affect the theme of the
-            site!
+            familiarity of their colors, while differentiating it from unrelated
+            content nearby. I additionally strategically used gradients to call
+            attention to certain items, differentiating it through the emotional
+            impact of the gradient. If you click around a bit, you may even find
+            some Easter eggs that affect the theme of the site!
           </ModalSection>
           <ModalSection icon={MousePointerClick} title="Interactivity">
             Some of the most popular systems seem to place a focus on
