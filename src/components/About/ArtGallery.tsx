@@ -28,38 +28,32 @@ export default function ArtGallery() {
           image={hamburger}
           color="var(--color-primary)"
           objectFit="contain"
-          onClick={() => setExpandedImage(hamburger)}
         />
         <CarouselImageItem
           image={hungryHippo}
           color="var(--color-primary)"
           objectFit="contain"
-          onClick={() => setExpandedImage(hungryHippo)}
         />
         <CarouselImageItem
           image={dinosaur}
           color="var(--color-primary)"
           objectFit="contain"
-          onClick={() => setExpandedImage(dinosaur)}
         />
         <CarouselImageItem
           image={brainPain}
           color="var(--color-primary)"
           objectFit="contain"
-          onClick={() => setExpandedImage(brainPain)}
         />
         <CarouselImageItem
           image={fansABlazin}
           color="var(--color-primary)"
           objectFit="contain"
-          onClick={() => setExpandedImage(fansABlazin)}
         />
         <CarouselItem
           className="inner-highlight inner-highlight-interactive flex flex-col justify-center p-6 h-[150px] w-[150px] cursor-pointer rounded-2xl"
           style={
             { '--highlight-color': 'var(--color-htf)' } as React.CSSProperties
           }
-          onClick={() => openExperienceModal('htf-design-director')}
         >
           <div className="flex flex-col gap-2 text-sm">
             <div>Creations from my time as Design Director</div>
@@ -75,12 +69,6 @@ export default function ArtGallery() {
             {
               '--highlight-color': 'var(--color-primary)',
             } as React.CSSProperties
-          }
-          onClick={() =>
-            window.open(
-              'https://www.redbubble.com/people/Js-Creations/shop?asc=u',
-              '_blank'
-            )
           }
         >
           <div className="flex flex-col gap-2 text-sm">
