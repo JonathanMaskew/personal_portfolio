@@ -20,7 +20,7 @@
   --color-nac: var(--color-nac);
   --color-purdue: var(--color-purdue);
   --color-generic: var(--color-generic);
-  --color-the-difference-card: var(--color-the-difference-card)
+  --color-the-difference-card: var(--color-the-difference-card);
 
   /* Border Radius */
   --radius-sm: var(--radius-sm);
@@ -373,6 +373,64 @@ html[data-theme='future']::after {
 [data-theme='winter'] .highlight-feature,
 [data-theme='winter'] .highlight-detailed {
   border-top: 3px solid rgba(255, 255, 255, 1);
+}
+
+/* 
+  Reese's Theme (Peanut Butter & Chocolate)
+*/
+
+[data-theme='reeses'] {
+  --color-background: #ff5d00; /* Reese's Orange */
+  --color-foreground: #2f1c0b;
+  --color-foreground-2: #2f1c0b;
+
+  --color-primary: #ffc000; /* Reese's Yellow */
+  --color-primary-accent: #ffc000; /* Dark Chocolate Brown */
+  --color-brand: #ffc000;
+
+  /* All companies yellow */
+  --color-myhelo: #ffc000;
+  --color-allegion: #ffc000;
+  --color-qualifi: #ffc000;
+  --color-htf: #ffc000;
+  --color-texy-mexy: #ffc000;
+  --color-nac: #ffc000;
+  --color-purdue: #ffc000;
+  --color-generic: #ffc000;
+  --color-the-difference-card: #ffc000;
+
+  /* Remove all border radius */
+  --radius-2xl: 0px;
+}
+
+/* Remove border radius across all elements in Reese's mode */
+[data-theme='reeses'] * {
+  border-radius: 0px !important;
+}
+
+/* Solid opaque yellow company cards with always-shown brown border */
+[data-theme='reeses'] .highlight-feature,
+[data-theme='reeses'] .highlight-detailed {
+  background: var(--highlight-color) !important;
+  border: 2px solid #2f1c0b !important;
+}
+
+/* Brown hover border for interactive cards */
+[data-theme='reeses'] .highlight-feature.cursor-pointer:hover,
+[data-theme='reeses'] .highlight-feature.cursor-pointer:active,
+[data-theme='reeses'] .highlight-detailed.cursor-pointer:hover,
+[data-theme='reeses'] .highlight-detailed.cursor-pointer:active {
+  box-shadow: inset 0 0 0 2px #2f1c0b !important;
+}
+
+[data-theme='reeses'] .inner-highlight {
+  background: #5b391b !important;
+  color: #ffffff !important;
+}
+
+[data-theme='reeses'] .inner-highlight-interactive:hover,
+[data-theme='reeses'] .inner-highlight-interactive:active {
+  background: #976639 !important;
 }
 
 /* 

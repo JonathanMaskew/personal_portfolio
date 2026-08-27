@@ -1,6 +1,5 @@
 'use client';
 
-import { ChevronRight, TriangleAlert } from 'lucide-react';
 import { useState } from 'react';
 import Carousel, { CarouselImageItem } from '../Carousel';
 import tennis from '@/assets/images/personal/tennis.jpg';
@@ -13,8 +12,11 @@ import travel from '@/assets/images/personal/travel.png';
 import roundabouts from '@/assets/images/personal/roundabouts.jpg';
 import carouselOfProgress from '@/assets/images/personal/carousel-of-progress.png';
 import JurassicParkEasterEgg from '../JurassicParkEasterEgg';
+import { useTheme } from '@/context/ThemeContext';
+import { Button } from '../Button';
 
 export default function PersonalCarousel() {
+  const { theme, setTheme } = useTheme();
   const [showJurassicParkEasterEgg, setShowJurassicParkEasterEgg] =
     useState(false);
 
@@ -34,25 +36,28 @@ export default function PersonalCarousel() {
             image={dinosaur}
             text="Jurassic Park - a great movie, and a cautionary tale about IT security!"
             color="var(--color-primary)"
-            onClick={() => setShowJurassicParkEasterEgg(true)}
           >
-            <div className="flex flex-col gap-1 text-xs">
-              <div className="flex items-center gap-2 font-bold text-red-500">
-                {' '}
-                <TriangleAlert size={14} />
-                SYSTEMS FAILING
-              </div>
-              <div className="flex items-center text-red-500">
-                Investigate failures
-                <ChevronRight size={14} />
-              </div>
-            </div>
+            <Button
+              text="Launch Control Console"
+              clickDetail={() => setShowJurassicParkEasterEgg(true)}
+              className="text-xs"
+            />
           </CarouselImageItem>
           <CarouselImageItem
             image={reeses}
             text="I am addicted to Reese's Peanut Butter Cups in every shape and size."
             color="var(--color-primary)"
-          />
+          >
+            <Button
+              text={
+                theme === 'reeses' ? "Exit Reese's Mode" : "Enter Reese's Mode"
+              }
+              clickDetail={() =>
+                setTheme(theme === 'reeses' ? 'default' : 'reeses')
+              }
+              className="text-xs"
+            />
+          </CarouselImageItem>
           <CarouselImageItem
             image={carouselOfProgress}
             text="I could ride the Carousel of Progress in a loop."

@@ -111,21 +111,15 @@ interface CarouselItemProps {
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
-  onClick?: () => void;
 }
 
 export function CarouselItem({
   children,
   className = '',
   style,
-  onClick,
 }: CarouselItemProps) {
   return (
-    <div 
-      className={`flex-shrink-0 ${className} ${onClick ? 'cursor-pointer' : ''}`} 
-      style={style}
-      onClick={onClick}
-    >
+    <div className={`flex-shrink-0 ${className}`} style={style}>
       {children}
     </div>
   );
@@ -138,7 +132,6 @@ interface CarouselImageItemProps {
   color?: string;
   size?: number;
   objectFit?: 'cover' | 'contain';
-  onClick?: () => void;
   children?: React.ReactNode;
 }
 
@@ -149,15 +142,11 @@ export function CarouselImageItem({
   color,
   size = 150,
   objectFit = 'cover',
-  onClick,
   children,
 }: CarouselImageItemProps) {
   return (
     <CarouselItem className={className} style={{ width: `${size}px` }}>
-      <div
-        className={`flex flex-col gap-4 ${onClick ? 'cursor-pointer' : ''}`}
-        onClick={onClick}
-      >
+      <div className="flex flex-col gap-4">
         <div style={{ width: `${size}px`, height: `${size}px` }}>
           <Image
             src={image}

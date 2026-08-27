@@ -7,7 +7,7 @@ import {
   ReactNode,
 } from 'react';
 
-type Theme = 'default' | 'past' | 'future' | 'winter';
+type Theme = 'default' | 'past' | 'future' | 'winter' | 'reeses';
 
 interface ThemeContextProps {
   theme: Theme;
